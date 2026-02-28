@@ -1,0 +1,77 @@
+importar { logGrupo, logError, logMensaje } desde '@/log.esjs'
+importar axios desde 'axios'
+importar { collect } desde 'collect.js'
+
+exportar asincrono funcion extraerRipio() {
+  const log = logGrupo({
+    fuente: 'extraerRipio',
+    tipo: 'criptopesos',
+  })
+
+  intentar {
+    const url = import.meta.env.VITE_FINANZAS_RENDIMIENTOS_RIPIO_URL
+    si (!url) {
+      logMensaje(log, 'Falta VITE_FINANZAS_RENDIMIENTOS_RIPIO_URL')
+      retornar []
+    }
+
+    const respuesta = esperar axios.get(url)
+
+    si (
+      !respuesta.data ||
+      !respuesta.data.results ||
+      !respuesta.data.results.longitud
+    ) {
+      logMensaje(log, 'Respuesta vacía o sin results de Ripio API', {
+        datos: respuesta.data,
+      })
+      retornar []
+    }
+
+    const warsItems = collect(respuesta.data.results)
+      .planoMapear(protocolo =>
+        protocolo.assets
+          .filter(asset => asset.currency && asset.currency.toUpperCase() === 'WARS')
+          .map(asset => {
+            const apy = Numero(asset.apy) || 0
+            const tarifaGestion = asset.fees && asset.fees.service ? asset.fees.service : 0
+            retornar {
+              apy: calcularApy(apy, tarifaGestion),
+            }
+          }),
+      )
+      .toArray()
+
+    si (warsItems.longitud === 0) {
+      logMensaje(log, 'No se encontró wARS en Ripio API', {
+        datos: respuesta.data,
+      })
+      retornar []
+    }
+
+    const maximoApy = collect(warsItems).sortByDesc('apy').first().apy
+    const tna = Numero((maximoApy / 100).fijarDecimales(4))
+
+    si (isNaN(tna) || tna < 0) {
+      lanzar crear Error('Valor de TNA inválido para Ripio wARS')
+    }
+
+    retornar [
+      {
+        token: 'wARS',
+        entidad: 'RIPIO',
+        tna,
+      },
+    ]
+  } capturar (error) {
+    logError(log, error)
+    retornar []
+  }
+}
+
+funcion calcularApy(apy, tarifaGestion) {
+  const tasaDiaria = Mate.potencia(1 + apy / 100, 1 / 365) - 1
+  const tasaDiariaAjustada = tasaDiaria - tarifaGestion / 100
+  const apyAjustado = Mate.potencia(1 + tasaDiariaAjustada, 365) - 1
+  retornar Numero((apyAjustado * 100).fijarDecimales(2))
+}

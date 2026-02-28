@@ -12,6 +12,8 @@ importar fci desde '@/finanzas/fci/fci.comando.esjs'
 importar rendimientos desde '@/finanzas/rendimientos/rendimientos.comando.esjs'
 importar riesgoPais desde '@/finanzas/riesgoPais/riesgoPais.comando.esjs'
 importar { extraerBelo } desde '@/finanzas/criptopesos/extraccion/extraerBelo.esjs'
+importar { extraerCapyfi } desde '@/finanzas/criptopesos/extraccion/extraerCapyfi.esjs'
+importar { extraerRipio } desde '@/finanzas/criptopesos/extraccion/extraerRipio.esjs'
 importar { guardarCriptopesos } desde '@/finanzas/criptopesos/guardado/guardarCriptopesos.esjs'
 importar { extraerCuentasRemuneradasUsd } desde '@/finanzas/cuentas-remuneradas-usd/extraccion/extraerCuentasRemuneradasUsd.esjs'
 importar { guardarCuentasRemuneradasUsd } desde '@/finanzas/cuentas-remuneradas-usd/guardado/guardarCuentasRemuneradasUsd.esjs'
@@ -112,7 +114,12 @@ asincrono funcion indiceUVA() {
 
 asincrono funcion criptopesos() {
   intentar {
-    const datos = esperar extraerBelo()
+    const [belo, capyfi, ripio] = esperar Promise.all([
+      extraerBelo(),
+      extraerCapyfi(),
+      extraerRipio(),
+    ])
+    const datos = [...belo, ...capyfi, ...ripio]
 
     esperar guardarCriptopesos(datos)
   } capturar (error) {
