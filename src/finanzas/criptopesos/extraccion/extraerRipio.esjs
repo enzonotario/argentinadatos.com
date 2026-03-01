@@ -69,9 +69,9 @@ exportar asincrono funcion extraerRipio() {
   }
 }
 
-funcion calcularApy(apy, tarifaGestion) {
-  const tasaDiaria = Mate.potencia(1 + apy / 100, 1 / 365) - 1
-  const tasaDiariaAjustada = tasaDiaria - tarifaGestion / 100
-  const apyAjustado = Mate.potencia(1 + tasaDiariaAjustada, 365) - 1
-  retornar Numero((apyAjustado * 100).fijarDecimales(2))
+exportar funcion calcularApy(apy, tarifaGestion) {
+  const factorAnualBruto = 1 + apy / 100
+  const factorFeeAnual = Mate.potencia(1 - tarifaGestion / 100, 365)
+  const factorAnualNeto = factorAnualBruto * factorFeeAnual
+  retornar Numero(((factorAnualNeto - 1) * 100).fijarDecimales(2))
 }
