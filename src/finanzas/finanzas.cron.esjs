@@ -11,10 +11,7 @@ importar { guardarIndiceUVA } desde '@/finanzas/guardado/guardarIndiceUVA.esjs'
 importar fci desde '@/finanzas/fci/fci.comando.esjs'
 importar rendimientos desde '@/finanzas/rendimientos/rendimientos.comando.esjs'
 importar riesgoPais desde '@/finanzas/riesgoPais/riesgoPais.comando.esjs'
-importar { extraerBelo } desde '@/finanzas/criptopesos/extraccion/extraerBelo.esjs'
-importar { extraerCapyfi } desde '@/finanzas/criptopesos/extraccion/extraerCapyfi.esjs'
-importar { extraerRipio } desde '@/finanzas/criptopesos/extraccion/extraerRipio.esjs'
-importar { guardarCriptopesos } desde '@/finanzas/criptopesos/guardado/guardarCriptopesos.esjs'
+importar { ejecutarCriptopesos } desde '@/finanzas/criptopesos/criptopesos.comando.esjs'
 importar { extraerCuentasRemuneradasUsd } desde '@/finanzas/cuentas-remuneradas-usd/extraccion/extraerCuentasRemuneradasUsd.esjs'
 importar { guardarCuentasRemuneradasUsd } desde '@/finanzas/cuentas-remuneradas-usd/guardado/guardarCuentasRemuneradasUsd.esjs'
 importar { extraerTna } desde '@/finanzas/hipotecariosUva/extraccion/extraerTna.esjs'
@@ -35,7 +32,7 @@ exportar asincrono funcion cronFinanzas() {
   esperar fci()
   esperar rendimientos()
   esperar riesgoPais()
-  esperar criptopesos()
+  esperar ejecutarCriptopesos()
   esperar cuentasRemuneradasUsd()
   esperar hipotecariosUva()
   esperar creditosHipotecariosUva()
@@ -109,21 +106,6 @@ asincrono funcion indiceUVA() {
     esperar guardarIndiceUVA(indices)
   } capturar (error) {
     consola.error('Error al extraer indice UVA', error)
-  }
-}
-
-asincrono funcion criptopesos() {
-  intentar {
-    const [belo, capyfi, ripio] = esperar Promise.all([
-      extraerBelo(),
-      extraerCapyfi(),
-      extraerRipio(),
-    ])
-    const datos = [...belo, ...capyfi, ...ripio]
-
-    esperar guardarCriptopesos(datos)
-  } capturar (error) {
-    consola.error('Error al extraer criptopesos', error)
   }
 }
 
