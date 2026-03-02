@@ -7,7 +7,7 @@ const hasEnv = Boolean(token && baseUrl)
 
 describe('extraerCapyfi', () => {
   it.skipIf(!hasEnv)(
-    'extrae APY de market-apy y lo retorna como wARS/CAPYFI con TNA',
+    'extrae APY de market-apy y lo retorna como wARS/CAPYFI con TNA nominal anual',
     async () => {
       const resultado = await extraerCapyfi()
 
@@ -18,6 +18,7 @@ describe('extraerCapyfi', () => {
       })
       expect(resultado[0].tna).toBeTypeOf('number')
       expect(resultado[0].tna).toBeGreaterThanOrEqual(0)
+      expect(resultado[0].tna).toBeLessThanOrEqual(1)
     },
     15000,
   )

@@ -54,22 +54,31 @@ exportar asincrono funcion extraerCapyfi() {
       lanzar crear Error('Error en la respuesta de Capyfi API: APY no encontrado')
     }
 
-    mut tna = Numero(apyRaw)
-    si (tna > 1) {
-      tna = tna / 100
+    mut apy = Numero(apyRaw)
+    si (apy > 1) {
+      apy = apy / 100
     }
 
-    si (isNaN(tna) || tna < 0) {
+    si (isNaN(apy) || apy < 0) {
       lanzar crear Error('Valor de APY/TNA inválido')
     }
+
+    const segundosPorAnio = 365 * 24 * 60 * 60
+    const slotSeconds = 12.04
+    const n = Mate.redondear(segundosPorAnio / slotSeconds)
+
+    const r = Mate.potencia(1 + apy, 1 / n) - 1
+    const tna = r * n
+
+    const tnaRedondeada = Numero(tna.fijarDecimales(4))
 
     retornar [
       {
         token: 'wARS',
         entidad: 'CAPYFI',
-        tna: Numero(tna.fijarDecimales(4)),
+        tna: tnaRedondeada,
       },
-    ];
+    ]
   } capturar (error) {
     logError(log, error)
     retornar []
