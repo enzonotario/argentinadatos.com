@@ -53,10 +53,7 @@ exportar asincrono funcion extraerRipio() {
     const maximoApy = collect(warsItems).sortByDesc('apy').first().apy
     const apyDecimal = maximoApy / 100
 
-    const segundosPorAnio = 365 * 24 * 60 * 60
-    const slotSeconds = 12.04
-    const n = segundosPorAnio / slotSeconds
-
+    const n = 365
     const tnaCalculada = apyToTna(apyDecimal, n)
     const tna = Numero(tnaCalculada.fijarDecimales(4))
 
