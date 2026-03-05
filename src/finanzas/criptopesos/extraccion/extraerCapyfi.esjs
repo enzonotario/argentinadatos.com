@@ -1,5 +1,6 @@
 importar { logGrupo, logError, logMensaje } desde '@/log.esjs'
 importar axios desde 'axios'
+importar { apyToTna } desde '@/finanzas/criptopesos/apyToTna.esjs'
 
 exportar asincrono funcion extraerCapyfi() {
   const log = logGrupo({
@@ -65,10 +66,9 @@ exportar asincrono funcion extraerCapyfi() {
 
     const segundosPorAnio = 365 * 24 * 60 * 60
     const slotSeconds = 12.04
-    const n = Mate.redondear(segundosPorAnio / slotSeconds)
+    const n = segundosPorAnio / slotSeconds
 
-    const r = Mate.potencia(1 + apy, 1 / n) - 1
-    const tna = r * n
+    const tna = apyToTna(apy, n)
 
     const tnaRedondeada = Numero(tna.fijarDecimales(4))
 

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { calcularApy, extraerRipio } from '@/finanzas/criptopesos/extraccion/extraerRipio.esjs'
+import { apyToTna } from '@/finanzas/criptopesos/apyToTna.esjs'
 
 describe('calcularApy', () => {
   it('sin fee no modifica el APY', () => {
@@ -33,7 +34,22 @@ describe('extraerRipio', () => {
       })
       expect(resultado[0].tna).toBeTypeOf('number')
       expect(resultado[0].tna).toBeGreaterThanOrEqual(0)
+      expect(resultado[0].tna).toBeLessThanOrEqual(1)
     },
     15000,
   )
+})
+
+describe('apyToTna', () => {
+  it('convierte correctamente un APY positivo a TNA nominal', () => {
+    const segundosPorAnio = 365 * 24 * 60 * 60
+    const slotSeconds = 12.04
+    const n = segundosPorAnio / slotSeconds
+
+    const apy = 0.2863
+    const tna = apyToTna(apy, n)
+
+    expect(tna).toBeGreaterThan(0.24)
+    expect(tna).toBeLessThan(0.27)
+  })
 })

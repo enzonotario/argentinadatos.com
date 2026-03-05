@@ -1,6 +1,7 @@
 importar { logGrupo, logError, logMensaje } desde '@/log.esjs'
 importar axios desde 'axios'
 importar { collect } desde 'collect.js'
+importar { apyToTna } desde '@/finanzas/criptopesos/apyToTna.esjs'
 
 exportar asincrono funcion extraerRipio() {
   const log = logGrupo({
@@ -28,13 +29,13 @@ exportar asincrono funcion extraerRipio() {
       retornar []
     }
 
-    const warsItems = collect(respuesta.data.results)
-      .planoMapear(protocolo =>
-        protocolo.assets
-          .filter(asset => asset.currency && asset.currency.toUpperCase() === 'WARS')
-          .map(asset => {
+    const warsItems = collect(respuesta.data.results).planoMapear(protocolo =>
+        protocolo.assets.filtrar(
+            asset => asset.currency && asset.currency.aMayusculas() === 'WARS',
+          ).mapear(asset => {
             const apy = Numero(asset.apy) || 0
-            const tarifaGestion = asset.fees && asset.fees.service ? asset.fees.service : 0
+            const tarifaGestion =
+              asset.fees && asset.fees.service ? asset.fees.service : 0
             retornar {
               apy: calcularApy(apy, tarifaGestion),
             }
@@ -50,7 +51,14 @@ exportar asincrono funcion extraerRipio() {
     }
 
     const maximoApy = collect(warsItems).sortByDesc('apy').first().apy
-    const tna = Numero((maximoApy / 100).fijarDecimales(4))
+    const apyDecimal = maximoApy / 100
+
+    const segundosPorAnio = 365 * 24 * 60 * 60
+    const slotSeconds = 12.04
+    const n = segundosPorAnio / slotSeconds
+
+    const tnaCalculada = apyToTna(apyDecimal, n)
+    const tna = Numero(tnaCalculada.fijarDecimales(4))
 
     si (isNaN(tna) || tna < 0) {
       lanzar crear Error('Valor de TNA inválido para Ripio wARS')
@@ -73,5 +81,5 @@ exportar funcion calcularApy(apy, tarifaGestion) {
   const factorAnualBruto = 1 + apy / 100
   const factorFeeAnual = Mate.potencia(1 - tarifaGestion / 100, 365)
   const factorAnualNeto = factorAnualBruto * factorFeeAnual
-  retornar Numero(((factorAnualNeto - 1) * 100).fijarDecimales(2))
+  retornar Numero(((factorAnualNeto - 1) * 100).fijarDecimales(2));
 }

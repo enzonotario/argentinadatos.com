@@ -1,0 +1,10 @@
+exportar funcion apyToTna(apyDecimal, nPerYear) {
+  si (!Numero.esFinito(apyDecimal))
+    lanzar crear TypeError('apyDecimal debe ser un número finito')
+  si (!Numero.esFinito(nPerYear) || nPerYear <= 0)
+    lanzar crear TypeError('nPerYear debe ser mayor que 0')
+  si (apyDecimal <= -1) lanzar crear RangeError('apyDecimal debe ser mayor que -1')
+
+  const rPeriod = Mate.potencia(1 + apyDecimal, 1 / nPerYear) - 1
+  retornar rPeriod * nPerYear
+}
