@@ -1,0 +1,14 @@
+importar { extraerPlazoFijo } desde '@/finanzas/extraccion/extraerPlazoFijo.esjs'
+importar { guardarPlazoFijo } desde '@/finanzas/guardado/guardarPlazoFijo.esjs'
+
+exportar asincrono funcion ejecutarPlazoFijo() {
+  intentar {
+    const tasas = esperar extraerPlazoFijo()
+
+    esperar guardarPlazoFijo(tasas)
+  } capturar (error) {
+    consola.error('Error al extraer tasas de plazo fijo', error)
+  }
+}
+
+exportar porDefecto ejecutarPlazoFijo

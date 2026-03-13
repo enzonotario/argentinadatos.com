@@ -6,6 +6,7 @@ importar fciIA desde '@/finanzas/fci/fciIA.comando.esjs'
 importar riesgoPais desde '@/finanzas/riesgoPais/riesgoPais.comando.esjs'
 importar rendimientos desde '@/finanzas/rendimientos/rendimientos.comando.esjs'
 importar criptopesos desde '@/finanzas/criptopesos/criptopesos.comando.esjs'
+importar plazoFijoComando desde '@/finanzas/plazoFijo/plazoFijo.comando.esjs'
 
 const predefinidos = {
   diario: ['/v1/cotizaciones', '/v1/finanzas'],
@@ -64,6 +65,9 @@ exportar asincrono funcion iniciar(comando) {
       romper
     caso '/v1/finanzas/criptopesos':
       esperar criptopesos()
+      romper
+    caso '/v1/finanzas/plazo-fijo':
+      esperar plazoFijoComando()
       romper
       porDefecto: consola.escribir('No se encontro el comando')
       romper
