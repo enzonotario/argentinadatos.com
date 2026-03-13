@@ -1,7 +1,4 @@
-importar { load } desde 'cheerio'
-importar { format } desde 'date-fns'
 importar axios desde 'axios'
-importar { interpretarDecimalConComa } desde '@/utils/numeros.esjs'
 importar { extraerUalaPlazoFijo } desde '@/finanzas/extraccion/extraerUala.esjs'
 
 exportar asincrono funcion extraerPlazoFijo() {
@@ -16,50 +13,22 @@ exportar asincrono funcion extraerPlazoFijo() {
 
 exportar asincrono funcion obtenerRespuesta() {
   intentar {
-    process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
-
     const respuesta = esperar axios.get(
-      'http://www.bcra.gob.ar/BCRAyVos/Plazos_fijos_online.asp',
-      {
-        responseType: 'arraybuffer',
-      },
+      'https://www.bcra.gob.ar/api-plazos-fijos.php',
     )
+    const { top10, otros } = respuesta.data
 
-    const $ = load(respuesta.data.aCadena('latin1'))
-
-    const tabla = $('table')
-
-    const items = []
-
-    tabla.buscar('tbody tr').each((i, tr) => {
-      const entidad = $(tr).buscar('td').eq(0).text()
-      const logo = $(tr).find('td').eq(1).buscar('img').attr('src')
-      const tnaClientes = interpretarPorcentaje($(tr).buscar('td').eq(2).text())
-      const tnaNoClientes = interpretarPorcentaje($(tr).buscar('td').eq(3).text())
-      const enlace = $(tr).find('td').eq(4).buscar('a').attr('href')
-
-      items.agregar({
-        entidad: entidad.recortarEspacios(),
-        logo: crear URL(logo, 'https://www.bcra.gob.ar/').href,
-        tnaClientes,
-        tnaNoClientes,
-        enlace: enlace || nulo,
-      })
-    })
-
-    retornar items
+    retornar [...top10, ...otros].mapear(item => ({
+      entidad: item.entidad.recortarEspacios(),
+      logo: item.logo_url,
+      tnaClientes: item.tasa_con_relacion ? item.tasa_con_relacion / 100 : nulo,
+      tnaNoClientes: item.tasa_sin_relacion
+        ? item.tasa_sin_relacion / 100
+        : nulo,
+      enlace: item.web || nulo,
+    }));
   } capturar (error) {
     consola.error('Error al obtener respuesta de tasas de plazo fijo', error)
     retornar []
   }
-}
-
-funcion interpretarPorcentaje(valor) {
-  const porcentaje = interpretarDecimalConComa(valor.reemplazar('%', ''))
-
-  si (!porcentaje) {
-    retornar nulo
-  }
-
-  retornar interpretarDecimal((Numero(porcentaje) / 100).fijarDecimales(4));
 }
