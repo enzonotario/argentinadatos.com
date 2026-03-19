@@ -66,6 +66,17 @@ exportar asincrono funcion extraerCarrefourCuentaRemunerada() {
       )
       condiciones = `Permite ingresar ${topeFormateado} / mes`
       condicionesCorto = `Permite ingresar ${topeFormateado} / mes`
+    } sino {
+      const historial = leerRuta('finanzas/fci/otros/carrefour-banco')
+      si (Matriz.esMatriz(historial)) {
+        const ultimaConCondiciones = [...historial]
+          .invertir()
+          .encontrar(e => e.condiciones !== nulo)
+        si (ultimaConCondiciones) {
+          condiciones = ultimaConCondiciones.condiciones
+          condicionesCorto = ultimaConCondiciones.condicionesCorto
+        }
+      }
     }
 
     retornar {

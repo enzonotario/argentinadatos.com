@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { extraerCarrefourCondiciones } from '@/finanzas/extraccion/extraerCarrefourCondiciones.esjs'
 
 describe('extraerCarrefourCondiciones', () => {
-  it('extrae condiciones de Carrefour correctamente', async () => {
+  it('extrae condiciones de Carrefour o retorna el último conocido', async () => {
     const resultado = await extraerCarrefourCondiciones()
 
     if (resultado !== null) {
@@ -15,4 +15,3 @@ describe('extraerCarrefourCondiciones', () => {
     timeout: 500000,
   })
 })
-

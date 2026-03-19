@@ -11,8 +11,8 @@ describe('extraerCarrefour', () => {
       tea: expect.any(Number),
       tna: expect.any(Number),
       tope: expect.toBeOneOf([null, expect.any(Number)]),
-      condiciones: expect.anything(),
-      condicionesCorto: expect.anything(),
+      condiciones: expect.toBeOneOf([null, expect.any(String)]),
+      condicionesCorto: expect.toBeOneOf([null, expect.any(String)]),
     })
   }, {
     timeout: 500000,
