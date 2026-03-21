@@ -1,7 +1,7 @@
 importar { escribirRuta, leerRuta } desde '@/utils/rutas.esjs'
 importar { format } desde 'date-fns'
 importar { logGrupo, logError, logMensaje } desde '@/log.esjs'
-importar { scrapearConFirecrawl } desde './firecrawl.esjs'
+importar { scrapearConIA } desde './ia.esjs'
 
 exportar asincrono funcion extraerBnaCuentaRemunerada() {
   const log = logGrupo({
@@ -10,7 +10,7 @@ exportar asincrono funcion extraerBnaCuentaRemunerada() {
   })
 
   intentar {
-    const datos = esperar scrapearConFirecrawl(log, {
+    const datos = esperar scrapearConIA(log, {
       url: 'https://bna.com.ar/Personas/cuentasueldo',
       prompt:
         'Extrae la tasa de la cuenta remunerada en pesos en formato JSON. Para la TNA usa números decimales (por ejemplo 0.2 para 2%). En condiciones/condicionesCorto aclará para qué tipo de Cuentas/Clientes es.',

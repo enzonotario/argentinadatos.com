@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import { extraerUalaCuentaRemunerada } from '@/finanzas/extraccion/extraerUala.esjs'
 
+import.meta.env.VITE_FORCE_IA = 'true'
+
 describe('extraerUala', () => {
   it('extrae Uala Cuenta Remunerada correctamente', async () => {
     const resultado = await extraerUalaCuentaRemunerada()

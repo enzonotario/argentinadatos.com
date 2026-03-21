@@ -1,5 +1,5 @@
 importar { logGrupo, logError, logMensaje } desde '@/log.esjs'
-importar { scrapearConFirecrawl } desde './firecrawl.esjs'
+importar { scrapearConIA } desde './ia.esjs'
 
 exportar asincrono funcion extraerCarrefourCondiciones() {
   const log = logGrupo({
@@ -8,7 +8,7 @@ exportar asincrono funcion extraerCarrefourCondiciones() {
   })
 
   intentar {
-    const datos = esperar scrapearConFirecrawl(log, {
+    const datos = esperar scrapearConIA(log, {
       url: 'https://www.bancodeserviciosfinancieros.com.ar/costos-prepaga/',
       prompt:
         'Extrae el tope de recarga mensual de la cuenta digital Carrefour. Busca el valor en la sección "CUENTA DIGITAL MI CARREFOUR" bajo "Tope mensual de recarga". Retorna el número sin símbolos ni puntos, solo el valor numérico.',

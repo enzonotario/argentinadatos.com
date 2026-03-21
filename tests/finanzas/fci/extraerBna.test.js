@@ -3,6 +3,7 @@ import { extraerBnaCuentaRemunerada } from '@/finanzas/extraccion/extraerBna.esj
 
 describe('extraerBna', () => {
   it('extrae BNA Cuenta Remunerada correctamente', async () => {
+    import.meta.env.VITE_FORCE_IA = 'true'
     const resultado = await extraerBnaCuentaRemunerada()
 
     expect(resultado).toMatchObject({

@@ -1,0 +1,153 @@
+importar { logMensaje, logError } desde '@/log.esjs'
+importar { getDay } desde 'date-fns'
+
+const TABSTACK_API_URL = 'https://api.tabstack.ai/v1/extract/markdown'
+const TABSTACK_API_KEY = import.meta.env.VITE_TABSTACK_API_KEY
+const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY
+const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions'
+const FORCE_IA = import.meta.env.VITE_FORCE_IA === 'true' || verdadero
+
+exportar asincrono funcion scrapearConIA(log, configuracion) {
+  const { url, prompt, schema, required } = configuracion
+
+  const diaSemana = getDay(crear Fecha())
+  si (!FORCE_IA && ![1, 3, 5].incluye(diaSemana)) {
+    logMensaje(log, 'IA omitida: no es día de ejecución', { url, diaSemana })
+    retornar nulo
+  }
+
+  intentar {
+    logMensaje(log, 'Iniciando extracción con Tabstack', { url })
+
+    const respuestaTabstack = esperar fetch(TABSTACK_API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Authorization: `Bearer ${TABSTACK_API_KEY}`,
+      },
+      body: JSON.aTexto({
+        geo_target: { country: 'AR' },
+        metadata: falso,
+        nocache: verdadero,
+        url,
+      }),
+    })
+
+    si (!respuestaTabstack.ok) {
+      const respuestaTexto = esperar respuestaTabstack.text()
+      logMensaje(log, 'Respuesta no OK de Tabstack', {
+        status: respuestaTabstack.status,
+        statusText: respuestaTabstack.statusText,
+        url,
+        respuestaBody: respuestaTexto,
+      })
+      lanzar crear Error(
+        `Error en Tabstack: ${respuestaTabstack.status} ${respuestaTabstack.statusText}. URL: ${url}`,
+      )
+    }
+
+    const datosTabstack = esperar respuestaTabstack.json()
+    const markdown = datosTabstack.content
+
+    si (!markdown) {
+      lanzar crear Error(`No se obtuvo markdown de Tabstack para URL: ${url}`)
+    }
+
+    logMensaje(log, 'Markdown obtenido, iniciando extracción con OpenAI', {
+      url,
+    })
+
+    const propiedades = {}
+    const listaRequeridos = Object.claves(schema)
+
+    listaRequeridos.paraCada(llave => {
+      const esRequeridoPorExtractor = required ? required.incluye(llave) : verdadero
+
+      si (esRequeridoPorExtractor) {
+        propiedades[llave] = schema[llave]
+      } sino {
+        // Si no es requerido por el extractor, permitimos que sea nulo para cumplir con strict: true de OpenAI
+        propiedades[llave] = {
+          anyOf: [schema[llave], { type: 'null' }],
+        }
+      }
+    })
+
+    const bodyOpenAI = {
+      model: 'gpt-4o-mini',
+      messages: [
+        {
+          role: 'system',
+          content:
+            'Eres un extractor de datos experto. Extrae la información solicitada en formato JSON siguiendo el esquema proporcionado. Si no encuentras un dato opcional, devuelve null. No inventes datos.',
+        },
+        {
+          role: 'user',
+          content: `Markdown:\n${markdown}\n\nInstrucción: ${prompt}`,
+        },
+      ],
+      response_format: {
+        type: 'json_schema',
+        json_schema: {
+          name: 'extractor_datos',
+          strict: verdadero,
+          schema: {
+            type: 'object',
+            properties: propiedades,
+            required: listaRequeridos,
+            additionalProperties: falso,
+          },
+        },
+      },
+    }
+
+    const respuestaOpenAI = esperar fetch(OPENAI_API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${OPENAI_API_KEY}`,
+      },
+      body: JSON.aTexto(bodyOpenAI),
+    })
+
+    si (!respuestaOpenAI.ok) {
+      const respuestaTexto = esperar respuestaOpenAI.text()
+      logMensaje(log, 'Respuesta no OK de OpenAI', {
+        status: respuestaOpenAI.status,
+        statusText: respuestaOpenAI.statusText,
+        url,
+        respuestaBody: respuestaTexto,
+      })
+      lanzar crear Error(
+        `Error en OpenAI: ${respuestaOpenAI.status} ${respuestaOpenAI.statusText}. URL: ${url}`,
+      )
+    }
+
+    const datosOpenAI = esperar respuestaOpenAI.json()
+
+    si (
+      !datosOpenAI.choices ||
+      !datosOpenAI.choices[0] ||
+      !datosOpenAI.choices[0].message
+    ) {
+      lanzar crear Error('Datos inválidos de OpenAI')
+    }
+
+    const resultado = JSON.analizar(datosOpenAI.choices[0].message.content)
+
+    logMensaje(log, 'Extracción con IA exitosa', {
+      url,
+      datos: resultado,
+    })
+
+    retornar resultado
+  } capturar (error) {
+    logError(log, error)
+    logMensaje(log, 'Error al scrapear con IA', {
+      url: configuracion.url,
+      errorMessage: error.message,
+    })
+    lanzar error
+  }
+}

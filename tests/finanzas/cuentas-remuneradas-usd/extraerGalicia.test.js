@@ -3,6 +3,7 @@ import { extraerGalicia } from '@/finanzas/cuentas-remuneradas-usd/extraccion/ex
 
 describe('extraerGalicia', () => {
   it('extrae datos correctamente de Galicia', async () => {
+    import.meta.env.VITE_FORCE_IA = 'true'
     const resultado = await extraerGalicia()
 
     expect(resultado).toBeInstanceOf(Array)

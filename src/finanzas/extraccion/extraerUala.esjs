@@ -3,7 +3,7 @@ importar { escribirRuta, leerRuta } desde '@/utils/rutas.esjs'
 importar axios desde 'axios'
 importar { logGrupo, logError, logMensaje } desde '@/log.esjs'
 importar { interpretarDecimalConComa } desde '@/utils/numeros.esjs'
-importar { scrapearConFirecrawl } desde './firecrawl.esjs'
+importar { scrapearConIA } desde './ia.esjs'
 
 exportar asincrono funcion extraerUalaCuentaRemunerada() {
   const log = logGrupo({
@@ -12,7 +12,7 @@ exportar asincrono funcion extraerUalaCuentaRemunerada() {
   })
 
   intentar {
-    const datos = esperar scrapearConFirecrawl(log, {
+    const datos = esperar scrapearConIA(log, {
       url: 'https://www.uala.com.ar/inversiones/cuenta-remunerada',
       prompt: 'Extrae las tasas de las cuentas remuneradas Normal y Plus (en los niveles que haya). Para la TNA usa números decimales (por ejemplo 0.75 para 75%). En condicionesCorto asegúrate de que quede claro que monto se debe consumir para acceder a la cuenta Plus. Respetá los nombres/formatos de los fondos del ejemplo. Por ejemplo: [ { "fondo": "UALA", "tna": 0.4, "tope": 1500000, "fecha": "2025-09-19" }, { "fondo": "UALA PLUS 1", "tna": 0.45, "tope": 1500000, "condiciones": "Si acumulás $250.000 o más entre ciertas operaciones este mes, el próximo tu tasa sube 3%", "condicionesCorto": "Acumulá $250.000 entre inversiones y consumos para acceder a la tasa Plus 1 el próximo mes", "fecha": "2025-09-19" }, { "fondo": "UALA PLUS 2", "tna": 0.5, "tope": 1500000, "condiciones": "Si acumulás $500.000 o más entre ciertas operaciones este mes, el próximo tu tasa sube 5%", "condicionesCorto": "Acumulá $500.000 entre inversiones y consumos para acceder a la tasa Plus 2 el próximo mes", "fecha": "2025-09-19" } ]',
       schema: {
@@ -38,8 +38,8 @@ exportar asincrono funcion extraerUalaCuentaRemunerada() {
       !Array.isArray(datos.fondos) ||
       datos.fondos.length === 0
     ) {
-      logMensaje(log, 'Fondos inválidos en respuesta de Firecrawl', { datos })
-      lanzar crear Error('Error en la respuesta de Firecrawl: fondos inválidos')
+      logMensaje(log, 'Fondos inválidos en respuesta de IA', { datos })
+      lanzar crear Error('Error en la respuesta de IA: fondos inválidos')
     }
 
     retornar [

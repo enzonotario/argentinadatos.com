@@ -1,4 +1,4 @@
-importar { scrapearConFirecrawl } desde '@/finanzas/extraccion/firecrawl.esjs'
+importar { scrapearConIA } desde '@/finanzas/extraccion/ia.esjs'
 importar { logMensaje, logError, logGrupo } desde '@/log.esjs'
 
 exportar asincrono funcion extraerGalicia() {
@@ -25,7 +25,7 @@ exportar asincrono funcion extraerGalicia() {
       required: ['tasa'],
     }
 
-    const datos = esperar scrapearConFirecrawl(log, configuracion)
+    const datos = esperar scrapearConIA(log, configuracion)
 
     si (!datos || tipoDe datos.tasa !== 'number') {
       lanzar crear Error('Datos inválidos de Galicia: falta tasa')

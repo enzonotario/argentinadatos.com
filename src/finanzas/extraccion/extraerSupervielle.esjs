@@ -1,7 +1,7 @@
 importar { escribirRuta, leerRuta } desde '@/utils/rutas.esjs'
 importar { format } desde 'date-fns'
 importar { logGrupo, logError, logMensaje } desde '@/log.esjs'
-importar { scrapearConFirecrawl } desde './firecrawl.esjs'
+importar { scrapearConIA } desde './ia.esjs'
 
 exportar asincrono funcion extraerSupervielleCuentaRemunerada() {
   const log = logGrupo({
@@ -10,7 +10,7 @@ exportar asincrono funcion extraerSupervielleCuentaRemunerada() {
   })
 
   intentar {
-    const datos = esperar scrapearConFirecrawl(log, {
+    const datos = esperar scrapearConIA(log, {
       url: 'https://www.supervielle.com.ar/personas/cuentas/cuenta-remunerada',
       prompt:
         'Extrae la TNA (Tasa Nominal Anual) y el tope máximo de remuneración de la cuenta remunerada en pesos de Supervielle. Para la TNA usa números decimales (por ejemplo 0.75 para 75%, 0.42 para 42%). El tope es el monto máximo en pesos que se puede remunerar. Si no se especifica un tope, deja el campo vacío.',
@@ -35,7 +35,7 @@ exportar asincrono funcion extraerSupervielleCuentaRemunerada() {
 
     const valor = Numero(datos.tna)
 
-    const tna = Numero((valor).fijarDecimales(4))
+    const tna = Numero(valor.fijarDecimales(4))
 
     const tea = Numero(((1 + tna / 365) ** 365 - 1).fijarDecimales(4))
 
