@@ -149,7 +149,7 @@ exportar clase FciOtrosDatabaseService {
         SELECT id, fondo, tna, tea, tope, fecha, condiciones, condicionesCorto, timestamp
         FROM fci_otros
         WHERE fondo = ?
-        ORDER BY timestamp ASC, created_at ASC
+        ORDER BY fecha ASC, timestamp ASC
       `,
       args: [fondo],
     })
