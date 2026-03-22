@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import colors from 'tailwindcss/colors'
 import { format, parseISO } from 'date-fns'
+import { es } from 'date-fns/locale'
 import { useApi } from '../../composables/useApi'
 import { useEcharts } from '../../composables/useEcharts'
 
@@ -10,6 +11,10 @@ const chartRef = ref()
 const { setOptions, theme } = useEcharts(chartRef)
 
 const api = useApi()
+
+watch(theme, async () => {
+  await setChartOptions()
+})
 
 const autoFontSize = computed(() => {
   const chartWidth = chartRef.value?.clientWidth
@@ -56,28 +61,28 @@ async function setChartOptions() {
         const prevTasa = prevItem?.valor ? prevItem.valor * 100 : currentTasa
         const variacion = currentTasa - prevTasa
         const variacionPorcentaje = prevTasa !== 0
-          ? ((variacion / prevTasa) * 100).toFixed(2)
-          : '0.00'
+          ? ((variacion / prevTasa) * 100).toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+          : '0,00'
         const isSubida = variacion > 0
         const variacionColor = isSubida ? colors.green[500] : colors.red[500]
         const variacionSigno = isSubida ? '+' : ''
 
         return `<div class="flex flex-col gap-1">
-          <div class="font-semibold">${format(parseISO(date), 'dd/MM/yyyy')}</div>
+          <div class="font-semibold">${format(parseISO(date), 'dd/MM/yyyy', { locale: es })}</div>
           <div class="flex items-center gap-2">
             <span>Tasa de interés:</span>
-            <span class="font-bold">${currentTasa.toFixed(2)}%</span>
+            <span class="font-bold">${currentTasa.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%</span>
           </div>
           ${prevItem ? `
             <div class="flex items-center gap-2">
               <span>Variación:</span>
               <span class="font-bold" style="color: ${variacionColor}">
-                ${variacionSigno}${variacion.toFixed(2)} p.p.
+                ${variacionSigno}${variacion.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} p.p.
                 (${variacionSigno}${variacionPorcentaje}%)
               </span>
             </div>
             <div class="text-xs text-gray-500">
-              vs. día anterior: ${prevTasa.toFixed(2)}%
+              vs. día anterior: ${prevTasa.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%
             </div>
           ` : ''}
         </div>`
@@ -133,7 +138,7 @@ async function setChartOptions() {
       axisLabel: {
         color: theme.value === 'dark' ? colors.gray[100] : colors.gray[800],
         formatter: (value: number) => {
-          return `${value.toFixed(1)}%`
+          return `${value.toLocaleString('es-AR')}%`
         },
       },
     },

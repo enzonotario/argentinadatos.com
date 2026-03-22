@@ -82,6 +82,9 @@ async function setChartOptions(casa: string) {
   setOptions({
     legend: {
       data: ['Venta', 'Variación'],
+      textStyle: {
+        color: theme.value === 'dark' ? colors.gray[100] : colors.gray[800],
+      },
     },
     tooltip: {
       trigger: 'axis',
@@ -147,6 +150,7 @@ async function setChartOptions(casa: string) {
         type: 'category',
         data: dolares.map(item => item.fecha),
         axisLabel: {
+          color: theme.value === 'dark' ? colors.gray[100] : colors.gray[800],
           formatter: (value: string) => {
             return format(parseISO(value), 'dd/MM/yyyy')
           },
@@ -157,8 +161,9 @@ async function setChartOptions(casa: string) {
       {
         type: 'value',
         axisLabel: {
+          color: theme.value === 'dark' ? colors.gray[100] : colors.gray[800],
           formatter: (value: number) => {
-            return `$${value.toFixed(0)}`
+            return `$${value.toLocaleString('es-AR')}`
           },
         },
         min: Math.min(...dolares.map(item => item.venta)) - 10,
@@ -167,8 +172,9 @@ async function setChartOptions(casa: string) {
       {
         type: 'value',
         axisLabel: {
+          color: theme.value === 'dark' ? colors.gray[100] : colors.gray[800],
           formatter: (value: number) => {
-            return `$${value.toFixed(0)}`
+            return `$${value.toLocaleString('es-AR')}`
           },
         },
         min: Math.min(...dolares.map(item => item.variacion)) - 10,
@@ -204,8 +210,8 @@ async function setChartOptions(casa: string) {
 }
 
 watch(
-  casa,
-  async (value) => {
+  [casa, theme],
+  async ([value]) => {
     await setChartOptions(value)
   },
   {

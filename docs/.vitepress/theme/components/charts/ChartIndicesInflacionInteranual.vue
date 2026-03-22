@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { collect } from 'collect.js'
 import colors from 'tailwindcss/colors'
 import { format, parseISO } from 'date-fns'
+import { es } from 'date-fns/locale'
 import { useApi } from '../../composables/useApi'
 import { useEcharts } from '../../composables/useEcharts'
 
@@ -11,6 +12,10 @@ const chartRef = ref()
 const { setOptions, theme } = useEcharts(chartRef)
 
 const api = useApi()
+
+watch(theme, async () => {
+  await setChartOptions()
+})
 
 async function fetchData() {
   try {
@@ -59,8 +64,9 @@ async function setChartOptions() {
           <span class="text-xs">${format(
             parseISO(params[0].value[0]),
             'MMMM',
+            { locale: es },
           )}</span>
-          <div class="text-md">${date}: <span class="font-bold">${value}%</span></div>
+          <div class="text-md">${date}: <span class="font-bold">${value.toLocaleString('es-AR')}%</span></div>
         </div>`
       },
     },
@@ -70,6 +76,11 @@ async function setChartOptions() {
     },
     yAxis: {
       type: 'value',
+      axisLabel: {
+        formatter: (value: number) => {
+          return `${value.toLocaleString('es-AR')}%`
+        },
+      },
     },
     series: [
       {

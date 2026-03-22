@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 
 const BASE_URL = 'https://api.argentinadatos.com/static/assets/arq/'
 const LINK_URL =
@@ -60,17 +60,18 @@ const bannerImageUrl = computed(() => {
     : currentBanner.value.desktopUrl
 })
 
+let timeoutId
+const checkMobile = () => {
+  isMobile.value = window.innerWidth < 768
+}
+
 onMounted(() => {
   const defer = window.requestIdleCallback || (fn => setTimeout(fn, 1))
 
   defer(() => {
-    const checkMobile = () => {
-      isMobile.value = window.innerWidth < 768
-    }
     checkMobile()
     window.addEventListener('resize', checkMobile, { passive: true })
 
-    let timeoutId
     const scheduleNext = () => {
       const entry = playlist[currentPlaylistIndex.value]
       timeoutId = setTimeout(() => {
@@ -80,12 +81,12 @@ onMounted(() => {
       }, entry.duration)
     }
     scheduleNext()
-
-    onUnmounted(() => {
-      window.removeEventListener('resize', checkMobile)
-      clearTimeout(timeoutId)
-    })
   })
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', checkMobile)
+  if (timeoutId) clearTimeout(timeoutId)
 })
 
 const handleImageError = () => {

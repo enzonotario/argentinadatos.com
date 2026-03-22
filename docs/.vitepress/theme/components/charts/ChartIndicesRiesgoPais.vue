@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import colors from 'tailwindcss/colors'
 import { format, parseISO } from 'date-fns'
+import { es } from 'date-fns/locale'
 import { useApi } from '../../composables/useApi'
 import { useEcharts } from '../../composables/useEcharts'
 
@@ -10,6 +11,10 @@ const chartRef = ref()
 const { setOptions, theme } = useEcharts(chartRef)
 
 const api = useApi()
+
+watch(theme, async () => {
+  await setChartOptions()
+})
 
 async function fetchData() {
   try {
@@ -45,14 +50,14 @@ async function setChartOptions() {
         const prevValor = prevItem?.valor || currentValor
         const variacion = currentValor - prevValor
         const variacionPorcentaje = prevValor !== 0
-          ? ((variacion / prevValor) * 100).toFixed(2)
-          : '0.00'
+          ? ((variacion / prevValor) * 100).toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+          : '0,00'
         const isSubida = variacion > 0
         const variacionColor = isSubida ? colors.red[500] : colors.green[500]
         const variacionSigno = isSubida ? '+' : ''
 
         return `<div class="flex flex-col gap-1">
-          <div class="font-semibold">${format(parseISO(date), 'dd/MM/yyyy')}</div>
+          <div class="font-semibold">${format(parseISO(date), 'dd/MM/yyyy', { locale: es })}</div>
           <div class="flex items-center gap-2">
             <span>Riesgo país:</span>
             <span class="font-bold">${currentValor.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} puntos</span>

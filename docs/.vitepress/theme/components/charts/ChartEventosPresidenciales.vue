@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { collect } from 'collect.js'
 import colors from 'tailwindcss/colors'
 import { format, parseISO } from 'date-fns'
@@ -11,6 +11,10 @@ const chartRef = ref()
 const { setOptions, theme } = useEcharts(chartRef)
 
 const api = useApi()
+
+watch(theme, async () => {
+  await setChartOptions()
+})
 
 async function fetchData() {
   try {

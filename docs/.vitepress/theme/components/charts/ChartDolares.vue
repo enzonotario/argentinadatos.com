@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { collect } from 'collect.js'
 import colors from 'tailwindcss/colors'
 import { format, parseISO } from 'date-fns'
@@ -22,6 +22,10 @@ const chartRef = ref()
 const { setOptions, theme } = useEcharts(chartRef)
 
 const api = useApi()
+
+watch(theme, async () => {
+  await setChartOptions()
+})
 
 async function fetchDolares() {
   try {
@@ -117,6 +121,9 @@ async function setChartOptions() {
   setOptions({
     legend: {
       data: casas,
+      textStyle: {
+        color: theme.value === 'dark' ? colors.gray[100] : colors.gray[800],
+      },
     },
     tooltip: {
       trigger: 'axis',
@@ -137,7 +144,7 @@ async function setChartOptions() {
                   ? colorsMap[casa][theme.value === 'dark' ? 300 : 500]
                   : colors.gray[theme.value === 'dark' ? 300 : 500]
               }"></div>
-              <div>${casa}: $${value}</div>
+              <div>${casa}: $${value.toLocaleString('es-AR')}</div>
             </div>`
           })
           .join('')
@@ -180,6 +187,7 @@ async function setChartOptions() {
       data: fechas,
       // inverse: true,
       axisLabel: {
+        color: theme.value === 'dark' ? colors.gray[100] : colors.gray[800],
         formatter: (value: string) => {
           return format(parseISO(value), 'dd/MM/yyyy')
         },
@@ -188,8 +196,9 @@ async function setChartOptions() {
     yAxis: {
       type: 'value',
       axisLabel: {
+        color: theme.value === 'dark' ? colors.gray[100] : colors.gray[800],
         formatter: (value: number) => {
-          return `$${value.toFixed(0)}`
+          return `$${value.toLocaleString('es-AR')}`
         },
       },
     },
