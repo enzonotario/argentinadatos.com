@@ -3,8 +3,6 @@ import DefaultTheme from 'vitepress/theme'
 import { setDefaultOptions } from 'date-fns'
 import { es } from 'date-fns/locale'
 import { h } from 'vue'
-import Layout from 'genji-theme-vitepress'
-import * as ObservablePlot from '@observablehq/plot'
 import spec from '../../public/openapi.json' with { type: 'json' }
 import { useECharts } from '../plugins/echarts'
 import chartComponents from './components/charts'
@@ -14,20 +12,9 @@ import SponsorsAvatars from './components/sponsors/SponsorsAvatars.vue'
 import 'vitepress-openapi/dist/style.css'
 import './style.css'
 
-const props = {
-  Theme: {
-    Layout: CustomLayout,
-  },
-  library: {
-    Plot: ObservablePlot,
-  },
-}
-
 export default {
   extends: DefaultTheme,
-  Layout() {
-    return h(Layout, props)
-  },
+  Layout: CustomLayout,
   enhanceApp({ app }) {
     setDefaultOptions({ locale: es })
 

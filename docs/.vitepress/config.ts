@@ -1,7 +1,6 @@
 import { URL, fileURLToPath } from 'node:url'
 import { defineConfig, loadEnv } from 'vitepress'
 import { useSidebar } from 'vitepress-openapi'
-import { genjiAttrs } from 'genji-theme-vitepress/config'
 import { SitemapStream } from 'sitemap'
 import { createWriteStream } from 'node:fs'
 import { resolve } from 'node:path'
@@ -186,18 +185,6 @@ export default defineConfig({
       alias: {
         '@': fileURLToPath(new URL('./', import.meta.url)),
       },
-    },
-    optimizeDeps: {
-      include: [
-        'genji-theme-vitepress > genji-runtime > esprima',
-        'genji-theme-vitepress > genji-runtime > estraverse',
-      ],
-    },
-  },
-
-  markdown: {
-    config: (md) => {
-      md.use(genjiAttrs)
     },
   },
 
