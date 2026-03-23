@@ -410,6 +410,32 @@
         "operationId": "get-finanzas-criptopesos"
       }
     },
+    "/v1/finanzas/letras": {
+      "get": {
+        "summary": "Letras capitalizables (LECAP/BONCAP)",
+        "tags": [
+          "Finanzas",
+          "Letras"
+        ],
+        "description": "Pago final (VPV) y fechas de emisión y vencimiento de las letras capitalizables (LECAP) y bonos capitalizables (BONCAP) activos, calculados a partir de los archivos oficiales de la Secretaría de Finanzas.",
+        "responses": {
+          "200": {
+            "description": "Devuelve una lista de letras capitalizables activas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LetraCapitalizable"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-finanzas-letras"
+      }
+    },
     "/v1/finanzas/creditos/hipotecariosUva": {
       "get": {
         "summary": "Créditos Hipotecarios UVA",
@@ -910,6 +936,41 @@
   },
   "components": {
     "schemas": {
+      "LetraCapitalizable": {
+        "title": "LetraCapitalizable",
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string",
+            "description": "Código del instrumento (ej: S31G5, T17O5)"
+          },
+          "fechaEmision": {
+            "type": "string",
+            "description": "Fecha de emisión original (ISO 8601)"
+          },
+          "fechaVencimiento": {
+            "type": "string",
+            "description": "Fecha de vencimiento (ISO 8601)"
+          },
+          "tem": {
+            "type": "number",
+            "description": "Tasa Efectiva Mensual (%)"
+          },
+          "vpv": {
+            "type": "number",
+            "description": "Valor de Pago al Vencimiento por cada $100 de valor nominal"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "ticker": "S31G5",
+            "fechaEmision": "2024-06-14",
+            "fechaVencimiento": "2025-08-31",
+            "tem": 3.75,
+            "vpv": 118.45612
+          }
+        }
+      },
       "Feriado": {
         "title": "Feriado",
         "type": "object",

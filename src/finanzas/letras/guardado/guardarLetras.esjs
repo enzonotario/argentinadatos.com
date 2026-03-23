@@ -1,0 +1,36 @@
+importar { LetrasDatabaseService } desde '../database/service.esjs'
+importar { escribirRuta } desde '@/utils/rutas.esjs'
+
+const TURSO_DATABASE_URL = import.meta.env.VITE_TURSO_DATABASE_URL
+const TURSO_AUTH_TOKEN = import.meta.env.VITE_TURSO_AUTH_TOKEN
+
+exportar asincrono funcion guardarLetras(
+  items,
+  url = TURSO_DATABASE_URL,
+  authToken = TURSO_AUTH_TOKEN,
+) {
+  const db = crear LetrasDatabaseService(url, authToken)
+
+  intentar {
+    esperar db.initialize()
+
+    para (const item de items) {
+      esperar db.upsertLetra(
+        item.ticker,
+        item.fechaEmision,
+        item.fechaVencimiento,
+        item.tem,
+        item.vpv,
+      )
+    }
+
+    esperar generarEndpointEstatico(db)
+  } finalmente {
+    db.close()
+  }
+}
+
+asincrono funcion generarEndpointEstatico(db) {
+  const datos = esperar db.getAllLetras()
+  escribirRuta('/finanzas/letras', datos)
+}

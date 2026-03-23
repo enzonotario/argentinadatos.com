@@ -117,6 +117,13 @@ export default defineConfig({
             }),
             collapsed: true,
           }),
+          addDocsPrefix({
+            ...sidebar.generateSidebarGroup({
+              tag: ['Finanzas', 'Letras'],
+              text: 'Letras',
+            }),
+            collapsed: true,
+          }),
         ],
       },
       {
