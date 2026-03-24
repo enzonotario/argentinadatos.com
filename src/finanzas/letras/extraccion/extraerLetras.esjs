@@ -1,4 +1,5 @@
 importar * como XLSX desde 'xlsx'
+importar { obtenerFilasDeSheets } desde '@/utils/gsheets.esjs'
 
 const PAGINA_COLOCACIONES =
   'https://www.argentina.gob.ar/economia/finanzas/deudapublica/colocacionesdedeuda'
@@ -164,7 +165,51 @@ asincrono funcion parsearBufferExcel(buffer, vencimientoATicker) {
   retornar resultados
 }
 
-exportar asincrono funcion extraerLetras() {
+exportar funcion parsearFilaSheets(fila) {
+  const ticker = fila[0] && fila[0].trim()
+  si (!ticker) retornar nulo
+
+  const fechaEmision = fila[1] && fila[1].trim() ? aFechaIso(fila[1].trim()) : nulo
+  const fechaVencimientoBruta = fila[2] && fila[2].trim()
+  const temBruto = fila[3] && fila[3].trim()
+  const vpvBruto = fila[4] && fila[4].trim()
+
+  mut fechaVencimiento = fechaVencimientoBruta ? aFechaIso(fechaVencimientoBruta) : nulo
+  si (!fechaVencimiento) {
+    const vencimientoDeTicket = parsearVencimientoTicker(ticker)
+    si (vencimientoDeTicket) fechaVencimiento = vencimientoDeTicket
+  }
+
+  const tem = temBruto ? interpretarDecimal(temBruto) : nulo
+  mut vpv = vpvBruto ? interpretarDecimal(vpvBruto) : nulo
+
+  si (vpv === nulo && fechaEmision && fechaVencimiento && tem !== nulo && !isNaN(tem)) {
+    vpv = calcularVpv(fechaEmision, fechaVencimiento, tem)
+  }
+
+  retornar { ticker, fechaEmision, fechaVencimiento, tem, vpv }
+}
+
+exportar asincrono funcion extraerLetrasDesdeSheets() {
+  const spreadsheetId = import.meta.env.VITE_GSHEETS_LETRAS_SPREADSHEET_ID
+  si (!spreadsheetId) retornar []
+
+  intentar {
+    const filas = esperar obtenerFilasDeSheets(spreadsheetId, 'A:E')
+    si (filas.longitud <= 1) retornar []
+
+    const resultado = []
+    para (var i = 1; i < filas.longitud; i++) {
+      const item = parsearFilaSheets(filas[i])
+      si (item) resultado.agregar(item)
+    }
+    retornar resultado
+  } capturar (error) {
+    retornar []
+  }
+}
+
+asincrono funcion extraerLetrasDesdeExcel() {
   const vencimientoATicker = esperar obtenerTickersActivos()
   const urls = esperar obtenerUrlsExcel()
   const todosDatos = crear Map()
@@ -193,4 +238,31 @@ exportar asincrono funcion extraerLetras() {
   }
 
   retornar resultado
+}
+
+exportar asincrono funcion extraerLetras() {
+  const [datosExcel, datosSheets] = esperar Promesa.todos([
+    extraerLetrasDesdeExcel(),
+    extraerLetrasDesdeSheets(),
+  ])
+
+  const mapa = crear Map()
+  para (const item de datosExcel) {
+    mapa.set(item.ticker, { ...item })
+  }
+
+  para (const item de datosSheets) {
+    const base = mapa.get(item.ticker) || { fechaEmision: nulo, fechaVencimiento: nulo, tem: nulo, vpv: nulo }
+    const merged = { ...base, ticker: item.ticker }
+    si (item.fechaEmision) merged.fechaEmision = item.fechaEmision
+    si (item.fechaVencimiento) merged.fechaVencimiento = item.fechaVencimiento
+    si (item.tem !== nulo && !isNaN(item.tem)) merged.tem = item.tem
+    si (item.vpv !== nulo && !isNaN(item.vpv)) merged.vpv = item.vpv
+    mapa.set(item.ticker, merged)
+  }
+
+  retornar [...mapa.values()].filtrar(item =>
+    item.fechaVencimiento &&
+    item.vpv !== nulo && item.vpv !== indefinido && !isNaN(item.vpv),
+  )
 }

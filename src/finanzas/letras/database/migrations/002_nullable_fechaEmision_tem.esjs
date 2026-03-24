@@ -1,0 +1,34 @@
+exportar const migration_002_nullable_fechaEmision_tem = {
+  version: 2,
+  name: 'nullable_fechaEmision_tem',
+
+  asincrono up(db) {
+    esperar db.execute(`
+      CREATE TABLE IF NOT EXISTS letras_new (
+        ticker TEXT PRIMARY KEY,
+        fechaEmision TEXT,
+        fechaVencimiento TEXT NOT NULL,
+        tem REAL,
+        vpv REAL NOT NULL,
+        fechaActualizacion TEXT NOT NULL DEFAULT (datetime('now'))
+      )
+    `)
+
+    esperar db.execute(`
+      INSERT INTO letras_new (ticker, fechaEmision, fechaVencimiento, tem, vpv, fechaActualizacion)
+      SELECT ticker, fechaEmision, fechaVencimiento, tem, vpv, fechaActualizacion FROM letras
+    `)
+
+    esperar db.execute(`DROP TABLE letras`)
+    esperar db.execute(`ALTER TABLE letras_new RENAME TO letras`)
+
+    esperar db.execute(`
+      CREATE INDEX IF NOT EXISTS idx_letras_fechaVencimiento ON letras(fechaVencimiento)
+    `)
+  },
+
+  asincrono down(db) {
+    esperar db.execute('DROP INDEX IF EXISTS idx_letras_fechaVencimiento')
+    esperar db.execute('DROP TABLE IF EXISTS letras')
+  },
+}
