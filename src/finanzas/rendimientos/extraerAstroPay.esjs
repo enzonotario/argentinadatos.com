@@ -1,14 +1,9 @@
-importar axios desde 'axios'
 importar { format } desde 'date-fns'
+importar { obtenerFilasDeSheets } desde '@/utils/gsheets.esjs'
 
 exportar asincrono funcion extraerAstroPay() {
   intentar {
-    const apiKey = import.meta.env.VITE_GSHEETS_API_KEY
     const spreadsheetId = import.meta.env.VITE_GSHEETS_ASTROPAY_SPREADSHEET_ID
-
-    si (!apiKey) {
-      lanzar crear Error('VITE_GSHEETS_API_KEY debe estar definido')
-    }
 
     si (!spreadsheetId) {
       lanzar crear Error(
@@ -16,19 +11,11 @@ exportar asincrono funcion extraerAstroPay() {
       )
     }
 
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/A:B?key=${apiKey}`
+    const filas = esperar obtenerFilasDeSheets(spreadsheetId, 'A:B')
 
-    const respuesta = esperar axios.get(url)
-
-    si (
-      !respuesta.data ||
-      !respuesta.data.valores ||
-      respuesta.data.valores.longitud === 0
-    ) {
+    si (filas.length === 0) {
       retornar []
     }
-
-    const filas = respuesta.data.valores
     const fecha = format(crear Fecha(), 'yyyy-MM-dd')
     const items = []
 

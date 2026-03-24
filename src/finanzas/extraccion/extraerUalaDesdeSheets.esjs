@@ -1,7 +1,7 @@
-importar axios desde 'axios'
 importar { format, parse, isAfter, differenceInDays } desde 'date-fns'
 importar { logGrupo, logError } desde '@/log.esjs'
 importar { interpretarDecimalConComa } desde '@/utils/numeros.esjs'
+importar { obtenerFilasDeSheets } desde '@/utils/gsheets.esjs'
 
 exportar asincrono funcion extraerUalaCuentaRemuneradaDesdeSheets() {
   const log = logGrupo({
@@ -10,27 +10,18 @@ exportar asincrono funcion extraerUalaCuentaRemuneradaDesdeSheets() {
   })
 
   intentar {
-    const apiKey = import.meta.env.VITE_GSHEETS_API_KEY
     const spreadsheetId = import.meta.env.VITE_GSHEETS_UALA_SPREADSHEET_ID
-
-    si (!apiKey) {
-      lanzar crear Error('VITE_GSHEETS_API_KEY debe estar definido')
-    }
 
     si (!spreadsheetId) {
       lanzar crear Error('VITE_GSHEETS_UALA_SPREADSHEET_ID debe estar definido')
     }
 
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/A:G?key=${apiKey}`
+    const filas = esperar obtenerFilasDeSheets(spreadsheetId, 'A:G')
 
-    const respuesta = esperar axios.get(url)
-
-    si (!respuesta.data || !respuesta.data.values || respuesta.data.values.length === 0) {
+    si (filas.length === 0) {
       logError(log, crear Error('No se encontraron datos en el Google Sheet'))
       retornar []
     }
-
-    const filas = respuesta.data.values
     const hoy = crear Fecha()
     hoy.setHours(0, 0, 0, 0)
 

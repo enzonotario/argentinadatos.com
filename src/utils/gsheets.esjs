@@ -1,0 +1,23 @@
+importar axios desde 'axios'
+
+exportar asincrono funcion obtenerFilasDeSheets(spreadsheetId, rango) {
+  const apiKey = import.meta.env.VITE_GSHEETS_API_KEY
+
+  si (!apiKey) {
+    lanzar crear Error('VITE_GSHEETS_API_KEY debe estar definido')
+  }
+
+  si (!spreadsheetId) {
+    lanzar crear Error('spreadsheetId debe estar definido')
+  }
+
+  const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${rango}?key=${apiKey}`
+
+  const respuesta = esperar axios.get(url)
+
+  si (!respuesta.data || !respuesta.data.values || respuesta.data.values.length === 0) {
+    retornar []
+  }
+
+  retornar respuesta.data.values
+}
