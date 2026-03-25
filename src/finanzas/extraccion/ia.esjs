@@ -5,16 +5,9 @@ const TABSTACK_API_URL = 'https://api.tabstack.ai/v1/extract/markdown'
 const TABSTACK_API_KEY = import.meta.env.VITE_TABSTACK_API_KEY
 const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY
 const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions'
-const FORCE_IA = import.meta.env.VITE_FORCE_IA === 'true' || verdadero
 
 exportar asincrono funcion scrapearConIA(log, configuracion) {
   const { url, prompt, schema, required } = configuracion
-
-  const diaSemana = getDay(crear Fecha())
-  si (!FORCE_IA && ![1, 3, 5].incluye(diaSemana)) {
-    logMensaje(log, 'IA omitida: no es día de ejecución', { url, diaSemana })
-    retornar nulo
-  }
 
   intentar {
     logMensaje(log, 'Iniciando extracción con Tabstack', { url })
