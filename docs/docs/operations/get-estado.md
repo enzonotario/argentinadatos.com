@@ -6,6 +6,7 @@ title: Estado de la API
 
 <script setup>
 import { useRoute } from 'vitepress'
+import { OAMarkdown } from 'vitepress-openapi/client'
 
 const route = useRoute()
 </script>
