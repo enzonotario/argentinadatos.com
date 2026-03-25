@@ -48,7 +48,10 @@
             }
           }
         },
-        "operationId": "get-feriados"
+        "operationId": "get-feriados",
+        "x-data-source": [
+          "[La Nación](https://www.lanacion.com.ar/feriados/)"
+        ]
       }
     },
     "/v1/cotizaciones/dolares": {
@@ -73,7 +76,10 @@
             }
           }
         },
-        "operationId": "get-cotizaciones-dolares"
+        "operationId": "get-cotizaciones-dolares",
+        "x-data-source": [
+          "[DolarApi](https://dolarapi.com)"
+        ]
       }
     },
     "/v1/cotizaciones/dolares/{casa}": {
@@ -120,7 +126,10 @@
             }
           }
         },
-        "operationId": "get-cotizaciones-dolares-casa"
+        "operationId": "get-cotizaciones-dolares-casa",
+        "x-data-source": [
+          "[DolarApi](https://dolarapi.com)"
+        ]
       }
     },
     "/v1/cotizaciones/dolares/{casa}/{fecha}": {
@@ -175,7 +184,10 @@
             }
           }
         },
-        "operationId": "get-cotizaciones-dolares-casa-fecha"
+        "operationId": "get-cotizaciones-dolares-casa-fecha",
+        "x-data-source": [
+          "[DolarApi](https://dolarapi.com)"
+        ]
       }
     },
     "/v1/eventos/presidenciales": {
@@ -200,7 +212,10 @@
             }
           }
         },
-        "operationId": "get-eventos-presidenciales"
+        "operationId": "get-eventos-presidenciales",
+        "x-data-source": [
+          "[Wikipedia](https://es.wikipedia.org/wiki/Anexo:Presidentes_de_la_Naci%C3%B3n_Argentina)"
+        ]
       }
     },
     "/v1/finanzas/indices/inflacion": {
@@ -227,7 +242,10 @@
           }
         },
         "operationId": "get-finanzas-indices-inflacion",
-        "x-sidebar-title": "Inflación mensual"
+        "x-sidebar-title": "Inflación mensual",
+        "x-data-source": [
+          "[BCRA](https://bcra.gob.ar/)"
+        ]
       }
     },
     "/v1/finanzas/indices/inflacionInteranual": {
@@ -254,7 +272,10 @@
           }
         },
         "operationId": "get-finanzas-indices-inflacion-interanual",
-        "x-sidebar-title": "Inflación interanual"
+        "x-sidebar-title": "Inflación interanual",
+        "x-data-source": [
+          "[BCRA](https://bcra.gob.ar/)"
+        ]
       }
     },
     "/v1/finanzas/indices/uva": {
@@ -280,7 +301,10 @@
             }
           }
         },
-        "operationId": "get-finanzas-indices-uva"
+        "operationId": "get-finanzas-indices-uva",
+        "x-data-source": [
+          "[BCRA](https://bcra.gob.ar/)"
+        ]
       }
     },
     "/v1/finanzas/indices/riesgo-pais": {
@@ -306,7 +330,10 @@
             }
           }
         },
-        "operationId": "get-finanzas-indices-riesgo-pais"
+        "operationId": "get-finanzas-indices-riesgo-pais",
+        "x-data-source": [
+          "[Ámbito](https://mercados.ambito.com/riesgopais/)"
+        ]
       }
     },
     "/v1/finanzas/indices/riesgo-pais/ultimo": {
@@ -329,7 +356,10 @@
             }
           }
         },
-        "operationId": "get-finanzas-indices-riesgo-pais-ultimo"
+        "operationId": "get-finanzas-indices-riesgo-pais-ultimo",
+        "x-data-source": [
+          "[Ámbito](https://mercados.ambito.com/riesgopais/)"
+        ]
       }
     },
     "/v1/finanzas/tasas/plazoFijo": {
@@ -355,7 +385,10 @@
             }
           }
         },
-        "operationId": "get-finanzas-tasas-plazo-fijo"
+        "operationId": "get-finanzas-tasas-plazo-fijo",
+        "x-data-source": [
+          "[BCRA](https://www.bcra.gob.ar/api-plazos-fijos.php)"
+        ]
       }
     },
     "/v1/finanzas/tasas/depositos30Dias": {
@@ -381,7 +414,10 @@
             }
           }
         },
-        "operationId": "get-finanzas-tasas-depositos-30-dias"
+        "operationId": "get-finanzas-tasas-depositos-30-dias",
+        "x-data-source": [
+          "[BCRA](https://bcra.gob.ar/)"
+        ]
       }
     },
     "/v1/finanzas/criptopesos": {
@@ -407,7 +443,12 @@
             }
           }
         },
-        "operationId": "get-finanzas-criptopesos"
+        "operationId": "get-finanzas-criptopesos",
+        "x-data-source": [
+          "[Belo](https://www.belo.app/)",
+          "[Ripio](https://www.ripio.com/ar/)",
+          "[Buenbit](https://buenbit.com/)"
+        ]
       }
     },
     "/v1/finanzas/letras": {
@@ -433,7 +474,11 @@
             }
           }
         },
-        "operationId": "get-finanzas-letras"
+        "operationId": "get-finanzas-letras",
+        "x-data-source": [
+          "[Ministerio de Economía](https://www.argentina.gob.ar/economia/finanzas/deudapublica/colocacionesdedeuda)",
+          "[https://data912.com](https://data912.com)"
+        ]
       }
     },
     "/v1/finanzas/creditos/hipotecariosUva": {
@@ -459,7 +504,10 @@
             }
           }
         },
-        "operationId": "get-finanzas-creditos-hipotecarios-uva"
+        "operationId": "get-finanzas-creditos-hipotecarios-uva",
+        "x-data-source": [
+          "[@SalinasAndres](https://x.com/SalinasAndres)"
+        ]
       }
     },
     "/v1/finanzas/fci/mercadoDinero/{fecha}": {
@@ -498,7 +546,10 @@
             }
           }
         },
-        "operationId": "get-finanzas-fci-mercado-dinero-fecha"
+        "operationId": "get-finanzas-fci-mercado-dinero-fecha",
+        "x-data-source": [
+          "[CAFCI](https://cafci.org.ar)"
+        ]
       }
     },
     "/v1/finanzas/fci/rentaVariable/{fecha}": {
@@ -537,7 +588,10 @@
             }
           }
         },
-        "operationId": "get-finanzas-fci-renta-variable-fecha"
+        "operationId": "get-finanzas-fci-renta-variable-fecha",
+        "x-data-source": [
+          "[CAFCI](https://cafci.org.ar)"
+        ]
       }
     },
     "/v1/finanzas/fci/rentaFija/{fecha}": {
@@ -576,7 +630,10 @@
             }
           }
         },
-        "operationId": "get-finanzas-fci-renta-fija-fecha"
+        "operationId": "get-finanzas-fci-renta-fija-fecha",
+        "x-data-source": [
+          "[CAFCI](https://cafci.org.ar)"
+        ]
       }
     },
     "/v1/finanzas/fci/rentaMixta/{fecha}": {
@@ -615,7 +672,10 @@
             }
           }
         },
-        "operationId": "get-finanzas-fci-renta-mixta-fecha"
+        "operationId": "get-finanzas-fci-renta-mixta-fecha",
+        "x-data-source": [
+          "[CAFCI](https://cafci.org.ar)"
+        ]
       }
     },
     "/v1/finanzas/fci/otros/{fecha}": {
@@ -654,7 +714,19 @@
             }
           }
         },
-        "operationId": "get-finanzas-fci-otros-fecha"
+        "operationId": "get-finanzas-fci-otros-fecha",
+        "x-data-source": [
+          "[Ualá](http://uala.com.ar/)",
+          "[Belo](https://www.belo.app/)",
+          "[BNA](https://www.bna.com.ar/)",
+          "[Brubank](https://www.brubank.com/)",
+          "[Carrefour Banco](https://www.bancodeserviciosfinancieros.com.ar/carrefourbank/)",
+          "[Cresium](https://www.cresium.com/)",
+          "[Fiwind](https://www.fiwind.io/)",
+          "[Montemar Pay](https://www.montemarpay.com.ar/)",
+          "[Naranja X](https://www.naranjax.com/)",
+          "[Supervielle](https://www.supervielle.com.ar/)"
+        ]
       }
     },
     "/v1/estado": {
@@ -703,7 +775,20 @@
           }
         },
         "operationId": "get-finanzas-rendimientos",
-        "x-sidebar-title": "De entidades"
+        "x-sidebar-title": "De entidades",
+        "x-data-source": [
+          "[Nexo](https://nexo.com/)",
+          "[Fiwind](https://www.fiwind.io/)",
+          "[Letsbit](https://letsbit.io/)",
+          "[Belo](https://www.belo.app/)",
+          "[Lemon Cash](https://www.lemon.me/)",
+          "[Ripio](https://www.ripio.com/ar/)",
+          "[Satoshi Tango](https://www.satoshitango.com/ar/)",
+          "[Luca Money](https://lucamoney.com/)",
+          "[Decrypto](https://www.decrypto.la/)",
+          "[Vesseo](https://www.vesseofinance.com/)",
+          "[AstroPay](https://www.astropay.com/ar/)"
+        ]
       }
     },
     "/v1/finanzas/rendimientos/{entidad}": {
@@ -752,7 +837,20 @@
             }
           }
         },
-        "operationId": "get-finanzas-rendimientos-entidad"
+        "operationId": "get-finanzas-rendimientos-entidad",
+        "x-data-source": [
+          "[Nexo](https://nexo.com/)",
+          "[Fiwind](https://www.fiwind.io/)",
+          "[Letsbit](https://letsbit.io/)",
+          "[Belo](https://www.belo.app/)",
+          "[Lemon Cash](https://www.lemon.me/)",
+          "[Ripio](https://www.ripio.com/ar/)",
+          "[Satoshi Tango](https://www.satoshitango.com/ar/)",
+          "[Luca Money](https://lucamoney.com/)",
+          "[Decrypto](https://www.decrypto.la/)",
+          "[Vesseo](https://www.vesseofinance.com/)",
+          "[AstroPay](https://www.astropay.com/ar/)"
+        ]
       }
     },
     "/v1/senado/senadores": {
@@ -777,7 +875,10 @@
             }
           }
         },
-        "operationId": "get-senado-senadores"
+        "operationId": "get-senado-senadores",
+        "x-data-source": [
+          "[Senado](https://www.senado.gob.ar)"
+        ]
       }
     },
     "/v1/senado/actas/{año}": {
@@ -816,7 +917,10 @@
             }
           }
         },
-        "operationId": "get-senado-actas-año"
+        "operationId": "get-senado-actas-año",
+        "x-data-source": [
+          "[Senado](https://www.senado.gob.ar)"
+        ]
       }
     },
     "/v1/senado/actas": {
@@ -841,7 +945,10 @@
             }
           }
         },
-        "operationId": "get-senado-actas"
+        "operationId": "get-senado-actas",
+        "x-data-source": [
+          "[Senado](https://www.senado.gob.ar)"
+        ]
       }
     },
     "/v1/diputados/diputados": {
@@ -866,7 +973,10 @@
             }
           }
         },
-        "operationId": "get-diputados-diputados"
+        "operationId": "get-diputados-diputados",
+        "x-data-source": [
+          "[Diputados](https://datos.hcdn.gob.ar)"
+        ]
       }
     },
     "/v1/diputados/actas/{año}": {
@@ -905,7 +1015,10 @@
             }
           }
         },
-        "operationId": "get-diputados-actas-año"
+        "operationId": "get-diputados-actas-año",
+        "x-data-source": [
+          "[Diputados](https://votaciones.hcdn.gob.ar)"
+        ]
       }
     },
     "/v1/diputados/actas": {
@@ -930,7 +1043,10 @@
             }
           }
         },
-        "operationId": "get-diputados-actas"
+        "operationId": "get-diputados-actas",
+        "x-data-source": [
+          "[Diputados](https://votaciones.hcdn.gob.ar)"
+        ]
       }
     }
   },

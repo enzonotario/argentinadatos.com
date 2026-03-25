@@ -8,6 +8,8 @@ import { useECharts } from '../plugins/echarts'
 import chartComponents from './components/charts'
 import CustomLayout from './CustomLayout.vue'
 import SponsorsAvatars from './components/sponsors/SponsorsAvatars.vue'
+import MarkdownLink from './components/MarkdownLink.vue'
+import DataSources from './components/DataSources.vue'
 
 import 'vitepress-openapi/dist/style.css'
 import './style.css'
@@ -43,5 +45,7 @@ export default {
       app.component(name, component)
 
     app.component('SponsorsAvatars', SponsorsAvatars)
+    app.component('MarkdownLink', MarkdownLink)
+    app.component('DataSources', DataSources)
   },
 }

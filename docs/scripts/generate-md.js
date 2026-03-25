@@ -21,6 +21,18 @@ export function init() {
 function generateMarkdown(operationId) {
   const operation = openapi.getOperation(operationId)
 
+  const dataSource = operation['x-data-source']
+    ? `
+<template #description="description">
+
+<OAMarkdown :content="description.operation.description"></OAMarkdown>
+
+<DataSources :sources="description.operation['x-data-source']" />
+
+</template>
+`
+    : ''
+
   const markdown = `---
 aside: false
 outline: false
@@ -29,12 +41,13 @@ title: ${operation.summary}
 
 <script setup>
 import { useRoute } from 'vitepress'
+import { OAMarkdown } from 'vitepress-openapi/client'
 
 const route = useRoute()
 </script>
 
 <OAOperation operation-id="${operationId}">
-
+${dataSource}
 <template #footer="footer">
 
 <!--@include: ./parts/${operationId}-footer.md -->
