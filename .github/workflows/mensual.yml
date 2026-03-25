@@ -14,7 +14,9 @@ jobs:
   update:
     uses: ./.github/workflows/reusable-data-update.yml
     with:
-      run_command: pnpm run cron mensual
+      run_command: |
+        pnpm run cron mensual
+        pnpm run cron actualizar-openapi-year
       needs_build: true
       env_preset: full
     secrets: inherit

@@ -1,0 +1,29 @@
+importar fs desde 'node:fs'
+importar ruta desde 'node:path'
+
+exportar asincrono funcion actualizarOpenApiAño() {
+  const rutaOpenApi = ruta.resolver('docs/public/openapi.json')
+  const especificacion = JSON.analizar(fs.readFileSync(rutaOpenApi, 'utf8'))
+
+  const añoActual = crear Fecha().obtenerAñoFull()
+
+  const rutasAActualizar = [
+    '/v1/feriados/{año}',
+    '/v1/senado/actas/{año}',
+    '/v1/diputados/actas/{año}',
+  ]
+
+  rutasAActualizar.paraCada(ruta => {
+    si (especificacion.paths[ruta]) {
+      const parametros = especificacion.paths[ruta].get.parameters
+      const parametroAño = parametros.buscar(p => p.name === 'año')
+      si (parametroAño) {
+        parametroAño.schema.maximum = añoActual
+        parametroAño.example = añoActual
+      }
+    }
+  })
+
+  fs.writeFileSync(rutaOpenApi, JSON.cadena(especificacion, nulo, 2), 'utf8')
+  consola.escribir(`OpenAPI actualizado con el año ${añoActual}`)
+}
