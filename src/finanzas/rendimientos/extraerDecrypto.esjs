@@ -21,21 +21,23 @@ exportar asincrono funcion extraerDecrypto() {
     const items = []
     const fecha = format(crear Fecha(), 'yyyy-MM-dd')
 
-    $('data > moneda').parent().each((_, elemento) => {
-      const simbolo = $(elemento).buscar('simbolo').text().recortarEspacios()
-      const porcentaje = $(elemento).buscar('porcentaje').text().recortarEspacios()
+    $('data > moneda')
+      .parent()
+      .each((_, elemento) => {
+        const simbolo = $(elemento).buscar('simbolo').text().recortarEspacios()
+        const porcentaje = $(elemento).buscar('porcentaje').text().recortarEspacios()
 
-      si (simbolo && porcentaje) {
-        const moneda = simbolo.aMayusculas()
-        const apy = Numero(porcentaje)
+        si (simbolo && porcentaje) {
+          const moneda = simbolo.aMayusculas()
+          const apy = Numero(porcentaje)
 
-        items.agregar({
-          moneda,
-          apy,
-          fecha,
-        })
-      }
-    })
+          items.agregar({
+            moneda,
+            apy,
+            fecha,
+          })
+        }
+      })
 
     retornar items
   } capturar (error) {

@@ -15,14 +15,11 @@ exportar asincrono funcion extraerCacfi(serie, fecha) {
   const log = logGrupo({ fuente: 'cacfi', serie, url })
 
   intentar {
-    const respuesta = esperar axios.get(
-      url,
-      {
-        headers: {
-          origin: 'https://www.cafci.org.ar',
-        },
+    const respuesta = esperar axios.get(url, {
+      headers: {
+        origin: 'https://www.cafci.org.ar',
       },
-    )
+    })
 
     si (respuesta.data.error) {
       logError(log, respuesta.data.error)

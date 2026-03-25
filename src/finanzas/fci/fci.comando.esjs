@@ -44,10 +44,7 @@ asincrono funcion extraerUalaDesdeSheets() {
         si (ultimo.tope !== nulo && ultimo.tope !== indefinido) {
           valorExtraido.tope = ultimo.tope
         }
-        si (
-          ultimo.condiciones !== nulo &&
-          ultimo.condiciones !== indefinido
-        ) {
+        si (ultimo.condiciones !== nulo && ultimo.condiciones !== indefinido) {
           valorExtraido.condiciones = ultimo.condiciones
         }
         si (

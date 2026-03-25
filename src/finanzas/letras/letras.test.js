@@ -128,7 +128,13 @@ describe('aFechaIso', () => {
 
 describe('parsearFilaSheets', () => {
   it('parsea fila completa respetando vpv del sheet', () => {
-    const result = parsearFilaSheets(['S17A6', '2025-12-15', '2026-04-17', '2.4', '110'])
+    const result = parsearFilaSheets([
+      'S17A6',
+      '2025-12-15',
+      '2026-04-17',
+      '2.4',
+      '110',
+    ])
     expect(result).toEqual({
       ticker: 'S17A6',
       fechaEmision: '2025-12-15',
@@ -148,13 +154,25 @@ describe('parsearFilaSheets', () => {
   })
 
   it('calcula vpv cuando no está definido pero sí tem y fechas', () => {
-    const result = parsearFilaSheets(['S17A6', '2025-12-15', '2026-04-17', '2.4', ''])
+    const result = parsearFilaSheets([
+      'S17A6',
+      '2025-12-15',
+      '2026-04-17',
+      '2.4',
+      '',
+    ])
     expect(result.vpv).not.toBeNull()
     expect(result.vpv).toBeGreaterThan(100)
   })
 
   it('no sobreescribe vpv del sheet con el calculado', () => {
-    const result = parsearFilaSheets(['S17A6', '2025-12-15', '2026-04-17', '2.4', '110'])
+    const result = parsearFilaSheets([
+      'S17A6',
+      '2025-12-15',
+      '2026-04-17',
+      '2.4',
+      '110',
+    ])
     const calculado = calcularVpv('2025-12-15', '2026-04-17', 2.4)
     expect(result.vpv).toBe(110)
     expect(result.vpv).not.toBeCloseTo(calculado)
@@ -177,7 +195,9 @@ describe('parsearFilaSheets', () => {
   })
 
   it('retorna null para fila sin ticker', () => {
-    expect(parsearFilaSheets(['', '2025-12-15', '2026-04-17', '2.4', '110'])).toBeNull()
+    expect(
+      parsearFilaSheets(['', '2025-12-15', '2026-04-17', '2.4', '110']),
+    ).toBeNull()
   })
 
   it('retorna null para fila vacía', () => {
@@ -185,7 +205,13 @@ describe('parsearFilaSheets', () => {
   })
 
   it('parsea BONCAP T30J6 correctamente', () => {
-    const result = parsearFilaSheets(['T30J6', '2025-01-17', '2026-06-30', '2.15', '145'])
+    const result = parsearFilaSheets([
+      'T30J6',
+      '2025-01-17',
+      '2026-06-30',
+      '2.15',
+      '145',
+    ])
     expect(result.ticker).toBe('T30J6')
     expect(result.fechaVencimiento).toBe('2026-06-30')
     expect(result.tem).toBeCloseTo(2.15)

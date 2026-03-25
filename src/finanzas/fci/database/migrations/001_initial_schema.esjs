@@ -38,16 +38,10 @@ exportar const migration_001_initial_schema = {
   },
 
   asincrono down(db) {
-    consola.escribir(
-      'Revirtiendo migración 001: eliminando tabla fci_otros...',
-    )
+    consola.escribir('Revirtiendo migración 001: eliminando tabla fci_otros...')
 
-    esperar db.execute(
-      'DROP INDEX IF EXISTS idx_fci_otros_fecha',
-    )
-    esperar db.execute(
-      'DROP INDEX IF EXISTS idx_fci_otros_timestamp',
-    )
+    esperar db.execute('DROP INDEX IF EXISTS idx_fci_otros_fecha')
+    esperar db.execute('DROP INDEX IF EXISTS idx_fci_otros_timestamp')
     esperar db.execute('DROP INDEX IF EXISTS idx_fci_otros_fondo')
     esperar db.execute('DROP TABLE IF EXISTS fci_otros')
 

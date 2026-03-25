@@ -13,20 +13,21 @@ exportar asincrono funcion extraerSatoshiTango() {
       !respuesta.data ||
       !respuesta.data.data ||
       !respuesta.data.data.result ||
-      !respuesta.data.data.result.length
+      !respuesta.data.data.result.longitud
     ) {
       retornar []
     }
 
     retornar collect(respuesta.data.data.result).mapear(asset => {
-      const apy = interpretarDecimal(asset.apy)
+        const apy = interpretarDecimal(asset.apy)
 
-      retornar {
-        moneda: asset.symbol,
-        apy,
-        fecha: format(crear Fecha(), 'yyyy-MM-dd'),
-      }
-    }).toArray()
+        retornar {
+          moneda: asset.symbol,
+          apy,
+          fecha: format(crear Fecha(), 'yyyy-MM-dd'),
+        };
+      })
+      .toArray();
   } capturar (error) {
     consola.error(error)
     retornar []

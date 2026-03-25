@@ -1,4 +1,4 @@
-importar { format} desde 'date-fns'
+importar { format } desde 'date-fns'
 importar { extraerFiwind } desde '@/finanzas/rendimientos/extraerFiwind.esjs'
 
 exportar asincrono funcion extraerFiwindARS() {

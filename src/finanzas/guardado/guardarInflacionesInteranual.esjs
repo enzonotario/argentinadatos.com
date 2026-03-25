@@ -11,5 +11,8 @@ exportar asincrono funcion guardarInflacionesInteranual(items) {
     }
   }
 
-  retornar escribirRuta('/finanzas/indices/inflacionInteranual', ordenarPorFecha(actual))
+  retornar escribirRuta(
+    '/finanzas/indices/inflacionInteranual',
+    ordenarPorFecha(actual),
+  )
 }

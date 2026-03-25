@@ -8,7 +8,9 @@ exportar asincrono funcion extraerInflacionREM() {
     const token = import.meta.env.VITE_FINANZAS_INFLACION_REM_SHEETDB_TOKEN
 
     si (!url || !token) {
-      lanzar crear Error('VITE_FINANZAS_INFLACION_REM_SHEETDB_URL y VITE_FINANZAS_INFLACION_REM_SHEETDB_TOKEN deben estar definidos')
+      lanzar crear Error(
+        'VITE_FINANZAS_INFLACION_REM_SHEETDB_URL y VITE_FINANZAS_INFLACION_REM_SHEETDB_TOKEN deben estar definidos',
+      )
     }
 
     const respuesta = esperar axios.get(url, {
@@ -21,7 +23,7 @@ exportar asincrono funcion extraerInflacionREM() {
       tipo: item['Inflación'],
       fecha: normalizarMes(item['Mes']),
       valor: interpretarDecimalConComa(item['Valor']),
-    }))
+    }));
   } capturar (error) {
     consola.error('Error al extraer inflación REM', error)
     retornar []
@@ -30,17 +32,17 @@ exportar asincrono funcion extraerInflacionREM() {
 
 funcion normalizarMes(mes) {
   intentar {
-    const partes = mes.split('/')
+    const partes = mes.dividir('/')
 
-    si (partes.length === 2) {
-      const mesNum = Number.parseInt(partes[0], 10)
-      const añoNum = Number.parseInt(partes[1], 10)
+    si (partes.longitud === 2) {
+      const mesNum = Numero.interpretarEntero(partes[0], 10)
+      const añoNum = Numero.interpretarEntero(partes[1], 10)
       const fecha = crear Fecha(añoNum, mesNum - 1, 1)
       retornar format(fecha, 'yyyy-MM-dd')
-    } sino si (partes.length === 3) {
-      const diaNum = Number.parseInt(partes[0], 10)
-      const mesNum = Number.parseInt(partes[1], 10)
-      const añoNum = Number.parseInt(partes[2], 10)
+    } sino si (partes.longitud === 3) {
+      const diaNum = Numero.interpretarEntero(partes[0], 10)
+      const mesNum = Numero.interpretarEntero(partes[1], 10)
+      const añoNum = Numero.interpretarEntero(partes[2], 10)
       const fecha = crear Fecha(añoNum, mesNum - 1, 1)
       retornar format(fecha, 'yyyy-MM-dd')
     }
@@ -51,4 +53,3 @@ funcion normalizarMes(mes) {
     retornar mes
   }
 }
-

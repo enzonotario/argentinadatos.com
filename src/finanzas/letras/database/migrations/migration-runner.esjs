@@ -1,7 +1,10 @@
 importar { migration_001_initial_schema } desde './001_initial_schema.esjs'
 importar { migration_002_nullable_fechaEmision_tem } desde './002_nullable_fechaEmision_tem.esjs'
 
-const MIGRATIONS = [migration_001_initial_schema, migration_002_nullable_fechaEmision_tem]
+const MIGRATIONS = [
+  migration_001_initial_schema,
+  migration_002_nullable_fechaEmision_tem,
+]
 
 exportar clase MigrationRunner {
   constructor(db, scope = 'letras') {

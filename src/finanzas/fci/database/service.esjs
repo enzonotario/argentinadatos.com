@@ -7,23 +7,38 @@ exportar clase FciOtrosDatabaseService {
       url,
       authToken,
     })
-    ambiente.migrationRunner = crear MigrationRunner(
-      ambiente.db,
-      'fci-otros',
-    )
+    ambiente.migrationRunner = crear MigrationRunner(ambiente.db, 'fci-otros')
   }
 
   asincrono initialize() {
     esperar ambiente.migrationRunner.runPendingMigrations()
   }
 
-  asincrono insertFciOtros(fondo, tna, tea, tope, fecha, condiciones, condicionesCorto, timestamp) {
+  asincrono insertFciOtros(
+    fondo,
+    tna,
+    tea,
+    tope,
+    fecha,
+    condiciones,
+    condicionesCorto,
+    timestamp,
+  ) {
     esperar ambiente.db.execute({
       sql: `
         INSERT INTO fci_otros (fondo, tna, tea, tope, fecha, condiciones, condicionesCorto, timestamp)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?)
       `,
-      args: [fondo, tna, tea, tope, fecha, condiciones, condicionesCorto, timestamp],
+      args: [
+        fondo,
+        tna,
+        tea,
+        tope,
+        fecha,
+        condiciones,
+        condicionesCorto,
+        timestamp,
+      ],
     })
   }
 

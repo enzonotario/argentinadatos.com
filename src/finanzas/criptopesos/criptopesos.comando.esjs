@@ -5,7 +5,7 @@ importar { guardarCriptopesos } desde '@/finanzas/criptopesos/guardado/guardarCr
 
 exportar asincrono funcion ejecutarCriptopesos() {
   intentar {
-    const [belo, capyfi, ripio] = esperar Promise.all([
+    const [belo, capyfi, ripio] = esperar Promesa.todos([
       extraerBelo(),
       extraerCapyfi(),
       extraerRipio(),

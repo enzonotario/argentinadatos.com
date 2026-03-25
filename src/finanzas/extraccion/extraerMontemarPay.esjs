@@ -28,7 +28,9 @@ exportar asincrono funcion extraerMontemarPayCuentaRemunerada() {
     const coincidencias = textoCompleto.coincidir(tnaRegex)
 
     si (!coincidencias || !coincidencias[1]) {
-      lanzar crear Error('No se pudo encontrar la tasa TNA en la página de Montemar Pay')
+      lanzar crear Error(
+        'No se pudo encontrar la tasa TNA en la página de Montemar Pay',
+      )
     }
 
     const tna = Numero((interpretarDecimalConComa(coincidencias[1]) / 100).fijarDecimales(4))
@@ -42,10 +44,9 @@ exportar asincrono funcion extraerMontemarPayCuentaRemunerada() {
       fecha: format(crear Fecha(), 'yyyy-MM-dd'),
       condiciones: nulo,
       condicionesCorto: nulo,
-    }
+    };
   } capturar (error) {
     logError(log, error)
     retornar []
   }
 }
-

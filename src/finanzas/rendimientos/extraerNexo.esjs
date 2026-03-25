@@ -7,7 +7,8 @@ exportar asincrono funcion extraerNexo() {
       import.meta.env.VITE_FINANZAS_RENDIMIENTOS_NEXO_URL,
       {
         headers: {
-          'X-Comparatasas-Api-Key': import.meta.env.VITE_FINANZAS_RENDIMIENTOS_NEXO_API_KEY,
+          'X-Comparatasas-Api-Key': import.meta.env
+            .VITE_FINANZAS_RENDIMIENTOS_NEXO_API_KEY,
         },
       },
     )

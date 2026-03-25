@@ -18,27 +18,27 @@ exportar asincrono funcion extraerUalaCuentaRemuneradaDesdeSheets() {
 
     const filas = esperar obtenerFilasDeSheets(spreadsheetId, 'A:G')
 
-    si (filas.length === 0) {
+    si (filas.longitud === 0) {
       logError(log, crear Error('No se encontraron datos en el Google Sheet'))
       retornar []
     }
     const hoy = crear Fecha()
-    hoy.setHours(0, 0, 0, 0)
+    hoy.establecerHoras(0, 0, 0, 0)
 
     var fechaMasCercana = nulo
     var indiceFilaMasCercana = -1
     var diferenciaMinima = Infinito
 
-    para (var i = 1; i < filas.length; i++) {
+    para (var i = 1; i < filas.longitud; i++) {
       const fila = filas[i]
-      si (!fila || fila.length === 0 || !fila[0]) {
+      si (!fila || fila.longitud === 0 || !fila[0]) {
         continuar
       }
 
       intentar {
-        const fechaTexto = fila[0].trim()
+        const fechaTexto = fila[0].recortarEspacios()
         const fecha = parse(fechaTexto, 'dd/MM/yy', crear Fecha())
-        fecha.setHours(0, 0, 0, 0)
+        fecha.establecerHoras(0, 0, 0, 0)
 
         si (isAfter(fecha, hoy)) {
           continuar
@@ -64,13 +64,14 @@ exportar asincrono funcion extraerUalaCuentaRemuneradaDesdeSheets() {
     const filaSeleccionada = filas[indiceFilaMasCercana]
     const fechaFormateada = format(fechaMasCercana, 'yyyy-MM-dd')
 
-    const tope = filaSeleccionada[1] && filaSeleccionada[1].trim() !== '' 
-      ? Numero(interpretarDecimalConComa(filaSeleccionada[1])) 
-      : nulo
+    const tope =
+      filaSeleccionada[1] && filaSeleccionada[1].recortarEspacios() !== ''
+        ? Numero(interpretarDecimalConComa(filaSeleccionada[1]))
+        : nulo
 
     const fondos = []
 
-    si (filaSeleccionada[2] && filaSeleccionada[2].trim() !== '') {
+    si (filaSeleccionada[2] && filaSeleccionada[2].recortarEspacios() !== '') {
       const tna = interpretarDecimalConComa(filaSeleccionada[2])
       fondos.agregar({
         fondo: 'UALA',
@@ -83,11 +84,12 @@ exportar asincrono funcion extraerUalaCuentaRemuneradaDesdeSheets() {
       })
     }
 
-    si (filaSeleccionada[3] && filaSeleccionada[3].trim() !== '') {
+    si (filaSeleccionada[3] && filaSeleccionada[3].recortarEspacios() !== '') {
       const tna = interpretarDecimalConComa(filaSeleccionada[3])
-      const condicionesCorto = filaSeleccionada[5] && filaSeleccionada[5].trim() !== ''
-        ? filaSeleccionada[5].trim()
-        : nulo
+      const condicionesCorto =
+        filaSeleccionada[5] && filaSeleccionada[5].recortarEspacios() !== ''
+          ? filaSeleccionada[5].recortarEspacios()
+          : nulo
       fondos.agregar({
         fondo: 'UALA PLUS 1',
         tna: Numero(tna.fijarDecimales(4)),
@@ -99,11 +101,12 @@ exportar asincrono funcion extraerUalaCuentaRemuneradaDesdeSheets() {
       })
     }
 
-    si (filaSeleccionada[4] && filaSeleccionada[4].trim() !== '') {
+    si (filaSeleccionada[4] && filaSeleccionada[4].recortarEspacios() !== '') {
       const tna = interpretarDecimalConComa(filaSeleccionada[4])
-      const condicionesCorto = filaSeleccionada[6] && filaSeleccionada[6].trim() !== ''
-        ? filaSeleccionada[6].trim()
-        : nulo
+      const condicionesCorto =
+        filaSeleccionada[6] && filaSeleccionada[6].recortarEspacios() !== ''
+          ? filaSeleccionada[6].recortarEspacios()
+          : nulo
       fondos.agregar({
         fondo: 'UALA PLUS 2',
         tna: Numero(tna.fijarDecimales(4)),
@@ -121,4 +124,3 @@ exportar asincrono funcion extraerUalaCuentaRemuneradaDesdeSheets() {
     retornar []
   }
 }
-

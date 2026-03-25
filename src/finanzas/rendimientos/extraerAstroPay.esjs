@@ -13,7 +13,7 @@ exportar asincrono funcion extraerAstroPay() {
 
     const filas = esperar obtenerFilasDeSheets(spreadsheetId, 'A:B')
 
-    si (filas.length === 0) {
+    si (filas.longitud === 0) {
       retornar []
     }
     const fecha = format(crear Fecha(), 'yyyy-MM-dd')

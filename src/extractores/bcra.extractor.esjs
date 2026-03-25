@@ -1,36 +1,36 @@
-import axios from 'axios'
+importar axios desde 'axios'
 
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0
 
-export async function extraerBcra(serie, desde, hasta) {
+exportar asincrono funcion extraerBcra(serie, desde, hasta) {
   const intentos = 3
 
-  for (var intento = 0; intento < intentos; intento++) {
-    try {
-      const respuesta = await obtenerRespuesta(serie, desde, hasta)
+  para (var intento = 0; intento < intentos; intento++) {
+    intentar {
+      const respuesta = esperar obtenerRespuesta(serie, desde, hasta)
 
-      return respuesta
-    } catch (error) {
-      console.error('Error al extraer datos del BCRA', error)
+      retornar respuesta
+    } capturar (error) {
+      consola.error('Error al extraer datos del BCRA', error)
     }
 
-    await new Promise(resuelve => {
+    esperar crear Promesa(resuelve => {
       setTimeout(resuelve, 700)
     })
   }
 
-  throw new Error(
+  lanzar crear Error(
     `No se pudo extraer los datos del BCRA para la serie ${serie}`,
   )
 }
 
-async function obtenerRespuesta(serie, desde, hasta) {
+asincrono funcion obtenerRespuesta(serie, desde, hasta) {
   const url =
     'http://www.bcra.gob.ar/PublicacionesEstadisticas/Principales_variables_datos.asp'
 
-  const respuesta = await fetch(url, {
+  const respuesta = esperar fetch(url, {
     method: 'POST',
-    body: new URLSearchParams({
+    body: crear URLSearchParams({
       fecha_desde: desde,
       fecha_hasta: hasta,
       primeravez: '1',
@@ -38,30 +38,34 @@ async function obtenerRespuesta(serie, desde, hasta) {
     }),
   })
 
-  return respuesta.text()
+  retornar respuesta.text()
 }
 
-export async function extraerBcraApi(serie, desde, hasta) {
+exportar asincrono funcion extraerBcraApi(serie, desde, hasta) {
   const intentos = 3
 
-  for (var intento = 0; intento < intentos; intento++) {
+  para (var intento = 0; intento < intentos; intento++) {
     const url = `https://api.bcra.gob.ar/estadisticas/v4.0/Monetarias/${serie}?desde=${desde}&hasta=${hasta}`
 
-    try {
-      const respuesta = await axios.get(url)
+    intentar {
+      const respuesta = esperar axios.get(url)
 
       // console.log(respuesta.data.results[0].detalle)
       // return respuesta.data.results
 
-      const respuestaSerie = respuesta.data.results.find(r => r.idVariable === serie)
+      const respuestaSerie = respuesta.data.results.buscar(
+        r => r.idVariable === serie,
+      )
 
-      if (!respuestaSerie) {
-        throw new Error(`No se encontró la serie ${serie} en la respuesta del BCRA API`)
+      si (!respuestaSerie) {
+        lanzar crear Error(
+          `No se encontró la serie ${serie} en la respuesta del BCRA API`,
+        )
       }
 
-      return respuestaSerie.detalle
-    } catch (error) {
-      console.error('BCRA API error', {
+      retornar respuestaSerie.detalle
+    } capturar (error) {
+      consola.error('BCRA API error', {
         serie,
         desde,
         hasta,
@@ -70,12 +74,12 @@ export async function extraerBcraApi(serie, desde, hasta) {
       })
     }
 
-    await new Promise(resuelve => {
+    esperar crear Promesa(resuelve => {
       setTimeout(resuelve, 700)
     })
   }
 
-  throw new Error(
+  lanzar crear Error(
     `No se pudo extraer los datos del BCRA para la serie ${serie}`,
   )
 }

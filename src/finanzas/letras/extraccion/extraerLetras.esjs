@@ -166,15 +166,18 @@ asincrono funcion parsearBufferExcel(buffer, vencimientoATicker) {
 }
 
 exportar funcion parsearFilaSheets(fila) {
-  const ticker = fila[0] && fila[0].trim()
+  const ticker = fila[0] && fila[0].recortarEspacios()
   si (!ticker) retornar nulo
 
-  const fechaEmision = fila[1] && fila[1].trim() ? aFechaIso(fila[1].trim()) : nulo
-  const fechaVencimientoBruta = fila[2] && fila[2].trim()
-  const temBruto = fila[3] && fila[3].trim()
-  const vpvBruto = fila[4] && fila[4].trim()
+  const fechaEmision =
+    fila[1] && fila[1].recortarEspacios() ? aFechaIso(fila[1].recortarEspacios()) : nulo
+  const fechaVencimientoBruta = fila[2] && fila[2].recortarEspacios()
+  const temBruto = fila[3] && fila[3].recortarEspacios()
+  const vpvBruto = fila[4] && fila[4].recortarEspacios()
 
-  mut fechaVencimiento = fechaVencimientoBruta ? aFechaIso(fechaVencimientoBruta) : nulo
+  mut fechaVencimiento = fechaVencimientoBruta
+    ? aFechaIso(fechaVencimientoBruta)
+    : nulo
   si (!fechaVencimiento) {
     const vencimientoDeTicket = parsearVencimientoTicker(ticker)
     si (vencimientoDeTicket) fechaVencimiento = vencimientoDeTicket
@@ -183,7 +186,13 @@ exportar funcion parsearFilaSheets(fila) {
   const tem = temBruto ? interpretarDecimal(temBruto) : nulo
   mut vpv = vpvBruto ? interpretarDecimal(vpvBruto) : nulo
 
-  si (vpv === nulo && fechaEmision && fechaVencimiento && tem !== nulo && !isNaN(tem)) {
+  si (
+    vpv === nulo &&
+    fechaEmision &&
+    fechaVencimiento &&
+    tem !== nulo &&
+    !isNaN(tem)
+  ) {
     vpv = calcularVpv(fechaEmision, fechaVencimiento, tem)
   }
 
@@ -252,7 +261,12 @@ exportar asincrono funcion extraerLetras() {
   }
 
   para (const item de datosSheets) {
-    const base = mapa.get(item.ticker) || { fechaEmision: nulo, fechaVencimiento: nulo, tem: nulo, vpv: nulo }
+    const base = mapa.get(item.ticker) || {
+      fechaEmision: nulo,
+      fechaVencimiento: nulo,
+      tem: nulo,
+      vpv: nulo,
+    }
     const merged = { ...base, ticker: item.ticker }
     si (item.fechaEmision) merged.fechaEmision = item.fechaEmision
     si (item.fechaVencimiento) merged.fechaVencimiento = item.fechaVencimiento
@@ -261,8 +275,11 @@ exportar asincrono funcion extraerLetras() {
     mapa.set(item.ticker, merged)
   }
 
-  retornar [...mapa.values()].filtrar(item =>
-    item.fechaVencimiento &&
-    item.vpv !== nulo && item.vpv !== indefinido && !isNaN(item.vpv),
-  )
+  retornar [...mapa.valores()].filtrar(
+    item =>
+      item.fechaVencimiento &&
+      item.vpv !== nulo &&
+      item.vpv !== indefinido &&
+      !isNaN(item.vpv),
+  );
 }

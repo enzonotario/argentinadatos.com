@@ -15,9 +15,13 @@ exportar asincrono funcion obtenerFilasDeSheets(spreadsheetId, rango) {
 
   const respuesta = esperar axios.get(url)
 
-  si (!respuesta.data || !respuesta.data.values || respuesta.data.values.length === 0) {
+  si (
+    !respuesta.data ||
+    !respuesta.data.valores ||
+    respuesta.data.valores.longitud === 0
+  ) {
     retornar []
   }
 
-  retornar respuesta.data.values
+  retornar respuesta.data.valores;
 }

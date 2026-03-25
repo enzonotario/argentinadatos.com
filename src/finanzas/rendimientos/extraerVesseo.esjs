@@ -14,14 +14,15 @@ exportar asincrono funcion extraerVesseo() {
     const fecha = format(crear Fecha(), 'yyyy-MM-dd')
     const apy = Numero(respuesta.data.apy) * 100
 
-    retornar [{
-      moneda: 'USDC',
-      apy,
-      fecha,
-    }]
+    retornar [
+      {
+        moneda: 'USDC',
+        apy,
+        fecha,
+      },
+    ]
   } capturar (error) {
     consola.error(error)
     retornar []
   }
 }
-
