@@ -20,7 +20,7 @@ exportar asincrono funcion descargarImagen(url, directorio, nombreArchivo) {
     fs.mkdirSync(rutaDirectorio, { recursive: verdadero })
   }
 
-  const extension = path.extname(url.dividir('?')[0]) || '.png'
+  const extension = (path.extname(url.dividir('?')[0]) || '.png').toLowerCase()
   const nombreFinal = `${nombreArchivo}${extension}`
   const rutaArchivo = path.join(rutaDirectorio, nombreFinal)
 

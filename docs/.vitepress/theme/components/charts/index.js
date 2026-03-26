@@ -42,5 +42,6 @@ export default {
   ChartDiputadosActasResultado: defineAsyncComponent(() => import('./ChartDiputadosActasResultado.vue')),
   ChartDiputadosActasArbol: defineAsyncComponent(() => import('./ChartDiputadosActasArbol.vue')),
   ChartDiputadosActasPresentismo: defineAsyncComponent(() => import('./ChartDiputadosActasPresentismo.vue')),
+  ChartPresidentes: defineAsyncComponent(() => import('./ChartPresidentes.vue')),
   FeriadosSection: defineAsyncComponent(() => import('./FeriadosSection.vue')),
 }
