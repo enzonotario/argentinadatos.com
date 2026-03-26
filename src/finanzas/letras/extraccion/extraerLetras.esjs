@@ -115,6 +115,26 @@ asincrono funcion obtenerUrlsExcel() {
   retornar [...crear Set(urls)]
 }
 
+exportar asincrono funcion extraerLetrasDesdeRendimientos() {
+  intentar {
+    const respuesta = esperar fetch('https://rendimientos.co/config.json')
+    si (!respuesta.ok) retornar []
+    const data = esperar respuesta.json()
+    const letras = data.lecaps && data.lecaps.letras ? data.lecaps.letras : []
+
+    retornar letras.mapear(l => ({
+      ticker: l.ticker,
+      fechaVencimiento: l.fecha_vencimiento,
+      vpv: l.pago_final,
+      fechaEmision: nulo,
+      tem: nulo,
+    }));
+  } capturar (error) {
+    consola.error('Error al extraer letras desde rendimientos.co', error)
+    retornar []
+  }
+}
+
 asincrono funcion parsearBufferExcel(buffer, vencimientoATicker) {
   const libro = XLSX.read(buffer, { type: 'array', cellDates: verdadero })
   const resultados = []
@@ -250,9 +270,10 @@ asincrono funcion extraerLetrasDesdeExcel() {
 }
 
 exportar asincrono funcion extraerLetras() {
-  const [datosExcel, datosSheets] = esperar Promesa.todos([
+  const [datosExcel, datosSheets, datosRendimientos] = esperar Promesa.todos([
     extraerLetrasDesdeExcel(),
     extraerLetrasDesdeSheets(),
+    extraerLetrasDesdeRendimientos(),
   ])
 
   const mapa = crear Map()
@@ -272,6 +293,17 @@ exportar asincrono funcion extraerLetras() {
     si (item.fechaVencimiento) merged.fechaVencimiento = item.fechaVencimiento
     si (item.tem !== nulo && !isNaN(item.tem)) merged.tem = item.tem
     si (item.vpv !== nulo && !isNaN(item.vpv)) merged.vpv = item.vpv
+    mapa.set(item.ticker, merged)
+  }
+
+  para (const item de datosRendimientos) {
+    const base = mapa.get(item.ticker) || {
+      fechaEmision: nulo,
+      fechaVencimiento: nulo,
+      tem: nulo,
+      vpv: nulo,
+    }
+    const merged = { ...base, ...item }
     mapa.set(item.ticker, merged)
   }
 
