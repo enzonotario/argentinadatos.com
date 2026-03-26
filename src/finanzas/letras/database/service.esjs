@@ -42,6 +42,19 @@ exportar clase LetrasDatabaseService {
     }));
   }
 
+  asincrono deleteLetrasExcept(tickers) {
+    si (!tickers || tickers.longitud === 0) {
+      esperar ambiente.db.execute('DELETE FROM letras')
+      retornar
+    }
+
+    const placeholders = tickers.mapear(() => '?').juntar(',')
+    esperar ambiente.db.execute({
+      sql: `DELETE FROM letras WHERE ticker NOT IN (${placeholders})`,
+      args: tickers,
+    })
+  }
+
   close() {
     ambiente.db.close()
   }

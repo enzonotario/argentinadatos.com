@@ -121,14 +121,17 @@ exportar asincrono funcion extraerLetrasDesdeRendimientos() {
     si (!respuesta.ok) retornar []
     const data = esperar respuesta.json()
     const letras = data.lecaps && data.lecaps.letras ? data.lecaps.letras : []
+    const especiales = data.lecaps && data.lecaps.especiales ? data.lecaps.especiales : []
+    const boncaps = data.lecaps && data.lecaps.boncaps ? data.lecaps.boncaps : []
+    const todos = [...letras, ...especiales, ...boncaps]
 
-    retornar letras.mapear(l => ({
-      ticker: l.ticker,
-      fechaVencimiento: l.fecha_vencimiento,
-      vpv: l.pago_final,
-      fechaEmision: nulo,
-      tem: nulo,
-    }));
+    retornar todos.filtrar(l => l.activo !== falso).mapear(l => ({
+        ticker: l.ticker,
+        fechaVencimiento: l.fecha_vencimiento,
+        vpv: l.pago_final,
+        fechaEmision: nulo,
+        tem: nulo,
+      }));
   } capturar (error) {
     consola.error('Error al extraer letras desde rendimientos.co', error)
     retornar []

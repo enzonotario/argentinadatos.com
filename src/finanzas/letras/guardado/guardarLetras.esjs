@@ -24,6 +24,9 @@ exportar asincrono funcion guardarLetras(
       )
     }
 
+    const tickers = items.mapear(item => item.ticker)
+    esperar db.deleteLetrasExcept(tickers)
+
     esperar generarEndpointEstatico(db)
   } finalmente {
     db.close()
