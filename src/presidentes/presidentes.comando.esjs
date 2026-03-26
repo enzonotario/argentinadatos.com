@@ -1,0 +1,13 @@
+importar { extraerPresidentes } desde '@/presidentes/extraccion/extraerPresidentes.esjs'
+importar { guardarPresidentes } desde '@/presidentes/guardado/guardarPresidentes.esjs'
+
+exportar porDefecto asincrono funcion () {
+  const presidentes = esperar extraerPresidentes()
+
+  si (!presidentes || !presidentes.longitud) {
+    consola.error('No se encontraron presidentes')
+    retornar
+  }
+
+  esperar guardarPresidentes(presidentes)
+}

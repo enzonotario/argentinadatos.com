@@ -730,6 +730,34 @@
         ]
       }
     },
+    "/v1/presidentes": {
+      "get": {
+        "summary": "Presidentes",
+        "tags": [
+          "Historia"
+        ],
+        "description": "Devuelve la lista de presidentes de la Nación Argentina.",
+        "responses": {
+          "200": {
+            "description": "Devuelve una lista de presidentes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Presidente"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-presidentes",
+        "x-data-source": [
+          "[Wikipedia](https://es.wikipedia.org/wiki/Anexo:Presidentes_de_la_Naci%C3%B3n_Argentina)"
+        ]
+      }
+    },
     "/v1/estado": {
       "get": {
         "summary": "Estado de la API",
@@ -1751,6 +1779,63 @@
                 }
               }
             }
+          }
+        }
+      },
+      "Presidente": {
+        "title": "Presidente",
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string"
+          },
+          "inicio": {
+            "type": "string",
+            "nullable": true,
+            "description": "Fecha de inicio del mandato (formato yyyy-MM-dd)"
+          },
+          "fin": {
+            "type": "string",
+            "nullable": true,
+            "description": "Fecha de fin del mandato (formato yyyy-MM-dd). Null si es el presidente actual."
+          },
+          "partido": {
+            "type": "string",
+            "nullable": true
+          },
+          "periodoPresidencial": {
+            "type": "string",
+            "nullable": true,
+            "description": "Rango de años del período presidencial (ej: '2019-2023')"
+          },
+          "vicepresidente": {
+            "type": "string",
+            "nullable": true,
+            "description": "Nombre del vicepresidente. Puede ser 'Cargo inexistente' o 'vacante' en ciertos periodos."
+          },
+          "imagen": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true,
+            "description": "URL de la imagen del presidente"
+          },
+          "partidoImagen": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true,
+            "description": "URL de la imagen del logo del partido político"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "nombre": "Javier Milei",
+            "inicio": "2023-12-10",
+            "fin": null,
+            "partido": "La Libertad Avanza",
+            "periodoPresidencial": "2023-2027",
+            "vicepresidente": "Victoria Villarruel",
+            "imagen": "https://api.argentinadatos.com/static/presidentes/javier-milei.jpg",
+            "partidoImagen": "https://api.argentinadatos.com/static/partidos/la-libertad-avanza.png"
           }
         }
       }

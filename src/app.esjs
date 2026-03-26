@@ -8,6 +8,7 @@ importar rendimientos desde '@/finanzas/rendimientos/rendimientos.comando.esjs'
 importar criptopesos desde '@/finanzas/criptopesos/criptopesos.comando.esjs'
 importar plazoFijoComando desde '@/finanzas/plazoFijo/plazoFijo.comando.esjs'
 importar letrasComando desde '@/finanzas/letras/letras.comando.esjs'
+importar presidentesComando desde '@/presidentes/presidentes.comando.esjs'
 importar { actualizarOpenApiAño } desde '@/utils/actualizarOpenApiAño.esjs'
 
 const predefinidos = {
@@ -74,6 +75,9 @@ exportar asincrono funcion iniciar(comando) {
       romper
     caso '/v1/finanzas/letras':
       esperar letrasComando()
+      romper
+    caso '/v1/presidentes':
+      esperar presidentesComando()
       romper
     caso 'actualizar-openapi-year':
       esperar actualizarOpenApiAño()

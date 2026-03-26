@@ -145,6 +145,15 @@ export default defineConfig({
         ],
       },
       {
+        text: 'Historia',
+        items: [
+          addDocsPrefix(sidebar.generateSidebarGroup({
+            tag: 'Historia',
+            text: '',
+          })),
+        ],
+      },
+      {
         text: 'API',
         items: [
           addDocsPrefix(sidebar.generateSidebarGroup({
