@@ -1,0 +1,90 @@
+importar axios desde 'axios'
+importar { load } desde 'cheerio'
+
+exportar asincrono funcion extraerPlazoFijoUvaPagoPeriodico() {
+  intentar {
+    const proveedores = [...(esperar extraerBna())]
+
+    retornar proveedores
+  } capturar (error) {
+    consola.error(
+      'Error al extraer tasas de plazo fijo UVA con pago periódico',
+      error,
+    )
+    retornar []
+  }
+}
+
+asincrono funcion extraerBna() {
+  intentar {
+    const respuesta = esperar axios.get(
+      'https://www.bna.com.ar/Personas/PlazoFijoElectronico',
+    )
+    const $ = load(respuesta.data)
+
+    const tabla = $(
+      'table.plazoTable:contains("PF TRAD.EN UVA CON PAGO INTERÉS SUBPERÍODOS DE 30 DÍAS")',
+    )
+
+    si (!tabla.longitud) {
+      retornar []
+    }
+
+    const filas = tabla.buscar('tbody tr')
+    const tasas = []
+
+    filas.each((i, fila) => {
+      const celdas = $(fila).buscar('td')
+      si (celdas.longitud === 3) {
+        const rangoTexto = $(celdas[0]).text().recortarEspacios()
+        const plazos = parsearRangoPlazoDias(rangoTexto)
+        si (!plazos) {
+          retornar
+        }
+
+        const tna = parsearPorcentaje($(celdas[1]).text())
+        const tea = parsearPorcentaje($(celdas[2]).text())
+
+        tasas.agregar({
+          nombre: 'PF TRAD.EN UVA CON PAGO INTERÉS SUBPERÍODOS DE 30 DÍAS',
+          plazoMinDias: plazos.plazoMinDias,
+          plazoMaxDias: plazos.plazoMaxDias,
+          tna,
+          tea,
+        })
+      }
+    })
+
+    retornar [
+      {
+        id: 'bna',
+        entidad: 'Banco de la Nación Argentina',
+        logo: 'https://www.bna.com.ar/Content/img/logo-bna.png',
+        tasas,
+      },
+    ]
+  } capturar (error) {
+    consola.error(
+      'Error al extraer tasas de plazo fijo UVA con pago periódico de BNA',
+      error,
+    )
+    retornar []
+  }
+}
+
+funcion parsearRangoPlazoDias(texto) {
+  si (!texto) retornar nulo
+  const coincidencia = texto.coincidir(/De\s+(\d+)\s+a\s+(\d+)/i)
+  si (!coincidencia) retornar nulo
+  const plazoMinDias = Numero.interpretarEntero(coincidencia[1], 10)
+  const plazoMaxDias = Numero.interpretarEntero(coincidencia[2], 10)
+  si (Numero.esNan(plazoMinDias) || Numero.esNan(plazoMaxDias)) retornar nulo
+  retornar { plazoMinDias, plazoMaxDias }
+}
+
+funcion parsearPorcentaje(valor) {
+  si (!valor) retornar nulo
+  const limpio = valor.replace('%', '').reemplazar(',', '.').recortarEspacios()
+  const numero = Numero.interpretarDecimal(limpio)
+  retornar Numero.esNan(numero) ? nulo : numero / 100;
+}

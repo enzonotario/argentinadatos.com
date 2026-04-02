@@ -1,0 +1,17 @@
+importar { extraerPlazoFijoUvaPagoPeriodico } desde '@/finanzas/extraccion/extraerPlazoFijoUvaPagoPeriodico.esjs'
+importar { guardarPlazoFijoUvaPagoPeriodico } desde '@/finanzas/guardado/guardarPlazoFijoUvaPagoPeriodico.esjs'
+
+exportar asincrono funcion ejecutarPlazoFijoUvaPagoPeriodico() {
+  intentar {
+    const proveedores = esperar extraerPlazoFijoUvaPagoPeriodico()
+
+    esperar guardarPlazoFijoUvaPagoPeriodico(proveedores)
+  } capturar (error) {
+    consola.error(
+      'Error al extraer tasas de plazo fijo UVA con pago periódico',
+      error,
+    )
+  }
+}
+
+exportar porDefecto ejecutarPlazoFijoUvaPagoPeriodico

@@ -391,6 +391,35 @@
         ]
       }
     },
+    "/v1/finanzas/tasas/plazoFijoUvaPagoPeriodico": {
+      "get": {
+        "summary": "Plazo fijo UVA con pago periódico de intereses",
+        "tags": [
+          "Finanzas",
+          "Tasas"
+        ],
+        "description": "Tasas Nominales Anuales (TNA) y Tasas Efectivas Anuales (TEA) para plazos fijos UVA con pago periódico de intereses.",
+        "responses": {
+          "200": {
+            "description": "Devuelve una lista de proveedores, cada uno con sus tasas por rango de plazo",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProveedorPlazoFijoUvaPagoPeriodico"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-finanzas-tasas-plazo-fijo-uva-pago-periodico",
+        "x-data-source": [
+          "[BNA](https://www.bna.com.ar/Personas/PlazoFijoElectronico)"
+        ]
+      }
+    },
     "/v1/finanzas/tasas/depositos30Dias": {
       "get": {
         "summary": "Depósitos a 30 días",
@@ -1293,6 +1322,86 @@
             "tnaNoClientes": 123.45,
             "logo": null,
             "link": null
+          }
+        }
+      },
+      "ProveedorPlazoFijoUvaPagoPeriodico": {
+        "title": "ProveedorPlazoFijoUvaPagoPeriodico",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Identificador estable del proveedor (p. ej. bna)"
+          },
+          "entidad": {
+            "type": "string",
+            "description": "Nombre de la entidad"
+          },
+          "logo": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL del logo de la entidad"
+          },
+          "tasas": {
+            "type": "array",
+            "description": "Tasas por rango de plazo",
+            "items": {
+              "$ref": "#/components/schemas/TasaPlazoFijoUvaPagoPeriodico"
+            }
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "id": "bna",
+            "entidad": "Banco de la Nación Argentina",
+            "logo": "https://www.bna.com.ar/Content/img/logo-bna.png",
+            "tasas": [
+              {
+                "nombre": "PF TRAD.EN UVA CON PAGO INTERÉS SUBPERÍODOS DE 30 DÍAS",
+                "plazoMinDias": 90,
+                "plazoMaxDias": 119,
+                "tna": 0.015,
+                "tea": 0.0151
+              }
+            ]
+          }
+        }
+      },
+      "TasaPlazoFijoUvaPagoPeriodico": {
+        "title": "TasaPlazoFijoUvaPagoPeriodico",
+        "type": "object",
+        "description": "Tasa para un rango de plazo dentro de un proveedor",
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "description": "Nombre del tipo de plazo fijo"
+          },
+          "plazoMinDias": {
+            "type": "integer",
+            "description": "Mínimo de días del rango de plazo"
+          },
+          "plazoMaxDias": {
+            "type": "integer",
+            "description": "Máximo de días del rango de plazo"
+          },
+          "tna": {
+            "type": "number",
+            "description": "Tasa Nominal Anual",
+            "format": "float"
+          },
+          "tea": {
+            "type": "number",
+            "description": "Tasa Efectiva Anual",
+            "format": "float"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "nombre": "PF TRAD.EN UVA CON PAGO INTERÉS SUBPERÍODOS DE 30 DÍAS",
+            "plazoMinDias": 90,
+            "plazoMaxDias": 119,
+            "tna": 0.015,
+            "tea": 0.0151
           }
         }
       },
