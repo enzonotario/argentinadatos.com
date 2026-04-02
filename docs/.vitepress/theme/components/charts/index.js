@@ -33,6 +33,9 @@ export default {
   ChartSenadoresProvincia: defineAsyncComponent(() => import('./ChartSenadoresProvincia.vue')),
   ChartSenadoresProvinciaPartido: defineAsyncComponent(() => import('./ChartSenadoresProvinciaPartido.vue')),
   ChartPlazoFijo: defineAsyncComponent(() => import('./ChartPlazoFijo.vue')),
+  ChartPlazoFijoUvaPagoPeriodico: defineAsyncComponent(
+    () => import('./ChartPlazoFijoUvaPagoPeriodico.vue'),
+  ),
   ChartFeriadosCalendario: defineAsyncComponent(() => import('./ChartFeriadosCalendario.vue')),
   ChartSenadoActasVotos: defineAsyncComponent(() => import('./ChartSenadoActasVotos.vue')),
   ChartSenadoActasResultado: defineAsyncComponent(() => import('./ChartSenadoActasResultado.vue')),
