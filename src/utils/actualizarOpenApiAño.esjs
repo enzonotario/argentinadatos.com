@@ -24,6 +24,6 @@ exportar asincrono funcion actualizarOpenApiAño() {
     }
   })
 
-  fs.writeFileSync(rutaOpenApi, JSON.cadena(especificacion, nulo, 2), 'utf8')
+  fs.writeFileSync(rutaOpenApi, JSON.aTexto(especificacion, nulo, 2), 'utf8')
   consola.escribir(`OpenAPI actualizado con el año ${añoActual}`)
 }
