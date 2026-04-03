@@ -2,7 +2,7 @@ importar fs desde 'node:fs'
 importar ruta desde 'node:path'
 
 exportar asincrono funcion actualizarOpenApiAño() {
-  const rutaOpenApi = ruta.resolver('docs/public/openapi.json')
+  const rutaOpenApi = ruta.resolve('docs/public/openapi.json')
   const especificacion = JSON.analizar(fs.readFileSync(rutaOpenApi, 'utf8'))
 
   const añoActual = crear Fecha().obtenerAñoFull()
