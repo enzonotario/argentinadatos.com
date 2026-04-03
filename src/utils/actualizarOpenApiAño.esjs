@@ -5,7 +5,7 @@ exportar asincrono funcion actualizarOpenApiAño() {
   const rutaOpenApi = ruta.resolve('docs/public/openapi.json')
   const especificacion = JSON.analizar(fs.readFileSync(rutaOpenApi, 'utf8'))
 
-  const añoActual = crear Fecha().obtenerAñoFull()
+  const añoActual = crear Fecha().obtenerAño()
 
   const rutasAActualizar = [
     '/v1/feriados/{año}',
