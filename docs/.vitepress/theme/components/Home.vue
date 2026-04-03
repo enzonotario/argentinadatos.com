@@ -20,25 +20,25 @@ const dataSources = {
       name: 'BCRA',
       logo: '/assets/logos/bcra.png',
       url: 'https://www.bcra.gob.ar/',
-      transparent: true
+      transparent: true,
     },
     {
       name: 'INDEC',
       logo: '/assets/logos/indec.png',
       url: 'https://www.indec.gob.ar/',
-      transparent: false
+      transparent: false,
     },
     {
       name: 'CAFCI',
       logo: '/assets/logos/cafci.png',
       url: 'https://www.cafci.org.ar/',
-      transparent: false
+      transparent: false,
     },
     {
       name: 'JP Morgan',
       logo: '/assets/logos/jpmorgan.svg',
       url: 'https://www.jpmorgan.com/',
-      transparent: false
+      transparent: false,
     },
   ],
   outer: [
@@ -46,25 +46,25 @@ const dataSources = {
       name: 'Diputados',
       logo: '/assets/logos/diputados.png',
       url: 'https://www.hcdn.gob.ar/',
-      transparent: false
+      transparent: false,
     },
     {
       name: 'Senado',
       logo: '/assets/logos/senado.png',
       url: 'https://www.senado.gob.ar/',
-      transparent: false
+      transparent: false,
     },
     {
       name: 'Ámbito',
       logo: '/assets/logos/ambito.png',
       url: 'https://www.ambito.com/',
-      transparent: true
+      transparent: true,
     },
     {
       name: 'La Nación',
       logo: '/assets/logos/lanacion.png',
       url: 'https://www.lanacion.com.ar/',
-      transparent: true
+      transparent: true,
     },
   ],
 }
@@ -80,9 +80,7 @@ const dataSources = {
           <span class="_gradient-text">ArgentinaDatos</span>
         </h1>
 
-        <p class="hero-subtitle">
-          API y Visualizaciones de Datos de Argentina
-        </p>
+        <p class="hero-subtitle">API y Visualizaciones de Datos de Argentina</p>
 
         <div class="orbit-system" :class="{ 'is-visible': isVisible }">
           <Orbit
@@ -102,7 +100,11 @@ const dataSources = {
               :class="{ 'orbit-logo-transparent': source.transparent }"
               :title="source.name"
             >
-              <img :src="source.logo" :alt="source.name" class="orbit-logo-img" />
+              <img
+                :src="source.logo"
+                :alt="source.name"
+                class="orbit-logo-img"
+              />
             </a>
           </Orbit>
 
@@ -123,12 +125,20 @@ const dataSources = {
               :class="{ 'orbit-logo-transparent': source.transparent }"
               :title="source.name"
             >
-              <img :src="source.logo" :alt="source.name" class="orbit-logo-img" />
+              <img
+                :src="source.logo"
+                :alt="source.name"
+                class="orbit-logo-img"
+              />
             </a>
           </Orbit>
 
           <div class="center-logo">
-            <img src="/assets/logo.png" alt="ArgentinaDatos" class="argentina-logo">
+            <img
+              src="/assets/logo.png"
+              alt="ArgentinaDatos"
+              class="argentina-logo"
+            />
             <div class="center-glow" />
           </div>
         </div>
@@ -137,7 +147,10 @@ const dataSources = {
 
     <section class="bento-section">
       <div class="bento-grid">
-        <div class="bento-card bento-card-lg api-card" :class="{ 'is-visible': isVisible }">
+        <div
+          class="bento-card bento-card-lg api-card"
+          :class="{ 'is-visible': isVisible }"
+        >
           <div class="card-icon">
             <span class="i-mdi-code-json" />
           </div>
@@ -145,7 +158,12 @@ const dataSources = {
             <h2 class="!border-t-0 !pt-0">API Pública</h2>
             <p>
               API desarrollada en
-              <a href="https://es.js.org/?ref=argentinadatos.com" target="_blank" rel="noreferrer">EsJS</a>
+              <a
+                href="https://es.js.org/?ref=argentinadatos.com"
+                target="_blank"
+                rel="noreferrer"
+                >EsJS</a
+              >
               para acceder a datos de Argentina de forma gratuita y sin límites.
             </p>
           </div>
@@ -167,7 +185,10 @@ const dataSources = {
           <div class="card-decoration" />
         </div>
 
-        <div class="bento-card bento-card-md viz-card" :class="{ 'is-visible': isVisible }">
+        <div
+          class="bento-card bento-card-md viz-card"
+          :class="{ 'is-visible': isVisible }"
+        >
           <div class="card-icon">
             <span class="i-mdi-chart-areaspline" />
           </div>
@@ -197,7 +218,10 @@ const dataSources = {
           <div class="card-decoration" />
         </div>
 
-        <div class="bento-card bento-card-md senadores-card" :class="{ 'is-visible': isVisible }">
+        <div
+          class="bento-card bento-card-md senadores-card"
+          :class="{ 'is-visible': isVisible }"
+        >
           <div class="card-icon">
             <span class="i-mdi-account-group" />
           </div>
@@ -226,7 +250,10 @@ const dataSources = {
           </div>
         </div>
 
-        <div class="bento-card bento-card-md diputados-card" :class="{ 'is-visible': isVisible }">
+        <div
+          class="bento-card bento-card-md diputados-card"
+          :class="{ 'is-visible': isVisible }"
+        >
           <div class="card-icon">
             <span class="i-mdi-account-multiple" />
           </div>
@@ -255,6 +282,22 @@ const dataSources = {
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="my-12 flex justify-center">
+      <a
+        href="https://malvinas.argentinadatos.com/"
+        target="_blank"
+        rel="noreferrer"
+        class="block"
+      >
+        <img
+          src="https://malvinas.argentinadatos.com/strip.png"
+          width="800"
+          height="130"
+          alt="Islas Malvinas Argentinas — Franja"
+        />
+      </a>
     </section>
 
     <section class="footer-section">
@@ -422,7 +465,8 @@ const dataSources = {
 }
 
 @keyframes center-pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(-50%, -50%) scale(1);
     opacity: 0.8;
   }
@@ -660,10 +704,18 @@ const dataSources = {
   transform: translateY(0);
 }
 
-.bento-card:nth-child(1) { transition-delay: 0.1s; }
-.bento-card:nth-child(2) { transition-delay: 0.2s; }
-.bento-card:nth-child(3) { transition-delay: 0.3s; }
-.bento-card:nth-child(4) { transition-delay: 0.4s; }
+.bento-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.bento-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.bento-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.bento-card:nth-child(4) {
+  transition-delay: 0.4s;
+}
 
 .dark .bento-card {
   background: rgba(39, 39, 42, 0.6);
@@ -724,7 +776,11 @@ const dataSources = {
 }
 
 .dark .api-card .card-icon {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.05)
+  );
   color: #fafafa;
 }
 
@@ -734,7 +790,11 @@ const dataSources = {
 }
 
 .dark .viz-card .card-icon {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.05)
+  );
   color: #fafafa;
 }
 
@@ -744,7 +804,11 @@ const dataSources = {
 }
 
 .dark .senadores-card .card-icon {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.05)
+  );
   color: #fafafa;
 }
 
@@ -754,7 +818,11 @@ const dataSources = {
 }
 
 .dark .diputados-card .card-icon {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.05)
+  );
   color: #fafafa;
 }
 
