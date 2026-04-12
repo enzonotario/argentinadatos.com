@@ -174,6 +174,12 @@ const items = computed(() => ([
   'https://github.com/catdevnull',
   'https://github.com/Xyborg',
   { type: 'logo', logoUrl: 'https://argentinadatos.com/assets/sponsors/diploi.png', url: 'https://diploi.com/', name: 'Diploi' },
+  {
+    type: 'logo',
+    logoUrl: 'https://vzlalegal.com/favicon.png',
+    url: 'https://vzlalegal.com/',
+    name: 'VZLA Legal',
+  },
   { type: 'logo', url: '/docs/sponsors', name: 'Tu Logo' },
 ])
   .map(parseItem)
@@ -182,7 +188,10 @@ const items = computed(() => ([
 
 <template>
   <div class="flex flex-col gap-w">
-    <div class="flex flex-wrap gap-2 items-center" :style="{ '--size': sizePx }">
+    <div
+      class="flex flex-wrap gap-2 items-center"
+      :style="{ '--size': sizePx }"
+    >
       <a
         v-for="(it, idx) in items"
         :key="idx"
@@ -194,16 +203,29 @@ const items = computed(() => ([
         class="group inline-flex items-center overflow-hidden rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 border border-transparent hover:border-indigo-300 dark:hover:border-indigo-600 !no-underline"
         :style="{ maxWidth: 'var(--size)', height: 'var(--size)' }"
       >
-        <div class="flex-shrink-0 w-[var(--size)] h-[var(--size)] flex items-center justify-center overflow-hidden">
+        <div
+          class="flex-shrink-0 w-[var(--size)] h-[var(--size)] flex items-center justify-center overflow-hidden"
+        >
           <template v-if="it.type === 'twitter'">
-            <span class="text-gray-500 group-hover:text-gray-700 dark:text-gray-300 dark:group-hover:text-white text-xl" :class="it.iconClass" />
+            <span
+              class="text-gray-500 group-hover:text-gray-700 dark:text-gray-300 dark:group-hover:text-white text-xl"
+              :class="it.iconClass"
+            />
           </template>
           <template v-else>
-            <img v-if="it.imgSrc" :src="it.imgSrc" :alt="it.alt" class="w-full h-full object-cover" loading="lazy">
+            <img
+              v-if="it.imgSrc"
+              :src="it.imgSrc"
+              :alt="it.alt"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
             <span v-else class="i-mdi-image text-gray-400 text-xl" />
           </template>
         </div>
-        <div class="pl-2 pr-3 whitespace-nowrap text-sm text-gray-700 dark:text-gray-200">
+        <div
+          class="pl-2 pr-3 whitespace-nowrap text-sm text-gray-700 dark:text-gray-200"
+        >
           {{ it.label }}
         </div>
       </a>
@@ -223,7 +245,10 @@ const items = computed(() => ([
 <style scoped>
 /* Hover-to-expand behavior using max-width transition. */
 a.group {
-  transition: max-width 220ms ease, background-color 150ms ease, border-color 150ms ease;
+  transition:
+    max-width 220ms ease,
+    background-color 150ms ease,
+    border-color 150ms ease;
 }
 a.group:hover,
 a.group:focus-visible {
