@@ -284,7 +284,23 @@ const dataSources = {
       </div>
     </section>
 
-    <section class="my-12 flex justify-center">
+    <section class="footer-section">
+      <div class="sponsors-wrapper">
+        <h2 class="section-title !border-t-0">
+          <span class="i-mdi-heart text-rose-500" />
+          Sponsors
+        </h2>
+        <SponsorsAvatars :size="52" />
+      </div>
+
+      <div class="banner-wrapper">
+        <Ads />
+      </div>
+    </section>
+
+    <hr/>
+
+    <section class="mt-24 -mb-24 flex justify-center">
       <a
         href="https://malvinas.argentinadatos.com/"
         target="_blank"
@@ -298,20 +314,6 @@ const dataSources = {
           alt="Islas Malvinas Argentinas — Franja"
         />
       </a>
-    </section>
-
-    <section class="footer-section">
-      <div class="sponsors-wrapper">
-        <h2 class="section-title !border-t-0">
-          <span class="i-mdi-heart text-rose-500" />
-          Sponsors
-        </h2>
-        <SponsorsAvatars :size="52" />
-      </div>
-
-      <div class="banner-wrapper">
-        <Ads />
-      </div>
     </section>
   </div>
 </template>
