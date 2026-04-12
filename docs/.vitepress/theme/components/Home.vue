@@ -298,7 +298,9 @@ const dataSources = {
       </div>
     </section>
 
-    <hr/>
+    <div class="pt-12">
+      <hr />
+    </div>
 
     <section class="mt-24 -mb-24 flex justify-center">
       <a
