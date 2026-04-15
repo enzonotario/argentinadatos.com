@@ -78,6 +78,7 @@ exportar asincrono funcion extraerCreditosHipotecariosUva() {
 
       datos.agregar({
         entidad,
+        nombreComercial: entidad,
         tna,
         metadata: {
           plazo_max_anios: plazoMax,

@@ -1457,6 +1457,10 @@
             "type": "string",
             "description": "Nombre del banco u oferente del crédito hipotecario UVA"
           },
+          "nombreComercial": {
+            "type": "string",
+            "description": "Nombre comercial"
+          },
           "tna": {
             "type": "number",
             "description": "Tasa Nominal Anual",
@@ -1486,6 +1490,7 @@
         "x-examples": {
           "Example 1": {
             "entidad": "BNA",
+            "nombreComercial": "BNA",
             "tna": 0.06,
             "metadata": {
               "plazo_max_anios": 30,
