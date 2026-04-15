@@ -1,0 +1,56 @@
+importar { logGrupo, logError, logMensaje } desde '@/log.esjs'
+importar { scrapearConIA } desde './ia.esjs'
+
+exportar asincrono funcion extraerFiwindARSCondiciones() {
+  const log = logGrupo({
+    fuente: 'extraerFiwindARSCondiciones',
+    tipo: 'cuentaRemunerada',
+  })
+
+  intentar {
+    const datos = esperar scrapearConIA(log, {
+      url: 'https://help.fiwind.io/es/articles/11723346-tus-primeros-pesos-rinden-mas',
+      prompt:
+        'Extrae las condiciones del rendimiento bonificado respecto a la fecha de vigencia. No extraigas tasas actuales. En condiciones incluí la fecha de vigencia. En condicionesCorto resumilo en menos de 100 caracteres.',
+      schema: {
+        condiciones: {
+          type: 'string',
+        },
+        condicionesCorto: {
+          type: 'string',
+          maxLength: 100,
+        },
+      },
+      required: ['condiciones', 'condicionesCorto'],
+    })
+
+    si (
+      !datos ||
+      tipoDe datos.condiciones !== 'string' ||
+      tipoDe datos.condicionesCorto !== 'string'
+    ) {
+      logMensaje(
+        log,
+        'Datos inválidos de Fiwind ARS Condiciones: faltan condiciones',
+        { datos },
+      )
+      retornar nulo
+    }
+
+    logMensaje(log, 'Extracción de Fiwind ARS Condiciones exitosa', {
+      condiciones: datos.condiciones,
+      condicionesCorto: datos.condicionesCorto,
+    })
+
+    retornar {
+      condiciones: datos.condiciones,
+      condicionesCorto: datos.condicionesCorto,
+    }
+  } capturar (error) {
+    logError(log, error)
+    logMensaje(log, 'Error al extraer condiciones de Fiwind ARS', {
+      errorMessage: error.message,
+    })
+    retornar nulo
+  }
+}
