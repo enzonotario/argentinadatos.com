@@ -1455,23 +1455,43 @@
         "properties": {
           "entidad": {
             "type": "string",
-            "description": "Nombre oficial de la entidad bancaria que ofrece el crédito hipotecario UVA"
-          },
-          "nombreComercial": {
-            "type": "string",
-            "description": "Nombre comercial de la entidad bancaria"
+            "description": "Nombre del banco u oferente del crédito hipotecario UVA"
           },
           "tna": {
             "type": "number",
             "description": "Tasa Nominal Anual",
-            "format": "float"
+            "format": "float",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Detalle de condiciones",
+            "properties": {
+              "plazo_max_anios": {
+                "type": "integer",
+                "description": "Plazo máximo del préstamo en años"
+              },
+              "relacion_cuota_ingreso": {
+                "type": "string",
+                "description": "Relación cuota–ingreso indicada en la fuente (p. ej. porcentaje del ingreso)"
+              },
+              "financiamiento": {
+                "type": "string",
+                "description": "Porcentaje o condición de financiamiento"
+              }
+            }
           }
         },
         "x-examples": {
           "Example 1": {
-            "entidad": "BANCO NACIÓN ARGENTINA",
-            "nombreComercial": "Banco Nación",
-            "tna": 6
+            "entidad": "BNA",
+            "tna": 0.06,
+            "metadata": {
+              "plazo_max_anios": 30,
+              "relacion_cuota_ingreso": "25%",
+              "financiamiento": "75%"
+            }
           }
         }
       },

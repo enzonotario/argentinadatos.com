@@ -1,72 +1,164 @@
 [
   {
-    "entidad": "BANCO NACIÓN ARGENTINA",
-    "nombreComercial": "Banco Nación",
-    "tna": 0.06
+    "entidad": "BNA",
+    "tna": 0.06,
+    "metadata": {
+      "plazo_max_anios": 30,
+      "relacion_cuota_ingreso": "25%",
+      "financiamiento": "75%"
+    }
   },
   {
-    "entidad": "BANCO BBVA ARGENTINA",
-    "nombreComercial": "BBVA",
-    "tna": 0.075
+    "entidad": "ICBC",
+    "tna": 0.069,
+    "metadata": {
+      "plazo_max_anios": 20,
+      "relacion_cuota_ingreso": "25%",
+      "financiamiento": "75%"
+    }
   },
   {
-    "entidad": "BANCO DEL SOL",
-    "nombreComercial": "Banco del Sol",
-    "tna": 0.09
+    "entidad": "Ciudad",
+    "tna": 0.075,
+    "metadata": {
+      "plazo_max_anios": 20,
+      "relacion_cuota_ingreso": "25%",
+      "financiamiento": "70%"
+    }
   },
   {
-    "entidad": "BANCO CIUDAD",
-    "nombreComercial": "Banco Ciudad",
-    "tna": 0.125
+    "entidad": "BBVA",
+    "tna": 0.075,
+    "metadata": {
+      "plazo_max_anios": 30,
+      "relacion_cuota_ingreso": "25%",
+      "financiamiento": "80%"
+    }
   },
   {
-    "entidad": "BANCO COMAFI",
-    "nombreComercial": "Comafi",
-    "tna": 0.105
+    "entidad": "Credicoop",
+    "tna": 0.08,
+    "metadata": {
+      "plazo_max_anios": 20,
+      "relacion_cuota_ingreso": "25%",
+      "financiamiento": "70%"
+    }
   },
   {
-    "entidad": "BANCO ICBC",
-    "nombreComercial": "ICBC",
-    "tna": 0.11
+    "entidad": "Macro",
+    "tna": 0.085,
+    "metadata": {
+      "plazo_max_anios": 20,
+      "relacion_cuota_ingreso": "25%",
+      "financiamiento": "70%"
+    }
   },
   {
-    "entidad": "BRUBANK",
-    "nombreComercial": "Brubank",
-    "tna": 0.12
+    "entidad": "BANCOR",
+    "tna": 0.089,
+    "metadata": {
+      "plazo_max_anios": 20,
+      "relacion_cuota_ingreso": "25%",
+      "financiamiento": "75%"
+    }
   },
   {
-    "entidad": "BANCO CREDICOOP",
-    "nombreComercial": "Credicoop",
-    "tna": 0.125
+    "entidad": "Banco del Sol",
+    "tna": 0.09,
+    "metadata": {
+      "plazo_max_anios": 20,
+      "relacion_cuota_ingreso": "25%",
+      "financiamiento": "80%"
+    }
   },
   {
-    "entidad": "BANCO HIPOTECARIO",
-    "nombreComercial": "Banco Hipotecario",
-    "tna": 0.139
+    "entidad": "Santander",
+    "tna": 0.095,
+    "metadata": {
+      "plazo_max_anios": 20,
+      "relacion_cuota_ingreso": "25%",
+      "financiamiento": "70%"
+    }
   },
   {
-    "entidad": "BANCO PATAGONIA",
-    "nombreComercial": "Banco Patagonia",
-    "tna": 0.14
+    "entidad": "Galicia",
+    "tna": 0.095,
+    "metadata": {
+      "plazo_max_anios": 20,
+      "relacion_cuota_ingreso": "25%",
+      "financiamiento": "70%"
+    }
   },
   {
-    "entidad": "BANCO SUPERVIELLE",
-    "nombreComercial": "Supervielle",
-    "tna": 0.15
+    "entidad": "Patagonia",
+    "tna": 0.097,
+    "metadata": {
+      "plazo_max_anios": 30,
+      "relacion_cuota_ingreso": "25%",
+      "financiamiento": "75%"
+    }
   },
   {
-    "entidad": "BANCO SANTANDER",
-    "nombreComercial": "Santander",
-    "tna": 0.15
+    "entidad": "Grupo Petersen",
+    "tna": 0.099,
+    "metadata": {
+      "plazo_max_anios": 20,
+      "relacion_cuota_ingreso": "30%",
+      "financiamiento": "75%"
+    }
   },
   {
-    "entidad": "BANCO MACRO",
-    "nombreComercial": "Banco Macro",
-    "tna": 0.15
+    "entidad": "Banco de Chubut",
+    "tna": 0.1,
+    "metadata": {
+      "plazo_max_anios": 15,
+      "relacion_cuota_ingreso": "30%",
+      "financiamiento": "75%"
+    }
   },
   {
-    "entidad": "BANCO GALICIA",
-    "nombreComercial": "Banco Galicia",
-    "tna": 0.15
+    "entidad": "Comafi",
+    "tna": 0.105,
+    "metadata": {
+      "plazo_max_anios": 20,
+      "relacion_cuota_ingreso": "25%",
+      "financiamiento": "75%"
+    }
+  },
+  {
+    "entidad": "Brubank",
+    "tna": 0.12,
+    "metadata": {
+      "plazo_max_anios": 30,
+      "relacion_cuota_ingreso": "25%",
+      "financiamiento": "70%"
+    }
+  },
+  {
+    "entidad": "Banco de Corrientes",
+    "tna": 0.12,
+    "metadata": {
+      "plazo_max_anios": 20,
+      "relacion_cuota_ingreso": "25%",
+      "financiamiento": "80%"
+    }
+  },
+  {
+    "entidad": "Hipotecario",
+    "tna": 0.125,
+    "metadata": {
+      "plazo_max_anios": 15,
+      "relacion_cuota_ingreso": "20%",
+      "financiamiento": "80%"
+    }
+  },
+  {
+    "entidad": "Supervielle",
+    "tna": 0.15,
+    "metadata": {
+      "plazo_max_anios": 15,
+      "relacion_cuota_ingreso": "25%",
+      "financiamiento": "65%"
+    }
   }
 ]

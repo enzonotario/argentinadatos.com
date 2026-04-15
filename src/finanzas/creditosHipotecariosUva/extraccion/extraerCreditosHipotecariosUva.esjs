@@ -1,35 +1,95 @@
 importar axios desde 'axios'
-importar { interpretarDecimalConComa } desde '@/utils/numeros.esjs'
+
+const SHEET_ID_DEFECTO = '1h191b61YRkAI9Xv3_dDuNf7ejst_ziw9kacfJsnvLoM'
+const GID_DEFECTO = '1120229027'
+
+funcion parsearCSV(texto) {
+  const filas = []
+  const lineas = texto.dividir('\n')
+  para (const linea de lineas) {
+    const recortada = linea.recortarEspacios()
+    si (!recortada) continuar
+    const celdas = []
+    mut actual = ''
+    mut entreComillas = falso
+    para (mut i = 0; i < recortada.longitud; i++) {
+      const ch = recortada[i]
+      si (ch === '"') {
+        entreComillas = !entreComillas
+      } sino si (ch === ',' && !entreComillas) {
+        celdas.agregar(actual)
+        actual = ''
+      } sino {
+        actual += ch
+      }
+    }
+    celdas.agregar(actual)
+    filas.agregar(celdas)
+  }
+  retornar filas
+}
 
 exportar asincrono funcion extraerCreditosHipotecariosUva() {
   intentar {
-    const url = import.meta.env
-      .VITE_FINANZAS_CREDITOS_HIPOTECARIOS_UVA_SHEETDB_URL
-    const token = import.meta.env
-      .VITE_FINANZAS_CREDITOS_HIPOTECARIOS_UVA_SHEETDB_TOKEN
-
-    si (!url || !token) {
-      lanzar crear Error(
-        'VITE_FINANZAS_CREDITOS_HIPOTECARIOS_UVA_SHEETDB_URL y VITE_FINANZAS_CREDITOS_HIPOTECARIOS_UVA_SHEETDB_TOKEN deben estar definidos',
-      )
-    }
+    const sheetId =
+      import.meta.env.VITE_FINANZAS_CREDITOS_HIPOTECARIOS_UVA_SHEET_ID ||
+      SHEET_ID_DEFECTO
+    const gid =
+      import.meta.env.VITE_FINANZAS_CREDITOS_HIPOTECARIOS_UVA_GID || GID_DEFECTO
+    const url = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv&gid=${gid}`
 
     const respuesta = esperar axios.get(url, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+      responseType: 'text',
+      maxRedirects: 5,
     })
 
-    retornar respuesta.data.mapear(item => {
-      const porcentaje = interpretarDecimalConComa(item['TNA Porcentaje'])
-      const tna = porcentaje ? porcentaje / 100 : nulo
+    const csv = respuesta.data
+    const filas = parsearCSV(csv)
 
-      retornar {
-        entidad: item['Entidad'],
-        nombreComercial: item['Nombre Comercial'],
-        tna,
+    si (filas.longitud < 2) {
+      retornar []
+    }
+
+    mut inicio = 1
+    para (mut h = 0; h < filas.longitud; h++) {
+      const cab = filas[h]
+      si (cab.longitud >= 1 && cab[0].recortarEspacios().aMinusculas() === 'banco') {
+        inicio = h + 1
+        romper
       }
-    });
+    }
+
+    const datos = []
+    para (mut i = inicio; i < filas.longitud; i++) {
+      const fila = filas[i]
+      si (fila.longitud < 5 || !fila[0].recortarEspacios()) continuar
+
+      const entidad = fila[0].recortarEspacios()
+      const tnaPorcentajePlano =
+        Numero.interpretarDecimal(fila[1].replace('%', '').reemplazar(',', '.').recortarEspacios()) ||
+        0
+      const plazoMax = Numero.interpretarEntero(fila[2], 10) || 0
+      const cuotaIngreso = fila[3].recortarEspacios()
+      const financiamiento = fila[4].recortarEspacios()
+
+      si (tnaPorcentajePlano <= 0) continuar
+
+      const tna = Numero((tnaPorcentajePlano / 100).fijarDecimales(6))
+
+      datos.agregar({
+        entidad,
+        tna,
+        metadata: {
+          plazo_max_anios: plazoMax,
+          relacion_cuota_ingreso: cuotaIngreso,
+          financiamiento,
+        },
+      })
+    }
+
+    datos.ordenar((a, b) => a.tna - b.tna)
+
+    retornar datos
   } capturar (error) {
     consola.error('Error al extraer créditos hipotecarios UVA', error)
     retornar []
