@@ -6,6 +6,8 @@ importar { extraerPlazoFijo } desde '@/finanzas/extraccion/extraerPlazoFijo.esjs
 importar { guardarPlazoFijo } desde '@/finanzas/guardado/guardarPlazoFijo.esjs'
 importar { extraerPlazoFijoUvaPagoPeriodico } desde '@/finanzas/extraccion/extraerPlazoFijoUvaPagoPeriodico.esjs'
 importar { guardarPlazoFijoUvaPagoPeriodico } desde '@/finanzas/guardado/guardarPlazoFijoUvaPagoPeriodico.esjs'
+importar { extraerPlazoFijoPrecancelable } desde '@/finanzas/extraccion/extraerPlazoFijoPrecancelable.esjs'
+importar { guardarPlazoFijoPrecancelable } desde '@/finanzas/guardado/guardarPlazoFijoPrecancelable.esjs'
 importar { extraerTasasDepositos30Dias } desde '@/finanzas/extraccion/extraerTasasDepositos30Dias.esjs'
 importar { guardarTasasDepositos30Dias } desde '@/finanzas/guardado/guardarTasasDepositos30Dias.esjs'
 importar { extraerIndiceUVA } desde '@/finanzas/extraccion/extraerIndiceUVA.esjs'
@@ -30,6 +32,7 @@ exportar asincrono funcion cronFinanzas() {
   esperar inflacionInteranual()
   esperar plazoFijo()
   esperar plazoFijoUvaPagoPeriodico()
+  esperar plazoFijoPrecancelable()
   esperar tasasDepositos30Dias()
   esperar indiceUVA()
   esperar fci()
@@ -92,6 +95,16 @@ asincrono funcion plazoFijoUvaPagoPeriodico() {
       'Error al extraer tasas de plazo fijo UVA con pago periódico',
       error,
     )
+  }
+}
+
+asincrono funcion plazoFijoPrecancelable() {
+  intentar {
+    const proveedores = esperar extraerPlazoFijoPrecancelable()
+
+    esperar guardarPlazoFijoPrecancelable(proveedores)
+  } capturar (error) {
+    consola.error('Error al extraer plazo fijo precancelable', error)
   }
 }
 

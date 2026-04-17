@@ -1,0 +1,14 @@
+importar { extraerPlazoFijoPrecancelable } desde '@/finanzas/extraccion/extraerPlazoFijoPrecancelable.esjs'
+importar { guardarPlazoFijoPrecancelable } desde '@/finanzas/guardado/guardarPlazoFijoPrecancelable.esjs'
+
+exportar asincrono funcion ejecutarPlazoFijoPrecancelable() {
+  intentar {
+    const proveedores = esperar extraerPlazoFijoPrecancelable()
+
+    esperar guardarPlazoFijoPrecancelable(proveedores)
+  } capturar (error) {
+    consola.error('Error al extraer plazo fijo precancelable', error)
+  }
+}
+
+exportar porDefecto ejecutarPlazoFijoPrecancelable

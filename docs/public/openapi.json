@@ -420,6 +420,37 @@
         ]
       }
     },
+    "/v1/finanzas/tasas/plazoFijoPrecancelable": {
+      "get": {
+        "summary": "Plazo fijo UVA precancelable",
+        "tags": [
+          "Finanzas",
+          "Tasas"
+        ],
+        "description": "Condiciones y tasas publicadas por entidades bancarias para plazos fijos UVA precancelables.",
+        "responses": {
+          "200": {
+            "description": "Devuelve una lista de proveedores con condiciones de plazo fijo UVA precancelable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProveedorPlazoFijoPrecancelable"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-finanzas-tasas-plazo-fijo-precancelable",
+        "x-data-source": [
+          "[BNA](https://www.bna.com.ar/personas/plazofijoprecancelableuva)",
+          "[BBVA](https://www.bbva.com.ar/economia-para-tu-dia-a-dia/ef/plazos-fijos/que-es-plazo-fijo-uva.html)",
+          "[Banco Provincia](https://www.bancoprovincia.com.ar/mvc/productos/inversiones/Plazo_Fijo_uva_cancel_ant/Plazo_Fijo_uva_ca_info_gral)"
+        ]
+      }
+    },
     "/v1/finanzas/tasas/depositos30Dias": {
       "get": {
         "summary": "Depósitos a 30 días",
@@ -1402,6 +1433,117 @@
             "plazoMaxDias": 119,
             "tna": 0.015,
             "tea": 0.0151
+          }
+        }
+      },
+      "ProveedorPlazoFijoPrecancelable": {
+        "title": "ProveedorPlazoFijoPrecancelable",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Identificador estable del proveedor"
+          },
+          "entidad": {
+            "type": "string",
+            "description": "Nombre de la entidad"
+          },
+          "logo": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL del logo de la entidad"
+          },
+          "enlace": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL de la fuente"
+          },
+          "canal": {
+            "type": "string",
+            "nullable": true,
+            "description": "Canales publicados para constituir el plazo fijo"
+          },
+          "moneda": {
+            "type": "string",
+            "description": "Moneda de constitución"
+          },
+          "plazoMinDias": {
+            "type": "integer",
+            "description": "Plazo mínimo en días"
+          },
+          "plazoMaxDias": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Plazo máximo en días"
+          },
+          "plazoPrecancelacionDias": {
+            "type": "integer",
+            "description": "Días mínimos para ejercer la precancelación"
+          },
+          "avisoPrecancelacionDias": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Días hábiles de aviso previo para precancelar"
+          },
+          "montoMinimo": {
+            "type": "number",
+            "nullable": true,
+            "description": "Monto mínimo de constitución"
+          },
+          "montoMaximo": {
+            "type": "number",
+            "nullable": true,
+            "description": "Monto máximo de constitución"
+          },
+          "modalidad": {
+            "type": "string",
+            "nullable": true,
+            "description": "Modalidad publicada por la entidad"
+          },
+          "tna": {
+            "type": "number",
+            "nullable": true,
+            "format": "float",
+            "description": "Tasa Nominal Anual"
+          },
+          "tea": {
+            "type": "number",
+            "nullable": true,
+            "format": "float",
+            "description": "Tasa Efectiva Anual"
+          },
+          "tnaPrecancelacion": {
+            "type": "number",
+            "nullable": true,
+            "format": "float",
+            "description": "Tasa Nominal Anual aplicada ante precancelación"
+          },
+          "teaPrecancelacion": {
+            "type": "number",
+            "nullable": true,
+            "format": "float",
+            "description": "Tasa Efectiva Anual aplicada ante precancelación"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "id": "bna",
+            "entidad": "Banco de la Nación Argentina",
+            "logo": "https://www.bna.com.ar/Content/img/logo-bna.png",
+            "enlace": "https://www.bna.com.ar/personas/plazofijoprecancelableuva",
+            "canal": "App BNA+, Home Banking y sucursales",
+            "moneda": "ARS",
+            "plazoMinDias": 180,
+            "plazoMaxDias": 370,
+            "plazoPrecancelacionDias": 30,
+            "avisoPrecancelacionDias": 5,
+            "montoMinimo": 1500,
+            "montoMaximo": 5000000,
+            "modalidad": "intransferible",
+            "tna": 0.01,
+            "tea": 0.01,
+            "tnaPrecancelacion": 0.83,
+            "teaPrecancelacion": 1.232
           }
         }
       },
