@@ -7,6 +7,7 @@ const mapeoSerie = {
   rentaVariable: '2',
   rentaFija: '3',
   rentaMixta: '5',
+  retornoTotal: '7',
 }
 
 exportar asincrono funcion extraerCacfi(serie, fecha) {

@@ -9,6 +9,7 @@ describe('extraerCacfi', () => {
         'rentaVariable',
         'rentaFija',
         'rentaMixta',
+        'retornoTotal',
       ]
 
       const yesterday = format(subDays(new Date(), 1), 'yyyy-MM-dd')

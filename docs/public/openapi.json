@@ -739,6 +739,48 @@
         ]
       }
     },
+    "/v1/finanzas/fci/retornoTotal/{fecha}": {
+      "get": {
+        "summary": "Retorno total",
+        "tags": [
+          "Finanzas",
+          "FCI"
+        ],
+        "description": "Devuelve los valores de Retorno Total de los Fondos Comunes de Inversión en la fecha indicada (en formato `YYYY/MM/DD`).\n\nTambién se puede consultar el `ultimo` y `penultimo` día con valores utilizando los endpoints: \n\n- `/v1/finanzas/fci/retornoTotal/ultimo`\n- `/v1/finanzas/fci/retornoTotal/penultimo`",
+        "parameters": [
+          {
+            "name": "fecha",
+            "in": "path",
+            "description": "Fecha de consulta",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "ultimo"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Devuelve una lista de Fondos Comunes de Inversión",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FondoComunInversion"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-finanzas-fci-retorno-total-fecha",
+        "x-data-source": [
+          "[CAFCI](https://cafci.org.ar)"
+        ]
+      }
+    },
     "/v1/finanzas/fci/otros/{fecha}": {
       "get": {
         "summary": "Otros",

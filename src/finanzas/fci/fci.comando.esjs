@@ -69,7 +69,13 @@ asincrono funcion extraerUalaDesdeSheets() {
 }
 
 asincrono funcion extraerSeriesDesdeCacfi() {
-  const series = ['mercadoDinero', 'rentaVariable', 'rentaFija', 'rentaMixta']
+  const series = [
+    'mercadoDinero',
+    'rentaVariable',
+    'rentaFija',
+    'rentaMixta',
+    'retornoTotal',
+  ]
 
   const promesas = Promesa.todos(series.mapear(serie => ejecutarSerie(serie)))
 
