@@ -1205,6 +1205,7 @@
           }
         },
         "operationId": "get-rems",
+        "x-sidebar-title": "REM",
         "x-data-source": [
           "[BCRA Últimos Informes](https://www.bcra.gob.ar/ultimos-informes/)"
         ]
@@ -1234,6 +1235,7 @@
           }
         },
         "operationId": "get-rems-ultimo",
+        "x-sidebar-title": "Último informe",
         "x-data-source": [
           "[BCRA Últimos Informes](https://www.bcra.gob.ar/ultimos-informes/)"
         ]
@@ -1287,6 +1289,7 @@
           }
         },
         "operationId": "get-rems-anio-mes",
+        "x-sidebar-title": "Por período",
         "x-data-source": [
           "[BCRA Últimos Informes](https://www.bcra.gob.ar/ultimos-informes/)"
         ]
