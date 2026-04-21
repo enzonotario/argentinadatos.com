@@ -124,6 +124,13 @@ export default defineConfig({
             }),
             collapsed: true,
           }),
+          addDocsPrefix({
+            ...sidebar.generateSidebarGroup({
+              tag: ['Finanzas', 'REM'],
+              text: 'REM',
+            }),
+            collapsed: true,
+          }),
         ],
       },
       {

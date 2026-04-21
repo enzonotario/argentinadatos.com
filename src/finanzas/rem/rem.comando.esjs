@@ -1,0 +1,10 @@
+importar { extraerRem } desde './extraccion/extraerRem.esjs'
+importar { guardarRem } desde './guardado/guardarRem.esjs'
+
+exportar asincrono funcion ejecutarRem() {
+  const datos = esperar extraerRem()
+  esperar guardarRem(datos)
+  retornar datos
+}
+
+exportar porDefecto ejecutarRem

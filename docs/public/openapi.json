@@ -1179,6 +1179,118 @@
           "[Diputados](https://votaciones.hcdn.gob.ar)"
         ]
       }
+    },
+    "/v1/rems": {
+      "get": {
+        "summary": "Relevamientos de Expectativas de Mercado (REM)",
+        "tags": [
+          "Finanzas",
+          "REM"
+        ],
+        "description": "Devuelve el índice de endpoints relativos para consultar el último REM y cada uno de los informes REM disponibles por período.",
+        "responses": {
+          "200": {
+            "description": "Devuelve una lista de endpoints relativos disponibles",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "example": "/rems/2026/03"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-rems",
+        "x-data-source": [
+          "[BCRA Últimos Informes](https://www.bcra.gob.ar/ultimos-informes/)"
+        ]
+      }
+    },
+    "/v1/rems/ultimo": {
+      "get": {
+        "summary": "Relevamiento de Expectativas de Mercado (REM) - último informe",
+        "tags": [
+          "Finanzas",
+          "REM"
+        ],
+        "description": "Devuelve las expectativas del último informe REM disponible.",
+        "responses": {
+          "200": {
+            "description": "Devuelve una lista de expectativas del último REM",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RemExpectativa"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-rems-ultimo",
+        "x-data-source": [
+          "[BCRA Últimos Informes](https://www.bcra.gob.ar/ultimos-informes/)"
+        ]
+      }
+    },
+    "/v1/rems/{año}/{mes}": {
+      "get": {
+        "summary": "Relevamiento de Expectativas de Mercado (REM) por período",
+        "tags": [
+          "Finanzas",
+          "REM"
+        ],
+        "description": "Devuelve las expectativas del informe REM correspondiente al año y mes indicados.",
+        "parameters": [
+          {
+            "name": "año",
+            "in": "path",
+            "description": "Año del informe REM",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 2016
+            },
+            "example": 2026
+          },
+          {
+            "name": "mes",
+            "in": "path",
+            "description": "Mes del informe REM con dos dígitos",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(0[1-9]|1[0-2])$"
+            },
+            "example": "03"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Devuelve una lista de expectativas del REM para el período indicado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RemExpectativa"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-rems-anio-mes",
+        "x-data-source": [
+          "[BCRA Últimos Informes](https://www.bcra.gob.ar/ultimos-informes/)"
+        ]
+      }
     }
   },
   "components": {
@@ -2154,6 +2266,147 @@
             "vicepresidente": "Victoria Villarruel",
             "imagen": "https://api.argentinadatos.com/static/presidentes/javier-milei.jpg",
             "partidoImagen": "https://api.argentinadatos.com/static/partidos/la-libertad-avanza.png"
+          }
+        }
+      },
+      "RemExpectativa": {
+        "title": "RemExpectativa",
+        "type": "object",
+        "properties": {
+          "informe": {
+            "type": "string",
+            "description": "Informe REM en formato YYYY-MM"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date",
+            "description": "Fecha ISO del primer día del mes del informe"
+          },
+          "muestra": {
+            "type": "string",
+            "enum": [
+              "todos",
+              "top_10"
+            ],
+            "description": "Muestra de participantes: todos o TOP 10"
+          },
+          "indicador": {
+            "type": "string",
+            "description": "Indicador relevado"
+          },
+          "periodo": {
+            "type": "string",
+            "description": "Período original informado por el BCRA"
+          },
+          "periodoTipo": {
+            "type": "string",
+            "description": "Tipo de período normalizado"
+          },
+          "periodoDesde": {
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "description": "Fecha de inicio del período normalizado"
+          },
+          "periodoHasta": {
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "description": "Fecha de fin del período normalizado"
+          },
+          "referencia": {
+            "type": "string",
+            "description": "Referencia original de la tabla"
+          },
+          "referenciaFecha": {
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "description": "Fecha detectada en la referencia, si corresponde"
+          },
+          "unidad": {
+            "type": "string",
+            "nullable": true,
+            "description": "Unidad inferida desde la referencia"
+          },
+          "mediana": {
+            "type": "number",
+            "nullable": true
+          },
+          "promedio": {
+            "type": "number",
+            "nullable": true
+          },
+          "desvio": {
+            "type": "number",
+            "nullable": true
+          },
+          "maximo": {
+            "type": "number",
+            "nullable": true
+          },
+          "minimo": {
+            "type": "number",
+            "nullable": true
+          },
+          "percentil90": {
+            "type": "number",
+            "nullable": true
+          },
+          "percentil75": {
+            "type": "number",
+            "nullable": true
+          },
+          "percentil25": {
+            "type": "number",
+            "nullable": true
+          },
+          "percentil10": {
+            "type": "number",
+            "nullable": true
+          },
+          "participantes": {
+            "type": "integer",
+            "nullable": true
+          },
+          "fuente": {
+            "type": "string"
+          },
+          "publicacionUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "xlsxUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "informe": "2026-03",
+            "fecha": "2026-03-01",
+            "muestra": "todos",
+            "indicador": "Precios minoristas (IPC nivel general-Nacional; INDEC)",
+            "periodo": "Mar-26",
+            "periodoTipo": "mensual",
+            "periodoDesde": "2026-03-01",
+            "periodoHasta": "2026-03-31",
+            "referencia": "var. % mensual",
+            "referenciaFecha": null,
+            "unidad": "var. % mensual",
+            "mediana": 3,
+            "promedio": 3,
+            "desvio": 0.2,
+            "maximo": 3.5,
+            "minimo": 2.5,
+            "percentil90": 3.2,
+            "percentil75": 3.1,
+            "percentil25": 2.9,
+            "percentil10": 2.8,
+            "participantes": 46,
+            "fuente": "BCRA REM",
+            "publicacionUrl": "https://www.bcra.gob.ar/publicaciones/relevamiento-de-expectativas-de-mercado-rem-marzo-de-2026/",
+            "xlsxUrl": "https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/informes/tablas-relevamiento-expectativas-mercado-mar-2026.xlsx"
           }
         }
       }
