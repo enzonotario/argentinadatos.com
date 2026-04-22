@@ -10,7 +10,7 @@ importar {
 importar { extraerUalaCuentaRemuneradaDesdeSheets } desde '@/finanzas/extraccion/extraerUalaDesdeSheets.esjs'
 importar { guardarSerieOtros } desde '@/finanzas/fci/guardado/guardarSerieOtros.esjs'
 importar { FciOtrosDatabaseService } desde '@/finanzas/fci/database/service.esjs'
-importar { logGrupo, logError } desde '@/log.esjs'
+importar { logGrupo, logError, logMensaje } desde '@/log.esjs'
 
 const TURSO_DATABASE_URL = import.meta.env.VITE_TURSO_DATABASE_URL
 const TURSO_AUTH_TOKEN = import.meta.env.VITE_TURSO_AUTH_TOKEN
@@ -23,9 +23,11 @@ exportar porDefecto asincrono funcion () {
 }
 
 asincrono funcion extraerUalaDesdeSheets() {
+  const log = logGrupo({ comando: 'fci', fuente: 'uala.sheets' })
   const valoresExtraidos = (esperar extraerUalaCuentaRemuneradaDesdeSheets()).filtrar(item => item.fondo)
 
   si (valoresExtraidos.longitud === 0) {
+    logMensaje(log, 'No se obtuvieron valores válidos desde Ualá Sheets')
     retornar
   }
 

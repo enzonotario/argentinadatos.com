@@ -1,8 +1,14 @@
 importar axios desde 'axios'
 importar { format } desde 'date-fns'
 importar { escribirRuta, leerRuta } desde '@/utils/rutas.esjs'
+importar { logGrupo, logError, logMensaje } desde '@/log.esjs'
 
 exportar asincrono funcion extraerNaranjaX() {
+  const log = logGrupo({
+    fuente: 'extraerNaranjaX',
+    tipo: 'cuentaRemunerada',
+  })
+
   intentar {
     const solicitarToken = esperar axios.post(
       import.meta.env.VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_URL,
@@ -25,6 +31,11 @@ exportar asincrono funcion extraerNaranjaX() {
 
     const token = solicitarToken.data.access_token
 
+    si (!token) {
+      logMensaje(log, 'No se obtuvo token de Naranja X')
+      lanzar crear Error('No se obtuvo token de Naranja X')
+    }
+
     const rendimientos = esperar axios.get(
       import.meta.env.VITE_FINANZAS_PLAZOFIJO_NARANJAX_URL,
       {
@@ -34,6 +45,11 @@ exportar asincrono funcion extraerNaranjaX() {
       },
     )
 
+    si (!rendimientos?.data) {
+      logMensaje(log, 'Respuesta vacía de Naranja X')
+      lanzar crear Error('Respuesta vacía de Naranja X')
+    }
+
     retornar {
       fondo: 'NARANJA X',
       tna: rendimientos.data.tna / 100,
@@ -42,7 +58,10 @@ exportar asincrono funcion extraerNaranjaX() {
       fecha: format(crear Fecha(), 'yyyy-MM-dd'),
     };
   } capturar (error) {
-    consola.error('Error al extraer Naranja X', error.aCadena())
+    logError(log, error)
+    logMensaje(log, 'Error al extraer Naranja X', {
+      errorMessage: error.message,
+    })
     retornar {}
   }
 }

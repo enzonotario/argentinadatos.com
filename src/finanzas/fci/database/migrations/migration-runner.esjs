@@ -1,4 +1,5 @@
 importar { migration_001_initial_schema } desde './001_initial_schema.esjs'
+importar { logGrupo, logError, logMensaje } desde '@/log.esjs'
 
 const MIGRATIONS = [migration_001_initial_schema]
 
@@ -63,7 +64,17 @@ exportar clase MigrationRunner {
         esperar ambiente.markMigrationAsExecuted(migration)
         consola.escribir(`Migración ${migration.version} ejecutada exitosamente`)
       } capturar (error) {
-        consola.error(`Error ejecutando migración ${migration.version}:`, error)
+        const log = logGrupo({
+          comando: 'fci.migrations',
+          scope: ambiente.scope,
+          migrationVersion: migration.version,
+          migrationName: migration.name,
+        })
+        logError(log, error)
+        logMensaje(log, 'Error ejecutando migración', {
+          migrationVersion: migration.version,
+          migrationName: migration.name,
+        })
         lanzar crear Error(`Falló la migración ${migration.version}: ${error}`)
       }
     }
@@ -103,7 +114,17 @@ exportar clase MigrationRunner {
       })
       consola.escribir(`Migración ${migration.version} revertida exitosamente`)
     } capturar (error) {
-      consola.error(`Error revirtiendo migración ${migration.version}:`, error)
+      const log = logGrupo({
+        comando: 'fci.migrations',
+        scope: ambiente.scope,
+        migrationVersion: migration.version,
+        migrationName: migration.name,
+      })
+      logError(log, error)
+      logMensaje(log, 'Error revirtiendo migración', {
+        migrationVersion: migration.version,
+        migrationName: migration.name,
+      })
       lanzar crear Error(
         `Falló la reversión de la migración ${migration.version}: ${error}`,
       )
