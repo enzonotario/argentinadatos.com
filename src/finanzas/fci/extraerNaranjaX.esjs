@@ -3,6 +3,18 @@ importar { format } desde 'date-fns'
 importar { escribirRuta, leerRuta } desde '@/utils/rutas.esjs'
 importar { logGrupo, logError, logMensaje } desde '@/log.esjs'
 
+funcion extraerContextoAxios(error) {
+  retornar {
+    axiosCode: error?.code,
+    responseStatus: error?.response?.status,
+    responseStatusText: error?.response?.statusText,
+    responseData: error?.response?.data,
+    requestUrl: error?.config?.url,
+    requestMethod: error?.config?.method,
+    requestTimeout: error?.config?.timeout,
+  };
+}
+
 exportar asincrono funcion extraerNaranjaX() {
   const log = logGrupo({
     fuente: 'extraerNaranjaX',
@@ -61,6 +73,7 @@ exportar asincrono funcion extraerNaranjaX() {
     logError(log, error)
     logMensaje(log, 'Error al extraer Naranja X', {
       errorMessage: error.message,
+      ...extraerContextoAxios(error),
     })
     retornar {}
   }
