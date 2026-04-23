@@ -5,11 +5,11 @@ describe('extraerGlobal66CuentaRemunerada', () => {
   beforeEach(() => {
     vi.stubEnv(
       'VITE_GLOBAL66_API_URL',
-      import.meta.env.VITE_GLOBAL66_API_URL ?? 'https://rem-ars.global66.com/prod/info',
+      import.meta.env.VITE_GLOBAL66_API_URL,
     )
     vi.stubEnv(
       'VITE_GLOBAL66_API_KEY',
-      import.meta.env.VITE_GLOBAL66_API_KEY ?? 'XDX3x4mxj08IPa8GYPmhe8Jlq2zQxoGO1GqTI7XI',
+      import.meta.env.VITE_GLOBAL66_API_KEY,
     )
   })
 
