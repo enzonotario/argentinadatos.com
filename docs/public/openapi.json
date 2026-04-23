@@ -1294,6 +1294,48 @@
           "[BCRA](https://www.bcra.gob.ar/ultimos-informes/)"
         ]
       }
+    },
+    "/v1/finanzas/fci/variables/{fecha}": {
+      "get": {
+        "summary": "Variables",
+        "tags": [
+          "Finanzas",
+          "FCI"
+        ],
+        "description": "Devuelve los valores de Rendimientos Variables de los Fondos Comunes de Inversión en la fecha indicada (en formato `YYYY/MM/DD`).\n\nTambién se puede consultar el `ultimo` y `penultimo` día con valores utilizando los endpoints: \n\n- `/v1/finanzas/fci/variables/ultimo`\n- `/v1/finanzas/fci/variables/penultimo`",
+        "parameters": [
+          {
+            "name": "fecha",
+            "in": "path",
+            "description": "Fecha de consulta",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "example": "ultimo"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Devuelve una lista de Fondos Comunes de Inversión",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FondoComunInversionOtro"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-finanzas-fci-variables-fecha",
+        "x-data-source": [
+          "[Global66](https://global66.com/)"
+        ]
+      }
     }
   },
   "components": {
@@ -1806,6 +1848,9 @@
           "fondo": {
             "type": "string"
           },
+          "tipo": {
+            "type": "string"
+          },
           "fecha": {
             "type": "string"
           },
@@ -1860,6 +1905,7 @@
         "x-examples": {
           "Example 1": {
             "fondo": "Otro Fondo Común de Inversión",
+            "tipo": "billetera",
             "tea": 123.45,
             "tna": 123.45,
             "tope": 123.45

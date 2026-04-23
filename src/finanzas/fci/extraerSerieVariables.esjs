@@ -1,0 +1,38 @@
+importar { format } desde 'date-fns'
+importar { extraerGlobal66CuentaRemunerada } desde '@/finanzas/extraccion/extraerGlobal66.esjs'
+importar { guardarSerieVariables } desde '@/finanzas/fci/guardado/guardarSerieVariables.esjs'
+importar { logGrupo, logMensaje } desde '@/log.esjs'
+
+const log = logGrupo({ comando: 'finanzas.fci.variables' })
+
+exportar asincrono funcion extraerSerieVariables() {
+  const resultados = [
+    esperar extraerGlobal66CuentaRemunerada(),
+  ]
+
+  const valoresExtraidos = resultados.filtrar(item => item.fondo)
+  const sinFondo = resultados.longitud - valoresExtraidos.longitud
+
+  si (sinFondo > 0) {
+    logMensaje(log, 'Se descartaron extracciones sin fondo en FCI variables', {
+      totalFuentes: resultados.longitud,
+      descartados: sinFondo,
+    })
+  }
+
+  si (valoresExtraidos.longitud === 0) {
+    logMensaje(log, 'No se obtuvieron valores válidos en FCI variables')
+    retornar
+  }
+
+  const fechaActual = format(crear Fecha(), 'yyyy-MM-dd')
+  const valoresConFecha = valoresExtraidos.mapear(item => ({
+    ...item,
+    fecha: item.fecha || fechaActual,
+  }))
+
+  log.info('[/v1/finanzas/fci/variables]: Valores extraídos', valoresConFecha)
+  consola.escribir('[/v1/finanzas/fci/variables]: Valores extraídos', valoresConFecha)
+
+  esperar guardarSerieVariables(valoresConFecha)
+}

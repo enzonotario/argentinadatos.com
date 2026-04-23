@@ -91,6 +91,8 @@ jobs:
           echo "VITE_FINANZAS_RENDIMIENTOS_UALA_PASSWORD=${{ secrets.VITE_FINANZAS_RENDIMIENTOS_UALA_PASSWORD }}" >> .env
           echo "VITE_FINANZAS_RENDIMIENTOS_UALA_URL=${{ secrets.VITE_FINANZAS_RENDIMIENTOS_UALA_URL }}" >> .env
           echo "VITE_CARREFOUR_API_URL=${{ secrets.VITE_CARREFOUR_API_URL }}" >> .env
+          echo "VITE_GLOBAL66_API_URL=${{ secrets.VITE_GLOBAL66_API_URL }}" >> .env
+          echo "VITE_GLOBAL66_API_KEY=${{ secrets.VITE_GLOBAL66_API_KEY }}" >> .env
           echo "VITE_FINANZAS_CRESIUM_URL=${{ secrets.VITE_FINANZAS_CRESIUM_URL }}" >> .env
           echo "VITE_FINANZAS_BELO_CUENTA_REMUNERADA_URL=${{ secrets.VITE_FINANZAS_BELO_CUENTA_REMUNERADA_URL }}" >> .env
           echo "VITE_FINANZAS_CAPYFI_API_URL=${{ secrets.VITE_FINANZAS_CAPYFI_API_URL }}" >> .env

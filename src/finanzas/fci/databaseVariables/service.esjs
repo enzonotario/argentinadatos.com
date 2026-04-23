@@ -1,0 +1,175 @@
+importar { createClient } desde '@libsql/client'
+importar { MigrationRunnerVariables } desde './migrations/migration-runner.esjs'
+
+exportar clase FciVariablesDatabaseService {
+  constructor(url, authToken) {
+    ambiente.db = createClient({
+      url,
+      authToken,
+    })
+    ambiente.migrationRunner = crear MigrationRunnerVariables(ambiente.db, 'fci-variables')
+  }
+
+  asincrono initialize() {
+    esperar ambiente.migrationRunner.runPendingMigrations()
+  }
+
+  asincrono insertFciVariables(
+    fondo,
+    tipo,
+    tna,
+    tea,
+    tope,
+    fecha,
+    condiciones,
+    condicionesCorto,
+    timestamp,
+  ) {
+    esperar ambiente.db.execute({
+      sql: `
+        INSERT INTO fci_variables (fondo, tipo, tna, tea, tope, fecha, condiciones, condicionesCorto, timestamp)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `,
+      args: [
+        fondo,
+        tipo,
+        tna,
+        tea,
+        tope,
+        fecha,
+        condiciones,
+        condicionesCorto,
+        timestamp,
+      ],
+    })
+  }
+
+  asincrono getLatestFciVariablesByFondo(fondo) {
+    const resultado = esperar ambiente.db.execute({
+      sql: `
+        SELECT id, fondo, tipo, tna, tea, tope, fecha, condiciones, condicionesCorto, timestamp
+        FROM fci_variables
+        WHERE fondo = ?
+        ORDER BY timestamp DESC, created_at DESC
+        LIMIT 1
+      `,
+      args: [fondo],
+    })
+    si (resultado.rows.longitud === 0) {
+      retornar nulo
+    }
+    const row = resultado.rows[0]
+    retornar {
+      id: row.id,
+      fondo: row.fondo,
+      tipo: row.tipo,
+      tna: row.tna,
+      tea: row.tea,
+      tope: row.tope,
+      fecha: row.fecha,
+      condiciones: row.condiciones,
+      condicionesCorto: row.condicionesCorto,
+      timestamp: row.timestamp,
+    }
+  }
+
+  asincrono getAllLatestFciVariables() {
+    const resultado = esperar ambiente.db.execute({
+      sql: `
+        SELECT c.*
+        FROM fci_variables c
+        INNER JOIN (
+          SELECT fondo, MAX(timestamp) AS max_timestamp
+          FROM fci_variables
+          GROUP BY fondo
+        ) latest ON c.fondo = latest.fondo
+          AND c.timestamp = latest.max_timestamp
+        ORDER BY c.fondo
+      `,
+    })
+    retornar resultado.rows.mapear(row => ({
+      id: row.id,
+      fondo: row.fondo,
+      tipo: row.tipo,
+      tna: row.tna,
+      tea: row.tea,
+      tope: row.tope,
+      fecha: row.fecha,
+      condiciones: row.condiciones,
+      condicionesCorto: row.condicionesCorto,
+      timestamp: row.timestamp,
+    }));
+  }
+
+  asincrono getPenultimoFciVariables() {
+    const resultado = esperar ambiente.db.execute({
+      sql: `
+        SELECT c.*
+        FROM fci_variables c
+        INNER JOIN (
+          SELECT fondo, MAX(timestamp) AS max_timestamp
+          FROM fci_variables c2
+          WHERE c2.timestamp < (
+            SELECT MAX(timestamp)
+            FROM fci_variables c3
+            WHERE c3.fondo = c2.fondo
+          )
+          GROUP BY fondo
+        ) penultimo ON c.fondo = penultimo.fondo
+          AND c.timestamp = penultimo.max_timestamp
+        ORDER BY c.fondo
+      `,
+    })
+    retornar resultado.rows.mapear(row => ({
+      id: row.id,
+      fondo: row.fondo,
+      tipo: row.tipo,
+      tna: row.tna,
+      tea: row.tea,
+      tope: row.tope,
+      fecha: row.fecha,
+      condiciones: row.condiciones,
+      condicionesCorto: row.condicionesCorto,
+      timestamp: row.timestamp,
+    }));
+  }
+
+  asincrono getHistorialPorFondo(fondo) {
+    const resultado = esperar ambiente.db.execute({
+      sql: `
+        SELECT id, fondo, tipo, tna, tea, tope, fecha, condiciones, condicionesCorto, timestamp
+        FROM fci_variables
+        WHERE fondo = ?
+        ORDER BY fecha ASC, timestamp ASC
+      `,
+      args: [fondo],
+    })
+    retornar resultado.rows.mapear(row => ({
+      id: row.id,
+      fondo: row.fondo,
+      tipo: row.tipo,
+      tna: row.tna,
+      tea: row.tea,
+      tope: row.tope,
+      fecha: row.fecha,
+      condiciones: row.condiciones,
+      condicionesCorto: row.condicionesCorto,
+      timestamp: row.timestamp,
+    }));
+  }
+
+  asincrono getAllFondos() {
+    const resultado = esperar ambiente.db.execute({
+      sql: `
+        SELECT DISTINCT fondo
+        FROM fci_variables
+        ORDER BY fondo
+      `,
+    })
+    retornar resultado.rows.mapear(row => row.fondo);
+  }
+
+  close() {
+    ambiente.db.close()
+  }
+}
