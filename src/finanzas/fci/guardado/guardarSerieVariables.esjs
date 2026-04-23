@@ -4,8 +4,8 @@ importar { escribirRuta } desde '@/utils/rutas.esjs'
 const TURSO_DATABASE_URL = import.meta.env.VITE_TURSO_DATABASE_URL
 const TURSO_AUTH_TOKEN = import.meta.env.VITE_TURSO_AUTH_TOKEN
 
-funcion normalizarNombreFondo(fondo) {
-  retornar fondo.aMinusculas()
+funcion normalizarNombreFondo(nombre) {
+  retornar nombre.aMinusculas()
     .replace(/\s+/g, '-').reemplazar(/[^a-z0-9-]/g, '');
 }
 
@@ -23,11 +23,12 @@ exportar asincrono funcion guardarSerieVariables(
     const itemsToInsert = []
 
     para (const item de items) {
-      const ultimo = esperar db.getLatestFciVariablesByFondo(item.fondo)
+      const ultimo = esperar db.getLatestFciVariablesByNombre(item.nombre)
 
       const valoresCambiaron =
         ultimo &&
         (ultimo.tna !== item.tna ||
+          ultimo.fondo !== (item.fondo || nulo) ||
           ultimo.tipo !== (item.tipo || nulo) ||
           ultimo.tea !== item.tea ||
           ultimo.tope !== item.tope ||
@@ -37,6 +38,7 @@ exportar asincrono funcion guardarSerieVariables(
       si (!ultimo || (valoresCambiaron && item.fecha > ultimo.fecha)) {
         itemsToInsert.agregar(item)
         esperar db.insertFciVariables(
+          item.nombre,
           item.fondo,
           item.tipo || nulo,
           item.tna,
@@ -66,6 +68,7 @@ asincrono funcion generarEndpointsEstaticos(db) {
   const todosLosDatos = esperar db.getAllLatestFciVariables()
 
   const resultado = todosLosDatos.mapear(row => ({
+    nombre: row.nombre,
     fondo: row.fondo,
     tipo: row.tipo,
     tna: row.tna,
@@ -80,6 +83,7 @@ asincrono funcion generarEndpointsEstaticos(db) {
 
   const penultimo = esperar db.getPenultimoFciVariables()
   const penultimoResultado = penultimo.mapear(row => ({
+    nombre: row.nombre,
     fondo: row.fondo,
     tipo: row.tipo,
     tna: row.tna,
@@ -94,11 +98,12 @@ asincrono funcion generarEndpointsEstaticos(db) {
     escribirRuta('/finanzas/fci/variables/penultimo', penultimoResultado)
   }
 
-  const fondos = esperar db.getAllFondos()
+  const nombres = esperar db.getAllNombres()
 
-  para (const fondo de fondos) {
-    const historial = esperar db.getHistorialPorFondo(fondo)
+  para (const nombre de nombres) {
+    const historial = esperar db.getHistorialPorNombre(nombre)
     const historialResultado = historial.mapear(row => ({
+      fondo: row.fondo,
       tna: row.tna,
       tipo: row.tipo,
       tea: row.tea,
@@ -110,6 +115,7 @@ asincrono funcion generarEndpointsEstaticos(db) {
       si (index === 0) retornar verdadero
       const prev = arr[index - 1]
       retornar (
+        item.fondo !== prev.fondo ||
         item.tna !== prev.tna ||
         item.tipo !== prev.tipo ||
         item.tea !== prev.tea ||
@@ -119,7 +125,7 @@ asincrono funcion generarEndpointsEstaticos(db) {
       )
     })
 
-    const nombreNormalizado = normalizarNombreFondo(fondo)
+    const nombreNormalizado = normalizarNombreFondo(nombre)
     escribirRuta(`/finanzas/fci/variables/${nombreNormalizado}`, historialResultado)
   }
 }

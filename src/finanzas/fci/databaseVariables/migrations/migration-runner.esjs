@@ -1,8 +1,13 @@
 importar { migration_001_initial_schema } desde './001_initial_schema.esjs'
 importar { migration_002_add_tipo_column } desde './002_add_tipo_column.esjs'
+importar { migration_003_add_nombre_column } desde './003_add_nombre_column.esjs'
 importar { logGrupo, logError, logMensaje } desde '@/log.esjs'
 
-const MIGRATIONS = [migration_001_initial_schema, migration_002_add_tipo_column]
+const MIGRATIONS = [
+  migration_001_initial_schema,
+  migration_002_add_tipo_column,
+  migration_003_add_nombre_column,
+]
 
 exportar clase MigrationRunnerVariables {
   constructor(db, scope = 'fci-variables') {

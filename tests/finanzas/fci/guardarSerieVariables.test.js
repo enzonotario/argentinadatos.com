@@ -10,7 +10,8 @@ describe('guardarSerieVariables', () => {
   it('guarda nuevos valores en la base de datos', async () => {
     const items = [
       {
-        fondo: 'GLOBAL66',
+        nombre: 'GLOBAL66',
+        fondo: 'Compass Liquidez - Clase A',
         tipo: 'billetera',
         tna: 0.2048,
         tea: 0.2273,
@@ -25,11 +26,12 @@ describe('guardarSerieVariables', () => {
 
     const db = new FciVariablesDatabaseService(TEST_URL, TEST_AUTH_TOKEN)
     await db.initialize()
-    const ultimo = await db.getLatestFciVariablesByFondo('GLOBAL66')
+    const ultimo = await db.getLatestFciVariablesByNombre('GLOBAL66')
     db.close()
 
     expect(ultimo).toBeDefined()
-    expect(ultimo.fondo).toBe('GLOBAL66')
+    expect(ultimo.nombre).toBe('GLOBAL66')
+    expect(ultimo.fondo).toBe('Compass Liquidez - Clase A')
     expect(ultimo.tna).toBe(0.2048)
     expect(ultimo.tea).toBe(0.2273)
     expect(ultimo.tope).toBeNull()
@@ -40,7 +42,8 @@ describe('guardarSerieVariables', () => {
   it('genera el endpoint estatico correctamente', async () => {
     const items = [
       {
-        fondo: 'GLOBAL66',
+        nombre: 'GLOBAL66',
+        fondo: 'Compass Liquidez - Clase A',
         tipo: 'billetera',
         tna: 0.2048,
         tea: 0.2273,
@@ -59,10 +62,11 @@ describe('guardarSerieVariables', () => {
     expect(Array.isArray(guardado)).toBe(true)
     expect(guardado.length).toBeGreaterThan(0)
 
-    const global66Entry = guardado.find(r => r.fondo === 'GLOBAL66')
+    const global66Entry = guardado.find(r => r.nombre === 'GLOBAL66')
     expect(global66Entry).toBeDefined()
     expect(global66Entry).toEqual({
-      fondo: 'GLOBAL66',
+      nombre: 'GLOBAL66',
+      fondo: 'Compass Liquidez - Clase A',
       tipo: 'billetera',
       tna: 0.2048,
       tea: 0.2273,

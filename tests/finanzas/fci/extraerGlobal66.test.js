@@ -1,13 +1,29 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, beforeEach, afterEach, vi } from 'vitest'
 import { extraerGlobal66CuentaRemunerada } from '@/finanzas/extraccion/extraerGlobal66.esjs'
 
 describe('extraerGlobal66CuentaRemunerada', () => {
+  beforeEach(() => {
+    vi.stubEnv(
+      'VITE_GLOBAL66_API_URL',
+      import.meta.env.VITE_GLOBAL66_API_URL ?? 'https://rem-ars.global66.com/prod/info',
+    )
+    vi.stubEnv(
+      'VITE_GLOBAL66_API_KEY',
+      import.meta.env.VITE_GLOBAL66_API_KEY ?? 'XDX3x4mxj08IPa8GYPmhe8Jlq2zQxoGO1GqTI7XI',
+    )
+  })
+
+  afterEach(() => {
+    vi.unstubAllEnvs()
+  })
+
   it('extrae Global66 Cuenta Remunerada correctamente', async () => {
     const resultado = await extraerGlobal66CuentaRemunerada()
 
     expect(resultado).toMatchObject({
       fecha: expect.any(String),
-      fondo: 'GLOBAL66',
+      nombre: 'GLOBAL66',
+      fondo: 'Compass Liquidez - Clase A',
       tipo: 'billetera',
       tea: expect.any(Number),
       tna: expect.any(Number),

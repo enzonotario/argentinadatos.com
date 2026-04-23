@@ -1324,7 +1324,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/FondoComunInversionOtro"
+                    "$ref": "#/components/schemas/FondoComunInversionVariable"
                   }
                 }
               }
@@ -1905,10 +1905,64 @@
         "x-examples": {
           "Example 1": {
             "fondo": "Otro Fondo Común de Inversión",
-            "tipo": "billetera",
             "tea": 123.45,
             "tna": 123.45,
             "tope": 123.45
+          }
+        }
+      },
+      "FondoComunInversionVariable": {
+        "title": "FondoComunInversionVariable",
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "description": "Identificador de la fuente en Argentina Datos (por ejemplo el proveedor o el canal)."
+          },
+          "fondo": {
+            "type": "string",
+            "description": "Nombre del fondo común de inversión (clase o denominación oficial)."
+          },
+          "tipo": {
+            "type": "string",
+            "description": "Clasificación del instrumento. Valor conocido: `billetera` (cuenta remunerada en billetera digital).",
+            "enum": [
+              "billetera"
+            ]
+          },
+          "fecha": {
+            "type": "string"
+          },
+          "tea": {
+            "type": "number"
+          },
+          "tna": {
+            "type": "number"
+          },
+          "tope": {
+            "type": "number",
+            "nullable": true
+          },
+          "condiciones": {
+            "type": "string",
+            "nullable": true
+          },
+          "condicionesCorto": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "nombre": "GLOBAL66",
+            "fondo": "Compass Liquidez - Clase A",
+            "tipo": "billetera",
+            "fecha": "2026-04-23",
+            "tea": 0.2273,
+            "tna": 0.2048,
+            "tope": null,
+            "condiciones": "Solo clientes persona con servicio de rendimientos activado",
+            "condicionesCorto": "Solo clientes B2C"
           }
         }
       },

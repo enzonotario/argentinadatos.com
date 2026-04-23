@@ -10,13 +10,13 @@ exportar asincrono funcion extraerSerieVariables() {
     esperar extraerGlobal66CuentaRemunerada(),
   ]
 
-  const valoresExtraidos = resultados.filtrar(item => item.fondo)
-  const sinFondo = resultados.longitud - valoresExtraidos.longitud
+  const valoresExtraidos = resultados.filtrar(item => item.nombre)
+  const sinNombre = resultados.longitud - valoresExtraidos.longitud
 
-  si (sinFondo > 0) {
-    logMensaje(log, 'Se descartaron extracciones sin fondo en FCI variables', {
+  si (sinNombre > 0) {
+    logMensaje(log, 'Se descartaron extracciones sin nombre en FCI variables', {
       totalFuentes: resultados.longitud,
-      descartados: sinFondo,
+      descartados: sinNombre,
     })
   }
 

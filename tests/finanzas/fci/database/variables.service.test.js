@@ -24,12 +24,24 @@ describe('FciVariablesDatabaseService', () => {
 
   it('inserta un FCI variable', async () => {
     const timestamp = new Date().toISOString()
-    await db.insertFciVariables('GLOBAL66', 'billetera', 0.2048, 0.2273, null, '2026-04-23', 'Solo clientes', 'Solo clientes B2C', timestamp)
+    await db.insertFciVariables(
+      'GLOBAL66',
+      'Compass Liquidez - Clase A',
+      'billetera',
+      0.2048,
+      0.2273,
+      null,
+      '2026-04-23',
+      'Solo clientes',
+      'Solo clientes B2C',
+      timestamp,
+    )
 
-    const ultimo = await db.getLatestFciVariablesByFondo('GLOBAL66')
+    const ultimo = await db.getLatestFciVariablesByNombre('GLOBAL66')
 
     expect(ultimo).toBeDefined()
-    expect(ultimo.fondo).toBe('GLOBAL66')
+    expect(ultimo.nombre).toBe('GLOBAL66')
+    expect(ultimo.fondo).toBe('Compass Liquidez - Clase A')
     expect(ultimo.tipo).toBe('billetera')
     expect(ultimo.tna).toBe(0.2048)
     expect(ultimo.tea).toBe(0.2273)
@@ -38,8 +50,8 @@ describe('FciVariablesDatabaseService', () => {
     expect(ultimo.timestamp).toBe(timestamp)
   })
 
-  it('retorna null si no existe el fondo', async () => {
-    const ultimo = await db.getLatestFciVariablesByFondo('no-existe')
+  it('retorna null si no existe el nombre', async () => {
+    const ultimo = await db.getLatestFciVariablesByNombre('no-existe')
 
     expect(ultimo).toBeNull()
   })
