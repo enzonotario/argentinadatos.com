@@ -103,6 +103,7 @@ asincrono funcion generarEndpointsEstaticos(db) {
   para (const nombre de nombres) {
     const historial = esperar db.getHistorialPorNombre(nombre)
     const historialResultado = historial.mapear(row => ({
+      nombre: row.nombre,
       fondo: row.fondo,
       tna: row.tna,
       tipo: row.tipo,
@@ -115,6 +116,7 @@ asincrono funcion generarEndpointsEstaticos(db) {
       si (index === 0) retornar verdadero
       const prev = arr[index - 1]
       retornar (
+        item.nombre !== prev.nombre ||
         item.fondo !== prev.fondo ||
         item.tna !== prev.tna ||
         item.tipo !== prev.tipo ||
