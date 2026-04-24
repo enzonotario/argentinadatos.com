@@ -1,4 +1,5 @@
 importar { logMensaje, logError } desde '@/log.esjs'
+importar { obtenerMarkdownDefuddleDesdeUrl } desde '@/finanzas/extraccion/defuddle.esjs'
 
 const TABSTACK_API_URL = 'https://api.tabstack.ai/v1/extract/markdown'
 const TABSTACK_API_KEY = import.meta.env.VITE_TABSTACK_API_KEY
@@ -175,6 +176,13 @@ asincrono funcion obtenerMarkdownDirecto(log, url) {
   retornar markdown
 }
 
+asincrono funcion obtenerMarkdownDefuddle(log, url) {
+  logMensaje(log, 'Iniciando extracción de markdown con Defuddle (npm)', {
+    url,
+  })
+  retornar esperar obtenerMarkdownDefuddleDesdeUrl(url)
+}
+
 exportar asincrono funcion scrapearConIA(log, configuracion) {
   const { url, prompt, schema, required, markdown, fuenteMarkdown = 'tabstack' } =
     configuracion
@@ -186,7 +194,9 @@ exportar asincrono funcion scrapearConIA(log, configuracion) {
       markdownFinal =
         fuenteMarkdown === 'directo'
           ? esperar obtenerMarkdownDirecto(log, url)
-          : esperar obtenerMarkdownConTabstack(log, url)
+          : fuenteMarkdown === 'defuddle'
+            ? esperar obtenerMarkdownDefuddle(log, url)
+            : esperar obtenerMarkdownConTabstack(log, url)
     }
 
     retornar esperar extraerConOpenAI(log, {

@@ -1,7 +1,6 @@
 importar { format } desde 'date-fns'
 importar { logGrupo, logError, logMensaje } desde '@/log.esjs'
 importar { scrapearConIA } desde '@/finanzas/extraccion/ia.esjs'
-importar { urlDefuddle } desde '@/finanzas/extraccion/defuddle.esjs'
 
 const URL_NARANJA_BLOG_TNA =
   'https://www.naranjax.com/blog/cual-es-la-tna-de-la-cuenta-remunerada-de-naranja-x'
@@ -27,10 +26,10 @@ exportar asincrono funcion extraerNaranjaX() {
 
   intentar {
     const datos = esperar scrapearConIA(log, {
-      url: urlDefuddle(URL_NARANJA_BLOG_TNA),
-      fuenteMarkdown: 'directo',
+      url: URL_NARANJA_BLOG_TNA,
+      fuenteMarkdown: 'defuddle',
       prompt:
-        'El markdown es el artículo del blog de Naranja X (vía Defuddle). Extraé la TNA nominal anual vigente de la cuenta remunerada en pesos, el tope máximo de saldo remunerado si figura (monto en pesos, sin puntos de miles en el número), y un resumen breve de condiciones si aplica. TNA en decimal (ej. 0.19 para 19%). tope null si no se indica límite claro.',
+        'El markdown es el artículo del blog de Naranja X. Extraé la TNA nominal anual vigente de la cuenta remunerada en pesos, el tope máximo de saldo remunerado si figura (monto en pesos, sin puntos de miles en el número), y un resumen breve de condiciones si aplica. TNA en decimal (ej. 0.19 para 19%). tope null si no se indica límite claro.',
       schema: schemaNaranja,
       required: ['tna', 'tope', 'condiciones', 'condicionesCorto'],
     })
