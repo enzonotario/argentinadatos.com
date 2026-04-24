@@ -5,8 +5,6 @@ describe('extraerPlazoFijoPrecancelable', () => {
   it('extrae proveedores con condiciones de plazo fijo precancelable', async () => {
     const proveedores = await extraerPlazoFijoPrecancelable()
 
-    console.log({ proveedores })
-
     expect(proveedores).toBeInstanceOf(Array)
     expect(proveedores.length).toBeGreaterThan(0)
 

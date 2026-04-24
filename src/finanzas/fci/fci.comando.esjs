@@ -8,7 +8,7 @@ importar {
   extraerSerieOtrosIA,
 } desde '@/finanzas/fci/extraerSerieOtros.esjs'
 importar { extraerSerieVariables } desde '@/finanzas/fci/extraerSerieVariables.esjs'
-importar { extraerUalaCuentaRemuneradaDesdeSheets } desde '@/finanzas/extraccion/extraerUalaDesdeSheets.esjs'
+importar { extraerUalaCuentaRemunerada } desde '@/finanzas/extraccion/extraerUala.esjs'
 importar { guardarSerieOtros } desde '@/finanzas/fci/guardado/guardarSerieOtros.esjs'
 importar { FciOtrosDatabaseService } desde '@/finanzas/fci/database/service.esjs'
 importar { logGrupo, logError, logMensaje } desde '@/log.esjs'
@@ -21,15 +21,17 @@ exportar porDefecto asincrono funcion () {
   esperar extraerSerieOtros()
   esperar extraerSerieVariables()
   esperar extraerSerieOtrosIA()
-  esperar extraerUalaDesdeSheets()
+  esperar extraerUala()
 }
 
-asincrono funcion extraerUalaDesdeSheets() {
-  const log = logGrupo({ comando: 'fci', fuente: 'uala.sheets' })
-  const valoresExtraidos = (esperar extraerUalaCuentaRemuneradaDesdeSheets()).filtrar(item => item.fondo)
+asincrono funcion extraerUala() {
+  const log = logGrupo({ comando: 'fci', fuente: 'extraerUala' })
+  const valoresExtraidos = (esperar extraerUalaCuentaRemunerada()).filtrar(
+    item => item.fondo,
+  )
 
   si (valoresExtraidos.longitud === 0) {
-    logMensaje(log, 'No se obtuvieron valores válidos desde Ualá Sheets')
+    logMensaje(log, 'No se obtuvieron valores Ualá')
     retornar
   }
 
@@ -38,20 +40,21 @@ asincrono funcion extraerUalaDesdeSheets() {
   intentar {
     esperar db.initialize()
 
-    const fondosUala = ['UALA', 'UALA PLUS 1', 'UALA PLUS 2']
-
     para (var i = 0; i < valoresExtraidos.longitud; i++) {
       const valorExtraido = valoresExtraidos[i]
       const ultimo = esperar db.getLatestFciOtrosByFondo(valorExtraido.fondo)
 
       si (ultimo) {
-        si (ultimo.tope !== nulo && ultimo.tope !== indefinido) {
-          valorExtraido.tope = ultimo.tope
-        }
-        si (ultimo.condiciones !== nulo && ultimo.condiciones !== indefinido) {
+        si (
+          (!valorExtraido.condiciones || valorExtraido.condiciones === '') &&
+          ultimo.condiciones !== nulo &&
+          ultimo.condiciones !== indefinido
+        ) {
           valorExtraido.condiciones = ultimo.condiciones
         }
         si (
+          (!valorExtraido.condicionesCorto ||
+            valorExtraido.condicionesCorto === '') &&
           ultimo.condicionesCorto !== nulo &&
           ultimo.condicionesCorto !== indefinido
         ) {

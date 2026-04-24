@@ -1,18 +1,22 @@
-importar axios desde 'axios'
 importar { format } desde 'date-fns'
-importar { escribirRuta, leerRuta } desde '@/utils/rutas.esjs'
 importar { logGrupo, logError, logMensaje } desde '@/log.esjs'
+importar { scrapearConIA } desde '@/finanzas/extraccion/ia.esjs'
+importar { urlDefuddle } desde '@/finanzas/extraccion/defuddle.esjs'
 
-funcion extraerContextoAxios(error) {
-  retornar {
-    axiosCode: error?.code,
-    responseStatus: error?.response?.status,
-    responseStatusText: error?.response?.statusText,
-    responseData: error?.response?.data,
-    requestUrl: error?.config?.url,
-    requestMethod: error?.config?.method,
-    requestTimeout: error?.config?.timeout,
-  };
+const URL_NARANJA_BLOG_TNA =
+  'https://www.naranjax.com/blog/cual-es-la-tna-de-la-cuenta-remunerada-de-naranja-x'
+
+const schemaNaranja = {
+  tna: { type: 'number' },
+  tope: {
+    anyOf: [{ type: 'number' }, { type: 'null' }],
+  },
+  condiciones: {
+    anyOf: [{ type: 'string' }, { type: 'null' }],
+  },
+  condicionesCorto: {
+    anyOf: [{ type: 'string', maxLength: 200 }, { type: 'null' }],
+  },
 }
 
 exportar asincrono funcion extraerNaranjaX() {
@@ -22,58 +26,37 @@ exportar asincrono funcion extraerNaranjaX() {
   })
 
   intentar {
-    const solicitarToken = esperar axios.post(
-      import.meta.env.VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_URL,
-      {
-        client_id: import.meta.env
-          .VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_CLIENT_ID,
-        client_secret: import.meta.env
-          .VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_CLIENT_SECRET,
-        audience: import.meta.env
-          .VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_AUDIENCE,
-        grant_type: 'client_credentials',
-        cache: verdadero,
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      },
-    )
+    const datos = esperar scrapearConIA(log, {
+      url: urlDefuddle(URL_NARANJA_BLOG_TNA),
+      fuenteMarkdown: 'directo',
+      prompt:
+        'El markdown es el artículo del blog de Naranja X (vía Defuddle). Extraé la TNA nominal anual vigente de la cuenta remunerada en pesos, el tope máximo de saldo remunerado si figura (monto en pesos, sin puntos de miles en el número), y un resumen breve de condiciones si aplica. TNA en decimal (ej. 0.19 para 19%). tope null si no se indica límite claro.',
+      schema: schemaNaranja,
+      required: ['tna', 'tope', 'condiciones', 'condicionesCorto'],
+    })
 
-    const token = solicitarToken.data.access_token
-
-    si (!token) {
-      logMensaje(log, 'No se obtuvo token de Naranja X')
-      lanzar crear Error('No se obtuvo token de Naranja X')
+    si (!datos || tipoDe datos.tna !== 'number') {
+      logMensaje(log, 'Naranja X: TNA inválida', { datos })
+      lanzar crear Error('Naranja X: falta TNA')
     }
 
-    const rendimientos = esperar axios.get(
-      import.meta.env.VITE_FINANZAS_PLAZOFIJO_NARANJAX_URL,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      },
-    )
-
-    si (!rendimientos?.data) {
-      logMensaje(log, 'Respuesta vacía de Naranja X')
-      lanzar crear Error('Respuesta vacía de Naranja X')
-    }
+    const tna = Numero(datos.tna.fijarDecimales(4))
+    const tea = Numero(((1 + tna / 365) ** 365 - 1).fijarDecimales(4))
 
     retornar {
       fondo: 'NARANJA X',
-      tna: rendimientos.data.tna / 100,
-      tea: rendimientos.data.tea / 100,
-      tope: rendimientos.data.tope,
+      tna,
+      tea,
+      tope: datos.tope === indefinido ? nulo : datos.tope,
+      condiciones: datos.condiciones === indefinido ? nulo : datos.condiciones,
+      condicionesCorto:
+        datos.condicionesCorto === indefinido ? nulo : datos.condicionesCorto,
       fecha: format(crear Fecha(), 'yyyy-MM-dd'),
     };
   } capturar (error) {
     logError(log, error)
     logMensaje(log, 'Error al extraer Naranja X', {
       errorMessage: error.message,
-      ...extraerContextoAxios(error),
     })
     retornar {}
   }
