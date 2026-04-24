@@ -1,6 +1,3 @@
-exportar funcion urlDefuddle(urlAbsoluta) {
-  const sinProtocolo = urlAbsoluta
-    .reemplazar(/^https:\/\//i, '')
-    .reemplazar(/^http:\/\//i, '')
-  retornar `https://defuddle.md/${sinProtocolo}`
+export function urlDefuddle(url) {
+  return `https://defuddle.md/${url}`
 }
