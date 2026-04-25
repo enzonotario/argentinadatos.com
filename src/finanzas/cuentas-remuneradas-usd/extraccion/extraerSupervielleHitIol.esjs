@@ -1,0 +1,57 @@
+importar { scrapearConIA } desde '@/finanzas/extraccion/ia.esjs'
+importar { logMensaje, logError, logGrupo } desde '@/log.esjs'
+
+exportar asincrono funcion extraerSupervielleHitIol() {
+  const log = logGrupo({
+    fuente: 'extraerSupervielleHitIol',
+    tipo: 'cuentaRemuneradaUsd',
+  })
+
+  intentar {
+    const configuracion = {
+      url: 'https://www.supervielle.com.ar/personas/cuentas/cuenta-hit-iol',
+      prompt:
+        'Extrae la tasa nominal anual (TNA) de la caja de ahorro en dólares para clientes con Cuenta Hit IOL (promoción vigente en la página). Ignorá las tasas en pesos. Usá números decimales para la tasa (por ejemplo 0.01 para 1% TNA). Si el monto máximo remunerable en USD es "sin tope" o equivalente, devolvé tope null; si hay un tope numérico en dólares, devolvelo como número.',
+      schema: {
+        tasa: {
+          type: 'number',
+          description:
+            'TNA de la caja de ahorro en dólares (segmento Cuenta Hit IOL) en formato decimal',
+        },
+        tope: {
+          type: 'number',
+          description:
+            'Monto máximo en dólares remunerado; omitir o null si no hay tope',
+        },
+      },
+      required: ['tasa'],
+    }
+
+    logMensaje(
+      log,
+      'Iniciando extracción de cuenta remunerada USD Supervielle Hit IOL',
+    )
+
+    const datos = esperar scrapearConIA(log, configuracion)
+
+    si (!datos || tipoDe datos.tasa !== 'number') {
+      lanzar crear Error('Datos inválidos de Supervielle Hit IOL: falta tasa')
+    }
+
+    retornar [
+      {
+        entidad: 'SUPERVIELLE Hit IOL',
+        tasa: datos.tasa,
+        tope: datos.tope || nulo,
+        condiciones: 'Solo Clientes Cuenta Hit IOL.',
+        condicionesCorto: 'Solo Clientes Cuenta Hit IOL.',
+      },
+    ]
+  } capturar (error) {
+    logError(log, error)
+    logMensaje(log, 'Error al extraer datos de Supervielle Hit IOL', {
+      errorMessage: error.message,
+    })
+    retornar []
+  }
+}
