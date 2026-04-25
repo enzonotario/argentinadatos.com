@@ -48,6 +48,7 @@ export default {
   ChartPresidentes: defineAsyncComponent(() => import('./ChartPresidentes.vue')),
   ChartRems: defineAsyncComponent(() => import('./ChartRems.vue')),
   ChartRemIpc: defineAsyncComponent(() => import('./ChartRemIpc.vue')),
+  ChartRemDashboard: defineAsyncComponent(() => import('./ChartRemDashboard.vue')),
 
   FeriadosSection: defineAsyncComponent(() => import('./FeriadosSection.vue')),
 }

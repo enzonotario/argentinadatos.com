@@ -1,3 +1,3 @@
 ## Ejemplos de uso
 
-<ChartRemIpc fuente="historico" />
+<ChartRemDashboard fuente="historico" />
