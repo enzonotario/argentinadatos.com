@@ -1,13 +1,11 @@
 importar { extraerGalicia } desde './extraerGalicia.esjs'
 importar { extraerSupervielle } desde './extraerSupervielle.esjs'
-importar { extraerSupervielleHitIol } desde './extraerSupervielleHitIol.esjs'
 importar { extraerBna } desde './extraerBna.esjs'
 
 exportar asincrono funcion extraerCuentasRemuneradasUsd() {
   const resultados = esperar Promesa.todos([
     extraerGalicia(),
     extraerSupervielle(),
-    extraerSupervielleHitIol(),
     extraerBna(),
   ])
 

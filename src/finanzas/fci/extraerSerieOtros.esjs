@@ -1,6 +1,7 @@
 importar { format } desde 'date-fns'
 importar { extraerNaranjaX } desde '@/finanzas/fci/extraerNaranjaX.esjs'
 importar { extraerSupervielleCuentaRemunerada } desde '@/finanzas/extraccion/extraerSupervielle.esjs'
+importar { extraerSupervielleHitIolCuentaRemunerada } desde '@/finanzas/extraccion/extraerSupervielleHitIol.esjs'
 importar { extraerBnaCuentaRemunerada } desde '@/finanzas/extraccion/extraerBna.esjs'
 importar { extraerCresiumCuentaRemunerada } desde '@/finanzas/extraccion/extraerCresium.esjs'
 importar { extraerFiwindARS } desde '@/finanzas/extraccion/extraerFiwindARS.esjs'
@@ -52,6 +53,7 @@ exportar asincrono funcion extraerSerieOtros() {
 exportar asincrono funcion extraerSerieOtrosIA() {
   const resultados = [
     esperar extraerSupervielleCuentaRemunerada(),
+    esperar extraerSupervielleHitIolCuentaRemunerada(),
     esperar extraerBnaCuentaRemunerada(),
   ]
 
