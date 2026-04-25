@@ -9,7 +9,7 @@ describe('extraerSupervielleHitIol (Real)', () => {
       const resultado = await extraerSupervielleHitIol()
 
       expect(resultado).toHaveLength(1)
-      expect(resultado[0].entidad).toBe('SUPERVIELLE Hit IOL')
+      expect(resultado[0].entidad).toBe('SUPERVIELLE HIT IOL')
       expect(typeof resultado[0].tasa).toBe('number')
       expect(resultado[0].tasa).toBeGreaterThan(0)
     } catch (error) {

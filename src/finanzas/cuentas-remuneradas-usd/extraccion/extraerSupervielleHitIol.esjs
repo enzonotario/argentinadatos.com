@@ -40,7 +40,7 @@ exportar asincrono funcion extraerSupervielleHitIol() {
 
     retornar [
       {
-        entidad: 'SUPERVIELLE Hit IOL',
+        entidad: 'SUPERVIELLE HIT IOL',
         tasa: datos.tasa,
         tope: datos.tope || nulo,
         condiciones: 'Solo Clientes Cuenta Hit IOL.',
