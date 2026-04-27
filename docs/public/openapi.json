@@ -571,6 +571,37 @@
         ]
       }
     },
+    "/v1/finanzas/cuentas-remuneradas-usd": {
+      "get": {
+        "summary": "Cuentas remuneradas en USD",
+        "tags": [
+          "Finanzas",
+          "Tasas"
+        ],
+        "description": "Tasa de rendimiento anual y tope remunerable en dólares de **cuentas remuneradas en USD** de bancos relevados.",
+        "responses": {
+          "200": {
+            "description": "Lista de entidades con tasa y tope vigentes al último relevamiento",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CuentaRemuneradaUsd"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-finanzas-cuentas-remuneradas-usd",
+        "x-data-source": [
+          "[Banco de la Nación Argentina](https://www.bna.com.ar/home/cuentaremunerada)",
+          "[Banco Galicia](https://www.galicia.ar/personas/beneficios-dolares)",
+          "[Supervielle](https://www.supervielle.com.ar/personas/cuentas/cuenta-remunerada-dolares)"
+        ]
+      }
+    },
     "/v1/finanzas/fci/mercadoDinero/{fecha}": {
       "get": {
         "summary": "Mercado de dinero",
@@ -1761,6 +1792,34 @@
           "Example 1": {
             "entidad": "Banco de la Nación Argentina",
             "tna": 123.45
+          }
+        }
+      },
+      "CuentaRemuneradaUsd": {
+        "title": "CuentaRemuneradaUsd",
+        "type": "object",
+        "properties": {
+          "entidad": {
+            "type": "string",
+            "description": "Identificador de la entidad (p. ej. BNA, GALICIA, SUPERVIELLE)"
+          },
+          "tasa": {
+            "type": "number",
+            "format": "float",
+            "description": "Tasa de rendimiento anual en formato decimal (p. ej. 0.02 = 2 % anual)"
+          },
+          "tope": {
+            "type": "number",
+            "format": "float",
+            "nullable": true,
+            "description": "Monto máximo en USD remunerado a esa tasa, o null si no hay tope o no se informó"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "entidad": "BNA",
+            "tasa": 0.006,
+            "tope": 10000
           }
         }
       },
