@@ -1,5 +1,6 @@
 importar { format, parse } desde 'date-fns'
 importar { logGrupo, logError, logMensaje } desde '@/log.esjs'
+importar { construirRequestConProxy } desde '@/utils/proxy.esjs'
 
 exportar asincrono funcion extraerGlobal66CuentaRemunerada() {
   const log = logGrupo({
@@ -16,13 +17,19 @@ exportar asincrono funcion extraerGlobal66CuentaRemunerada() {
       retornar []
     }
 
-    const respuesta = esperar fetch(apiUrl, {
+    const request = construirRequestConProxy(apiUrl, {
       method: 'GET',
       headers: {
         'x-api-key': apiKey,
         'Content-Type': 'application/json',
       },
     })
+
+    si (request.usaProxy) {
+      logMensaje(log, 'Consultando Global66 via proxy')
+    }
+
+    const respuesta = esperar fetch(request.url, request.opciones)
 
     si (!respuesta.ok) {
       logMensaje(log, 'Respuesta no OK de Global66 API', {

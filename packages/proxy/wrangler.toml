@@ -1,0 +1,11 @@
+name = "proxy"
+main = "src/index.ts"
+compatibility_date = "2026-04-27"
+routes = [
+  { pattern = "proxy.argentinadatos.com", custom_domain = true }
+]
+
+[vars]
+# Token: `wrangler secret put PROXY_TOKEN`
+# PROXY_ALLOWED_HOSTS es opcional y limita destinos a esos hosts, separados por coma.
+PROXY_ALLOWED_HOSTS = ""

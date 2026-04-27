@@ -1,0 +1,16 @@
+{
+  "name": "@argentinadatos/proxy",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260416.0",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.14.4"
+  }
+}

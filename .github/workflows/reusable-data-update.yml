@@ -61,6 +61,8 @@ jobs:
           echo "VITE_TURSO_AUTH_TOKEN=${{ secrets.VITE_TURSO_AUTH_TOKEN }}" >> .env
           echo "VITE_FIRECRAWL_BASE_URL=${{ secrets.VITE_FIRECRAWL_BASE_URL }}" >> .env
           echo "VITE_FIRECRAWL_API_KEY=${{ secrets.VITE_FIRECRAWL_API_KEY }}" >> .env
+          echo "VITE_PROXY_URL=${{ secrets.VITE_PROXY_URL }}" >> .env
+          echo "VITE_PROXY_TOKEN=${{ secrets.VITE_PROXY_TOKEN }}" >> .env
 
       - name: Create .env file (full)
         if: inputs.env_preset == 'full'
@@ -111,6 +113,8 @@ jobs:
           echo "VITE_TABSTACK_API_KEY=${{ secrets.VITE_TABSTACK_API_KEY }}" >> .env
           echo "VITE_FIRECRAWL_BASE_URL=${{ secrets.VITE_FIRECRAWL_BASE_URL }}" >> .env
           echo "VITE_FIRECRAWL_API_KEY=${{ secrets.VITE_FIRECRAWL_API_KEY }}" >> .env
+          echo "VITE_PROXY_URL=${{ secrets.VITE_PROXY_URL }}" >> .env
+          echo "VITE_PROXY_TOKEN=${{ secrets.VITE_PROXY_TOKEN }}" >> .env
 
       - name: Force Firecrawl
         if: inputs.force_firecrawl
