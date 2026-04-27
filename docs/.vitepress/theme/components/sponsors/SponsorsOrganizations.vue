@@ -56,6 +56,23 @@
       </a>
     </div>
 
+    <a
+      href="https://www.firecrawl.dev/"
+      target="_blank" rel="noopener"
+      class="border rounded-lg p-2 flex gap-3 !no-underline mt-4"
+    >
+      <img src="https://argentinadatos.com/assets/sponsors/firecrawl.svg" alt="Firecrawl Logo" class="w-16 h-16 rounded bg-gray-100 dark:bg-gray-800 object-cover" />
+      <div class="flex flex-col flex-grow">
+        <div class="font-medium">
+          Firecrawl
+        </div>
+        <span class="flex-1" />
+        <div class="flex justify-between items-center text-xs text-gray-600 dark:text-gray-400">
+          <span>Scraping</span>
+        </div>
+      </div>
+    </a>
+
     <div class="mt-4 text-xs">
       ¿Querés ver tu logo aquí? Escribime por
       <a href="https://twitter.com/enzonotario_" target="_blank" rel="noopener">X/Twitter</a>

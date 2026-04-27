@@ -8,30 +8,29 @@ const props = defineProps({
   },
 })
 
-const sizePx = computed(() => typeof props.size === 'number' ? `${props.size}px` : props.size)
+const sizePx = computed(() =>
+  typeof props.size === 'number' ? `${props.size}px` : props.size,
+)
 
 function isImageUrl(s) {
-  if (!s || typeof s !== 'string')
-    return false
+  if (!s || typeof s !== 'string') return false
   const lower = s.toLowerCase()
-  if (lower.startsWith('data:image/'))
-    return true
+  if (lower.startsWith('data:image/')) return true
   return /(\.png|\.jpg|\.jpeg|\.gif|\.webp|\.svg)(\?.*)?$/.test(lower)
 }
 
 function parseItem(entry) {
   // Returns normalized object: { type, href, imgSrc, iconClass, label, alt }
-  if (!entry)
-    return null
+  if (!entry) return null
 
   const isStr = typeof entry === 'string'
   const raw = isStr ? entry.trim() : entry
 
-  let type = isStr ? '' : (raw.type || '')
-  let url = isStr ? raw : (raw.url || '')
-  let username = isStr ? '' : (raw.username || '')
-  const name = isStr ? '' : (raw.name || '')
-  let href = isStr ? '' : (raw.href || '')
+  let type = isStr ? '' : raw.type || ''
+  let url = isStr ? raw : raw.url || ''
+  let username = isStr ? '' : raw.username || ''
+  const name = isStr ? '' : raw.name || ''
+  let href = isStr ? '' : raw.href || ''
 
   if (isStr) {
     // Try to infer from string
@@ -39,8 +38,7 @@ function parseItem(entry) {
     if (s.startsWith('@')) {
       type = 'twitter'
       username = s.replace(/^@/, '')
-    }
-    else if (/^https?:\/\//i.test(s)) {
+    } else if (/^https?:\/\//i.test(s)) {
       try {
         const u = new URL(s)
         const host = u.hostname.toLowerCase()
@@ -49,56 +47,46 @@ function parseItem(entry) {
           const seg = u.pathname.split('/').filter(Boolean)
           username = (seg[0] || '').replace(/^@/, '')
           href = `https://github.com/${encodeURIComponent(username)}`
-        }
-        else if (host.includes('twitter.com') || host.includes('x.com')) {
+        } else if (host.includes('twitter.com') || host.includes('x.com')) {
           type = 'twitter'
           const seg = u.pathname.split('/').filter(Boolean)
           username = (seg[0] || '').replace(/^@/, '')
           href = `https://twitter.com/${encodeURIComponent(username)}`
-        }
-        else {
+        } else {
           type = 'logo'
           url = s
           href = s
         }
-      }
-      catch (e) {
+      } catch (e) {
         // If invalid URL string, treat as logo URL
         type = 'logo'
         url = s
         href = s
       }
-    }
-    else {
+    } else {
       // Fallback: treat as github username
       type = 'github'
       username = s
       href = `https://github.com/${encodeURIComponent(username)}`
     }
-  }
-  else {
+  } else {
     // object entry: infer missing type from url/username
     if (!type) {
       if (username && raw.type !== 'logo') {
         // If username provided and not a logo, default to github unless specified
         type = 'github'
-      }
-      else if (url && /^https?:\/\//i.test(url)) {
+      } else if (url && /^https?:\/\//i.test(url)) {
         try {
           const u = new URL(url)
           const host = u.hostname.toLowerCase()
-          if (host.includes('github.com'))
-            type = 'github'
+          if (host.includes('github.com')) type = 'github'
           else if (host.includes('twitter.com') || host.includes('x.com'))
             type = 'twitter'
-          else
-            type = 'logo'
-        }
-        catch {
+          else type = 'logo'
+        } catch {
           type = 'logo'
         }
-      }
-      else {
+      } else {
         type = 'logo'
       }
     }
@@ -107,10 +95,8 @@ function parseItem(entry) {
         href = `https://github.com/${encodeURIComponent(username)}`
       else if (type === 'twitter' && username)
         href = `https://twitter.com/${encodeURIComponent(username)}`
-      else if (url)
-        href = url
-      else
-        href = '#'
+      else if (url) href = url
+      else href = '#'
     }
   }
 
@@ -120,47 +106,45 @@ function parseItem(entry) {
   let alt = ''
 
   if (type === 'github') {
-    const user = username || (() => {
-      if (url) {
-        try {
-          const u = new URL(url)
-          const seg = u.pathname.split('/').filter(Boolean)
-          return (seg[0] || '').replace(/^@/, '')
+    const user =
+      username ||
+      (() => {
+        if (url) {
+          try {
+            const u = new URL(url)
+            const seg = u.pathname.split('/').filter(Boolean)
+            return (seg[0] || '').replace(/^@/, '')
+          } catch {}
         }
-        catch {}
-      }
-      return ''
-    })()
-    if (user)
-      imgSrc = `https://github.com/${encodeURIComponent(user)}.png`
+        return ''
+      })()
+    if (user) imgSrc = `https://github.com/${encodeURIComponent(user)}.png`
     label = name || `@${user}`
     alt = name ? `${name} (GitHub)` : `${user} (GitHub)`
-  }
-  else if (type === 'twitter') {
-    const user = username || (() => {
-      if (url) {
-        try {
-          const u = new URL(url)
-          const seg = u.pathname.split('/').filter(Boolean)
-          return (seg[0] || '').replace(/^@/, '')
+  } else if (type === 'twitter') {
+    const user =
+      username ||
+      (() => {
+        if (url) {
+          try {
+            const u = new URL(url)
+            const seg = u.pathname.split('/').filter(Boolean)
+            return (seg[0] || '').replace(/^@/, '')
+          } catch {}
         }
-        catch {}
-      }
-      return ''
-    })()
+        return ''
+      })()
     iconClass = 'i-mdi-twitter'
     label = name || `@${user}`
     alt = name ? `${name} (Twitter)` : `${user} (Twitter)`
-  }
-  else {
+  } else {
     // logo
-    const explicitLogo = isStr ? '' : (raw.logo || raw.logoUrl || raw.img || raw.image || '')
-    if (explicitLogo && isImageUrl(explicitLogo))
-      imgSrc = explicitLogo
-    else if (isImageUrl(url))
-      imgSrc = url
-    else
-      imgSrc = ''
+    const explicitLogo = isStr
+      ? ''
+      : raw.logo || raw.logoUrl || raw.img || raw.image || ''
+    if (explicitLogo && isImageUrl(explicitLogo)) imgSrc = explicitLogo
+    else if (isImageUrl(url)) imgSrc = url
+    else imgSrc = ''
     label = name || ''
     alt = name || 'Logo'
   }
@@ -168,22 +152,45 @@ function parseItem(entry) {
   return { type, href: href || '#', imgSrc, iconClass, label, alt }
 }
 
-const items = computed(() => ([
-  { type: 'logo', logoUrl: 'https://argentinadatos.com/assets/sponsors/revolt.png', url: 'https://revolt.digital/', name: 'Revolt' },
-  { type: 'logo', logoUrl: 'https://argentinadatos.com/assets/sponsors/theonclub.jpg', url: 'https://www.theonclub.com/', name: 'O(n) Club' },
-  'https://github.com/catdevnull',
-  'https://github.com/Xyborg',
-  { type: 'logo', logoUrl: 'https://argentinadatos.com/assets/sponsors/diploi.png', url: 'https://diploi.com/', name: 'Diploi' },
-  {
-    type: 'logo',
-    logoUrl: 'https://vzlalegal.com/favicon.png',
-    url: 'https://vzlalegal.com/',
-    name: 'VZLA Legal',
-  },
-  { type: 'logo', url: '/docs/sponsors', name: 'Tu Logo' },
-])
-  .map(parseItem)
-  .filter(Boolean))
+const items = computed(() =>
+  [
+    {
+      type: 'logo',
+      logoUrl: 'https://argentinadatos.com/assets/sponsors/revolt.png',
+      url: 'https://revolt.digital/',
+      name: 'Revolt',
+    },
+    {
+      type: 'logo',
+      logoUrl: 'https://argentinadatos.com/assets/sponsors/theonclub.jpg',
+      url: 'https://www.theonclub.com/',
+      name: 'O(n) Club',
+    },
+    'https://github.com/catdevnull',
+    'https://github.com/Xyborg',
+    {
+      type: 'logo',
+      logoUrl: 'https://argentinadatos.com/assets/sponsors/diploi.png',
+      url: 'https://diploi.com/',
+      name: 'Diploi',
+    },
+    {
+      type: 'logo',
+      logoUrl: 'https://vzlalegal.com/favicon.png',
+      url: 'https://vzlalegal.com/',
+      name: 'VZLA Legal',
+    },
+    {
+      type: 'logo',
+      logoUrl: 'https://argentinadatos.com/assets/sponsors/firecrawl.svg',
+      url: 'https://www.firecrawl.dev/',
+      name: 'Firecrawl',
+    },
+    { type: 'logo', url: '/docs/sponsors', name: 'Tu Logo' },
+  ]
+    .map(parseItem)
+    .filter(Boolean),
+)
 </script>
 
 <template>
