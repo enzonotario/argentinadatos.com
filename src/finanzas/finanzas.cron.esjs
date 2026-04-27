@@ -25,6 +25,7 @@ importar { guardarCreditosHipotecariosUva } desde '@/finanzas/creditosHipotecari
 importar { extraerInflacionREM } desde '@/finanzas/inflacionREM/extraccion/extraerInflacionREM.esjs'
 importar { guardarInflacionREM } desde '@/finanzas/inflacionREM/guardado/guardarInflacionREM.esjs'
 importar remComando desde '@/finanzas/rem/rem.comando.esjs'
+importar letrasComando desde '@/finanzas/letras/letras.comando.esjs'
 
 importar { subMonths, addMonths, format, subDays, addDays } desde 'date-fns'
 
@@ -45,6 +46,7 @@ exportar asincrono funcion cronFinanzas() {
   esperar creditosHipotecariosUva()
   esperar inflacionREM()
   esperar rem()
+  esperar letras()
 }
 
 asincrono funcion inflacionMensual() {
@@ -185,5 +187,13 @@ asincrono funcion rem() {
     esperar remComando()
   } capturar (error) {
     consola.error('Error al extraer REM', error)
+  }
+}
+
+asincrono funcion letras() {
+  intentar {
+    esperar letrasComando()
+  } capturar (error) {
+    consola.error('Error al extraer letras', error)
   }
 }
