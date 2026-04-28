@@ -1,0 +1,13 @@
+importar { extraerCuentasRemuneradasUsd } desde '@/finanzas/cuentas-remuneradas-usd/extraccion/extraerCuentasRemuneradasUsd.esjs'
+importar { guardarCuentasRemuneradasUsd } desde '@/finanzas/cuentas-remuneradas-usd/guardado/guardarCuentasRemuneradasUsd.esjs'
+
+exportar asincrono funcion ejecutarCuentasRemuneradasUsd() {
+  intentar {
+    const datos = esperar extraerCuentasRemuneradasUsd()
+    esperar guardarCuentasRemuneradasUsd(datos)
+  } capturar (error) {
+    consola.error('Error al extraer cuentas remuneradas USD', error)
+  }
+}
+
+exportar porDefecto ejecutarCuentasRemuneradasUsd

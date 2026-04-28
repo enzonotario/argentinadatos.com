@@ -9,6 +9,7 @@ importar criptopesos desde '@/finanzas/criptopesos/criptopesos.comando.esjs'
 importar plazoFijoComando desde '@/finanzas/plazoFijo/plazoFijo.comando.esjs'
 importar plazoFijoUvaPagoPeriodicoComando desde '@/finanzas/plazoFijo/plazoFijoUvaPagoPeriodico.comando.esjs'
 importar letrasComando desde '@/finanzas/letras/letras.comando.esjs'
+importar cuentasRemuneradasUsdComando desde '@/finanzas/cuentas-remuneradas-usd/cuentas-remuneradas-usd.comando.esjs'
 importar remComando desde '@/finanzas/rem/rem.comando.esjs'
 importar presidentesComando desde '@/presidentes/presidentes.comando.esjs'
 importar { actualizarOpenApiAño } desde '@/utils/actualizarOpenApiAño.esjs'
@@ -82,6 +83,9 @@ exportar asincrono funcion iniciar(comando) {
       romper
     caso '/v1/finanzas/letras':
       esperar letrasComando()
+      romper
+    caso '/v1/finanzas/cuentas-remuneradas-usd':
+      esperar cuentasRemuneradasUsdComando()
       romper
     caso '/v1/finanzas/rem':
       esperar remComando()
