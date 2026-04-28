@@ -16,8 +16,6 @@ importar fci desde '@/finanzas/fci/fci.comando.esjs'
 importar rendimientos desde '@/finanzas/rendimientos/rendimientos.comando.esjs'
 importar riesgoPais desde '@/finanzas/riesgoPais/riesgoPais.comando.esjs'
 importar { ejecutarCriptopesos } desde '@/finanzas/criptopesos/criptopesos.comando.esjs'
-importar { extraerCuentasRemuneradasUsd } desde '@/finanzas/cuentas-remuneradas-usd/extraccion/extraerCuentasRemuneradasUsd.esjs'
-importar { guardarCuentasRemuneradasUsd } desde '@/finanzas/cuentas-remuneradas-usd/guardado/guardarCuentasRemuneradasUsd.esjs'
 importar { extraerTna } desde '@/finanzas/hipotecariosUva/extraccion/extraerTna.esjs'
 importar { guardarTna } desde '@/finanzas/hipotecariosUva/guardado/guardarTna.esjs'
 importar { extraerCreditosHipotecariosUva } desde '@/finanzas/creditosHipotecariosUva/extraccion/extraerCreditosHipotecariosUva.esjs'
@@ -41,7 +39,6 @@ exportar asincrono funcion cronFinanzas() {
   esperar rendimientos()
   esperar riesgoPais()
   esperar ejecutarCriptopesos()
-  esperar cuentasRemuneradasUsd()
   esperar hipotecariosUva()
   esperar creditosHipotecariosUva()
   esperar inflacionREM()
@@ -159,16 +156,6 @@ asincrono funcion creditosHipotecariosUva() {
     esperar guardarCreditosHipotecariosUva(datos)
   } capturar (error) {
     consola.error('Error al extraer créditos hipotecarios UVA', error)
-  }
-}
-
-asincrono funcion cuentasRemuneradasUsd() {
-  intentar {
-    const datos = esperar extraerCuentasRemuneradasUsd()
-
-    esperar guardarCuentasRemuneradasUsd(datos)
-  } capturar (error) {
-    consola.error('Error al extraer cuentas remuneradas USD', error)
   }
 }
 

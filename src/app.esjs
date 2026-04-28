@@ -16,7 +16,7 @@ importar { actualizarOpenApiAño } desde '@/utils/actualizarOpenApiAño.esjs'
 
 const predefinidos = {
   diario: ['/v1/cotizaciones', '/v1/finanzas'],
-  mensual: ['/v1/feriados'],
+  mensual: ['/v1/feriados', '/v1/finanzas/cuentas-remuneradas-usd'],
   fci: ['/v1/finanzas/fci'],
   riesgoPais: ['/v1/finanzas/riesgo-pais'],
   fciIA: ['/v1/finanzas/fciIA'],
