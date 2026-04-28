@@ -1,4 +1,4 @@
-importar { scrapearConIA } desde '@/finanzas/extraccion/ia.esjs'
+importar { scrapearConFirecrawl } desde '@/finanzas/extraccion/firecrawl.esjs'
 importar { logMensaje, logError, logGrupo } desde '@/log.esjs'
 
 exportar asincrono funcion extraerSupervielle() {
@@ -30,7 +30,7 @@ exportar asincrono funcion extraerSupervielle() {
       'Iniciando extracción de cuenta remunerada USD de Supervielle',
     )
 
-    const datos = esperar scrapearConIA(log, configuracion)
+    const datos = esperar scrapearConFirecrawl(log, configuracion)
 
     si (!datos || tipoDe datos.tasa !== 'number') {
       lanzar crear Error('Datos inválidos de Supervielle: falta tasa')
