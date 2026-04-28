@@ -17,11 +17,6 @@ on:
         required: false
         type: string
         default: 'full'
-      force_firecrawl:
-        description: 'Force Firecrawl execution regardless of day of week'
-        required: false
-        type: boolean
-        default: false
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -115,10 +110,6 @@ jobs:
           echo "VITE_FIRECRAWL_API_KEY=${{ secrets.VITE_FIRECRAWL_API_KEY }}" >> .env
           echo "VITE_PROXY_URL=${{ secrets.VITE_PROXY_URL }}" >> .env
           echo "VITE_PROXY_TOKEN=${{ secrets.VITE_PROXY_TOKEN }}" >> .env
-
-      - name: Force Firecrawl
-        if: inputs.force_firecrawl
-        run: echo "VITE_FORCE_FIRECRAWL=true" >> .env
 
       - name: Install dependencies
         run: pnpm install

@@ -17,5 +17,4 @@ jobs:
       run_command: pnpm run cron diario
       needs_build: true
       env_preset: full
-      force_firecrawl: ${{ github.event_name == 'workflow_dispatch' }}
     secrets: inherit
