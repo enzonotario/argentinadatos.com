@@ -2,9 +2,11 @@ name: Extraer valores de FCI
 
 on:
   schedule:
+    - cron: '30 15 * * *' # 12:30 ART
     - cron: '30 22 * * *' # 19:30 ART
     - cron: '30 23 * * *' # 20:30 ART
     - cron: '30 0 * * *'  # 21:30 ART
+    - cron: '30 14 * * *' # 11:30 ART
   workflow_dispatch:
 
 permissions:
