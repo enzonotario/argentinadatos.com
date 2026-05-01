@@ -16,8 +16,6 @@ importar fci desde '@/finanzas/fci/fci.comando.esjs'
 importar rendimientos desde '@/finanzas/rendimientos/rendimientos.comando.esjs'
 importar riesgoPais desde '@/finanzas/riesgoPais/riesgoPais.comando.esjs'
 importar { ejecutarCriptopesos } desde '@/finanzas/criptopesos/criptopesos.comando.esjs'
-importar { extraerTna } desde '@/finanzas/hipotecariosUva/extraccion/extraerTna.esjs'
-importar { guardarTna } desde '@/finanzas/hipotecariosUva/guardado/guardarTna.esjs'
 importar { extraerCreditosHipotecariosUva } desde '@/finanzas/creditosHipotecariosUva/extraccion/extraerCreditosHipotecariosUva.esjs'
 importar { guardarCreditosHipotecariosUva } desde '@/finanzas/creditosHipotecariosUva/guardado/guardarCreditosHipotecariosUva.esjs'
 importar { extraerInflacionREM } desde '@/finanzas/inflacionREM/extraccion/extraerInflacionREM.esjs'
@@ -39,7 +37,6 @@ exportar asincrono funcion cronFinanzas() {
   esperar rendimientos()
   esperar riesgoPais()
   esperar ejecutarCriptopesos()
-  esperar hipotecariosUva()
   esperar creditosHipotecariosUva()
   esperar inflacionREM()
   esperar rem()
@@ -136,16 +133,6 @@ asincrono funcion indiceUVA() {
     esperar guardarIndiceUVA(indices)
   } capturar (error) {
     consola.error('Error al extraer indice UVA', error)
-  }
-}
-
-asincrono funcion hipotecariosUva() {
-  intentar {
-    const datos = extraerTna()
-
-    esperar guardarTna(datos)
-  } capturar (error) {
-    consola.error('Error al extraer TNA de hipotecarios UVA', error)
   }
 }
 
