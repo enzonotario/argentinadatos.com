@@ -103,31 +103,34 @@ asincrono funcion generarEndpointsEstaticos(db) {
   para (const nombre de nombres) {
     const historial = esperar db.getHistorialPorNombre(nombre)
     const historialResultado = historial.mapear(row => ({
-      nombre: row.nombre,
-      fondo: row.fondo,
-      tna: row.tna,
-      tipo: row.tipo,
-      tea: row.tea,
-      tope: row.tope,
-      fecha: row.fecha,
-      condiciones: row.condiciones,
-      condicionesCorto: row.condicionesCorto,
-    })).filtrar((item, index, arr) => {
-      si (index === 0) retornar verdadero
-      const prev = arr[index - 1]
-      retornar (
-        item.nombre !== prev.nombre ||
-        item.fondo !== prev.fondo ||
-        item.tna !== prev.tna ||
-        item.tipo !== prev.tipo ||
-        item.tea !== prev.tea ||
-        item.tope !== prev.tope ||
-        item.condiciones !== prev.condiciones ||
-        item.condicionesCorto !== prev.condicionesCorto
-      )
-    })
+        nombre: row.nombre,
+        fondo: row.fondo,
+        tna: row.tna,
+        tipo: row.tipo,
+        tea: row.tea,
+        tope: row.tope,
+        fecha: row.fecha,
+        condiciones: row.condiciones,
+        condicionesCorto: row.condicionesCorto,
+      })).filtrar((item, index, arr) => {
+        si (index === 0) retornar verdadero
+        const prev = arr[index - 1]
+        retornar (
+          item.nombre !== prev.nombre ||
+          item.fondo !== prev.fondo ||
+          item.tna !== prev.tna ||
+          item.tipo !== prev.tipo ||
+          item.tea !== prev.tea ||
+          item.tope !== prev.tope ||
+          item.condiciones !== prev.condiciones ||
+          item.condicionesCorto !== prev.condicionesCorto
+        )
+      })
 
     const nombreNormalizado = normalizarNombreFondo(nombre)
-    escribirRuta(`/finanzas/fci/variables/${nombreNormalizado}`, historialResultado)
+    escribirRuta(
+      `/finanzas/fci/variables/${nombreNormalizado}`,
+      historialResultado,
+    )
   }
 }

@@ -1,16 +1,24 @@
 importar { format } desde 'date-fns'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({ fuente: 'extraerDolares', tipo: 'extraccion' })
 
 exportar asincrono funcion extraerDolares() {
-  const respuesta = esperar fetch('https://dolarapi.com/v1/dolares')
+  intentar {
+    const respuesta = esperar fetch('https://dolarapi.com/v1/dolares')
 
-  const dolares = esperar respuesta.json()
+    const dolares = esperar respuesta.json()
 
-  const hoy = crear Fecha()
+    const hoy = crear Fecha()
 
-  retornar dolares.mapear(dolar => ({
-    casa: dolar.casa,
-    compra: dolar.compra,
-    venta: dolar.venta,
-    fecha: format(hoy, 'yyyy-MM-dd'),
-  }));
+    retornar dolares.mapear(dolar => ({
+      casa: dolar.casa,
+      compra: dolar.compra,
+      venta: dolar.venta,
+      fecha: format(hoy, 'yyyy-MM-dd'),
+    }));
+  } capturar (error) {
+    logError(log, error)
+    lanzar error
+  }
 }

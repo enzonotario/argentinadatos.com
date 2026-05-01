@@ -91,12 +91,10 @@ exportar asincrono funcion extraerUalaCuentaRemunerada() {
       lanzar crear Error('Error en la respuesta de IA: fondos inválidos')
     }
 
-    const fondosNormalizados = datos.fondos
-      .mapear(f => ({
+    const fondosNormalizados = datos.fondos.mapear(f => ({
         ...f,
         fondo: normalizarFondoUala(f.fondo),
-      }))
-      .filtrar(f => f.fondo)
+      })).filtrar(f => f.fondo)
 
     retornar [
       ...fondosNormalizados.mapear(f => ({

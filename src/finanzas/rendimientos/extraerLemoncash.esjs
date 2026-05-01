@@ -1,6 +1,9 @@
 importar { load } desde 'cheerio'
 importar { format } desde 'date-fns'
 importar axios desde 'axios'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({ fuente: 'extraerLemoncash', tipo: 'rendimientos' })
 
 exportar asincrono funcion extraerLemoncash() {
   intentar {
@@ -29,7 +32,7 @@ exportar asincrono funcion extraerLemoncash() {
 
     retornar items
   } capturar (error) {
-    consola.error(error)
+    logError(log, error)
     retornar []
   }
 }

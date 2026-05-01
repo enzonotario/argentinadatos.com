@@ -2,44 +2,52 @@ importar { format } desde 'date-fns'
 importar { extraerFiwind } desde '@/finanzas/rendimientos/extraerFiwind.esjs'
 importar { leerRuta } desde '@/utils/rutas.esjs'
 importar { extraerFiwindARSCondiciones } desde './extraerFiwindARSCondiciones.esjs'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({ fuente: 'extraerFiwindARS', tipo: 'extraccion' })
 
 exportar asincrono funcion extraerFiwindARS() {
-  const rendimientos = esperar extraerFiwind()
+  intentar {
+    const rendimientos = esperar extraerFiwind()
 
-  const fiwindARS = rendimientos.buscar(
-    item => item.moneda === 'ARS' && item.apy > 0,
-  )
+    const fiwindARS = rendimientos.buscar(
+      item => item.moneda === 'ARS' && item.apy > 0,
+    )
 
-  si (!fiwindARS) {
-    retornar nulo
-  }
+    si (!fiwindARS) {
+      retornar nulo
+    }
 
-  const condicionesData = esperar extraerFiwindARSCondiciones()
+    const condicionesData = esperar extraerFiwindARSCondiciones()
 
-  var condiciones = nulo
-  var condicionesCorto = nulo
+    var condiciones = nulo
+    var condicionesCorto = nulo
 
-  si (condicionesData) {
-    condiciones = condicionesData.condiciones
-    condicionesCorto = condicionesData.condicionesCorto
-  } sino {
-    const historial = leerRuta('finanzas/fci/otros/fiwind')
-    si (Matriz.esMatriz(historial)) {
-      const ultimaConCondiciones = [...historial].reverso().buscar(e => e.condiciones !== nulo)
-      si (ultimaConCondiciones) {
-        condiciones = ultimaConCondiciones.condiciones
-        condicionesCorto = ultimaConCondiciones.condicionesCorto
+    si (condicionesData) {
+      condiciones = condicionesData.condiciones
+      condicionesCorto = condicionesData.condicionesCorto
+    } sino {
+      const historial = leerRuta('finanzas/fci/otros/fiwind')
+      si (Matriz.esMatriz(historial)) {
+        const ultimaConCondiciones = [...historial].reverso().buscar(e => e.condiciones !== nulo)
+        si (ultimaConCondiciones) {
+          condiciones = ultimaConCondiciones.condiciones
+          condicionesCorto = ultimaConCondiciones.condicionesCorto
+        }
       }
     }
-  }
 
-  retornar {
-    fondo: 'FIWIND',
-    tna: Numero((fiwindARS.bonusValue / 100).fijarDecimales(4)),
-    tea: Numero(((1 + fiwindARS.bonusValue / 100 / 365) ** 365 - 1).fijarDecimales(4)),
-    tope: fiwindARS.bonusThreshold,
-    fecha: format(crear Fecha(), 'yyyy-MM-dd'),
-    condiciones,
-    condicionesCorto,
-  };
+    retornar {
+      fondo: 'FIWIND',
+      tna: Numero((fiwindARS.bonusValue / 100).fijarDecimales(4)),
+      tea: Numero(((1 + fiwindARS.bonusValue / 100 / 365) ** 365 - 1).fijarDecimales(4)),
+      tope: fiwindARS.bonusThreshold,
+      fecha: format(crear Fecha(), 'yyyy-MM-dd'),
+      condiciones,
+      condicionesCorto,
+    };
+  } capturar (error) {
+    logError(log, error)
+    retornar nulo
+  }
 }

@@ -26,7 +26,10 @@ funcion construirPropiedadesParaOpenAI(schema, required) {
   retornar { propiedades, listaRequeridos }
 }
 
-asincrono funcion extraerConOpenAI(log, { markdown, prompt, schema, required, url }) {
+asincrono funcion extraerConOpenAI(
+  log,
+  { markdown, prompt, schema, required, url },
+) {
   const { propiedades, listaRequeridos } = construirPropiedadesParaOpenAI(
     schema,
     required,
@@ -184,8 +187,14 @@ asincrono funcion obtenerMarkdownDefuddle(log, url) {
 }
 
 exportar asincrono funcion scrapearConIA(log, configuracion) {
-  const { url, prompt, schema, required, markdown, fuenteMarkdown = 'tabstack' } =
-    configuracion
+  const {
+    url,
+    prompt,
+    schema,
+    required,
+    markdown,
+    fuenteMarkdown = 'tabstack',
+  } = configuracion
 
   intentar {
     var markdownFinal = markdown

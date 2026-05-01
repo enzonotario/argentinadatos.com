@@ -3,26 +3,23 @@ importar path desde 'node:path'
 importar { pipeline } desde 'node:stream/promises'
 
 exportar funcion normalizarNombre(texto) {
-  retornar texto
-    .toLowerCase()
-    .normalize('NFD')
+  retornar texto.aMinusculas().normalizar('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .replace(/[^a-z0-9]/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '')
+    .replace(/-+/g, '-').reemplazar(/^-|-$/g, '');
 }
 
 exportar asincrono funcion descargarImagen(url, directorio, nombreArchivo) {
   si (!url) retornar nulo
 
-  const rutaDirectorio = path.join('datos', 'static', directorio)
+  const rutaDirectorio = path.juntar('datos', 'static', directorio)
   si (!fs.existsSync(rutaDirectorio)) {
     fs.mkdirSync(rutaDirectorio, { recursive: verdadero })
   }
 
-  const extension = (path.extname(url.dividir('?')[0]) || '.png').toLowerCase()
+  const extension = (path.extname(url.dividir('?')[0]) || '.png').aMinusculas()
   const nombreFinal = `${nombreArchivo}${extension}`
-  const rutaArchivo = path.join(rutaDirectorio, nombreFinal)
+  const rutaArchivo = path.juntar(rutaDirectorio, nombreFinal)
 
   si (fs.existsSync(rutaArchivo)) {
     retornar `https://api.argentinadatos.com/static/${directorio}/${nombreFinal}`

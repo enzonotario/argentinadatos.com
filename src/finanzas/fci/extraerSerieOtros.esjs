@@ -9,77 +9,88 @@ importar { extraerCarrefourCuentaRemunerada } desde '@/finanzas/extraccion/extra
 importar { extraerMontemarPayCuentaRemunerada } desde '@/finanzas/extraccion/extraerMontemarPay.esjs'
 importar { extraerBeloCuentaRemunerada } desde '@/finanzas/extraccion/extraerBelo.esjs'
 importar { guardarSerieOtros } desde '@/finanzas/fci/guardado/guardarSerieOtros.esjs'
-importar { logGrupo, logMensaje } desde '@/log.esjs'
+importar { logGrupo, logMensaje, logError } desde '@/log.esjs'
 
 const log = logGrupo({ comando: 'finanzas.fci.otros' })
 
 exportar asincrono funcion extraerSerieOtros() {
-  const resultados = [
-    esperar extraerNaranjaX(),
-    esperar extraerFiwindARS(),
-    esperar extraerCarrefourCuentaRemunerada(),
-    esperar extraerMontemarPayCuentaRemunerada(),
-    esperar extraerCresiumCuentaRemunerada(),
-    esperar extraerBeloCuentaRemunerada(),
-  ]
+  intentar {
+    const resultados = [
+      esperar extraerNaranjaX(),
+      esperar extraerFiwindARS(),
+      esperar extraerCarrefourCuentaRemunerada(),
+      esperar extraerMontemarPayCuentaRemunerada(),
+      esperar extraerCresiumCuentaRemunerada(),
+      esperar extraerBeloCuentaRemunerada(),
+    ]
 
-  const valoresExtraidos = resultados.filtrar(item => item.fondo)
-  const sinFondo = resultados.longitud - valoresExtraidos.longitud
+    const valoresExtraidos = resultados.filtrar(item => item.fondo)
+    const sinFondo = resultados.longitud - valoresExtraidos.longitud
 
-  si (sinFondo > 0) {
-    logMensaje(log, 'Se descartaron extracciones sin fondo en FCI otros', {
-      totalFuentes: resultados.longitud,
-      descartados: sinFondo,
-    })
+    si (sinFondo > 0) {
+      logMensaje(log, 'Se descartaron extracciones sin fondo en FCI otros', {
+        totalFuentes: resultados.longitud,
+        descartados: sinFondo,
+      })
+    }
+
+    si (valoresExtraidos.longitud === 0) {
+      logMensaje(log, 'No se obtuvieron valores válidos en FCI otros')
+      retornar
+    }
+
+    const fechaActual = format(crear Fecha(), 'yyyy-MM-dd')
+    const valoresConFecha = valoresExtraidos.mapear(item => ({
+      ...item,
+      fecha: item.fecha || fechaActual,
+    }))
+
+    log.info('[/v1/finanzas/fci/otros]: Valores extraídos', valoresConFecha)
+    consola.escribir('[/v1/finanzas/fci/otros]: Valores extraídos', valoresConFecha)
+
+    esperar guardarSerieOtros(valoresConFecha)
+  } capturar (error) {
+    logError(log, error)
   }
-
-  si (valoresExtraidos.longitud === 0) {
-    logMensaje(log, 'No se obtuvieron valores válidos en FCI otros')
-    retornar
-  }
-
-  const fechaActual = format(crear Fecha(), 'yyyy-MM-dd')
-  const valoresConFecha = valoresExtraidos.mapear(item => ({
-    ...item,
-    fecha: item.fecha || fechaActual,
-  }))
-
-  log.info('[/v1/finanzas/fci/otros]: Valores extraídos', valoresConFecha)
-  consola.escribir('[/v1/finanzas/fci/otros]: Valores extraídos', valoresConFecha)
-
-  esperar guardarSerieOtros(valoresConFecha)
 }
 
 exportar asincrono funcion extraerSerieOtrosIA() {
-  const resultados = [
-    esperar extraerSupervielleCuentaRemunerada(),
-    esperar extraerSupervielleHitIolCuentaRemunerada(),
-    esperar extraerBnaCuentaRemunerada(),
-  ]
+  intentar {
+    const resultados = [
+      esperar extraerSupervielleCuentaRemunerada(),
+      esperar extraerSupervielleHitIolCuentaRemunerada(),
+      esperar extraerBnaCuentaRemunerada(),
+    ]
 
-  const valoresExtraidos = resultados.filtrar(item => item.fondo)
-  const sinFondo = resultados.longitud - valoresExtraidos.longitud
+    const valoresExtraidos = resultados.filtrar(item => item.fondo)
+    const sinFondo = resultados.longitud - valoresExtraidos.longitud
 
-  si (sinFondo > 0) {
-    logMensaje(log, 'Se descartaron extracciones sin fondo en FCI otros IA', {
-      totalFuentes: resultados.longitud,
-      descartados: sinFondo,
-    })
+    si (sinFondo > 0) {
+      logMensaje(log, 'Se descartaron extracciones sin fondo en FCI otros IA', {
+        totalFuentes: resultados.longitud,
+        descartados: sinFondo,
+      })
+    }
+
+    si (valoresExtraidos.longitud === 0) {
+      logMensaje(log, 'No se obtuvieron valores válidos en FCI otros IA')
+      retornar
+    }
+
+    const fechaActual = format(crear Fecha(), 'yyyy-MM-dd')
+    const valoresConFecha = valoresExtraidos.mapear(item => ({
+      ...item,
+      fecha: item.fecha || fechaActual,
+    }))
+
+    log.info('[/v1/finanzas/fci/otros]: Valores extraídos IA', valoresConFecha)
+    consola.escribir(
+      '[/v1/finanzas/fci/otros]: Valores extraídos IA',
+      valoresConFecha,
+    )
+
+    esperar guardarSerieOtros(valoresConFecha)
+  } capturar (error) {
+    logError(log, error)
   }
-
-  si (valoresExtraidos.longitud === 0) {
-    logMensaje(log, 'No se obtuvieron valores válidos en FCI otros IA')
-    retornar
-  }
-
-  const fechaActual = format(crear Fecha(), 'yyyy-MM-dd')
-  const valoresConFecha = valoresExtraidos.mapear(item => ({
-    ...item,
-    fecha: item.fecha || fechaActual,
-  }))
-
-  log.info('[/v1/finanzas/fci/otros]: Valores extraídos IA', valoresConFecha)
-  consola.escribir('[/v1/finanzas/fci/otros]: Valores extraídos IA', valoresConFecha)
-
-  esperar guardarSerieOtros(valoresConFecha)
 }

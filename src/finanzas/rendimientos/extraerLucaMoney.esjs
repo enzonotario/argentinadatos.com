@@ -1,5 +1,8 @@
 importar { format } desde 'date-fns'
 importar axios desde 'axios'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({ fuente: 'extraerLucaMoney', tipo: 'rendimientos' })
 
 exportar asincrono funcion extraerLucaMoney() {
   intentar {
@@ -26,7 +29,7 @@ exportar asincrono funcion extraerLucaMoney() {
 
     retornar items
   } capturar (error) {
-    consola.error(error)
+    logError(log, error)
     retornar []
   }
 }

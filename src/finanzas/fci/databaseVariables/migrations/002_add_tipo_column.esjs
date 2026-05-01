@@ -12,7 +12,7 @@ exportar const migration_002_add_tipo_column = {
         ALTER TABLE fci_variables ADD COLUMN tipo TEXT
       `)
     } capturar (error) {
-      si (String(error).includes('duplicate column name: tipo')) {
+      si (Cadena(error).incluye('duplicate column name: tipo')) {
         consola.escribir('La columna tipo ya existe en fci_variables, se omite')
         retornar
       }

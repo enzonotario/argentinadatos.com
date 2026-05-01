@@ -2,6 +2,9 @@ importar { load } desde 'cheerio'
 importar { format } desde 'date-fns'
 importar axios desde 'axios'
 importar { collect } desde 'collect.js'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({ fuente: 'extraerSatoshiTango', tipo: 'rendimientos' })
 
 exportar asincrono funcion extraerSatoshiTango() {
   intentar {
@@ -29,7 +32,7 @@ exportar asincrono funcion extraerSatoshiTango() {
       })
       .toArray();
   } capturar (error) {
-    consola.error(error)
+    logError(log, error)
     retornar []
   }
 }

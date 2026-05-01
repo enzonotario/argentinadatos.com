@@ -13,9 +13,7 @@ exportar asincrono funcion htmlAMarkdownConDefuddle(html, pageUrl) {
   const md = resultado.content
 
   si (!md || md.recortarEspacios() === '') {
-    lanzar crear Error(
-      `Defuddle no devolvió contenido markdown para ${pageUrl}`,
-    )
+    lanzar crear Error(`Defuddle no devolvió contenido markdown para ${pageUrl}`)
   }
 
   retornar md

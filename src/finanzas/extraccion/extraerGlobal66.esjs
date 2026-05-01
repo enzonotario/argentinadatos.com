@@ -48,7 +48,7 @@ exportar asincrono funcion extraerGlobal66CuentaRemunerada() {
       lanzar crear Error('Error en la respuesta de Global66 API')
     }
 
-    const tna = Numero((Numero(datos.tna) / 100).fijarDecimales(4))
+    const tna = Numero((Number(datos.tna) / 100).fijarDecimales(4))
     const tea = Numero(((1 + tna / 365) ** 365 - 1).fijarDecimales(4))
 
     var fecha = format(crear Fecha(), 'yyyy-MM-dd')
@@ -73,7 +73,7 @@ exportar asincrono funcion extraerGlobal66CuentaRemunerada() {
       fecha,
       condiciones: datos.condiciones || nulo,
       condicionesCorto: datos.condicionesCorto || nulo,
-    };
+    }
   } capturar (error) {
     logError(log, error)
     retornar []

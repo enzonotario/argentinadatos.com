@@ -1,5 +1,11 @@
 importar axios desde 'axios'
 importar { load } desde 'cheerio'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({
+  fuente: 'extraerPlazoFijoPrecancelable',
+  tipo: 'extraccion',
+})
 
 exportar asincrono funcion extraerPlazoFijoPrecancelable() {
   intentar {
@@ -11,7 +17,7 @@ exportar asincrono funcion extraerPlazoFijoPrecancelable() {
 
     retornar proveedores
   } capturar (error) {
-    consola.error('Error al extraer plazo fijo precancelable', error)
+    logError(log, error)
     retornar []
   }
 }
@@ -63,7 +69,7 @@ asincrono funcion extraerBna() {
       },
     ]
   } capturar (error) {
-    consola.error('Error al extraer plazo fijo precancelable de BNA', error)
+    logError(log, error)
     retornar []
   }
 }
@@ -99,7 +105,7 @@ asincrono funcion extraerBbva() {
       },
     ]
   } capturar (error) {
-    consola.error('Error al extraer plazo fijo precancelable de BBVA', error)
+    logError(log, error)
     retornar []
   }
 }
@@ -141,10 +147,7 @@ asincrono funcion extraerProvincia() {
       },
     ]
   } capturar (error) {
-    consola.error(
-      'Error al extraer plazo fijo precancelable de Banco Provincia',
-      error,
-    )
+    logError(log, error)
     retornar []
   }
 }

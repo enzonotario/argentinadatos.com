@@ -1,7 +1,11 @@
-exportar funcion construirRequestConProxy(urlDestino, opciones = {}, env = import.meta.env) {
+exportar funcion construirRequestConProxy(
+  urlDestino,
+  opciones = {},
+  env = import.meta.env,
+) {
   const proxyUrl = env.VITE_PROXY_URL
   const proxyToken = env.VITE_PROXY_TOKEN
-  const usaProxy = Boolean(proxyUrl && proxyToken)
+  const usaProxy = Booleano(proxyUrl && proxyToken)
 
   const headersNormalizados = normalizarHeaders(opciones.headers)
 
@@ -32,10 +36,10 @@ exportar funcion construirRequestConProxy(urlDestino, opciones = {}, env = impor
 
 funcion normalizarHeaders(headers = {}) {
   si (headers instanciaDe Headers) {
-    retornar Object.fromEntries(headers.entries())
+    retornar Object.fromEntries(headers.entradas());
   }
 
-  si (Array.isArray(headers)) {
+  si (Matriz.esMatriz(headers)) {
     retornar Object.fromEntries(headers)
   }
 

@@ -2,12 +2,23 @@ importar { load } desde 'cheerio'
 importar { format, parse } desde 'date-fns'
 importar { extraerBcraApi } desde '@/extractores/bcra.extractor.esjs'
 importar { interpretarDecimalConComa } desde '@/utils/numeros.esjs'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({
+  fuente: 'extraerInflacionesInteranual',
+  tipo: 'extraccion',
+})
 
 exportar asincrono funcion extraerInflacionesInteranual(desde, hasta) {
-  const data = esperar extraerBcraApi(28, desde, hasta)
+  intentar {
+    const data = esperar extraerBcraApi(28, desde, hasta)
 
-  retornar data.mapear(item => ({
-    fecha: item.fecha,
-    valor: item.valor,
-  }));
+    retornar data.mapear(item => ({
+      fecha: item.fecha,
+      valor: item.valor,
+    }));
+  } capturar (error) {
+    logError(log, error)
+    lanzar error
+  }
 }

@@ -7,7 +7,10 @@ exportar clase FciVariablesDatabaseService {
       url,
       authToken,
     })
-    ambiente.migrationRunner = crear MigrationRunnerVariables(ambiente.db, 'fci-variables')
+    ambiente.migrationRunner = crear MigrationRunnerVariables(
+      ambiente.db,
+      'fci-variables',
+    )
   }
 
   asincrono initialize() {

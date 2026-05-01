@@ -1,5 +1,8 @@
 importar * como XLSX desde 'xlsx'
 importar { obtenerFilasDeSheets } desde '@/utils/gsheets.esjs'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({ fuente: 'extraerLetras', tipo: 'extraccion' })
 
 const PAGINA_COLOCACIONES =
   'https://www.argentina.gob.ar/economia/finanzas/deudapublica/colocacionesdedeuda'
@@ -121,8 +124,10 @@ exportar asincrono funcion extraerLetrasDesdeRendimientos() {
     si (!respuesta.ok) retornar []
     const data = esperar respuesta.json()
     const letras = data.lecaps && data.lecaps.letras ? data.lecaps.letras : []
-    const especiales = data.lecaps && data.lecaps.especiales ? data.lecaps.especiales : []
-    const boncaps = data.lecaps && data.lecaps.boncaps ? data.lecaps.boncaps : []
+    const especiales =
+      data.lecaps && data.lecaps.especiales ? data.lecaps.especiales : []
+    const boncaps =
+      data.lecaps && data.lecaps.boncaps ? data.lecaps.boncaps : []
     const todos = [...letras, ...especiales, ...boncaps]
 
     retornar todos.filtrar(l => l.activo !== falso).mapear(l => ({
@@ -133,7 +138,7 @@ exportar asincrono funcion extraerLetrasDesdeRendimientos() {
         tem: nulo,
       }));
   } capturar (error) {
-    consola.error('Error al extraer letras desde rendimientos.co', error)
+    logError(log, error)
     retornar []
   }
 }
@@ -237,6 +242,7 @@ exportar asincrono funcion extraerLetrasDesdeSheets() {
     }
     retornar resultado
   } capturar (error) {
+    logError(log, error)
     retornar []
   }
 }
@@ -273,48 +279,53 @@ asincrono funcion extraerLetrasDesdeExcel() {
 }
 
 exportar asincrono funcion extraerLetras() {
-  const [datosExcel, datosSheets, datosRendimientos] = esperar Promesa.todos([
-    extraerLetrasDesdeExcel(),
-    extraerLetrasDesdeSheets(),
-    extraerLetrasDesdeRendimientos(),
-  ])
+  intentar {
+    const [datosExcel, datosSheets, datosRendimientos] = esperar Promesa.todos([
+      extraerLetrasDesdeExcel(),
+      extraerLetrasDesdeSheets(),
+      extraerLetrasDesdeRendimientos(),
+    ])
 
-  const mapa = crear Map()
-  para (const item de datosExcel) {
-    mapa.set(item.ticker, { ...item })
-  }
-
-  para (const item de datosSheets) {
-    const base = mapa.get(item.ticker) || {
-      fechaEmision: nulo,
-      fechaVencimiento: nulo,
-      tem: nulo,
-      vpv: nulo,
+    const mapa = crear Map()
+    para (const item de datosExcel) {
+      mapa.set(item.ticker, { ...item })
     }
-    const merged = { ...base, ticker: item.ticker }
-    si (item.fechaEmision) merged.fechaEmision = item.fechaEmision
-    si (item.fechaVencimiento) merged.fechaVencimiento = item.fechaVencimiento
-    si (item.tem !== nulo && !isNaN(item.tem)) merged.tem = item.tem
-    si (item.vpv !== nulo && !isNaN(item.vpv)) merged.vpv = item.vpv
-    mapa.set(item.ticker, merged)
-  }
 
-  para (const item de datosRendimientos) {
-    const base = mapa.get(item.ticker) || {
-      fechaEmision: nulo,
-      fechaVencimiento: nulo,
-      tem: nulo,
-      vpv: nulo,
+    para (const item de datosSheets) {
+      const base = mapa.get(item.ticker) || {
+        fechaEmision: nulo,
+        fechaVencimiento: nulo,
+        tem: nulo,
+        vpv: nulo,
+      }
+      const merged = { ...base, ticker: item.ticker }
+      si (item.fechaEmision) merged.fechaEmision = item.fechaEmision
+      si (item.fechaVencimiento) merged.fechaVencimiento = item.fechaVencimiento
+      si (item.tem !== nulo && !isNaN(item.tem)) merged.tem = item.tem
+      si (item.vpv !== nulo && !isNaN(item.vpv)) merged.vpv = item.vpv
+      mapa.set(item.ticker, merged)
     }
-    const merged = { ...base, ...item }
-    mapa.set(item.ticker, merged)
-  }
 
-  retornar [...mapa.valores()].filtrar(
-    item =>
-      item.fechaVencimiento &&
-      item.vpv !== nulo &&
-      item.vpv !== indefinido &&
-      !isNaN(item.vpv),
-  );
+    para (const item de datosRendimientos) {
+      const base = mapa.get(item.ticker) || {
+        fechaEmision: nulo,
+        fechaVencimiento: nulo,
+        tem: nulo,
+        vpv: nulo,
+      }
+      const merged = { ...base, ...item }
+      mapa.set(item.ticker, merged)
+    }
+
+    retornar [...mapa.valores()].filtrar(
+      item =>
+        item.fechaVencimiento &&
+        item.vpv !== nulo &&
+        item.vpv !== indefinido &&
+        !isNaN(item.vpv),
+    );
+  } capturar (error) {
+    logError(log, error)
+    lanzar error
+  }
 }

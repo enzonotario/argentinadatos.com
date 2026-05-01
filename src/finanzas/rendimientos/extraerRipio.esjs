@@ -2,6 +2,9 @@ importar { load } desde 'cheerio'
 importar { format } desde 'date-fns'
 importar axios desde 'axios'
 importar { collect } desde 'collect.js'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({ fuente: 'extraerRipio', tipo: 'rendimientos' })
 
 exportar asincrono funcion extraerRipio() {
   intentar {
@@ -42,7 +45,7 @@ exportar asincrono funcion extraerRipio() {
       })
       .toArray();
   } capturar (error) {
-    consola.error(error)
+    logError(log, error)
     retornar []
   }
 }

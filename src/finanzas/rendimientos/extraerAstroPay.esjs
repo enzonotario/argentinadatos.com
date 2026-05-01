@@ -1,5 +1,8 @@
 importar { format } desde 'date-fns'
 importar { obtenerFilasDeSheets } desde '@/utils/gsheets.esjs'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({ fuente: 'extraerAstroPay', tipo: 'rendimientos' })
 
 exportar asincrono funcion extraerAstroPay() {
   intentar {
@@ -53,7 +56,7 @@ exportar asincrono funcion extraerAstroPay() {
 
     retornar items
   } capturar (error) {
-    consola.error('Error en extraerAstroPay:', error.message || error)
+    logError(log, error)
     retornar []
   }
 }

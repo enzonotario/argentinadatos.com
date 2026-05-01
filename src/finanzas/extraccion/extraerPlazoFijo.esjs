@@ -1,5 +1,8 @@
 importar axios desde 'axios'
 importar { extraerUalaPlazoFijo } desde '@/finanzas/extraccion/extraerUala.esjs'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({ fuente: 'extraerPlazoFijo', tipo: 'extraccion' })
 
 const URL_PLAZOS_FIJOS_BCRA =
   'https://www.bcra.gob.ar/api/endpoints/plazos-fijos.php'
@@ -20,7 +23,7 @@ exportar asincrono funcion extraerPlazoFijo() {
 
     retornar tasas
   } capturar (error) {
-    consola.error('Error al extraer tasas de plazo fijo', error)
+    logError(log, error)
   }
 }
 
@@ -30,7 +33,10 @@ exportar asincrono funcion obtenerRespuesta() {
     const datos = respuesta.data
 
     si (!datos || !datos.success) {
-      consola.error('Respuesta inválida de plazos fijos BCRA', { datos })
+      logError(
+        log,
+        crear Error('Respuesta inválida de plazos fijos BCRA (success o datos)'),
+      )
       retornar []
     }
 
@@ -45,7 +51,7 @@ exportar asincrono funcion obtenerRespuesta() {
       enlace: item.web || nulo,
     }));
   } capturar (error) {
-    consola.error('Error al obtener respuesta de tasas de plazo fijo', error)
+    logError(log, error)
     retornar []
   }
 }

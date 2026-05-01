@@ -2,6 +2,9 @@ importar { load } desde 'cheerio'
 importar { format } desde 'date-fns'
 importar axios desde 'axios'
 importar { collect } desde 'collect.js'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({ fuente: 'extraerLetsbit', tipo: 'rendimientos' })
 
 exportar asincrono funcion extraerLetsbit() {
   intentar {
@@ -34,7 +37,7 @@ exportar asincrono funcion extraerLetsbit() {
 
     retornar items
   } capturar (error) {
-    consola.error(error)
+    logError(log, error)
     retornar []
   }
 }

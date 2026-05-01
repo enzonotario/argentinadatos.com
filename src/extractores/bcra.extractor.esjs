@@ -1,6 +1,9 @@
 importar axios desde 'axios'
+importar { logGrupo, logError } desde '@/log.esjs'
 
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0
+
+const log = logGrupo({ fuente: 'bcra.extractor', tipo: 'extraccion' })
 
 exportar asincrono funcion extraerBcra(serie, desde, hasta) {
   const intentos = 3
@@ -11,7 +14,7 @@ exportar asincrono funcion extraerBcra(serie, desde, hasta) {
 
       retornar respuesta
     } capturar (error) {
-      consola.error('Error al extraer datos del BCRA', error)
+      logError(log, error)
     }
 
     esperar crear Promesa(resuelve => {
@@ -65,13 +68,7 @@ exportar asincrono funcion extraerBcraApi(serie, desde, hasta) {
 
       retornar respuestaSerie.detalle
     } capturar (error) {
-      consola.error('BCRA API error', {
-        serie,
-        desde,
-        hasta,
-        url,
-        error: error.message,
-      })
+      logError(log, error)
     }
 
     esperar crear Promesa(resuelve => {

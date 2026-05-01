@@ -1,13 +1,24 @@
 importar { extraerGalicia } desde './extraerGalicia.esjs'
 importar { extraerSupervielle } desde './extraerSupervielle.esjs'
 importar { extraerBna } desde './extraerBna.esjs'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({
+  fuente: 'extraerCuentasRemuneradasUsd',
+  tipo: 'extraccion',
+})
 
 exportar asincrono funcion extraerCuentasRemuneradasUsd() {
-  const resultados = esperar Promesa.todos([
-    extraerGalicia(),
-    extraerSupervielle(),
-    extraerBna(),
-  ])
+  intentar {
+    const resultados = esperar Promesa.todos([
+      extraerGalicia(),
+      extraerSupervielle(),
+      extraerBna(),
+    ])
 
-  retornar resultados.plano();
+    retornar resultados.plano();
+  } capturar (error) {
+    logError(log, error)
+    retornar []
+  }
 }

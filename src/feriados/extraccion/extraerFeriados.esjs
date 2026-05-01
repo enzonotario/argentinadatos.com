@@ -1,4 +1,7 @@
 importar { load } desde 'cheerio'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({ fuente: 'extraerFeriados', tipo: 'extraccion' })
 
 // Mapear los nombres de los meses a números
 const mesesNumeros = {
@@ -17,38 +20,43 @@ const mesesNumeros = {
 }
 
 exportar asincrono funcion extraerFeriados(año) {
-  const url = `https://www.lanacion.com.ar/feriados/${año}`
-  const $ = load(esperar (esperar fetch(url)).text())
+  intentar {
+    const url = `https://www.lanacion.com.ar/feriados/${año}`
+    const $ = load(esperar (esperar fetch(url)).text())
 
-  // Matriz para almacenar los feriados
-  var feriados = []
+    // Matriz para almacenar los feriados
+    var feriados = []
 
-  // Seleccionar los elementos que contienen los feriados
-  $('div.holidays-card-calendar').each((i, div) => {
-    // Extraer el mes del feriado
-    const mes = $(div).buscar('h3.com-text').text()
+    // Seleccionar los elementos que contienen los feriados
+    $('div.holidays-card-calendar').each((i, div) => {
+      // Extraer el mes del feriado
+      const mes = $(div).buscar('h3.com-text').text()
 
-    // Iterar sobre cada feriado en el mes
-    $(div).buscar('ul.holidays-list li')
-      .each((j, li) => {
-        // Extraer el día, tipo y nombre del feriado
-        const dia = $(li).buscar('span').text()
-        const tipo = $(li).buscar('span').attr('class')
-        const nombre = $(li).buscar('h4.com-text').text()
+      // Iterar sobre cada feriado en el mes
+      $(div).buscar('ul.holidays-list li')
+        .each((j, li) => {
+          // Extraer el día, tipo y nombre del feriado
+          const dia = $(li).buscar('span').text()
+          const tipo = $(li).buscar('span').attr('class')
+          const nombre = $(li).buscar('h4.com-text').text()
 
-        // Añadir el feriado a la matriz
-        feriados.agregar({
-          dia: Numero(dia),
-          mes: mesesNumeros[mes],
-          año,
-          fecha: crear Fecha(año, mesesNumeros[mes] - 1, Numero(dia)).aCadenaISO().dividir('T')[0],
-          tipo: interpretarTipo(limpiarTipo(tipo)),
-          nombre,
+          // Añadir el feriado a la matriz
+          feriados.agregar({
+            dia: Numero(dia),
+            mes: mesesNumeros[mes],
+            año,
+            fecha: crear Fecha(año, mesesNumeros[mes] - 1, Numero(dia)).aCadenaISO().dividir('T')[0],
+            tipo: interpretarTipo(limpiarTipo(tipo)),
+            nombre,
+          })
         })
-      })
-  })
+    })
 
-  retornar feriados
+    retornar feriados
+  } capturar (error) {
+    logError(log, error)
+    lanzar error
+  }
 }
 
 funcion limpiarTipo(tipo) {

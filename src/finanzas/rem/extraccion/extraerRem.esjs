@@ -1,4 +1,7 @@
 importar * como XLSX desde 'xlsx'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({ fuente: 'extraerRem', tipo: 'extraccion' })
 
 const BCRA_BASE_URL = 'https://www.bcra.gob.ar'
 const BCRA_ULTIMOS_INFORMES_URL = `${BCRA_BASE_URL}/ultimos-informes/`
@@ -338,7 +341,7 @@ exportar asincrono funcion obtenerPublicacionesRem(urls) {
           parsearInformeDesdeTitulo(titulo) || parsearInformeDesdeUrl(xlsxUrl),
       })
     } capturar (error) {
-      consola.error('Error al obtener publicación REM', url, error)
+      logError(log, error)
     }
   }
 
@@ -448,7 +451,7 @@ exportar asincrono funcion extraerRem(urls) {
       const buffer = esperar respuesta.arrayBuffer()
       resultados.agregar(...parsearWorkbookRem(buffer, publicacion))
     } capturar (error) {
-      consola.error('Error al extraer XLSX REM', publicacion.xlsxUrl, error)
+      logError(log, error)
     }
   }
 

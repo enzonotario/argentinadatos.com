@@ -1,6 +1,9 @@
 importar { load } desde 'cheerio'
 importar { format } desde 'date-fns'
 importar axios desde 'axios'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({ fuente: 'extraerDecrypto', tipo: 'rendimientos' })
 
 exportar asincrono funcion extraerDecrypto() {
   intentar {
@@ -41,7 +44,7 @@ exportar asincrono funcion extraerDecrypto() {
 
     retornar items
   } capturar (error) {
-    consola.error(error)
+    logError(log, error)
     retornar []
   }
 }

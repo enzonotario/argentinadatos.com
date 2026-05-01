@@ -1,4 +1,10 @@
 importar axios desde 'axios'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({
+  fuente: 'extraerCreditosHipotecariosUva',
+  tipo: 'extraccion',
+})
 
 const SHEET_ID_DEFECTO = '1h191b61YRkAI9Xv3_dDuNf7ejst_ziw9kacfJsnvLoM'
 const GID_DEFECTO = '1120229027'
@@ -92,7 +98,7 @@ exportar asincrono funcion extraerCreditosHipotecariosUva() {
 
     retornar datos
   } capturar (error) {
-    consola.error('Error al extraer créditos hipotecarios UVA', error)
+    logError(log, error)
     retornar []
   }
 }

@@ -12,8 +12,10 @@ exportar const migration_003_add_nombre_column = {
         ALTER TABLE fci_variables ADD COLUMN nombre TEXT
       `)
     } capturar (error) {
-      si (String(error).includes('duplicate column name: nombre')) {
-        consola.escribir('La columna nombre ya existe en fci_variables, se omite el ALTER')
+      si (Cadena(error).incluye('duplicate column name: nombre')) {
+        consola.escribir(
+          'La columna nombre ya existe en fci_variables, se omite el ALTER',
+        )
       } sino {
         lanzar error
       }

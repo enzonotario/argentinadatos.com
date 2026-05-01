@@ -1,6 +1,9 @@
 importar axios desde 'axios'
 importar { format, subDays, addDays, isBefore como esAntes, parse } desde 'date-fns'
 importar { escribirRuta, leerRuta } desde '@/utils/rutas.esjs'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({ fuente: 'extraerRiesgoPais', tipo: 'extraccion' })
 
 exportar asincrono funcion extraerRiesgoPais(desde, hasta) {
   intentar {
@@ -23,7 +26,7 @@ exportar asincrono funcion extraerRiesgoPais(desde, hasta) {
 
     retornar items
   } capturar (error) {
-    consola.error(error)
+    logError(log, error)
     retornar []
   }
 }

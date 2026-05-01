@@ -1,12 +1,23 @@
 importar { load } desde 'cheerio'
 importar { format, parse } desde 'date-fns'
 importar { extraerBcraApi } desde '@/extractores/bcra.extractor.esjs'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({
+  fuente: 'extraerTasasDepositos30Dias',
+  tipo: 'extraccion',
+})
 
 exportar asincrono funcion extraerTasasDepositos30Dias(desde, hasta) {
-  const data = esperar extraerBcraApi(12, desde, hasta)
+  intentar {
+    const data = esperar extraerBcraApi(12, desde, hasta)
 
-  retornar data.mapear(item => ({
-    fecha: item.fecha,
-    valor: item.valor,
-  }));
+    retornar data.mapear(item => ({
+      fecha: item.fecha,
+      valor: item.valor,
+    }));
+  } capturar (error) {
+    logError(log, error)
+    lanzar error
+  }
 }

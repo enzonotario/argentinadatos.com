@@ -50,9 +50,10 @@ exportar asincrono funcion extraerSupervielleHitIolCuentaRemunerada() {
       tea,
       tope: datos.tope || nulo,
       fecha: format(crear Fecha(), 'yyyy-MM-dd'),
-      condiciones: 'Cuenta remunerada en pesos para clientes con Cuenta Hit IOL.',
+      condiciones:
+        'Cuenta remunerada en pesos para clientes con Cuenta Hit IOL.',
       condicionesCorto: 'Solo Clientes Cuenta Hit IOL.',
-    }
+    };
   } capturar (error) {
     logError(log, error)
     logMensaje(log, 'Error al extraer datos de Supervielle Hit IOL', {

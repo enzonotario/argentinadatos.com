@@ -1,5 +1,11 @@
 importar axios desde 'axios'
 importar { load } desde 'cheerio'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({
+  fuente: 'extraerPlazoFijoUvaPagoPeriodico',
+  tipo: 'extraccion',
+})
 
 exportar asincrono funcion extraerPlazoFijoUvaPagoPeriodico() {
   intentar {
@@ -7,10 +13,7 @@ exportar asincrono funcion extraerPlazoFijoUvaPagoPeriodico() {
 
     retornar proveedores
   } capturar (error) {
-    consola.error(
-      'Error al extraer tasas de plazo fijo UVA con pago periódico',
-      error,
-    )
+    logError(log, error)
     retornar []
   }
 }
@@ -64,10 +67,7 @@ asincrono funcion extraerBna() {
       },
     ]
   } capturar (error) {
-    consola.error(
-      'Error al extraer tasas de plazo fijo UVA con pago periódico de BNA',
-      error,
-    )
+    logError(log, error)
     retornar []
   }
 }

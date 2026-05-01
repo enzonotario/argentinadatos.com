@@ -1,6 +1,9 @@
 importar axios desde 'axios'
 importar { interpretarDecimalConComa } desde '@/utils/numeros.esjs'
 importar { format } desde 'date-fns'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({ fuente: 'extraerInflacionREM', tipo: 'extraccion' })
 
 exportar asincrono funcion extraerInflacionREM() {
   intentar {
@@ -25,7 +28,7 @@ exportar asincrono funcion extraerInflacionREM() {
       valor: interpretarDecimalConComa(item['Valor']),
     }));
   } capturar (error) {
-    consola.error('Error al extraer inflación REM', error)
+    logError(log, error)
     retornar []
   }
 }
@@ -49,7 +52,7 @@ funcion normalizarMes(mes) {
 
     retornar mes
   } capturar (error) {
-    consola.error('Error al normalizar mes', mes, error)
+    logError(log, error)
     retornar mes
   }
 }
