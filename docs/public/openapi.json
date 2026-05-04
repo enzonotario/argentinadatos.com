@@ -542,6 +542,32 @@
         ]
       }
     },
+    "/v1/finanzas/bonos-cer": {
+      "get": {
+        "summary": "Bonos soberanos ajustados por CER",
+        "tags": [
+          "Finanzas",
+          "Bonos"
+        ],
+        "description": "Bonos soberanos en pesos indexados por CER: cotización y TIR.",
+        "responses": {
+          "200": {
+            "description": "Listado de bonos soberanos CER con marca temporal de actualización",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BonosCer"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-finanzas-bonos-cer",
+        "x-data-source": [
+          "[Docta Capital](https://app.doctacapital.com.ar/dashboard/bonos/general/soberanos/cer)"
+        ]
+      }
+    },
     "/v1/finanzas/creditos/hipotecariosUva": {
       "get": {
         "summary": "Créditos Hipotecarios UVA",
@@ -1403,6 +1429,88 @@
             "fechaVencimiento": "2025-08-31",
             "tem": 3.75,
             "vpv": 118.45612
+          }
+        }
+      },
+      "BonoSoberanoCer": {
+        "title": "BonoSoberanoCer",
+        "type": "object",
+        "required": [
+          "ticker",
+          "precioArs",
+          "tirPorcentaje",
+          "fechaVencimiento"
+        ],
+        "properties": {
+          "ticker": {
+            "type": "string",
+            "description": "Código del bono (ej. TZX26, TX26)"
+          },
+          "precioArs": {
+            "type": "number",
+            "description": "Precio de cotización en pesos argentinos"
+          },
+          "tirPorcentaje": {
+            "type": "number",
+            "description": "Tasa interna de retorno (TIR) en porcentaje"
+          },
+          "fechaVencimiento": {
+            "type": "string",
+            "format": "date",
+            "description": "Fecha de vencimiento (ISO 8601, solo fecha: yyyy-MM-dd)"
+          },
+          "volumen": {
+            "type": "number",
+            "description": "Volumen nominal negociado, si la fuente lo publica"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "ticker": "TZX26",
+            "precioArs": 379.3,
+            "tirPorcentaje": -8.55,
+            "fechaVencimiento": "2026-06-30",
+            "volumen": 7197806107
+          }
+        }
+      },
+      "BonosCer": {
+        "title": "BonosCer",
+        "type": "object",
+        "required": [
+          "fechaActualizacion",
+          "bonos"
+        ],
+        "properties": {
+          "fechaActualizacion": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Instante en que se generó el recurso (UTC, ISO 8601 con sufijo Z)"
+          },
+          "bonos": {
+            "type": "array",
+            "description": "Filas de la grilla soberanos CER",
+            "items": {
+              "$ref": "#/components/schemas/BonoSoberanoCer"
+            }
+          },
+          "errorExtraccion": {
+            "type": "string",
+            "description": "Solo si falló la extracción: mensaje de error"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "fechaActualizacion": "2026-05-04T19:02:59.767Z",
+            "bonos": [
+              {
+                "ticker": "TZX26",
+                "precioArs": 379.3,
+                "tirPorcentaje": -8.55,
+                "fechaVencimiento": "2026-06-30",
+                "volumen": 7197806107
+              }
+            ]
           }
         }
       },

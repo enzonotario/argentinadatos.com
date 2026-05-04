@@ -1,0 +1,179 @@
+importar { scrapearConFirecrawl } desde '@/finanzas/extraccion/firecrawl.esjs'
+importar { logMensaje, logError, logGrupo } desde '@/log.esjs'
+
+exportar const DOCTA_BONOS_CER_URL =
+  'https://app.doctacapital.com.ar/dashboard/bonos/general/soberanos/cer'
+
+funcion parseNumeroFlexible(valor) {
+  si (valor === nulo || valor === indefinido) retornar nulo
+  si (tipoDe valor === 'number' && !isNaN(valor)) retornar valor
+  mut s = String(valor).recortarEspacios().reemplazar(/\$/g, '').reemplazar(/\s/g, '')
+  si (s.incluye(',') && s.incluye('.')) {
+    s = s.reemplazar(/\./g, '').reemplazar(',', '.')
+  } sino si (s.incluye(',')) {
+    s = s.reemplazar(',', '.')
+  }
+  const n = interpretarDecimal(s)
+  retornar !isNaN(n) ? n : nulo
+}
+
+/** DD/MM/YYYY o DD-MM-YYYY → yyyy-MM-dd */
+funcion vencimientoDmaAIso(dma) {
+  si (!dma || tipoDe dma !== 'string') retornar nulo
+  const partes = dma.trim().dividir(/[\/\-]/).mapear(p => p.trim())
+  si (partes.longitud !== 3) retornar nulo
+  const dd = interpretarEntero(partes[0])
+  const mm = interpretarEntero(partes[1])
+  const yyyy = interpretarEntero(partes[2])
+  si (isNaN(dd) || isNaN(mm) || isNaN(yyyy)) retornar nulo
+  retornar `${yyyy}-${String(mm).rellenarAlComienzo(2, '0')}-${String(dd).rellenarAlComienzo(2, '0')}`
+}
+
+/** Instante en UTC (offset 0), ISO 8601 con sufijo `Z` (equiv. `Date#toISOString()`). */
+funcion fechaActualizacionUtc0() {
+  retornar crear Fecha().aCadenaISO()
+}
+
+funcion limpiarTicker(raw) {
+  mut s = String(raw ?? '')
+    .recortarEspacios()
+    .toUpperCase()
+  s = s.reemplazar(/\s+24HS$/i, '').recortarEspacios()
+  retornar s
+}
+
+/** Tabla Soberano CER en Docta (Firecrawl JSON extract → filas del endpoint). */
+asincrono funcion extraerFilasBonosCerDocta(log) {
+  const configuracion = {
+    url: DOCTA_BONOS_CER_URL,
+    prompt: `Estás en la página de cotización de bonos soberanos ajustados por CER de Docta Capital.
+Extraé **todas las filas visibles** de la tabla principal (no solo las primeras): ticker, precio en pesos, TIR en porcentaje, fecha de vencimiento y volumen nominal si figura.
+
+Reglas:
+- ticker: código del bono (ej. TZX26, TX26, X13Y6). Sin texto extra tipo "24hs".
+- precioArs: número decimal del precio cotización (ej. 107.29 para "$107,29").
+- tirPorcentaje: número sin símbolo % (ej. 29.76 para "29,76%").
+- vencimientoDma: fecha exactamente en formato DD/MM/YYYY como en la columna Vto.
+- volumenNominal: si hay columna de volumen en nominales, número sin separadores de miles; si no hay dato, omití la propiedad.`,
+    schema: {
+      bonos: {
+        type: 'array',
+        description: 'Filas de la grilla soberanos CER',
+        items: {
+          type: 'object',
+          properties: {
+            ticker: { type: 'string', description: 'Código del bono' },
+            precioArs: {
+              type: 'number',
+              description: 'Precio cotización en ARS (decimal)',
+            },
+            tirPorcentaje: {
+              type: 'number',
+              description: 'TIR en % sin signo porcentaje',
+            },
+            vencimientoDma: {
+              type: 'string',
+              description: 'Vencimiento DD/MM/AAAA',
+            },
+            volumenNominal: {
+              type: 'number',
+              description: 'Volumen nominal opcional',
+            },
+          },
+          required: [
+            'ticker',
+            'precioArs',
+            'tirPorcentaje',
+            'vencimientoDma',
+          ],
+        },
+      },
+    },
+    required: ['bonos'],
+  }
+
+  logMensaje(log, 'Firecrawl: Docta Capital soberanos CER', {
+    url: DOCTA_BONOS_CER_URL,
+  })
+
+  const datos = esperar scrapearConFirecrawl(log, configuracion)
+
+  si (!datos || !Array.isArray(datos.bonos)) {
+    lanzar crear Error(
+      'Firecrawl Docta: respuesta sin array bonos',
+    )
+  }
+
+  const resultado = []
+
+  para (const raw de datos.bonos) {
+    const symbol = limpiarTicker(raw.ticker)
+    si (!symbol || symbol.longitud < 3) continuar
+
+    const precio =
+      parseNumeroFlexible(raw.precioArs) ?? parseNumeroFlexible(raw.precio)
+    const tir =
+      parseNumeroFlexible(raw.tirPorcentaje) ??
+      parseNumeroFlexible(raw.tirReal)
+    si (precio === nulo || precio <= 0) continuar
+    si (tir === nulo || isNaN(tir)) continuar
+
+    const maturity = vencimientoDmaAIso(raw.vencimientoDma || raw.vto || '')
+    si (!maturity) continuar
+
+    mut vol = raw.volumenNominal
+    si (vol !== nulo && tipoDe vol !== 'number') vol = parseNumeroFlexible(vol)
+
+    resultado.agregar({
+      ticker: symbol,
+      precioArs: Math.round(precio * 100) / 100,
+      tirPorcentaje: Math.round(tir * 100) / 100,
+      fechaVencimiento: maturity,
+      volumen: vol !== nulo && !isNaN(vol) ? vol : indefinido,
+    })
+  }
+
+  si (resultado.longitud === 0) {
+    lanzar crear Error(
+      'Firecrawl Docta: no quedaron filas válidas tras normalizar',
+    )
+  }
+
+  resultado.sort((a, b) =>
+    a.fechaVencimiento.localeCompare(b.fechaVencimiento),
+  )
+
+  logMensaje(log, 'Docta CER: filas normalizadas', {
+    cantidad: resultado.longitud,
+    muestra: resultado
+      .rodaja(0, Math.min(5, resultado.longitud))
+      .mapear(r => r.ticker),
+  })
+
+  retornar resultado
+}
+
+exportar asincrono funcion extraerBonosCer() {
+  const log = logGrupo({
+    fuente: 'extraerBonosCer',
+    tipo: 'bonosCer',
+  })
+
+  intentar {
+    const bonos = esperar extraerFilasBonosCerDocta(log)
+    retornar {
+      fechaActualizacion: fechaActualizacionUtc0(),
+      bonos,
+    }
+  } capturar (error) {
+    logError(log, error)
+    logMensaje(log, 'extraerBonosCer: falló Docta/Firecrawl', {
+      errorMessage: error.message,
+    })
+    retornar {
+      fechaActualizacion: fechaActualizacionUtc0(),
+      bonos: [],
+      errorExtraccion: error.message,
+    }
+  }
+}

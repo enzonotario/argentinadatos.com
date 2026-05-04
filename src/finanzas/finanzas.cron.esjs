@@ -22,6 +22,7 @@ importar { extraerInflacionREM } desde '@/finanzas/inflacionREM/extraccion/extra
 importar { guardarInflacionREM } desde '@/finanzas/inflacionREM/guardado/guardarInflacionREM.esjs'
 importar remComando desde '@/finanzas/rem/rem.comando.esjs'
 importar letrasComando desde '@/finanzas/letras/letras.comando.esjs'
+importar ejecutarBonosCer desde '@/finanzas/bonosCer/bonosCer.comando.esjs'
 
 importar { subMonths, addMonths, format, subDays, addDays } desde 'date-fns'
 
@@ -41,6 +42,7 @@ exportar asincrono funcion cronFinanzas() {
   esperar inflacionREM()
   esperar rem()
   esperar letras()
+  esperar ejecutarBonosCer()
 }
 
 asincrono funcion inflacionMensual() {

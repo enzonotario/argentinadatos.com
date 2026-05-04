@@ -25,6 +25,7 @@ on:
           - pnpm run cron /v1/finanzas/plazo-fijo
           - pnpm run cron /v1/finanzas/cuentas-remuneradas-usd
           - pnpm run cron /v1/finanzas/letras
+          - pnpm run cron /v1/finanzas/bonos-cer
           - pnpm run senado:test:run
           - pnpm run diputados:test:run
       needs_build:

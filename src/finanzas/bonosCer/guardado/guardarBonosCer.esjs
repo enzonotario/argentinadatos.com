@@ -1,0 +1,5 @@
+importar { escribirRuta } desde '@/utils/rutas.esjs'
+
+exportar asincrono funcion guardarBonosCer(payload) {
+  escribirRuta('/finanzas/bonos-cer', payload)
+}
