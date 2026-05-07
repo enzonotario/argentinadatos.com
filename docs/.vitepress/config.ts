@@ -201,6 +201,9 @@ export default defineConfig({
       gtag('js', new Date());
       gtag('config', '${gTag}');`,
     ],
+
+    // Favicon
+    ['link', { rel: 'icon', href: '/docs/favicon.ico' }],
   ],
 
   vite: {
