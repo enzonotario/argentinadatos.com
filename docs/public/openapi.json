@@ -542,32 +542,6 @@
         ]
       }
     },
-    "/v1/finanzas/bonos-cer": {
-      "get": {
-        "summary": "Bonos soberanos ajustados por CER",
-        "tags": [
-          "Finanzas",
-          "Bonos"
-        ],
-        "description": "Bonos soberanos en pesos indexados por CER: cotización y TIR.",
-        "responses": {
-          "200": {
-            "description": "Listado de bonos soberanos CER con marca temporal de actualización",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BonosCer"
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get-finanzas-bonos-cer",
-        "x-data-source": [
-          "[Docta Capital](https://app.doctacapital.com.ar/dashboard/bonos/general/soberanos/cer)"
-        ]
-      }
-    },
     "/v1/finanzas/creditos/hipotecariosUva": {
       "get": {
         "summary": "Créditos Hipotecarios UVA",
