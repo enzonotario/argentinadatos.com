@@ -203,7 +203,7 @@ export default defineConfig({
     ],
 
     // Favicon
-    ['link', { rel: 'icon', href: '/docs/favicon.ico' }],
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
   ],
 
   vite: {
