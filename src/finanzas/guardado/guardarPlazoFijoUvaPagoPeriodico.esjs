@@ -1,5 +1,10 @@
-importar { escribirRuta } desde '@/utils/rutas.esjs'
+importar { escribirRuta, leerRuta } desde '@/utils/rutas.esjs'
 
 exportar asincrono funcion guardarPlazoFijoUvaPagoPeriodico(proveedores) {
+  si (proveedores === nulo || proveedores === indefinido) {
+    consola.error('No se extrajeron proveedores de plazo fijo UVA con pago periódico. Se preserva la extracción anterior.')
+    retornar leerRuta('/finanzas/tasas/plazoFijoUvaPagoPeriodico')
+  }
+
   retornar escribirRuta('/finanzas/tasas/plazoFijoUvaPagoPeriodico', proveedores)
 }
