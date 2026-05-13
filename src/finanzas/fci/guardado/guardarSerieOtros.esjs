@@ -33,7 +33,7 @@ exportar asincrono funcion guardarSerieOtros(
           ultimo.condiciones !== (item.condiciones || nulo) ||
           ultimo.condicionesCorto !== (item.condicionesCorto || nulo))
 
-      si (!ultimo || (valoresCambiaron && item.fecha > ultimo.fecha)) {
+      si (!ultimo || (valoresCambiaron && item.fecha >= ultimo.fecha)) {
         itemsToInsert.agregar(item)
         esperar db.insertFciOtros(
           item.fondo,
