@@ -100,11 +100,14 @@ asincrono funcion ejecutarSerie(serie) {
   }
 
   const itemsConFecha = items.filtrar(item => item.fecha)
-  const porFecha = collect(itemsConFecha).groupBy('fecha').toArray()
 
-  para (const [fecha, itemsFecha] de porFecha) {
-    esperar guardarCafci(serie, itemsFecha, parseISO(fecha))
-  }
+  const guardados = []
+
+  collect(itemsConFecha).groupBy('fecha').mapear((itemsFecha, fecha) => {
+    guardados.agregar(guardarCafci(serie, itemsFecha.toArray(), parseISO(fecha)))
+  })
+
+  esperar Promesa.todos(guardados)
 
   const penultimo = []
   const ultimo = []
