@@ -1,8 +1,8 @@
 importar { collect } desde 'collect.js'
-importar { format, subDays, addDays, isBefore como esAntes } desde 'date-fns'
-importar { guardarCacfi } desde '@/finanzas/fci/guardarCacfi.esjs'
-importar { escribirRuta, leerRuta } desde '@/utils/rutas.esjs'
-importar { extraerCacfi } desde '@/extractores/cacfi.extractor.esjs'
+importar { format, parseISO } desde 'date-fns'
+importar { guardarCafci } desde '@/finanzas/fci/guardarCafci.esjs'
+importar { escribirRuta } desde '@/utils/rutas.esjs'
+importar { extraerCafci } desde '@/extractores/cafci.extractor.esjs'
 importar {
   extraerSerieOtros,
   extraerSerieOtrosIA,
@@ -17,7 +17,7 @@ const TURSO_DATABASE_URL = import.meta.env.VITE_TURSO_DATABASE_URL
 const TURSO_AUTH_TOKEN = import.meta.env.VITE_TURSO_AUTH_TOKEN
 
 exportar porDefecto asincrono funcion () {
-  esperar extraerSeriesDesdeCacfi()
+  esperar extraerSeriesDesdeCafci()
   esperar extraerSerieOtros()
   esperar extraerSerieVariables()
   esperar extraerSerieOtrosIA()
@@ -75,7 +75,7 @@ asincrono funcion extraerUala() {
   }
 }
 
-asincrono funcion extraerSeriesDesdeCacfi() {
+asincrono funcion extraerSeriesDesdeCafci() {
   const series = [
     'mercadoDinero',
     'rentaVariable',
@@ -90,49 +90,36 @@ asincrono funcion extraerSeriesDesdeCacfi() {
 }
 
 asincrono funcion ejecutarSerie(serie) {
-  const log = logGrupo({ comando: 'fci', fuente: 'cacfi', serie })
+  const log = logGrupo({ comando: 'fci', fuente: 'cafci', serie })
 
-  const inicio = subDays(crear Fecha(), 10)
-  const fin = addDays(crear Fecha(), 1)
-  var fecha = inicio
+  const items = esperar extraerCafci(serie)
 
-  var itemsTodos = []
-
-  mientras (esAntes(fecha, fin)) {
-    const items = esperar extraerCacfi(serie, format(fecha, 'yyyy-MM-dd'))
-
-    si (items.longitud === 0) {
-      logError(
-        log,
-        `No se encontraron datos para ${serie} en ${format(fecha, 'yyyy-MM-dd')}`,
-      )
-      fecha = addDays(fecha, 1)
-      continuar
-    }
-
-    guardarCacfi(serie, items, fecha)
-
-    fecha = addDays(fecha, 1)
-
-    itemsTodos = itemsTodos.concatenar(items)
+  si (items.longitud === 0) {
+    logError(log, `No se encontraron datos para ${serie}`)
+    retornar
   }
 
-  // Por cada fondo, buscar los ultimos 2 dias para guardarlos en penultimo y ultimo
+  const porFecha = collect(items).groupBy('fecha').toArray()
+
+  para (const [fecha, itemsFecha] de porFecha) {
+    esperar guardarCafci(serie, itemsFecha, parseISO(fecha))
+  }
+
   const penultimo = []
   const ultimo = []
 
-  collect(itemsTodos)
+  collect(items)
     .groupBy('fondo').mapear((valores, key) => {
-      const items = collect(valores)
+      const itemsFondo = collect(valores)
         .sortByDesc('fecha')
         .unique('fecha')
         .toArray()
 
-      si (items.longitud > 1) {
-        penultimo.agregar(items[1])
-        ultimo.agregar(items[0])
-      } sino si (items.longitud === 1) {
-        ultimo.agregar(items[0])
+      si (itemsFondo.longitud > 1) {
+        penultimo.agregar(itemsFondo[1])
+        ultimo.agregar(itemsFondo[0])
+      } sino si (itemsFondo.longitud === 1) {
+        ultimo.agregar(itemsFondo[0])
       }
     })
 

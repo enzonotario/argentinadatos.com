@@ -1,7 +1,7 @@
 importar { escribirRuta } desde '@/utils/rutas.esjs'
 importar { format } desde 'date-fns'
 
-exportar asincrono funcion guardarCacfi(serie, items, fecha) {
+exportar asincrono funcion guardarCafci(serie, items, fecha) {
   const fechaConBarra = format(fecha, 'yyyy/MM/dd')
 
   retornar escribirRuta(`/finanzas/fci/${serie}/${fechaConBarra}`, items)

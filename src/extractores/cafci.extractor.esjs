@@ -1,0 +1,82 @@
+importar axios desde 'axios'
+importar { format, parse } desde 'date-fns'
+importar { interpretarDecimalConComa } desde '@/utils/numeros.esjs'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const mapeoSerie = {
+  mercadoDinero: '4',
+  rentaVariable: '2',
+  rentaFija: '3',
+  rentaMixta: '5',
+  retornoTotal: '7',
+}
+
+funcion decodificar(texto) {
+  retornar texto
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&nbsp;/g, ' ')
+    .trim()
+}
+
+funcion extraerItemsDeHtml(html) {
+  const items = []
+  var m
+
+  const re = crear RegExp('<tr>\\s*<td>(?!<\\/td>)(.*?)<\\/td>\\s*<td>(.*?)<\\/td>\\s*<td[^>]*>(.*?)<\\/td>\\s*<td[^>]*>(.*?)<\\/td>\\s*<td[^>]*>(.*?)<\\/td>\\s*<td[^>]*>(.*?)<\\/td>\\s*<\\/tr>', 'gi')
+
+  mientras ((m = re.exec(html)) !== nulo) {
+    const fondo = decodificar(m[1])
+    const horizonteTexto = decodificar(m[2])
+
+    si (!fondo || !horizonteTexto) continuar
+
+    const fechaTexto = decodificar(m[3])
+    const vcpTexto = decodificar(m[4])
+    const ccpTexto = decodificar(m[5])
+    const patrimonioTexto = decodificar(m[6])
+
+    items.agregar({
+      fondo,
+      horizonte: interpretarHorizonte(horizonteTexto),
+      fecha: fechaTexto
+        ? format(parse(fechaTexto, 'dd/MM/yy', crear Fecha()), 'yyyy-MM-dd')
+        : nulo,
+      vcp: vcpTexto ? interpretarDecimalConComa(vcpTexto) : nulo,
+      ccp: ccpTexto ? interpretarDecimalConComa(ccpTexto) : nulo,
+      patrimonio: patrimonioTexto ? interpretarDecimalConComa(patrimonioTexto) : nulo,
+    })
+  }
+
+  retornar items
+}
+
+exportar asincrono funcion extraerCafci(serie) {
+  const url = `https://estadisticas.cafci.org.ar/estadisticas/informacion-diaria?tipo_renta=${mapeoSerie[serie]}`
+
+  const log = logGrupo({ fuente: 'cafci', serie, url })
+
+  intentar {
+    const respuesta = esperar axios.get(url)
+
+    const inicioTabla = respuesta.data.indexOf('<div id="scrollTable">')
+    const finTabla = respuesta.data.indexOf('<div id="tool"', inicioTabla)
+    const htmlTabla = respuesta.data.rodaja(inicioTabla, finTabla)
+
+    retornar extraerItemsDeHtml(htmlTabla)
+  } capturar (error) {
+    logError(log, error)
+    retornar []
+  }
+}
+
+funcion interpretarHorizonte(horizonte) {
+  si (horizonte === 'COR') retornar 'corto'
+  si (horizonte === 'MED') retornar 'medio'
+  si (horizonte === 'LAR') retornar 'largo'
+  si (horizonte === 'FLEX') retornar 'flex'
+  retornar horizonte
+}
