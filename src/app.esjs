@@ -10,6 +10,7 @@ importar plazoFijoComando desde '@/finanzas/plazoFijo/plazoFijo.comando.esjs'
 importar plazoFijoUvaPagoPeriodicoComando desde '@/finanzas/plazoFijo/plazoFijoUvaPagoPeriodico.comando.esjs'
 importar letrasComando desde '@/finanzas/letras/letras.comando.esjs'
 importar ejecutarBonosCer desde '@/finanzas/bonosCer/bonosCer.comando.esjs'
+importar ejecutarRemesas desde '@/finanzas/remesas/remesas.comando.esjs'
 importar cuentasRemuneradasUsdComando desde '@/finanzas/cuentas-remuneradas-usd/cuentas-remuneradas-usd.comando.esjs'
 importar remComando desde '@/finanzas/rem/rem.comando.esjs'
 importar presidentesComando desde '@/presidentes/presidentes.comando.esjs'
@@ -17,7 +18,7 @@ importar { actualizarOpenApiAño } desde '@/utils/actualizarOpenApiAño.esjs'
 
 const predefinidos = {
   diario: ['/v1/cotizaciones', '/v1/finanzas'],
-  mensual: ['/v1/feriados', '/v1/finanzas/cuentas-remuneradas-usd'],
+  mensual: ['/v1/feriados', '/v1/finanzas/cuentas-remuneradas-usd', '/v1/finanzas/remesas'],
   fci: ['/v1/finanzas/fci'],
   riesgoPais: ['/v1/finanzas/riesgo-pais'],
   fciIA: ['/v1/finanzas/fciIA'],
@@ -90,6 +91,9 @@ exportar asincrono funcion iniciar(comando) {
       romper
     caso '/v1/finanzas/cuentas-remuneradas-usd':
       esperar cuentasRemuneradasUsdComando()
+      romper
+    caso '/v1/finanzas/remesas':
+      esperar ejecutarRemesas()
       romper
     caso '/v1/finanzas/rem':
       esperar remComando()

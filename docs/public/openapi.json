@@ -542,6 +542,32 @@
         ]
       }
     },
+    "/v1/finanzas/remesas": {
+      "get": {
+        "summary": "Remesas",
+        "tags": [
+          "Finanzas",
+          "Remesas"
+        ],
+        "description": "Devuelve las plataformas para cobrar pagos del exterior, con sus costos y características.",
+        "responses": {
+          "200": {
+            "description": "Devuelve la información de plataformas de remesas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Remesas"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-finanzas-remesas",
+        "x-data-source": [
+          "[Dolarito](https://www.dolarito.ar/remotito)"
+        ]
+      }
+    },
     "/v1/finanzas/creditos/hipotecariosUva": {
       "get": {
         "summary": "Créditos Hipotecarios UVA",
@@ -2510,6 +2536,128 @@
             "vicepresidente": "Victoria Villarruel",
             "imagen": "https://api.argentinadatos.com/static/presidentes/javier-milei.jpg",
             "partidoImagen": "https://api.argentinadatos.com/static/partidos/la-libertad-avanza.png"
+          }
+        }
+      },
+      "Remesa": {
+        "title": "Remesa",
+        "type": "object",
+        "properties": {
+          "compania": {
+            "type": "string",
+            "description": "Nombre de la compañía/plataforma"
+          },
+          "cuentaPropia": {
+            "type": "boolean",
+            "description": "Indica si la plataforma tiene cuenta propia"
+          },
+          "moneda": {
+            "type": "string",
+            "enum": [
+              "FIAT",
+              "CRIPTO"
+            ],
+            "nullable": true,
+            "description": "Tipo de moneda que maneja la plataforma"
+          },
+          "inversiones": {
+            "type": "boolean",
+            "description": "Indica si permite inversiones"
+          },
+          "tarjetaUsa": {
+            "type": "boolean",
+            "description": "Indica si ofrece tarjeta emitida en EEUU"
+          },
+          "costoRecibirPagos": {
+            "type": "string",
+            "nullable": true,
+            "description": "Costo por recibir pagos (ej. '0', '1%', '3 USD')"
+          },
+          "costoMantenimientoTarjeta": {
+            "type": "string",
+            "nullable": true,
+            "description": "Costo de mantenimiento de tarjeta (ej. '0 USD', '29,95 USD')"
+          },
+          "costoTarjeta": {
+            "type": "string",
+            "nullable": true,
+            "description": "Costo de uso de tarjeta (ej. '0%', '1% a 3%')"
+          },
+          "retiroArs": {
+            "type": "string",
+            "nullable": true,
+            "description": "Costo de retiro en ARS (ej. '0', '2%', '1%')"
+          },
+          "calificacionAndroid": {
+            "type": "number",
+            "nullable": true,
+            "description": "Puntaje en Google Play Store"
+          },
+          "calificacionIos": {
+            "type": "number",
+            "nullable": true,
+            "description": "Puntaje en App Store"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "compania": "DolarApp",
+            "cuentaPropia": true,
+            "moneda": "FIAT",
+            "inversiones": true,
+            "tarjetaUsa": false,
+            "costoRecibirPagos": "1%",
+            "costoMantenimientoTarjeta": "0 USD",
+            "costoTarjeta": "0%",
+            "retiroArs": "1%",
+            "calificacionAndroid": 4.5,
+            "calificacionIos": 4.7
+          }
+        }
+      },
+      "Remesas": {
+        "title": "Remesas",
+        "type": "object",
+        "required": [
+          "fechaActualizacion",
+          "remesas"
+        ],
+        "properties": {
+          "fechaActualizacion": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Instante en que se generó el recurso (UTC, ISO 8601)"
+          },
+          "remesas": {
+            "type": "array",
+            "description": "Filas de la tabla comparativa de plataformas de cobro",
+            "items": {
+              "$ref": "#/components/schemas/Remesa"
+            }
+          },
+          "errorExtraccion": {
+            "type": "string",
+            "description": "Solo si falló la extracción: mensaje de error"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "fechaActualizacion": "2026-05-13T18:47:54.000Z",
+            "remesas": [
+              {
+                "compania": "DolarApp",
+                "cuentaPropia": true,
+                "moneda": "FIAT",
+                "inversiones": true,
+                "tarjetaUsa": false,
+                "costoRecibirPagos": "1%",
+                "costoMantenimientoTarjeta": "0 USD",
+                "costoTarjeta": "0%",
+                "retiroArs": "1%",
+                "calificacionAndroid": 4.5,
+                "calificacionIos": 4.7
+              }
+            ]
           }
         }
       },
