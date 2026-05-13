@@ -1,7 +1,7 @@
 ---
 aside: false
 outline: false
-title: Plazo fijo UVA precancelable
+title: Remesas
 ---
 
 <script setup>
@@ -11,7 +11,7 @@ import { OAMarkdown } from 'vitepress-openapi/client'
 const route = useRoute()
 </script>
 
-<OAOperation operation-id="get-finanzas-tasas-plazo-fijo-precancelable">
+<OAOperation operation-id="get-finanzas-remesas">
 
 <template #description="description">
 
@@ -23,7 +23,7 @@ const route = useRoute()
 
 <template #footer="footer">
 
-<!--@include: ./parts/get-finanzas-tasas-plazo-fijo-precancelable-footer.md -->
+<!--@include: ./parts/get-finanzas-remesas-footer.md -->
 
 </template>
 

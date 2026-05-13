@@ -21,4 +21,10 @@ const route = useRoute()
 
 </template>
 
+<template #footer="footer">
+
+<!--@include: ./parts/get-finanzas-fci-variables-fecha-footer.md -->
+
+</template>
+
 </OAOperation>
