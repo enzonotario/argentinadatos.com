@@ -99,7 +99,8 @@ asincrono funcion ejecutarSerie(serie) {
     retornar
   }
 
-  const porFecha = collect(items).groupBy('fecha').toArray()
+  const itemsConFecha = items.filtrar(item => item.fecha)
+  const porFecha = collect(itemsConFecha).groupBy('fecha').toArray()
 
   para (const [fecha, itemsFecha] de porFecha) {
     esperar guardarCafci(serie, itemsFecha, parseISO(fecha))
