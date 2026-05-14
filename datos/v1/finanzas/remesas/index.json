@@ -1,5 +1,5 @@
 {
-  "fechaActualizacion": "2026-05-13T22:24:57.502Z",
+  "fechaActualizacion": "2026-05-14T21:15:29.459Z",
   "remesas": [
     {
       "compania": "wallbit",
@@ -11,6 +11,7 @@
       "costoMantenimientoTarjeta": "0 USD",
       "costoTarjeta": "0%",
       "retiroArs": "0",
+      "detalles": null,
       "calificacionAndroid": 4.75,
       "calificacionIos": 4.75
     },
@@ -24,6 +25,7 @@
       "costoMantenimientoTarjeta": "0 USD",
       "costoTarjeta": "0%",
       "retiroArs": "0",
+      "detalles": null,
       "calificacionAndroid": 4.55,
       "calificacionIos": 4.55
     },
@@ -37,6 +39,10 @@
       "costoMantenimientoTarjeta": "0 USD",
       "costoTarjeta": "0%",
       "retiroArs": "0",
+      "detalles": {
+        "inversiones": "El balance que se tiene en AstroPay se invierte para generar rendimiento en dólares y en pesos.",
+        "tarjetaUsa": "La AstroCard Global se emite en el extranjero y tiene beneficios al usarla fuera de Argentina."
+      },
       "calificacionAndroid": 4.8,
       "calificacionIos": 4.8
     },
@@ -50,6 +56,10 @@
       "costoMantenimientoTarjeta": "0 USD",
       "costoTarjeta": "0%",
       "retiroArs": "5 USD",
+      "detalles": {
+        "costoRecibirPagos": "Recibir ACH no tiene costo, recibir wire doméstica 5 USD y swift 20 USD",
+        "retiroArs": "Los retiros tienen un costo fijo de 5 USD."
+      },
       "calificacionAndroid": 4.75,
       "calificacionIos": 4.75
     },
@@ -63,6 +73,11 @@
       "costoMantenimientoTarjeta": "0 USD",
       "costoTarjeta": "1%",
       "retiroArs": "0",
+      "detalles": {
+        "costoRecibirPagos": "Para ACH es 0, para wire doméstica es 25 USD y swift 35 USD",
+        "costoMantenimientoTarjeta": "Debe abonarse una única vez 5 USD de emisión de tarjeta.",
+        "retiroArs": "Para ARS y crypto 0%. Para USD 3%, salvo que sean provenientes de Deel o Paypal que aplica 1%."
+      },
       "calificacionAndroid": 4.2,
       "calificacionIos": 4.2
     },
@@ -76,6 +91,9 @@
       "costoMantenimientoTarjeta": "29,95 USD",
       "costoTarjeta": "1% a 3%",
       "retiroArs": "2%",
+      "detalles": {
+        "costoTarjeta": "Dependiendo si hay FX."
+      },
       "calificacionAndroid": 4.4,
       "calificacionIos": 4.4
     },
@@ -89,6 +107,7 @@
       "costoMantenimientoTarjeta": "No tiene tarjeta emitida en EEUU.",
       "costoTarjeta": "No tiene tarjeta emitida en EEUU.",
       "retiroArs": "0",
+      "detalles": null,
       "calificacionAndroid": 4.7,
       "calificacionIos": 4.7
     },
@@ -102,6 +121,9 @@
       "costoMantenimientoTarjeta": "No tiene tarjeta emitida en EEUU.",
       "costoTarjeta": "No tiene tarjeta emitida en EEUU.",
       "retiroArs": "0",
+      "detalles": {
+        "tarjetaUsa": "Tienen la Lemon Card, que es una tarjeta VISA internacional con la que se pueden usar los USDC que se acreditan al hacer un depósito de USD."
+      },
       "calificacionAndroid": 4.45,
       "calificacionIos": 4.45
     },
@@ -115,6 +137,10 @@
       "costoMantenimientoTarjeta": "No tiene tarjeta emitida en EEUU.",
       "costoTarjeta": "No tiene tarjeta emitida en EEUU.",
       "retiroArs": "1%",
+      "detalles": {
+        "cuentaPropia": "Wise ya no ofrece este servicio a residentes de Argentina.",
+        "costoRecibirPagos": "Recibir vía wire doméstica o swift es 6,11 USD, si es por ACH es 0"
+      },
       "calificacionAndroid": 4.8,
       "calificacionIos": 4.8
     }
