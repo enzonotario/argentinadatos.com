@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="pyr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ED2F4A"/>
+      <stop offset="0.25" stop-color="#F68C1F"/>
+      <stop offset="0.5" stop-color="#FFD500"/>
+      <stop offset="0.75" stop-color="#3DB54A"/>
+      <stop offset="1" stop-color="#2B9FE0"/>
+    </linearGradient>
+    <linearGradient id="pyr2" x1="1" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#2B9FE0"/>
+      <stop offset="0.5" stop-color="#8E44AD"/>
+      <stop offset="1" stop-color="#ED2F4A"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="10" fill="#EEEEF6"/>
+  <circle cx="24" cy="22" r="11" fill="none" stroke="url(#pyr)" stroke-width="4"/>
+  <path d="M13 22a11 11 0 0 0 22 0" fill="none" stroke="url(#pyr2)" stroke-width="4" transform="rotate(180 24 22)"/>
+  <text x="24" y="44" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="7" font-weight="800" fill="#111">Payoneer</text>
+</svg>
