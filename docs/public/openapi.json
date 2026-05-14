@@ -946,7 +946,7 @@
           "Finanzas",
           "Rendimientos"
         ],
-        "description": "Rendimientos de distintas monedas por entidad.\n\nLas entidades disponibles son:\n\n- [Nexo](https://nexo.com/?ref=argentinadatos.com)\n\n- [Fiwind](https://www.fiwind.io/?ref=argentinadatos.com)\n\n- [Letsbit](https://letsbit.io/?ref=argentinadatos.com)\n\n- [Belo](https://www.belo.app/?ref=argentinadatos.com)\n\n- [Lemon Cash](https://www.lemon.me/?ref=argentinadatos.com)\n\n- [Ripio](https://www.ripio.com/ar/?ref=argentinadatos.com)\n\n- [Satoshi Tango](https://www.satoshitango.com/?ref=argentinadatos.com)\n\n- [Luca Money](https://lucamoney.com/?ref=argentinadatos.com)\n\n- [Decrypto](https://www.decrypto.la//?ref=argentinadatos.com)",
+        "description": "Rendimientos de distintas monedas por entidad.\n\nLas entidades disponibles son:\n\n- [Nexo](https://nexo.com/?ref=argentinadatos.com)\n\n- [Fiwind](https://www.fiwind.io/?ref=argentinadatos.com)\n\n- [Letsbit](https://letsbit.io/?ref=argentinadatos.com)\n\n- [Belo](https://www.belo.app/?ref=argentinadatos.com)\n\n- [Lemon Cash](https://www.lemon.me/?ref=argentinadatos.com)\n\n- [Ripio](https://www.ripio.com/ar/?ref=argentinadatos.com)\n\n- [Satoshi Tango](https://www.satoshitango.com/?ref=argentinadatos.com)\n\n- [Luca Money](https://lucamoney.com/?ref=argentinadatos.com)\n\n- [Decrypto](https://www.decrypto.la//?ref=argentinadatos.com)\n\n- [Lune.fi](https://lune.fi/investments)",
         "responses": {
           "200": {
             "description": "Devuelve una lista de rendimientos",
@@ -975,7 +975,8 @@
           "[Luca Money](https://lucamoney.com/)",
           "[Decrypto](https://www.decrypto.la/)",
           "[Vesseo](https://www.vesseofinance.com/)",
-          "[AstroPay](https://www.astropay.com/ar/)"
+          "[AstroPay](https://www.astropay.com/ar/)",
+          "[Lune.fi](https://lune.fi/investments)"
         ]
       }
     },
@@ -986,7 +987,7 @@
           "Finanzas",
           "Rendimientos"
         ],
-        "description": "Rendimientos de distintas monedas por entidad.\n\nLas entidades disponibles son:\n\n- [Nexo](https://nexo.com/?ref=argentinadatos.com)\n\n- [Fiwind](https://www.fiwind.io/?ref=argentinadatos.com)\n\n- [Letsbit](https://letsbit.io/?ref=argentinadatos.com)\n\n- [Belo](https://www.belo.app/?ref=argentinadatos.com)\n\n- [Lemon Cash](https://www.lemon.me/?ref=argentinadatos.com)\n\n- [Ripio](https://www.ripio.com/ar/?ref=argentinadatos.com)\n\n- [Satoshi Tango](https://www.satoshitango.com/?ref=argentinadatos.com)\n\n- [Luca Money](https://lucamoney.com/?ref=argentinadatos.com)\n\n- [Decrypto](https://www.decrypto.la//?ref=argentinadatos.com)",
+        "description": "Rendimientos de distintas monedas por entidad.\n\nLas entidades disponibles son:\n\n- [Nexo](https://nexo.com/?ref=argentinadatos.com)\n\n- [Fiwind](https://www.fiwind.io/?ref=argentinadatos.com)\n\n- [Letsbit](https://letsbit.io/?ref=argentinadatos.com)\n\n- [Belo](https://www.belo.app/?ref=argentinadatos.com)\n\n- [Lemon Cash](https://www.lemon.me/?ref=argentinadatos.com)\n\n- [Ripio](https://www.ripio.com/ar/?ref=argentinadatos.com)\n\n- [Satoshi Tango](https://www.satoshitango.com/?ref=argentinadatos.com)\n\n- [Luca Money](https://lucamoney.com/?ref=argentinadatos.com)\n\n- [Decrypto](https://www.decrypto.la//?ref=argentinadatos.com)\n\n- [Lune.fi](https://lune.fi/investments)",
         "parameters": [
           {
             "name": "entidad",
@@ -1004,7 +1005,10 @@
                 "ripio",
                 "satoshitango",
                 "lucamoney",
-                "decrypto"
+                "decrypto",
+                "vesseo",
+                "astropay",
+                "lunefi"
               ]
             },
             "example": "nexo"
@@ -1037,7 +1041,8 @@
           "[Luca Money](https://lucamoney.com/)",
           "[Decrypto](https://www.decrypto.la/)",
           "[Vesseo](https://www.vesseofinance.com/)",
-          "[AstroPay](https://www.astropay.com/ar/)"
+          "[AstroPay](https://www.astropay.com/ar/)",
+          "[Lune.fi](https://lune.fi/investments)"
         ]
       }
     },

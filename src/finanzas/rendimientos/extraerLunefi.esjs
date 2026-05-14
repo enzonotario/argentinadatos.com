@@ -1,0 +1,39 @@
+importar { format } desde 'date-fns'
+importar axios desde 'axios'
+importar { logGrupo, logError } desde '@/log.esjs'
+
+const log = logGrupo({ fuente: 'extraerLunefi', tipo: 'rendimientos' })
+
+exportar asincrono funcion extraerLunefi() {
+  intentar {
+    const respuesta = esperar axios.get(
+      import.meta.env.VITE_FINANZAS_RENDIMIENTOS_LUNEFI_URL,
+    )
+
+    si (!respuesta.data || !respuesta.data.longitud || !respuesta.data[0].rendimientos.longitud) {
+      retornar []
+    }
+
+    const items = []
+
+    const fecha = format(crear Fecha(), 'yyyy-MM-dd')
+
+    para (const item de respuesta.data[0].rendimientos) {
+      si (item.dias !== 1) continuar
+
+      const moneda = item.moneda
+      const apy = Numero((item.apy * 100).fijarDecimales(2))
+
+      items.agregar({
+        moneda,
+        apy,
+        fecha,
+      })
+    }
+
+    retornar items
+  } capturar (error) {
+    logError(log, error)
+    retornar []
+  }
+}

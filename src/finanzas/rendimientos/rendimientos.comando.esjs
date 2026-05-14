@@ -12,6 +12,7 @@ importar { extraerLucaMoney } desde '@/finanzas/rendimientos/extraerLucaMoney.es
 importar { extraerDecrypto } desde '@/finanzas/rendimientos/extraerDecrypto.esjs'
 importar { extraerVesseo } desde '@/finanzas/rendimientos/extraerVesseo.esjs'
 importar { extraerAstroPay } desde '@/finanzas/rendimientos/extraerAstroPay.esjs'
+importar { extraerLunefi } desde '@/finanzas/rendimientos/extraerLunefi.esjs'
 
 exportar porDefecto asincrono funcion () {
   const entidades = {
@@ -26,6 +27,7 @@ exportar porDefecto asincrono funcion () {
     decrypto: esperar extraerDecrypto(),
     vesseo: esperar extraerVesseo(),
     astropay: esperar extraerAstroPay(),
+    lunefi: esperar extraerLunefi(),
   }
 
   para (const [entidad, rendimientos] de Object.entradas(entidades)) {
