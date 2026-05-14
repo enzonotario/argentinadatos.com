@@ -11,7 +11,6 @@ importar plazoFijoUvaPagoPeriodicoComando desde '@/finanzas/plazoFijo/plazoFijoU
 importar letrasComando desde '@/finanzas/letras/letras.comando.esjs'
 importar ejecutarBonosCer desde '@/finanzas/bonosCer/bonosCer.comando.esjs'
 importar ejecutarRemesas desde '@/finanzas/remesas/remesas.comando.esjs'
-importar ejecutarDetallesFondos desde '@/finanzas/fci/detalles/detallesFondos.comando.esjs'
 importar cuentasRemuneradasUsdComando desde '@/finanzas/cuentas-remuneradas-usd/cuentas-remuneradas-usd.comando.esjs'
 importar remComando desde '@/finanzas/rem/rem.comando.esjs'
 importar presidentesComando desde '@/presidentes/presidentes.comando.esjs'
@@ -23,7 +22,6 @@ const predefinidos = {
   fci: ['/v1/finanzas/fci'],
   riesgoPais: ['/v1/finanzas/riesgo-pais'],
   fciIA: ['/v1/finanzas/fciIA'],
-  fciDetalles: ['/v1/finanzas/fci/fondos'],
   rendimientos: ['/v1/finanzas/rendimientos'],
   criptopesos: ['/v1/finanzas/criptopesos'],
   rem: ['/v1/finanzas/rem'],
@@ -46,7 +44,6 @@ exportar asincrono funcion iniciar(comando) {
     caso 'mensual':
     caso 'fci':
     caso 'fciIA':
-    caso 'fciDetalles':
     caso 'riesgoPais':
     caso 'rendimientos':
     caso 'criptopesos':
@@ -70,9 +67,6 @@ exportar asincrono funcion iniciar(comando) {
       romper
     caso '/v1/finanzas/fciIA':
       esperar fciIA()
-      romper
-    caso '/v1/finanzas/fci/fondos':
-      esperar ejecutarDetallesFondos()
       romper
     caso '/v1/finanzas/riesgo-pais':
       esperar riesgoPais()
