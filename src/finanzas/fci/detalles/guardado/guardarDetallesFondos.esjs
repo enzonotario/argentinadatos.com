@@ -1,0 +1,33 @@
+importar { escribirRuta } desde '@/utils/rutas.esjs'
+importar { logMensaje, logGrupo, logError } desde '@/log.esjs'
+
+exportar asincrono funcion guardarDetallesFondos(datos) {
+  const log = logGrupo({
+    fuente: 'guardarDetallesFondos',
+    tipo: 'fciDetalles',
+  })
+
+  intentar {
+    escribirRuta('/finanzas/fci/fondos', datos)
+
+    const fondos = datos.fondos || []
+    si (fondos.longitud > 0) {
+      fondos.paraCada(fondo => {
+        const nombreNormalizado = fondo.nombre
+          ? fondo.nombre.aMinusculas().reemplazar(/\s+/g, '-').reemplazar(/[^a-z0-9-]/g, '')
+          : `${fondo.fondoId}-${fondo.claseId}`
+
+        escribirRuta(`/finanzas/fci/fondos/${nombreNormalizado}`, fondo)
+      })
+    }
+
+    logMensaje(log, 'Detalles guardados', {
+      cantidad: fondos.longitud,
+    })
+
+    retornar verdadero
+  } capturar (error) {
+    logError(log, error)
+    retornar falso
+  }
+}

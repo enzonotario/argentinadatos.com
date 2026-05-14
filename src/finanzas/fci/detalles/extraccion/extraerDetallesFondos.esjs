@@ -1,0 +1,355 @@
+importar axios desde 'axios'
+importar { load } desde 'cheerio'
+importar { interpretarDecimalConComa } desde '@/utils/numeros.esjs'
+importar { logGrupo, logError, logMensaje } desde '@/log.esjs'
+
+const CAFCI_BASE = 'https://estadisticas.cafci.org.ar'
+const BUSQUEDA_URL = `${CAFCI_BASE}/resultado-busqueda`
+
+funcion parsearNumero(texto) {
+  si (!texto) retornar nulo
+
+  const limpio = texto
+    .trim()
+    .replace(/%/g, '')
+    .replace(/\s/g, '')
+    .replace(/\$/g, '')
+    .replace(/\./g, '')
+    .replace(/,/g, '.')
+
+  const valor = Numero(limpio)
+
+  retornar isNaN(valor) ? nulo : valor
+}
+
+funcion parsearNumeroMixto(texto) {
+  si (!texto) retornar nulo
+
+  const limpio = texto
+    .trim()
+    .replace(/%/g, '')
+    .replace(/\s/g, '')
+    .replace(/\$/g, '')
+
+  si (limpio.includes(',')) {
+    const valor = interpretarDecimalConComa(limpio)
+    retornar tipoDe valor === 'number' && !isNaN(valor) ? valor : nulo
+  }
+
+  const valor = Numero(limpio)
+  retornar isNaN(valor) ? nulo : valor
+}
+
+funcion parsearFecha(texto) {
+  si (!texto) retornar nulo
+
+  const m = texto.match(/(\d{2})\/(\d{2})\/(\d{4})/)
+  si (!m) retornar nulo
+
+  retornar `${m[3]}-${m[2]}-${m[1]}`
+}
+
+exportar asincrono funcion extraerListaFondos() {
+  const log = logGrupo({ fuente: 'extraerListaFondos', tipo: 'fciDetalles' })
+
+  intentar {
+    const respuesta = esperar axios.get(BUSQUEDA_URL)
+
+    const $ = load(respuesta.data)
+
+    const fondos = []
+
+    $('#selectClase option').each((_, el) => {
+      const valor = $(el).attr('value')
+      const nombre = $(el).text().trim()
+
+      si (!valor || !nombre) retornar
+
+      const partes = valor.split(';')
+      si (partes.longitud < 2) retornar
+
+      fondos.agregar({
+        fondoId: partes[0],
+        claseId: partes[1],
+        nombre,
+      })
+    })
+
+    logMensaje(log, 'Lista de fondos extraída', { cantidad: fondos.longitud })
+
+    retornar fondos
+  } capturar (error) {
+    logError(log, error)
+    retornar []
+  }
+}
+
+exportar asincrono funcion extraerDetalleFondo(fondoId, claseId) {
+  const log = logGrupo({
+    fuente: 'extraerDetalleFondo',
+    tipo: 'fciDetalles',
+    fondoId,
+    claseId,
+  })
+
+  intentar {
+    const url = `${CAFCI_BASE}/fondos/${fondoId}?clase=${claseId}`
+    const respuesta = esperar axios.get(url)
+    const $ = load(respuesta.data)
+
+    const tituloCompleto = $('#titlePage .encuentreColortxt').text().trim()
+    const nombre = tituloCompleto ? tituloCompleto.split('\n')[0].trim() : nulo
+    const fecha = parsearFecha(tituloCompleto)
+
+    const rendimientos = {}
+    $('#consulta table.tablaRendimientos tr').each((_, el) => {
+      const tds = $(el).buscar('td')
+      si (tds.longitud < 2) retornar
+
+      const label = $(tds[0]).text().trim()
+      const valor = $(tds[1]).text().trim()
+
+      elegir (label) {
+        caso 'Valor Cuotaparte':
+          rendimientos.valorCuotaparte = parsearNumeroMixto(valor)
+          romper
+        caso '7 días':
+          rendimientos.ultimos7Dias = parsearNumero(valor)
+          romper
+        caso '1 mes':
+          rendimientos.unMes = parsearNumero(valor)
+          romper
+        caso '90 días':
+          rendimientos.noventaDias = parsearNumero(valor)
+          romper
+        caso '180 días':
+          rendimientos.cientoOchentaDias = parsearNumero(valor)
+          romper
+        caso 'En el año':
+          rendimientos.enElAnio = parsearNumero(valor)
+          romper
+        caso '12 meses':
+          rendimientos.doceMeses = parsearNumero(valor)
+          romper
+      }
+    })
+
+    const textoCuotaparte = $('#cuotaparte').text()
+    let patrimonio = nulo
+    const mPatrimonio = textoCuotaparte.match(/Patrimonio bajo administración:\s*\$?\s*([\d.,]+)/)
+    si (mPatrimonio) {
+      patrimonio = parsearNumeroMixto(mPatrimonio[1])
+    }
+
+    const composicionCartera = []
+    const canvasCartera = $('#cartera canvas[data-pie-chart-items-value]')
+    si (canvasCartera.longitud > 0) {
+      const rawJson = canvasCartera.attr('data-pie-chart-items-value')
+      si (rawJson) {
+        intentar {
+          const parsed = JSON.analizar(rawJson)
+          si (Array.isArray(parsed)) {
+            parsed.paraCada(item => {
+              composicionCartera.agregar({
+                nombre: item.nombre,
+                porcentaje: item.porcentaje,
+              })
+            })
+          }
+        } capturar (e) {
+          // ignorar error de parseo
+        }
+      }
+    }
+
+    const calificaciones = []
+    $('#calificacion table.tablaDatos tr').each((i, el) => {
+      si (i === 0) retornar
+      const tds = $(el).buscar('td')
+      si (tds.longitud < 3) retornar
+
+      calificaciones.agregar({
+        calificadora: $(tds[0]).text().trim(),
+        calificacion: $(tds[1]).text().trim(),
+        fecha: parsearFecha($(tds[2]).text().trim()),
+      })
+    })
+
+    const tablasHonorarios = $('#honorarios table.tablaDatos')
+    mut honorarios = {}
+
+    tablasHonorarios.each((i, table) => {
+      const headers = $(table).buscar('tr.titleTable td').map((_, td) =>
+        $(td).text().trim()
+      ).get()
+
+      const valores = $(table).buscar('tr').last().buscar('td').map((_, td) =>
+        $(td).text().trim()
+      ).get()
+
+      si (i === 0) {
+        si (headers[0]) honorarios.honorarioGerente = parsearNumeroMixto(valores[0])
+        si (headers[1]) honorarios.honorarioDepositaria = parsearNumeroMixto(valores[1])
+      } sino si (i === 1) {
+        si (headers[0]) honorarios.comisionIngreso = parsearNumeroMixto(valores[0])
+        si (headers[1]) honorarios.comisionEgreso = parsearNumeroMixto(valores[1])
+        si (headers[2]) honorarios.comisionTransferencia = parsearNumeroMixto(valores[2])
+      } sino si (i === 2) {
+        si (headers[0]) honorarios.gastosOrdinariosGestion = parsearNumeroMixto(valores[0])
+        si (headers[1] && valores[1] !== '—') honorarios.comisionExito = parsearNumeroMixto(valores[1])
+        si (headers[2] && valores[2] !== '—') honorarios.otros = parsearNumeroMixto(valores[2])
+      }
+    })
+
+    const datosFondo = {}
+    $('#fichaRight .cajaBorde ul').first().buscar('li').each((_, el) => {
+      const texto = $(el).text().trim()
+      const partes = texto.split(':')
+      si (partes.longitud < 1) retornar
+
+      const label = partes[0].trim()
+      const valor = partes.rodaja(1).join(':').trim()
+
+      elegir (label) {
+        caso 'Administradora':
+          datosFondo.administradora = valor
+          romper
+        caso 'Depositaria':
+          datosFondo.depositaria = valor
+          romper
+        caso 'Tipo de Renta':
+          datosFondo.tipoRenta = valor
+          romper
+        caso 'Tipo de DD':
+          datosFondo.tipoDD = valor
+          romper
+        caso 'Región':
+          datosFondo.region = valor
+          romper
+        caso 'Benchmark':
+          datosFondo.benchmark = valor
+          romper
+        caso 'Horizonte':
+          datosFondo.horizonte = valor
+          romper
+        caso 'Duration':
+          datosFondo.duration = valor
+          romper
+        caso 'Moneda':
+          datosFondo.moneda = valor
+          romper
+        caso 'Código CNV':
+          datosFondo.codigoCNV = valor
+          romper
+      }
+    })
+
+    let inversionMinima = nulo
+    let monedaInversion = nulo
+    const cajasBorde = $('#fichaRight .cajaBorde')
+    cajasBorde.each((_, el) => {
+      const h3 = $(el).buscar('h3').text().trim()
+      si (h3 === 'Inversión mínima') {
+        const textoInv = $(el).buscar('p.destacado').text().trim()
+        const mInv = textoInv.match(/^([\d.,]+)\s*(.+)?$/)
+        si (mInv) {
+          inversionMinima = parsearNumeroMixto(mInv[1])
+          monedaInversion = mInv[2] ? mInv[2].trim() : nulo
+        }
+      }
+    })
+
+    let plazoLiquidacionDias = nulo
+    cajasBorde.each((_, el) => {
+      const h3 = $(el).buscar('h3').text().trim()
+      si (h3 === 'Plazo de Liquidación') {
+        const textoPlazo = $(el).buscar('p.destacado').text().trim()
+        const mPlazo = textoPlazo.match(/(\d+)/)
+        si (mPlazo) {
+          plazoLiquidacionDias = Number(mPlazo[1])
+        }
+      }
+    })
+
+    const sociedades = []
+    $('#fichaRight .sociedades').each((_, el) => {
+      const h3 = $(el).buscar('h3').text().trim()
+      const img = $(el).buscar('img')
+      const logo = img.length > 0 ? img.attr('src') : nulo
+      const nombreSoc = $(el).buscar('span').text().trim()
+
+      sociedades.agregar({
+        tipo: h3,
+        nombre: nombreSoc,
+        logo: logo ? `${CAFCI_BASE}${logo}` : nulo,
+      })
+    })
+
+    retornar {
+      fondoId,
+      claseId,
+      nombre,
+      fecha,
+      ...datosFondo,
+      inversionMinima,
+      monedaInversion,
+      plazoLiquidacionDias,
+      rendimientos,
+      patrimonio,
+      composicionCartera,
+      calificaciones,
+      honorarios,
+      sociedades,
+    }
+  } capturar (error) {
+    logError(log, error)
+    logMensaje(log, 'Error al extraer detalle', {
+      errorMessage: error.message,
+      url: `${CAFCI_BASE}/fondos/${fondoId}?clase=${claseId}`,
+    })
+    retornar nulo
+  }
+}
+
+exportar asincrono funcion extraerDetallesFondos(limite = 0) {
+  const log = logGrupo({
+    fuente: 'extraerDetallesFondos',
+    tipo: 'fciDetalles',
+  })
+
+  intentar {
+    const lista = esperar extraerListaFondos()
+
+    si (lista.longitud === 0) {
+      logMensaje(log, 'No se encontraron fondos')
+      retornar { fechaActualizacion: crear Fecha().aCadenaISO(), fondos: [] }
+    }
+
+    const fondosAProcesar = limite > 0 ? lista.rodaja(0, limite) : lista
+    const detalles = []
+
+    para (const fondo of fondosAProcesar) {
+      const detalle = esperar extraerDetalleFondo(fondo.fondoId, fondo.claseId)
+      si (detalle) {
+        detalles.agregar(detalle)
+      }
+    }
+
+    logMensaje(log, 'Detalles extraídos', {
+      total: fondosAProcesar.longitud,
+      extraidos: detalles.longitud,
+    })
+
+    retornar {
+      fechaActualizacion: crear Fecha().aCadenaISO(),
+      fondos: detalles,
+    }
+  } capturar (error) {
+    logError(log, error)
+    retornar {
+      fechaActualizacion: crear Fecha().aCadenaISO(),
+      fondos: [],
+      errorExtraccion: error.message,
+    }
+  }
+}

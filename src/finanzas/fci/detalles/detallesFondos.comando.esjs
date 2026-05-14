@@ -1,0 +1,13 @@
+importar { extraerDetallesFondos } desde '@/finanzas/fci/detalles/extraccion/extraerDetallesFondos.esjs'
+importar { guardarDetallesFondos } desde '@/finanzas/fci/detalles/guardado/guardarDetallesFondos.esjs'
+
+exportar asincrono funcion ejecutarDetallesFondos() {
+  intentar {
+    const datos = esperar extraerDetallesFondos()
+    esperar guardarDetallesFondos(datos)
+  } capturar (error) {
+    consola.error('Error al extraer detalles de fondos', error)
+  }
+}
+
+exportar porDefecto ejecutarDetallesFondos
