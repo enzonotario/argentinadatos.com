@@ -2593,6 +2593,63 @@
             "nullable": true,
             "description": "Costo de retiro en ARS (ej. '0', '2%', '1%')"
           },
+          "detalles": {
+            "type": "object",
+            "nullable": true,
+            "description": "Aclaraciones o tooltips por columna cuando existan",
+            "properties": {
+              "cuentaPropia": {
+                "type": "string",
+                "nullable": true,
+                "description": "Detalle adicional de cuenta propia"
+              },
+              "moneda": {
+                "type": "string",
+                "nullable": true,
+                "description": "Detalle adicional de moneda"
+              },
+              "inversiones": {
+                "type": "string",
+                "nullable": true,
+                "description": "Detalle adicional de inversiones"
+              },
+              "tarjetaUsa": {
+                "type": "string",
+                "nullable": true,
+                "description": "Detalle adicional de tarjeta USA"
+              },
+              "costoRecibirPagos": {
+                "type": "string",
+                "nullable": true,
+                "description": "Detalle adicional de costo por recibir pagos"
+              },
+              "costoMantenimientoTarjeta": {
+                "type": "string",
+                "nullable": true,
+                "description": "Detalle adicional de costo de mantenimiento de tarjeta"
+              },
+              "costoTarjeta": {
+                "type": "string",
+                "nullable": true,
+                "description": "Detalle adicional de costo de uso de tarjeta"
+              },
+              "retiroArs": {
+                "type": "string",
+                "nullable": true,
+                "description": "Detalle adicional de retiro en ARS"
+              },
+              "calificacionAndroid": {
+                "type": "string",
+                "nullable": true,
+                "description": "Detalle adicional de review Android"
+              },
+              "calificacionIos": {
+                "type": "string",
+                "nullable": true,
+                "description": "Detalle adicional de review iOS"
+              }
+            }
+          },
           "calificacionAndroid": {
             "type": "number",
             "nullable": true,
@@ -2615,6 +2672,9 @@
             "costoMantenimientoTarjeta": "0 USD",
             "costoTarjeta": "0%",
             "retiroArs": "1%",
+            "detalles": {
+              "costoRecibirPagos": "Para ACH es 0, para wire doméstica es 25 USD y swift 35 USD"
+            },
             "calificacionAndroid": 4.5,
             "calificacionIos": 4.7
           }
@@ -2659,6 +2719,9 @@
                 "costoMantenimientoTarjeta": "0 USD",
                 "costoTarjeta": "0%",
                 "retiroArs": "1%",
+                "detalles": {
+                  "costoRecibirPagos": "Para ACH es 0, para wire doméstica es 25 USD y swift 35 USD"
+                },
                 "calificacionAndroid": 4.5,
                 "calificacionIos": 4.7
               }
