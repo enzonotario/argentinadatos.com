@@ -1,5 +1,5 @@
 {
-  "fechaActualizacion": "2026-05-14T21:15:29.459Z",
+  "fechaActualizacion": "2026-05-15T00:30:15.583Z",
   "remesas": [
     {
       "compania": "wallbit",
@@ -107,7 +107,11 @@
       "costoMantenimientoTarjeta": "No tiene tarjeta emitida en EEUU.",
       "costoTarjeta": "No tiene tarjeta emitida en EEUU.",
       "retiroArs": "0",
-      "detalles": null,
+      "detalles": {
+        "tarjetaUsa": "No tiene tarjeta emitida en EEUU.",
+        "costoMantenimientoTarjeta": "No tiene tarjeta emitida en EEUU.",
+        "costoTarjeta": "No tiene tarjeta emitida en EEUU."
+      },
       "calificacionAndroid": 4.7,
       "calificacionIos": 4.7
     },
@@ -122,7 +126,9 @@
       "costoTarjeta": "No tiene tarjeta emitida en EEUU.",
       "retiroArs": "0",
       "detalles": {
-        "tarjetaUsa": "Tienen la Lemon Card, que es una tarjeta VISA internacional con la que se pueden usar los USDC que se acreditan al hacer un depósito de USD."
+        "tarjetaUsa": "Tienen la Lemon Card, que es una tarjeta VISA internacional con la que se pueden usar los USDC que se acreditan al hacer un depósito de USD.",
+        "costoMantenimientoTarjeta": "No tiene tarjeta emitida en EEUU.",
+        "costoTarjeta": "No tiene tarjeta emitida en EEUU."
       },
       "calificacionAndroid": 4.45,
       "calificacionIos": 4.45
@@ -139,10 +145,29 @@
       "retiroArs": "1%",
       "detalles": {
         "cuentaPropia": "Wise ya no ofrece este servicio a residentes de Argentina.",
-        "costoRecibirPagos": "Recibir vía wire doméstica o swift es 6,11 USD, si es por ACH es 0"
+        "tarjetaUsa": "No tiene tarjeta emitida en EEUU.",
+        "costoRecibirPagos": "Recibir vía wire doméstica o swift es 6,11 USD, si es por ACH es 0",
+        "costoMantenimientoTarjeta": "No tiene tarjeta emitida en EEUU.",
+        "costoTarjeta": "No tiene tarjeta emitida en EEUU."
       },
       "calificacionAndroid": 4.8,
       "calificacionIos": 4.8
+    },
+    {
+      "compania": "Cocos",
+      "cuentaPropia": true,
+      "moneda": "FIAT",
+      "inversiones": true,
+      "tarjetaUsa": true,
+      "costoRecibirPagos": "0.5%",
+      "costoMantenimientoTarjeta": "0 USD",
+      "costoTarjeta": null,
+      "retiroArs": null,
+      "detalles": {
+        "costoRecibirPagos": "Mínimo 2.5 USD. todo gratis · wire/ach"
+      },
+      "calificacionAndroid": null,
+      "calificacionIos": null
     }
   ]
 }
