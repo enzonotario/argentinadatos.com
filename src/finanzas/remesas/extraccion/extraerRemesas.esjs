@@ -1,5 +1,6 @@
 importar { scrapearConFirecrawl } desde '@/finanzas/extraccion/firecrawl.esjs'
 importar { logMensaje, logError, logGrupo } desde '@/log.esjs'
+importar { extraerCocosRemesas } desde '@/finanzas/remesas/extraccion/extraerCocosRemesas.esjs'
 
 const REMESAS_URL = 'https://www.dolarito.ar/remotito'
 const PREFIJO_NEXT_PUSH = 'self.__next_f.push('
@@ -292,14 +293,35 @@ exportar asincrono funcion extraerRemesas() {
   })
 
   intentar {
-    const remesas = esperar extraerFilasRemesas(log)
+    const [resultadoPrincipal, resultadoCocos] = esperar Promise.allSettled([
+      extraerFilasRemesas(log),
+      extraerCocosRemesas(log),
+    ])
+
+    const remesas =
+      resultadoPrincipal.status === 'fulfilled' ? resultadoPrincipal.value : []
+
+    si (resultadoCocos.status === 'fulfilled') {
+      remesas.agregar(resultadoCocos.value)
+      logMensaje(log, 'extraerRemesas: Cocos desde rendimientos.co agregado')
+    } sino {
+      logError(log, resultadoCocos.reason)
+      logMensaje(log, 'extraerRemesas: falló Cocos desde rendimientos.co', {
+        errorMessage: resultadoCocos.reason?.message,
+      })
+    }
+
+    si (remesas.length === 0 && resultadoPrincipal.status === 'rejected') {
+      lanzar resultadoPrincipal.reason
+    }
+
     retornar {
       fechaActualizacion: crear Fecha().aCadenaISO(),
       remesas,
     }
   } capturar (error) {
     logError(log, error)
-    logMensaje(log, 'extraerRemesas: falló Firecrawl', {
+    logMensaje(log, 'extraerRemesas: falló extracción', {
       errorMessage: error.message,
     })
     retornar {

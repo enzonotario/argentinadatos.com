@@ -6,6 +6,10 @@ import {
   normalizarRemesa,
   parsearRemesasDesdeHtml,
 } from '@/finanzas/remesas/extraccion/extraerRemesas.esjs'
+import {
+  extraerRemesasDesdeJs,
+  mapearCocosDesdeRendimientos,
+} from '@/finanzas/remesas/extraccion/extraerCocosRemesas.esjs'
 
 const tieneFirecrawl =
   Boolean(import.meta.env.VITE_FIRECRAWL_API_KEY) &&
@@ -168,5 +172,86 @@ describe.skipIf(!tieneFirecrawl)('extraerRemesas (Firecrawl real)', () => {
     console.log('[extraerRemesas.real]', remesas.length, 'plataformas', {
       muestra: remesas.slice(0, 3),
     })
+
+    const cocos = remesas.find(
+      row => row.compania.toLowerCase() === 'cocos',
+    )
+
+    if (cocos) {
+      expect(cocos.compania).toBe('Cocos')
+      expect(cocos.cuentaPropia).toBe(true)
+      expect(cocos.moneda).toBe('FIAT')
+    }
   }, 120000)
+})
+
+describe('extraerRemesasDesdeJs', () => {
+  it('extrae el array REMESAS desde tty.js minificado', () => {
+    const js = `
+      const REMESAS = [
+        { name: 'Cocos', fee: 0.50, feeMin: 2.50, checking: true, subnominada: true, card: true, mantenimientoFree: true, note: 'todo gratis · wire/ach' },
+        { name: 'Wallbit', fee: 0, checking: true, card: true, mantenimientoFree: true },
+      ];
+    `
+
+    const remesas = extraerRemesasDesdeJs(js)
+
+    expect(Array.isArray(remesas)).toBe(true)
+    expect(remesas).toHaveLength(2)
+    expect(remesas[0].name).toBe('Cocos')
+    expect(remesas[0].fee).toBe(0.50)
+    expect(remesas[1].name).toBe('Wallbit')
+  })
+})
+
+describe('mapearCocosDesdeRendimientos', () => {
+  it('convierte data de rendimientos.co al esquema de remesas', () => {
+    const cocosRaw = {
+      name: 'Cocos',
+      fee: 0.50,
+      feeMin: 2.50,
+      checking: true,
+      subnominada: true,
+      card: true,
+      mantenimientoFree: true,
+      note: 'todo gratis · wire/ach',
+    }
+
+    const remesa = mapearCocosDesdeRendimientos(cocosRaw)
+
+    expect(remesa.compania).toBe('Cocos')
+    expect(remesa.cuentaPropia).toBe(true)
+    expect(remesa.moneda).toBe('FIAT')
+    expect(remesa.inversiones).toBe(true)
+    expect(remesa.tarjetaUsa).toBe(true)
+    expect(remesa.costoRecibirPagos).toBe('0.5%')
+    expect(remesa.costoMantenimientoTarjeta).toBe('0 USD')
+    expect(remesa.costoTarjeta).toBeNull()
+    expect(remesa.retiroArs).toBeNull()
+    expect(remesa.calificacionAndroid).toBeNull()
+    expect(remesa.calificacionIos).toBeNull()
+    expect(remesa.detalles).toEqual({
+      costoRecibirPagos: 'Mínimo 2.5 USD. todo gratis · wire/ach',
+    })
+  })
+
+  it('maneja Cocos sin note ni feeMin', () => {
+    const cocosRaw = {
+      name: 'Cocos',
+      fee: 1.00,
+      checking: false,
+      subnominada: false,
+      card: false,
+      mantenimientoFree: false,
+    }
+
+    const remesa = mapearCocosDesdeRendimientos(cocosRaw)
+
+    expect(remesa.cuentaPropia).toBe(false)
+    expect(remesa.inversiones).toBe(false)
+    expect(remesa.tarjetaUsa).toBe(false)
+    expect(remesa.costoRecibirPagos).toBe('1%')
+    expect(remesa.costoMantenimientoTarjeta).toBeNull()
+    expect(remesa.detalles).toBeNull()
+  })
 })

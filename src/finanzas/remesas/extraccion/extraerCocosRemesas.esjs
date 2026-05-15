@@ -1,0 +1,75 @@
+importar { logMensaje, logError } desde '@/log.esjs'
+importar { normalizarRemesa } desde '@/finanzas/remesas/extraccion/extraerRemesas.esjs'
+
+const RENDIMIENTOS_TTY_URL = 'https://rendimientos.co/tty.js'
+
+exportar funcion extraerRemesasDesdeJs(js) {
+  const match = js.match(/const\s+REMESAS\s*=\s*(\[[\s\S]*?\]);/)
+
+  si (!match || !match[1]) {
+    lanzar crear Error('No se encontró la constante REMESAS en tty.js')
+  }
+
+  retornar new Function(`return ${match[1]}`)()
+}
+
+exportar funcion mapearCocosDesdeRendimientos(cocosRaw) {
+  const costoRecibirPagos = cocosRaw.fee != null ? `${cocosRaw.fee}%` : nulo
+
+  const detalles = {}
+
+  si (cocosRaw.feeMin != null) {
+    detalles.costoRecibirPagos = `Mínimo ${cocosRaw.feeMin} USD`
+  }
+
+  si (cocosRaw.note) {
+    detalles.costoRecibirPagos = detalles.costoRecibirPagos
+      ? `${detalles.costoRecibirPagos}. ${cocosRaw.note}`
+      : cocosRaw.note
+  }
+
+  retornar normalizarRemesa({
+    compania: 'Cocos',
+    cuentaPropia: cocosRaw.checking === true,
+    moneda: 'FIAT',
+    inversiones: cocosRaw.subnominada === true,
+    tarjetaUsa: cocosRaw.card === true,
+    costoRecibirPagos,
+    costoMantenimientoTarjeta: cocosRaw.mantenimientoFree === true ? '0 USD' : nulo,
+    costoTarjeta: nulo,
+    retiroArs: nulo,
+    calificacionAndroid: nulo,
+    calificacionIos: nulo,
+    detalles: Object.keys(detalles).length > 0 ? detalles : nulo,
+  })
+}
+
+exportar asincrono funcion extraerCocosRemesas(log) {
+  logMensaje(log, 'rendimientos.co: extrayendo Cocos remesas', {
+    url: RENDIMIENTOS_TTY_URL,
+  })
+
+  const respuesta = esperar fetch(RENDIMIENTOS_TTY_URL)
+
+  si (!respuesta.ok) {
+    lanzar crear Error(
+      `Error al obtener tty.js: ${respuesta.status} ${respuesta.statusText}`,
+    )
+  }
+
+  const js = esperar respuesta.text()
+  const remesas = extraerRemesasDesdeJs(js)
+  const cocos = remesas.find(r => r.name && r.name.toLowerCase() === 'cocos')
+
+  si (!cocos) {
+    lanzar crear Error('No se encontró Cocos en REMESAS de rendimientos.co')
+  }
+
+  logMensaje(log, 'rendimientos.co: Cocos extraído', {
+    name: cocos.name,
+    fee: cocos.fee,
+    feeMin: cocos.feeMin,
+  })
+
+  retornar mapearCocosDesdeRendimientos(cocos)
+}
