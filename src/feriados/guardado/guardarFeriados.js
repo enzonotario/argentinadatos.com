@@ -5,7 +5,7 @@ export function guardarFeriados(año, feriados) {
     `/feriados/${año}`,
     feriados.map(feriado => ({
       fecha: feriado.fecha,
-      tipo: feriado.type,
+      tipo: feriado.tipo,
       nombre: feriado.nombre,
     })),
   )

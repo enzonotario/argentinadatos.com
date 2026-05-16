@@ -31,7 +31,7 @@ export async function guardarSerieVariables(
         ultimo &&
         (ultimo.tna !== item.tna ||
           ultimo.fondo !== (item.fondo || null) ||
-          ultimo.type !== (item.type || null) ||
+          ultimo.tipo !== (item.tipo || null) ||
           ultimo.tea !== item.tea ||
           ultimo.tope !== item.tope ||
           ultimo.condiciones !== (item.condiciones || null) ||
@@ -42,7 +42,7 @@ export async function guardarSerieVariables(
         await db.insertFciVariables(
           item.nombre,
           item.fondo,
-          item.type || null,
+          item.tipo || null,
           item.tna,
           item.tea,
           item.tope || null,
@@ -72,7 +72,7 @@ async function generarEndpointsEstaticos(db) {
   const resultado = todosLosDatos.map(row => ({
     nombre: row.nombre,
     fondo: row.fondo,
-    tipo: row.type,
+    tipo: row.tipo,
     tna: row.tna,
     tea: row.tea,
     tope: row.tope,
@@ -87,7 +87,7 @@ async function generarEndpointsEstaticos(db) {
   const penultimoResultado = penultimo.map(row => ({
     nombre: row.nombre,
     fondo: row.fondo,
-    tipo: row.type,
+    tipo: row.tipo,
     tna: row.tna,
     tea: row.tea,
     tope: row.tope,
@@ -109,7 +109,7 @@ async function generarEndpointsEstaticos(db) {
         nombre: row.nombre,
         fondo: row.fondo,
         tna: row.tna,
-        tipo: row.type,
+        tipo: row.tipo,
         tea: row.tea,
         tope: row.tope,
         fecha: row.fecha,
@@ -125,7 +125,7 @@ async function generarEndpointsEstaticos(db) {
           item.nombre !== prev.nombre ||
           item.fondo !== prev.fondo ||
           item.tna !== prev.tna ||
-          item.type !== prev.type ||
+          item.tipo !== prev.tipo ||
           item.tea !== prev.tea ||
           item.tope !== prev.tope ||
           item.condiciones !== prev.condiciones ||

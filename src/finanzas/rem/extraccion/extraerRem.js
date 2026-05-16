@@ -493,7 +493,7 @@ export function parsearWorkbookRem(buffer, publicacion = {}) {
 
       const periodoNormalizado = parsearPeriodo(item.periodo)
 
-      item.periodoTipo = periodoNormalizado.type
+      item.periodoTipo = periodoNormalizado.tipo
       item.periodoDesde = periodoNormalizado.desde
       item.periodoHasta = periodoNormalizado.hasta
       item.referenciaFecha = parsearFechaReferencia(item.referencia)

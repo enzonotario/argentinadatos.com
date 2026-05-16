@@ -21,7 +21,7 @@ export async function cronFeriados() {
         `/feriados`,
         feriados.map(feriado => ({
           fecha: feriado.fecha,
-          tipo: feriado.type,
+          tipo: feriado.tipo,
           nombre: feriado.nombre,
         })),
       )
