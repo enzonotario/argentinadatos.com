@@ -5,11 +5,11 @@ import {
   normalizarDetallesRemesa,
   normalizarRemesa,
   parsearRemesasDesdeHtml,
-} from '@/finanzas/remesas/extraccion/extraerRemesas.esjs'
+} from '@/finanzas/remesas/extraccion/extraerRemesas.js'
 import {
   extraerRemesasDesdeJs,
   mapearCocosDesdeRendimientos,
-} from '@/finanzas/remesas/extraccion/extraerCocosRemesas.esjs'
+} from '@/finanzas/remesas/extraccion/extraerCocosRemesas.js'
 
 const tieneFirecrawl =
   Boolean(import.meta.env.VITE_FIRECRAWL_API_KEY) &&

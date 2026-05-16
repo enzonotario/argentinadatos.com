@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerCuentasRemuneradasUsd } from '@/finanzas/cuentas-remuneradas-usd/extraccion/extraerCuentasRemuneradasUsd.esjs'
+import { extraerCuentasRemuneradasUsd } from '@/finanzas/cuentas-remuneradas-usd/extraccion/extraerCuentasRemuneradasUsd.js'
 
 describe('extraerCuentasRemuneradasUsd (Real)', () => {
   it('extrae datos de todas las entidades', async () => {

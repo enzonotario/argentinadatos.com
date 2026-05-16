@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { guardarSerieVariables } from '@/finanzas/fci/guardado/guardarSerieVariables.esjs'
-import { FciVariablesDatabaseService } from '@/finanzas/fci/databaseVariables/service.esjs'
-import { leerRuta } from '@/utils/rutas.esjs'
+import { guardarSerieVariables } from '@/finanzas/fci/guardado/guardarSerieVariables.js'
+import { FciVariablesDatabaseService } from '@/finanzas/fci/databaseVariables/service.js'
+import { leerRuta } from '@/utils/rutas.js'
 
 const TEST_URL = import.meta.env.VITE_TURSO_DATABASE_URL || 'libsql://test.turso.io'
 const TEST_AUTH_TOKEN = import.meta.env.VITE_TURSO_AUTH_TOKEN || 'test-token'

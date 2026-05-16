@@ -2,7 +2,6 @@ import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 import { existsSync } from 'node:fs'
 import { createServer } from 'vite'
-import EsJS from '@es-js/vite-plugin-esjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -24,7 +23,7 @@ if (!command) {
   process.exit(1)
 }
 
-const modulePath = `src/finanzas/${module}/database/migrations/cli.esjs`
+const modulePath = `src/finanzas/${module}/database/migrations/cli.js`
 const fullPath = join(rootDir, modulePath)
 
 if (!existsSync(fullPath)) {
@@ -36,18 +35,18 @@ if (!existsSync(fullPath)) {
 try {
   const server = await createServer({
     root: rootDir,
-    plugins: [EsJS()],
+    plugins: [],
     server: { middlewareMode: true },
     appType: 'custom'
   })
 
   const { main } = await server.ssrLoadModule(fullPath)
-  
+
   const originalArgv = process.argv
-  process.argv = ['node', 'cli.esjs', command, ...process.argv.slice(4)]
-  
+  process.argv = ['node', 'cli.js', command, ...process.argv.slice(4)]
+
   await main()
-  
+
   process.argv = originalArgv
   await server.close()
 } catch (error) {

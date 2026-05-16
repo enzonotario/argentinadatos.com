@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { leerRuta } from '@/utils/rutas.esjs'
-import { extraerPlazoFijo } from '@/finanzas/extraccion/extraerPlazoFijo.esjs'
-import { guardarPlazoFijo } from '@/finanzas/guardado/guardarPlazoFijo.esjs'
+import { leerRuta } from '@/utils/rutas.js'
+import { extraerPlazoFijo } from '@/finanzas/extraccion/extraerPlazoFijo.js'
+import { guardarPlazoFijo } from '@/finanzas/guardado/guardarPlazoFijo.js'
 
 describe('guardarPlazoFijo', () => {
   it('guarda los plazos fijos', async () => {

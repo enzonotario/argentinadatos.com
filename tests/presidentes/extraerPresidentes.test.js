@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerPresidentes } from '@/presidentes/extraccion/extraerPresidentes.esjs'
+import { extraerPresidentes } from '@/presidentes/extraccion/extraerPresidentes.js'
 
 describe('extraerPresidentes', () => {
   it('extrae una lista de presidentes', async () => {

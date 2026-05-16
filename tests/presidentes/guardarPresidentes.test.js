@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { extraerPresidentes } from '@/presidentes/extraccion/extraerPresidentes.esjs'
-import { guardarPresidentes } from '@/presidentes/guardado/guardarPresidentes.esjs'
-import { leerRuta } from '@/utils/rutas.esjs'
+import { extraerPresidentes } from '@/presidentes/extraccion/extraerPresidentes.js'
+import { guardarPresidentes } from '@/presidentes/guardado/guardarPresidentes.js'
+import { leerRuta } from '@/utils/rutas.js'
 
 describe('guardarPresidentes', () => {
   it('guarda los presidentes y los puede leer de vuelta', async () => {

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { leerRuta } from '@/utils/rutas.esjs'
-import { extraerCreditosHipotecariosUva } from '@/finanzas/creditosHipotecariosUva/extraccion/extraerCreditosHipotecariosUva.esjs'
-import { guardarCreditosHipotecariosUva } from '@/finanzas/creditosHipotecariosUva/guardado/guardarCreditosHipotecariosUva.esjs'
+import { leerRuta } from '@/utils/rutas.js'
+import { extraerCreditosHipotecariosUva } from '@/finanzas/creditosHipotecariosUva/extraccion/extraerCreditosHipotecariosUva.js'
+import { guardarCreditosHipotecariosUva } from '@/finanzas/creditosHipotecariosUva/guardado/guardarCreditosHipotecariosUva.js'
 
 describe('guardarCreditosHipotecariosUva', () => {
   it('guarda los créditos hipotecarios UVA', async () => {

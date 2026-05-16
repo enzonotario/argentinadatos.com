@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { leerRuta } from '@/utils/rutas.esjs'
-import { extraerTasasDepositos30Dias } from '@/finanzas/extraccion/extraerTasasDepositos30Dias.esjs'
-import { guardarTasasDepositos30Dias } from '@/finanzas/guardado/guardarTasasDepositos30Dias.esjs'
+import { leerRuta } from '@/utils/rutas.js'
+import { extraerTasasDepositos30Dias } from '@/finanzas/extraccion/extraerTasasDepositos30Dias.js'
+import { guardarTasasDepositos30Dias } from '@/finanzas/guardado/guardarTasasDepositos30Dias.js'
 import { format, subDays, addDays } from 'date-fns'
 
 describe('guardarDepositos30Dias', () => {

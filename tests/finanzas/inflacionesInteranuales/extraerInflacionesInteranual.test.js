@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerInflacionesInteranual } from '@/finanzas/extraccion/extraerInflacionesInteranual.esjs'
+import { extraerInflacionesInteranual } from '@/finanzas/extraccion/extraerInflacionesInteranual.js'
 
 describe('extraerInflacionesInteranual', () => {
   it('extrae los inflaciones interanuales', async () => {

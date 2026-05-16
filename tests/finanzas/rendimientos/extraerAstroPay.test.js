@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerAstroPay } from '@/finanzas/rendimientos/extraerAstroPay.esjs'
+import { extraerAstroPay } from '@/finanzas/rendimientos/extraerAstroPay.js'
 
 describe('extraerAstroPay', () => {
   it('extrae AstroPay desde Google Sheets correctamente', async () => {

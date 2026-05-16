@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerPlazoFijoUvaPagoPeriodico } from '@/finanzas/extraccion/extraerPlazoFijoUvaPagoPeriodico.esjs'
+import { extraerPlazoFijoUvaPagoPeriodico } from '@/finanzas/extraccion/extraerPlazoFijoUvaPagoPeriodico.js'
 
 describe('extraerPlazoFijoUvaPagoPeriodico', () => {
   it('extrae proveedores con tasas por plazo (UVA pago periódico)', async () => {

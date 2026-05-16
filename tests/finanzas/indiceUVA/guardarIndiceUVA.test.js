@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { leerRuta } from '@/utils/rutas.esjs'
-import { extraerIndiceUVA } from '@/finanzas/extraccion/extraerIndiceUVA.esjs'
-import { guardarIndiceUVA } from '@/finanzas/guardado/guardarIndiceUVA.esjs'
+import { leerRuta } from '@/utils/rutas.js'
+import { extraerIndiceUVA } from '@/finanzas/extraccion/extraerIndiceUVA.js'
+import { guardarIndiceUVA } from '@/finanzas/guardado/guardarIndiceUVA.js'
 import { format, subDays, addDays } from "date-fns";
 
 describe('guardarIndiceUVA', () => {

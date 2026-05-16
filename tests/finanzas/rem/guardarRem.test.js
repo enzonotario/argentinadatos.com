@@ -1,8 +1,8 @@
 import { afterEach, describe, expect, it } from 'vitest'
 import fs from 'node:fs'
-import { guardarRem } from '@/finanzas/rem/guardado/guardarRem.esjs'
-import { RemDatabaseService } from '@/finanzas/rem/database/service.esjs'
-import { leerRuta } from '@/utils/rutas.esjs'
+import { guardarRem } from '@/finanzas/rem/guardado/guardarRem.js'
+import { RemDatabaseService } from '@/finanzas/rem/database/service.js'
+import { leerRuta } from '@/utils/rutas.js'
 
 const DB_PATH = '/tmp/rem-test.sqlite'
 const TEST_URL = `file:${DB_PATH}`

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { extraerFeriados } from '@/feriados/extraccion/extraerFeriados.esjs'
-import { guardarFeriados } from '@/feriados/guardado/guardarFeriados.esjs'
-import { leerRuta } from '@/utils/rutas.esjs'
+import { extraerFeriados } from '@/feriados/extraccion/extraerFeriados.js'
+import { guardarFeriados } from '@/feriados/guardado/guardarFeriados.js'
+import { leerRuta } from '@/utils/rutas.js'
 
 describe('guardarFeriados', () => {
   it('guarda los feriados del año', async () => {

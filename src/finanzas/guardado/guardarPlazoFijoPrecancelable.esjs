@@ -1,5 +1,0 @@
-importar { escribirRuta } desde '@/utils/rutas.esjs'
-
-exportar asincrono funcion guardarPlazoFijoPrecancelable(proveedores) {
-  retornar escribirRuta('/finanzas/tasas/plazoFijoPrecancelable', proveedores)
-}

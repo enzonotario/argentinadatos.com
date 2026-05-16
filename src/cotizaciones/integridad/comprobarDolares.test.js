@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { format, parseISO, startOfDay, addDays, subDays } from 'date-fns'
-import { leerRuta, escribirRuta, existeRuta } from '@/utils/rutas.esjs'
+import { leerRuta, escribirRuta, existeRuta } from '@/utils/rutas.js'
 import { collect } from 'collect.js'
 
 describe('comprobarDolares', () => {

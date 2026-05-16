@@ -1,5 +1,0 @@
-importar { escribirRuta } desde '@/utils/rutas.esjs'
-
-exportar funcion guardarPresidentes(presidentes) {
-  retornar escribirRuta('/presidentes', presidentes)
-}

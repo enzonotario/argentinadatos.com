@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerBna } from '@/finanzas/cuentas-remuneradas-usd/extraccion/extraerBna.esjs'
+import { extraerBna } from '@/finanzas/cuentas-remuneradas-usd/extraccion/extraerBna.js'
 
 describe('extraerBna (Real)', () => {
   it('extrae datos correctamente de BNA', async () => {

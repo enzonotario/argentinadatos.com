@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerUalaCuentaRemuneradaDesdeSheets } from '@/finanzas/extraccion/extraerUalaDesdeSheets.esjs'
+import { extraerUalaCuentaRemuneradaDesdeSheets } from '@/finanzas/extraccion/extraerUalaDesdeSheets.js'
 
 describe('extraerUalaDesdeSheets', () => {
   it('extrae Uala Cuenta Remunerada desde Google Sheets correctamente', async () => {

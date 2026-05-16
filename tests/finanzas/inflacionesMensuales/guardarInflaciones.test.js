@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { leerRuta } from '@/utils/rutas.esjs'
-import { extraerInflaciones } from '@/finanzas/extraccion/extraerInflaciones.esjs'
-import { guardarInflaciones } from '@/finanzas/guardado/guardarInflaciones.esjs'
+import { leerRuta } from '@/utils/rutas.js'
+import { extraerInflaciones } from '@/finanzas/extraccion/extraerInflaciones.js'
+import { guardarInflaciones } from '@/finanzas/guardado/guardarInflaciones.js'
 import { subMonths, addMonths, format } from 'date-fns'
 
 describe('guardarInflaciones', () => {

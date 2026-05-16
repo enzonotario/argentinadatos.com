@@ -1,5 +1,0 @@
-importar { escribirRuta, leerRuta } desde '@/utils/rutas.esjs'
-
-exportar asincrono funcion guardarPlazoFijo(items) {
-  retornar escribirRuta('/finanzas/tasas/plazoFijo', items)
-}

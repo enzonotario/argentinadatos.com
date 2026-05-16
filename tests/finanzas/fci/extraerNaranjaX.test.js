@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { extraerNaranjaX } from '@/finanzas/fci/extraerNaranjaX.esjs'
+import { extraerNaranjaX } from '@/finanzas/fci/extraerNaranjaX.js'
 
 describe('extraerNaranjaX', () => {
   it('extrae datos reales desde Defuddle + IA', async () => {

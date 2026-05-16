@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { calcularApy, extraerRipio } from '@/finanzas/criptopesos/extraccion/extraerRipio.esjs'
-import { apyToTna } from '@/finanzas/criptopesos/apyToTna.esjs'
+import { calcularApy, extraerRipio } from '@/finanzas/criptopesos/extraccion/extraerRipio.js'
+import { apyToTna } from '@/finanzas/criptopesos/apyToTna.js'
 
 describe('calcularApy', () => {
   it('sin fee no modifica el APY', () => {

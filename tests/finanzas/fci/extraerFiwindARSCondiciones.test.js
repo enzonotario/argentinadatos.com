@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerFiwindARSCondiciones } from '@/finanzas/extraccion/extraerFiwindARSCondiciones.esjs'
+import { extraerFiwindARSCondiciones } from '@/finanzas/extraccion/extraerFiwindARSCondiciones.js'
 
 describe('extraerFiwindARSCondiciones', () => {
   it('extrae condiciones de Fiwind ARS', async () => {

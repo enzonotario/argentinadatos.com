@@ -8,7 +8,7 @@ import {
   parsearFilaSheets,
   parsearVencimientoTicker,
   aFechaIso,
-} from './extraccion/extraerLetras.esjs'
+} from './extraccion/extraerLetras.js'
 
 describe('parsearVencimientoTicker', () => {
   it('parsea LECAP S31G5 → 2025-08-31', () => {

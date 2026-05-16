@@ -1,5 +1,5 @@
 import { describe, expect, it, beforeEach, afterEach } from 'vitest'
-import { CriptopesosDatabaseService } from '@/finanzas/criptopesos/database/service.esjs'
+import { CriptopesosDatabaseService } from '@/finanzas/criptopesos/database/service.js'
 
 const TEST_URL = import.meta.env.VITE_TURSO_DATABASE_URL || 'libsql://test.turso.io'
 const TEST_AUTH_TOKEN = import.meta.env.VITE_TURSO_AUTH_TOKEN || 'test-token'

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerCafci } from '@/extractores/cafci.extractor.esjs'
+import { extraerCafci } from '@/extractores/cafci.extractor.js'
 
 describe('extraerCafci', () => {
   it('extrae las series de Cafci', async () => {

@@ -1,5 +1,5 @@
 import { describe, expect, it, beforeEach, afterEach, vi } from 'vitest'
-import { extraerGlobal66CuentaRemunerada } from '@/finanzas/extraccion/extraerGlobal66.esjs'
+import { extraerGlobal66CuentaRemunerada } from '@/finanzas/extraccion/extraerGlobal66.js'
 
 describe('extraerGlobal66CuentaRemunerada', () => {
   beforeEach(() => {

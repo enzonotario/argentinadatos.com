@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerCapyfi } from '@/finanzas/criptopesos/extraccion/extraerCapyfi.esjs'
+import { extraerCapyfi } from '@/finanzas/criptopesos/extraccion/extraerCapyfi.js'
 
 const token = import.meta.env.VITE_FINANZAS_CAPYFI_TOKEN
 const baseUrl = import.meta.env.VITE_FINANZAS_CAPYFI_API_URL

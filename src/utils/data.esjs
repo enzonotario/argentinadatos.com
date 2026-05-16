@@ -1,5 +1,0 @@
-exportar funcion ordenarPorFecha(data) {
-  retornar data.ordenar((a, b) => {
-    retornar crear Fecha(a.fecha) - crear Fecha(b.fecha);
-  });
-}

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { scrapearConIA } from '@/finanzas/extraccion/ia.esjs'
-import { logGrupo } from '@/log.esjs'
+import { scrapearConIA } from '@/finanzas/extraccion/ia.js'
+import { logGrupo } from '@/log.js'
 
 describe('scrapearConIA (Real)', () => {
   it('extrae datos reales de BNA', async () => {

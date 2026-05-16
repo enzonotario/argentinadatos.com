@@ -56,10 +56,7 @@
     "singleQuote": true,
     "trailingComma": "all",
     "arrowParens": "avoid",
-    "endOfLine": "auto",
-    "plugins": [
-      "prettier-plugin-esjs"
-    ]
+    "endOfLine": "auto"
   },
   "dependencies": {
     "@libsql/client": "^0.15.15",

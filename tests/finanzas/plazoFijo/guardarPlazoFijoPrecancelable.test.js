@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { leerRuta } from '@/utils/rutas.esjs'
-import { extraerPlazoFijoPrecancelable } from '@/finanzas/extraccion/extraerPlazoFijoPrecancelable.esjs'
-import { guardarPlazoFijoPrecancelable } from '@/finanzas/guardado/guardarPlazoFijoPrecancelable.esjs'
+import { leerRuta } from '@/utils/rutas.js'
+import { extraerPlazoFijoPrecancelable } from '@/finanzas/extraccion/extraerPlazoFijoPrecancelable.js'
+import { guardarPlazoFijoPrecancelable } from '@/finanzas/guardado/guardarPlazoFijoPrecancelable.js'
 
 describe('guardarPlazoFijoPrecancelable', () => {
   it('guarda los plazos fijos precancelables', async () => {

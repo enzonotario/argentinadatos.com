@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerCresiumCuentaRemunerada } from '@/finanzas/extraccion/extraerCresium.esjs'
+import { extraerCresiumCuentaRemunerada } from '@/finanzas/extraccion/extraerCresium.js'
 
 describe('extraerCresium', () => {
   it('extrae Cresium Cuenta Remunerada correctamente', async () => {

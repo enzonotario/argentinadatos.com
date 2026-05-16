@@ -1,5 +1,0 @@
-importar parseDecimalNumber desde 'parse-decimal-number'
-
-exportar funcion interpretarDecimalConComa(valor) {
-  retornar parseDecimalNumber(valor, '.,')
-}

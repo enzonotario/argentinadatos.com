@@ -6,7 +6,7 @@ import {
   parsearNumero,
   resolverUrl,
   parsearPeriodo,
-} from '@/finanzas/rem/extraccion/extraerRem.esjs'
+} from '@/finanzas/rem/extraccion/extraerRem.js'
 
 const URLS_REM_2026 = [
   'https://www.bcra.gob.ar/publicaciones/relevamiento-de-expectativas-de-mercado-rem-marzo-de-2026/',

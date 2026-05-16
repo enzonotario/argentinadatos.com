@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { leerRuta } from '@/utils/rutas.esjs'
-import { extraerInflacionREM } from '@/finanzas/inflacionREM/extraccion/extraerInflacionREM.esjs'
-import { guardarInflacionREM } from '@/finanzas/inflacionREM/guardado/guardarInflacionREM.esjs'
+import { leerRuta } from '@/utils/rutas.js'
+import { extraerInflacionREM } from '@/finanzas/inflacionREM/extraccion/extraerInflacionREM.js'
+import { guardarInflacionREM } from '@/finanzas/inflacionREM/guardado/guardarInflacionREM.js'
 
 describe('guardarInflacionREM', () => {
   it('guarda la inflación REM', async () => {

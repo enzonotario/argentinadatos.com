@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerMontemarPayCuentaRemunerada } from '@/finanzas/extraccion/extraerMontemarPay.esjs'
+import { extraerMontemarPayCuentaRemunerada } from '@/finanzas/extraccion/extraerMontemarPay.js'
 
 describe('extraerMontemarPayCuentaRemunerada', () => {
   it('extrae la TNA de Montemar Pay', async () => {

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { leerRuta } from '@/utils/rutas.esjs'
-import { guardarCafci } from '@/finanzas/fci/guardarCafci.esjs'
+import { leerRuta } from '@/utils/rutas.js'
+import { guardarCafci } from '@/finanzas/fci/guardarCafci.js'
 import { format, parseISO } from 'date-fns'
 
 describe('guardarCafci', () => {

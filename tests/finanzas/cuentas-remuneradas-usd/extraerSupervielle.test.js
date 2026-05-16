@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerSupervielle } from '@/finanzas/cuentas-remuneradas-usd/extraccion/extraerSupervielle.esjs'
+import { extraerSupervielle } from '@/finanzas/cuentas-remuneradas-usd/extraccion/extraerSupervielle.js'
 
 describe('extraerSupervielle (Real)', () => {
   it('extrae datos correctamente de Supervielle', async () => {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerPlazoFijoPrecancelable } from '@/finanzas/extraccion/extraerPlazoFijoPrecancelable.esjs'
+import { extraerPlazoFijoPrecancelable } from '@/finanzas/extraccion/extraerPlazoFijoPrecancelable.js'
 
 describe('extraerPlazoFijoPrecancelable', () => {
   it('extrae proveedores con condiciones de plazo fijo precancelable', async () => {

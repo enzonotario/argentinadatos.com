@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerPlazoFijo } from '@/finanzas/extraccion/extraerPlazoFijo.esjs'
+import { extraerPlazoFijo } from '@/finanzas/extraccion/extraerPlazoFijo.js'
 
 describe('extraerPlazoFijo', () => {
   it('extrae los plazos fijos', async () => {

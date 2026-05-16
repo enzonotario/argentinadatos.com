@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import { format, parse } from 'date-fns'
-import { extraerDolares } from '@/cotizaciones/extraccion/extraerDolares.esjs'
-import { guardarDolares } from '@/cotizaciones/guardado/guardarDolares.esjs'
-import { leerRuta, escribirRuta } from '@/utils/rutas.esjs'
+import { extraerDolares } from '@/cotizaciones/extraccion/extraerDolares.js'
+import { guardarDolares } from '@/cotizaciones/guardado/guardarDolares.js'
+import { leerRuta, escribirRuta } from '@/utils/rutas.js'
 
 const dolares = [
   {

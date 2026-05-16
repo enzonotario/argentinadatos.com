@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerGalicia } from '@/finanzas/cuentas-remuneradas-usd/extraccion/extraerGalicia.esjs'
+import { extraerGalicia } from '@/finanzas/cuentas-remuneradas-usd/extraccion/extraerGalicia.js'
 
 describe('extraerGalicia', () => {
   it('extrae datos correctamente de Galicia', async () => {

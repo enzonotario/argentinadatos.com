@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerSupervielleHitIolCuentaRemunerada } from '@/finanzas/extraccion/extraerSupervielleHitIol.esjs'
+import { extraerSupervielleHitIolCuentaRemunerada } from '@/finanzas/extraccion/extraerSupervielleHitIol.js'
 
 import.meta.env.VITE_FORCE_IA = 'true'
 

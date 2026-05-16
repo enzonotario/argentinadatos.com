@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerUalaCuentaRemunerada } from '@/finanzas/extraccion/extraerUala.esjs'
+import { extraerUalaCuentaRemunerada } from '@/finanzas/extraccion/extraerUala.js'
 
 import.meta.env.VITE_FORCE_IA = 'true'
 

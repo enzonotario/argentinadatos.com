@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerFiwindARS } from '@/finanzas/extraccion/extraerFiwindARS.esjs'
+import { extraerFiwindARS } from '@/finanzas/extraccion/extraerFiwindARS.js'
 
 describe('extraerFiwindARS', () => {
   it('extrae FiwindARS Cuenta Remunerada correctamente', async () => {

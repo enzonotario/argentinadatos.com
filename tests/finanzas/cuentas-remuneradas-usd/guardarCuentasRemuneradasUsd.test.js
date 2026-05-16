@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { guardarCuentasRemuneradasUsd } from '@/finanzas/cuentas-remuneradas-usd/guardado/guardarCuentasRemuneradasUsd.esjs'
-import { CuentasRemuneradasUsdDatabaseService } from '@/finanzas/cuentas-remuneradas-usd/database/service.esjs'
-import { leerRuta } from '@/utils/rutas.esjs'
+import { guardarCuentasRemuneradasUsd } from '@/finanzas/cuentas-remuneradas-usd/guardado/guardarCuentasRemuneradasUsd.js'
+import { CuentasRemuneradasUsdDatabaseService } from '@/finanzas/cuentas-remuneradas-usd/database/service.js'
+import { leerRuta } from '@/utils/rutas.js'
 
 const TEST_URL = import.meta.env.VITE_TURSO_DATABASE_URL || 'libsql://test.turso.io'
 const TEST_AUTH_TOKEN = import.meta.env.VITE_TURSO_AUTH_TOKEN || 'test-token'

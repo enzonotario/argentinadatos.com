@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerCarrefourCondiciones } from '@/finanzas/extraccion/extraerCarrefourCondiciones.esjs'
+import { extraerCarrefourCondiciones } from '@/finanzas/extraccion/extraerCarrefourCondiciones.js'
 
 describe('extraerCarrefourCondiciones', () => {
   it('extrae condiciones de Carrefour o retorna el último conocido', async () => {

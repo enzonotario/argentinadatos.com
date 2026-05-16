@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerBeloCuentaRemunerada } from '@/finanzas/extraccion/extraerBelo.esjs'
+import { extraerBeloCuentaRemunerada } from '@/finanzas/extraccion/extraerBelo.js'
 
 describe('extraerBeloCuentaRemunerada', () => {
   it('extrae datos reales de la API de Belo', async () => {

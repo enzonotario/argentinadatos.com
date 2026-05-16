@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { format, isAfter, subMonths, parse, subDays, isBefore, addDays } from "date-fns";
-import { extraerIndiceUVA } from '@/finanzas/extraccion/extraerIndiceUVA.esjs'
+import { extraerIndiceUVA } from '@/finanzas/extraccion/extraerIndiceUVA.js'
 
 describe('extraerIndiceUVA', () => {
   it('extrae los indices UVA', async () => {

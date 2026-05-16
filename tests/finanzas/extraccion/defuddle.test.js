@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { htmlAMarkdownConDefuddle } from '@/finanzas/extraccion/defuddle.esjs'
+import { htmlAMarkdownConDefuddle } from '@/finanzas/extraccion/defuddle.js'
 
 describe('htmlAMarkdownConDefuddle', () => {
   it('convierte HTML mínimo en markdown', async () => {

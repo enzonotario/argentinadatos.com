@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { extraerCarrefourCuentaRemunerada } from '@/finanzas/extraccion/extraerCarrefour.esjs'
+import { extraerCarrefourCuentaRemunerada } from '@/finanzas/extraccion/extraerCarrefour.js'
 
 describe('extraerCarrefour', () => {
   it('extrae Carrefour Cuenta Remunerada correctamente', async () => {

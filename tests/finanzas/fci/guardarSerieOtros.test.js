@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { guardarSerieOtros } from '@/finanzas/fci/guardado/guardarSerieOtros.esjs'
-import { FciOtrosDatabaseService } from '@/finanzas/fci/database/service.esjs'
-import { leerRuta } from '@/utils/rutas.esjs'
+import { guardarSerieOtros } from '@/finanzas/fci/guardado/guardarSerieOtros.js'
+import { FciOtrosDatabaseService } from '@/finanzas/fci/database/service.js'
+import { leerRuta } from '@/utils/rutas.js'
 
 const TEST_URL = import.meta.env.VITE_TURSO_DATABASE_URL || 'libsql://test.turso.io'
 const TEST_AUTH_TOKEN = import.meta.env.VITE_TURSO_AUTH_TOKEN || 'test-token'

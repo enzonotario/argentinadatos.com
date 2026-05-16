@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { guardarCriptopesos } from '@/finanzas/criptopesos/guardado/guardarCriptopesos.esjs'
-import { CriptopesosDatabaseService } from '@/finanzas/criptopesos/database/service.esjs'
-import { leerRuta } from '@/utils/rutas.esjs'
+import { guardarCriptopesos } from '@/finanzas/criptopesos/guardado/guardarCriptopesos.js'
+import { CriptopesosDatabaseService } from '@/finanzas/criptopesos/database/service.js'
+import { leerRuta } from '@/utils/rutas.js'
 
 const TEST_URL = import.meta.env.VITE_TURSO_DATABASE_URL || 'libsql://test.turso.io'
 const TEST_AUTH_TOKEN = import.meta.env.VITE_TURSO_AUTH_TOKEN || 'test-token'

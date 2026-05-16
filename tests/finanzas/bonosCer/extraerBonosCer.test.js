@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import {
   DOCTA_BONOS_CER_URL,
   extraerBonosCer,
-} from '@/finanzas/bonosCer/extraccion/extraerBonosCer.esjs'
+} from '@/finanzas/bonosCer/extraccion/extraerBonosCer.js'
 
 const tieneFirecrawl =
   Boolean(import.meta.env.VITE_FIRECRAWL_API_KEY) &&
