@@ -82,6 +82,6 @@ function interpretarTipo(tipo) {
 
     case 'bridge':
       return 'puente'
-      porDefecto: return 'otro'
+      default: return 'otro'
   }
 }
