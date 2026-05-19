@@ -1,5 +1,5 @@
 {
-  "fechaActualizacion": "2026-05-15T00:30:15.583Z",
+  "fechaActualizacion": "2026-05-19T16:03:04.749Z",
   "remesas": [
     {
       "compania": "wallbit",
@@ -12,20 +12,55 @@
       "costoTarjeta": "0%",
       "retiroArs": "0",
       "detalles": null,
-      "calificacionAndroid": 4.75,
-      "calificacionIos": 4.75
+      "calificacionAndroid": 4.55,
+      "calificacionIos": 4.55
     },
     {
-      "compania": "arq",
+      "compania": "takenos",
       "cuentaPropia": true,
       "moneda": "CRIPTO",
       "inversiones": true,
       "tarjetaUsa": true,
-      "costoRecibirPagos": "3 USD",
+      "costoRecibirPagos": "0",
+      "costoMantenimientoTarjeta": "0 USD",
+      "costoTarjeta": "1%",
+      "retiroArs": "0",
+      "detalles": {
+        "costoRecibirPagos": "Para ACH es 0, para wire doméstica es 25 USD y swift 35 USD",
+        "costoMantenimientoTarjeta": "Debe abonarse una única vez 5 USD de emisión de tarjeta.",
+        "retiroArs": "Para ARS y crypto 0%. Para USD 3%, salvo que sean provenientes de Deel o Paypal que aplica 1%."
+      },
+      "calificacionAndroid": 3.85,
+      "calificacionIos": 3.85
+    },
+    {
+      "compania": "airtm",
+      "cuentaPropia": true,
+      "moneda": "CRIPTO",
+      "inversiones": true,
+      "tarjetaUsa": true,
+      "costoRecibirPagos": "0",
       "costoMantenimientoTarjeta": "0 USD",
       "costoTarjeta": "0%",
       "retiroArs": "0",
       "detalles": null,
+      "calificacionAndroid": 4.75,
+      "calificacionIos": 4.75
+    },
+    {
+      "compania": "grabrfi",
+      "cuentaPropia": true,
+      "moneda": "FIAT",
+      "inversiones": false,
+      "tarjetaUsa": true,
+      "costoRecibirPagos": "0",
+      "costoMantenimientoTarjeta": "0 USD",
+      "costoTarjeta": "0%",
+      "retiroArs": "5 USD",
+      "detalles": {
+        "costoRecibirPagos": "Recibir ACH no tiene costo, recibir wire doméstica 5 USD y swift 20 USD",
+        "retiroArs": "Los retiros tienen un costo fijo de 5 USD."
+      },
       "calificacionAndroid": 4.55,
       "calificacionIos": 4.55
     },
@@ -43,43 +78,8 @@
         "inversiones": "El balance que se tiene en AstroPay se invierte para generar rendimiento en dólares y en pesos.",
         "tarjetaUsa": "La AstroCard Global se emite en el extranjero y tiene beneficios al usarla fuera de Argentina."
       },
-      "calificacionAndroid": 4.8,
-      "calificacionIos": 4.8
-    },
-    {
-      "compania": "grabrfi",
-      "cuentaPropia": true,
-      "moneda": "FIAT",
-      "inversiones": false,
-      "tarjetaUsa": true,
-      "costoRecibirPagos": "0",
-      "costoMantenimientoTarjeta": "0 USD",
-      "costoTarjeta": "0%",
-      "retiroArs": "5 USD",
-      "detalles": {
-        "costoRecibirPagos": "Recibir ACH no tiene costo, recibir wire doméstica 5 USD y swift 20 USD",
-        "retiroArs": "Los retiros tienen un costo fijo de 5 USD."
-      },
-      "calificacionAndroid": 4.75,
-      "calificacionIos": 4.75
-    },
-    {
-      "compania": "takenos",
-      "cuentaPropia": true,
-      "moneda": "CRIPTO",
-      "inversiones": true,
-      "tarjetaUsa": true,
-      "costoRecibirPagos": "0",
-      "costoMantenimientoTarjeta": "0 USD",
-      "costoTarjeta": "1%",
-      "retiroArs": "0",
-      "detalles": {
-        "costoRecibirPagos": "Para ACH es 0, para wire doméstica es 25 USD y swift 35 USD",
-        "costoMantenimientoTarjeta": "Debe abonarse una única vez 5 USD de emisión de tarjeta.",
-        "retiroArs": "Para ARS y crypto 0%. Para USD 3%, salvo que sean provenientes de Deel o Paypal que aplica 1%."
-      },
-      "calificacionAndroid": 4.2,
-      "calificacionIos": 4.2
+      "calificacionAndroid": 4.5,
+      "calificacionIos": 4.5
     },
     {
       "compania": "payoneer",
@@ -94,26 +94,8 @@
       "detalles": {
         "costoTarjeta": "Dependiendo si hay FX."
       },
-      "calificacionAndroid": 4.4,
-      "calificacionIos": 4.4
-    },
-    {
-      "compania": "airtm",
-      "cuentaPropia": true,
-      "moneda": "CRIPTO",
-      "inversiones": false,
-      "tarjetaUsa": false,
-      "costoRecibirPagos": "0",
-      "costoMantenimientoTarjeta": "No tiene tarjeta emitida en EEUU.",
-      "costoTarjeta": "No tiene tarjeta emitida en EEUU.",
-      "retiroArs": "0",
-      "detalles": {
-        "tarjetaUsa": "No tiene tarjeta emitida en EEUU.",
-        "costoMantenimientoTarjeta": "No tiene tarjeta emitida en EEUU.",
-        "costoTarjeta": "No tiene tarjeta emitida en EEUU."
-      },
-      "calificacionAndroid": 4.7,
-      "calificacionIos": 4.7
+      "calificacionAndroid": 4.3,
+      "calificacionIos": 4.3
     },
     {
       "compania": "lemon",
@@ -130,8 +112,22 @@
         "costoMantenimientoTarjeta": "No tiene tarjeta emitida en EEUU.",
         "costoTarjeta": "No tiene tarjeta emitida en EEUU."
       },
-      "calificacionAndroid": 4.45,
-      "calificacionIos": 4.45
+      "calificacionAndroid": 4.05,
+      "calificacionIos": 4.05
+    },
+    {
+      "compania": "arq",
+      "cuentaPropia": true,
+      "moneda": "CRIPTO",
+      "inversiones": true,
+      "tarjetaUsa": true,
+      "costoRecibirPagos": "3 USD",
+      "costoMantenimientoTarjeta": "0 USD",
+      "costoTarjeta": "0%",
+      "retiroArs": "0",
+      "detalles": null,
+      "calificacionAndroid": 4.55,
+      "calificacionIos": 4.55
     },
     {
       "compania": "wise",
@@ -145,13 +141,12 @@
       "retiroArs": "1%",
       "detalles": {
         "cuentaPropia": "Wise ya no ofrece este servicio a residentes de Argentina.",
-        "tarjetaUsa": "No tiene tarjeta emitida en EEUU.",
         "costoRecibirPagos": "Recibir vía wire doméstica o swift es 6,11 USD, si es por ACH es 0",
         "costoMantenimientoTarjeta": "No tiene tarjeta emitida en EEUU.",
         "costoTarjeta": "No tiene tarjeta emitida en EEUU."
       },
-      "calificacionAndroid": 4.8,
-      "calificacionIos": 4.8
+      "calificacionAndroid": 4.85,
+      "calificacionIos": 4.85
     },
     {
       "compania": "Cocos",
