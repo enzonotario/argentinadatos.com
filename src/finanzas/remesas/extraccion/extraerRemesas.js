@@ -1,38 +1,3 @@
-function _nullishCoalesce(lhs, rhsFn) {
-  if (lhs != null) {
-    return lhs
-  } else {
-    return rhsFn()
-  }
-}
-
-function _optionalChain(ops) {
-  let lastAccessLHS = undefined
-  let value = ops[0]
-  let i = 1
-
-  while (i < ops.length) {
-    const op = ops[i]
-    const fn = ops[i + 1]
-
-    i += 2
-
-    if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) {
-      return undefined
-    }
-
-    if (op === 'access' || op === 'optionalAccess') {
-      lastAccessLHS = value
-      value = fn(value)
-    } else if (op === 'call' || op === 'optionalCall') {
-      value = fn((...args) => value.call(lastAccessLHS, ...args))
-      lastAccessLHS = undefined
-    }
-  }
-
-  return value
-}
-
 import { scrapearConFirecrawl } from '@/finanzas/extraccion/firecrawl.js'
 import { logMensaje, logError, logGrupo } from '@/log.js'
 import { extraerCocosRemesas } from '@/finanzas/remesas/extraccion/extraerCocosRemesas.js'
@@ -164,7 +129,7 @@ function normalizarBooleano(valor) {
 
 function normalizarTexto(valor) {
   if (typeof valor !== 'string') {
-    return _nullishCoalesce(valor, () => null)
+    return valor ?? null
   }
 
   const texto = valor.trim()
@@ -257,15 +222,7 @@ export function parsearRemesasDesdeHtml(html) {
 
   const payload = JSON.parse(payloadSerializado.slice(indiceSeparador + 1))
 
-  const datos = _optionalChain([
-    payload,
-    'optionalAccess',
-    _ => _[3],
-    'optionalAccess',
-    _2 => _2.serviceResponse,
-    'optionalAccess',
-    _3 => _3.data,
-  ])
+  const datos = payload?.[3]?.serviceResponse?.data
 
   if (!Array.isArray(datos)) {
     throw new Error('Payload estructurado de remesas sin array data')
@@ -277,144 +234,28 @@ export function parsearRemesasDesdeHtml(html) {
 function mapearRemesaDesdeHtml(raw) {
   return normalizarRemesa({
     compania: raw.company,
-    cuentaPropia: _optionalChain([
-      raw,
-      'access',
-      _4 => _4.ownAccount,
-      'optionalAccess',
-      _5 => _5.value,
-    ]),
+    cuentaPropia: raw.ownAccount?.value,
     moneda: raw.currency,
-    inversiones: _optionalChain([
-      raw,
-      'access',
-      _6 => _6.investments,
-      'optionalAccess',
-      _7 => _7.value,
-    ]),
-    tarjetaUsa: _optionalChain([
-      raw,
-      'access',
-      _8 => _8.usaCard,
-      'optionalAccess',
-      _9 => _9.value,
-    ]),
-    costoRecibirPagos: _optionalChain([
-      raw,
-      'access',
-      _10 => _10.receivePaymentsCost,
-      'optionalAccess',
-      _11 => _11.description,
-    ]),
-    costoMantenimientoTarjeta: _optionalChain([
-      raw,
-      'access',
-      _12 => _12.cardMaintenanceCost,
-      'optionalAccess',
-      _13 => _13.description,
-    ]),
-    costoTarjeta: _optionalChain([
-      raw,
-      'access',
-      _14 => _14.cardUseCost,
-      'optionalAccess',
-      _15 => _15.description,
-    ]),
-    retiroArs: _optionalChain([
-      raw,
-      'access',
-      _16 => _16.arsWithdrawal,
-      'optionalAccess',
-      _17 => _17.description,
-    ]),
+    inversiones: raw.investments?.value,
+    tarjetaUsa: raw.usaCard?.value,
+    costoRecibirPagos: raw.receivePaymentsCost?.description,
+    costoMantenimientoTarjeta: raw.cardMaintenanceCost?.description,
+    costoTarjeta: raw.cardUseCost?.description,
+    retiroArs: raw.arsWithdrawal?.description,
     detalles: {
-      cuentaPropia: _optionalChain([
-        raw,
-        'access',
-        _18 => _18.ownAccount,
-        'optionalAccess',
-        _19 => _19.popup,
-      ]),
+      cuentaPropia: raw.ownAccount?.popup,
       moneda: raw.currencyPopup,
-      inversiones: _optionalChain([
-        raw,
-        'access',
-        _20 => _20.investments,
-        'optionalAccess',
-        _21 => _21.popup,
-      ]),
-      tarjetaUsa: _optionalChain([
-        raw,
-        'access',
-        _22 => _22.usaCard,
-        'optionalAccess',
-        _23 => _23.popup,
-      ]),
-      costoRecibirPagos: _optionalChain([
-        raw,
-        'access',
-        _24 => _24.receivePaymentsCost,
-        'optionalAccess',
-        _25 => _25.popup,
-      ]),
-      costoMantenimientoTarjeta: _optionalChain([
-        raw,
-        'access',
-        _26 => _26.cardMaintenanceCost,
-        'optionalAccess',
-        _27 => _27.popup,
-      ]),
-      costoTarjeta: _optionalChain([
-        raw,
-        'access',
-        _28 => _28.cardUseCost,
-        'optionalAccess',
-        _29 => _29.popup,
-      ]),
-      retiroArs: _optionalChain([
-        raw,
-        'access',
-        _30 => _30.arsWithdrawal,
-        'optionalAccess',
-        _31 => _31.popup,
-      ]),
-      calificacionAndroid: _optionalChain([
-        raw,
-        'access',
-        _32 => _32.appScore,
-        'optionalAccess',
-        _33 => _33.android,
-        'optionalAccess',
-        _34 => _34.popup,
-      ]),
-      calificacionIos: _optionalChain([
-        raw,
-        'access',
-        _35 => _35.appScore,
-        'optionalAccess',
-        _36 => _36.ios,
-        'optionalAccess',
-        _37 => _37.popup,
-      ]),
+      inversiones: raw.investments?.popup,
+      tarjetaUsa: raw.usaCard?.popup,
+      costoRecibirPagos: raw.receivePaymentsCost?.popup,
+      costoMantenimientoTarjeta: raw.cardMaintenanceCost?.popup,
+      costoTarjeta: raw.cardUseCost?.popup,
+      retiroArs: raw.arsWithdrawal?.popup,
+      calificacionAndroid: raw.appScore?.android?.popup,
+      calificacionIos: raw.appScore?.ios?.popup,
     },
-    calificacionAndroid: _optionalChain([
-      raw,
-      'access',
-      _38 => _38.appScore,
-      'optionalAccess',
-      _39 => _39.android,
-      'optionalAccess',
-      _40 => _40.rating,
-    ]),
-    calificacionIos: _optionalChain([
-      raw,
-      'access',
-      _41 => _41.appScore,
-      'optionalAccess',
-      _42 => _42.ios,
-      'optionalAccess',
-      _43 => _43.rating,
-    ]),
+    calificacionAndroid: raw.appScore?.android?.rating,
+    calificacionIos: raw.appScore?.ios?.rating,
   })
 }
 
@@ -441,30 +282,14 @@ export function enriquecerRemesasConDetalles(remesasBase, remesasDesdeHtml) {
     remesasDesdeHtml
       .filter(Boolean)
       .map(remesa => [
-        _optionalChain([
-          remesa,
-          'access',
-          _44 => _44.compania,
-          'optionalAccess',
-          _45 => _45.toLowerCase,
-          'call',
-          _46 => _46(),
-        ]),
+        remesa.compania?.toLowerCase(),
         remesa,
       ]),
   )
 
   return remesasBase.map(remesa => {
     const remesaHtml = remesasPorCompania.get(
-      _optionalChain([
-        remesa,
-        'access',
-        _47 => _47.compania,
-        'optionalAccess',
-        _48 => _48.toLowerCase,
-        'call',
-        _49 => _49(),
-      ]),
+      remesa.compania?.toLowerCase(),
     )
 
     if (!remesaHtml) {
@@ -530,13 +355,7 @@ Ejemplo Takenos:
     logMensaje(log, 'extraerRemesas: usando fallback HTML estructurado', {
       motivo:
         resultadoFirecrawl.status === 'rejected'
-          ? _optionalChain([
-              resultadoFirecrawl,
-              'access',
-              _50 => _50.reason,
-              'optionalAccess',
-              _51 => _51.message,
-            ])
+          ? resultadoFirecrawl.reason?.message
           : 'Firecrawl sin array remesas',
     })
 
@@ -573,13 +392,7 @@ export async function extraerRemesas() {
     } else {
       logError(log, resultadoCocos.reason)
       logMensaje(log, 'extraerRemesas: falló Cocos desde rendimientos.co', {
-        errorMessage: _optionalChain([
-          resultadoCocos,
-          'access',
-          _52 => _52.reason,
-          'optionalAccess',
-          _53 => _53.message,
-        ]),
+        errorMessage: resultadoCocos.reason?.message,
       })
     }
 
