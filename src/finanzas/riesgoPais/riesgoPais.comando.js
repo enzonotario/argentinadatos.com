@@ -39,7 +39,7 @@ async function guardarHistorico(valores) {
 
       if (nuevoValor) {
         return {
-          valor: nuevoValor.value,
+          valor: nuevoValor.valor,
           fecha: item.fecha,
         }
       }

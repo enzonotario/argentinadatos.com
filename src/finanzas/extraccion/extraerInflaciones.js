@@ -15,7 +15,7 @@ export async function extraerInflaciones(desde, hasta) {
 
     return data.map(item => ({
       fecha: item.fecha,
-      valor: item.value,
+      valor: item.valor,
     }))
   } catch (error) {
     logError(log, error)

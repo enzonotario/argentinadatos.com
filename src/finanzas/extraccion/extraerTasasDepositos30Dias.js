@@ -14,7 +14,7 @@ export async function extraerTasasDepositos30Dias(desde, hasta) {
 
     return data.map(item => ({
       fecha: item.fecha,
-      valor: item.value,
+      valor: item.valor,
     }))
   } catch (error) {
     logError(log, error)
