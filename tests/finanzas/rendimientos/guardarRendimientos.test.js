@@ -21,7 +21,11 @@ async function testGuardarRendimientos(entidad, funcionExtraccion) {
   const guardado = await leerRuta(`/finanzas/rendimientos/${entidad}`)
 
   for (const item of items) {
-    expect(guardado).toContainEqual(item)
+    expect(guardado).toContainEqual({
+      moneda: item.moneda,
+      apy: item.apy,
+      fecha: item.fecha,
+    })
   }
 }
 

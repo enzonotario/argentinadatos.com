@@ -2,18 +2,18 @@ import { readdir, readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { dirname } from 'node:path'
-import { createClient } from '@libsql/client'
 import { parse, compareAsc } from 'date-fns'
 import { config } from 'dotenv'
+import {
+  crearClienteLibsql,
+  resolverConexionLibsql,
+} from '../src/utils/libsql.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 const rootDir = join(__dirname, '..')
 
 config({ path: join(rootDir, '.env') })
-
-const TURSO_DATABASE_URL = process.env.VITE_TURSO_DATABASE_URL
-const TURSO_AUTH_TOKEN = process.env.VITE_TURSO_AUTH_TOKEN
 
 const DATOS_DIR = join(rootDir, 'datos/v1/finanzas/fci/otros')
 
@@ -30,7 +30,8 @@ function valoresIguales(item1, item2) {
     item1.tea === item2.tea &&
     normalizarValor(item1.tope) === normalizarValor(item2.tope) &&
     normalizarValor(item1.condiciones) === normalizarValor(item2.condiciones) &&
-    normalizarValor(item1.condicionesCorto) === normalizarValor(item2.condicionesCorto)
+    normalizarValor(item1.condicionesCorto) ===
+      normalizarValor(item2.condicionesCorto)
   )
 }
 
@@ -77,10 +78,14 @@ async function inicializarBaseDatos(db) {
     sql: 'SELECT version FROM migrations WHERE scope = ?',
     args: ['fci-otros'],
   })
-  const executedMigrations = new Set(resultado.rows.map(row => Number(row.version)))
+  const executedMigrations = new Set(
+    resultado.rows.map(row => Number(row.version)),
+  )
 
   if (!executedMigrations.has(1)) {
-    console.log('Ejecutando migración 001: creando esquema inicial de fci otros...')
+    console.log(
+      'Ejecutando migración 001: creando esquema inicial de fci otros...',
+    )
 
     await db.execute(`
       CREATE TABLE IF NOT EXISTS fci_otros (
@@ -146,13 +151,32 @@ async function getLatestFciOtrosByFondo(db, fondo) {
   }
 }
 
-async function insertFciOtros(db, fondo, tna, tea, tope, fecha, condiciones, condicionesCorto, timestamp) {
+async function insertFciOtros(
+  db,
+  fondo,
+  tna,
+  tea,
+  tope,
+  fecha,
+  condiciones,
+  condicionesCorto,
+  timestamp,
+) {
   await db.execute({
     sql: `
       INSERT INTO fci_otros (fondo, tna, tea, tope, fecha, condiciones, condicionesCorto, timestamp)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     `,
-    args: [fondo, tna, tea, tope, fecha, condiciones, condicionesCorto, timestamp],
+    args: [
+      fondo,
+      tna,
+      tea,
+      tope,
+      fecha,
+      condiciones,
+      condicionesCorto,
+      timestamp,
+    ],
   })
 }
 
@@ -196,7 +220,12 @@ async function procesarArchivos() {
 
   for (const fondo of Object.keys(datosPorFondo)) {
     const registros = datosPorFondo[fondo]
-    registros.sort((a, b) => compareAsc(parse(a.fecha, 'yyyy-MM-dd', new Date()), parse(b.fecha, 'yyyy-MM-dd', new Date())))
+    registros.sort((a, b) =>
+      compareAsc(
+        parse(a.fecha, 'yyyy-MM-dd', new Date()),
+        parse(b.fecha, 'yyyy-MM-dd', new Date()),
+      ),
+    )
 
     if (registros.length === 0) {
       continue
@@ -215,23 +244,24 @@ async function procesarArchivos() {
     }
   }
 
-  console.log(`Registros a insertar después de filtrar duplicados: ${datosParaInsertar.length}`)
+  console.log(
+    `Registros a insertar después de filtrar duplicados: ${datosParaInsertar.length}`,
+  )
 
   return datosParaInsertar
 }
 
 async function main() {
-  if (!TURSO_DATABASE_URL || !TURSO_AUTH_TOKEN) {
-    console.error('Error: Se requieren las variables de entorno VITE_TURSO_DATABASE_URL y VITE_TURSO_AUTH_TOKEN')
-    process.exit(1)
-  }
+  const conexion = resolverConexionLibsql({
+    scope: 'fci-otros',
+  })
 
-  const db = createClient({
-    url: TURSO_DATABASE_URL,
-    authToken: TURSO_AUTH_TOKEN,
+  const db = crearClienteLibsql({
+    scope: 'fci-otros',
   })
 
   try {
+    console.log(`Usando base de datos: ${conexion.url}`)
     console.log('Inicializando base de datos...')
     await inicializarBaseDatos(db)
 
@@ -246,13 +276,19 @@ async function main() {
     for (const item of datosParaInsertar) {
       const ultimo = await getLatestFciOtrosByFondo(db, item.fondo)
 
-      if (!ultimo ||
-          ultimo.tna !== item.tna ||
-          ultimo.tea !== item.tea ||
-          ultimo.tope !== item.tope ||
-          ultimo.condiciones !== item.condiciones ||
-          ultimo.condicionesCorto !== item.condicionesCorto) {
-        const timestamp = parse(item.fecha, 'yyyy-MM-dd', new Date()).toISOString()
+      if (
+        !ultimo ||
+        ultimo.tna !== item.tna ||
+        ultimo.tea !== item.tea ||
+        ultimo.tope !== item.tope ||
+        ultimo.condiciones !== item.condiciones ||
+        ultimo.condicionesCorto !== item.condicionesCorto
+      ) {
+        const timestamp = parse(
+          item.fecha,
+          'yyyy-MM-dd',
+          new Date(),
+        ).toISOString()
         await insertFciOtros(
           db,
           item.fondo,
@@ -270,7 +306,9 @@ async function main() {
       }
     }
 
-    console.log(`Seed completado: ${insertados} insertados, ${omitidos} omitidos`)
+    console.log(
+      `Seed completado: ${insertados} insertados, ${omitidos} omitidos`,
+    )
   } catch (error) {
     console.error('Error durante el seed:', error)
     throw error

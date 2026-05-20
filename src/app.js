@@ -3,13 +3,13 @@ import { cronCotizaciones } from '@/cotizaciones/cotizaciones.cron.js'
 import { cronFinanzas } from '@/finanzas/finanzas.cron.js'
 import fci from '@/finanzas/fci/fci.comando.js'
 import fciIA from '@/finanzas/fci/fciIA.comando.js'
-import riesgoPais from '@/finanzas/riesgoPais/riesgoPais.comando.js'
+import riesgoPais from '@/finanzas/indices/riesgo-pais/riesgoPais.comando.js'
 import rendimientos from '@/finanzas/rendimientos/rendimientos.comando.js'
 import criptopesos from '@/finanzas/criptopesos/criptopesos.comando.js'
-import plazoFijoComando from '@/finanzas/plazoFijo/plazoFijo.comando.js'
-import plazoFijoUvaPagoPeriodicoComando from '@/finanzas/plazoFijo/plazoFijoUvaPagoPeriodico.comando.js'
+import plazoFijoComando from '@/finanzas/tasas/plazo-fijo/plazoFijo.comando.js'
+import plazoFijoUvaPagoPeriodicoComando from '@/finanzas/tasas/plazo-fijo-uva-pago-periodico/plazoFijoUvaPagoPeriodico.comando.js'
 import letrasComando from '@/finanzas/letras/letras.comando.js'
-import ejecutarBonosCer from '@/finanzas/bonosCer/bonosCer.comando.js'
+import ejecutarBonosCer from '@/finanzas/bonos-cer/bonosCer.comando.js'
 import ejecutarRemesas from '@/finanzas/remesas/remesas.comando.js'
 import cuentasRemuneradasUsdComando from '@/finanzas/cuentas-remuneradas-usd/cuentas-remuneradas-usd.comando.js'
 import remComando from '@/finanzas/rem/rem.comando.js'
@@ -56,7 +56,6 @@ export async function iniciar(comando) {
         console.log('- ' + path)
         await iniciar(path)
       }
-
       break
 
     case '/v1/feriados':
@@ -126,7 +125,9 @@ export async function iniciar(comando) {
     case 'actualizar-openapi-year':
       await actualizarOpenApiAño()
       break
-      porDefecto: console.log('No se encontro el comando')
+
+    default:
+      console.log('No se encontro el comando')
       break
   }
 

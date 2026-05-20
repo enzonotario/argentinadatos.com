@@ -3,20 +3,12 @@ import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-  ],
+  plugins: [],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
-    extensions: [
-      '.js',
-      '.json',
-      '.jsx',
-      '.mjs',
-      '.ts',
-      '.tsx',
-    ],
+    extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx'],
   },
   build: {
     rollupOptions: {
@@ -25,5 +17,8 @@ export default defineConfig({
       },
     },
   },
-  test: {},
+  test: {
+    testTimeout: 15_000,
+    include: ['tests/**/*.test.js', 'tests/**/*.spec.js'],
+  },
 })

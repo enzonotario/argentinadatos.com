@@ -1,4 +1,4 @@
-import { scrapearConFirecrawl } from '@/finanzas/extraccion/firecrawl.js'
+import { scrapearConFirecrawl } from '@/finanzas/compartido/extraccion/firecrawl.js'
 import { logMensaje, logError, logGrupo } from '@/log.js'
 
 export async function extraerSupervielle() {

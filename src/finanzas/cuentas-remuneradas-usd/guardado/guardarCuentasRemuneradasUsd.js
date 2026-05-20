@@ -1,14 +1,7 @@
 import { CuentasRemuneradasUsdDatabaseService } from '../database/service.js'
 import { escribirRuta } from '@/utils/rutas.js'
 
-const TURSO_DATABASE_URL = import.meta.env.VITE_TURSO_DATABASE_URL
-const TURSO_AUTH_TOKEN = import.meta.env.VITE_TURSO_AUTH_TOKEN
-
-export async function guardarCuentasRemuneradasUsd(
-  items,
-  url = TURSO_DATABASE_URL,
-  authToken = TURSO_AUTH_TOKEN,
-) {
+export async function guardarCuentasRemuneradasUsd(items, url, authToken) {
   const db = new CuentasRemuneradasUsdDatabaseService(url, authToken)
 
   try {

@@ -1,9 +1,10 @@
-import { createClient } from '@libsql/client'
 import { MigrationRunner } from './migrations/migration-runner.js'
+import { crearClienteLibsql } from '@/utils/libsql.js'
 
 export class RemDatabaseService {
   constructor(url, authToken) {
-    this.db = createClient({
+    this.db = crearClienteLibsql({
+      scope: 'rem',
       url,
       authToken,
     })
@@ -80,7 +81,7 @@ export class RemDatabaseService {
         item.percentil25,
         item.percentil10,
         item.participantes,
-        item.src,
+        item.src ?? item.fuente ?? null,
         item.publicacionUrl,
         item.xlsxUrl,
       ],

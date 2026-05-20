@@ -1,4 +1,4 @@
-import { scrapearConIA } from '@/finanzas/extraccion/ia.js'
+import { scrapearConIA } from '@/finanzas/compartido/extraccion/ia.js'
 import { logMensaje, logError, logGrupo } from '@/log.js'
 
 export async function extraerBna() {

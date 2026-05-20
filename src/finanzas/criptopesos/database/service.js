@@ -1,9 +1,10 @@
-import { createClient } from '@libsql/client'
 import { MigrationRunner } from './migrations/migration-runner.js'
+import { crearClienteLibsql } from '@/utils/libsql.js'
 
 export class CriptopesosDatabaseService {
   constructor(url, authToken) {
-    this.db = createClient({
+    this.db = crearClienteLibsql({
+      scope: 'criptopesos',
       url,
       authToken,
     })

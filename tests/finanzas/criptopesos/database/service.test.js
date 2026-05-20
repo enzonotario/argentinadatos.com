@@ -1,14 +1,14 @@
 import { describe, expect, it, beforeEach, afterEach } from 'vitest'
 import { CriptopesosDatabaseService } from '@/finanzas/criptopesos/database/service.js'
-
-const TEST_URL = import.meta.env.VITE_TURSO_DATABASE_URL || 'libsql://test.turso.io'
-const TEST_AUTH_TOKEN = import.meta.env.VITE_TURSO_AUTH_TOKEN || 'test-token'
+import { crearBaseDeDatosTemporal } from '../../../helpers/sqlite.js'
 
 describe('CriptopesosDatabaseService', () => {
   let db
+  let testDb
 
   beforeEach(async () => {
-    db = new CriptopesosDatabaseService(TEST_URL, TEST_AUTH_TOKEN)
+    testDb = crearBaseDeDatosTemporal('criptopesos')
+    db = new CriptopesosDatabaseService(testDb.url, testDb.authToken)
     await db.initialize()
   })
 
@@ -16,6 +16,7 @@ describe('CriptopesosDatabaseService', () => {
     if (db) {
       db.close()
     }
+    testDb?.cleanup()
   })
 
   it('inicializa la base de datos correctamente', () => {
@@ -40,11 +41,11 @@ describe('CriptopesosDatabaseService', () => {
     const timestamp2 = new Date().toISOString()
 
     await db.insertCriptopeso('ARGt', 'belo', 0.25, timestamp1)
-    await db.insertCriptopeso('ARGt', 'belo', 0.30, timestamp2)
+    await db.insertCriptopeso('ARGt', 'belo', 0.3, timestamp2)
 
     const ultimo = await db.getLatestCriptopesoByEntity('ARGt', 'belo')
 
-    expect(ultimo.tna).toBe(0.30)
+    expect(ultimo.tna).toBe(0.3)
   })
 
   it('obtiene todos los ultimos criptopesos', async () => {
@@ -56,8 +57,12 @@ describe('CriptopesosDatabaseService', () => {
     const todos = await db.getAllLatestCriptopesos()
 
     expect(todos.length).toBeGreaterThanOrEqual(2)
-    expect(todos.find(r => r.token === 'ARGt' && r.entidad === 'belo')).toBeDefined()
-    expect(todos.find(r => r.token === 'wARS' && r.entidad === 'Test')).toBeDefined()
+    expect(
+      todos.find(r => r.token === 'ARGt' && r.entidad === 'belo'),
+    ).toBeDefined()
+    expect(
+      todos.find(r => r.token === 'wARS' && r.entidad === 'Test'),
+    ).toBeDefined()
   })
 
   it('retorna null si no existe la entidad', async () => {
@@ -66,4 +71,3 @@ describe('CriptopesosDatabaseService', () => {
     expect(ultimo).toBeNull()
   })
 })
-

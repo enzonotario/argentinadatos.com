@@ -1,14 +1,14 @@
 import { describe, expect, it, beforeEach, afterEach } from 'vitest'
 import { CuentasRemuneradasUsdDatabaseService } from '@/finanzas/cuentas-remuneradas-usd/database/service.js'
-
-const TEST_URL = import.meta.env.VITE_TURSO_DATABASE_URL || 'libsql://test.turso.io'
-const TEST_AUTH_TOKEN = import.meta.env.VITE_TURSO_AUTH_TOKEN || 'test-token'
+import { crearBaseDeDatosTemporal } from '../../../helpers/sqlite.js'
 
 describe('CuentasRemuneradasUsdDatabaseService', () => {
   let db
+  let testDb
 
   beforeEach(async () => {
-    db = new CuentasRemuneradasUsdDatabaseService(TEST_URL, TEST_AUTH_TOKEN)
+    testDb = crearBaseDeDatosTemporal('cuentas-remuneradas-usd')
+    db = new CuentasRemuneradasUsdDatabaseService(testDb.url, testDb.authToken)
     await db.initialize()
   })
 
@@ -16,6 +16,7 @@ describe('CuentasRemuneradasUsdDatabaseService', () => {
     if (db) {
       db.close()
     }
+    testDb?.cleanup()
   })
 
   it('inicializa la base de datos correctamente', () => {

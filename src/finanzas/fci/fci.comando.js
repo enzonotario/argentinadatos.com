@@ -1,20 +1,17 @@
 import { collect } from 'collect.js'
 import { format, parseISO } from 'date-fns'
-import { guardarCafci } from '@/finanzas/fci/guardarCafci.js'
+import { guardarCafci } from '@/finanzas/fci/cafci/guardado/guardarCafci.js'
 import { escribirRuta } from '@/utils/rutas.js'
-import { extraerCafci } from '@/extractores/cafci.extractor.js'
+import { extraerCafci } from '@/finanzas/fci/cafci/extraccion/extraerCafci.js'
 import {
   extraerSerieOtros,
   extraerSerieOtrosIA,
-} from '@/finanzas/fci/extraerSerieOtros.js'
-import { extraerSerieVariables } from '@/finanzas/fci/extraerSerieVariables.js'
-import { extraerUalaCuentaRemunerada } from '@/finanzas/extraccion/extraerUala.js'
-import { guardarSerieOtros } from '@/finanzas/fci/guardado/guardarSerieOtros.js'
-import { FciOtrosDatabaseService } from '@/finanzas/fci/database/service.js'
+} from '@/finanzas/fci/otros/extraccion/extraerSerieOtros.js'
+import { extraerSerieVariables } from '@/finanzas/fci/variables/extraccion/extraerSerieVariables.js'
+import { extraerUalaCuentaRemunerada } from '@/finanzas/fci/otros/extraccion/extraerUala.js'
+import { guardarSerieOtros } from '@/finanzas/fci/otros/guardado/guardarSerieOtros.js'
+import { FciOtrosDatabaseService } from '@/finanzas/fci/otros/database/service.js'
 import { logGrupo, logError, logMensaje } from '@/log.js'
-
-const TURSO_DATABASE_URL = import.meta.env.VITE_TURSO_DATABASE_URL
-const TURSO_AUTH_TOKEN = import.meta.env.VITE_TURSO_AUTH_TOKEN
 
 export default async function () {
   await extraerSeriesDesdeCafci()
@@ -39,13 +36,12 @@ async function extraerUala() {
     return
   }
 
-  const db = new FciOtrosDatabaseService(TURSO_DATABASE_URL, TURSO_AUTH_TOKEN)
+  const db = new FciOtrosDatabaseService()
 
   try {
     await db.initialize()
 
-    for (var i = 0; i < valoresExtraidos.length; i++) {
-      const valorExtraido = valoresExtraidos[i]
+    for (const valorExtraido of valoresExtraidos) {
       const ultimo = await db.getLatestFciOtrosByFondo(valorExtraido.fondo)
 
       if (ultimo) {
@@ -69,7 +65,6 @@ async function extraerUala() {
     }
 
     const fechaActual = format(new Date(), 'yyyy-MM-dd')
-
     const valoresConFecha = valoresExtraidos.map(item => ({
       ...item,
       fecha: item.fecha || fechaActual,
@@ -90,9 +85,7 @@ async function extraerSeriesDesdeCafci() {
     'retornoTotal',
   ]
 
-  const promesas = Promise.all(series.map(serie => ejecutarSerie(serie)))
-
-  await promesas
+  await Promise.all(series.map(serie => ejecutarSerie(serie)))
 }
 
 async function ejecutarSerie(serie) {
@@ -110,7 +103,6 @@ async function ejecutarSerie(serie) {
   }
 
   const itemsConFecha = items.filter(item => item.fecha)
-
   const guardados = []
 
   collect(itemsConFecha)
@@ -126,7 +118,7 @@ async function ejecutarSerie(serie) {
 
   collect(items)
     .groupBy('fondo')
-    .map((valores, key) => {
+    .map(valores => {
       const itemsFondo = collect(valores)
         .sortByDesc('fecha')
         .unique('fecha')

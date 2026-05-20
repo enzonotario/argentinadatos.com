@@ -1,5 +1,8 @@
 import { MigrationRunner } from './migration-runner.js'
-import { createClient } from '@libsql/client'
+import {
+  crearClienteLibsql,
+  resolverConexionLibsql,
+} from '../../../../utils/libsql.js'
 
 const COMMANDS = {
   up: 'Ejecutar migraciones pendientes',
@@ -31,8 +34,8 @@ export async function main() {
   }
 
   const command = args[0]
-  const url = args[1] || import.meta.env.VITE_TURSO_DATABASE_URL
-  const authToken = args[2] || import.meta.env.VITE_TURSO_AUTH_TOKEN
+  const url = args[1]
+  const authToken = args[2]
 
   if (!Object.keys(COMMANDS).includes(command)) {
     console.error(`Comando desconocido: ${command}`)
@@ -40,18 +43,20 @@ export async function main() {
     process.exit(1)
   }
 
-  if (!url || !authToken) {
-    console.error('Se requiere URL y token de autenticación de Turso')
-    process.exit(1)
-  }
+  const conexion = resolverConexionLibsql({
+    scope: 'criptopesos',
+    url,
+    authToken,
+  })
 
-  const db = createClient({
+  const db = crearClienteLibsql({
+    scope: 'criptopesos',
     url,
     authToken,
   })
 
   try {
-    console.log(`Conectando a base de datos: ${url}`)
+    console.log(`Conectando a base de datos: ${conexion.url}`)
 
     const migrationRunner = new MigrationRunner(db)
 

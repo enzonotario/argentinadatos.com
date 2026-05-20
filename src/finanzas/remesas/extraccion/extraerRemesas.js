@@ -1,4 +1,4 @@
-import { scrapearConFirecrawl } from '@/finanzas/extraccion/firecrawl.js'
+import { scrapearConFirecrawl } from '@/finanzas/compartido/extraccion/firecrawl.js'
 import { logMensaje, logError, logGrupo } from '@/log.js'
 import { extraerCocosRemesas } from '@/finanzas/remesas/extraccion/extraerCocosRemesas.js'
 
@@ -281,16 +281,11 @@ export function enriquecerRemesasConDetalles(remesasBase, remesasDesdeHtml) {
   const remesasPorCompania = new Map(
     remesasDesdeHtml
       .filter(Boolean)
-      .map(remesa => [
-        remesa.compania?.toLowerCase(),
-        remesa,
-      ]),
+      .map(remesa => [remesa.compania?.toLowerCase(), remesa]),
   )
 
   return remesasBase.map(remesa => {
-    const remesaHtml = remesasPorCompania.get(
-      remesa.compania?.toLowerCase(),
-    )
+    const remesaHtml = remesasPorCompania.get(remesa.compania?.toLowerCase())
 
     if (!remesaHtml) {
       return remesa

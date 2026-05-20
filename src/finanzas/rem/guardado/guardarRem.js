@@ -1,16 +1,7 @@
 import { RemDatabaseService } from '../database/service.js'
 import { escribirRuta } from '@/utils/rutas.js'
 
-const TURSO_DATABASE_URL =
-  import.meta.env.VITE_TURSO_DATABASE_URL || 'file:database.sqlite'
-
-const TURSO_AUTH_TOKEN = import.meta.env.VITE_TURSO_AUTH_TOKEN
-
-export async function guardarRem(
-  items,
-  url = TURSO_DATABASE_URL,
-  authToken = TURSO_AUTH_TOKEN,
-) {
+export async function guardarRem(items, url, authToken) {
   const db = new RemDatabaseService(url, authToken)
 
   try {
