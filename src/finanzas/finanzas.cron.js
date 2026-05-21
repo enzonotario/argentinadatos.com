@@ -18,8 +18,6 @@ import riesgoPais from '@/finanzas/indices/riesgo-pais/riesgoPais.comando.js'
 import { ejecutarCriptopesos } from '@/finanzas/criptopesos/criptopesos.comando.js'
 import { extraerCreditosHipotecariosUva } from '@/finanzas/creditos/hipotecarios-uva/extraccion/extraerCreditosHipotecariosUva.js'
 import { guardarCreditosHipotecariosUva } from '@/finanzas/creditos/hipotecarios-uva/guardado/guardarCreditosHipotecariosUva.js'
-import { extraerInflacionREM } from '@/finanzas/inflacion/rem/extraccion/extraerInflacionREM.js'
-import { guardarInflacionREM } from '@/finanzas/inflacion/rem/guardado/guardarInflacionREM.js'
 import remComando from '@/finanzas/rem/rem.comando.js'
 import letrasComando from '@/finanzas/letras/letras.comando.js'
 import ejecutarBonosCer from '@/finanzas/bonos-cer/bonosCer.comando.js'
@@ -38,7 +36,6 @@ export async function cronFinanzas() {
   await riesgoPais()
   await ejecutarCriptopesos()
   await creditosHipotecariosUva()
-  await inflacionREM()
   await rem()
   await letras()
   await ejecutarBonosCer()
@@ -144,16 +141,6 @@ async function creditosHipotecariosUva() {
     await guardarCreditosHipotecariosUva(datos)
   } catch (error) {
     console.error('Error al extraer créditos hipotecarios UVA', error)
-  }
-}
-
-async function inflacionREM() {
-  try {
-    const datos = await extraerInflacionREM()
-
-    await guardarInflacionREM(datos)
-  } catch (error) {
-    console.error('Error al extraer inflación REM', error)
   }
 }
 
