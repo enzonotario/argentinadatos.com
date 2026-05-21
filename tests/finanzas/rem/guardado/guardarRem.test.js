@@ -85,11 +85,20 @@ describe('guardarRem', () => {
     expect(ultimo[0].informe).toBe('2026-03')
 
     expect(endpoints).toEqual([
+      '/finanzas/rem/ultimo',
+      '/finanzas/rem/2026/03',
+      '/finanzas/rem/2026/02',
+    ])
+    expect(leerRuta('/finanzas/rem')).toEqual(endpoints)
+    expect(leerRuta('/finanzas/rem/ultimo')).toEqual(ultimo)
+    expect(leerRuta('/finanzas/rem/2026/03')).toEqual([todos[0]])
+    expect(leerRuta('/finanzas/rem/2026/02')).toEqual([todos[1]])
+
+    expect(leerRuta('/rems')).toEqual([
       '/rems/ultimo',
       '/rems/2026/03',
       '/rems/2026/02',
     ])
-    expect(leerRuta('/rems')).toEqual(endpoints)
     expect(leerRuta('/rems/ultimo')).toEqual(ultimo)
     expect(leerRuta('/rems/2026/03')).toEqual([todos[0]])
     expect(leerRuta('/rems/2026/02')).toEqual([todos[1]])

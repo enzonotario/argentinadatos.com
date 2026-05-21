@@ -1,7 +1,7 @@
 ---
 aside: false
 outline: false
-title: Relevamientos de Expectativas de Mercado (REM)
+title: Relevamiento de Expectativas de Mercado (REM) - último informe
 ---
 
 <script setup>
@@ -11,7 +11,7 @@ import { OAMarkdown } from 'vitepress-openapi/client'
 const route = useRoute()
 </script>
 
-<OAOperation operation-id="get-rems">
+<OAOperation operation-id="get-finanzas-rem-ultimo">
 
 <template #description="description">
 
@@ -23,7 +23,7 @@ const route = useRoute()
 
 <template #footer="footer">
 
-<!--@include: ./parts/get-rems-footer.md -->
+<!--@include: ./parts/get-finanzas-rem-ultimo-footer.md -->
 
 </template>
 

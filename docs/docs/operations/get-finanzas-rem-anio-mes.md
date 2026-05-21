@@ -11,7 +11,7 @@ import { OAMarkdown } from 'vitepress-openapi/client'
 const route = useRoute()
 </script>
 
-<OAOperation operation-id="get-rems-anio-mes">
+<OAOperation operation-id="get-finanzas-rem-anio-mes">
 
 <template #description="description">
 
@@ -23,7 +23,7 @@ const route = useRoute()
 
 <template #footer="footer">
 
-<!--@include: ./parts/get-rems-anio-mes-footer.md -->
+<!--@include: ./parts/get-finanzas-rem-anio-mes-footer.md -->
 
 </template>
 
