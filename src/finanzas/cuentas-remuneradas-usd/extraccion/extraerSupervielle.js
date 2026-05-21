@@ -1,4 +1,4 @@
-import { scrapearConFirecrawl } from '@/finanzas/compartido/extraccion/scrapearConFirecrawl.js'
+import { scrapeWithFirecrawl } from '@/shared/extraction/firecrawl/scrapeWithFirecrawl.js'
 import { logMensaje, logError, logGrupo } from '@/log.js'
 
 export async function extraerSupervielle() {
@@ -30,7 +30,7 @@ export async function extraerSupervielle() {
       'Iniciando extracción de cuenta remunerada USD de Supervielle',
     )
 
-    const datos = await scrapearConFirecrawl(log, configuracion)
+    const datos = await scrapeWithFirecrawl(log, configuracion)
 
     if (!datos || typeof datos.tasa !== 'number') {
       throw new Error('Datos inválidos de Supervielle: falta tasa')

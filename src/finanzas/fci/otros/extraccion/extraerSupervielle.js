@@ -1,6 +1,6 @@
 import { format } from 'date-fns'
 import { logGrupo, logError, logMensaje } from '@/log.js'
-import { scrapearConIA } from '@/finanzas/compartido/extraccion/scrapearConIA.js'
+import { extractWithAI } from '@/shared/extraction/ai/extractWithAI.js'
 import {
   calcularTeaDesdeTna,
   redondearTasa,
@@ -13,7 +13,7 @@ export async function extraerSupervielleCuentaRemunerada() {
   })
 
   try {
-    const datos = await scrapearConIA(log, {
+    const datos = await extractWithAI(log, {
       url: 'https://www.supervielle.com.ar/personas/cuentas/cuenta-remunerada',
       prompt:
         'Extrae la TNA (Tasa Nominal Anual) y el tope máximo de remuneración de la cuenta remunerada en pesos de Supervielle. Para la TNA usa números decimales (por ejemplo 0.75 para 75%, 0.42 para 42%). El tope es el monto máximo en pesos que se puede remunerar. Si no se especifica un tope, deja el campo vacío.',

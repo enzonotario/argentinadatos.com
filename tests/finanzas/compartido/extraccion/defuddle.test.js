@@ -1,11 +1,11 @@
 import { describe, it, expect } from 'vitest'
-import { htmlAMarkdownConDefuddle } from '@/finanzas/compartido/extraccion/defuddle.js'
+import { convertHtmlToMarkdownWithDefuddle } from '@/shared/extraction/defuddle.js'
 
-describe('htmlAMarkdownConDefuddle', () => {
+describe('convertHtmlToMarkdownWithDefuddle', () => {
   it('convierte HTML mínimo en markdown', async () => {
     const html =
       '<html><head><title>T</title></head><body><article><h1>Hello</h1><p>World</p></article></body></html>'
-    const md = await htmlAMarkdownConDefuddle(
+    const md = await convertHtmlToMarkdownWithDefuddle(
       html,
       'https://example.com/pagina',
     )

@@ -1,6 +1,6 @@
 import { format } from 'date-fns'
 import { logGrupo, logError, logMensaje } from '@/log.js'
-import { scrapearConIA } from '@/finanzas/compartido/extraccion/scrapearConIA.js'
+import { extractWithAI } from '@/shared/extraction/ai/extractWithAI.js'
 import {
   calcularTeaDesdeTna,
   redondearTasa,
@@ -13,7 +13,7 @@ export async function extraerSupervielleHitIolCuentaRemunerada() {
   })
 
   try {
-    const datos = await scrapearConIA(log, {
+    const datos = await extractWithAI(log, {
       url: 'https://www.supervielle.com.ar/personas/cuentas/cuenta-hit-iol',
       prompt:
         'Extrae la TNA (Tasa Nominal Anual) de la cuenta en pesos ("Cuenta en Pesos") para el segmento Clientes Cuenta Hit IOL de la promoción publicada. No uses las tasas de la cuenta en dólares. Para la TNA usá números decimales (por ejemplo 0.20 para 20%). El tope es el monto máximo en pesos remunerable; si indica "sin tope" o no hay límite numérico claro, omití tope o dejalo null.',

@@ -1,6 +1,6 @@
 import { format } from 'date-fns'
 import { logGrupo, logError, logMensaje } from '@/log.js'
-import { scrapearConIA } from '@/finanzas/compartido/extraccion/scrapearConIA.js'
+import { extractWithAI } from '@/shared/extraction/ai/extractWithAI.js'
 import {
   calcularTeaDesdeTna,
   redondearTasa,
@@ -13,7 +13,7 @@ export async function extraerBnaCuentaRemunerada() {
   })
 
   try {
-    const datos = await scrapearConIA(log, {
+    const datos = await extractWithAI(log, {
       url: 'https://bna.com.ar/Personas/cuentasueldo',
       prompt:
         'Extrae la tasa de la cuenta remunerada en pesos en formato JSON. Para la TNA usa números decimales (por ejemplo 0.2 para 2%). En condiciones/condicionesCorto aclará para qué tipo de Cuentas/Clientes es.',

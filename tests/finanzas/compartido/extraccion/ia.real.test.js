@@ -1,12 +1,12 @@
 import { describe, expect, it } from 'vitest'
-import { scrapearConIA } from '@/finanzas/compartido/extraccion/scrapearConIA.js'
+import { extractWithAI } from '@/shared/extraction/ai/extractWithAI.js'
 import { logGrupo } from '@/log.js'
 
 const tieneIaCompleta =
   Boolean(import.meta.env.VITE_TABSTACK_API_KEY) &&
   Boolean(import.meta.env.VITE_OPENAI_API_KEY)
 
-describe.skipIf(!tieneIaCompleta)('scrapearConIA (Real)', () => {
+describe.skipIf(!tieneIaCompleta)('extractWithAI (Real)', () => {
   it('extrae datos reales de BNA', async () => {
     const log = logGrupo({ fuente: 'test', tipo: 'real' })
 
@@ -26,7 +26,7 @@ describe.skipIf(!tieneIaCompleta)('scrapearConIA (Real)', () => {
     }
 
     try {
-      const datos = await scrapearConIA(log, configuracion)
+      const datos = await extractWithAI(log, configuracion)
 
       console.log('Datos extraídos:', datos)
 

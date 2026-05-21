@@ -1,6 +1,6 @@
 import { format } from 'date-fns'
 import { logGrupo, logError, logMensaje } from '@/log.js'
-import { scrapearConIA } from '@/finanzas/compartido/extraccion/scrapearConIA.js'
+import { extractWithAI } from '@/shared/extraction/ai/extractWithAI.js'
 import {
   calcularTeaDesdeTna,
   redondearTasa,
@@ -25,9 +25,9 @@ export async function extraerNaranjaX() {
   })
 
   try {
-    const datos = await scrapearConIA(log, {
+    const datos = await extractWithAI(log, {
       url: URL_NARANJA_BLOG_TNA,
-      fuenteMarkdown: 'defuddle',
+      markdownSource: 'defuddle',
       prompt:
         'El markdown es el artículo del blog de Naranja X. Extraé la TNA nominal anual vigente de la cuenta remunerada en pesos, el tope máximo de saldo remunerado si figura (monto en pesos, sin puntos de miles en el número), y un resumen breve de condiciones si aplica. TNA en decimal (ej. 0.19 para 19%). tope null si no se indica límite claro.',
       schema: schemaNaranja,

@@ -1,5 +1,5 @@
 import { logGrupo, logError, logMensaje } from '@/log.js'
-import { scrapearConIA } from '@/finanzas/compartido/extraccion/scrapearConIA.js'
+import { extractWithAI } from '@/shared/extraction/ai/extractWithAI.js'
 
 export async function extraerFiwindARSCondiciones() {
   const log = logGrupo({
@@ -8,7 +8,7 @@ export async function extraerFiwindARSCondiciones() {
   })
 
   try {
-    const datos = await scrapearConIA(log, {
+    const datos = await extractWithAI(log, {
       url: 'https://help.fiwind.io/es/articles/11723346-tus-primeros-pesos-rinden-mas',
       prompt:
         'Extrae las condiciones del rendimiento bonificado respecto a la fecha de vigencia. No extraigas tasas actuales. En condiciones incluí la fecha de vigencia. En condicionesCorto resumilo en menos de 100 caracteres.',

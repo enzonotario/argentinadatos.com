@@ -1,5 +1,5 @@
 import { logGrupo, logError, logMensaje } from '@/log.js'
-import { scrapearConIA } from '@/finanzas/compartido/extraccion/scrapearConIA.js'
+import { extractWithAI } from '@/shared/extraction/ai/extractWithAI.js'
 
 export async function extraerCarrefourCondiciones() {
   const log = logGrupo({
@@ -8,7 +8,7 @@ export async function extraerCarrefourCondiciones() {
   })
 
   try {
-    const datos = await scrapearConIA(log, {
+    const datos = await extractWithAI(log, {
       url: 'https://www.bancodeserviciosfinancieros.com.ar/costos-prepaga/',
       prompt:
         'Extrae el tope de recarga mensual de la cuenta digital Carrefour. Busca el valor en la sección "CUENTA DIGITAL MI CARREFOUR" bajo "Tope mensual de recarga". Retorna el número sin símbolos ni puntos, solo el valor numérico.',

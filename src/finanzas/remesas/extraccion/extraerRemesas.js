@@ -1,4 +1,4 @@
-import { scrapearConFirecrawl } from '@/finanzas/compartido/extraccion/scrapearConFirecrawl.js'
+import { scrapeWithFirecrawl } from '@/shared/extraction/firecrawl/scrapeWithFirecrawl.js'
 import { logMensaje, logError, logGrupo } from '@/log.js'
 import { extraerCocosRemesas } from '@/finanzas/remesas/extraccion/extraerCocosRemesas.js'
 
@@ -328,7 +328,7 @@ Ejemplo Takenos:
   })
 
   const [resultadoFirecrawl, resultadoHtml] = await Promise.allSettled([
-    scrapearConFirecrawl(log, configuracion),
+    scrapeWithFirecrawl(log, configuracion),
     extraerRemesasDesdeHtml(log),
   ])
 

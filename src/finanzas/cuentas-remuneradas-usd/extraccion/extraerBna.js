@@ -1,4 +1,4 @@
-import { scrapearConIA } from '@/finanzas/compartido/extraccion/scrapearConIA.js'
+import { extractWithAI } from '@/shared/extraction/ai/extractWithAI.js'
 import { logMensaje, logError, logGrupo } from '@/log.js'
 
 export async function extraerBna() {
@@ -25,7 +25,7 @@ export async function extraerBna() {
       required: ['tasa'],
     }
 
-    const datos = await scrapearConIA(log, configuracion)
+    const datos = await extractWithAI(log, configuracion)
 
     if (!datos || typeof datos.tasa !== 'number') {
       throw new Error('Datos inválidos de BNA: falta tasa')

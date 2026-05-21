@@ -6,7 +6,7 @@ function _nullishCoalesce(lhs, rhsFn) {
   }
 }
 
-import { scrapearConFirecrawl } from '@/finanzas/compartido/extraccion/scrapearConFirecrawl.js'
+import { scrapeWithFirecrawl } from '@/shared/extraction/firecrawl/scrapeWithFirecrawl.js'
 import { logMensaje, logError, logGrupo } from '@/log.js'
 
 export const DOCTA_BONOS_CER_URL =
@@ -116,7 +116,7 @@ Reglas:
     url: DOCTA_BONOS_CER_URL,
   })
 
-  const datos = await scrapearConFirecrawl(log, configuracion)
+  const datos = await scrapeWithFirecrawl(log, configuracion)
 
   if (!datos || !Array.isArray(datos.bonos)) {
     throw new Error('Firecrawl Docta: respuesta sin array bonos')
