@@ -27,7 +27,7 @@ permissions:
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
@@ -111,6 +111,17 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+
+      - name: Download CAFCI worker SQLite from R2
+        if: inputs.run_command == 'pnpm run cron /v1/finanzas/fci/fondos'
+        env:
+          CAFCI_WORKER_R2_ACCOUNT_ID: ${{ secrets.CAFCI_WORKER_R2_ACCOUNT_ID }}
+          CAFCI_WORKER_R2_ACCESS_KEY_ID: ${{ secrets.CAFCI_WORKER_R2_ACCESS_KEY_ID }}
+          CAFCI_WORKER_R2_SECRET_ACCESS_KEY: ${{ secrets.CAFCI_WORKER_R2_SECRET_ACCESS_KEY }}
+          CAFCI_WORKER_R2_BUCKET: ${{ secrets.CAFCI_WORKER_R2_BUCKET }}
+          CAFCI_WORKER_R2_OBJECT_KEY: ${{ secrets.CAFCI_WORKER_R2_OBJECT_KEY }}
+          CAFCI_WORKER_DB_PATH: storage/cafci-worker/db.sqlite
+        run: pnpm run cafci-worker:r2:download
 
       - name: Build
         if: inputs.needs_build

@@ -18,6 +18,7 @@ on:
           - pnpm run cron /v1/cotizaciones
           - pnpm run cron /v1/finanzas
           - pnpm run cron /v1/finanzas/fci
+          - pnpm run cron /v1/finanzas/fci/fondos
           - pnpm run cron /v1/finanzas/fciIA
           - pnpm run cron /v1/finanzas/riesgo-pais
           - pnpm run cron /v1/finanzas/rendimientos

@@ -13,6 +13,7 @@ import ejecutarBonosCer from '@/finanzas/bonos-cer/bonosCer.comando.js'
 import ejecutarRemesas from '@/finanzas/remesas/remesas.comando.js'
 import cuentasRemuneradasUsdComando from '@/finanzas/cuentas-remuneradas-usd/cuentas-remuneradas-usd.comando.js'
 import remComando from '@/finanzas/rem/rem.comando.js'
+import fondosFciComando from '@/finanzas/fci/fondos/fondos.comando.js'
 import presidentesComando from '@/presidentes/presidentes.comando.js'
 import { actualizarOpenApiAño } from '@/utils/actualizarOpenApiAño.js'
 
@@ -72,6 +73,10 @@ export async function iniciar(comando) {
 
     case '/v1/finanzas/fci':
       await fci()
+      break
+
+    case '/v1/finanzas/fci/fondos':
+      await fondosFciComando()
       break
 
     case '/v1/finanzas/fciIA':
