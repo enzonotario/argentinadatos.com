@@ -1,6 +1,6 @@
 import { format } from 'date-fns'
 import { logGrupo, logError, logMensaje } from '@/log.js'
-import { scrapearConIA } from '@/finanzas/compartido/extraccion/ia.js'
+import { scrapearConIA } from '@/finanzas/compartido/extraccion/scrapearConIA.js'
 import {
   calcularTeaDesdeTna,
   redondearTasa,

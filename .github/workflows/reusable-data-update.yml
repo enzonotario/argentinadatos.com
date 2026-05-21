@@ -100,7 +100,6 @@ jobs:
           echo "VITE_TURSO_DATABASE_URL=${{ secrets.VITE_TURSO_DATABASE_URL }}" >> .env
           echo "VITE_TURSO_AUTH_TOKEN=${{ secrets.VITE_TURSO_AUTH_TOKEN }}" >> .env
           echo "VITE_GSHEETS_API_KEY=${{ secrets.VITE_GSHEETS_API_KEY }}" >> .env
-          echo "VITE_GSHEETS_UALA_SPREADSHEET_ID=${{ secrets.VITE_GSHEETS_UALA_SPREADSHEET_ID }}" >> .env
           echo "VITE_GSHEETS_ASTROPAY_SPREADSHEET_ID=${{ secrets.VITE_GSHEETS_ASTROPAY_SPREADSHEET_ID }}" >> .env
           echo "VITE_GSHEETS_LETRAS_SPREADSHEET_ID=${{ secrets.VITE_GSHEETS_LETRAS_SPREADSHEET_ID }}" >> .env
           echo "VITE_OPENAI_API_KEY=${{ secrets.VITE_OPENAI_API_KEY }}" >> .env

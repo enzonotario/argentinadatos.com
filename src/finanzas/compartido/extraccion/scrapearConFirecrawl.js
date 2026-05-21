@@ -1,5 +1,4 @@
-import { logMensaje, logError } from '@/log.js'
-import { getDay } from 'date-fns'
+import { logError, logMensaje } from '@/log.js'
 
 const FIRECRAWL_API_URL = `${import.meta.env.VITE_FIRECRAWL_BASE_URL}/v2/scrape`
 const FIRECRAWL_API_KEY = import.meta.env.VITE_FIRECRAWL_API_KEY

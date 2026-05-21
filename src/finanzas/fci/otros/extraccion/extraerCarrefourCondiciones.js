@@ -1,5 +1,5 @@
 import { logGrupo, logError, logMensaje } from '@/log.js'
-import { scrapearConIA } from '@/finanzas/compartido/extraccion/ia.js'
+import { scrapearConIA } from '@/finanzas/compartido/extraccion/scrapearConIA.js'
 
 export async function extraerCarrefourCondiciones() {
   const log = logGrupo({

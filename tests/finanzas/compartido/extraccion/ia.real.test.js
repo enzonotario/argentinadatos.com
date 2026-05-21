@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { scrapearConIA } from '@/finanzas/compartido/extraccion/ia.js'
+import { scrapearConIA } from '@/finanzas/compartido/extraccion/scrapearConIA.js'
 import { logGrupo } from '@/log.js'
 
 const tieneIaCompleta =

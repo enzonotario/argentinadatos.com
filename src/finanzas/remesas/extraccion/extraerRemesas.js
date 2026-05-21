@@ -1,4 +1,4 @@
-import { scrapearConFirecrawl } from '@/finanzas/compartido/extraccion/firecrawl.js'
+import { scrapearConFirecrawl } from '@/finanzas/compartido/extraccion/scrapearConFirecrawl.js'
 import { logMensaje, logError, logGrupo } from '@/log.js'
 import { extraerCocosRemesas } from '@/finanzas/remesas/extraccion/extraerCocosRemesas.js'
 

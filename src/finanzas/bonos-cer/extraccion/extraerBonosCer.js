@@ -6,7 +6,7 @@ function _nullishCoalesce(lhs, rhsFn) {
   }
 }
 
-import { scrapearConFirecrawl } from '@/finanzas/compartido/extraccion/firecrawl.js'
+import { scrapearConFirecrawl } from '@/finanzas/compartido/extraccion/scrapearConFirecrawl.js'
 import { logMensaje, logError, logGrupo } from '@/log.js'
 
 export const DOCTA_BONOS_CER_URL =
