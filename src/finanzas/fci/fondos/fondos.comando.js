@@ -1,5 +1,6 @@
 import {
   guardarDetalleFondo,
+  guardarHistoricoFondo,
   guardarListaFondos,
 } from '@/finanzas/fci/fondos/guardado/guardarDetallesFondos.js'
 import { FciFondosDatabaseService } from '@/finanzas/fci/fondos/database/service.js'
@@ -27,7 +28,13 @@ export default async function fondosComando() {
     )
 
     for (const fondo of fondos) {
-      guardarDetalleFondo(adaptarFondoParaApi(fondo))
+      const fondoAdaptado = adaptarFondoParaApi(fondo)
+      guardarDetalleFondo(fondoAdaptado)
+      guardarHistoricoFondo(
+        fondoAdaptado,
+        db.obtenerHistorialPorSlug(fondo.slug),
+        snapshot.fechaActualizacion,
+      )
     }
 
     await guardarListaFondos({

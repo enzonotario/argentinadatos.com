@@ -11,6 +11,20 @@ export function guardarDetalleFondo(fondo) {
   return slug
 }
 
+export function guardarHistoricoFondo(fondo, historico, fechaActualizacion) {
+  const slug = normalizarNombreFondo(fondo)
+
+  escribirRuta(`/finanzas/fci/fondos/${slug}/historico`, {
+    fondoId: fondo.fondoId,
+    claseId: fondo.claseId,
+    nombre: fondo.nombre,
+    fechaActualizacion,
+    historico,
+  })
+
+  return slug
+}
+
 export async function guardarListaFondos(datos) {
   const log = logGrupo({
     fuente: 'guardarListaFondos',

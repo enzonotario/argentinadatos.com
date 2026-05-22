@@ -78,6 +78,52 @@ export class FciFondosDatabaseService {
     }
   }
 
+  obtenerHistorialPorSlug(slug) {
+    if (!existsSync(this.dbPath)) {
+      return []
+    }
+
+    const db = new Database(this.dbPath, {
+      readonly: true,
+      fileMustExist: true,
+    })
+
+    try {
+      if (!this.tieneTabla(db, 'historical_fund_snapshots')) {
+        return []
+      }
+
+      return db
+        .prepare(
+          `
+            SELECT *
+            FROM historical_fund_snapshots
+            WHERE slug = ?
+            ORDER BY source_date
+          `,
+        )
+        .all(slug)
+        .map(row => ({
+          slug: row.slug,
+          fundId: row.fund_id,
+          claseId: row.class_id,
+          nombre: row.name,
+          fecha: row.source_date,
+          categoria: row.category_label,
+          categoriaKey: row.category_key,
+          horizonte: row.horizon,
+          valorCuotaparte: row.share_value,
+          patrimonio: row.assets_under_management,
+          retornoDiario: row.daily_return,
+          retornoAcumulado: row.cumulative_return,
+          flujoEstimado: row.estimated_net_flow,
+          origen: row.source_kind,
+        }))
+    } finally {
+      db.close()
+    }
+  }
+
   tieneTabla(db, nombreTabla) {
     const row = db
       .prepare(
