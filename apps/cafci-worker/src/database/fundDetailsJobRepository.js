@@ -206,6 +206,36 @@ export class FundDetailsJobRepository {
       .get().count
   }
 
+  isHistoricalBackfillCompleted() {
+    const row = this.db
+      .prepare(
+        `
+          SELECT value
+          FROM worker_state
+          WHERE key = 'historical_backfill_completed_at'
+          LIMIT 1
+        `,
+      )
+      .get()
+
+    return Boolean(row?.value)
+  }
+
+  markHistoricalBackfillCompleted(completedAt = new Date().toISOString()) {
+    this.db
+      .prepare(
+        `
+          INSERT INTO worker_state (key, value, created_at, updated_at)
+          VALUES ('historical_backfill_completed_at', ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+          ON CONFLICT(key)
+          DO UPDATE SET
+            value = excluded.value,
+            updated_at = CURRENT_TIMESTAMP
+        `,
+      )
+      .run(completedAt)
+  }
+
   upsertHistoricalSnapshot(snapshot) {
     this.db
       .prepare(

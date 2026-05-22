@@ -49,7 +49,7 @@ export async function backfillHistoricalSnapshots(
   repository,
   { legacyRoot = getLegacyHistoryRoot() } = {},
 ) {
-  if (!existsSync(legacyRoot) || repository.countHistoricalSnapshots() > 0) {
+  if (!existsSync(legacyRoot) || repository.isHistoricalBackfillCompleted()) {
     return 0
   }
 
@@ -68,6 +68,10 @@ export async function backfillHistoricalSnapshots(
       const records = readJson(indexPath)
 
       for (const record of records) {
+        if (!record.fecha) {
+          continue
+        }
+
         const slug = buildFundSlug({
           name: record.fondo,
           fundId: 'legacy',
@@ -120,6 +124,8 @@ export async function backfillHistoricalSnapshots(
       previousSnapshot = snapshot
     }
   }
+
+  repository.markHistoricalBackfillCompleted()
 
   return imported
 }
