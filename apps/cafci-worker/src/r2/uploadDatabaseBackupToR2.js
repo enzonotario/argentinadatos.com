@@ -1,4 +1,5 @@
 import { PutObjectCommand } from '@aws-sdk/client-s3'
+import { gzipSync } from 'node:zlib'
 import { mkdtempSync, readFileSync, rmSync } from 'node:fs'
 import { join } from 'node:path'
 import { tmpdir } from 'node:os'
@@ -17,12 +18,15 @@ export async function uploadFileToR2({
   const client = createR2Client()
   const config = getR2Config()
 
+  const compressed = gzipSync(readFileSync(filePath))
+
   await client.send(
     new PutObjectCommand({
       Bucket: config.bucket,
       Key: objectKey,
-      Body: readFileSync(filePath),
+      Body: compressed,
       ContentType: 'application/vnd.sqlite3',
+      ContentEncoding: 'gzip',
       Metadata: {
         source: 'cafci-worker',
         uploadedAt: new Date().toISOString(),

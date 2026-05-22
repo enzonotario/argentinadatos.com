@@ -1,4 +1,5 @@
 import { GetObjectCommand } from '@aws-sdk/client-s3'
+import { gunzipSync } from 'node:zlib'
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { dirname } from 'node:path'
 import {
@@ -7,6 +8,10 @@ import {
   isR2BackupConfigured,
 } from '../config.js'
 import { createR2Client } from './r2Client.js'
+
+function isGzipped(buffer) {
+  return buffer.length > 2 && buffer[0] === 0x1f && buffer[1] === 0x8b
+}
 
 export async function downloadDatabaseBackupFromR2({
   destinationPath = getDatabasePath(),
@@ -35,11 +40,14 @@ export async function downloadDatabaseBackupFromR2({
       throw new Error('R2 response body is empty')
     }
 
+    const buffer = Buffer.from(body)
+    const data = isGzipped(buffer) ? gunzipSync(buffer) : buffer
+
     mkdirSync(dirname(destinationPath), {
       recursive: true,
     })
 
-    writeFileSync(destinationPath, Buffer.from(body))
+    writeFileSync(destinationPath, data)
     console.log('[cafci-worker] SQLite downloaded from R2', {
       destinationPath,
       bucket: config.bucket,
