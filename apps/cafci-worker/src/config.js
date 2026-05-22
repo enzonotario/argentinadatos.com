@@ -69,6 +69,14 @@ export function getPollIntervalMs() {
   )
 }
 
+export function getBackfillSeedDatabasePath() {
+  const configuredPath = readEnv('CAFCI_WORKER_BACKFILL_SEED_DB_PATH')
+
+  return configuredPath
+    ? resolveFromRepositoryRoot(configuredPath)
+    : resolve(repositoryRoot, 'storage', 'cafci-worker', 'backfill-seed.sqlite')
+}
+
 export function getLegacyHistoryRoot() {
   return resolve(repositoryRoot, 'datos', 'v1', 'finanzas', 'fci')
 }
@@ -80,6 +88,9 @@ export function getR2Config() {
   const bucket = readEnv('CAFCI_WORKER_R2_BUCKET')
   const objectKey =
     readEnv('CAFCI_WORKER_R2_OBJECT_KEY') || 'cafci-worker/db.sqlite'
+  const backfillObjectKey =
+    readEnv('CAFCI_WORKER_R2_BACKFILL_OBJECT_KEY') ||
+    'cafci-worker/backfill-seed.sqlite'
   const endpoint =
     readEnv('CAFCI_WORKER_R2_ENDPOINT') ||
     (accountId ? `https://${accountId}.r2.cloudflarestorage.com` : undefined)
@@ -90,6 +101,7 @@ export function getR2Config() {
     secretAccessKey,
     bucket,
     objectKey,
+    backfillObjectKey,
     endpoint,
   }
 }

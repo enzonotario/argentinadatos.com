@@ -1,6 +1,5 @@
 import { getConcurrency, getMaxAttempts, getPollIntervalMs } from '../config.js'
 import { fetchFundDetail, fetchFundsCatalog } from '../cafci/cafciClient.js'
-import { backfillHistoricalSnapshots } from '../history/backfillHistoricalSnapshots.js'
 import { recordHistoricalSnapshotFromDetail } from '../history/recordHistoricalSnapshotFromDetail.js'
 import { uploadDatabaseBackupToR2 } from '../r2/uploadDatabaseBackupToR2.js'
 import { sleep } from '../utils/sleep.js'
@@ -14,8 +13,6 @@ export class FundDetailsSyncService {
   }
 
   async runCycle({ forceRetryFailed = false } = {}) {
-    await backfillHistoricalSnapshots(this.repository)
-
     const executionDate = new Date().toISOString().slice(0, 10)
     const catalog = await fetchFundsCatalog()
 

@@ -1,6 +1,7 @@
 import { existsSync } from 'node:fs'
 import { getDatabasePath, isR2BackupConfigured } from './config.js'
 import { FundDetailsJobRepository } from './database/fundDetailsJobRepository.js'
+import { importHistoricalBackfillSeedFromR2 } from './history/importHistoricalBackfillSeedFromR2.js'
 import { downloadDatabaseBackupFromR2 } from './r2/downloadDatabaseBackupFromR2.js'
 import { uploadDatabaseBackupToR2 } from './r2/uploadDatabaseBackupToR2.js'
 import { FundDetailsSyncService } from './services/fundDetailsSyncService.js'
@@ -19,6 +20,7 @@ if (!existsSync(databasePath) && isR2BackupConfigured()) {
 
 const repository = new FundDetailsJobRepository(databasePath)
 await repository.initialize()
+await importHistoricalBackfillSeedFromR2(repository)
 
 const shutdown = () => {
   try {

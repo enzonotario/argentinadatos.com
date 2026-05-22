@@ -200,6 +200,40 @@ export class FundDetailsJobRepository {
       .map(row => JSON.parse(row.payload))
   }
 
+  getWorkerState(key) {
+    const row = this.db
+      .prepare(
+        `
+          SELECT value
+          FROM worker_state
+          WHERE key = ?
+          LIMIT 1
+        `,
+      )
+      .get(key)
+
+    return row?.value ?? null
+  }
+
+  setWorkerState(key, value) {
+    this.db
+      .prepare(
+        `
+          INSERT INTO worker_state (key, value, created_at, updated_at)
+          VALUES (?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+          ON CONFLICT(key)
+          DO UPDATE SET
+            value = excluded.value,
+            updated_at = CURRENT_TIMESTAMP
+        `,
+      )
+      .run(key, value)
+  }
+
+  deleteWorkerState(key) {
+    this.db.prepare('DELETE FROM worker_state WHERE key = ?').run(key)
+  }
+
   countHistoricalSnapshots() {
     return this.db
       .prepare('SELECT COUNT(*) AS count FROM historical_fund_snapshots')
@@ -207,33 +241,11 @@ export class FundDetailsJobRepository {
   }
 
   isHistoricalBackfillCompleted() {
-    const row = this.db
-      .prepare(
-        `
-          SELECT value
-          FROM worker_state
-          WHERE key = 'historical_backfill_completed_at'
-          LIMIT 1
-        `,
-      )
-      .get()
-
-    return Boolean(row?.value)
+    return Boolean(this.getWorkerState('historical_backfill_completed_at'))
   }
 
   markHistoricalBackfillCompleted(completedAt = new Date().toISOString()) {
-    this.db
-      .prepare(
-        `
-          INSERT INTO worker_state (key, value, created_at, updated_at)
-          VALUES ('historical_backfill_completed_at', ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
-          ON CONFLICT(key)
-          DO UPDATE SET
-            value = excluded.value,
-            updated_at = CURRENT_TIMESTAMP
-        `,
-      )
-      .run(completedAt)
+    this.setWorkerState('historical_backfill_completed_at', completedAt)
   }
 
   upsertHistoricalSnapshot(snapshot) {
@@ -370,6 +382,86 @@ export class FundDetailsJobRepository {
     })
     this.db.pragma('wal_checkpoint(TRUNCATE)')
     copyFileSync(this.databasePath, destinationPath)
+  }
+
+  importHistoricalBackfillFromDatabase(sourceDatabasePath) {
+    const attachedSchema = 'seed_backfill'
+    const beforeCount = this.countHistoricalSnapshots()
+
+    this.db.prepare(`ATTACH DATABASE ? AS ${attachedSchema}`).run(sourceDatabasePath)
+
+    try {
+      const hasHistoricalTable = this.db
+        .prepare(
+          `
+            SELECT name
+            FROM ${attachedSchema}.sqlite_master
+            WHERE type = 'table'
+              AND name = 'historical_fund_snapshots'
+            LIMIT 1
+          `,
+        )
+        .get()
+
+      if (!hasHistoricalTable) {
+        return 0
+      }
+
+      this.db
+        .prepare(
+          `
+            INSERT OR REPLACE INTO historical_fund_snapshots (
+              slug,
+              fund_id,
+              class_id,
+              name,
+              source_date,
+              category_key,
+              category_label,
+              horizon,
+              share_value,
+              assets_under_management,
+              daily_return,
+              cumulative_return,
+              estimated_net_flow,
+              source_kind,
+              raw_source,
+              created_at,
+              updated_at
+            )
+            SELECT
+              slug,
+              fund_id,
+              class_id,
+              name,
+              source_date,
+              category_key,
+              category_label,
+              horizon,
+              share_value,
+              assets_under_management,
+              daily_return,
+              cumulative_return,
+              estimated_net_flow,
+              source_kind,
+              raw_source,
+              created_at,
+              updated_at
+            FROM ${attachedSchema}.historical_fund_snapshots
+          `,
+        )
+        .run()
+    } finally {
+      this.db.exec(`DETACH DATABASE ${attachedSchema}`)
+    }
+
+    const afterCount = this.countHistoricalSnapshots()
+
+    if (afterCount > 0) {
+      this.markHistoricalBackfillCompleted()
+    }
+
+    return afterCount - beforeCount
   }
 
   close() {
