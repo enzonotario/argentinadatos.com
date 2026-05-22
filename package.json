@@ -31,7 +31,7 @@
     "cafci-worker:r2:backup": "pnpm --filter @argentinadatos/cafci-worker r2:backup",
     "cafci-worker:r2:download": "pnpm --filter @argentinadatos/cafci-worker r2:download",
     "cafci-worker:backfill:build": "pnpm --filter @argentinadatos/cafci-worker backfill:build",
-    "cafci-worker:backfill:publish": "pnpm --filter @argentinadatos/cafci-worker backfill:publish",
+    "cafci-worker:db:rebuild-from-static": "pnpm --filter @argentinadatos/cafci-worker db:rebuild-from-static",
     "migrate": "node scripts/migrate.js",
     "seed:fci-otros": "node scripts/seed-fci-otros.js"
   },

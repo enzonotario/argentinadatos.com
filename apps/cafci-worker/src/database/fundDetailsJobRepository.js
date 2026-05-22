@@ -167,6 +167,42 @@ export class FundDetailsJobRepository {
     transaction()
   }
 
+  upsertCurrentFundDetail(payload, fetchedAt = new Date().toISOString()) {
+    this.db
+      .prepare(
+        `
+          INSERT INTO current_fund_details (
+            fund_id,
+            class_id,
+            slug,
+            name,
+            payload,
+            source_date,
+            fetched_at,
+            created_at,
+            updated_at
+          ) VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+          ON CONFLICT(fund_id, class_id)
+          DO UPDATE SET
+            slug = excluded.slug,
+            name = excluded.name,
+            payload = excluded.payload,
+            source_date = excluded.source_date,
+            fetched_at = excluded.fetched_at,
+            updated_at = CURRENT_TIMESTAMP
+        `,
+      )
+      .run(
+        payload.fundId,
+        payload.classId,
+        payload.slug,
+        payload.name,
+        JSON.stringify(payload),
+        payload.date ?? null,
+        fetchedAt,
+      )
+  }
+
   markFailed(jobId, attempts, error, maxAttempts = getMaxAttempts()) {
     const delayMs = Math.min(Math.pow(2, attempts) * 1000, 60_000)
     const nextAttemptAt = new Date(Date.now() + delayMs).toISOString()

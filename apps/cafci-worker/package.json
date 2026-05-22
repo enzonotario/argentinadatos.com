@@ -9,7 +9,7 @@
     "r2:backup": "node src/scripts/uploadBackupToR2.js",
     "r2:download": "node src/scripts/downloadBackupFromR2.js",
     "backfill:build": "node src/scripts/buildHistoricalBackfillSeed.js",
-    "backfill:publish": "node src/scripts/publishHistoricalBackfillSeedToR2.js"
+    "db:rebuild-from-static": "node src/scripts/rebuildDatabaseFromStaticFunds.js"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.922.0",
