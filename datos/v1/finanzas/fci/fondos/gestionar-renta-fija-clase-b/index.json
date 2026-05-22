@@ -1,0 +1,68 @@
+{
+  "fondoId": "608",
+  "claseId": "1230",
+  "nombre": "Gestionar Renta Fija - Clase B",
+  "fecha": "2022-12-30",
+  "administradora": "Nativa S.G.F.C.I.S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Badlar",
+  "horizonte": "Corto Plazo",
+  "duration": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "709",
+  "patrimonio": 12882166.81,
+  "inversionMinima": 0,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": null,
+    "ultimos7Dias": null,
+    "unMes": null,
+    "noventaDias": null,
+    "cientoOchentaDias": null,
+    "enElAnio": null,
+    "doceMeses": null
+  },
+  "composicionCartera": [
+    {
+      "nombre": "FCI Allaria Ahorro - Clase B",
+      "porcentaje": 69.2
+    },
+    {
+      "nombre": "Cta Cte $ Bco de Valores",
+      "porcentaje": 30.8
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moody's Local Calif. Riesgo",
+      "calificacion": "A-bf.ar",
+      "fecha": "2018-07-18"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 1.7,
+    "honorarioDepositaria": 0.2662,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Nativa S.G.F.C.I.S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00388G-eb00eeb0.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

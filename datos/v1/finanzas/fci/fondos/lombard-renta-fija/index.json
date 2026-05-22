@@ -1,0 +1,112 @@
+{
+  "fondoId": "141",
+  "claseId": "141",
+  "nombre": "Lombard Renta Fija",
+  "fecha": "2026-05-20",
+  "administradora": "Patagonia Inversora S.A.S.G.F.C.I",
+  "depositaria": "Banco Patagonia S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Largo Plazo",
+  "duration": "Mayor a 3 Años",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "186",
+  "patrimonio": 16570066693.69,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 711592.036,
+    "ultimos7Dias": 0.8977,
+    "unMes": 2.1119,
+    "noventaDias": 5.6071,
+    "cientoOchentaDias": 8.0803,
+    "enElAnio": 4.1346,
+    "doceMeses": 36.879
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Fut Reg ARS",
+      "porcentaje": 61.6
+    },
+    {
+      "nombre": "Bonos Rep Argentina 2030",
+      "porcentaje": 19.2
+    },
+    {
+      "nombre": "Bono Boncer TZX26",
+      "porcentaje": 17.5
+    },
+    {
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 12.1
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional T15E7",
+      "porcentaje": 11.7
+    },
+    {
+      "nombre": "Letra Tesoro Nac T30A7",
+      "porcentaje": 7.1
+    },
+    {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 5
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional T31Y7",
+      "porcentaje": 5
+    },
+    {
+      "nombre": "FCI Premier Renta CP $ CC",
+      "porcentaje": 4.7
+    },
+    {
+      "nombre": "Letra Tesoro Nac D30A6",
+      "porcentaje": 4.3
+    },
+    {
+      "nombre": "ON PCR Clase K",
+      "porcentaje": 4.3
+    },
+    {
+      "nombre": "Lecer X31L6",
+      "porcentaje": 3.4
+    },
+    {
+      "nombre": "Lecer X30N6",
+      "porcentaje": 3.2
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moody's Local Calif. Riesgo",
+      "calificacion": "alta calidad = AA",
+      "fecha": "2014-09-12"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.24,
+    "honorarioDepositaria": 0.56,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Patagonia Inversora S.A.S.G.F.C.I",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00017G-57ea7826.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Patagonia S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00209-6f3e2645.jpg"
+    }
+  ]
+}

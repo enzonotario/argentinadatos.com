@@ -1,0 +1,100 @@
+{
+  "fondoId": "617",
+  "claseId": "1245",
+  "nombre": "Galileo Renta Fija - Clase A",
+  "fecha": "2026-05-20",
+  "administradora": "Galileo Argentina S.G.F.C.I.S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Retorno Total",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Largo Plazo",
+  "duration": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "764",
+  "patrimonio": 5545914069.12,
+  "inversionMinima": 0,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 254075.505,
+    "ultimos7Dias": 1.1373,
+    "unMes": 3.6505,
+    "noventaDias": 15.3263,
+    "cientoOchentaDias": 24.9494,
+    "enElAnio": 21.059,
+    "doceMeses": 56.8608
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Dual TTJ26",
+      "porcentaje": 26.3
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional AO27",
+      "porcentaje": 13.9
+    },
+    {
+      "nombre": "Lecer X29Y6",
+      "porcentaje": 13.9
+    },
+    {
+      "nombre": "Lecer X15Y6",
+      "porcentaje": 13.2
+    },
+    {
+      "nombre": "Bono Prov de Buenos Aires TZV28",
+      "porcentaje": 10.2
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TMG27",
+      "porcentaje": 8.7
+    },
+    {
+      "nombre": "Letra Tamar TEM TMF27",
+      "porcentaje": 4.6
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional AN29",
+      "porcentaje": 4.3
+    },
+    {
+      "nombre": "FCI Pionero Pesos Plus - Clase B",
+      "porcentaje": 2.7
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.8
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moody's Local Calif. Riesgo",
+      "calificacion": "BBBf.ar",
+      "fecha": "2023-08-28"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 1.25,
+    "honorarioDepositaria": 0.1331,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Galileo Argentina S.G.F.C.I.S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00001G-f2ee5115.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

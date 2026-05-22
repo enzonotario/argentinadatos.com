@@ -1,0 +1,68 @@
+{
+  "fondoId": "154",
+  "claseId": "1768",
+  "nombre": "Superfondo Renta Fija Latam - Clase C",
+  "fecha": "2026-03-17",
+  "administradora": "Santander Rio Asset Management G.F.C.I.S.A.",
+  "depositaria": "Banco Santander Argentina S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Latinoamerica",
+  "benchmark": "Otro",
+  "horizonte": "Largo Plazo",
+  "duration": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "198",
+  "patrimonio": 0,
+  "inversionMinima": 1000,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 5,
+  "rendimientos": {
+    "valorCuotaparte": null,
+    "ultimos7Dias": null,
+    "unMes": null,
+    "noventaDias": null,
+    "cientoOchentaDias": null,
+    "enElAnio": null,
+    "doceMeses": null
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte U$S Bco Santander",
+      "porcentaje": 98.1
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.9
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "AAAf(arg)",
+      "fecha": "2023-02-13"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 0.471,
+    "honorarioDepositaria": 0.5553,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Santander Rio Asset Management G.F.C.I.S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00049G-c03041ad.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Santander Argentina S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00096-4e9f0233.jpg"
+    }
+  ]
+}

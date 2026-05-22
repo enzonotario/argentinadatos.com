@@ -1,0 +1,64 @@
+{
+  "fondoId": "737",
+  "claseId": "2195",
+  "nombre": "Argenfunds Renta Crecimiento - Clase C",
+  "fecha": "2026-05-20",
+  "administradora": "Argenfunds S.A.",
+  "depositaria": "Banco Macro S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duration": "Mayor a 3 Años",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "904",
+  "patrimonio": 0,
+  "inversionMinima": 0,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1,
+    "ultimos7Dias": 0,
+    "unMes": 0,
+    "noventaDias": 0,
+    "cientoOchentaDias": 0,
+    "enElAnio": 0,
+    "doceMeses": 0
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte U$S Bco Macro Ban",
+      "porcentaje": 100.5
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "AAf(arg)",
+      "fecha": "2017-06-01"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 1.5,
+    "honorarioDepositaria": 0.3509,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Argenfunds S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00377G-dc836163.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Macro S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00098-871484a2.jpg"
+    }
+  ]
+}

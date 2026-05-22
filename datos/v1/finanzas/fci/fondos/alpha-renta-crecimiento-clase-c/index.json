@@ -1,0 +1,88 @@
+{
+  "fondoId": "144",
+  "claseId": "1839",
+  "nombre": "Alpha Renta Crecimiento - Clase C",
+  "fecha": "2026-05-20",
+  "administradora": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
+  "depositaria": "ICBC (Arg) S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Largo Plazo",
+  "duration": "Mayor a 3 Años",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "194",
+  "patrimonio": 0,
+  "inversionMinima": 100000,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 62.628,
+    "ultimos7Dias": -0.4055,
+    "unMes": -1.11,
+    "noventaDias": -1.5577,
+    "cientoOchentaDias": 1.4695,
+    "enElAnio": 3.5002,
+    "doceMeses": -19.5819
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Lecap S30N6",
+      "porcentaje": 27.7
+    },
+    {
+      "nombre": "Lecap S30A6",
+      "porcentaje": 26.2
+    },
+    {
+      "nombre": "Lecap S30S6",
+      "porcentaje": 13.8
+    },
+    {
+      "nombre": "Lecap S15Y6",
+      "porcentaje": 13.6
+    },
+    {
+      "nombre": "Letra Tesoro Nac S30O6",
+      "porcentaje": 13.2
+    },
+    {
+      "nombre": "FCI Allaria Ahorro - Clase C",
+      "porcentaje": 4
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.5
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "A-f(arg)",
+      "fecha": "2025-03-03"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 0.31,
+    "honorarioDepositaria": 0.03,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.04,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00008G-f9ac58c8.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "ICBC (Arg) S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00062-50a49656.jpg"
+    }
+  ]
+}

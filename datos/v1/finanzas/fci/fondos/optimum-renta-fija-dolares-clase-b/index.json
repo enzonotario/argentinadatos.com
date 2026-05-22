@@ -1,0 +1,80 @@
+{
+  "fondoId": "625",
+  "claseId": "1261",
+  "nombre": "Optimum Renta Fija Dolares - Clase B",
+  "fecha": "2025-09-30",
+  "administradora": "Santander Rio Asset Management G.F.C.I.S.A.",
+  "depositaria": "Banco Santander Argentina S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Corto Plazo",
+  "duration": "Menor o Igual a 1 Año",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "767",
+  "patrimonio": 0,
+  "inversionMinima": 0,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": null,
+    "ultimos7Dias": null,
+    "unMes": null,
+    "noventaDias": null,
+    "cientoOchentaDias": null,
+    "enElAnio": null,
+    "doceMeses": null
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bonos Rep Argentina GD35",
+      "porcentaje": 32.9
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD30",
+      "porcentaje": 28.4
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD29",
+      "porcentaje": 17.7
+    },
+    {
+      "nombre": "Cta Cte USD BNP NY Branch",
+      "porcentaje": 11.1
+    },
+    {
+      "nombre": "Cta Cte U$S BNP",
+      "porcentaje": 9.9
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "AAAf(arg)",
+      "fecha": "2019-05-28"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 0.4,
+    "honorarioDepositaria": 0.135,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Santander Rio Asset Management G.F.C.I.S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00049G-c03041ad.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Santander Argentina S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00096-4e9f0233.jpg"
+    }
+  ]
+}

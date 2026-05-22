@@ -1,0 +1,80 @@
+{
+  "fondoId": "97",
+  "claseId": "764",
+  "nombre": "Alpha Renta Fija Serie 6 - Clase A",
+  "fecha": "2026-05-20",
+  "administradora": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
+  "depositaria": "ICBC (Arg) S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Largo Plazo",
+  "duration": "Mayor a 3 Años",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "114",
+  "patrimonio": 44890.21,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 14599866.654,
+    "ultimos7Dias": 0.4827,
+    "unMes": 1.9104,
+    "noventaDias": 9.0957,
+    "cientoOchentaDias": 15.839,
+    "enElAnio": 13.1037,
+    "doceMeses": 38.6824
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Lecap S30N6",
+      "porcentaje": 29.6
+    },
+    {
+      "nombre": "Lecap S30A6",
+      "porcentaje": 24.7
+    },
+    {
+      "nombre": "Letra Tesoro Nac S30O6",
+      "porcentaje": 22.5
+    },
+    {
+      "nombre": "Lecap S14G6",
+      "porcentaje": 21.5
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.7
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "A+f(arg)",
+      "fecha": "2025-06-01"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.1638,
+    "honorarioDepositaria": 0.2412,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.018,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00008G-f9ac58c8.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "ICBC (Arg) S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00062-50a49656.jpg"
+    }
+  ]
+}

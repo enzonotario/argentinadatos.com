@@ -1,0 +1,88 @@
+{
+  "fondoId": "502",
+  "claseId": "1013",
+  "nombre": "Alpha Renta Balanceada Global - Clase A",
+  "fecha": "2026-05-20",
+  "administradora": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
+  "depositaria": "ICBC (Arg) S.A.",
+  "tipoRenta": "Renta Mixta",
+  "tipoDD": "No Aplica",
+  "region": "Global",
+  "benchmark": "IAMC",
+  "horizonte": "Plazo Flexible",
+  "duration": "No Aplicable",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "639",
+  "patrimonio": 1740054630.85,
+  "inversionMinima": 100000,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 484798.847,
+    "ultimos7Dias": 0.632,
+    "unMes": -0.7809,
+    "noventaDias": 5.1081,
+    "cientoOchentaDias": 7.9228,
+    "enElAnio": 3.2551,
+    "doceMeses": 36.1707
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 27.3
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD35",
+      "porcentaje": 20.7
+    },
+    {
+      "nombre": "Bono Boncer TZXS8",
+      "porcentaje": 17
+    },
+    {
+      "nombre": "Grupo Fciero Galicia - B",
+      "porcentaje": 13.1
+    },
+    {
+      "nombre": "Pampa Energia",
+      "porcentaje": 12.2
+    },
+    {
+      "nombre": "Letra Tesoro Nac S30O6",
+      "porcentaje": 8.9
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.8
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "A+c(arg)",
+      "fecha": "2025-03-03"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 1.8283,
+    "honorarioDepositaria": 0.1967,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00008G-f9ac58c8.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "ICBC (Arg) S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00062-50a49656.jpg"
+    }
+  ]
+}

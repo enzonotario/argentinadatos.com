@@ -1,0 +1,78 @@
+{
+  "fondoId": "1434",
+  "claseId": "4876",
+  "nombre": "IEB Renta Fija Dólar 2 - Clase Ley N° 27.743",
+  "fecha": "2026-05-20",
+  "administradora": "IEB S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Latinoamerica",
+  "benchmark": "Otro",
+  "horizonte": "Largo Plazo",
+  "duration": "Mayor a 3 Años",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "1346",
+  "patrimonio": 83.44,
+  "inversionMinima": 1000,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 1030.133,
+    "ultimos7Dias": 0.12,
+    "unMes": 0.2042,
+    "noventaDias": 0.4576,
+    "cientoOchentaDias": 0.8451,
+    "enElAnio": 1.2848,
+    "doceMeses": -2.5919
+  },
+  "composicionCartera": [
+    {
+      "nombre": "FCI IAM Liquidez en Dólares - Clase B",
+      "porcentaje": 65.9
+    },
+    {
+      "nombre": "ON Bco Serv Transac C23",
+      "porcentaje": 13.3
+    },
+    {
+      "nombre": "ON Mercado Pago C2",
+      "porcentaje": 11.6
+    },
+    {
+      "nombre": "Cta Cte U$S Bco Comafi",
+      "porcentaje": 5.8
+    },
+    {
+      "nombre": "FCI Max Money Market Dólares - Clase B",
+      "porcentaje": 3.3
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.1
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0.3,
+    "honorarioDepositaria": 0.14,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "IEB S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02496G-cffb0731.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

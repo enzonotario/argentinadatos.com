@@ -1,0 +1,92 @@
+{
+  "fondoId": "423",
+  "claseId": "786",
+  "nombre": "Lombard Capital",
+  "fecha": "2026-05-20",
+  "administradora": "Patagonia Inversora S.A.S.G.F.C.I",
+  "depositaria": "Banco Patagonia S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Badlar",
+  "horizonte": "Corto Plazo",
+  "duration": "Menor o Igual a 0.5 Año",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "552",
+  "patrimonio": 111091176750.16,
+  "inversionMinima": 30000,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 254044.11,
+    "ultimos7Dias": 0.4042,
+    "unMes": 1.9564,
+    "noventaDias": 6.9703,
+    "cientoOchentaDias": 14.6725,
+    "enElAnio": 11.7294,
+    "doceMeses": 39.6516
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Lecer X15Y6",
+      "porcentaje": 28.4
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Nacion",
+      "porcentaje": 12.5
+    },
+    {
+      "nombre": "Lecap S15Y6",
+      "porcentaje": 10.4
+    },
+    {
+      "nombre": "Lecer X29Y6",
+      "porcentaje": 5.5
+    },
+    {
+      "nombre": "Pagare #MAV140560041",
+      "porcentaje": 2.5
+    },
+    {
+      "nombre": "Cheque #MAV230660037",
+      "porcentaje": 2.5
+    },
+    {
+      "nombre": "ON Arcor C4",
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 35.9
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moody's Local Calif. Riesgo",
+      "calificacion": "alta calidad = AA",
+      "fecha": "2014-09-12"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.24,
+    "honorarioDepositaria": 0.56,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Patagonia Inversora S.A.S.G.F.C.I",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00017G-57ea7826.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Patagonia S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00209-6f3e2645.jpg"
+    }
+  ]
+}

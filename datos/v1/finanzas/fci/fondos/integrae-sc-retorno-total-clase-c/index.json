@@ -1,0 +1,84 @@
+{
+  "fondoId": "716",
+  "claseId": "2440",
+  "nombre": "Integrae SC Retorno Total - Clase C",
+  "fecha": "2020-12-23",
+  "administradora": "Cohen S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Mixta",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duration": "No Aplicable",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "862",
+  "patrimonio": 0,
+  "inversionMinima": 1000,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": null,
+    "ultimos7Dias": null,
+    "unMes": null,
+    "noventaDias": null,
+    "cientoOchentaDias": null,
+    "enElAnio": null,
+    "doceMeses": null
+  },
+  "composicionCartera": [
+    {
+      "nombre": "FCI Goal Pesos Clase B",
+      "porcentaje": 50.9
+    },
+    {
+      "nombre": "ON Epec C1",
+      "porcentaje": 15.1
+    },
+    {
+      "nombre": "ON Banco de Cordoba S2",
+      "porcentaje": 11
+    },
+    {
+      "nombre": "Bono M de Rio Cuarto 2020 BRN20",
+      "porcentaje": 10.7
+    },
+    {
+      "nombre": "ON YPF Clase V",
+      "porcentaje": 10.3
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 2.1
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "BBBc(arg)+",
+      "fecha": "2017-01-18"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 3,
+    "honorarioDepositaria": 0.18,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Cohen S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00359G-614204e4.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

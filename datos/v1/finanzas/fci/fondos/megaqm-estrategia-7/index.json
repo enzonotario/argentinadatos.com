@@ -1,0 +1,88 @@
+{
+  "fondoId": "376",
+  "claseId": "670",
+  "nombre": "MEGAQM Estrategia 7",
+  "fecha": "2026-05-20",
+  "administradora": "MEGA QM S.A.",
+  "depositaria": "Banco de Servicios y Transacciones S.A. (BST)",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Largo Plazo",
+  "duration": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "514",
+  "patrimonio": 222126559488,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 621846.419,
+    "ultimos7Dias": 0.6645,
+    "unMes": 1.1185,
+    "noventaDias": 13.3763,
+    "cientoOchentaDias": 20.5374,
+    "enElAnio": 16.7945,
+    "doceMeses": 51.739
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 29.3
+    },
+    {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 27.9
+    },
+    {
+      "nombre": "Lecer X30N6",
+      "porcentaje": 12.4
+    },
+    {
+      "nombre": "Bono Boncer TZXD7",
+      "porcentaje": 11.7
+    },
+    {
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 8.7
+    },
+    {
+      "nombre": "Bono Boncer TZX26",
+      "porcentaje": 4.5
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 5.4
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "Af",
+      "fecha": "2025-05-30"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.622,
+    "honorarioDepositaria": 0.121,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "MEGA QM S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00378G-e0793717.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco de Servicios y Transacciones S.A. (BST)",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00387-5d5880dd.jpg"
+    }
+  ]
+}

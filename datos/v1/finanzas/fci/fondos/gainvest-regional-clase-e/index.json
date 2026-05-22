@@ -1,0 +1,72 @@
+{
+  "fondoId": "511",
+  "claseId": "2633",
+  "nombre": "Gainvest Regional - Clase E",
+  "fecha": "2026-05-20",
+  "administradora": "StoneX Asset Management S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duration": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "650",
+  "patrimonio": 0,
+  "inversionMinima": 1000,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1,
+    "ultimos7Dias": 0,
+    "unMes": 0,
+    "noventaDias": 0,
+    "cientoOchentaDias": 0,
+    "enElAnio": 0,
+    "doceMeses": 0
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Rem Bco Comafi",
+      "porcentaje": 85.8
+    },
+    {
+      "nombre": "Cta Cte U$S Bco Comafi",
+      "porcentaje": 14.1
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.1
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moody's Local Calif. Riesgo",
+      "calificacion": "A-bf.ar",
+      "fecha": "2017-12-07"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 0,
+    "honorarioDepositaria": 0.1452,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "StoneX Asset Management S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00311G-be0f6f28.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

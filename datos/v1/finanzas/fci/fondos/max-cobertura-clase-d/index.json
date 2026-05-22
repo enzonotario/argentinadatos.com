@@ -1,0 +1,92 @@
+{
+  "fondoId": "1352",
+  "claseId": "3861",
+  "nombre": "Max Cobertura - Clase D",
+  "fecha": "2026-05-20",
+  "administradora": "Max Capital Asset Management S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duration": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "1289",
+  "patrimonio": 0,
+  "inversionMinima": 500000000,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1,
+    "ultimos7Dias": 0,
+    "unMes": 0,
+    "noventaDias": 0,
+    "cientoOchentaDias": 0,
+    "enElAnio": 0,
+    "doceMeses": 0
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Fut Reg ARS",
+      "porcentaje": 75.5
+    },
+    {
+      "nombre": "Lecer X29Y6",
+      "porcentaje": 28.8
+    },
+    {
+      "nombre": "Lecer X15Y6",
+      "porcentaje": 23.2
+    },
+    {
+      "nombre": "Lecap S30A6",
+      "porcentaje": 21.9
+    },
+    {
+      "nombre": "ON YPF Luz C12",
+      "porcentaje": 7.5
+    },
+    {
+      "nombre": "ON YPF Clase 30",
+      "porcentaje": 5.9
+    },
+    {
+      "nombre": "ON Vista Gas y Oil Arg C18",
+      "porcentaje": 3
+    },
+    {
+      "nombre": "ON Telecom C20 TLCLO",
+      "porcentaje": 2.4
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "AA-f(arg)",
+      "fecha": "2023-04-05"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 1.25,
+    "honorarioDepositaria": 0.13,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Max Capital Asset Management S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03014G-5673e990.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

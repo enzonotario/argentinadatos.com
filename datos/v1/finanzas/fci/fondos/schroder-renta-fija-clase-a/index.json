@@ -1,0 +1,88 @@
+{
+  "fondoId": "48",
+  "claseId": "1717",
+  "nombre": "Schroder Renta Fija - Clase A",
+  "fecha": "2026-05-20",
+  "administradora": "Schroder S.A.S.G.F.C.I.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Mediano Plazo",
+  "duration": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "154",
+  "patrimonio": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 662.587,
+    "ultimos7Dias": 0,
+    "unMes": 0,
+    "noventaDias": 0,
+    "cientoOchentaDias": 0,
+    "enElAnio": 0,
+    "doceMeses": 0
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 30
+    },
+    {
+      "nombre": "Bono Disc ARS Ley AR DICP",
+      "porcentaje": 28
+    },
+    {
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 17.2
+    },
+    {
+      "nombre": "Bono Boncer TZX28",
+      "porcentaje": 13.3
+    },
+    {
+      "nombre": "Cta Cte U$S Citibank EEUU",
+      "porcentaje": 3.6
+    },
+    {
+      "nombre": "Cta Cte U$S Bco Valores",
+      "porcentaje": 3.3
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 4.5
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moody's Local Calif. Riesgo",
+      "calificacion": "Aa-bf.ar",
+      "fecha": "2017-12-06"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 0.65,
+    "honorarioDepositaria": 0.0968,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Schroder S.A.S.G.F.C.I.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00051G-0c57ca49.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

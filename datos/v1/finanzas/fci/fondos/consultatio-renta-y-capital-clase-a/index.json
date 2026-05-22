@@ -1,0 +1,76 @@
+{
+  "fondoId": "643",
+  "claseId": "1305",
+  "nombre": "Consultatio Renta y Capital - Clase A",
+  "fecha": "2026-05-20",
+  "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Plazo Flexible",
+  "duration": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "781",
+  "patrimonio": 0,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 106739.632,
+    "ultimos7Dias": 0.3377,
+    "unMes": 0.899,
+    "noventaDias": 3.1779,
+    "cientoOchentaDias": 7.1113,
+    "enElAnio": 5.443,
+    "doceMeses": 83.5922
+  },
+  "composicionCartera": [
+    {
+      "nombre": "FCI Allaria Ahorro - Clase C",
+      "porcentaje": 51.6
+    },
+    {
+      "nombre": "FCI BAVSA Ahorro - Clase B",
+      "porcentaje": 41.1
+    },
+    {
+      "nombre": "Cta Cte $ Bco de Valores",
+      "porcentaje": 2.8
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 4.4
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moody's Local Calif. Riesgo",
+      "calificacion": "EF-3.ar",
+      "fecha": "2023-08-07"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 3,
+    "honorarioDepositaria": 0.115,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00022G-3c173d8e.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "fondoId": "744",
+  "claseId": "1629",
+  "nombre": "First Renta Pesos - Clase A",
+  "fecha": "2026-05-20",
+  "administradora": "First Capital Markets S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Badlar",
+  "horizonte": "Corto Plazo",
+  "duration": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "915",
+  "patrimonio": 2959680797.25,
+  "inversionMinima": 10000,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 64651.241,
+    "ultimos7Dias": 0.3813,
+    "unMes": 1.6848,
+    "noventaDias": 8.0145,
+    "cientoOchentaDias": 16.7773,
+    "enElAnio": 13.1393,
+    "doceMeses": 43.821
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Dual TTJ26",
+      "porcentaje": 21.1
+    },
+    {
+      "nombre": "Lecer X15Y6",
+      "porcentaje": 11.8
+    },
+    {
+      "nombre": "Letra Tamar TEM M31G6",
+      "porcentaje": 11.3
+    },
+    {
+      "nombre": "Lecer X29Y6",
+      "porcentaje": 6.4
+    },
+    {
+      "nombre": "Bono Dual TTS26",
+      "porcentaje": 6.3
+    },
+    {
+      "nombre": "Pase Colocador ARS MAV",
+      "porcentaje": 5.2
+    },
+    {
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 4.7
+    },
+    {
+      "nombre": "FCI MEGAQM Pesos - Clase B",
+      "porcentaje": 3
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 30.3
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 2,
+    "honorarioDepositaria": 0.15,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "First Capital Markets S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00395-2ffc0cff.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

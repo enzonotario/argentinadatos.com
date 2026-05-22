@@ -1,0 +1,100 @@
+{
+  "fondoId": "633",
+  "claseId": "1440",
+  "nombre": "IAM Renta Plus - Clase C",
+  "fecha": "2026-05-20",
+  "administradora": "Industrial Asset Management S.G.F.C.I.S.A.",
+  "depositaria": "Banco Industrial S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Badlar",
+  "horizonte": "Corto Plazo",
+  "duration": "Menor o Igual a 0.5 Año",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "775",
+  "patrimonio": 614438439.54,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 216985.954,
+    "ultimos7Dias": 0.7643,
+    "unMes": 1.0707,
+    "noventaDias": 12.4463,
+    "cientoOchentaDias": 22.1772,
+    "enElAnio": 18.4922,
+    "doceMeses": 39.6551
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 24.6
+    },
+    {
+      "nombre": "Fut Reg ARS",
+      "porcentaje": 21.8
+    },
+    {
+      "nombre": "Bono Bocon 2029 PR17",
+      "porcentaje": 16.9
+    },
+    {
+      "nombre": "Lecer X30N6",
+      "porcentaje": 15.9
+    },
+    {
+      "nombre": "Bonos Rep Argentina 2030",
+      "porcentaje": 13.4
+    },
+    {
+      "nombre": "Lecer X30S6",
+      "porcentaje": 9.5
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional AN29",
+      "porcentaje": 8.3
+    },
+    {
+      "nombre": "Bono Boncer TZXS7",
+      "porcentaje": 4.6
+    },
+    {
+      "nombre": "Bono Boncer TZXD7",
+      "porcentaje": 2.8
+    },
+    {
+      "nombre": "FCI IEB Ahorro - Clase E",
+      "porcentaje": 2.6
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moody's Local Calif. Riesgo",
+      "calificacion": "Af.ar",
+      "fecha": "2023-05-31"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 1.98,
+    "honorarioDepositaria": 0.05,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Industrial Asset Management S.G.F.C.I.S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00039G-d09ad373.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Industrial S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00391-92ebcc0c.jpg"
+    }
+  ]
+}

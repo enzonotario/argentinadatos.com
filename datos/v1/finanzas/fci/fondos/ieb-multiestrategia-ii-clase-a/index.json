@@ -1,0 +1,66 @@
+{
+  "fondoId": "1331",
+  "claseId": "3799",
+  "nombre": "IEB Multiestrategia II - Clase A",
+  "fecha": "2026-05-21",
+  "administradora": "IEB S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Mixta",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Largo Plazo",
+  "duration": "Mayor a 3 Años",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "1315",
+  "patrimonio": null,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": null,
+    "ultimos7Dias": null,
+    "unMes": null,
+    "noventaDias": null,
+    "cientoOchentaDias": null,
+    "enElAnio": null,
+    "doceMeses": null
+  },
+  "composicionCartera": [
+    {
+      "nombre": "ON Arcor C2 7,6%",
+      "porcentaje": 96.8
+    },
+    {
+      "nombre": "Cta Cte U$S Bco Comafi",
+      "porcentaje": 2.8
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.4
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 1,
+    "honorarioDepositaria": 0.13,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "IEB S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02496G-cffb0731.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

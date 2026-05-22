@@ -1,0 +1,80 @@
+{
+  "fondoId": "97",
+  "claseId": "3308",
+  "nombre": "Alpha Renta Fija Serie 6 - Clase R Art. 11 Decreto 99/2019 y mod",
+  "fecha": "2026-05-20",
+  "administradora": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
+  "depositaria": "ICBC (Arg) S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Largo Plazo",
+  "duration": "Mayor a 3 Años",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "114",
+  "patrimonio": 0,
+  "inversionMinima": 100,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 0.699,
+    "ultimos7Dias": -0.2853,
+    "unMes": -0.9915,
+    "noventaDias": -1.5493,
+    "cientoOchentaDias": 1.5988,
+    "enElAnio": 3.5556,
+    "doceMeses": -19.5627
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Lecap S30N6",
+      "porcentaje": 29.6
+    },
+    {
+      "nombre": "Lecap S30A6",
+      "porcentaje": 24.7
+    },
+    {
+      "nombre": "Letra Tesoro Nac S30O6",
+      "porcentaje": 22.5
+    },
+    {
+      "nombre": "Lecap S14G6",
+      "porcentaje": 21.5
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.7
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "A+f(arg)",
+      "fecha": "2025-06-01"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": null,
+    "honorarioDepositaria": null,
+    "comisionIngreso": null,
+    "comisionEgreso": null,
+    "comisionTransferencia": null,
+    "gastosOrdinariosGestion": null,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00008G-f9ac58c8.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "ICBC (Arg) S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00062-50a49656.jpg"
+    }
+  ]
+}

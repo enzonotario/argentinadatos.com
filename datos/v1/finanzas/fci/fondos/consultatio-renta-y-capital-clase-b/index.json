@@ -1,0 +1,76 @@
+{
+  "fondoId": "643",
+  "claseId": "1306",
+  "nombre": "Consultatio Renta y Capital - Clase B",
+  "fecha": "2026-05-20",
+  "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Plazo Flexible",
+  "duration": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "781",
+  "patrimonio": 10498511.78,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 96942.933,
+    "ultimos7Dias": 0.3066,
+    "unMes": 0.7652,
+    "noventaDias": 2.7679,
+    "cientoOchentaDias": 6.2569,
+    "enElAnio": 4.7872,
+    "doceMeses": 81.2807
+  },
+  "composicionCartera": [
+    {
+      "nombre": "FCI Allaria Ahorro - Clase C",
+      "porcentaje": 51.6
+    },
+    {
+      "nombre": "FCI BAVSA Ahorro - Clase B",
+      "porcentaje": 41.1
+    },
+    {
+      "nombre": "Cta Cte $ Bco de Valores",
+      "porcentaje": 2.8
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 4.4
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moody's Local Calif. Riesgo",
+      "calificacion": "EF-3.ar",
+      "fecha": "2023-08-07"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 1.5,
+    "honorarioDepositaria": 0.115,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00022G-3c173d8e.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

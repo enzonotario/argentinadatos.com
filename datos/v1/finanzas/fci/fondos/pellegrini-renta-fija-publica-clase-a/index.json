@@ -1,0 +1,84 @@
+{
+  "fondoId": "591",
+  "claseId": "1196",
+  "nombre": "Pellegrini Renta Fija Publica - Clase A",
+  "fecha": "2026-05-20",
+  "administradora": "Pellegrini S.A.S.G.F.C.I.",
+  "depositaria": "Banco de La Nacion Argentina",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Corto Plazo",
+  "duration": "Mayor a 3 Años",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "735",
+  "patrimonio": 105629555194.21,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 204060.046,
+    "ultimos7Dias": 0.3321,
+    "unMes": 1.5287,
+    "noventaDias": 8.2458,
+    "cientoOchentaDias": 14.5378,
+    "enElAnio": 12.9803,
+    "doceMeses": 31.5509
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZX26",
+      "porcentaje": 27.3
+    },
+    {
+      "nombre": "Lecer X29Y6",
+      "porcentaje": 25.1
+    },
+    {
+      "nombre": "Lecer X15Y6",
+      "porcentaje": 22.8
+    },
+    {
+      "nombre": "Lecap S29Y6",
+      "porcentaje": 13.8
+    },
+    {
+      "nombre": "Lecap T30J6",
+      "porcentaje": 8.4
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 2.5
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moody's Local Calif. Riesgo",
+      "calificacion": "BBf.ar",
+      "fecha": "2023-08-28"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2,
+    "honorarioDepositaria": 0.625,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Pellegrini S.A.S.G.F.C.I.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00041G-c2e70db2.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco de La Nacion Argentina",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00089-d9e4893d.jpg"
+    }
+  ]
+}

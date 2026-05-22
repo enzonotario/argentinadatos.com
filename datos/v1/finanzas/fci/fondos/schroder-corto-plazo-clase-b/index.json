@@ -1,0 +1,88 @@
+{
+  "fondoId": "285",
+  "claseId": "285",
+  "nombre": "Schroder Corto Plazo - Clase B",
+  "fecha": "2026-05-20",
+  "administradora": "Schroder S.A.S.G.F.C.I.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Corto Plazo",
+  "duration": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "373",
+  "patrimonio": 9635399069.21,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 487963.202,
+    "ultimos7Dias": 1.2256,
+    "unMes": 1.8873,
+    "noventaDias": 7.5841,
+    "cientoOchentaDias": 9.4341,
+    "enElAnio": 11.7209,
+    "doceMeses": 27.2697
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 28.6
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 24.2
+    },
+    {
+      "nombre": "Lecer X30N6",
+      "porcentaje": 20.5
+    },
+    {
+      "nombre": "Lecer X29Y6",
+      "porcentaje": 12.2
+    },
+    {
+      "nombre": "Bonos Rep Argentina AE38",
+      "porcentaje": 10.7
+    },
+    {
+      "nombre": "Cta Cte U$S Citibank EEUU",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.7
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moody's Local Calif. Riesgo",
+      "calificacion": "Aa-bf.ar",
+      "fecha": "2017-12-06"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 0.47,
+    "honorarioDepositaria": 0.0968,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Schroder S.A.S.G.F.C.I.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00051G-0c57ca49.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

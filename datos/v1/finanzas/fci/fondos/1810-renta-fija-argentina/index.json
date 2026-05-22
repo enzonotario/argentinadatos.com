@@ -1,0 +1,92 @@
+{
+  "fondoId": "760",
+  "claseId": "1683",
+  "nombre": "1810 Renta Fija Argentina",
+  "fecha": "2026-05-20",
+  "administradora": "Proahorro Administradora de Activos S.A.",
+  "depositaria": "Banco Credicoop Coop. Ltdo.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duration": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "975",
+  "patrimonio": 12448060273.48,
+  "inversionMinima": 5000,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 72812.56,
+    "ultimos7Dias": 0.2666,
+    "unMes": 1.5674,
+    "noventaDias": 6.2755,
+    "cientoOchentaDias": 5.6006,
+    "enElAnio": 3.3221,
+    "doceMeses": 27.5542
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono del Tesoro Nacional TZV26",
+      "porcentaje": 29.3
+    },
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 19.9
+    },
+    {
+      "nombre": "Letra Tesoro Nac D30A6",
+      "porcentaje": 18.9
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TZV27",
+      "porcentaje": 15.1
+    },
+    {
+      "nombre": "Bono CER TZX27",
+      "porcentaje": 7.5
+    },
+    {
+      "nombre": "Lecap S17L6",
+      "porcentaje": 3
+    },
+    {
+      "nombre": "Lecap S14G6",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 4.1
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Univ. Nac. de Tres de Febrero",
+      "calificacion": "A (rf)",
+      "fecha": "2023-08-28"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 0.05,
+    "honorarioDepositaria": 1.95,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Proahorro Administradora de Activos S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00241G-5159107a.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Credicoop Coop. Ltdo.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00116-8cd1d90c.jpg"
+    }
+  ]
+}

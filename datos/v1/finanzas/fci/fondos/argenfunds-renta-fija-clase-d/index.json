@@ -1,0 +1,68 @@
+{
+  "fondoId": "530",
+  "claseId": "2025",
+  "nombre": "Argenfunds Renta Fija - Clase D",
+  "fecha": "2026-05-20",
+  "administradora": "Argenfunds S.A.",
+  "depositaria": "Banco Macro S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Mediano Plazo",
+  "duration": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "654",
+  "patrimonio": 0,
+  "inversionMinima": 0,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 3.97,
+    "ultimos7Dias": -0.4014,
+    "unMes": -1.1208,
+    "noventaDias": -1.5621,
+    "cientoOchentaDias": 1.4567,
+    "enElAnio": 3.4932,
+    "doceMeses": -19.5868
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte U$S Bco Macro Ban",
+      "porcentaje": 54.9
+    },
+    {
+      "nombre": "Cta Cte $ Bco Macro Ban",
+      "porcentaje": 45.1
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "Af(arg)",
+      "fecha": "2017-05-22"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 3.25,
+    "honorarioDepositaria": 0.3509,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Argenfunds S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00377G-dc836163.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Macro S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00098-871484a2.jpg"
+    }
+  ]
+}

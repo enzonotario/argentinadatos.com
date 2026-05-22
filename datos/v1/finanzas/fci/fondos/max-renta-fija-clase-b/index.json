@@ -1,0 +1,88 @@
+{
+  "fondoId": "1353",
+  "claseId": "3863",
+  "nombre": "Max Renta Fija - Clase B",
+  "fecha": "2026-05-20",
+  "administradora": "Max Capital Asset Management S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duration": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "1290",
+  "patrimonio": 24588026363.37,
+  "inversionMinima": 100000000,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 15083.22,
+    "ultimos7Dias": 0.5627,
+    "unMes": 1.6225,
+    "noventaDias": 11.6558,
+    "cientoOchentaDias": 22.1791,
+    "enElAnio": 17.541,
+    "doceMeses": 48.6827
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Lecer X29Y6",
+      "porcentaje": 28.6
+    },
+    {
+      "nombre": "Lecer X15Y6",
+      "porcentaje": 27.9
+    },
+    {
+      "nombre": "Bono Boncer TZX26",
+      "porcentaje": 27.1
+    },
+    {
+      "nombre": "Bono Boncer TZXD7",
+      "porcentaje": 7.2
+    },
+    {
+      "nombre": "Lecer X31L6",
+      "porcentaje": 5.3
+    },
+    {
+      "nombre": "FCI ST Zero - Clase C",
+      "porcentaje": 2.5
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.4
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "AA-f(arg)",
+      "fecha": "2023-04-05"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2,
+    "honorarioDepositaria": 0.13,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Max Capital Asset Management S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03014G-5673e990.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

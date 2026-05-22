@@ -1,0 +1,112 @@
+{
+  "fondoId": "562",
+  "claseId": "1140",
+  "nombre": "Toronto Trust Renta Fija - Clase C",
+  "fecha": "2026-05-20",
+  "administradora": "BACS Administradora de Activos S.A.S.G.F.C.I",
+  "depositaria": "Banco Credito y Securitizacion S.A. (BACS)",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Badlar",
+  "horizonte": "Corto Plazo",
+  "duration": "Menor o Igual a 0.5 Año",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "700",
+  "patrimonio": 1107168266.4,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 74790.729,
+    "ultimos7Dias": 0.4371,
+    "unMes": 1.6776,
+    "noventaDias": 8.645,
+    "cientoOchentaDias": 16.3006,
+    "enElAnio": 13.2327,
+    "doceMeses": 39.7177
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Lecer X15Y6",
+      "porcentaje": 18.2
+    },
+    {
+      "nombre": "Bono Boncer TZX26",
+      "porcentaje": 16.1
+    },
+    {
+      "nombre": "Lecap S14G6",
+      "porcentaje": 8.6
+    },
+    {
+      "nombre": "Lecap S17L6",
+      "porcentaje": 5.2
+    },
+    {
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 4.3
+    },
+    {
+      "nombre": "Pagare #MAV040560080",
+      "porcentaje": 3.4
+    },
+    {
+      "nombre": "Bono Dual TTJ26",
+      "porcentaje": 3
+    },
+    {
+      "nombre": "Cheque E *MAV080600897",
+      "porcentaje": 2.6
+    },
+    {
+      "nombre": "FCI Axis Pesos - Clase B",
+      "porcentaje": 2.6
+    },
+    {
+      "nombre": "Lecap S29Y6",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "Letra Tamar TEM M31G6",
+      "porcentaje": 2
+    },
+    {
+      "nombre": "Lecer X29Y6",
+      "porcentaje": 2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 29.8
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "AA- f (arg)",
+      "fecha": "2023-05-29"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.508,
+    "honorarioDepositaria": 0.242,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "BACS Administradora de Activos S.A.S.G.F.C.I",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00027G-ea0e4766.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Credito y Securitizacion S.A. (BACS)",
+      "logo": null
+    }
+  ]
+}

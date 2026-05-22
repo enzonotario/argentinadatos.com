@@ -1,0 +1,68 @@
+{
+  "fondoId": "706",
+  "claseId": "2045",
+  "nombre": "Argenfunds Renta Global - Clase C",
+  "fecha": "2026-05-20",
+  "administradora": "Argenfunds S.A.",
+  "depositaria": "Banco Macro S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duration": "Mayor a 3 Años",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "823",
+  "patrimonio": 0,
+  "inversionMinima": 0,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1.016,
+    "ultimos7Dias": -0.3922,
+    "unMes": -1.1673,
+    "noventaDias": -1.5504,
+    "cientoOchentaDias": 1.3972,
+    "enElAnio": 3.4623,
+    "doceMeses": -19.6203
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Bco Macro Ban",
+      "porcentaje": 99
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "BBBf(arg)+",
+      "fecha": "2017-06-21"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 3,
+    "honorarioDepositaria": 0.3509,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Argenfunds S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00377G-dc836163.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Macro S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00098-871484a2.jpg"
+    }
+  ]
+}

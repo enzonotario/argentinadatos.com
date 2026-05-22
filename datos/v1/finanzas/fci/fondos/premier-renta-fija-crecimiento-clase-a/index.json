@@ -1,0 +1,88 @@
+{
+  "fondoId": "180",
+  "claseId": "180",
+  "nombre": "Premier Renta Fija Crecimiento - Clase A",
+  "fecha": "2026-05-20",
+  "administradora": "Supervielle Asset Management S.A.",
+  "depositaria": "Banco Supervielle S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Mediano Plazo",
+  "duration": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "232",
+  "patrimonio": 19031656.63,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 576122.316,
+    "ultimos7Dias": 4.0375,
+    "unMes": 5.9249,
+    "noventaDias": 19.5147,
+    "cientoOchentaDias": 27.9402,
+    "enElAnio": 26.6132,
+    "doceMeses": 30.8694
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 23.2
+    },
+    {
+      "nombre": "Letra Tesoro Nac T30A7",
+      "porcentaje": 20.2
+    },
+    {
+      "nombre": "YPF - D",
+      "porcentaje": 18.4
+    },
+    {
+      "nombre": "Bono Boncer TZXD7",
+      "porcentaje": 18.3
+    },
+    {
+      "nombre": "Cedear Vista Oil Gas",
+      "porcentaje": 17.2
+    },
+    {
+      "nombre": "FCI Lombard Renta en $",
+      "porcentaje": 2.6
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.1
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moody's Local Calif. Riesgo",
+      "calificacion": "Aa-bf.ar",
+      "fecha": "2018-07-05"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.3,
+    "honorarioDepositaria": 0.2,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Supervielle Asset Management S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00052G-7dab5db1.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Supervielle S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00097-9a7b1e3e.jpg"
+    }
+  ]
+}

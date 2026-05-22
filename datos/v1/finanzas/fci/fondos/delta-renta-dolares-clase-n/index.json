@@ -1,0 +1,88 @@
+{
+  "fondoId": "709",
+  "claseId": "6027",
+  "nombre": "Delta Renta Dolares - Clase N",
+  "fecha": "2026-05-21",
+  "administradora": "Delta Asset Management S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Plazo Flexible",
+  "duration": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "849",
+  "patrimonio": null,
+  "inversionMinima": 20000000,
+  "monedaInversion": "Dolar Estadounidense Billete",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": null,
+    "ultimos7Dias": null,
+    "unMes": null,
+    "noventaDias": null,
+    "cientoOchentaDias": null,
+    "enElAnio": null,
+    "doceMeses": null
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bonos Rep Argentina GD46",
+      "porcentaje": 27.1
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD41",
+      "porcentaje": 22.5
+    },
+    {
+      "nombre": "Bonos Rep Argentina AE38",
+      "porcentaje": 22.1
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional AO27",
+      "porcentaje": 10.8
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD30",
+      "porcentaje": 10.7
+    },
+    {
+      "nombre": "Cta Cte U$S Citibank EEUU",
+      "porcentaje": 3
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 3.8
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "Af (arg)",
+      "fecha": "2020-11-02"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": null,
+    "honorarioDepositaria": null,
+    "comisionIngreso": null,
+    "comisionEgreso": null,
+    "comisionTransferencia": null,
+    "gastosOrdinariosGestion": null,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Delta Asset Management S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00321G-78ba876b.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

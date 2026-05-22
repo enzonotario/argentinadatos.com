@@ -1,0 +1,84 @@
+{
+  "fondoId": "506",
+  "claseId": "1933",
+  "nombre": "MAF Renta Argentina 2 - Clase E",
+  "fecha": "2026-05-20",
+  "administradora": "Mariva Asset Management S.A.U.S.G.F.C.I.",
+  "depositaria": "Banco Mariva S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Mediano Plazo",
+  "duration": "Mayor a 3 Años",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "634",
+  "patrimonio": 0,
+  "inversionMinima": 5000,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 3,
+  "rendimientos": {
+    "valorCuotaparte": 50.57,
+    "ultimos7Dias": -0.2879,
+    "unMes": -1.5497,
+    "noventaDias": -2.5551,
+    "cientoOchentaDias": -0.0158,
+    "enElAnio": 2.2835,
+    "doceMeses": -21.5117
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZX28",
+      "porcentaje": 29
+    },
+    {
+      "nombre": "Bono Disc ARS Ley AR DICP",
+      "porcentaje": 19.7
+    },
+    {
+      "nombre": "Cta Cte $ Comp. Finan. Ar",
+      "porcentaje": 19
+    },
+    {
+      "nombre": "ON TGLT Clase 16",
+      "porcentaje": 16.7
+    },
+    {
+      "nombre": "Bono CER TZX27",
+      "porcentaje": 14.2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.5
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "A (arg)",
+      "fecha": "2020-06-11"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.25,
+    "honorarioDepositaria": 0.12,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.11,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Mariva Asset Management S.A.U.S.G.F.C.I.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00371G-45045e78.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Mariva S.A.",
+      "logo": null
+    }
+  ]
+}

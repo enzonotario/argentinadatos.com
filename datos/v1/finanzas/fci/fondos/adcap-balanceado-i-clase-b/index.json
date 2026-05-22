@@ -1,0 +1,88 @@
+{
+  "fondoId": "575",
+  "claseId": "1168",
+  "nombre": "Adcap Balanceado I - Clase B",
+  "fecha": "2026-05-20",
+  "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Corto Plazo",
+  "duration": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "686",
+  "patrimonio": 28330342797.16,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 119686.313,
+    "ultimos7Dias": 0.5288,
+    "unMes": 1.917,
+    "noventaDias": 16.0345,
+    "cientoOchentaDias": 14.479,
+    "enElAnio": 10.8821,
+    "doceMeses": 52.2161
+  },
+  "composicionCartera": [
+    {
+      "nombre": "FCI Allaria Ahorro - Clase C",
+      "porcentaje": 52.9
+    },
+    {
+      "nombre": "Bono Boncer TZX26",
+      "porcentaje": 23.7
+    },
+    {
+      "nombre": "Lecap S29Y6",
+      "porcentaje": 7.9
+    },
+    {
+      "nombre": "Lecap S15Y6",
+      "porcentaje": 7.9
+    },
+    {
+      "nombre": "Lecap S30A6",
+      "porcentaje": 4.7
+    },
+    {
+      "nombre": "Lecer X15Y6",
+      "porcentaje": 2.7
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.1
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moody's Local Calif. Riesgo",
+      "calificacion": "B",
+      "fecha": "2019-11-12"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 3.52,
+    "honorarioDepositaria": 0.121,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.02,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "fondoId": "862",
+  "claseId": "2484",
+  "nombre": "Probolsa Dolares",
+  "fecha": "2023-08-16",
+  "administradora": "Mercofond S.G.F.C.I.S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Mixta",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Corto Plazo",
+  "duration": "Menor o Igual a 0.5 Año",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "1075",
+  "patrimonio": 0,
+  "inversionMinima": 1000,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 3,
+  "rendimientos": {
+    "valorCuotaparte": null,
+    "ultimos7Dias": null,
+    "unMes": null,
+    "noventaDias": null,
+    "cientoOchentaDias": null,
+    "enElAnio": null,
+    "doceMeses": null
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bonos Rep Argentina 2030",
+      "porcentaje": 93.2
+    },
+    {
+      "nombre": "Bonos Rep Argentina 2029",
+      "porcentaje": 5.2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.6
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 1.2,
+    "honorarioDepositaria": 0.27,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Mercofond S.G.F.C.I.S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00040G-5ca39baf.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

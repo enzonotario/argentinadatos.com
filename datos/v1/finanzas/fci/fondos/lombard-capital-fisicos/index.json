@@ -1,0 +1,62 @@
+{
+  "fondoId": "1135",
+  "claseId": "3115",
+  "nombre": "Lombard Capital Fisicos",
+  "fecha": "2026-05-20",
+  "administradora": "Patagonia Inversora S.A.S.G.F.C.I",
+  "depositaria": "Banco Patagonia S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Badlar",
+  "horizonte": "Corto Plazo",
+  "duration": "Menor o Igual a 0.5 Año",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "552",
+  "patrimonio": 108170845.41,
+  "inversionMinima": 0,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 183253.138,
+    "ultimos7Dias": 0.3323,
+    "unMes": 1.4822,
+    "noventaDias": 5.2142,
+    "cientoOchentaDias": 11.471,
+    "enElAnio": 9.1071,
+    "doceMeses": 30.9346
+  },
+  "composicionCartera": [
+    {
+      "nombre": "FCI Pionero Pesos Plus - Clase B",
+      "porcentaje": 99.1
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.9
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0,
+    "honorarioDepositaria": 0,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Patagonia Inversora S.A.S.G.F.C.I",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00017G-57ea7826.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Patagonia S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00209-6f3e2645.jpg"
+    }
+  ]
+}

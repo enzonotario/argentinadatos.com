@@ -1,0 +1,70 @@
+{
+  "fondoId": "1714",
+  "claseId": "5767",
+  "nombre": "Pellegrini Liquidez Pesos Clase E",
+  "fecha": "2026-05-20",
+  "administradora": "Pellegrini S.A.S.G.F.C.I.",
+  "depositaria": "Banco de La Nacion Argentina",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": "Clásico",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Corto Plazo",
+  "duration": "Menor o Igual a 0.5 Año",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "1701",
+  "patrimonio": 0,
+  "inversionMinima": 100,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 0,
+  "rendimientos": {
+    "valorCuotaparte": 1,
+    "ultimos7Dias": 0,
+    "unMes": 0,
+    "noventaDias": 0,
+    "cientoOchentaDias": 0,
+    "enElAnio": 0,
+    "doceMeses": null
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Bco Nacion",
+      "porcentaje": 50.5
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Galicia",
+      "porcentaje": 24.6
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Santander Ri",
+      "porcentaje": 24.6
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.3
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 1.2,
+    "honorarioDepositaria": 0.3,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Pellegrini S.A.S.G.F.C.I.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00041G-c2e70db2.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco de La Nacion Argentina",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00089-d9e4893d.jpg"
+    }
+  ]
+}

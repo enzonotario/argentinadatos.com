@@ -1,0 +1,96 @@
+{
+  "fondoId": "858",
+  "claseId": "2460",
+  "nombre": "Delta Patrimonio I - Clase G",
+  "fecha": "2026-05-20",
+  "administradora": "Delta Asset Management S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Corto Plazo",
+  "duration": "Menor o Igual a 0.5 Año",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "996",
+  "patrimonio": 0,
+  "inversionMinima": 0,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 2.46,
+    "ultimos7Dias": -0.2837,
+    "unMes": -1.5606,
+    "noventaDias": -2.5743,
+    "cientoOchentaDias": 0.2037,
+    "enElAnio": 2.2869,
+    "doceMeses": -21.4058
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Fut Reg ARS",
+      "porcentaje": 92.3
+    },
+    {
+      "nombre": "Lecer X15Y6",
+      "porcentaje": 24.9
+    },
+    {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 21.6
+    },
+    {
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 19
+    },
+    {
+      "nombre": "Letra Tamar TEM TMF27",
+      "porcentaje": 13.7
+    },
+    {
+      "nombre": "Lecer X29Y6",
+      "porcentaje": 8.2
+    },
+    {
+      "nombre": "Caucion Colocadora $ BYMA",
+      "porcentaje": 5.3
+    },
+    {
+      "nombre": "FCI Gainvest Pesos",
+      "porcentaje": 4.5
+    },
+    {
+      "nombre": "Cta Cte $ Bco de Valores",
+      "porcentaje": 2.5
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "AA-f (arg)",
+      "fecha": "2020-09-09"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.3,
+    "honorarioDepositaria": 0.0908,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Delta Asset Management S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00321G-78ba876b.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

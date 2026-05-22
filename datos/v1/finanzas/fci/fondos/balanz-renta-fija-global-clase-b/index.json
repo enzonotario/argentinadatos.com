@@ -1,0 +1,74 @@
+{
+  "fondoId": "1754",
+  "claseId": "5930",
+  "nombre": "Balanz Renta Fija Global - Clase B",
+  "fecha": "2026-05-20",
+  "administradora": "Balanz S.G.F.C.I.S.A.U.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Global",
+  "benchmark": "No Registrado",
+  "horizonte": "Largo Plazo",
+  "duration": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "1680",
+  "patrimonio": 1141021.74,
+  "inversionMinima": 0,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 1008.34,
+    "ultimos7Dias": -0.0946,
+    "unMes": -0.3895,
+    "noventaDias": -0.3643,
+    "cientoOchentaDias": 0.9356,
+    "enElAnio": 0.1757,
+    "doceMeses": null
+  },
+  "composicionCartera": [
+    {
+      "nombre": "ETF IShares JPM USD EM Corp ACC",
+      "porcentaje": 30.8
+    },
+    {
+      "nombre": "ETF IShares USD Short HY Corp ACC",
+      "porcentaje": 25.7
+    },
+    {
+      "nombre": "Cta Cte USC Citibank",
+      "porcentaje": 18.5
+    },
+    {
+      "nombre": "ETF IShares USD Short Dur ACC",
+      "porcentaje": 15.4
+    },
+    {
+      "nombre": "ETF Ultrashort",
+      "porcentaje": 9.6
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0.7,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Balanz S.G.F.C.I.S.A.U.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00372G-cc6ce723.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

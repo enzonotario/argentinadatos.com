@@ -1,0 +1,104 @@
+{
+  "fondoId": "583",
+  "claseId": "2179",
+  "nombre": "Argenfunds Renta Argentina - Clase E",
+  "fecha": "2026-05-20",
+  "administradora": "Argenfunds S.A.",
+  "depositaria": "Banco Macro S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duration": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "724",
+  "patrimonio": 0,
+  "inversionMinima": 0,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 0.699,
+    "ultimos7Dias": -0.2853,
+    "unMes": -0.9915,
+    "noventaDias": -1.5493,
+    "cientoOchentaDias": 1.5988,
+    "enElAnio": 3.5556,
+    "doceMeses": -19.5627
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Disc ARS Ley AR DICP",
+      "porcentaje": 17.2
+    },
+    {
+      "nombre": "Bono Dual TTJ26",
+      "porcentaje": 14.7
+    },
+    {
+      "nombre": "Bono Dual TTD26",
+      "porcentaje": 14.3
+    },
+    {
+      "nombre": "Bono Dual TTS26",
+      "porcentaje": 11.1
+    },
+    {
+      "nombre": "Boncer Mendoza C1",
+      "porcentaje": 10.4
+    },
+    {
+      "nombre": "Bono Boncer TZXS8",
+      "porcentaje": 10
+    },
+    {
+      "nombre": "FCI Max Money Market - Clase B",
+      "porcentaje": 5
+    },
+    {
+      "nombre": "Bono Boncer 2029 TZXM9",
+      "porcentaje": 2.7
+    },
+    {
+      "nombre": "Letra Tesoro Nac D30A6",
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "ON Genneia Clase 42",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 9.8
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "AAf(arg)",
+      "fecha": "2017-05-22"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 1,
+    "honorarioDepositaria": 0,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Argenfunds S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00377G-dc836163.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Macro S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00098-871484a2.jpg"
+    }
+  ]
+}

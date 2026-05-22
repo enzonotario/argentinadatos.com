@@ -1,0 +1,84 @@
+{
+  "fondoId": "781",
+  "claseId": "1761",
+  "nombre": "Allaria Dólar Global - Clase C",
+  "fecha": "2026-05-20",
+  "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Largo Plazo",
+  "duration": "Menor o Igual a 0.5 Año",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "985",
+  "patrimonio": 9172.72,
+  "inversionMinima": 500,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1370.383,
+    "ultimos7Dias": -0.3335,
+    "unMes": -0.4375,
+    "noventaDias": 2.0803,
+    "cientoOchentaDias": 3.3556,
+    "enElAnio": 2.6654,
+    "doceMeses": 4.7794
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bonos Rep Argentina GD30",
+      "porcentaje": 29.3
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD38",
+      "porcentaje": 27.6
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD35",
+      "porcentaje": 27.5
+    },
+    {
+      "nombre": "Bono Bopreal 2027 Serie 1 Clase D BPOD7",
+      "porcentaje": 9.4
+    },
+    {
+      "nombre": "Bono Bopreal 2027 Serie 1 Clase B BPOB7",
+      "porcentaje": 4.2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.9
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "AA+f(arg)",
+      "fecha": "2025-08-04"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 0.9,
+    "honorarioDepositaria": 0.05,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00356G-ea35a573.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

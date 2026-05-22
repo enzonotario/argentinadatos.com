@@ -1,0 +1,96 @@
+{
+  "fondoId": "858",
+  "claseId": "3169",
+  "nombre": "Delta Patrimonio I - Clase I",
+  "fecha": "2026-05-20",
+  "administradora": "Delta Asset Management S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Corto Plazo",
+  "duration": "Menor o Igual a 0.5 Año",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "996",
+  "patrimonio": 295.03,
+  "inversionMinima": 1000,
+  "monedaInversion": "Dolar Estadounidense Billete",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 12.541,
+    "ultimos7Dias": 0.1677,
+    "unMes": 0.3842,
+    "noventaDias": 1.4726,
+    "cientoOchentaDias": 1.448,
+    "enElAnio": 1.7608,
+    "doceMeses": -7.5965
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Fut Reg ARS",
+      "porcentaje": 92.3
+    },
+    {
+      "nombre": "Lecer X15Y6",
+      "porcentaje": 24.9
+    },
+    {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 21.6
+    },
+    {
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 19
+    },
+    {
+      "nombre": "Letra Tamar TEM TMF27",
+      "porcentaje": 13.7
+    },
+    {
+      "nombre": "Lecer X29Y6",
+      "porcentaje": 8.2
+    },
+    {
+      "nombre": "Caucion Colocadora $ BYMA",
+      "porcentaje": 5.3
+    },
+    {
+      "nombre": "FCI Gainvest Pesos",
+      "porcentaje": 4.5
+    },
+    {
+      "nombre": "Cta Cte $ Bco de Valores",
+      "porcentaje": 2.5
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "AA-f (arg)",
+      "fecha": "2020-09-09"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.3,
+    "honorarioDepositaria": 0.0908,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Delta Asset Management S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00321G-78ba876b.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

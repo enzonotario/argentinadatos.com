@@ -1,0 +1,88 @@
+{
+  "fondoId": "68",
+  "claseId": "68",
+  "nombre": "Fima Renta Pesos - Clase A",
+  "fecha": "2026-05-20",
+  "administradora": "Galicia Asset Management S.A.U.",
+  "depositaria": "Banco de Galicia y Buenos Aires S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Corto Plazo",
+  "duration": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "69",
+  "patrimonio": 106936921072.38,
+  "inversionMinima": 100,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 183127.317,
+    "ultimos7Dias": 0.6195,
+    "unMes": 0.847,
+    "noventaDias": 15.5163,
+    "cientoOchentaDias": 24.0778,
+    "enElAnio": 20.6893,
+    "doceMeses": 46.3402
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 26
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 22.2
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional T15E7",
+      "porcentaje": 14.8
+    },
+    {
+      "nombre": "Bono Boncer TZXD7",
+      "porcentaje": 14.6
+    },
+    {
+      "nombre": "Lecer X30N6",
+      "porcentaje": 13.5
+    },
+    {
+      "nombre": "Letra Tesoro Nac T30A7",
+      "porcentaje": 7.6
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.3
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moody's Local Calif. Riesgo",
+      "calificacion": "Af.ar",
+      "fecha": "2021-02-26"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.5075,
+    "honorarioDepositaria": 0.4425,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Galicia Asset Management S.A.U.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00002G-01a59b57.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco de Galicia y Buenos Aires S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00081-d14fcb5c.jpg"
+    }
+  ]
+}

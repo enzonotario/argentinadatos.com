@@ -1,0 +1,84 @@
+{
+  "fondoId": "775",
+  "claseId": "1744",
+  "nombre": "Toronto Trust Crecimiento - Clase A",
+  "fecha": "2026-05-20",
+  "administradora": "BACS Administradora de Activos S.A.S.G.F.C.I",
+  "depositaria": "Banco Credito y Securitizacion S.A. (BACS)",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duration": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "966",
+  "patrimonio": 9244362.87,
+  "inversionMinima": 1000,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 200.856,
+    "ultimos7Dias": -0.2359,
+    "unMes": 0.0224,
+    "noventaDias": 1.4809,
+    "cientoOchentaDias": 8.779,
+    "enElAnio": 4.697,
+    "doceMeses": 23.0502
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bonos Rep Argentina GD41",
+      "porcentaje": 29.5
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD38",
+      "porcentaje": 26.7
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD30",
+      "porcentaje": 19
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD35",
+      "porcentaje": 11.6
+    },
+    {
+      "nombre": "Bono Buenos Aires 2037",
+      "porcentaje": 10.6
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 2.7
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "A+f (arg)",
+      "fecha": "2023-06-15"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 1.5,
+    "honorarioDepositaria": 0.1452,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "BACS Administradora de Activos S.A.S.G.F.C.I",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00027G-ea0e4766.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Credito y Securitizacion S.A. (BACS)",
+      "logo": null
+    }
+  ]
+}

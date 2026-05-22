@@ -1,0 +1,62 @@
+{
+  "fondoId": "121",
+  "claseId": "121",
+  "nombre": "Pellegrini Renta",
+  "fecha": "2026-05-20",
+  "administradora": "Pellegrini S.A.S.G.F.C.I.",
+  "depositaria": "Banco de La Nacion Argentina",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": "Clásico",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Corto Plazo",
+  "duration": "No Aplicable",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "163",
+  "patrimonio": 58544827.73,
+  "inversionMinima": 100,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 6810.728,
+    "ultimos7Dias": 14.3985,
+    "unMes": 14.4958,
+    "noventaDias": 16.043,
+    "cientoOchentaDias": 18.3402,
+    "enElAnio": 18.6501,
+    "doceMeses": 26.7185
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Bco Nacion",
+      "porcentaje": 79.3
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Galicia",
+      "porcentaje": 20.7
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0.45,
+    "honorarioDepositaria": 0.15,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Pellegrini S.A.S.G.F.C.I.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00041G-c2e70db2.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco de La Nacion Argentina",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00089-d9e4893d.jpg"
+    }
+  ]
+}

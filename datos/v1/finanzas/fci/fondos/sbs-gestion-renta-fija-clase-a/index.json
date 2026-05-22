@@ -1,0 +1,128 @@
+{
+  "fondoId": "470",
+  "claseId": "924",
+  "nombre": "SBS Gestion Renta Fija - Clase A",
+  "fecha": "2026-05-20",
+  "administradora": "SBS Asset Management S.A.S.G.F.C.I.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Badlar",
+  "horizonte": "Corto Plazo",
+  "duration": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "609",
+  "patrimonio": 33349231613.94,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 38750.715,
+    "ultimos7Dias": 0.4662,
+    "unMes": 1.9027,
+    "noventaDias": 8.1405,
+    "cientoOchentaDias": 16.5628,
+    "enElAnio": 13.0344,
+    "doceMeses": 39.0957
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZX26",
+      "porcentaje": 12.5
+    },
+    {
+      "nombre": "Lecap S17L6",
+      "porcentaje": 10.4
+    },
+    {
+      "nombre": "Lecer X15Y6",
+      "porcentaje": 8
+    },
+    {
+      "nombre": "Lecer X29Y6",
+      "porcentaje": 7.7
+    },
+    {
+      "nombre": "Lecap T30J6",
+      "porcentaje": 4.5
+    },
+    {
+      "nombre": "Lecap S14G6",
+      "porcentaje": 4.3
+    },
+    {
+      "nombre": "Cheque E *MAV100800951",
+      "porcentaje": 2.4
+    },
+    {
+      "nombre": "Cheque E *MAV080701171",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "ON Arcor C3",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "FCI Balanz Capital Money Market Clase C",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "Pagare $MAV140560039",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "Letra Prov Bs As 210526",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "FF Mercado Credito 47 CA",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "Cheque E *MAV080600891",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "Cheque E *MAV080600890",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "Cheque E *MAV080600892",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 30.9
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moody's Local Calif. Riesgo",
+      "calificacion": "AA",
+      "fecha": "2017-06-15"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.5,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "SBS Asset Management S.A.S.G.F.C.I.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00347G-615b02d0.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

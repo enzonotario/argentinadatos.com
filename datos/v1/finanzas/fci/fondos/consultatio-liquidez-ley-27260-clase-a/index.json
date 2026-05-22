@@ -1,0 +1,84 @@
+{
+  "fondoId": "710",
+  "claseId": "1520",
+  "nombre": "Consultatio Liquidez Ley 27260 - Clase A",
+  "fecha": "2026-05-20",
+  "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Corto Plazo",
+  "duration": "Menor o Igual a 1 Año",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "883",
+  "patrimonio": 0,
+  "inversionMinima": 250000,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 779.769,
+    "ultimos7Dias": 0.015,
+    "unMes": 0.0665,
+    "noventaDias": 0.177,
+    "cientoOchentaDias": 0.5712,
+    "enElAnio": 0.3658,
+    "doceMeses": 1.7887
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte U$S Rem Bco Nacion",
+      "porcentaje": 36.6
+    },
+    {
+      "nombre": "Pzo Fi U$S Bco Nacion",
+      "porcentaje": 27.6
+    },
+    {
+      "nombre": "Caucion Colocadora U$S Merval",
+      "porcentaje": 23.3
+    },
+    {
+      "nombre": "Cta Cte U$S Citibank EEUU",
+      "porcentaje": 6
+    },
+    {
+      "nombre": "Cta Cte U$S Rem Bco Coinag",
+      "porcentaje": 5.1
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.4
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moody's Local Calif. Riesgo",
+      "calificacion": "BB-f.ar",
+      "fecha": "2023-08-28"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 0.4,
+    "honorarioDepositaria": 0.115,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00022G-3c173d8e.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

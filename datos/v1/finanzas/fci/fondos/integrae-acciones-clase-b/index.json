@@ -1,0 +1,64 @@
+{
+  "fondoId": "715",
+  "claseId": "1543",
+  "nombre": "Integrae Acciones - Clase B",
+  "fecha": "2019-07-29",
+  "administradora": "Cohen S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Variable",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "S&P Merval",
+  "horizonte": "Mediano Plazo",
+  "duration": "No Aplicable",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "861",
+  "patrimonio": 0,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": null,
+    "ultimos7Dias": null,
+    "unMes": null,
+    "noventaDias": null,
+    "cientoOchentaDias": null,
+    "enElAnio": null,
+    "doceMeses": null
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Bco Comafi",
+      "porcentaje": 100
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "BBBc (arg)",
+      "fecha": "2017-01-18"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 0,
+    "honorarioDepositaria": 0,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Cohen S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00359G-614204e4.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "fondoId": "555",
+  "claseId": "2199",
+  "nombre": "Schroder Retorno Absoluto Dolares - Clase B",
+  "fecha": "2026-05-20",
+  "administradora": "Schroder S.A.S.G.F.C.I.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Mixta",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Plazo Flexible",
+  "duration": "No Aplicable",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "677",
+  "patrimonio": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 29.348,
+    "ultimos7Dias": -0.3159,
+    "unMes": -1.5498,
+    "noventaDias": -2.6245,
+    "cientoOchentaDias": 0.3419,
+    "enElAnio": 2.422,
+    "doceMeses": -21.3211
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZX28",
+      "porcentaje": 28.6
+    },
+    {
+      "nombre": "Bono Disc ARS Ley AR DICP",
+      "porcentaje": 26.7
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 19
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD35",
+      "porcentaje": 17.1
+    },
+    {
+      "nombre": "Bono Boncer TZXS8",
+      "porcentaje": 7.8
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.9
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moody's Local Calif. Riesgo",
+      "calificacion": "A-bf.ar",
+      "fecha": "2017-12-06"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.5,
+    "honorarioDepositaria": 0.0968,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Schroder S.A.S.G.F.C.I.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00051G-0c57ca49.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+    }
+  ]
+}
