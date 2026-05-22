@@ -1,4 +1,9 @@
-import { getConcurrency, getMaxAttempts, getPollIntervalMs } from '../config.js'
+import {
+  getConcurrency,
+  getMaxAttempts,
+  getPollIntervalMs,
+  getR2UploadIntervalMs,
+} from '../config.js'
 import { fetchFundDetail, fetchFundsCatalog } from '../cafci/cafciClient.js'
 import { recordHistoricalSnapshotFromDetail } from '../history/recordHistoricalSnapshotFromDetail.js'
 import { uploadDatabaseBackupToR2 } from '../r2/uploadDatabaseBackupToR2.js'
@@ -10,6 +15,8 @@ export class FundDetailsSyncService {
     this.concurrency = options.concurrency ?? getConcurrency()
     this.maxAttempts = options.maxAttempts ?? getMaxAttempts()
     this.pollIntervalMs = options.pollIntervalMs ?? getPollIntervalMs()
+    this.r2UploadIntervalMs =
+      options.r2UploadIntervalMs ?? getR2UploadIntervalMs()
   }
 
   async runCycle({ forceRetryFailed = false } = {}) {
@@ -76,11 +83,47 @@ export class FundDetailsSyncService {
     }
   }
 
+  shouldUploadBackup(now = Date.now()) {
+    const lastUploadAt = this.repository.getWorkerState('last_r2_backup_at')
+
+    if (!lastUploadAt) {
+      return true
+    }
+
+    const lastUploadTime = new Date(lastUploadAt).getTime()
+
+    if (!Number.isFinite(lastUploadTime)) {
+      return true
+    }
+
+    return now - lastUploadTime >= this.r2UploadIntervalMs
+  }
+
+  async maybeUploadBackup() {
+    if (!this.shouldUploadBackup()) {
+      console.log('[cafci-worker] skipping R2 upload for this cycle', {
+        nextEligibleInMs: this.r2UploadIntervalMs,
+      })
+      return false
+    }
+
+    const uploaded = await uploadDatabaseBackupToR2(this.repository)
+
+    if (uploaded) {
+      this.repository.setWorkerState(
+        'last_r2_backup_at',
+        new Date().toISOString(),
+      )
+    }
+
+    return uploaded
+  }
+
   async startPolling({ forceRetryFailed = false } = {}) {
     while (true) {
       try {
         const summary = await this.runCycle({ forceRetryFailed })
-        await uploadDatabaseBackupToR2(this.repository)
+        await this.maybeUploadBackup()
         console.log('[cafci-worker] cycle summary', summary)
       } catch (error) {
         console.error('[cafci-worker] cycle failed', error)

@@ -1,4 +1,4 @@
-import { existsSync } from 'node:fs'
+import { existsSync, statSync } from 'node:fs'
 import { getDatabasePath, isR2BackupConfigured } from './config.js'
 import { FundDetailsJobRepository } from './database/fundDetailsJobRepository.js'
 import { downloadDatabaseBackupFromR2 } from './r2/downloadDatabaseBackupFromR2.js'
@@ -10,8 +10,10 @@ const watchMode = args.has('--watch')
 const forceRetryFailed = args.has('--force')
 const databasePath = getDatabasePath()
 
+let downloadedBackup = null
+
 if (!existsSync(databasePath) && isR2BackupConfigured()) {
-  await downloadDatabaseBackupFromR2({
+  downloadedBackup = await downloadDatabaseBackupFromR2({
     destinationPath: databasePath,
     failIfMissing: false,
   })
@@ -19,6 +21,20 @@ if (!existsSync(databasePath) && isR2BackupConfigured()) {
 
 const repository = new FundDetailsJobRepository(databasePath)
 await repository.initialize()
+
+if (
+  watchMode &&
+  isR2BackupConfigured() &&
+  !repository.getWorkerState('last_r2_backup_at')
+) {
+  repository.setWorkerState(
+    'last_r2_backup_at',
+    downloadedBackup?.uploadedAt ||
+      downloadedBackup?.lastModified ||
+      statSync(databasePath).mtime.toISOString() ||
+      new Date().toISOString(),
+  )
+}
 
 const shutdown = () => {
   try {

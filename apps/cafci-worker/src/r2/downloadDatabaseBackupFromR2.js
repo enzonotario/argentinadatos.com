@@ -1,17 +1,21 @@
 import { GetObjectCommand } from '@aws-sdk/client-s3'
-import { gunzipSync } from 'node:zlib'
-import { mkdirSync, writeFileSync } from 'node:fs'
-import { dirname } from 'node:path'
+import {
+  createWriteStream,
+  mkdirSync,
+  mkdtempSync,
+  renameSync,
+  rmSync,
+} from 'node:fs'
+import { dirname, join } from 'node:path'
+import { tmpdir } from 'node:os'
+import { pipeline } from 'node:stream/promises'
+import { createGunzip } from 'node:zlib'
 import {
   getDatabasePath,
   getR2Config,
   isR2BackupConfigured,
 } from '../config.js'
 import { createR2Client } from './r2Client.js'
-
-function isGzipped(buffer) {
-  return buffer.length > 2 && buffer[0] === 0x1f && buffer[1] === 0x8b
-}
 
 export async function downloadDatabaseBackupFromR2({
   destinationPath = getDatabasePath(),
@@ -34,27 +38,47 @@ export async function downloadDatabaseBackupFromR2({
       }),
     )
 
-    const body = await response.Body?.transformToByteArray()
+    const body = response.Body
 
     if (!body) {
       throw new Error('R2 response body is empty')
     }
 
-    const buffer = Buffer.from(body)
-    const data = isGzipped(buffer) ? gunzipSync(buffer) : buffer
-
     mkdirSync(dirname(destinationPath), {
       recursive: true,
     })
 
-    writeFileSync(destinationPath, data)
+    const tempDirectory = mkdtempSync(join(tmpdir(), 'cafci-worker-download-'))
+    const tempPath = join(tempDirectory, 'db.sqlite')
+
+    try {
+      const source =
+        response.ContentEncoding === 'gzip' ? body.pipe(createGunzip()) : body
+
+      await pipeline(source, createWriteStream(tempPath))
+      renameSync(tempPath, destinationPath)
+    } finally {
+      rmSync(tempDirectory, {
+        recursive: true,
+        force: true,
+      })
+    }
+
     console.log('[cafci-worker] SQLite downloaded from R2', {
       destinationPath,
       bucket: config.bucket,
       objectKey,
+      contentEncoding: response.ContentEncoding || 'identity',
     })
 
-    return true
+    return {
+      destinationPath,
+      bucket: config.bucket,
+      objectKey,
+      lastModified: response.LastModified?.toISOString?.() ?? null,
+      uploadedAt: response.Metadata?.uploadedat ?? null,
+      contentEncoding: response.ContentEncoding || null,
+    }
   } catch (error) {
     if (
       error?.name === 'NoSuchKey' ||

@@ -69,6 +69,13 @@ export function getPollIntervalMs() {
   )
 }
 
+export function getR2UploadIntervalMs() {
+  return readNumberEnv(
+    ['CAFCI_WORKER_R2_UPLOAD_INTERVAL_MS'],
+    6 * 60 * 60 * 1000,
+  )
+}
+
 export function getBackfillSeedDatabasePath() {
   const configuredPath = readEnv('CAFCI_WORKER_BACKFILL_SEED_DB_PATH')
 

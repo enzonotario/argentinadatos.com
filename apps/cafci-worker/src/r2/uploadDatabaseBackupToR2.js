@@ -1,8 +1,8 @@
-import { PutObjectCommand } from '@aws-sdk/client-s3'
-import { gzipSync } from 'node:zlib'
-import { mkdtempSync, readFileSync, rmSync } from 'node:fs'
+import { Upload } from '@aws-sdk/lib-storage'
+import { createReadStream, mkdtempSync, rmSync } from 'node:fs'
 import { join } from 'node:path'
 import { tmpdir } from 'node:os'
+import { createGzip } from 'node:zlib'
 import { getR2Config, isR2BackupConfigured } from '../config.js'
 import { createR2Client } from './r2Client.js'
 
@@ -18,13 +18,12 @@ export async function uploadFileToR2({
   const client = createR2Client()
   const config = getR2Config()
 
-  const compressed = gzipSync(readFileSync(filePath))
-
-  await client.send(
-    new PutObjectCommand({
+  const upload = new Upload({
+    client,
+    params: {
       Bucket: config.bucket,
       Key: objectKey,
-      Body: compressed,
+      Body: createReadStream(filePath).pipe(createGzip()),
       ContentType: 'application/vnd.sqlite3',
       ContentEncoding: 'gzip',
       Metadata: {
@@ -32,8 +31,12 @@ export async function uploadFileToR2({
         uploadedAt: new Date().toISOString(),
         ...metadata,
       },
-    }),
-  )
+    },
+    queueSize: 1,
+    partSize: 10 * 1024 * 1024,
+  })
+
+  await upload.done()
 
   console.log('[cafci-worker] SQLite uploaded to R2', {
     bucket: config.bucket,
