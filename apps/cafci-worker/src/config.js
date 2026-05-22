@@ -10,6 +10,14 @@ const defaultDatabasePath = resolve(
   'db.sqlite',
 )
 
+function resolveFromRepositoryRoot(pathname) {
+  if (!pathname) {
+    return defaultDatabasePath
+  }
+
+  return resolve(repositoryRoot, pathname)
+}
+
 function readEnv(...names) {
   for (const name of names) {
     const value = process.env[name]
@@ -30,10 +38,14 @@ function readNumberEnv(names, fallback) {
 }
 
 export function getDatabasePath() {
-  return resolve(
-    readEnv('CAFCI_WORKER_DB_PATH', 'FCI_FUND_DETAILS_DB_PATH') ||
-      defaultDatabasePath,
+  const configuredPath = readEnv(
+    'CAFCI_WORKER_DB_PATH',
+    'FCI_FUND_DETAILS_DB_PATH',
   )
+
+  return configuredPath
+    ? resolveFromRepositoryRoot(configuredPath)
+    : defaultDatabasePath
 }
 
 export function getConcurrency() {

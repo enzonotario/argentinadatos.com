@@ -120,7 +120,7 @@ jobs:
           CAFCI_WORKER_R2_SECRET_ACCESS_KEY: ${{ secrets.CAFCI_WORKER_R2_SECRET_ACCESS_KEY }}
           CAFCI_WORKER_R2_BUCKET: ${{ secrets.CAFCI_WORKER_R2_BUCKET }}
           CAFCI_WORKER_R2_OBJECT_KEY: ${{ secrets.CAFCI_WORKER_R2_OBJECT_KEY }}
-          CAFCI_WORKER_DB_PATH: storage/cafci-worker/db.sqlite
+          CAFCI_WORKER_DB_PATH: ${{ github.workspace }}/storage/cafci-worker/db.sqlite
         run: pnpm run cafci-worker:r2:download
 
       - name: Build
