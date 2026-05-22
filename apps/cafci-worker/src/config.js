@@ -69,6 +69,10 @@ export function getPollIntervalMs() {
   )
 }
 
+export function getLegacyHistoryRoot() {
+  return resolve(repositoryRoot, 'datos', 'v1', 'finanzas', 'fci')
+}
+
 export function getR2Config() {
   const accountId = readEnv('CAFCI_WORKER_R2_ACCOUNT_ID')
   const accessKeyId = readEnv('CAFCI_WORKER_R2_ACCESS_KEY_ID')

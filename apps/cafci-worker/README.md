@@ -8,6 +8,7 @@ La ruta por defecto es `storage/cafci-worker/db.sqlite`. El flujo esperado es:
 2. Coolify persiste ese archivo en disco.
 3. `cafci-worker` sube periódicamente la SQLite a R2 como backup.
 4. GitHub Actions descarga esa SQLite desde R2 y, con ella, genera los JSON estáticos.
+5. En la primera corrida, si la tabla histórica está vacía, hace un backfill estricto usando los JSON legacy de `datos/v1/finanzas/fci/*`.
 
 ## Scripts
 
@@ -15,6 +16,18 @@ La ruta por defecto es `storage/cafci-worker/db.sqlite`. El flujo esperado es:
 - `pnpm start`: corre en loop, reintentando según el intervalo configurado
 - `pnpm r2:backup`: sube manualmente la SQLite actual a R2
 - `pnpm r2:download`: descarga la SQLite desde R2 al path local configurado
+
+## Histórico
+
+El worker guarda una evolución diaria por fondo/clase en SQLite:
+
+- backfill inicial desde los históricos legacy del repo
+- snapshots nuevos desde los detalles actuales de CAFCI
+- retornos derivados desde `VCP`
+- `AUM`/patrimonio cuando haya evidencia suficiente
+- flujo neto estimado solo cuando se puede calcular sin inventar datos
+
+Por ahora este histórico queda solo en SQLite/R2 y no se publica todavía como endpoint JSON.
 
 ## Variables de entorno
 

@@ -200,6 +200,140 @@ export class FundDetailsJobRepository {
       .map(row => JSON.parse(row.payload))
   }
 
+  countHistoricalSnapshots() {
+    return this.db
+      .prepare('SELECT COUNT(*) AS count FROM historical_fund_snapshots')
+      .get().count
+  }
+
+  upsertHistoricalSnapshot(snapshot) {
+    this.db
+      .prepare(
+        `
+          INSERT INTO historical_fund_snapshots (
+            slug,
+            fund_id,
+            class_id,
+            name,
+            source_date,
+            category_key,
+            category_label,
+            horizon,
+            share_value,
+            assets_under_management,
+            daily_return,
+            cumulative_return,
+            estimated_net_flow,
+            source_kind,
+            raw_source,
+            created_at,
+            updated_at
+          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+          ON CONFLICT(slug, source_date)
+          DO UPDATE SET
+            fund_id = excluded.fund_id,
+            class_id = excluded.class_id,
+            name = excluded.name,
+            category_key = excluded.category_key,
+            category_label = excluded.category_label,
+            horizon = excluded.horizon,
+            share_value = excluded.share_value,
+            assets_under_management = excluded.assets_under_management,
+            daily_return = excluded.daily_return,
+            cumulative_return = excluded.cumulative_return,
+            estimated_net_flow = excluded.estimated_net_flow,
+            source_kind = excluded.source_kind,
+            raw_source = excluded.raw_source,
+            updated_at = CURRENT_TIMESTAMP
+        `,
+      )
+      .run(
+        snapshot.slug,
+        snapshot.fundId,
+        snapshot.classId,
+        snapshot.name,
+        snapshot.sourceDate,
+        snapshot.categoryKey,
+        snapshot.categoryLabel,
+        snapshot.horizon,
+        snapshot.shareValue,
+        snapshot.assetsUnderManagement,
+        snapshot.dailyReturn,
+        snapshot.cumulativeReturn,
+        snapshot.estimatedNetFlow,
+        snapshot.sourceKind,
+        snapshot.rawSource ? JSON.stringify(snapshot.rawSource) : null,
+      )
+  }
+
+  listHistoricalSnapshotsBySlug(slug) {
+    return this.db
+      .prepare(
+        `
+          SELECT *
+          FROM historical_fund_snapshots
+          WHERE slug = ?
+          ORDER BY source_date
+        `,
+      )
+      .all(slug)
+      .map(row => this.mapHistoricalSnapshot(row))
+  }
+
+  getFirstHistoricalSnapshot(slug) {
+    const row = this.db
+      .prepare(
+        `
+          SELECT *
+          FROM historical_fund_snapshots
+          WHERE slug = ?
+          ORDER BY source_date ASC
+          LIMIT 1
+        `,
+      )
+      .get(slug)
+
+    return row ? this.mapHistoricalSnapshot(row) : null
+  }
+
+  getLatestHistoricalSnapshotBefore(slug, sourceDate) {
+    const row = this.db
+      .prepare(
+        `
+          SELECT *
+          FROM historical_fund_snapshots
+          WHERE slug = ?
+            AND source_date < ?
+          ORDER BY source_date DESC
+          LIMIT 1
+        `,
+      )
+      .get(slug, sourceDate)
+
+    return row ? this.mapHistoricalSnapshot(row) : null
+  }
+
+  mapHistoricalSnapshot(row) {
+    return {
+      id: row.id,
+      slug: row.slug,
+      fundId: row.fund_id,
+      classId: row.class_id,
+      name: row.name,
+      sourceDate: row.source_date,
+      categoryKey: row.category_key,
+      categoryLabel: row.category_label,
+      horizon: row.horizon,
+      shareValue: row.share_value,
+      assetsUnderManagement: row.assets_under_management,
+      dailyReturn: row.daily_return,
+      cumulativeReturn: row.cumulative_return,
+      estimatedNetFlow: row.estimated_net_flow,
+      sourceKind: row.source_kind,
+      rawSource: row.raw_source ? JSON.parse(row.raw_source) : null,
+    }
+  }
+
   exportDatabaseSnapshot(destinationPath) {
     mkdirSync(dirname(destinationPath), {
       recursive: true,
