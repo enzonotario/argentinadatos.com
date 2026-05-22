@@ -7,7 +7,6 @@ import {
   rmSync,
 } from 'node:fs'
 import { dirname, join } from 'node:path'
-import { tmpdir } from 'node:os'
 import { pipeline } from 'node:stream/promises'
 import { createGunzip } from 'node:zlib'
 import {
@@ -48,7 +47,10 @@ export async function downloadDatabaseBackupFromR2({
       recursive: true,
     })
 
-    const tempDirectory = mkdtempSync(join(tmpdir(), 'cafci-worker-download-'))
+    const destinationDirectory = dirname(destinationPath)
+    const tempDirectory = mkdtempSync(
+      join(destinationDirectory, '.cafci-worker-download-'),
+    )
     const tempPath = join(tempDirectory, 'db.sqlite')
 
     try {
