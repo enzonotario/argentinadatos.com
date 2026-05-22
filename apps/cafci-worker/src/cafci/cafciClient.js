@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { load } from 'cheerio'
 import { buildFundSlug } from '../utils/buildFundSlug.js'
+import { normalizarPayloadFondo } from '../utils/normalizarPayloadFondo.js'
 
 const cafciBaseUrl = 'https://estadisticas.cafci.org.ar'
 const searchPageUrl = `${cafciBaseUrl}/resultado-busqueda`
@@ -71,26 +72,26 @@ export async function fetchFundsCatalog() {
       return
     }
 
-    const [fundId, classId] = value.split(';')
+    const [fondoId, claseId] = value.split(';')
 
-    if (!fundId || !classId) {
+    if (!fondoId || !claseId) {
       return
     }
 
     funds.push({
-      fundId,
-      classId,
-      name,
-      slug: buildFundSlug({ name, fundId, classId }),
+      fondoId,
+      claseId,
+      nombre: name,
+      slug: buildFundSlug({ nombre: name, fondoId, claseId }),
     })
   })
 
   return funds
 }
 
-export async function fetchFundDetail(fundId, classId) {
+export async function fetchFundDetail(fondoId, claseId) {
   const response = await axios.get(
-    `${cafciBaseUrl}/fondos/${fundId}?clase=${classId}`,
+    `${cafciBaseUrl}/fondos/${fondoId}?clase=${claseId}`,
   )
   const $ = load(response.data)
 
@@ -290,10 +291,10 @@ export async function fetchFundDetail(fundId, classId) {
     })
   })
 
-  return {
-    fundId,
-    classId,
-    slug: buildFundSlug({ name, fundId, classId }),
+  return normalizarPayloadFondo({
+    fondoId,
+    claseId,
+    slug: buildFundSlug({ name, fondoId, claseId }),
     name,
     date,
     manager: fundData.manager ?? null,
@@ -315,5 +316,5 @@ export async function fetchFundDetail(fundId, classId) {
     ratings,
     fees,
     societies,
-  }
+  })
 }

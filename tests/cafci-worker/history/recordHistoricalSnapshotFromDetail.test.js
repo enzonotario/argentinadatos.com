@@ -28,33 +28,33 @@ describe('recordHistoricalSnapshotFromDetail', () => {
 
     repository.upsertHistoricalSnapshot({
       slug: 'mercado-fondo-clase-a',
-      fundId: null,
-      classId: null,
-      name: 'Mercado Fondo - Clase A',
-      sourceDate: '2026-05-20',
-      categoryKey: 'mercadoDinero',
-      categoryLabel: 'Mercado de Dinero',
-      horizon: 'corto',
-      shareValue: 100,
-      assetsUnderManagement: 1000,
-      dailyReturn: null,
-      cumulativeReturn: 0,
-      estimatedNetFlow: null,
-      sourceKind: 'legacy-json',
-      rawSource: { from: 'test' },
+      fondoId: null,
+      claseId: null,
+      nombre: 'Mercado Fondo - Clase A',
+      fecha: '2026-05-20',
+      categoriaKey: 'mercadoDinero',
+      categoria: 'Mercado de Dinero',
+      horizonte: 'corto',
+      valorCuotaparte: 100,
+      patrimonio: 1000,
+      retornoDiario: null,
+      retornoAcumulado: 0,
+      flujoEstimado: null,
+      origen: 'legacy-json',
+      fuenteOriginal: { from: 'test' },
     })
 
     await recordHistoricalSnapshotFromDetail(repository, {
-      fundId: '798',
-      classId: '1982',
+      fondoId: '798',
+      claseId: '1982',
       slug: 'mercado-fondo-clase-a',
-      name: 'Mercado Fondo - Clase A',
-      date: '2026-05-21',
-      incomeType: 'Mercado de Dinero',
-      horizon: 'Corto Plazo',
-      assetsUnderManagement: 1025,
-      performance: {
-        shareValue: 101,
+      nombre: 'Mercado Fondo - Clase A',
+      fecha: '2026-05-21',
+      tipoRenta: 'Mercado de Dinero',
+      horizonte: 'Corto Plazo',
+      patrimonio: 1025,
+      rendimientos: {
+        valorCuotaparte: 101,
       },
     })
 
@@ -64,17 +64,17 @@ describe('recordHistoricalSnapshotFromDetail', () => {
 
     expect(rows).toHaveLength(2)
     expect(rows[1]).toMatchObject({
-      fundId: '798',
-      classId: '1982',
-      sourceDate: '2026-05-21',
-      categoryKey: 'mercadoDinero',
-      categoryLabel: 'Mercado de Dinero',
-      shareValue: 101,
-      assetsUnderManagement: 1025,
-      dailyReturn: 1,
-      cumulativeReturn: 1,
-      estimatedNetFlow: 15,
-      sourceKind: 'cafci-detail',
+      fondoId: '798',
+      claseId: '1982',
+      fecha: '2026-05-21',
+      categoriaKey: 'mercadoDinero',
+      categoria: 'Mercado de Dinero',
+      valorCuotaparte: 101,
+      patrimonio: 1025,
+      retornoDiario: 1,
+      retornoAcumulado: 1,
+      flujoEstimado: 15,
+      origen: 'cafci-detail',
     })
 
     repository.close()

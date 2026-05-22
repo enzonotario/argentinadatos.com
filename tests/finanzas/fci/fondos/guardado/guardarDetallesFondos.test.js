@@ -85,38 +85,38 @@ describe('fondosComando', () => {
       'mercado-fondo-clase-a',
       'Mercado Fondo - Clase A',
       JSON.stringify({
-        fundId: '798',
-        classId: '1982',
+        fondoId: '798',
+        claseId: '1982',
         slug: 'mercado-fondo-clase-a',
-        name: 'Mercado Fondo - Clase A',
-        date: '2026-05-21',
-        manager: 'Administradora SA',
-        depositary: 'Depositaria SA',
-        performance: {
-          shareValue: 24088.316,
-          last7Days: 17.88,
+        nombre: 'Mercado Fondo - Clase A',
+        fecha: '2026-05-21',
+        administradora: 'Administradora SA',
+        depositaria: 'Depositaria SA',
+        rendimientos: {
+          valorCuotaparte: 24088.316,
+          ultimos7Dias: 17.88,
         },
-        portfolioComposition: [
+        composicionCartera: [
           {
-            name: 'Plazo Fijo',
-            percentage: 80,
+            nombre: 'Plazo Fijo',
+            porcentaje: 80,
           },
         ],
-        ratings: [
+        calificaciones: [
           {
-            agency: 'Fix',
-            rating: 'AA',
-            date: '2026-05-20',
+            calificadora: 'Fix',
+            calificacion: 'AA',
+            fecha: '2026-05-20',
           },
         ],
-        fees: {
-          managerFee: 1,
+        honorarios: {
+          honorarioGerente: 1,
         },
-        societies: [
+        sociedades: [
           {
-            type: 'Administradora',
-            name: 'Administradora SA',
-            logoUrl: 'https://example.com/logo.png',
+            tipo: 'Administradora',
+            nombre: 'Administradora SA',
+            logo: 'https://example.com/logo.png',
           },
         ],
       }),
@@ -124,80 +124,49 @@ describe('fondosComando', () => {
       '2026-05-21T10:00:00.000Z',
       '2026-05-21 10:00:00',
     )
-    db.prepare(
-      `
-      INSERT INTO historical_fund_snapshots (
-        slug,
-        fund_id,
-        class_id,
-        name,
-        source_date,
-        category_key,
-        category_label,
-        horizon,
-        share_value,
-        assets_under_management,
-        daily_return,
-        cumulative_return,
-        estimated_net_flow,
-        source_kind,
-        raw_source
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `,
-    ).run(
-      'mercado-fondo-clase-a',
-      '798',
-      '1982',
-      'Mercado Fondo - Clase A',
-      '2026-05-20',
-      'mercadoDinero',
-      'Mercado de Dinero',
-      'corto',
-      100,
-      1000,
-      null,
-      0,
-      null,
-      'legacy-json',
-      JSON.stringify({ fuente: 'test' }),
-    )
-    db.prepare(
-      `
-      INSERT INTO historical_fund_snapshots (
-        slug,
-        fund_id,
-        class_id,
-        name,
-        source_date,
-        category_key,
-        category_label,
-        horizon,
-        share_value,
-        assets_under_management,
-        daily_return,
-        cumulative_return,
-        estimated_net_flow,
-        source_kind,
-        raw_source
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `,
-    ).run(
-      'mercado-fondo-clase-a',
-      '798',
-      '1982',
-      'Mercado Fondo - Clase A',
-      '2026-05-21',
-      'mercadoDinero',
-      'Mercado de Dinero',
-      'corto',
-      101,
-      1025,
-      1,
-      1,
-      15,
-      'cafci-detail',
-      JSON.stringify({ fuente: 'test' }),
-    )
+
+    for (const row of [
+      ['2026-05-20', 100, 1000, null, 0, null, 'legacy-json'],
+      ['2026-05-21', 101, 1025, 1, 1, 15, 'cafci-detail'],
+    ]) {
+      db.prepare(
+        `
+        INSERT INTO historical_fund_snapshots (
+          slug,
+          fund_id,
+          class_id,
+          name,
+          source_date,
+          category_key,
+          category_label,
+          horizon,
+          share_value,
+          assets_under_management,
+          daily_return,
+          cumulative_return,
+          estimated_net_flow,
+          source_kind,
+          raw_source
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `,
+      ).run(
+        'mercado-fondo-clase-a',
+        '798',
+        '1982',
+        'Mercado Fondo - Clase A',
+        row[0],
+        'mercadoDinero',
+        'Mercado de Dinero',
+        'corto',
+        row[1],
+        row[2],
+        row[3],
+        row[4],
+        row[5],
+        row[6],
+        JSON.stringify({ fuente: 'test' }),
+      )
+    }
     db.close()
 
     const previous = process.env.VITE_CAFCI_WORKER_DB_PATH
@@ -237,7 +206,7 @@ describe('fondosComando', () => {
           region: null,
           benchmark: null,
           horizonte: null,
-          duration: null,
+          duracion: null,
           moneda: null,
           codigoCNV: null,
           patrimonio: null,
@@ -286,7 +255,10 @@ describe('fondosComando', () => {
         },
       ],
     })
-    expect(leerRuta('/finanzas/fci/fondos/mercado-fondo-clase-a/historico')).toEqual({
+
+    expect(
+      leerRuta('/finanzas/fci/fondos/mercado-fondo-clase-a/historico'),
+    ).toEqual({
       fondoId: '798',
       claseId: '1982',
       nombre: 'Mercado Fondo - Clase A',
@@ -294,7 +266,7 @@ describe('fondosComando', () => {
       historico: [
         {
           slug: 'mercado-fondo-clase-a',
-          fundId: '798',
+          fondoId: '798',
           claseId: '1982',
           nombre: 'Mercado Fondo - Clase A',
           fecha: '2026-05-20',
@@ -310,7 +282,7 @@ describe('fondosComando', () => {
         },
         {
           slug: 'mercado-fondo-clase-a',
-          fundId: '798',
+          fondoId: '798',
           claseId: '1982',
           nombre: 'Mercado Fondo - Clase A',
           fecha: '2026-05-21',

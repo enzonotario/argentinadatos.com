@@ -1,25 +1,15 @@
 import { existsSync, readdirSync, readFileSync, rmSync } from 'node:fs'
 import { join, resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { getBackfillSeedDatabasePath, getDatabasePath } from '../config.js'
+import { getDatabasePath } from '../config.js'
 import { FundDetailsJobRepository } from '../database/fundDetailsJobRepository.js'
+import { normalizarPayloadFondo } from '../utils/normalizarPayloadFondo.js'
 
 const currentDirectory = dirname(fileURLToPath(import.meta.url))
 const repositoryRoot = resolve(currentDirectory, '../../../..')
 
 function getStaticFundsRoot() {
   return resolve(repositoryRoot, 'datos', 'v1', 'finanzas', 'fci', 'fondos')
-}
-
-function normalizeStaticFundPayload(slug, payload) {
-  return {
-    ...payload,
-    slug,
-    fundId: payload.fundId ?? payload.fondoId ?? null,
-    classId: payload.classId ?? payload.claseId ?? null,
-    name: payload.name ?? payload.nombre ?? slug,
-    date: payload.date ?? payload.fecha ?? null,
-  }
 }
 
 function listStaticFundIndexFiles(rootDirectory) {
@@ -42,9 +32,12 @@ function listStaticFundIndexFiles(rootDirectory) {
 export async function rebuildDatabaseFromStaticFunds({
   databasePath = getDatabasePath(),
   staticFundsRoot = getStaticFundsRoot(),
-  historicalSeedPath = getBackfillSeedDatabasePath(),
 } = {}) {
-  for (const path of [databasePath, `${databasePath}-wal`, `${databasePath}-shm`]) {
+  for (const path of [
+    databasePath,
+    `${databasePath}-wal`,
+    `${databasePath}-shm`,
+  ]) {
     rmSync(path, {
       force: true,
     })
@@ -57,11 +50,17 @@ export async function rebuildDatabaseFromStaticFunds({
     const fetchedAt = new Date().toISOString()
     let importedCurrentFunds = 0
 
-    for (const { slug, indexPath } of listStaticFundIndexFiles(staticFundsRoot)) {
+    for (const { slug, indexPath } of listStaticFundIndexFiles(
+      staticFundsRoot,
+    )) {
       const payload = JSON.parse(readFileSync(indexPath, 'utf8'))
-      const normalized = normalizeStaticFundPayload(slug, payload)
+      const normalized = {
+        ...normalizarPayloadFondo({ ...payload, slug }),
+        slug,
+        nombre: payload.nombre ?? payload.name ?? slug,
+      }
 
-      if (!normalized.fundId || !normalized.classId) {
+      if (!normalized.fondoId || !normalized.claseId) {
         continue
       }
 
@@ -69,14 +68,9 @@ export async function rebuildDatabaseFromStaticFunds({
       importedCurrentFunds += 1
     }
 
-    const importedHistoricalSnapshots = existsSync(historicalSeedPath)
-      ? repository.importHistoricalBackfillFromDatabase(historicalSeedPath)
-      : 0
-
     return {
       databasePath,
       importedCurrentFunds,
-      importedHistoricalSnapshots,
     }
   } finally {
     repository.close()

@@ -44,10 +44,10 @@ export class FundDetailsJobRepository {
     const insertMany = this.db.transaction(items => {
       for (const fund of items) {
         insert.run(
-          fund.fundId,
-          fund.classId,
+          fund.fondoId,
+          fund.claseId,
           fund.slug,
-          fund.name,
+          fund.nombre,
           executionDate,
         )
       }
@@ -154,12 +154,12 @@ export class FundDetailsJobRepository {
     const transaction = this.db.transaction(() => {
       updateJob.run(JSON.stringify(payload), now, jobId)
       upsertCurrent.run(
-        payload.fundId,
-        payload.classId,
+        payload.fondoId,
+        payload.claseId,
         payload.slug,
-        payload.name,
+        payload.nombre,
         JSON.stringify(payload),
-        payload.date ?? null,
+        payload.fecha ?? null,
         now,
       )
     })
@@ -193,12 +193,12 @@ export class FundDetailsJobRepository {
         `,
       )
       .run(
-        payload.fundId,
-        payload.classId,
+        payload.fondoId,
+        payload.claseId,
         payload.slug,
-        payload.name,
+        payload.nombre,
         JSON.stringify(payload),
-        payload.date ?? null,
+        payload.fecha ?? null,
         fetchedAt,
       )
   }
@@ -276,14 +276,6 @@ export class FundDetailsJobRepository {
       .get().count
   }
 
-  isHistoricalBackfillCompleted() {
-    return Boolean(this.getWorkerState('historical_backfill_completed_at'))
-  }
-
-  markHistoricalBackfillCompleted(completedAt = new Date().toISOString()) {
-    this.setWorkerState('historical_backfill_completed_at', completedAt)
-  }
-
   upsertHistoricalSnapshot(snapshot) {
     this.db
       .prepare(
@@ -327,20 +319,22 @@ export class FundDetailsJobRepository {
       )
       .run(
         snapshot.slug,
-        snapshot.fundId,
-        snapshot.classId,
-        snapshot.name,
-        snapshot.sourceDate,
-        snapshot.categoryKey,
-        snapshot.categoryLabel,
-        snapshot.horizon,
-        snapshot.shareValue,
-        snapshot.assetsUnderManagement,
-        snapshot.dailyReturn,
-        snapshot.cumulativeReturn,
-        snapshot.estimatedNetFlow,
-        snapshot.sourceKind,
-        snapshot.rawSource ? JSON.stringify(snapshot.rawSource) : null,
+        snapshot.fondoId,
+        snapshot.claseId,
+        snapshot.nombre,
+        snapshot.fecha,
+        snapshot.categoriaKey,
+        snapshot.categoria,
+        snapshot.horizonte,
+        snapshot.valorCuotaparte,
+        snapshot.patrimonio,
+        snapshot.retornoDiario,
+        snapshot.retornoAcumulado,
+        snapshot.flujoEstimado,
+        snapshot.origen,
+        snapshot.fuenteOriginal
+          ? JSON.stringify(snapshot.fuenteOriginal)
+          : null,
       )
   }
 
@@ -395,20 +389,20 @@ export class FundDetailsJobRepository {
     return {
       id: row.id,
       slug: row.slug,
-      fundId: row.fund_id,
-      classId: row.class_id,
-      name: row.name,
-      sourceDate: row.source_date,
-      categoryKey: row.category_key,
-      categoryLabel: row.category_label,
-      horizon: row.horizon,
-      shareValue: row.share_value,
-      assetsUnderManagement: row.assets_under_management,
-      dailyReturn: row.daily_return,
-      cumulativeReturn: row.cumulative_return,
-      estimatedNetFlow: row.estimated_net_flow,
-      sourceKind: row.source_kind,
-      rawSource: row.raw_source ? JSON.parse(row.raw_source) : null,
+      fondoId: row.fund_id,
+      claseId: row.class_id,
+      nombre: row.name,
+      fecha: row.source_date,
+      categoriaKey: row.category_key,
+      categoria: row.category_label,
+      horizonte: row.horizon,
+      valorCuotaparte: row.share_value,
+      patrimonio: row.assets_under_management,
+      retornoDiario: row.daily_return,
+      retornoAcumulado: row.cumulative_return,
+      flujoEstimado: row.estimated_net_flow,
+      origen: row.source_kind,
+      fuenteOriginal: row.raw_source ? JSON.parse(row.raw_source) : null,
     }
   }
 
@@ -418,86 +412,6 @@ export class FundDetailsJobRepository {
     })
     this.db.pragma('wal_checkpoint(TRUNCATE)')
     copyFileSync(this.databasePath, destinationPath)
-  }
-
-  importHistoricalBackfillFromDatabase(sourceDatabasePath) {
-    const attachedSchema = 'seed_backfill'
-    const beforeCount = this.countHistoricalSnapshots()
-
-    this.db.prepare(`ATTACH DATABASE ? AS ${attachedSchema}`).run(sourceDatabasePath)
-
-    try {
-      const hasHistoricalTable = this.db
-        .prepare(
-          `
-            SELECT name
-            FROM ${attachedSchema}.sqlite_master
-            WHERE type = 'table'
-              AND name = 'historical_fund_snapshots'
-            LIMIT 1
-          `,
-        )
-        .get()
-
-      if (!hasHistoricalTable) {
-        return 0
-      }
-
-      this.db
-        .prepare(
-          `
-            INSERT OR REPLACE INTO historical_fund_snapshots (
-              slug,
-              fund_id,
-              class_id,
-              name,
-              source_date,
-              category_key,
-              category_label,
-              horizon,
-              share_value,
-              assets_under_management,
-              daily_return,
-              cumulative_return,
-              estimated_net_flow,
-              source_kind,
-              raw_source,
-              created_at,
-              updated_at
-            )
-            SELECT
-              slug,
-              fund_id,
-              class_id,
-              name,
-              source_date,
-              category_key,
-              category_label,
-              horizon,
-              share_value,
-              assets_under_management,
-              daily_return,
-              cumulative_return,
-              estimated_net_flow,
-              source_kind,
-              raw_source,
-              created_at,
-              updated_at
-            FROM ${attachedSchema}.historical_fund_snapshots
-          `,
-        )
-        .run()
-    } finally {
-      this.db.exec(`DETACH DATABASE ${attachedSchema}`)
-    }
-
-    const afterCount = this.countHistoricalSnapshots()
-
-    if (afterCount > 0) {
-      this.markHistoricalBackfillCompleted()
-    }
-
-    return afterCount - beforeCount
   }
 
   close() {

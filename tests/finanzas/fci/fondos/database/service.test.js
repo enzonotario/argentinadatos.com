@@ -51,13 +51,13 @@ describe('FciFondosDatabaseService', () => {
       'mercado-fondo-clase-a',
       'Mercado Fondo - Clase A',
       JSON.stringify({
-        fundId: '798',
-        classId: '1982',
+        fondoId: '798',
+        claseId: '1982',
         slug: 'mercado-fondo-clase-a',
-        name: 'Mercado Fondo - Clase A',
-        date: '2026-05-21',
-        performance: {
-          shareValue: 24088.316,
+        nombre: 'Mercado Fondo - Clase A',
+        fecha: '2026-05-21',
+        rendimientos: {
+          valorCuotaparte: 24088.316,
         },
       }),
       '2026-05-21',
@@ -73,10 +73,10 @@ describe('FciFondosDatabaseService', () => {
 
     expect(snapshot?.fondos).toHaveLength(1)
     expect(snapshot?.fondos[0]).toMatchObject({
-      fundId: '798',
-      classId: '1982',
+      fondoId: '798',
+      claseId: '1982',
       slug: 'mercado-fondo-clase-a',
-      name: 'Mercado Fondo - Clase A',
+      nombre: 'Mercado Fondo - Clase A',
     })
     expect(snapshot?.fechaActualizacion).toBe('2026-05-21T10:00:00.000Z')
   })
@@ -123,6 +123,44 @@ describe('FciFondosDatabaseService', () => {
           fondoId: '100',
           claseId: '200',
           nombre: 'Fondo Legacy',
+          slug: null,
+          fecha: null,
+          administradora: null,
+          depositaria: null,
+          tipoRenta: null,
+          tipoDD: null,
+          region: null,
+          benchmark: null,
+          horizonte: null,
+          duracion: null,
+          moneda: null,
+          codigoCNV: null,
+          patrimonio: null,
+          inversionMinima: null,
+          monedaInversion: null,
+          plazoLiquidacionDias: null,
+          rendimientos: {
+            valorCuotaparte: null,
+            ultimos7Dias: null,
+            unMes: null,
+            noventaDias: null,
+            cientoOchentaDias: null,
+            enElAnio: null,
+            doceMeses: null,
+          },
+          composicionCartera: [],
+          calificaciones: [],
+          honorarios: {
+            honorarioGerente: null,
+            honorarioDepositaria: null,
+            comisionIngreso: null,
+            comisionEgreso: null,
+            comisionTransferencia: null,
+            gastosOrdinariosGestion: null,
+            comisionExito: null,
+            otros: null,
+          },
+          sociedades: [],
         },
       ],
     })
@@ -157,80 +195,48 @@ describe('FciFondosDatabaseService', () => {
       )
     `)
 
-    db.prepare(
-      `
-      INSERT INTO historical_fund_snapshots (
-        slug,
-        fund_id,
-        class_id,
-        name,
-        source_date,
-        category_key,
-        category_label,
-        horizon,
-        share_value,
-        assets_under_management,
-        daily_return,
-        cumulative_return,
-        estimated_net_flow,
-        source_kind,
-        raw_source
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `,
-    ).run(
-      'mercado-fondo-clase-a',
-      '798',
-      '1982',
-      'Mercado Fondo - Clase A',
-      '2026-05-20',
-      'mercadoDinero',
-      'Mercado de Dinero',
-      'corto',
-      100,
-      1000,
-      null,
-      0,
-      null,
-      'legacy-json',
-      JSON.stringify({ fuente: 'test' }),
-    )
-    db.prepare(
-      `
-      INSERT INTO historical_fund_snapshots (
-        slug,
-        fund_id,
-        class_id,
-        name,
-        source_date,
-        category_key,
-        category_label,
-        horizon,
-        share_value,
-        assets_under_management,
-        daily_return,
-        cumulative_return,
-        estimated_net_flow,
-        source_kind,
-        raw_source
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `,
-    ).run(
-      'mercado-fondo-clase-a',
-      '798',
-      '1982',
-      'Mercado Fondo - Clase A',
-      '2026-05-21',
-      'mercadoDinero',
-      'Mercado de Dinero',
-      'corto',
-      101,
-      1025,
-      1,
-      1,
-      15,
-      'cafci-detail',
-      JSON.stringify({ fuente: 'test' }),
-    )
+    for (const row of [
+      ['2026-05-20', 100, 1000, null, 0, null, 'legacy-json'],
+      ['2026-05-21', 101, 1025, 1, 1, 15, 'cafci-detail'],
+    ]) {
+      db.prepare(
+        `
+        INSERT INTO historical_fund_snapshots (
+          slug,
+          fund_id,
+          class_id,
+          name,
+          source_date,
+          category_key,
+          category_label,
+          horizon,
+          share_value,
+          assets_under_management,
+          daily_return,
+          cumulative_return,
+          estimated_net_flow,
+          source_kind,
+          raw_source
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `,
+      ).run(
+        'mercado-fondo-clase-a',
+        '798',
+        '1982',
+        'Mercado Fondo - Clase A',
+        row[0],
+        'mercadoDinero',
+        'Mercado de Dinero',
+        'corto',
+        row[1],
+        row[2],
+        row[3],
+        row[4],
+        row[5],
+        row[6],
+        JSON.stringify({ fuente: 'test' }),
+      )
+    }
     db.close()
 
     const service = new FciFondosDatabaseService(
@@ -241,7 +247,7 @@ describe('FciFondosDatabaseService', () => {
     expect(historial).toEqual([
       {
         slug: 'mercado-fondo-clase-a',
-        fundId: '798',
+        fondoId: '798',
         claseId: '1982',
         nombre: 'Mercado Fondo - Clase A',
         fecha: '2026-05-20',
@@ -257,7 +263,7 @@ describe('FciFondosDatabaseService', () => {
       },
       {
         slug: 'mercado-fondo-clase-a',
-        fundId: '798',
+        fondoId: '798',
         claseId: '1982',
         nombre: 'Mercado Fondo - Clase A',
         fecha: '2026-05-21',

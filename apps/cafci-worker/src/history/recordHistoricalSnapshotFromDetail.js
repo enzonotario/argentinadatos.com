@@ -5,42 +5,33 @@ import {
 } from './historyCategories.js'
 
 export async function recordHistoricalSnapshotFromDetail(repository, detail) {
-  const sourceDate = detail.date || detail.fecha
+  const fecha = detail.fecha
 
-  if (!sourceDate) {
+  if (!fecha) {
     return null
   }
 
-  const categoryKey = inferHistoryCategoryKey(
-    detail.incomeType || detail.tipoRenta,
-  )
+  const categoriaKey = inferHistoryCategoryKey(detail.tipoRenta)
   const firstSnapshot = repository.getFirstHistoricalSnapshot(detail.slug)
   const previousSnapshot = repository.getLatestHistoricalSnapshotBefore(
     detail.slug,
-    sourceDate,
+    fecha,
   )
 
   const snapshot = buildHistoricalSnapshot(
     {
       slug: detail.slug,
-      fundId: detail.fundId ?? detail.fondoId ?? null,
-      classId: detail.classId ?? detail.claseId ?? null,
-      name: detail.name ?? detail.nombre,
-      sourceDate,
-      categoryKey,
-      categoryLabel:
-        inferHistoryCategoryLabel(categoryKey) ||
-        detail.incomeType ||
-        detail.tipoRenta,
-      horizon: detail.horizon ?? detail.horizonte ?? null,
-      shareValue:
-        detail.performance?.shareValue ??
-        detail.rendimientos?.valorCuotaparte ??
-        null,
-      assetsUnderManagement:
-        detail.assetsUnderManagement ?? detail.patrimonio ?? null,
-      sourceKind: 'cafci-detail',
-      rawSource: detail,
+      fondoId: detail.fondoId ?? null,
+      claseId: detail.claseId ?? null,
+      nombre: detail.nombre,
+      fecha,
+      categoriaKey,
+      categoria: inferHistoryCategoryLabel(categoriaKey) || detail.tipoRenta,
+      horizonte: detail.horizonte ?? null,
+      valorCuotaparte: detail.rendimientos?.valorCuotaparte ?? null,
+      patrimonio: detail.patrimonio ?? null,
+      origen: 'cafci-detail',
+      fuenteOriginal: detail,
     },
     {
       firstSnapshot,

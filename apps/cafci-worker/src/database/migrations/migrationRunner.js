@@ -30,8 +30,12 @@ export class MigrationRunner {
       }
 
       const transaction = this.database.transaction(() => {
-        for (const statement of migration.up) {
+        for (const statement of migration.up ?? []) {
           this.database.exec(statement)
+        }
+
+        if (typeof migration.run === 'function') {
+          migration.run(this.database)
         }
 
         insertMigration.run(this.scope, migration.id)

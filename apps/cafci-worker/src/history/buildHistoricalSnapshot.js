@@ -20,64 +20,71 @@ export function buildHistoricalSnapshot(input, context = {}) {
   const slug =
     input.slug ||
     buildFundSlug({
-      name: input.name,
-      fundId: input.fundId || 'unknown',
-      classId: input.classId || 'unknown',
+      nombre: input.nombre,
+      fondoId: input.fondoId || 'unknown',
+      claseId: input.claseId || 'unknown',
     })
 
-  const shareValue =
-    typeof input.shareValue === 'number' && !Number.isNaN(input.shareValue)
-      ? input.shareValue
+  const valorCuotaparte =
+    typeof input.valorCuotaparte === 'number' &&
+    !Number.isNaN(input.valorCuotaparte)
+      ? input.valorCuotaparte
       : null
-  const assetsUnderManagement = normalizeAum(input.assetsUnderManagement)
-  const firstShareValue =
-    context.firstSnapshot?.shareValue ?? shareValue ?? null
-  const previousShareValue = context.previousSnapshot?.shareValue ?? null
-  const previousAum = context.previousSnapshot?.assetsUnderManagement ?? null
+  const patrimonio = normalizeAum(input.patrimonio)
+  const primerValorCuotaparte =
+    context.firstSnapshot?.valorCuotaparte ?? valorCuotaparte ?? null
+  const valorCuotaparteAnterior =
+    context.previousSnapshot?.valorCuotaparte ?? null
+  const patrimonioAnterior = context.previousSnapshot?.patrimonio ?? null
 
-  const dailyReturn =
-    shareValue !== null && previousShareValue && previousShareValue !== 0
+  const retornoDiario =
+    valorCuotaparte !== null &&
+    valorCuotaparteAnterior &&
+    valorCuotaparteAnterior !== 0
       ? roundMetric(
-          ((shareValue - previousShareValue) / previousShareValue) * 100,
+          ((valorCuotaparte - valorCuotaparteAnterior) /
+            valorCuotaparteAnterior) *
+            100,
         )
       : null
 
-  const cumulativeReturn =
-    shareValue !== null && firstShareValue && firstShareValue !== 0
-      ? roundMetric(((shareValue - firstShareValue) / firstShareValue) * 100)
-      : shareValue !== null
+  const retornoAcumulado =
+    valorCuotaparte !== null &&
+    primerValorCuotaparte &&
+    primerValorCuotaparte !== 0
+      ? roundMetric(
+          ((valorCuotaparte - primerValorCuotaparte) / primerValorCuotaparte) *
+            100,
+        )
+      : valorCuotaparte !== null
         ? 0
         : null
 
-  const estimatedNetFlow =
-    assetsUnderManagement !== null &&
-    previousAum !== null &&
-    dailyReturn !== null
-      ? roundMetric(
-          assetsUnderManagement - previousAum * (1 + dailyReturn / 100),
-        )
+  const flujoEstimado =
+    patrimonio !== null && patrimonioAnterior !== null && retornoDiario !== null
+      ? roundMetric(patrimonio - patrimonioAnterior * (1 + retornoDiario / 100))
       : null
 
-  const categoryKey =
-    input.categoryKey || inferHistoryCategoryKey(input.categoryLabel) || null
-  const categoryLabel =
-    input.categoryLabel || inferHistoryCategoryLabel(categoryKey) || null
+  const categoriaKey =
+    input.categoriaKey || inferHistoryCategoryKey(input.categoria) || null
+  const categoria =
+    input.categoria || inferHistoryCategoryLabel(categoriaKey) || null
 
   return {
     slug,
-    fundId: input.fundId ?? null,
-    classId: input.classId ?? null,
-    name: input.name,
-    sourceDate: input.sourceDate,
-    categoryKey,
-    categoryLabel,
-    horizon: input.horizon ?? null,
-    shareValue,
-    assetsUnderManagement,
-    dailyReturn,
-    cumulativeReturn,
-    estimatedNetFlow,
-    sourceKind: input.sourceKind,
-    rawSource: input.rawSource ?? null,
+    fondoId: input.fondoId ?? null,
+    claseId: input.claseId ?? null,
+    nombre: input.nombre,
+    fecha: input.fecha,
+    categoriaKey,
+    categoria,
+    horizonte: input.horizonte ?? null,
+    valorCuotaparte,
+    patrimonio,
+    retornoDiario,
+    retornoAcumulado,
+    flujoEstimado,
+    origen: input.origen,
+    fuenteOriginal: input.fuenteOriginal ?? null,
   }
 }

@@ -41,58 +41,33 @@ function createStaticFundsTree() {
   return root
 }
 
-function createHistoricalSeedDatabase() {
-  const databasePath = join(createTempDirectory('cafci-seed-db'), 'db.sqlite')
-
-  return { databasePath }
-}
-
 describe('rebuildDatabaseFromStaticFunds', () => {
-  it('reconstruye db.sqlite desde fondos estáticos e importa el histórico local', async () => {
+  it('reconstruye db.sqlite desde fondos estáticos', async () => {
     const databasePath = join(createTempDirectory('cafci-db'), 'db.sqlite')
     const staticFundsRoot = createStaticFundsTree()
-    const seed = createHistoricalSeedDatabase()
-
-    const seedRepository = new FundDetailsJobRepository(seed.databasePath)
-    await seedRepository.initialize()
-    seedRepository.upsertHistoricalSnapshot({
-      slug: 'mercado-fondo-clase-a',
-      fundId: '798',
-      classId: '1982',
-      name: 'Mercado Fondo - Clase A',
-      sourceDate: '2026-05-20',
-      categoryKey: 'mercadoDinero',
-      categoryLabel: 'Mercado de Dinero',
-      horizon: 'corto',
-      shareValue: 100,
-      assetsUnderManagement: 1000,
-      dailyReturn: null,
-      cumulativeReturn: 0,
-      estimatedNetFlow: null,
-      sourceKind: 'legacy-json',
-      rawSource: null,
-    })
-    seedRepository.markHistoricalBackfillCompleted()
-    seedRepository.close()
 
     const result = await rebuildDatabaseFromStaticFunds({
       databasePath,
       staticFundsRoot,
-      historicalSeedPath: seed.databasePath,
     })
 
     expect(result).toMatchObject({
       databasePath,
       importedCurrentFunds: 1,
-      importedHistoricalSnapshots: 1,
     })
 
     const repository = new FundDetailsJobRepository(databasePath)
     await repository.initialize()
 
-    expect(repository.getCurrentFunds()).toHaveLength(1)
-    expect(repository.countHistoricalSnapshots()).toBe(1)
-    expect(repository.isHistoricalBackfillCompleted()).toBe(true)
+    expect(repository.getCurrentFunds()).toEqual([
+      expect.objectContaining({
+        fondoId: '798',
+        claseId: '1982',
+        nombre: 'Mercado Fondo - Clase A',
+        fecha: '2026-05-21',
+      }),
+    ])
+    expect(repository.countHistoricalSnapshots()).toBe(0)
 
     repository.close()
   })

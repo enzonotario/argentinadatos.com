@@ -1,9 +1,20 @@
-export function buildFundSlug({ name, fundId, classId }) {
-  if (!name) {
-    return `${fundId}-${classId}`
+export function buildFundSlug({
+  name,
+  nombre,
+  fundId,
+  fondoId,
+  classId,
+  claseId,
+}) {
+  const resolvedName = name ?? nombre
+  const resolvedFundId = fundId ?? fondoId
+  const resolvedClassId = classId ?? claseId
+
+  if (!resolvedName) {
+    return `${resolvedFundId}-${resolvedClassId}`
   }
 
-  const normalizedName = name
+  const normalizedName = resolvedName
     .normalize('NFD')
     .replace(/\p{Diacritic}/gu, '')
     .toLowerCase()
@@ -12,5 +23,5 @@ export function buildFundSlug({ name, fundId, classId }) {
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '')
 
-  return normalizedName || `${fundId}-${classId}`
+  return normalizedName || `${resolvedFundId}-${resolvedClassId}`
 }

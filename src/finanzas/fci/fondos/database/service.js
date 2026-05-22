@@ -1,6 +1,7 @@
 import Database from 'better-sqlite3'
 import { existsSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { normalizarPayloadFondo } from '../../../../../apps/cafci-worker/src/utils/normalizarPayloadFondo.js'
 
 function obtenerRutaDbFondos() {
   return resolve(
@@ -105,7 +106,7 @@ export class FciFondosDatabaseService {
         .all(slug)
         .map(row => ({
           slug: row.slug,
-          fundId: row.fund_id,
+          fondoId: row.fund_id,
           claseId: row.class_id,
           nombre: row.name,
           fecha: row.source_date,
@@ -148,6 +149,7 @@ export class FciFondosDatabaseService {
     const fondos = rows
       .map(row => parsearJsonSeguro(row.payload))
       .filter(Boolean)
+      .map(payload => normalizarPayloadFondo(payload))
 
     if (fondos.length === 0) {
       return null
@@ -199,6 +201,7 @@ export class FciFondosDatabaseService {
     const fondos = rows
       .map(row => parsearJsonSeguro(row.payload))
       .filter(Boolean)
+      .map(payload => normalizarPayloadFondo(payload))
 
     if (fondos.length === 0) {
       return null
