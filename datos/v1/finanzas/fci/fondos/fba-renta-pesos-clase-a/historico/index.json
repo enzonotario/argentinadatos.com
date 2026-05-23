@@ -2,7 +2,7 @@
   "fondoId": "111",
   "claseId": "943",
   "nombre": "FBA Renta Pesos - Clase A",
-  "fechaActualizacion": "2026-05-22T14:33:43.000Z",
+  "fechaActualizacion": "2026-05-23T01:06:20.000Z",
   "historico": [
     {
       "slug": "fba-renta-pesos-clase-a",
@@ -8774,19 +8774,19 @@
     },
     {
       "slug": "fba-renta-pesos-clase-a",
-      "fondoId": null,
-      "claseId": null,
+      "fondoId": "111",
+      "claseId": "943",
       "nombre": "FBA Renta Pesos - Clase A",
       "fecha": "2026-05-21",
       "categoria": "Mercado de Dinero",
       "categoriaKey": "mercadoDinero",
-      "horizonte": "corto",
+      "horizonte": "Corto Plazo",
       "valorCuotaparte": 168871.367,
-      "patrimonio": 462170912852,
+      "patrimonio": 462170912851.52,
       "retornoDiario": 1.048862,
       "retornoAcumulado": 128.002192,
-      "flujoEstimado": 14611294401.528992,
-      "origen": "legacy-json"
+      "flujoEstimado": 14611294401.049011,
+      "origen": "cafci-detail"
     }
   ]
 }

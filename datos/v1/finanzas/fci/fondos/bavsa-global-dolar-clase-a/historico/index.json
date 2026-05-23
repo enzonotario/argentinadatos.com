@@ -2,7 +2,7 @@
   "fondoId": "1785",
   "claseId": "6095",
   "nombre": "BAVSA Global Dólar - Clase A",
-  "fechaActualizacion": "2026-05-22T14:33:43.000Z",
+  "fechaActualizacion": "2026-05-23T01:06:20.000Z",
   "historico": [
     {
       "slug": "bavsa-global-dolar-clase-a",
@@ -310,19 +310,19 @@
     },
     {
       "slug": "bavsa-global-dolar-clase-a",
-      "fondoId": null,
-      "claseId": null,
+      "fondoId": "1785",
+      "claseId": "6095",
       "nombre": "BAVSA Global Dólar - Clase A",
       "fecha": "2026-05-21",
       "categoria": "Renta Fija",
       "categoriaKey": "rentaFija",
-      "horizonte": "PLA",
+      "horizonte": "Plazo Flexible",
       "valorCuotaparte": 1024.261,
-      "patrimonio": 932663,
+      "patrimonio": 932663.17,
       "retornoDiario": -0.102993,
       "retornoAcumulado": 2.4261,
-      "flujoEstimado": -0.431604,
-      "origen": "legacy-json"
+      "flujoEstimado": -0.261604,
+      "origen": "cafci-detail"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "522",
   "claseId": "1056",
   "nombre": "SBS Retorno Total - Clase B",
-  "fechaActualizacion": "2026-05-22T14:33:43.000Z",
+  "fechaActualizacion": "2026-05-23T01:06:20.000Z",
   "historico": [
     {
       "slug": "sbs-retorno-total-clase-b",
@@ -678,19 +678,19 @@
     },
     {
       "slug": "sbs-retorno-total-clase-b",
-      "fondoId": null,
-      "claseId": null,
+      "fondoId": "522",
+      "claseId": "1056",
       "nombre": "SBS Retorno Total - Clase B",
       "fecha": "2026-05-21",
       "categoria": "Retorno Total",
       "categoriaKey": "retornoTotal",
-      "horizonte": "medio",
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 560802.531,
-      "patrimonio": 2706327498,
+      "patrimonio": 2706327498.23,
       "retornoDiario": 0.433165,
       "retornoAcumulado": 1.778147,
-      "flujoEstimado": -7.205743,
-      "origen": "legacy-json"
+      "flujoEstimado": -6.975743,
+      "origen": "cafci-detail"
     }
   ]
 }

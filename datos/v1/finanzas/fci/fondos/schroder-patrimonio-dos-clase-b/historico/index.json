@@ -2,7 +2,7 @@
   "fondoId": "1439",
   "claseId": "4227",
   "nombre": "Schroder Patrimonio Dos - Clase B",
-  "fechaActualizacion": "2026-05-22T14:33:43.000Z",
+  "fechaActualizacion": "2026-05-23T01:06:20.000Z",
   "historico": [
     {
       "slug": "schroder-patrimonio-dos-clase-b",
@@ -694,19 +694,19 @@
     },
     {
       "slug": "schroder-patrimonio-dos-clase-b",
-      "fondoId": null,
-      "claseId": null,
+      "fondoId": "1439",
+      "claseId": "4227",
       "nombre": "Schroder Patrimonio Dos - Clase B",
       "fecha": "2026-05-21",
       "categoria": "Retorno Total",
       "categoriaKey": "retornoTotal",
-      "horizonte": "PLA",
+      "horizonte": "Plazo Flexible",
       "valorCuotaparte": 2468.63,
-      "patrimonio": 3454,
+      "patrimonio": 3454.41,
       "retornoDiario": -0.249192,
       "retornoAcumulado": 4.480246,
-      "flujoEstimado": -0.370481,
-      "origen": "legacy-json"
+      "flujoEstimado": 0.039519,
+      "origen": "cafci-detail"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "1373",
   "claseId": "3940",
   "nombre": "Delta Gestion XII - Clase B",
-  "fechaActualizacion": "2026-05-22T14:33:43.000Z",
+  "fechaActualizacion": "2026-05-23T01:06:20.000Z",
   "historico": [
     {
       "slug": "delta-gestion-xii-clase-b",
@@ -8070,19 +8070,19 @@
     },
     {
       "slug": "delta-gestion-xii-clase-b",
-      "fondoId": null,
-      "claseId": null,
+      "fondoId": "1373",
+      "claseId": "3940",
       "nombre": "Delta Gestion XII - Clase B",
       "fecha": "2026-05-21",
       "categoria": "Renta Fija",
       "categoriaKey": "rentaFija",
-      "horizonte": "largo",
-      "valorCuotaparte": 1000,
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 1,
       "patrimonio": 1000,
-      "retornoDiario": 0,
-      "retornoAcumulado": 0,
-      "flujoEstimado": 0,
-      "origen": "legacy-json"
+      "retornoDiario": -99.9,
+      "retornoAcumulado": -99.9,
+      "flujoEstimado": 999,
+      "origen": "cafci-detail"
     }
   ]
 }

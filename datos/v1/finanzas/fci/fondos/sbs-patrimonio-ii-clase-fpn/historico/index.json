@@ -2,7 +2,7 @@
   "fondoId": "878",
   "claseId": "2530",
   "nombre": "SBS Patrimonio II - Clase FPN",
-  "fechaActualizacion": "2026-05-22T14:33:43.000Z",
+  "fechaActualizacion": "2026-05-23T01:06:20.000Z",
   "historico": [
     {
       "slug": "sbs-patrimonio-ii-clase-fpn",
@@ -8262,19 +8262,19 @@
     },
     {
       "slug": "sbs-patrimonio-ii-clase-fpn",
-      "fondoId": null,
-      "claseId": null,
+      "fondoId": "878",
+      "claseId": "2530",
       "nombre": "SBS Patrimonio II - Clase FPN",
       "fecha": "2026-05-19",
       "categoria": "Renta Mixta",
       "categoriaKey": "rentaMixta",
-      "horizonte": "PLA",
-      "valorCuotaparte": 1000,
+      "horizonte": "Plazo Flexible",
+      "valorCuotaparte": 1,
       "patrimonio": null,
-      "retornoDiario": 0,
-      "retornoAcumulado": 0,
+      "retornoDiario": -99.9,
+      "retornoAcumulado": -99.9,
       "flujoEstimado": null,
-      "origen": "legacy-json"
+      "origen": "cafci-detail"
     }
   ]
 }

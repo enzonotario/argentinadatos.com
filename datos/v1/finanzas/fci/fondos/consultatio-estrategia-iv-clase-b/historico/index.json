@@ -2,7 +2,7 @@
   "fondoId": "1704",
   "claseId": "5703",
   "nombre": "Consultatio Estrategia IV - Clase B",
-  "fechaActualizacion": "2026-05-22T14:33:43.000Z",
+  "fechaActualizacion": "2026-05-23T01:06:20.000Z",
   "historico": [
     {
       "slug": "consultatio-estrategia-iv-clase-b",
@@ -2102,19 +2102,19 @@
     },
     {
       "slug": "consultatio-estrategia-iv-clase-b",
-      "fondoId": null,
-      "claseId": null,
+      "fondoId": "1704",
+      "claseId": "5703",
       "nombre": "Consultatio Estrategia IV - Clase B",
       "fecha": "2026-05-21",
       "categoria": "Renta Fija",
       "categoriaKey": "rentaFija",
-      "horizonte": "PLA",
+      "horizonte": "Plazo Flexible",
       "valorCuotaparte": 965.33,
-      "patrimonio": 965,
+      "patrimonio": 965.33,
       "retornoDiario": 0.101623,
       "retornoAcumulado": -3.467,
-      "flujoEstimado": 0.020354,
-      "origen": "legacy-json"
+      "flujoEstimado": 0.350354,
+      "origen": "cafci-detail"
     }
   ]
 }

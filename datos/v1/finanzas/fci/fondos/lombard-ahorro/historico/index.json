@@ -2,7 +2,7 @@
   "fondoId": "197",
   "claseId": "577",
   "nombre": "Lombard Ahorro",
-  "fechaActualizacion": "2026-05-22T14:33:43.000Z",
+  "fechaActualizacion": "2026-05-23T01:06:20.000Z",
   "historico": [
     {
       "slug": "lombard-ahorro",
@@ -8723,6 +8723,22 @@
       "retornoAcumulado": 91.923482,
       "flujoEstimado": 0.78951,
       "origen": "legacy-json"
+    },
+    {
+      "slug": "lombard-ahorro",
+      "fondoId": "197",
+      "claseId": "577",
+      "nombre": "Lombard Ahorro",
+      "fecha": "2026-05-21",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 74343.051,
+      "patrimonio": 80268341.15,
+      "retornoDiario": 0.921041,
+      "retornoAcumulado": 93.691177,
+      "flujoEstimado": 0.050425,
+      "origen": "cafci-detail"
     }
   ]
 }

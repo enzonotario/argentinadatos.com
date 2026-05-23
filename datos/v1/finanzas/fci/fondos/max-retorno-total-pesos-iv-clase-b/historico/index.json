@@ -2,7 +2,7 @@
   "fondoId": "1729",
   "claseId": "5835",
   "nombre": "Max Retorno Total Pesos IV - Clase B",
-  "fechaActualizacion": "2026-05-22T14:33:43.000Z",
+  "fechaActualizacion": "2026-05-23T01:06:20.000Z",
   "historico": [
     {
       "slug": "max-retorno-total-pesos-iv-clase-b",
@@ -278,19 +278,19 @@
     },
     {
       "slug": "max-retorno-total-pesos-iv-clase-b",
-      "fondoId": null,
-      "claseId": null,
+      "fondoId": "1729",
+      "claseId": "5835",
       "nombre": "Max Retorno Total Pesos IV - Clase B",
       "fecha": "2026-05-21",
       "categoria": "Retorno Total",
       "categoriaKey": "retornoTotal",
-      "horizonte": "PLA",
-      "valorCuotaparte": 1000,
+      "horizonte": "Plazo Flexible",
+      "valorCuotaparte": 1,
       "patrimonio": null,
-      "retornoDiario": 0,
-      "retornoAcumulado": 0,
+      "retornoDiario": -99.9,
+      "retornoAcumulado": -99.9,
       "flujoEstimado": null,
-      "origen": "legacy-json"
+      "origen": "cafci-detail"
     }
   ]
 }
