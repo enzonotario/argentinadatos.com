@@ -1240,6 +1240,94 @@
         "x-sidebar-title": "Por período",
         "x-data-source": ["[BCRA](https://www.bcra.gob.ar/ultimos-informes/)"]
       }
+    },
+    "/v1/finanzas/fci/fondos": {
+      "get": {
+        "summary": "Detalles de todos los fondos",
+        "tags": ["Finanzas", "FCI Detalles"],
+        "description": "Devuelve la información detallada disponible de los Fondos Comunes de Inversión.",
+        "responses": {
+          "200": {
+            "description": "Devuelve los detalles de todos los fondos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FondosDetalles"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-finanzas-fci-fondos",
+        "x-sidebar-title": "Detalles de fondos",
+        "x-data-source": ["[CAFCI](https://estadisticas.cafci.org.ar)"]
+      }
+    },
+    "/v1/finanzas/fci/fondos/{nombre}": {
+      "get": {
+        "summary": "Detalle de un fondo por nombre",
+        "tags": ["Finanzas", "FCI Detalles"],
+        "description": "Devuelve el detalle disponible de un Fondo Común de Inversión específico, identificado por su nombre normalizado en minúsculas y con guiones.",
+        "parameters": [
+          {
+            "name": "nombre",
+            "in": "path",
+            "description": "Nombre normalizado del fondo (por ejemplo: mercado-fondo-clase-a)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "mercado-fondo-clase-a"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Devuelve el detalle del fondo solicitado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FondoDetalle"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-finanzas-fci-fondos-nombre",
+        "x-data-source": ["[CAFCI](https://estadisticas.cafci.org.ar)"]
+      }
+    },
+    "/v1/finanzas/fci/fondos/{nombre}/historico": {
+      "get": {
+        "summary": "Histórico de un fondo por nombre",
+        "tags": ["Finanzas", "FCI Detalles"],
+        "description": "Devuelve la evolución histórica disponible de un Fondo Común de Inversión específico, identificado por su nombre normalizado en minúsculas y con guiones.",
+        "parameters": [
+          {
+            "name": "nombre",
+            "in": "path",
+            "description": "Nombre normalizado del fondo (por ejemplo: mercado-fondo-clase-a)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "mercado-fondo-clase-a"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Devuelve el histórico disponible del fondo solicitado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FondoHistorico"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-finanzas-fci-fondos-nombre-historico",
+        "x-data-source": ["[CAFCI](https://estadisticas.cafci.org.ar)"]
+      }
     }
   },
   "components": {
@@ -2687,6 +2775,342 @@
             "fuente": "BCRA REM",
             "publicacionUrl": "https://www.bcra.gob.ar/publicaciones/relevamiento-de-expectativas-de-mercado-rem-marzo-de-2026/",
             "xlsxUrl": "https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/informes/tablas-relevamiento-expectativas-mercado-mar-2026.xlsx"
+          }
+        }
+      },
+      "RendimientosHistoricoFondo": {
+        "title": "RendimientosHistoricoFondo",
+        "type": "object",
+        "properties": {
+          "valorCuotaparte": {
+            "type": "number",
+            "nullable": true
+          },
+          "ultimos7Dias": {
+            "type": "number",
+            "nullable": true
+          },
+          "unMes": {
+            "type": "number",
+            "nullable": true
+          },
+          "noventaDias": {
+            "type": "number",
+            "nullable": true
+          },
+          "cientoOchentaDias": {
+            "type": "number",
+            "nullable": true
+          },
+          "enElAnio": {
+            "type": "number",
+            "nullable": true
+          },
+          "doceMeses": {
+            "type": "number",
+            "nullable": true
+          }
+        }
+      },
+      "ComposicionCarteraItem": {
+        "title": "ComposicionCarteraItem",
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "porcentaje": {
+            "type": "number",
+            "nullable": true
+          }
+        }
+      },
+      "CalificacionFondo": {
+        "title": "CalificacionFondo",
+        "type": "object",
+        "properties": {
+          "calificadora": {
+            "type": "string",
+            "nullable": true
+          },
+          "calificacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "fecha": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "HonorariosFondo": {
+        "title": "HonorariosFondo",
+        "type": "object",
+        "properties": {
+          "honorarioGerente": {
+            "type": "number",
+            "nullable": true
+          },
+          "honorarioDepositaria": {
+            "type": "number",
+            "nullable": true
+          },
+          "comisionIngreso": {
+            "type": "number",
+            "nullable": true
+          },
+          "comisionEgreso": {
+            "type": "number",
+            "nullable": true
+          },
+          "comisionTransferencia": {
+            "type": "number",
+            "nullable": true
+          },
+          "gastosOrdinariosGestion": {
+            "type": "number",
+            "nullable": true
+          },
+          "comisionExito": {
+            "type": "number",
+            "nullable": true
+          },
+          "otros": {
+            "type": "number",
+            "nullable": true
+          }
+        }
+      },
+      "SociedadFondo": {
+        "title": "SociedadFondo",
+        "type": "object",
+        "properties": {
+          "tipo": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "logo": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "FondoDetalle": {
+        "title": "FondoDetalle",
+        "type": "object",
+        "properties": {
+          "fondoId": {
+            "type": "string",
+            "description": "Identificador del fondo"
+          },
+          "claseId": {
+            "type": "string",
+            "description": "Identificador de la clase del fondo"
+          },
+          "nombre": {
+            "type": "string",
+            "description": "Nombre del fondo"
+          },
+          "fecha": {
+            "type": "string",
+            "nullable": true,
+            "description": "Fecha de actualización de la información (ISO 8601)"
+          },
+          "tipoRenta": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoDD": {
+            "type": "string",
+            "nullable": true
+          },
+          "region": {
+            "type": "string",
+            "nullable": true
+          },
+          "benchmark": {
+            "type": "string",
+            "nullable": true
+          },
+          "horizonte": {
+            "type": "string",
+            "nullable": true
+          },
+          "duracion": {
+            "type": "string",
+            "nullable": true
+          },
+          "moneda": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoCNV": {
+            "type": "string",
+            "nullable": true
+          },
+          "administradora": {
+            "type": "string",
+            "nullable": true
+          },
+          "depositaria": {
+            "type": "string",
+            "nullable": true
+          },
+          "patrimonio": {
+            "type": "number",
+            "nullable": true
+          },
+          "inversionMinima": {
+            "type": "number",
+            "nullable": true
+          },
+          "monedaInversion": {
+            "type": "string",
+            "nullable": true
+          },
+          "plazoLiquidacionDias": {
+            "type": "integer",
+            "nullable": true
+          },
+          "rendimientos": {
+            "$ref": "#/components/schemas/RendimientosHistoricoFondo"
+          },
+          "composicionCartera": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComposicionCarteraItem"
+            }
+          },
+          "calificaciones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CalificacionFondo"
+            }
+          },
+          "honorarios": {
+            "$ref": "#/components/schemas/HonorariosFondo"
+          },
+          "sociedades": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SociedadFondo"
+            }
+          }
+        }
+      },
+      "FondosDetalles": {
+        "title": "FondosDetalles",
+        "type": "object",
+        "required": ["fechaActualizacion", "fondos"],
+        "properties": {
+          "fechaActualizacion": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Instante en que se generó el recurso (UTC, ISO 8601)"
+          },
+          "fondos": {
+            "type": "array",
+            "description": "Detalles de todos los fondos",
+            "items": {
+              "$ref": "#/components/schemas/FondoDetalle"
+            }
+          }
+        }
+      },
+      "FondoHistoricoSerieItem": {
+        "title": "FondoHistoricoSerieItem",
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string"
+          },
+          "fondoId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Identificador del fondo"
+          },
+          "claseId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Identificador de la clase del fondo"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "fecha": {
+            "type": "string"
+          },
+          "categoria": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoriaKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "horizonte": {
+            "type": "string",
+            "nullable": true
+          },
+          "valorCuotaparte": {
+            "type": "number",
+            "nullable": true
+          },
+          "patrimonio": {
+            "type": "number",
+            "nullable": true
+          },
+          "retornoDiario": {
+            "type": "number",
+            "nullable": true
+          },
+          "retornoAcumulado": {
+            "type": "number",
+            "nullable": true
+          },
+          "flujoEstimado": {
+            "type": "number",
+            "nullable": true
+          },
+          "origen": {
+            "type": "string"
+          }
+        }
+      },
+      "FondoHistorico": {
+        "title": "FondoHistorico",
+        "type": "object",
+        "required": [
+          "fondoId",
+          "claseId",
+          "nombre",
+          "fechaActualizacion",
+          "historico"
+        ],
+        "properties": {
+          "fondoId": {
+            "type": "string"
+          },
+          "claseId": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "fechaActualizacion": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "historico": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FondoHistoricoSerieItem"
+            }
           }
         }
       }

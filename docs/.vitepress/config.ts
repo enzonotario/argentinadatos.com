@@ -33,7 +33,10 @@ export default defineConfig({
   themeConfig: {
     logo: '/assets/logo.webp',
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/enzonotario/esjs-argentina-datos-api' },
+      {
+        icon: 'github',
+        link: 'https://github.com/enzonotario/esjs-argentina-datos-api',
+      },
     ],
     outline: [1, 3],
     sidebar: [
@@ -54,19 +57,23 @@ export default defineConfig({
       {
         text: 'Eventos',
         items: [
-          addDocsPrefix(sidebar.generateSidebarGroup({
-            tag: 'Eventos',
-            text: '',
-          })),
+          addDocsPrefix(
+            sidebar.generateSidebarGroup({
+              tag: 'Eventos',
+              text: '',
+            }),
+          ),
         ],
       },
       {
         text: 'Cotizaciones históricas',
         items: [
-          addDocsPrefix(sidebar.generateSidebarGroup({
-            tag: 'Cotizaciones históricas',
-            text: '',
-          })),
+          addDocsPrefix(
+            sidebar.generateSidebarGroup({
+              tag: 'Cotizaciones históricas',
+              text: '',
+            }),
+          ),
         ],
       },
       {
@@ -111,10 +118,20 @@ export default defineConfig({
             collapsed: true,
           }),
           addDocsPrefix({
-            ...sidebar.generateSidebarGroup({
-              tag: ['Finanzas', 'FCI'],
-              text: 'FCI',
-            }),
+            text: 'FCI',
+            items: [
+              ...sidebar.generateSidebarGroup({
+                tag: ['Finanzas', 'FCI'],
+              }).items,
+              addDocsPrefix({
+                text: 'Detalles',
+                items: [
+                  ...sidebar.generateSidebarGroup({
+                    tag: ['Finanzas', 'FCI Detalles'],
+                  }).items,
+                ],
+              }),
+            ],
             collapsed: true,
           }),
           addDocsPrefix({
@@ -143,45 +160,52 @@ export default defineConfig({
       {
         text: 'Senado',
         items: [
-          addDocsPrefix(sidebar.generateSidebarGroup({
-            tag: 'Senado',
-            text: '',
-          })),
+          addDocsPrefix(
+            sidebar.generateSidebarGroup({
+              tag: 'Senado',
+              text: '',
+            }),
+          ),
         ],
       },
       {
         text: 'Diputados',
         items: [
-          addDocsPrefix(sidebar.generateSidebarGroup({
-            tag: 'Diputados',
-            text: '',
-          })),
+          addDocsPrefix(
+            sidebar.generateSidebarGroup({
+              tag: 'Diputados',
+              text: '',
+            }),
+          ),
         ],
       },
       {
         text: 'Historia',
         items: [
-          addDocsPrefix(sidebar.generateSidebarGroup({
-            tag: 'Historia',
-            text: '',
-          })),
+          addDocsPrefix(
+            sidebar.generateSidebarGroup({
+              tag: 'Historia',
+              text: '',
+            }),
+          ),
         ],
       },
       {
         text: 'API',
         items: [
-          addDocsPrefix(sidebar.generateSidebarGroup({
-            tag: 'API',
-            text: '',
-          })),
+          addDocsPrefix(
+            sidebar.generateSidebarGroup({
+              tag: 'API',
+              text: '',
+            }),
+          ),
         ],
       },
     ],
-    nav: [
-      { text: 'Sponsors', link: '/docs/sponsors' },
-    ],
+    nav: [{ text: 'Sponsors', link: '/docs/sponsors' }],
     footer: {
-      message: 'Liberado bajo la <a href="https://github.com/enzonotario/esjs-argentina-datos-api/blob/main/LICENSE">Licencia MIT</a>.',
+      message:
+        'Liberado bajo la <a href="https://github.com/enzonotario/esjs-argentina-datos-api/blob/main/LICENSE">Licencia MIT</a>.',
       copyright: '<a href="/docs/legal">Aviso Legal</a>',
     },
     search: {
@@ -232,9 +256,9 @@ export default defineConfig({
         url: pageData.relativePath.endsWith('index.md')
           ? '/'
           : `${pageData.relativePath.replace(
-            /((^|\/)index)?\.md$/,
-            '$2',
-          )}.html`,
+              /((^|\/)index)?\.md$/,
+              '$2',
+            )}.html`,
         lastmod: pageData.lastUpdated,
       })
     }
@@ -251,7 +275,9 @@ export default defineConfig({
   },
 
   rewrites: {
-    '/docs/operations/get-finanzas-hipotecarios-uva.html': '/docs/operations/get-finanzas-creditos-hipotecarios-uva.html',
-    '/docs/operations/get-finanzas-hipotecarios-uva': '/docs/operations/get-finanzas-creditos-hipotecarios-uva.html',
+    '/docs/operations/get-finanzas-hipotecarios-uva.html':
+      '/docs/operations/get-finanzas-creditos-hipotecarios-uva.html',
+    '/docs/operations/get-finanzas-hipotecarios-uva':
+      '/docs/operations/get-finanzas-creditos-hipotecarios-uva.html',
   },
 })
