@@ -280,4 +280,14 @@ export default defineConfig({
     '/docs/operations/get-finanzas-hipotecarios-uva':
       '/docs/operations/get-finanzas-creditos-hipotecarios-uva.html',
   },
+
+  transformPageData(pageData) {
+    const pageTitle = pageData.params?.pageTitle
+
+    if (pageTitle) {
+      pageData.title = pageTitle
+      pageData.frontmatter ??= {}
+      pageData.frontmatter.title = pageTitle
+    }
+  },
 })
