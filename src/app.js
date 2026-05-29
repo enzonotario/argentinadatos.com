@@ -25,8 +25,9 @@ const predefinidos = {
     '/v1/finanzas/remesas',
   ],
   fci: ['/v1/finanzas/fci'],
-  riesgoPais: ['/v1/finanzas/riesgo-pais'],
+  'fci-fondos': ['/v1/finanzas/fci/fondos'],
   fciIA: ['/v1/finanzas/fciIA'],
+  riesgoPais: ['/v1/finanzas/riesgo-pais'],
   rendimientos: ['/v1/finanzas/rendimientos'],
   criptopesos: ['/v1/finanzas/criptopesos'],
   rem: ['/v1/finanzas/rem'],
@@ -48,6 +49,7 @@ export async function iniciar(comando) {
     case 'diario':
     case 'mensual':
     case 'fci':
+    case 'fci-fondos':
     case 'fciIA':
     case 'riesgoPais':
     case 'rendimientos':

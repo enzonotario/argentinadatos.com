@@ -1,0 +1,20 @@
+name: Actualizar FCI Fondos
+
+on:
+  schedule:
+    - cron: '0 23 * * *' # 20:00 ART
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  update:
+    uses: ./.github/workflows/reusable-data-update.yml
+    with:
+      run_command: pnpm run cron fci-fondos
+      needs_build: true
+      env_preset: full
+    secrets: inherit
