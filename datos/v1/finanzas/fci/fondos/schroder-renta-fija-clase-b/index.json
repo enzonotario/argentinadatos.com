@@ -2,7 +2,7 @@
   "fondoId": "48",
   "claseId": "48",
   "nombre": "Schroder Renta Fija - Clase B",
-  "fecha": "2026-05-21",
+  "fecha": "2026-05-28",
   "administradora": "Schroder S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,47 +13,51 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Peso Argentina",
   "codigoCNV": "154",
-  "patrimonio": 12251489686.91,
+  "patrimonio": 12345704164.89,
   "inversionMinima": 1,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 76066.936,
-    "ultimos7Dias": 0.6747,
-    "unMes": 1.556,
-    "noventaDias": 10.2271,
-    "cientoOchentaDias": 20.5741,
-    "enElAnio": 15.9496,
-    "doceMeses": 39.3644
+    "valorCuotaparte": 76651.893,
+    "ultimos7Dias": 0.769,
+    "unMes": 2.9259,
+    "noventaDias": 9.9585,
+    "cientoOchentaDias": 21.4922,
+    "enElAnio": 16.8413,
+    "doceMeses": 39.3341
   },
   "composicionCartera": [
     {
-      "nombre": "Bono Boncer TX26",
-      "porcentaje": 30
-    },
-    {
       "nombre": "Bono Disc ARS Ley AR DICP",
-      "porcentaje": 28
+      "porcentaje": 32.5
     },
     {
       "nombre": "Caucion Colocadora $ Merval",
-      "porcentaje": 17.2
+      "porcentaje": 21.5
+    },
+    {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 17
     },
     {
       "nombre": "Bono Boncer TZX28",
-      "porcentaje": 13.3
+      "porcentaje": 15.5
     },
     {
       "nombre": "Cta Cte U$S Citibank EEUU",
-      "porcentaje": 3.6
+      "porcentaje": 4.2
     },
     {
       "nombre": "Cta Cte U$S Bco Valores",
-      "porcentaje": 3.3
+      "porcentaje": 3.9
+    },
+    {
+      "nombre": "FCI Balanz Capital Money Market Clase C",
+      "porcentaje": 2.2
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 4.5
+      "porcentaje": 3.1
     }
   ],
   "calificaciones": [

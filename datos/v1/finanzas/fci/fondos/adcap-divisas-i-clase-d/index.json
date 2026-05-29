@@ -2,7 +2,7 @@
   "fondoId": "1870",
   "claseId": "6465",
   "nombre": "Adcap Divisas I - Clase D",
-  "fecha": "2026-05-21",
+  "fecha": "2026-05-27",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -26,7 +26,12 @@
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte U$S Bco Comafi",
+      "porcentaje": 100
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": null,

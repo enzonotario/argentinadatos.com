@@ -2,7 +2,7 @@
   "fondoId": "1850",
   "claseId": "6384",
   "nombre": "Tandem Global II - Clase B",
-  "fecha": "2026-05-21",
+  "fecha": "2026-05-28",
   "administradora": "Tandem Capital S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -26,7 +26,12 @@
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte USD MEP Banco de Valores",
+      "porcentaje": 100
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 0,

@@ -1,0 +1,74 @@
+{
+  "fondoId": "1625",
+  "claseId": "5393",
+  "nombre": "MP Ahorro - Clase A",
+  "fecha": "2026-05-28",
+  "administradora": "Mercado Pago Asset Managemet S.A.",
+  "depositaria": "Banco Industrial S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentina",
+  "codigoCNV": "1650",
+  "patrimonio": 36734522.83,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentina",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1117.809,
+    "ultimos7Dias": 1.2169,
+    "unMes": 1.6373,
+    "noventaDias": 1.6979,
+    "cientoOchentaDias": 1.6979,
+    "enElAnio": 1.6979,
+    "doceMeses": 6.2179
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Bco Industrial",
+      "porcentaje": 78.2
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Patagonia",
+      "porcentaje": 11.7
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Nacion",
+      "porcentaje": 6.1
+    },
+    {
+      "nombre": "FCI Allaria Ahorro - Clase C",
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.7
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0.07,
+    "honorarioDepositaria": 0.06,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Sociedad Gerente:",
+      "nombre": "Mercado Pago Asset Managemet S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03265G-e5cf3c10.jpg"
+    },
+    {
+      "tipo": "Sociedad Depositaria:",
+      "nombre": "Banco Industrial S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00391-92ebcc0c.jpg"
+    }
+  ]
+}

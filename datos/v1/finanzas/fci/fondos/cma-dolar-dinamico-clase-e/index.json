@@ -2,7 +2,7 @@
   "fondoId": "1721",
   "claseId": "5847",
   "nombre": "CMA Dólar Dinamico - Clase E",
-  "fecha": "2026-05-21",
+  "fecha": "2026-05-28",
   "administradora": "Capital Markets Argentina Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,23 +13,27 @@
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1644",
-  "patrimonio": 2400623.78,
+  "patrimonio": 2385113.81,
   "inversionMinima": 1000,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1046.871,
-    "ultimos7Dias": -0.012,
-    "unMes": 0.6273,
-    "noventaDias": 1.3901,
-    "cientoOchentaDias": 3.0279,
-    "enElAnio": 2.7,
+    "valorCuotaparte": 1043.446,
+    "ultimos7Dias": -0.3272,
+    "unMes": 0.0386,
+    "noventaDias": 1.0939,
+    "cientoOchentaDias": 2.5306,
+    "enElAnio": 2.364,
     "doceMeses": null
   },
   "composicionCartera": [
     {
+      "nombre": "ON Loma Negra C5",
+      "porcentaje": 7.1
+    },
+    {
       "nombre": "Cta Cte U$S Bco Comafi",
-      "porcentaje": 20.5
+      "porcentaje": 6.8
     },
     {
       "nombre": "Bono del Tesoro Nacional AO27",
@@ -37,7 +41,23 @@
     },
     {
       "nombre": "FCI Allaria Dólar Ahorro - Clase B",
+      "porcentaje": 4.9
+    },
+    {
+      "nombre": "ON YPF Clase 38",
       "porcentaje": 4.8
+    },
+    {
+      "nombre": "ON Scania Credit C2",
+      "porcentaje": 4.4
+    },
+    {
+      "nombre": "US Treasury Bill 291026",
+      "porcentaje": 4.4
+    },
+    {
+      "nombre": "ON Scania Credit C1",
+      "porcentaje": 4.1
     },
     {
       "nombre": "US Treasury Bill 060826",
@@ -45,31 +65,15 @@
     },
     {
       "nombre": "ON BBVA Frances Cl 40",
-      "porcentaje": 4.1
-    },
-    {
-      "nombre": "ON Loma Negra C5",
       "porcentaje": 4
     },
     {
-      "nombre": "ON Scania Credit C1",
-      "porcentaje": 3.9
-    },
-    {
       "nombre": "US Treasury Bill 020726",
-      "porcentaje": 3.9
+      "porcentaje": 3.8
     },
     {
       "nombre": "CL Rep Chile 2027",
       "porcentaje": 3.7
-    },
-    {
-      "nombre": "US Treasury Bill 291026",
-      "porcentaje": 3.7
-    },
-    {
-      "nombre": "ON YPF Clase 38",
-      "porcentaje": 3.6
     },
     {
       "nombre": "US Treasury Bill 271126",
@@ -81,11 +85,11 @@
     },
     {
       "nombre": "ON Banco de Galicia 31 BYCXO",
-      "porcentaje": 2.3
+      "porcentaje": 2.2
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 30.8
+      "porcentaje": 35.1
     }
   ],
   "calificaciones": [],

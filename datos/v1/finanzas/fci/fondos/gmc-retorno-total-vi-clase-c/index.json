@@ -2,7 +2,7 @@
   "fondoId": "1865",
   "claseId": "6447",
   "nombre": "GMC Retorno Total VI - Clase C",
-  "fecha": "2026-05-20",
+  "fecha": "2026-05-28",
   "administradora": "GMC Asset Management S.A.U.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,20 +13,33 @@
   "duracion": "Mayor a 3 Años",
   "moneda": "Peso Argentina",
   "codigoCNV": "1891",
-  "patrimonio": 1312079633.72,
+  "patrimonio": 1284327819.51,
   "inversionMinima": 100000001,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1004.196,
-    "ultimos7Dias": 0.1151,
+    "valorCuotaparte": 1007.583,
+    "ultimos7Dias": 0.3071,
     "unMes": null,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "FCI Allaria Ahorro - Clase C",
+      "porcentaje": 55.2
+    },
+    {
+      "nombre": "FCI IEB Ahorro - Clase E",
+      "porcentaje": 44.6
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.2
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": null,

@@ -2,7 +2,7 @@
   "fondoId": "1330",
   "claseId": "3796",
   "nombre": "Consultatio Gestion V - Clase A",
-  "fecha": "2026-05-21",
+  "fecha": "2026-05-28",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -18,19 +18,15 @@
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1463.591,
-    "ultimos7Dias": 0.0891,
-    "unMes": 1.4367,
-    "noventaDias": 2.8685,
-    "cientoOchentaDias": 1.181,
-    "enElAnio": -2.0808,
-    "doceMeses": 28.3978
+    "valorCuotaparte": 1484.328,
+    "ultimos7Dias": 1.4169,
+    "unMes": 0.951,
+    "noventaDias": 2.6523,
+    "cientoOchentaDias": 0.889,
+    "enElAnio": -0.6935,
+    "doceMeses": 28.3164
   },
   "composicionCartera": [
-    {
-      "nombre": "FCI Argenfunds Liquidez - Clase B",
-      "porcentaje": 16.3
-    },
     {
       "nombre": "Pagare #UMV070860006",
       "porcentaje": 7.1
@@ -46,6 +42,10 @@
     {
       "nombre": "ON YPF Clase 30",
       "porcentaje": 5.3
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TZV26",
+      "porcentaje": 5.2
     },
     {
       "nombre": "Pagare #UMV290560039",
@@ -64,14 +64,6 @@
       "porcentaje": 3.1
     },
     {
-      "nombre": "Letra Tesoro Nac D30A6",
-      "porcentaje": 3
-    },
-    {
-      "nombre": "Pagare #UBI300460001",
-      "porcentaje": 2.9
-    },
-    {
       "nombre": "Pagare #UMV150660087",
       "porcentaje": 2.9
     },
@@ -80,8 +72,16 @@
       "porcentaje": 2.8
     },
     {
+      "nombre": "Pagare #UBI270170001",
+      "porcentaje": 2.8
+    },
+    {
       "nombre": "Pagare #UFR311060001",
       "porcentaje": 2.8
+    },
+    {
+      "nombre": "Pagare #UBI300470001",
+      "porcentaje": 2.7
     },
     {
       "nombre": "Pagare #UBI130270001",
@@ -96,8 +96,12 @@
       "porcentaje": 2.1
     },
     {
+      "nombre": "FCI Wise Capital Money Markets - Clase D",
+      "porcentaje": 2
+    },
+    {
       "nombre": "Resto de Activos",
-      "porcentaje": 23
+      "porcentaje": 32.5
     }
   ],
   "calificaciones": [],

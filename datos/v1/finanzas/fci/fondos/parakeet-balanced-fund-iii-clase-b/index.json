@@ -2,7 +2,7 @@
   "fondoId": "1862",
   "claseId": "6437",
   "nombre": "Parakeet Balanced Fund III - Clase B",
-  "fecha": "2026-05-21",
+  "fecha": "2026-05-28",
   "administradora": "Parakeet S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -20,13 +20,18 @@
   "rendimientos": {
     "valorCuotaparte": 1,
     "ultimos7Dias": 0,
-    "unMes": null,
+    "unMes": 0,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte U$S Bco Valores",
+      "porcentaje": 100
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 0,

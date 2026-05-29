@@ -2,8 +2,8 @@
   "fondoId": "1425",
   "claseId": "4163",
   "nombre": "Optimum Balanced Strategy - Clase B",
-  "fecha": "2026-05-21",
-  "administradora": "Santander Rio Asset Management G.F.C.I.S.A.",
+  "fecha": "2026-05-28",
+  "administradora": "Santander Asset Management G.F.C.I.S.A.",
   "depositaria": "Banco Santander Argentina S.A.",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
@@ -13,20 +13,24 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Peso Argentina",
   "codigoCNV": "1332",
-  "patrimonio": 3806098631.23,
+  "patrimonio": 3853427758.09,
   "inversionMinima": 1000000,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 4202.995,
-    "ultimos7Dias": 0.2788,
-    "unMes": 1.0878,
-    "noventaDias": 1.8134,
-    "cientoOchentaDias": 4.0748,
-    "enElAnio": -0.6354,
-    "doceMeses": 32.1813
+    "valorCuotaparte": 4255.259,
+    "ultimos7Dias": 1.2435,
+    "unMes": 1.0024,
+    "noventaDias": 1.7392,
+    "cientoOchentaDias": 2.6706,
+    "enElAnio": 0.6002,
+    "doceMeses": 32.0074
   },
   "composicionCartera": [
+    {
+      "nombre": "ON Pan American C40",
+      "porcentaje": 18.3
+    },
     {
       "nombre": "ON Genneia Clase 41",
       "porcentaje": 18.2
@@ -40,16 +44,8 @@
       "porcentaje": 15.3
     },
     {
-      "nombre": "ON Genneia Clase 42",
-      "porcentaje": 14.2
-    },
-    {
       "nombre": "ON CGC C 28",
       "porcentaje": 9.6
-    },
-    {
-      "nombre": "Cta Cte $ Bco Santander R",
-      "porcentaje": 8.7
     },
     {
       "nombre": "ON YPF Luz C12",
@@ -62,6 +58,10 @@
     {
       "nombre": "FCI Argenfunds Liquidez - Clase B",
       "porcentaje": 4.7
+    },
+    {
+      "nombre": "Cta Cte $ Bco Santander R",
+      "porcentaje": 4.5
     }
   ],
   "calificaciones": [],
@@ -78,7 +78,7 @@
   "sociedades": [
     {
       "tipo": "Sociedad Gerente:",
-      "nombre": "Santander Rio Asset Management G.F.C.I.S.A.",
+      "nombre": "Santander Asset Management G.F.C.I.S.A.",
       "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00049G-c03041ad.jpg"
     },
     {
