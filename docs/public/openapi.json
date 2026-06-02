@@ -15,7 +15,9 @@
     "/v1/feriados/{año}": {
       "get": {
         "summary": "Feriados",
-        "tags": ["Eventos"],
+        "tags": [
+          "Eventos"
+        ],
         "description": "Devuelve los feriados del año indicado (o del año actual si no se especifica).",
         "parameters": [
           {
@@ -47,13 +49,17 @@
           }
         },
         "operationId": "get-feriados",
-        "x-data-source": ["[La Nación](https://www.lanacion.com.ar/feriados/)"]
+        "x-data-source": [
+          "[La Nación](https://www.lanacion.com.ar/feriados/)"
+        ]
       }
     },
     "/v1/cotizaciones/dolares": {
       "get": {
         "summary": "Dólares",
-        "tags": ["Cotizaciones históricas"],
+        "tags": [
+          "Cotizaciones históricas"
+        ],
         "description": "Devuelve las cotizaciones de todas las casas de cambio.",
         "responses": {
           "200": {
@@ -71,13 +77,17 @@
           }
         },
         "operationId": "get-cotizaciones-dolares",
-        "x-data-source": ["[DolarApi](https://dolarapi.com)"]
+        "x-data-source": [
+          "[DolarApi](https://dolarapi.com)"
+        ]
       }
     },
     "/v1/cotizaciones/dolares/{casa}": {
       "get": {
         "summary": "Dólares por casa",
-        "tags": ["Cotizaciones históricas"],
+        "tags": [
+          "Cotizaciones históricas"
+        ],
         "description": "Devuelve las cotizaciones del dólar de la casa de cambio especificada.",
         "parameters": [
           {
@@ -117,13 +127,17 @@
           }
         },
         "operationId": "get-cotizaciones-dolares-casa",
-        "x-data-source": ["[DolarApi](https://dolarapi.com)"]
+        "x-data-source": [
+          "[DolarApi](https://dolarapi.com)"
+        ]
       }
     },
     "/v1/cotizaciones/dolares/{casa}/{fecha}": {
       "get": {
         "summary": "Dólar por casa y fecha",
-        "tags": ["Cotizaciones históricas"],
+        "tags": [
+          "Cotizaciones históricas"
+        ],
         "description": "Devuelve la cotización del dólar de la casa de cambio especificada en la fecha indicada (en formato `YYYY/MM/DD`).",
         "parameters": [
           {
@@ -171,13 +185,17 @@
           }
         },
         "operationId": "get-cotizaciones-dolares-casa-fecha",
-        "x-data-source": ["[DolarApi](https://dolarapi.com)"]
+        "x-data-source": [
+          "[DolarApi](https://dolarapi.com)"
+        ]
       }
     },
     "/v1/eventos/presidenciales": {
       "get": {
         "summary": "Eventos presidenciales",
-        "tags": ["Eventos"],
+        "tags": [
+          "Eventos"
+        ],
         "description": "Devuelve los eventos presidenciales.",
         "responses": {
           "200": {
@@ -203,7 +221,10 @@
     "/v1/finanzas/indices/inflacion": {
       "get": {
         "summary": "Índices de inflación",
-        "tags": ["Finanzas", "Índices"],
+        "tags": [
+          "Finanzas",
+          "Índices"
+        ],
         "description": "Devuelve los índices de inflación mensuales.",
         "responses": {
           "200": {
@@ -222,13 +243,18 @@
         },
         "operationId": "get-finanzas-indices-inflacion",
         "x-sidebar-title": "Inflación mensual",
-        "x-data-source": ["[BCRA](https://bcra.gob.ar/)"]
+        "x-data-source": [
+          "[BCRA](https://bcra.gob.ar/)"
+        ]
       }
     },
     "/v1/finanzas/indices/inflacionInteranual": {
       "get": {
         "summary": "Índices de inflación interanuales",
-        "tags": ["Finanzas", "Índices"],
+        "tags": [
+          "Finanzas",
+          "Índices"
+        ],
         "description": "Devuelve los índices de inflación interanuales.",
         "responses": {
           "200": {
@@ -247,13 +273,18 @@
         },
         "operationId": "get-finanzas-indices-inflacion-interanual",
         "x-sidebar-title": "Inflación interanual",
-        "x-data-source": ["[BCRA](https://bcra.gob.ar/)"]
+        "x-data-source": [
+          "[BCRA](https://bcra.gob.ar/)"
+        ]
       }
     },
     "/v1/finanzas/indices/uva": {
       "get": {
         "summary": "Índices UVA",
-        "tags": ["Finanzas", "Índices"],
+        "tags": [
+          "Finanzas",
+          "Índices"
+        ],
         "description": "Devuelve los índices UVA.",
         "responses": {
           "200": {
@@ -271,13 +302,18 @@
           }
         },
         "operationId": "get-finanzas-indices-uva",
-        "x-data-source": ["[BCRA](https://bcra.gob.ar/)"]
+        "x-data-source": [
+          "[BCRA](https://bcra.gob.ar/)"
+        ]
       }
     },
     "/v1/finanzas/indices/riesgo-pais": {
       "get": {
         "summary": "Riesgo país",
-        "tags": ["Finanzas", "Índices"],
+        "tags": [
+          "Finanzas",
+          "Índices"
+        ],
         "description": "Devuelve una lista de riesgo país. Para obtener el último valor, consultar `/v1/finanzas/indices/riesgo-pais/ultimo`.",
         "responses": {
           "200": {
@@ -295,13 +331,18 @@
           }
         },
         "operationId": "get-finanzas-indices-riesgo-pais",
-        "x-data-source": ["[Ámbito](https://mercados.ambito.com/riesgopais/)"]
+        "x-data-source": [
+          "[Ámbito](https://mercados.ambito.com/riesgopais/)"
+        ]
       }
     },
     "/v1/finanzas/indices/riesgo-pais/ultimo": {
       "get": {
         "summary": "Riesgo país (último)",
-        "tags": ["Finanzas", "Índices"],
+        "tags": [
+          "Finanzas",
+          "Índices"
+        ],
         "description": "Devuelve el último valor de riesgo país.",
         "responses": {
           "200": {
@@ -316,13 +357,18 @@
           }
         },
         "operationId": "get-finanzas-indices-riesgo-pais-ultimo",
-        "x-data-source": ["[Ámbito](https://mercados.ambito.com/riesgopais/)"]
+        "x-data-source": [
+          "[Ámbito](https://mercados.ambito.com/riesgopais/)"
+        ]
       }
     },
     "/v1/finanzas/tasas/plazoFijo": {
       "get": {
         "summary": "Plazo fijo",
-        "tags": ["Finanzas", "Tasas"],
+        "tags": [
+          "Finanzas",
+          "Tasas"
+        ],
         "description": "Tasa Nominal Anual para colocaciones online de $100.000 a 30 días.(*).\n\nLas tasas son reportadas por los bancos al BCRA en cumplimiento del Régimen Informativo de Transparencia, capítulo I.\n\n(*): La tasa puede cambiar para otros montos o plazos.",
         "responses": {
           "200": {
@@ -348,7 +394,10 @@
     "/v1/finanzas/tasas/plazoFijoUvaPagoPeriodico": {
       "get": {
         "summary": "Plazo fijo UVA con pago periódico de intereses",
-        "tags": ["Finanzas", "Tasas"],
+        "tags": [
+          "Finanzas",
+          "Tasas"
+        ],
         "description": "Tasas Nominales Anuales (TNA) y Tasas Efectivas Anuales (TEA) para plazos fijos UVA con pago periódico de intereses.",
         "responses": {
           "200": {
@@ -374,7 +423,10 @@
     "/v1/finanzas/tasas/plazoFijoPrecancelable": {
       "get": {
         "summary": "Plazo fijo UVA precancelable",
-        "tags": ["Finanzas", "Tasas"],
+        "tags": [
+          "Finanzas",
+          "Tasas"
+        ],
         "description": "Condiciones y tasas publicadas por entidades bancarias para plazos fijos UVA precancelables.",
         "responses": {
           "200": {
@@ -402,7 +454,10 @@
     "/v1/finanzas/tasas/depositos30Dias": {
       "get": {
         "summary": "Depósitos a 30 días",
-        "tags": ["Finanzas", "Tasas"],
+        "tags": [
+          "Finanzas",
+          "Tasas"
+        ],
         "description": "Tasas de interés por depósitos a 30 días de plazo.",
         "responses": {
           "200": {
@@ -420,13 +475,18 @@
           }
         },
         "operationId": "get-finanzas-tasas-depositos-30-dias",
-        "x-data-source": ["[BCRA](https://bcra.gob.ar/)"]
+        "x-data-source": [
+          "[BCRA](https://bcra.gob.ar/)"
+        ]
       }
     },
     "/v1/finanzas/criptopesos": {
       "get": {
         "summary": "Criptopesos",
-        "tags": ["Finanzas", "Tasas"],
+        "tags": [
+          "Finanzas",
+          "Tasas"
+        ],
         "description": "Tasas Nominales Anuales (TNA) de criptopesos por entidad.",
         "responses": {
           "200": {
@@ -454,7 +514,10 @@
     "/v1/finanzas/letras": {
       "get": {
         "summary": "Letras capitalizables (LECAP/BONCAP)",
-        "tags": ["Finanzas", "Letras"],
+        "tags": [
+          "Finanzas",
+          "Letras"
+        ],
         "description": "Pago final (VPV) y fechas de emisión y vencimiento de las letras capitalizables (LECAP) y bonos capitalizables (BONCAP) activos, calculados a partir de los archivos oficiales de la Secretaría de Finanzas.",
         "responses": {
           "200": {
@@ -482,7 +545,10 @@
     "/v1/finanzas/remesas": {
       "get": {
         "summary": "Remesas",
-        "tags": ["Finanzas", "Remesas"],
+        "tags": [
+          "Finanzas",
+          "Remesas"
+        ],
         "description": "Devuelve las plataformas para cobrar pagos del exterior, con sus costos y características.",
         "responses": {
           "200": {
@@ -497,13 +563,18 @@
           }
         },
         "operationId": "get-finanzas-remesas",
-        "x-data-source": ["[Dolarito](https://www.dolarito.ar/remotito)"]
+        "x-data-source": [
+          "[Dolarito](https://www.dolarito.ar/remotito)"
+        ]
       }
     },
     "/v1/finanzas/creditos/hipotecariosUva": {
       "get": {
         "summary": "Créditos Hipotecarios UVA",
-        "tags": ["Finanzas", "Créditos"],
+        "tags": [
+          "Finanzas",
+          "Créditos"
+        ],
         "description": "Tasas Nominales Anuales (TNA) de créditos hipotecarios UVA por entidad bancaria.",
         "responses": {
           "200": {
@@ -521,13 +592,18 @@
           }
         },
         "operationId": "get-finanzas-creditos-hipotecarios-uva",
-        "x-data-source": ["[@SalinasAndres](https://x.com/SalinasAndres)"]
+        "x-data-source": [
+          "[@SalinasAndres](https://x.com/SalinasAndres)"
+        ]
       }
     },
     "/v1/finanzas/cuentas-remuneradas-usd": {
       "get": {
         "summary": "Cuentas remuneradas en USD",
-        "tags": ["Finanzas", "Tasas"],
+        "tags": [
+          "Finanzas",
+          "Tasas"
+        ],
         "description": "Tasa de rendimiento anual y tope remunerable en dólares de **cuentas remuneradas en USD** de bancos relevados.",
         "responses": {
           "200": {
@@ -555,7 +631,10 @@
     "/v1/finanzas/fci/mercadoDinero/{fecha}": {
       "get": {
         "summary": "Mercado de dinero",
-        "tags": ["Finanzas", "FCI"],
+        "tags": [
+          "Finanzas",
+          "FCI"
+        ],
         "description": "Devuelve los valores de Mercado de Dinero de los Fondos Comunes de Inversión en la fecha indicada (en formato `YYYY/MM/DD`).\n\nTambién se puede consultar el `ultimo` y `penultimo` día con valores utilizando los endpoints: \n\n- `/v1/finanzas/fci/mercadoDinero/ultimo`\n- `/v1/finanzas/fci/mercadoDinero/penultimo`",
         "parameters": [
           {
@@ -586,13 +665,18 @@
           }
         },
         "operationId": "get-finanzas-fci-mercado-dinero-fecha",
-        "x-data-source": ["[CAFCI](https://cafci.org.ar)"]
+        "x-data-source": [
+          "[CAFCI](https://cafci.org.ar)"
+        ]
       }
     },
     "/v1/finanzas/fci/rentaVariable/{fecha}": {
       "get": {
         "summary": "Renta variable",
-        "tags": ["Finanzas", "FCI"],
+        "tags": [
+          "Finanzas",
+          "FCI"
+        ],
         "description": "Devuelve los valores de Renta Variable de los Fondos Comunes de Inversión en la fecha indicada (en formato `YYYY/MM/DD`).\n\nTambién se puede consultar el `ultimo` y `penultimo` día con valores utilizando los endpoints: \n\n- `/v1/finanzas/fci/rentaVariable/ultimo`\n- `/v1/finanzas/fci/rentaVariable/penultimo`",
         "parameters": [
           {
@@ -623,13 +707,18 @@
           }
         },
         "operationId": "get-finanzas-fci-renta-variable-fecha",
-        "x-data-source": ["[CAFCI](https://cafci.org.ar)"]
+        "x-data-source": [
+          "[CAFCI](https://cafci.org.ar)"
+        ]
       }
     },
     "/v1/finanzas/fci/rentaFija/{fecha}": {
       "get": {
         "summary": "Renta fija",
-        "tags": ["Finanzas", "FCI"],
+        "tags": [
+          "Finanzas",
+          "FCI"
+        ],
         "description": "Devuelve los valores de Renta Fija de los Fondos Comunes de Inversión en la fecha indicada (en formato `YYYY/MM/DD`).\n\nTambién se puede consultar el `ultimo` y `penultimo` día con valores utilizando los endpoints: \n\n- `/v1/finanzas/fci/rentaFija/ultimo`\n- `/v1/finanzas/fci/rentaFija/penultimo`",
         "parameters": [
           {
@@ -660,13 +749,18 @@
           }
         },
         "operationId": "get-finanzas-fci-renta-fija-fecha",
-        "x-data-source": ["[CAFCI](https://cafci.org.ar)"]
+        "x-data-source": [
+          "[CAFCI](https://cafci.org.ar)"
+        ]
       }
     },
     "/v1/finanzas/fci/rentaMixta/{fecha}": {
       "get": {
         "summary": "Renta mixta",
-        "tags": ["Finanzas", "FCI"],
+        "tags": [
+          "Finanzas",
+          "FCI"
+        ],
         "description": "Devuelve los valores de Renta Mixta de los Fondos Comunes de Inversión en la fecha indicada (en formato `YYYY/MM/DD`).\n\nTambién se puede consultar el `ultimo` y `penultimo` día con valores utilizando los endpoints: \n\n- `/v1/finanzas/fci/rentaMixta/ultimo`\n- `/v1/finanzas/fci/rentaMixta/penultimo`",
         "parameters": [
           {
@@ -697,13 +791,18 @@
           }
         },
         "operationId": "get-finanzas-fci-renta-mixta-fecha",
-        "x-data-source": ["[CAFCI](https://cafci.org.ar)"]
+        "x-data-source": [
+          "[CAFCI](https://cafci.org.ar)"
+        ]
       }
     },
     "/v1/finanzas/fci/retornoTotal/{fecha}": {
       "get": {
         "summary": "Retorno total",
-        "tags": ["Finanzas", "FCI"],
+        "tags": [
+          "Finanzas",
+          "FCI"
+        ],
         "description": "Devuelve los valores de Retorno Total de los Fondos Comunes de Inversión en la fecha indicada (en formato `YYYY/MM/DD`).\n\nTambién se puede consultar el `ultimo` y `penultimo` día con valores utilizando los endpoints: \n\n- `/v1/finanzas/fci/retornoTotal/ultimo`\n- `/v1/finanzas/fci/retornoTotal/penultimo`",
         "parameters": [
           {
@@ -734,13 +833,18 @@
           }
         },
         "operationId": "get-finanzas-fci-retorno-total-fecha",
-        "x-data-source": ["[CAFCI](https://cafci.org.ar)"]
+        "x-data-source": [
+          "[CAFCI](https://cafci.org.ar)"
+        ]
       }
     },
     "/v1/finanzas/fci/otros/{fecha}": {
       "get": {
         "summary": "Otros",
-        "tags": ["Finanzas", "FCI"],
+        "tags": [
+          "Finanzas",
+          "FCI"
+        ],
         "description": "Devuelve los valores de Otros Fondos Comunes de Inversión en la fecha indicada (en formato `YYYY/MM/DD`).\n\nTambién se puede consultar el `ultimo` y `penultimo` día con valores utilizando los endpoints: \n\n- `/v1/finanzas/fci/otros/ultimo`\n- `/v1/finanzas/fci/otros/penultimo`",
         "parameters": [
           {
@@ -788,7 +892,9 @@
     "/v1/presidentes": {
       "get": {
         "summary": "Presidentes",
-        "tags": ["Historia"],
+        "tags": [
+          "Historia"
+        ],
         "description": "Devuelve la lista de presidentes de la Nación Argentina.",
         "responses": {
           "200": {
@@ -815,7 +921,9 @@
       "get": {
         "summary": "Estado de la API",
         "description": "Devuelve el estado de la API.",
-        "tags": ["API"],
+        "tags": [
+          "API"
+        ],
         "responses": {
           "200": {
             "description": "Devuelve el estado de la API",
@@ -834,7 +942,10 @@
     "/v1/finanzas/rendimientos": {
       "get": {
         "summary": "Rendimientos de todas las entidades",
-        "tags": ["Finanzas", "Rendimientos"],
+        "tags": [
+          "Finanzas",
+          "Rendimientos"
+        ],
         "description": "Rendimientos de distintas monedas por entidad.\n\nLas entidades disponibles son:\n\n- [Nexo](https://nexo.com/?ref=argentinadatos.com)\n\n- [Fiwind](https://www.fiwind.io/?ref=argentinadatos.com)\n\n- [Letsbit](https://letsbit.io/?ref=argentinadatos.com)\n\n- [Belo](https://www.belo.app/?ref=argentinadatos.com)\n\n- [Lemon Cash](https://www.lemon.me/?ref=argentinadatos.com)\n\n- [Ripio](https://www.ripio.com/ar/?ref=argentinadatos.com)\n\n- [Satoshi Tango](https://www.satoshitango.com/?ref=argentinadatos.com)\n\n- [Luca Money](https://lucamoney.com/?ref=argentinadatos.com)\n\n- [Decrypto](https://www.decrypto.la//?ref=argentinadatos.com)\n\n- [Lune.fi](https://lune.fi/investments)",
         "responses": {
           "200": {
@@ -872,7 +983,10 @@
     "/v1/finanzas/rendimientos/{entidad}": {
       "get": {
         "summary": "Por entidad",
-        "tags": ["Finanzas", "Rendimientos"],
+        "tags": [
+          "Finanzas",
+          "Rendimientos"
+        ],
         "description": "Rendimientos de distintas monedas por entidad.\n\nLas entidades disponibles son:\n\n- [Nexo](https://nexo.com/?ref=argentinadatos.com)\n\n- [Fiwind](https://www.fiwind.io/?ref=argentinadatos.com)\n\n- [Letsbit](https://letsbit.io/?ref=argentinadatos.com)\n\n- [Belo](https://www.belo.app/?ref=argentinadatos.com)\n\n- [Lemon Cash](https://www.lemon.me/?ref=argentinadatos.com)\n\n- [Ripio](https://www.ripio.com/ar/?ref=argentinadatos.com)\n\n- [Satoshi Tango](https://www.satoshitango.com/?ref=argentinadatos.com)\n\n- [Luca Money](https://lucamoney.com/?ref=argentinadatos.com)\n\n- [Decrypto](https://www.decrypto.la//?ref=argentinadatos.com)\n\n- [Lune.fi](https://lune.fi/investments)",
         "parameters": [
           {
@@ -935,7 +1049,9 @@
     "/v1/senado/senadores": {
       "get": {
         "summary": "Senadores",
-        "tags": ["Senado"],
+        "tags": [
+          "Senado"
+        ],
         "description": "Devuelve los senadores.",
         "responses": {
           "200": {
@@ -953,13 +1069,17 @@
           }
         },
         "operationId": "get-senado-senadores",
-        "x-data-source": ["[Senado](https://www.senado.gob.ar)"]
+        "x-data-source": [
+          "[Senado](https://www.senado.gob.ar)"
+        ]
       }
     },
     "/v1/senado/actas/{año}": {
       "get": {
         "summary": "Actas por año",
-        "tags": ["Senado"],
+        "tags": [
+          "Senado"
+        ],
         "description": "Devuelve las actas del Senado del año indicado.",
         "parameters": [
           {
@@ -991,13 +1111,17 @@
           }
         },
         "operationId": "get-senado-actas-año",
-        "x-data-source": ["[Senado](https://www.senado.gob.ar)"]
+        "x-data-source": [
+          "[Senado](https://www.senado.gob.ar)"
+        ]
       }
     },
     "/v1/senado/actas": {
       "get": {
         "summary": "Actas",
-        "tags": ["Senado"],
+        "tags": [
+          "Senado"
+        ],
         "description": "Devuelve las actas del Senado.",
         "responses": {
           "200": {
@@ -1015,13 +1139,17 @@
           }
         },
         "operationId": "get-senado-actas",
-        "x-data-source": ["[Senado](https://www.senado.gob.ar)"]
+        "x-data-source": [
+          "[Senado](https://www.senado.gob.ar)"
+        ]
       }
     },
     "/v1/diputados/diputados": {
       "get": {
         "summary": "Diputados",
-        "tags": ["Diputados"],
+        "tags": [
+          "Diputados"
+        ],
         "description": "Devuelve los diputados.",
         "responses": {
           "200": {
@@ -1039,13 +1167,17 @@
           }
         },
         "operationId": "get-diputados-diputados",
-        "x-data-source": ["[Diputados](https://datos.hcdn.gob.ar)"]
+        "x-data-source": [
+          "[Diputados](https://datos.hcdn.gob.ar)"
+        ]
       }
     },
     "/v1/diputados/actas/{año}": {
       "get": {
         "summary": "Actas por año",
-        "tags": ["Diputados"],
+        "tags": [
+          "Diputados"
+        ],
         "description": "Devuelve las actas de Diputados del año indicado.",
         "parameters": [
           {
@@ -1077,13 +1209,17 @@
           }
         },
         "operationId": "get-diputados-actas-año",
-        "x-data-source": ["[Diputados](https://votaciones.hcdn.gob.ar)"]
+        "x-data-source": [
+          "[Diputados](https://votaciones.hcdn.gob.ar)"
+        ]
       }
     },
     "/v1/diputados/actas": {
       "get": {
         "summary": "Actas",
-        "tags": ["Diputados"],
+        "tags": [
+          "Diputados"
+        ],
         "description": "Devuelve las actas de Diputados.",
         "responses": {
           "200": {
@@ -1101,13 +1237,18 @@
           }
         },
         "operationId": "get-diputados-actas",
-        "x-data-source": ["[Diputados](https://votaciones.hcdn.gob.ar)"]
+        "x-data-source": [
+          "[Diputados](https://votaciones.hcdn.gob.ar)"
+        ]
       }
     },
     "/v1/finanzas/fci/variables/{fecha}": {
       "get": {
         "summary": "Variables",
-        "tags": ["Finanzas", "FCI"],
+        "tags": [
+          "Finanzas",
+          "FCI"
+        ],
         "description": "Devuelve los valores de Rendimientos Variables de los Fondos Comunes de Inversión en la fecha indicada (en formato `YYYY/MM/DD`).\n\nTambién se puede consultar el `ultimo` y `penultimo` día con valores utilizando los endpoints: \n\n- `/v1/finanzas/fci/variables/ultimo`\n- `/v1/finanzas/fci/variables/penultimo`",
         "parameters": [
           {
@@ -1138,13 +1279,18 @@
           }
         },
         "operationId": "get-finanzas-fci-variables-fecha",
-        "x-data-source": ["[Global66](https://global66.com/)"]
+        "x-data-source": [
+          "[Global66](https://global66.com/)"
+        ]
       }
     },
     "/v1/finanzas/rem": {
       "get": {
         "summary": "Relevamientos de Expectativas de Mercado (REM)",
-        "tags": ["Finanzas", "REM"],
+        "tags": [
+          "Finanzas",
+          "REM"
+        ],
         "description": "Devuelve el índice de endpoints relativos para consultar el último REM y cada uno de los informes REM disponibles por período.",
         "responses": {
           "200": {
@@ -1164,13 +1310,18 @@
         },
         "operationId": "get-finanzas-rem",
         "x-sidebar-title": "REM",
-        "x-data-source": ["[BCRA](https://www.bcra.gob.ar/ultimos-informes/)"]
+        "x-data-source": [
+          "[BCRA](https://www.bcra.gob.ar/ultimos-informes/)"
+        ]
       }
     },
     "/v1/finanzas/rem/ultimo": {
       "get": {
         "summary": "Relevamiento de Expectativas de Mercado (REM) - último informe",
-        "tags": ["Finanzas", "REM"],
+        "tags": [
+          "Finanzas",
+          "REM"
+        ],
         "description": "Devuelve las expectativas del último informe REM disponible.",
         "responses": {
           "200": {
@@ -1189,13 +1340,18 @@
         },
         "operationId": "get-finanzas-rem-ultimo",
         "x-sidebar-title": "Último informe",
-        "x-data-source": ["[BCRA](https://www.bcra.gob.ar/ultimos-informes/)"]
+        "x-data-source": [
+          "[BCRA](https://www.bcra.gob.ar/ultimos-informes/)"
+        ]
       }
     },
     "/v1/finanzas/rem/{año}/{mes}": {
       "get": {
         "summary": "Relevamiento de Expectativas de Mercado (REM) por período",
-        "tags": ["Finanzas", "REM"],
+        "tags": [
+          "Finanzas",
+          "REM"
+        ],
         "description": "Devuelve las expectativas del informe REM correspondiente al año y mes indicados.",
         "parameters": [
           {
@@ -1238,13 +1394,18 @@
         },
         "operationId": "get-finanzas-rem-anio-mes",
         "x-sidebar-title": "Por período",
-        "x-data-source": ["[BCRA](https://www.bcra.gob.ar/ultimos-informes/)"]
+        "x-data-source": [
+          "[BCRA](https://www.bcra.gob.ar/ultimos-informes/)"
+        ]
       }
     },
     "/v1/finanzas/fci/fondos": {
       "get": {
         "summary": "Detalles de todos los fondos",
-        "tags": ["Finanzas", "FCI Detalles"],
+        "tags": [
+          "Finanzas",
+          "FCI Detalles"
+        ],
         "description": "Devuelve la información detallada disponible de los Fondos Comunes de Inversión.",
         "responses": {
           "200": {
@@ -1260,13 +1421,18 @@
         },
         "operationId": "get-finanzas-fci-fondos",
         "x-sidebar-title": "Detalles de fondos",
-        "x-data-source": ["[CAFCI](https://estadisticas.cafci.org.ar)"]
+        "x-data-source": [
+          "[CAFCI](https://estadisticas.cafci.org.ar)"
+        ]
       }
     },
     "/v1/finanzas/fci/fondos/{nombre}": {
       "get": {
         "summary": "Detalle de un fondo por nombre",
-        "tags": ["Finanzas", "FCI Detalles"],
+        "tags": [
+          "Finanzas",
+          "FCI Detalles"
+        ],
         "description": "Devuelve el detalle disponible de un Fondo Común de Inversión específico, identificado por su nombre normalizado en minúsculas y con guiones.",
         "parameters": [
           {
@@ -1293,13 +1459,18 @@
           }
         },
         "operationId": "get-finanzas-fci-fondos-nombre",
-        "x-data-source": ["[CAFCI](https://estadisticas.cafci.org.ar)"]
+        "x-data-source": [
+          "[CAFCI](https://estadisticas.cafci.org.ar)"
+        ]
       }
     },
     "/v1/finanzas/fci/fondos/{nombre}/historico": {
       "get": {
         "summary": "Histórico de un fondo por nombre",
-        "tags": ["Finanzas", "FCI Detalles"],
+        "tags": [
+          "Finanzas",
+          "FCI Detalles"
+        ],
         "description": "Devuelve la evolución histórica disponible de un Fondo Común de Inversión específico, identificado por su nombre normalizado en minúsculas y con guiones.",
         "parameters": [
           {
@@ -1326,7 +1497,9 @@
           }
         },
         "operationId": "get-finanzas-fci-fondos-nombre-historico",
-        "x-data-source": ["[CAFCI](https://estadisticas.cafci.org.ar)"]
+        "x-data-source": [
+          "[CAFCI](https://estadisticas.cafci.org.ar)"
+        ]
       }
     }
   },
@@ -1412,7 +1585,10 @@
       "BonosCer": {
         "title": "BonosCer",
         "type": "object",
-        "required": ["fechaActualizacion", "bonos"],
+        "required": [
+          "fechaActualizacion",
+          "bonos"
+        ],
         "properties": {
           "fechaActualizacion": {
             "type": "string",
@@ -1964,7 +2140,11 @@
           },
           "horizonte": {
             "type": "string",
-            "enum": ["corto", "medio", "largo"]
+            "enum": [
+              "corto",
+              "medio",
+              "largo"
+            ]
           }
         },
         "x-examples": {
@@ -2021,7 +2201,9 @@
           "tipo": {
             "type": "string",
             "description": "Clasificación del instrumento. Valor conocido: `billetera` (cuenta remunerada en billetera digital).",
-            "enum": ["billetera"]
+            "enum": [
+              "billetera"
+            ]
           },
           "fecha": {
             "type": "string"
@@ -2150,7 +2332,11 @@
           },
           "resultado": {
             "type": "string",
-            "enum": ["afirmativa", "negativa", "cancelada lev.vot."]
+            "enum": [
+              "afirmativa",
+              "negativa",
+              "cancelada lev.vot."
+            ]
           },
           "votos": {
             "type": "array",
@@ -2475,7 +2661,10 @@
           },
           "moneda": {
             "type": "string",
-            "enum": ["FIAT", "CRIPTO"],
+            "enum": [
+              "FIAT",
+              "CRIPTO"
+            ],
             "nullable": true,
             "description": "Tipo de moneda que maneja la plataforma"
           },
@@ -2597,7 +2786,10 @@
       "Remesas": {
         "title": "Remesas",
         "type": "object",
-        "required": ["fechaActualizacion", "remesas"],
+        "required": [
+          "fechaActualizacion",
+          "remesas"
+        ],
         "properties": {
           "fechaActualizacion": {
             "type": "string",
@@ -2655,7 +2847,10 @@
           },
           "muestra": {
             "type": "string",
-            "enum": ["todos", "top_10"],
+            "enum": [
+              "todos",
+              "top_10"
+            ],
             "description": "Muestra de participantes: todos o TOP 10"
           },
           "indicador": {
@@ -3006,7 +3201,10 @@
       "FondosDetalles": {
         "title": "FondosDetalles",
         "type": "object",
-        "required": ["fechaActualizacion", "fondos"],
+        "required": [
+          "fechaActualizacion",
+          "fondos"
+        ],
         "properties": {
           "fechaActualizacion": {
             "type": "string",
