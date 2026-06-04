@@ -26,30 +26,35 @@ async function repararPenultimo(serie) {
   const penultimo = []
 
   for (const fondo of ultimo) {
+    if (!fondo.fondo) continue
     if (!fondo.fecha) {
-      penultimo.push(fondo)
       continue
     }
 
     const fechaUltimo = parseISO(fondo.fecha)
-    const fechaDiaAnterior = subDays(fechaUltimo, 1)
-    const fechaPath = format(fechaDiaAnterior, 'yyyy/MM/dd')
+    let encontrado = false
 
-    const datosDiaAnterior = await leerRuta(`/finanzas/fci/${serie}/${fechaPath}`)
+    // Buscar hacia atrás hasta 30 días
+    for (let diasAtras = 1; diasAtras <= 30; diasAtras++) {
+      const fechaBusqueda = subDays(fechaUltimo, diasAtras)
+      const fechaPath = format(fechaBusqueda, 'yyyy/MM/dd')
 
-    if (!datosDiaAnterior) {
-      console.log(`[${serie}] ${fondo.fondo}: sin datos para ${format(fechaDiaAnterior, 'yyyy-MM-dd')}, se descarta`)
-      continue
+      const datosDia = await leerRuta(`/finanzas/fci/${serie}/${fechaPath}`)
+
+      if (!datosDia) continue
+
+      const anterior = datosDia.find(d => d.fondo === fondo.fondo)
+
+      if (anterior) {
+        penultimo.push(anterior)
+        encontrado = true
+        break
+      }
     }
 
-    const anterior = datosDiaAnterior.find(d => d.fondo === fondo.fondo)
-
-    if (!anterior) {
-      console.log(`[${serie}] ${fondo.fondo}: sin datos del dia anterior, se descarta`)
-      continue
+    if (!encontrado) {
+      console.log(`[${serie}] ${fondo.fondo}: sin datos en los ultimos 30 dias, se descarta`)
     }
-
-    penultimo.push(anterior)
   }
 
   if (penultimo.length > 0) {

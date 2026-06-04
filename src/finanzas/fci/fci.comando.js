@@ -1,5 +1,5 @@
 import { collect } from 'collect.js'
-import { format, parseISO } from 'date-fns'
+import { format, parseISO, subDays } from 'date-fns'
 import { guardarCafci } from '@/finanzas/fci/cafci/guardado/guardarCafci.js'
 import { escribirRuta, leerRuta } from '@/utils/rutas.js'
 import { extraerCafci } from '@/finanzas/fci/cafci/extraccion/extraerCafci.js'
@@ -142,7 +142,33 @@ async function ejecutarSerie(serie) {
       }
     })
 
-  // Preservar penultimo existente para fondos que no se actualizaron
+  // Para fondos que solo tienen 1 fecha, buscar el día anterior en daily files
+  const fondosSinPenultimo = Object.keys(penultimoPorFondo).filter(
+    fondo => items.find(i => i.fondo === fondo),
+  )
+
+  for (const fondoName of fondosSinPenultimo) {
+    const fondoItem = items.find(i => i.fondo === fondoName)
+    if (!fondoItem?.fecha) continue
+
+    const fechaUltimo = parseISO(fondoItem.fecha)
+    for (let diasAtras = 1; diasAtras <= 7; diasAtras++) {
+      const fechaBusqueda = subDays(fechaUltimo, diasAtras)
+      const fechaPath = format(fechaBusqueda, 'yyyy/MM/dd')
+
+      const datosDia = await leerRuta(`/finanzas/fci/${serie}/${fechaPath}`)
+      if (!datosDia) continue
+
+      const anterior = datosDia.find(d => d.fondo === fondoName)
+      if (anterior) {
+        penultimoNuevo.push(anterior)
+        delete penultimoPorFondo[fondoName]
+        break
+      }
+    }
+  }
+
+  // Preservar penultimo existente para fondos que no se actualizaron (ni con CAFCI ni con daily)
   const penultimo = [...penultimoNuevo, ...Object.values(penultimoPorFondo)]
 
   if (penultimo.length !== 0) {
