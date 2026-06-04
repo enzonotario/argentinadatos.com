@@ -1,7 +1,7 @@
 import { collect } from 'collect.js'
 import { format, parseISO } from 'date-fns'
 import { guardarCafci } from '@/finanzas/fci/cafci/guardado/guardarCafci.js'
-import { escribirRuta } from '@/utils/rutas.js'
+import { escribirRuta, leerRuta } from '@/utils/rutas.js'
 import { extraerCafci } from '@/finanzas/fci/cafci/extraccion/extraerCafci.js'
 import {
   extraerSerieOtros,
@@ -113,7 +113,16 @@ async function ejecutarSerie(serie) {
 
   await Promise.all(guardados)
 
-  const penultimo = []
+  const penultimoExistente = (await leerRuta(`/finanzas/fci/${serie}/penultimo`)) || []
+
+  const penultimoPorFondo = {}
+  for (const item of penultimoExistente) {
+    if (item.fondo) {
+      penultimoPorFondo[item.fondo] = item
+    }
+  }
+
+  const penultimoNuevo = []
   const ultimo = []
 
   collect(items)
@@ -125,12 +134,16 @@ async function ejecutarSerie(serie) {
         .toArray()
 
       if (itemsFondo.length > 1) {
-        penultimo.push(itemsFondo[1])
+        penultimoNuevo.push(itemsFondo[1])
+        delete penultimoPorFondo[itemsFondo[0].fondo]
         ultimo.push(itemsFondo[0])
       } else if (itemsFondo.length === 1) {
         ultimo.push(itemsFondo[0])
       }
     })
+
+  // Preservar penultimo existente para fondos que no se actualizaron
+  const penultimo = [...penultimoNuevo, ...Object.values(penultimoPorFondo)]
 
   if (penultimo.length !== 0) {
     await escribirRuta(`/finanzas/fci/${serie}/penultimo`, penultimo)
