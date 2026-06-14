@@ -1,6 +1,7 @@
 import { load } from 'cheerio'
 import { format } from 'date-fns'
 import { logGrupo, logError, logMensaje } from '@/log.js'
+import { construirRequestConProxy } from '@/utils/proxy.js'
 import {
   calcularTeaDesdeTna,
   porcentajeADecimal,
@@ -119,6 +120,7 @@ async function obtenerHtmlCuentaPositivaBica(log) {
   const intentos = 3
   const timeoutMs = 30000
   let ultimoError = null
+  let usaProxy = false
 
   for (const url of URLS_BICA_CUENTA_POSITIVA) {
     for (let intento = 1; intento <= intentos; intento += 1) {
@@ -126,10 +128,16 @@ async function obtenerHtmlCuentaPositivaBica(log) {
       const timeout = setTimeout(() => controller.abort(), timeoutMs)
 
       try {
-        const respuesta = await fetch(url, {
+        const request = construirRequestConProxy(url, {
           headers: HEADERS_BICA,
           signal: controller.signal,
         })
+
+        if (request.usaProxy) {
+          usaProxy = true
+        }
+
+        const respuesta = await fetch(request.url, request.opciones)
 
         if (!respuesta.ok) {
           throw new Error(
@@ -148,6 +156,7 @@ async function obtenerHtmlCuentaPositivaBica(log) {
         logMensaje(log, 'HTML de Banco Bica obtenido correctamente', {
           url,
           intento,
+          usaProxy,
         })
 
         return html
@@ -157,6 +166,7 @@ async function obtenerHtmlCuentaPositivaBica(log) {
         logMensaje(log, 'Fallo al obtener HTML de Banco Bica', {
           url,
           intento,
+          usaProxy,
           errorMessage: error.message,
           errorCause:
             error.cause?.code ||
