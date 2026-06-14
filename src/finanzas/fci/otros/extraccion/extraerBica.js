@@ -10,6 +10,18 @@ import {
 const URL_BICA_CUENTA_POSITIVA =
   'https://www.bancobica.com.ar/soluciones/cuentaspositivas.aspx'
 
+const URLS_BICA_CUENTA_POSITIVA = [
+  URL_BICA_CUENTA_POSITIVA,
+  'https://bancobica.com.ar/soluciones/cuentaspositivas.aspx',
+]
+
+const HEADERS_BICA = {
+  'User-Agent':
+    'Mozilla/5.0 (compatible; ArgentinaDatosBot/1.0; +https://argentinadatos.com)',
+  Accept: 'text/html,application/xhtml+xml',
+  'Accept-Language': 'es-AR,es;q=0.9',
+}
+
 const NOMBRES_FONDO = [
   'BICA CUENTA POSITIVA 1',
   'BICA CUENTA POSITIVA 2',
@@ -99,6 +111,72 @@ export function parsearNivelesCuentaPositivaBica(html) {
   return niveles
 }
 
+function esperarMs(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+async function obtenerHtmlCuentaPositivaBica(log) {
+  const intentos = 3
+  const timeoutMs = 30000
+  let ultimoError = null
+
+  for (const url of URLS_BICA_CUENTA_POSITIVA) {
+    for (let intento = 1; intento <= intentos; intento += 1) {
+      const controller = new AbortController()
+      const timeout = setTimeout(() => controller.abort(), timeoutMs)
+
+      try {
+        const respuesta = await fetch(url, {
+          headers: HEADERS_BICA,
+          signal: controller.signal,
+        })
+
+        if (!respuesta.ok) {
+          throw new Error(
+            `Error al obtener la página de Banco Bica: ${respuesta.status} ${respuesta.statusText}`,
+          )
+        }
+
+        const html = await respuesta.text()
+
+        if (!html.includes('id="C+1"')) {
+          throw new Error(
+            'La respuesta de Banco Bica no contiene la sección C+1 de Cuenta Positiva',
+          )
+        }
+
+        logMensaje(log, 'HTML de Banco Bica obtenido correctamente', {
+          url,
+          intento,
+        })
+
+        return html
+      } catch (error) {
+        ultimoError = error
+
+        logMensaje(log, 'Fallo al obtener HTML de Banco Bica', {
+          url,
+          intento,
+          errorMessage: error.message,
+          errorCause:
+            error.cause?.code ||
+            error.cause?.message ||
+            error.cause ||
+            null,
+        })
+
+        if (intento < intentos) {
+          await esperarMs(1000 * intento)
+        }
+      } finally {
+        clearTimeout(timeout)
+      }
+    }
+  }
+
+  throw ultimoError || new Error('No se pudo obtener la página de Banco Bica')
+}
+
 export async function extraerBicaCuentaPositiva() {
   const log = logGrupo({
     fuente: 'extraerBica',
@@ -106,15 +184,8 @@ export async function extraerBicaCuentaPositiva() {
   })
 
   try {
-    const respuesta = await fetch(URL_BICA_CUENTA_POSITIVA)
-
-    if (!respuesta.ok) {
-      throw new Error(
-        `Error al obtener la página de Banco Bica: ${respuesta.statusText}`,
-      )
-    }
-
-    const niveles = parsearNivelesCuentaPositivaBica(await respuesta.text())
+    const html = await obtenerHtmlCuentaPositivaBica(log)
+    const niveles = parsearNivelesCuentaPositivaBica(html)
     const fecha = format(new Date(), 'yyyy-MM-dd')
 
     logMensaje(log, 'Extracción de Banco Bica exitosa', {
