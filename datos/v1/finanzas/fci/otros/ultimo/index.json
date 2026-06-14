@@ -10,24 +10,15 @@
   },
   {
     "fondo": "BICA CUENTA POSITIVA 1",
-    "tna": 0.22,
-    "tea": 0.246,
-    "tope": 750000,
+    "tna": 0,
+    "tea": 0,
+    "tope": null,
     "fecha": "2026-06-14",
-    "condiciones": "Cuenta Positiva de Banco Bica: de $1 hasta $750.000",
-    "condicionesCorto": "de $1 hasta $750.000"
+    "condiciones": "Cuenta Positiva de Banco Bica: desde $20.000.001",
+    "condicionesCorto": "desde $20.000.001"
   },
   {
     "fondo": "BICA CUENTA POSITIVA 2",
-    "tna": 0.19,
-    "tea": 0.2092,
-    "tope": 2250000,
-    "fecha": "2026-06-14",
-    "condiciones": "Cuenta Positiva de Banco Bica: de $750.001 hasta $2.250.000",
-    "condicionesCorto": "de $750.001 hasta $2.250.000"
-  },
-  {
-    "fondo": "BICA CUENTA POSITIVA 3",
     "tna": 0.16,
     "tea": 0.1735,
     "tope": 20000000,
@@ -36,13 +27,22 @@
     "condicionesCorto": "de $2.250.001 hasta $20.000.000"
   },
   {
-    "fondo": "BICA CUENTA POSITIVA 4",
-    "tna": 0,
-    "tea": 0,
-    "tope": null,
+    "fondo": "BICA CUENTA POSITIVA 3",
+    "tna": 0.19,
+    "tea": 0.2092,
+    "tope": 2250000,
     "fecha": "2026-06-14",
-    "condiciones": "Cuenta Positiva de Banco Bica: desde $20.000.001",
-    "condicionesCorto": "desde $20.000.001"
+    "condiciones": "Cuenta Positiva de Banco Bica: de $750.001 hasta $2.250.000",
+    "condicionesCorto": "de $750.001 hasta $2.250.000"
+  },
+  {
+    "fondo": "BICA CUENTA POSITIVA 4",
+    "tna": 0.22,
+    "tea": 0.246,
+    "tope": 750000,
+    "fecha": "2026-06-14",
+    "condiciones": "Cuenta Positiva de Banco Bica: de $1 hasta $750.000",
+    "condicionesCorto": "de $1 hasta $750.000"
   },
   {
     "fondo": "BNA",
