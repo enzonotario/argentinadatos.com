@@ -1,21 +1,19 @@
 import { describe, expect, it } from 'vitest'
 import { extraerBicaCuentaPositiva } from '@/finanzas/fci/otros/extraccion/extraerBica.js'
 
-const FONDOS_ESPERADOS = [
-  'BICA CUENTA POSITIVA 1',
-  'BICA CUENTA POSITIVA 2',
-  'BICA CUENTA POSITIVA 3',
-  'BICA CUENTA POSITIVA 4',
-]
-
 describe('extraerBicaCuentaPositiva', () => {
   it('extrae los niveles de Cuenta Positiva desde la web de Banco Bica', async () => {
     const resultado = await extraerBicaCuentaPositiva()
 
     expect(resultado).toHaveLength(4)
+    expect(resultado.map(nivel => nivel.fondo)).toEqual([
+      'BICA CUENTA POSITIVA 4',
+      'BICA CUENTA POSITIVA 3',
+      'BICA CUENTA POSITIVA 2',
+      'BICA CUENTA POSITIVA 1',
+    ])
 
-    resultado.forEach((nivel, indice) => {
-      expect(nivel.fondo).toBe(FONDOS_ESPERADOS[indice])
+    resultado.forEach(nivel => {
       expect(nivel.tna).toBeGreaterThanOrEqual(0)
       expect(nivel.tea).toBeGreaterThanOrEqual(0)
       expect(typeof nivel.tna).toBe('number')
@@ -25,6 +23,9 @@ describe('extraerBicaCuentaPositiva', () => {
       expect(nivel.condicionesCorto).toMatch(/\$[\d.]+/)
     })
 
+    expect(resultado[0].tna).toBeGreaterThan(resultado[1].tna)
+    expect(resultado[1].tna).toBeGreaterThan(resultado[2].tna)
+    expect(resultado[2].tna).toBeGreaterThan(resultado[3].tna)
     expect(resultado[0].tope).toBeGreaterThan(0)
     expect(resultado[1].tope).toBeGreaterThan(resultado[0].tope)
     expect(resultado[2].tope).toBeGreaterThan(resultado[1].tope)

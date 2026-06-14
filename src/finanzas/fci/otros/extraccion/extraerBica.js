@@ -101,7 +101,7 @@ export function parsearNivelesCuentaPositivaBica(html) {
     }
 
     niveles.push({
-      fondo: NOMBRES_FONDO[indice],
+      fondo: NOMBRES_FONDO[3 - indice],
       tna: redondearTasa(tna),
       tope: parsearTopeDesdeRango(rango),
       condiciones: `Cuenta Positiva de Banco Bica: ${rango}`,
