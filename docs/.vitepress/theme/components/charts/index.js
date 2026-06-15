@@ -93,4 +93,5 @@ export default {
   ),
 
   FeriadosSection: defineAsyncComponent(() => import('./FeriadosSection.vue')),
+  FeriadosBancariosSection: defineAsyncComponent(() => import('./FeriadosBancariosSection.vue')),
 }
