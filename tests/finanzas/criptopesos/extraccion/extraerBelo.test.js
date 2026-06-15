@@ -3,7 +3,7 @@ import { extraerBelo } from '@/finanzas/criptopesos/extraccion/extraerBelo.js'
 
 describe('extraerBelo', () => {
   it(
-    'extrae datos de ARS y los retorna como ARGt',
+    'extrae TNA de ARGt en Belo API y lo retorna como ARGt/BELO',
     async () => {
       const resultado = await extraerBelo()
 
@@ -13,9 +13,9 @@ describe('extraerBelo', () => {
         entidad: 'BELO',
       })
       expect(resultado[0].tna).toBeTypeOf('number')
-      expect(resultado[0].tna).toBeGreaterThanOrEqual(0)
+      expect(resultado[0].tna).toBeGreaterThan(0)
+      expect(resultado[0].tna).toBeLessThanOrEqual(1)
     },
-    10000,
+    15000,
   )
 })
-

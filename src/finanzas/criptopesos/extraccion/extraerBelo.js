@@ -8,33 +8,42 @@ export async function extraerBelo() {
   })
 
   try {
-    const respuesta = await axios.get(
-      import.meta.env.VITE_FINANZAS_BELO_CUENTA_REMUNERADA_URL,
-    )
+    const url = import.meta.env.VITE_FINANZAS_RENDIMIENTOS_BELO_URL
 
-    if (
-      !respuesta ||
-      !respuesta.data ||
-      !respuesta.data.AR ||
-      !respuesta.data.AR.ARS
-    ) {
-      logMensaje(log, 'Datos inválidos de Belo API', {
-        datos: respuesta.data,
-      })
-      throw new Error('Error en la respuesta de Belo API')
+    if (!url) {
+      logMensaje(log, 'Falta VITE_FINANZAS_RENDIMIENTOS_BELO_URL')
+      return []
     }
 
-    const tna = Number(respuesta.data.AR.ARS)
+    const respuesta = await axios.get(url)
 
-    if (isNaN(tna)) {
-      throw new Error('Valor de TNA inválido')
+    if (!respuesta.data || !respuesta.data.length) {
+      logMensaje(log, 'Respuesta vacía de Belo API', {
+        datos: respuesta.data,
+      })
+      return []
+    }
+
+    const argt = respuesta.data.find(item => item.currency === 'ARGt')
+
+    if (!argt) {
+      logMensaje(log, 'No se encontró ARGt en Belo API', {
+        datos: respuesta.data,
+      })
+      return []
+    }
+
+    const tna = Number(Number(argt.rate).toFixed(4))
+
+    if (isNaN(tna) || tna < 0) {
+      throw new Error('Valor de TNA inválido para Belo ARGt')
     }
 
     return [
       {
         token: 'ARGt',
         entidad: 'BELO',
-        tna: Number(tna.toFixed(4)),
+        tna,
       },
     ]
   } catch (error) {
