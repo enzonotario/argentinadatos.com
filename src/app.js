@@ -1,4 +1,5 @@
 import { cronFeriados } from '@/feriados/feriados.cron.js'
+import { cronFeriadosBancarios } from '@/feriados-bancarios/feriadosBancarios.cron.js'
 import { cronCotizaciones } from '@/cotizaciones/cotizaciones.cron.js'
 import { cronFinanzas } from '@/finanzas/finanzas.cron.js'
 import fci from '@/finanzas/fci/fci.comando.js'
@@ -21,6 +22,7 @@ const predefinidos = {
   diario: ['/v1/cotizaciones', '/v1/finanzas'],
   mensual: [
     '/v1/feriados',
+    '/v1/feriados-bancarios',
     '/v1/finanzas/cuentas-remuneradas-usd',
     '/v1/finanzas/remesas',
   ],
@@ -63,6 +65,10 @@ export async function iniciar(comando) {
 
     case '/v1/feriados':
       await cronFeriados()
+      break
+
+    case '/v1/feriados-bancarios':
+      await cronFeriadosBancarios()
       break
 
     case '/v1/cotizaciones':

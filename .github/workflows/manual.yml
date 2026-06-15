@@ -15,6 +15,7 @@ on:
           - pnpm run cron fciIA
           - pnpm run cron riesgoPais
           - pnpm run cron /v1/feriados
+          - pnpm run cron /v1/feriados-bancarios
           - pnpm run cron /v1/cotizaciones
           - pnpm run cron /v1/finanzas
           - pnpm run cron /v1/finanzas/fci

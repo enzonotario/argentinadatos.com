@@ -9,6 +9,7 @@ export async function actualizarOpenApiAño() {
 
   const rutasAActualizar = [
     '/v1/feriados/{año}',
+    '/v1/feriados-bancarios/{año}',
     '/v1/senado/actas/{año}',
     '/v1/diputados/actas/{año}',
   ]

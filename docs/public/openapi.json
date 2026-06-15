@@ -54,6 +54,48 @@
         ]
       }
     },
+    "/v1/feriados-bancarios/{año}": {
+      "get": {
+        "summary": "Feriados bancarios",
+        "tags": [
+          "Eventos"
+        ],
+        "description": "Devuelve los feriados bancarios del año indicado (o del año actual si no se especifica).",
+        "parameters": [
+          {
+            "name": "año",
+            "in": "path",
+            "description": "Año de consulta",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 2011,
+              "maximum": 2026
+            },
+            "example": 2026
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Devuelve los feriados bancarios del año indicado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FeriadoBancario"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-feriados-bancarios",
+        "x-data-source": [
+          "[BCRA](https://www.bcra.gob.ar/consulta-feriados-bancarios/)"
+        ]
+      }
+    },
     "/v1/cotizaciones/dolares": {
       "get": {
         "summary": "Dólares",
@@ -1641,6 +1683,24 @@
             "fecha": "2020-01-01",
             "tipo": "Inamovible",
             "motivo": "Año Nuevo"
+          }
+        }
+      },
+      "FeriadoBancario": {
+        "title": "FeriadoBancario",
+        "type": "object",
+        "properties": {
+          "fecha": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "fecha": "2026-01-01",
+            "nombre": "Año nuevo"
           }
         }
       },
