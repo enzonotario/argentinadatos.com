@@ -42,8 +42,7 @@
     "cafci-worker:db:clear-jobs": "pnpm --filter @argentinadatos/cafci-worker db:clear-jobs",
     "cafci-worker:db:rebuild-from-static": "pnpm --filter @argentinadatos/cafci-worker db:rebuild-from-static",
     "migrate": "node scripts/migrate.js",
-    "seed:fci-otros": "node scripts/seed-fci-otros.js",
-    "postinstall": "node scripts/ensure-better-sqlite3.mjs"
+    "seed:fci-otros": "node scripts/seed-fci-otros.js"
   },
   "devDependencies": {
     "@es-js/vite-plugin-esjs": "^0.1.0-beta.2",
