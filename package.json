@@ -9,13 +9,19 @@
   "author": "Enzo Notario <hi@enzonotario.me>",
   "license": "MIT",
   "packageManager": "pnpm@10.24.0",
+  "engines": {
+    "node": ">=22 <23"
+  },
+  "volta": {
+    "node": "22.22.2"
+  },
   "scripts": {
     "dev": "vite --host",
     "build": "pnpm run cron:build",
     "cron": "pnpm run cron:run",
     "cron:build": "vite build --ssr --mode=production",
     "cron:run": "node ./dist/index.js",
-    "test": "vitest tests --run",
+    "test": "node scripts/ensure-better-sqlite3.mjs && vitest tests --run",
     "docs:dev": "cd docs && pnpm run dev",
     "docs:build": "cd docs && pnpm run build",
     "docs:preview": "cd docs && pnpm run preview",
@@ -28,12 +34,14 @@
     "diputados:test:run": "cd packages/diputados && pnpm run test:run",
     "cafci-worker:crawl": "pnpm --filter @argentinadatos/cafci-worker crawl",
     "cafci-worker:process-jobs": "pnpm --filter @argentinadatos/cafci-worker process-jobs",
+    "cafci-worker:test": "node scripts/ensure-better-sqlite3.mjs && vitest run tests/cafci-worker",
     "cafci-worker:start": "pnpm --filter @argentinadatos/cafci-worker start",
     "cafci-worker:r2:backup": "pnpm --filter @argentinadatos/cafci-worker r2:backup",
     "cafci-worker:r2:download": "pnpm --filter @argentinadatos/cafci-worker r2:download",
     "cafci-worker:db:rebuild-from-static": "pnpm --filter @argentinadatos/cafci-worker db:rebuild-from-static",
     "migrate": "node scripts/migrate.js",
-    "seed:fci-otros": "node scripts/seed-fci-otros.js"
+    "seed:fci-otros": "node scripts/seed-fci-otros.js",
+    "postinstall": "node scripts/ensure-better-sqlite3.mjs"
   },
   "devDependencies": {
     "@es-js/vite-plugin-esjs": "^0.1.0-beta.2",

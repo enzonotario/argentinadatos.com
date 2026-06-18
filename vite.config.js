@@ -20,5 +20,6 @@ export default defineConfig({
   test: {
     testTimeout: 15_000,
     include: ['tests/**/*.test.js', 'tests/**/*.spec.js'],
+    setupFiles: ['./scripts/vitest.setup.mjs'],
   },
 })

@@ -1,5 +1,5 @@
-import axios from 'axios'
 import { load } from 'cheerio'
+import { cafciGet } from '../utils/cafciHttp.js'
 import { buildFundSlug } from '../utils/buildFundSlug.js'
 import { normalizarPayloadFondo } from '../utils/normalizarPayloadFondo.js'
 
@@ -60,7 +60,7 @@ function parseDate(text) {
 }
 
 export async function fetchFundsCatalog() {
-  const response = await axios.get(searchPageUrl)
+  const response = await cafciGet(searchPageUrl)
   const $ = load(response.data)
   const funds = []
 
@@ -90,7 +90,7 @@ export async function fetchFundsCatalog() {
 }
 
 export async function fetchFundDetail(fondoId, claseId) {
-  const response = await axios.get(
+  const response = await cafciGet(
     `${cafciBaseUrl}/fondos/${fondoId}?clase=${claseId}`,
   )
   const $ = load(response.data)
