@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "crawl": "node src/main.js",
+    "process-jobs": "node src/scripts/processJobs.js",
     "start": "node src/main.js --watch",
     "r2:backup": "node src/scripts/uploadBackupToR2.js",
     "r2:download": "node src/scripts/downloadBackupFromR2.js",

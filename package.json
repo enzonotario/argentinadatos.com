@@ -27,6 +27,7 @@
     "diputados:test": "cd packages/diputados && pnpm test",
     "diputados:test:run": "cd packages/diputados && pnpm run test:run",
     "cafci-worker:crawl": "pnpm --filter @argentinadatos/cafci-worker crawl",
+    "cafci-worker:process-jobs": "pnpm --filter @argentinadatos/cafci-worker process-jobs",
     "cafci-worker:start": "pnpm --filter @argentinadatos/cafci-worker start",
     "cafci-worker:r2:backup": "pnpm --filter @argentinadatos/cafci-worker r2:backup",
     "cafci-worker:r2:download": "pnpm --filter @argentinadatos/cafci-worker r2:download",
