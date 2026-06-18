@@ -1,5 +1,24 @@
 [
   {
+    "id": "bna",
+    "entidad": "Banco de la Nación Argentina",
+    "logo": "https://www.bna.com.ar/Content/img/logo-bna.png",
+    "enlace": "https://www.bna.com.ar/personas/plazofijoprecancelableuva",
+    "canal": "App BNA+, Home Banking y sucursales",
+    "moneda": "ARS",
+    "plazoMinDias": 180,
+    "plazoMaxDias": 370,
+    "plazoPrecancelacionDias": 30,
+    "avisoPrecancelacionDias": 5,
+    "montoMinimo": 1500,
+    "montoMaximo": 5000000,
+    "modalidad": "intransferible",
+    "tna": 0.01,
+    "tea": 0.01,
+    "tnaPrecancelacion": 0.83,
+    "teaPrecancelacion": 1.232
+  },
+  {
     "id": "bbva",
     "entidad": "BBVA Banco Argentina",
     "logo": "https://www.bbva.com.ar/content/dam/public-web/global/images/logos/logo_bbva.svg",
