@@ -2,7 +2,7 @@
   "fondoId": "1879",
   "claseId": "6501",
   "nombre": "Schroder Liquidez Dolares - Clase D",
-  "fecha": "2026-06-04",
+  "fecha": "2026-06-17",
   "administradora": "Schroder S.A.S.G.F.C.I.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -20,7 +20,7 @@
   "rendimientos": {
     "valorCuotaparte": 1,
     "ultimos7Dias": 0,
-    "unMes": null,
+    "unMes": 0,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -28,24 +28,24 @@
   },
   "composicionCartera": [
     {
+      "nombre": "Cta Cte U$S . Bco Comaf",
+      "porcentaje": 23.8
+    },
+    {
       "nombre": "Pzo Fi U$S Bco Nacion",
-      "porcentaje": 20
+      "porcentaje": 19.1
     },
     {
       "nombre": "Pzo Fi U$S Bco Galicia",
-      "porcentaje": 20
+      "porcentaje": 19.1
     },
     {
       "nombre": "Pzo Fi U$S Bco BBVA",
-      "porcentaje": 20
-    },
-    {
-      "nombre": "Cta Cte U$S . Bco Comaf",
-      "porcentaje": 20
+      "porcentaje": 19.1
     },
     {
       "nombre": "Caucion Colocadora USB Merval",
-      "porcentaje": 20
+      "porcentaje": 19
     }
   ],
   "calificaciones": [],

@@ -2,7 +2,7 @@
   "fondoId": "805",
   "claseId": "2097",
   "nombre": "Fundcorp Long Performance Plus - Clase A",
-  "fecha": "2026-06-04",
+  "fecha": "2026-06-17",
   "administradora": "CMF Asset Management S.A.U.",
   "depositaria": "Banco C.M.F. S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,35 +13,43 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1030",
-  "patrimonio": 23710220.56,
+  "patrimonio": 24066044.73,
   "inversionMinima": 1000,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 647.25,
-    "ultimos7Dias": 0.0416,
-    "unMes": 0.1933,
-    "noventaDias": 0.6591,
-    "cientoOchentaDias": 1.5726,
-    "enElAnio": 1.2996,
-    "doceMeses": 2.7264
+    "valorCuotaparte": 647.737,
+    "ultimos7Dias": 0.0428,
+    "unMes": 0.1779,
+    "noventaDias": 0.6204,
+    "cientoOchentaDias": 1.512,
+    "enElAnio": 1.3759,
+    "doceMeses": 2.7229
   },
   "composicionCartera": [
     {
       "nombre": "Cta Cte U$S Bco CMF",
-      "porcentaje": 67.4
+      "porcentaje": 45.6
+    },
+    {
+      "nombre": "Caucion Colocadora U$S Merval",
+      "porcentaje": 19.1
     },
     {
       "nombre": "US Treasury Bill 020726",
-      "porcentaje": 4.8
+      "porcentaje": 4.3
+    },
+    {
+      "nombre": "Pzo Fi U$S Bco Nacion",
+      "porcentaje": 4.1
     },
     {
       "nombre": "Pzo Fi U$S Bco Supervielle",
-      "porcentaje": 3.1
+      "porcentaje": 2.7
     },
     {
       "nombre": "FF ALZ Agrocap S3",
-      "porcentaje": 2.4
+      "porcentaje": 2.1
     },
     {
       "nombre": "Resto de Activos",

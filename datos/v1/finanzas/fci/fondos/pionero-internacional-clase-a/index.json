@@ -2,7 +2,7 @@
   "fondoId": "1878",
   "claseId": "6495",
   "nombre": "Pionero Internacional - Clase A",
-  "fecha": "2026-06-04",
+  "fecha": "2026-06-17",
   "administradora": "Macro Fondos S.G.F.C.I.S.A.",
   "depositaria": "Banco Macro S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,20 +13,37 @@
   "duracion": "Mayor a 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1849",
-  "patrimonio": 848009.37,
+  "patrimonio": 850870.36,
   "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense Billete",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 998.409,
-    "ultimos7Dias": -0.1828,
+    "valorCuotaparte": 1001.778,
+    "ultimos7Dias": 0.5163,
     "unMes": null,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Overnight USD JP Morgan",
+      "porcentaje": 71.4
+    },
+    {
+      "nombre": "ETF State Street SPDR Bloomberg Investment Grade Floating Rate",
+      "porcentaje": 17.8
+    },
+    {
+      "nombre": "ETF IShares JPM USD EM Corp ACC",
+      "porcentaje": 9.3
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.5
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 0,

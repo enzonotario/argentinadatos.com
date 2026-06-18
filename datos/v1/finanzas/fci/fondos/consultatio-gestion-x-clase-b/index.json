@@ -2,7 +2,7 @@
   "fondoId": "565",
   "claseId": "1147",
   "nombre": "Consultatio Gestión X - Clase B",
-  "fecha": "2026-06-04",
+  "fecha": "2026-06-17",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -10,7 +10,7 @@
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
-  "duracion": "No Aplicable",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Peso Argentina",
   "codigoCNV": "705",
   "patrimonio": 0,
@@ -18,18 +18,22 @@
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 17204.673,
-    "ultimos7Dias": 0.5168,
-    "unMes": 2.3145,
-    "noventaDias": 7.3506,
-    "cientoOchentaDias": 16.6733,
-    "enElAnio": 14.0574,
-    "doceMeses": 43.8015
+    "valorCuotaparte": 17363.541,
+    "ultimos7Dias": 0.4964,
+    "unMes": 2.4537,
+    "noventaDias": 7.1479,
+    "cientoOchentaDias": 16.2836,
+    "enElAnio": 15.1106,
+    "doceMeses": 43.5014
   },
   "composicionCartera": [
     {
+      "nombre": "FCI IAM Liquidez en Dólares - Clase B",
+      "porcentaje": 2.1
+    },
+    {
       "nombre": "Resto de Activos",
-      "porcentaje": 85.7
+      "porcentaje": 85.1
     }
   ],
   "calificaciones": [],

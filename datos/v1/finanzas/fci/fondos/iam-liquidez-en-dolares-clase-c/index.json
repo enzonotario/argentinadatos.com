@@ -2,7 +2,7 @@
   "fondoId": "1522",
   "claseId": "4559",
   "nombre": "IAM Liquidez en Dólares - Clase C",
-  "fecha": "2026-06-04",
+  "fecha": "2026-06-17",
   "administradora": "Industrial Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Industrial S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,51 +13,55 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1482",
-  "patrimonio": 3716065.1,
+  "patrimonio": 5745582.76,
   "inversionMinima": 0,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1041.917,
-    "ultimos7Dias": 1.4868,
-    "unMes": 1.5298,
-    "noventaDias": 1.6661,
-    "cientoOchentaDias": 2.1359,
-    "enElAnio": 2.0798,
-    "doceMeses": 2.4842
+    "valorCuotaparte": 1042.423,
+    "ultimos7Dias": 1.3509,
+    "unMes": 1.4173,
+    "noventaDias": 1.5708,
+    "cientoOchentaDias": 2.0395,
+    "enElAnio": 2.0256,
+    "doceMeses": 2.4217
   },
   "composicionCartera": [
     {
-      "nombre": "Pzo Fi U$S Bco Nacion",
+      "nombre": "Caucion Colocadora U$S BYMA",
       "porcentaje": 27.3
     },
     {
-      "nombre": "Caucion Colocadora U$S BYMA",
-      "porcentaje": 22.6
+      "nombre": "Pzo Fi U$S Bco Nacion",
+      "porcentaje": 27.1
+    },
+    {
+      "nombre": "Cta Cte U$S Rem Bco Galicia",
+      "porcentaje": 13.4
     },
     {
       "nombre": "Cta Cte U$S Bco Industrial",
-      "porcentaje": 22.1
+      "porcentaje": 7.6
     },
     {
       "nombre": "Pzo Fi U$S Bco Comafi",
-      "porcentaje": 9.2
+      "porcentaje": 6.7
+    },
+    {
+      "nombre": "Pzo Fi U$S Bco Galicia",
+      "porcentaje": 6.1
     },
     {
       "nombre": "Pzo Fi U$S Bco Macro Ban",
-      "porcentaje": 7.1
+      "porcentaje": 5.2
     },
     {
       "nombre": "Pzo Fi U$S Bco BBVA",
-      "porcentaje": 5
-    },
-    {
-      "nombre": "Pzo Fi U$S Bco Supervielle",
-      "porcentaje": 2.1
+      "porcentaje": 3.7
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 3.1
+      "porcentaje": 2
     }
   ],
   "calificaciones": [],

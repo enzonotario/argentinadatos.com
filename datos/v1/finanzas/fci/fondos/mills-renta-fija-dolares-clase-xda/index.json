@@ -2,7 +2,7 @@
   "fondoId": "1829",
   "claseId": "6287",
   "nombre": "Mills Renta Fija Dólares - Clase XDA",
-  "fecha": "2026-06-04",
+  "fecha": "2026-06-17",
   "administradora": "Mills Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,20 +13,61 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1874",
-  "patrimonio": 4028684.35,
+  "patrimonio": 5054149.43,
   "inversionMinima": 100000,
   "monedaInversion": "Dolar Estadounidense Billete",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1002.79,
-    "ultimos7Dias": 0.2862,
+    "valorCuotaparte": 1006.186,
+    "ultimos7Dias": 0.6601,
     "unMes": null,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte U$S Bco Valores",
+      "porcentaje": 46
+    },
+    {
+      "nombre": "Caucion Colocadora U$S Merval",
+      "porcentaje": 16.2
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional AO28",
+      "porcentaje": 9.8
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional AO27",
+      "porcentaje": 8.6
+    },
+    {
+      "nombre": "Bonos Rep Argentina 2030",
+      "porcentaje": 5.1
+    },
+    {
+      "nombre": "FCI Megaqm Liquidez Dólar - Clase B",
+      "porcentaje": 4
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional AN29",
+      "porcentaje": 3.2
+    },
+    {
+      "nombre": "ON YPF Clase 42",
+      "porcentaje": 2.4
+    },
+    {
+      "nombre": "ON John Deere Cia. Fin C14",
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "ON Tecpetrol C13",
+      "porcentaje": 2.3
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 1.4,

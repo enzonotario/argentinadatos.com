@@ -2,7 +2,7 @@
   "fondoId": "1804",
   "claseId": "6183",
   "nombre": "MP Empresas Argentinas - Clase C",
-  "fecha": "2026-06-04",
+  "fecha": "2026-06-17",
   "administradora": "Mercado Pago Asset Managemet S.A.",
   "depositaria": "Banco Industrial S.A.",
   "tipoRenta": "Renta Variable",
@@ -13,23 +13,36 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Peso Argentina",
   "codigoCNV": "1802",
-  "patrimonio": 99721253.41,
+  "patrimonio": 102453154.8,
   "inversionMinima": 1,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1011.375,
-    "ultimos7Dias": -0.0626,
+    "valorCuotaparte": 1039.082,
+    "ultimos7Dias": 2.3349,
     "unMes": null,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Pampa Energia",
+      "porcentaje": 50.2
+    },
+    {
+      "nombre": "Banco Macro Bansud - B",
+      "porcentaje": 26.7
+    },
+    {
+      "nombre": "FCI Allaria Ahorro - Clase C",
+      "porcentaje": 23.1
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": 1.51,
+    "honorarioGerente": 2.15,
     "honorarioDepositaria": 0.06,
     "comisionIngreso": 0,
     "comisionEgreso": 0,

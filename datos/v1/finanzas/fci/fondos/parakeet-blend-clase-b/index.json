@@ -2,7 +2,7 @@
   "fondoId": "1698",
   "claseId": "5672",
   "nombre": "Parakeet Blend - Clase B",
-  "fecha": "2026-06-04",
+  "fecha": "2026-06-17",
   "administradora": "Parakeet S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,23 +13,31 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Peso Argentina",
   "codigoCNV": "1715",
-  "patrimonio": 1004.33,
+  "patrimonio": 965.35,
   "inversionMinima": 500000001,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1004.33,
-    "ultimos7Dias": 0.3267,
-    "unMes": 0.433,
-    "noventaDias": 0.433,
-    "cientoOchentaDias": 0.433,
-    "enElAnio": 0.433,
+    "valorCuotaparte": 965.35,
+    "ultimos7Dias": 0.6947,
+    "unMes": -3.465,
+    "noventaDias": -3.465,
+    "cientoOchentaDias": -3.465,
+    "enElAnio": -3.465,
     "doceMeses": null
   },
   "composicionCartera": [
     {
-      "nombre": "Cta Cte $ Bco de Valores",
-      "porcentaje": 100
+      "nombre": "FCI SBS Ahorro Pesos Cl B",
+      "porcentaje": 90.6
+    },
+    {
+      "nombre": "Cedear Google",
+      "porcentaje": 3
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 6.3
     }
   ],
   "calificaciones": [],

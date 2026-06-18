@@ -2,7 +2,7 @@
   "fondoId": "1442",
   "claseId": "4236",
   "nombre": "Gainvest Balanceado VIII - Clase B",
-  "fecha": "2026-06-04",
+  "fecha": "2026-06-17",
   "administradora": "StoneX Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,30 +13,34 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Peso Argentina",
   "codigoCNV": "1414",
-  "patrimonio": 12134962743.47,
+  "patrimonio": 12214670597.07,
   "inversionMinima": 1000,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 189.938,
-    "ultimos7Dias": 0.6657,
-    "unMes": 2.3902,
-    "noventaDias": 7.8084,
-    "cientoOchentaDias": 16.8993,
-    "enElAnio": 14.4577,
-    "doceMeses": 43.8456
+    "valorCuotaparte": 191.185,
+    "ultimos7Dias": 0.3617,
+    "unMes": 2.2462,
+    "noventaDias": 7.1527,
+    "cientoOchentaDias": 16.147,
+    "enElAnio": 15.2092,
+    "doceMeses": 43.184
   },
   "composicionCartera": [
     {
       "nombre": "Bono Boncer TZX26",
-      "porcentaje": 11.7
+      "porcentaje": 11.8
     },
     {
-      "nombre": "Cheque #MAV131060017",
-      "porcentaje": 8.1
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 11.1
     },
     {
       "nombre": "Cheque E *MAV290600771",
+      "porcentaje": 8.1
+    },
+    {
+      "nombre": "Cheque #MAV131060017",
       "porcentaje": 8.1
     },
     {
@@ -44,20 +48,16 @@
       "porcentaje": 7
     },
     {
-      "nombre": "ON Banco Comafi C15",
-      "porcentaje": 6.5
+      "nombre": "ON Banco Nacion Argentina Clase 1",
+      "porcentaje": 6.3
     },
     {
-      "nombre": "Bono Boncer TZXO6",
-      "porcentaje": 6.4
+      "nombre": "Caucion Colocadora $ BYMA",
+      "porcentaje": 6.3
     },
     {
       "nombre": "ON Bco Serv Fin Tamar C26",
       "porcentaje": 5.4
-    },
-    {
-      "nombre": "FCI Allaria Ahorro - Clase C",
-      "porcentaje": 4.6
     },
     {
       "nombre": "ON Banco Comafi C22",
@@ -65,15 +65,7 @@
     },
     {
       "nombre": "ON Bco Provincia Cl 4",
-      "porcentaje": 3.2
-    },
-    {
-      "nombre": "Cheque #MAV180560058",
-      "porcentaje": 2.5
-    },
-    {
-      "nombre": "FF Comafi Leasing 18 Cl A",
-      "porcentaje": 2.3
+      "porcentaje": 3
     },
     {
       "nombre": "ON Credicuotas Consumo S13",
@@ -84,12 +76,16 @@
       "porcentaje": 2.2
     },
     {
+      "nombre": "FF Comafi Leasing 18 Cl A",
+      "porcentaje": 2.1
+    },
+    {
       "nombre": "ON Credicuotas Consumo S17",
-      "porcentaje": 2.2
+      "porcentaje": 2
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 23.7
+      "porcentaje": 20.6
     }
   ],
   "calificaciones": [],

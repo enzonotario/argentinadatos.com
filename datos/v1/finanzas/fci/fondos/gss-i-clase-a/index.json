@@ -2,50 +2,58 @@
   "fondoId": "387",
   "claseId": "807",
   "nombre": "GSS I - Clase A",
-  "fecha": "2026-06-04",
+  "fecha": "2026-06-17",
   "administradora": "Grupo SS S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "Renta Mixta",
+  "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
   "region": "Argentina",
-  "benchmark": "Otro",
+  "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
-  "duracion": "No Aplicable",
+  "duracion": "Menor o Igual a 1 Año",
   "moneda": "Peso Argentina",
   "codigoCNV": "517",
-  "patrimonio": 501790223.83,
+  "patrimonio": 505551450.44,
   "inversionMinima": 10000,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 286721.706,
-    "ultimos7Dias": 0.4775,
-    "unMes": 2.1066,
-    "noventaDias": 6.6247,
-    "cientoOchentaDias": 15.3692,
-    "enElAnio": 13.4388,
-    "doceMeses": 41.3755
+    "valorCuotaparte": 288985.459,
+    "ultimos7Dias": 0.4317,
+    "unMes": 2.0396,
+    "noventaDias": 6.1284,
+    "cientoOchentaDias": 14.9834,
+    "enElAnio": 14.3344,
+    "doceMeses": 40.922
   },
   "composicionCartera": [
     {
-      "nombre": "Lecap S29Y6",
-      "porcentaje": 18.7
+      "nombre": "Lecap S17L6",
+      "porcentaje": 17
     },
     {
       "nombre": "Lecap S12J6",
-      "porcentaje": 16.8
+      "porcentaje": 11.4
     },
     {
       "nombre": "ON Banco Hipotecario C11",
-      "porcentaje": 9.8
+      "porcentaje": 8.9
+    },
+    {
+      "nombre": "ON BBVA Frances Cl 46",
+      "porcentaje": 7.3
     },
     {
       "nombre": "ON BBVA Frances Cl 36",
-      "porcentaje": 7.4
+      "porcentaje": 7.3
     },
     {
       "nombre": "Pzo Fi $ Toyota Cia. Fin.",
-      "porcentaje": 6.2
+      "porcentaje": 6.1
+    },
+    {
+      "nombre": "ON Mercado Pago C5",
+      "porcentaje": 6
     },
     {
       "nombre": "ON Mercado Pago C1",
@@ -53,19 +61,15 @@
     },
     {
       "nombre": "ON Santander Rio S 31",
-      "porcentaje": 5.3
+      "porcentaje": 5.2
     },
     {
       "nombre": "ON Banco Nacion Argentina Clase 1",
-      "porcentaje": 5.3
+      "porcentaje": 5.2
     },
     {
       "nombre": "ON ICBC Clase 5 110327",
-      "porcentaje": 5.1
-    },
-    {
-      "nombre": "FCI Fima Premium Clase B",
-      "porcentaje": 4.7
+      "porcentaje": 5
     },
     {
       "nombre": "ON ICBC Clase 3 170626",
@@ -73,11 +77,15 @@
     },
     {
       "nombre": "ON Banco de Valores C3",
-      "porcentaje": 2.7
+      "porcentaje": 2.6
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Galicia",
+      "porcentaje": 2.6
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 9.7
+      "porcentaje": 7.3
     }
   ],
   "calificaciones": [],

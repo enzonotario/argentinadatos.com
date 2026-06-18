@@ -2,7 +2,7 @@
   "fondoId": "1804",
   "claseId": "6182",
   "nombre": "MP Empresas Argentinas - Clase B",
-  "fecha": "2026-06-05",
+  "fecha": "2026-06-18",
   "administradora": "Mercado Pago Asset Managemet S.A.",
   "depositaria": "Banco Industrial S.A.",
   "tipoRenta": "Renta Variable",
@@ -26,7 +26,20 @@
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Pampa Energia",
+      "porcentaje": 50.2
+    },
+    {
+      "nombre": "Banco Macro Bansud - B",
+      "porcentaje": 26.7
+    },
+    {
+      "nombre": "FCI Allaria Ahorro - Clase C",
+      "porcentaje": 23.1
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": null,

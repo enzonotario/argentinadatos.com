@@ -2,7 +2,7 @@
   "fondoId": "1359",
   "claseId": "3886",
   "nombre": "Max Renta Fija Dolares - Clase A",
-  "fecha": "2026-06-04",
+  "fecha": "2026-06-17",
   "administradora": "Max Capital Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,98 +13,100 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1286",
-  "patrimonio": 51353511.9,
+  "patrimonio": 52259727.89,
   "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1129.079,
-    "ultimos7Dias": 0.149,
-    "unMes": 0.4279,
-    "noventaDias": 1.3807,
-    "cientoOchentaDias": 4.8364,
-    "enElAnio": 3.3867,
-    "doceMeses": 10.5942
+    "valorCuotaparte": 1130.587,
+    "ultimos7Dias": 0.0651,
+    "unMes": 0.378,
+    "noventaDias": 1.3653,
+    "cientoOchentaDias": 4.1451,
+    "enElAnio": 3.5248,
+    "doceMeses": 10.3567
   },
   "composicionCartera": [
     {
       "nombre": "Caucion Colocadora U$S Merval",
-      "porcentaje": 14.7
+      "porcentaje": 16.6
     },
     {
       "nombre": "ON Oiltanking S2",
-      "porcentaje": 4.5
-    },
-    {
-      "nombre": "ON YPF Clase 31",
-      "porcentaje": 4.4
-    },
-    {
-      "nombre": "ON Petroqui C Rivadavia PQCTO",
-      "porcentaje": 4.4
-    },
-    {
-      "nombre": "ON Profertil C2",
-      "porcentaje": 4
-    },
-    {
-      "nombre": "ON Profertil C3",
-      "porcentaje": 3.3
-    },
-    {
-      "nombre": "ON Pecom C3",
-      "porcentaje": 3.2
-    },
-    {
-      "nombre": "ON Luz De Tres Picos C5",
-      "porcentaje": 3.1
+      "porcentaje": 4.1
     },
     {
       "nombre": "ON Pecom C2",
-      "porcentaje": 2.9
+      "porcentaje": 3.8
+    },
+    {
+      "nombre": "ON YPF Clase 31",
+      "porcentaje": 3.8
+    },
+    {
+      "nombre": "ON Petroqui C Rivadavia PQCTO",
+      "porcentaje": 3.8
+    },
+    {
+      "nombre": "ON Profertil C2",
+      "porcentaje": 3.4
     },
     {
       "nombre": "ON Minera Exar Clase 1",
-      "porcentaje": 2.9
+      "porcentaje": 3.3
     },
     {
-      "nombre": "ON Capex C11",
-      "porcentaje": 2.6
-    },
-    {
-      "nombre": "Pagare #UMV301160041",
-      "porcentaje": 2.5
-    },
-    {
-      "nombre": "ON Mega C1",
-      "porcentaje": 2.4
-    },
-    {
-      "nombre": "ON John Deere Cia. Fin C18",
-      "porcentaje": 2.3
-    },
-    {
-      "nombre": "ON Arcor C2 7.6%",
-      "porcentaje": 2.1
-    },
-    {
-      "nombre": "ON Oldelval Clase 6",
-      "porcentaje": 2.1
+      "nombre": "FCI Allaria Dólar Ahorro - Clase B",
+      "porcentaje": 3.2
     },
     {
       "nombre": "FCI Balanz Money Market USD - Clase B",
-      "porcentaje": 2
+      "porcentaje": 3.2
     },
     {
-      "nombre": "ON Oldelval Clase 5",
-      "porcentaje": 2
+      "nombre": "ON Profertil C3",
+      "porcentaje": 2.9
+    },
+    {
+      "nombre": "ON Pecom C3",
+      "porcentaje": 2.8
+    },
+    {
+      "nombre": "ON Luz De Tres Picos C5",
+      "porcentaje": 2.7
+    },
+    {
+      "nombre": "ON Mega C1",
+      "porcentaje": 2.5
+    },
+    {
+      "nombre": "ON Genneia Clase 48",
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "ON Capex C11",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "Pagare #UMV301160041",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "ON John Deere Cia. Fin C18",
+      "porcentaje": 2.1
     },
     {
       "nombre": "Resto de Activos",
       "porcentaje": 34.8
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "AAf(arg)",
+      "fecha": "2026-05-06"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 1.37,
     "honorarioDepositaria": 0.11,

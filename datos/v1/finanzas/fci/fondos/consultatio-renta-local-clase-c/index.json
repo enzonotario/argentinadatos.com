@@ -2,7 +2,7 @@
   "fondoId": "538",
   "claseId": "1088",
   "nombre": "Consultatio Renta Local - Clase C",
-  "fecha": "2026-06-04",
+  "fecha": "2026-06-17",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -10,58 +10,66 @@
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
-  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Peso Argentina",
   "codigoCNV": "672",
-  "patrimonio": 443979594.32,
+  "patrimonio": 246210211.72,
   "inversionMinima": 40000000,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 121133.886,
-    "ultimos7Dias": 0.4682,
-    "unMes": 2.1655,
-    "noventaDias": 6.8892,
-    "cientoOchentaDias": 14.5921,
-    "enElAnio": 13.5047,
-    "doceMeses": 38.7986
+    "valorCuotaparte": 121938.166,
+    "ultimos7Dias": 0.2224,
+    "unMes": 1.7481,
+    "noventaDias": 6.2047,
+    "cientoOchentaDias": 14.402,
+    "enElAnio": 14.2583,
+    "doceMeses": 39.8739
   },
   "composicionCartera": [
     {
-      "nombre": "Lecer X29Y6",
-      "porcentaje": 25
-    },
-    {
       "nombre": "Bono Boncer TZX26",
-      "porcentaje": 22.8
+      "porcentaje": 29.1
     },
     {
       "nombre": "Lecap S12J6",
-      "porcentaje": 21.7
+      "porcentaje": 23.5
     },
     {
-      "nombre": "Lecap T30J6",
-      "porcentaje": 16.2
+      "nombre": "Lecap S17L6",
+      "porcentaje": 12.4
+    },
+    {
+      "nombre": "Bono Dual TTJ26",
+      "porcentaje": 8.4
     },
     {
       "nombre": "Pzo Fi $ Bco Nacion",
-      "porcentaje": 4.4
-    },
-    {
-      "nombre": "Pzo Fi $ Bco Santander Ri",
-      "porcentaje": 2.2
-    },
-    {
-      "nombre": "Pzo Fi $ Bco Cordoba",
-      "porcentaje": 2.2
+      "porcentaje": 7.4
     },
     {
       "nombre": "Pzo Fi $ Bco Supervielle",
-      "porcentaje": 2.2
+      "porcentaje": 4.9
+    },
+    {
+      "nombre": "Lecap T30J6",
+      "porcentaje": 4
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Galicia",
+      "porcentaje": 2.5
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Cordoba",
+      "porcentaje": 2.5
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Santander Ri",
+      "porcentaje": 2.5
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 3.1
+      "porcentaje": 2.7
     }
   ],
   "calificaciones": [

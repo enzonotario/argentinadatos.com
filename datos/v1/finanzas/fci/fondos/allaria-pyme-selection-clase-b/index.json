@@ -2,7 +2,7 @@
   "fondoId": "1369",
   "claseId": "3926",
   "nombre": "Allaria Pyme Selection - Clase B",
-  "fecha": "2026-06-04",
+  "fecha": "2026-06-17",
   "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "PyMes",
@@ -19,7 +19,7 @@
   "plazoLiquidacionDias": 1,
   "rendimientos": {
     "valorCuotaparte": 3868.733,
-    "ultimos7Dias": 0.0655,
+    "ultimos7Dias": 0,
     "unMes": 0.0655,
     "noventaDias": 0.7737,
     "cientoOchentaDias": 0.7737,
@@ -27,14 +27,6 @@
     "doceMeses": 0.7737
   },
   "composicionCartera": [
-    {
-      "nombre": "Cheque #MAV050660003",
-      "porcentaje": 9.9
-    },
-    {
-      "nombre": "Pagare #MAV110660002",
-      "porcentaje": 7.6
-    },
     {
       "nombre": "Pagare #MAV060860005",
       "porcentaje": 7
@@ -49,15 +41,31 @@
     },
     {
       "nombre": "Cheque #MAV240660004",
-      "porcentaje": 6.5
+      "porcentaje": 6.6
     },
     {
       "nombre": "Cheque E *MAV030301169",
       "porcentaje": 5.3
     },
     {
+      "nombre": "Cheque #MAV180570005",
+      "porcentaje": 5
+    },
+    {
+      "nombre": "Cheque #MAV110570003",
+      "porcentaje": 5
+    },
+    {
       "nombre": "Cheque #MAV040760004",
       "porcentaje": 4.1
+    },
+    {
+      "nombre": "Cheque #MAV180570004",
+      "porcentaje": 3.9
+    },
+    {
+      "nombre": "Cheque #MAV110570002",
+      "porcentaje": 3.7
     },
     {
       "nombre": "Cheque #MAV040570006",
@@ -66,6 +74,10 @@
     {
       "nombre": "Pagare #MAV030960003",
       "porcentaje": 3.6
+    },
+    {
+      "nombre": "Bono Boncer TZXS7",
+      "porcentaje": 3.3
     },
     {
       "nombre": "Cheque #MAV040760002",
@@ -78,10 +90,6 @@
     {
       "nombre": "Cheque #MAV140470004",
       "porcentaje": 2.6
-    },
-    {
-      "nombre": "Bono CER TZX27",
-      "porcentaje": 2.4
     },
     {
       "nombre": "Pagare #MAV230760002",
@@ -105,7 +113,7 @@
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 16.9
+      "porcentaje": 15.9
     }
   ],
   "calificaciones": [],
