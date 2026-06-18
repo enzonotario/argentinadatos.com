@@ -1,5 +1,6 @@
 import { getDatabasePath } from '../config.js'
 import { FundDetailsJobRepository } from '../database/fundDetailsJobRepository.js'
+import { formatJobsCleared } from './formatJobsOutput.js'
 import { parseJobsCliArgs, resolveExecutionDate } from './jobsCliArgs.js'
 
 const cliArgs = parseJobsCliArgs()
@@ -12,11 +13,13 @@ try {
     executionDate: resolveExecutionDate(cliArgs),
   })
 
-  console.log('[cafci-worker] jobs cleared', {
-    databasePath: repository.databasePath,
-    scope: cliArgs.all ? 'all' : resolveExecutionDate(cliArgs),
-    deleted,
-  })
+  console.log(
+    formatJobsCleared({
+      databasePath: repository.databasePath,
+      scope: cliArgs.all ? 'all' : resolveExecutionDate(cliArgs),
+      deleted,
+    }),
+  )
 } finally {
   repository.close()
 }
