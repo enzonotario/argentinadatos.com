@@ -99,6 +99,84 @@ export class FundDetailsJobRepository {
     }, {})
   }
 
+  getJobsStats({ executionDate } = {}) {
+    if (executionDate) {
+      const byStatus = this.countJobsByStatus(executionDate)
+      const total = Object.values(byStatus).reduce(
+        (sum, count) => sum + count,
+        0,
+      )
+
+      return {
+        databasePath: this.databasePath,
+        executionDate,
+        total,
+        byStatus,
+      }
+    }
+
+    const total = this.db
+      .prepare('SELECT COUNT(*) AS count FROM fund_detail_jobs')
+      .get().count
+    const statusRows = this.db
+      .prepare(
+        `
+          SELECT status, COUNT(*) AS count
+          FROM fund_detail_jobs
+          GROUP BY status
+          ORDER BY status
+        `,
+      )
+      .all()
+    const dateRows = this.db
+      .prepare(
+        `
+          SELECT execution_date, status, COUNT(*) AS count
+          FROM fund_detail_jobs
+          GROUP BY execution_date, status
+          ORDER BY execution_date DESC, status
+        `,
+      )
+      .all()
+
+    const byStatus = statusRows.reduce((stats, row) => {
+      stats[row.status] = row.count
+      return stats
+    }, {})
+    const byExecutionDate = dateRows.reduce((dates, row) => {
+      if (!dates[row.execution_date]) {
+        dates[row.execution_date] = {
+          total: 0,
+          byStatus: {},
+        }
+      }
+
+      dates[row.execution_date].byStatus[row.status] = row.count
+      dates[row.execution_date].total += row.count
+
+      return dates
+    }, {})
+
+    return {
+      databasePath: this.databasePath,
+      total,
+      byStatus,
+      byExecutionDate,
+    }
+  }
+
+  clearJobs({ executionDate, all = false } = {}) {
+    if (all) {
+      return this.db.prepare('DELETE FROM fund_detail_jobs').run().changes
+    }
+
+    const date = executionDate ?? new Date().toISOString().slice(0, 10)
+
+    return this.db
+      .prepare('DELETE FROM fund_detail_jobs WHERE execution_date = ?')
+      .run(date).changes
+  }
+
   resetFailedJobs(executionDate) {
     const result = this.db
       .prepare(

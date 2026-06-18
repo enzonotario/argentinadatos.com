@@ -9,6 +9,8 @@
     "start": "node src/main.js --watch",
     "r2:backup": "node src/scripts/uploadBackupToR2.js",
     "r2:download": "node src/scripts/downloadBackupFromR2.js",
+    "db:jobs-stats": "node src/scripts/showJobsStats.js",
+    "db:clear-jobs": "node src/scripts/clearJobs.js",
     "db:rebuild-from-static": "node src/scripts/rebuildDatabaseFromStaticFunds.js"
   },
   "dependencies": {

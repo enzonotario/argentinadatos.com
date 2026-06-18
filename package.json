@@ -38,6 +38,8 @@
     "cafci-worker:start": "pnpm --filter @argentinadatos/cafci-worker start",
     "cafci-worker:r2:backup": "pnpm --filter @argentinadatos/cafci-worker r2:backup",
     "cafci-worker:r2:download": "pnpm --filter @argentinadatos/cafci-worker r2:download",
+    "cafci-worker:db:jobs-stats": "pnpm --filter @argentinadatos/cafci-worker db:jobs-stats",
+    "cafci-worker:db:clear-jobs": "pnpm --filter @argentinadatos/cafci-worker db:clear-jobs",
     "cafci-worker:db:rebuild-from-static": "pnpm --filter @argentinadatos/cafci-worker db:rebuild-from-static",
     "migrate": "node scripts/migrate.js",
     "seed:fci-otros": "node scripts/seed-fci-otros.js",
