@@ -2,7 +2,7 @@
   "fondoId": "1827",
   "claseId": "6283",
   "nombre": "Mills Renta Fija Crecimiento Pesos - Clase XDB2",
-  "fecha": "2026-05-28",
+  "fecha": "2026-06-05",
   "administradora": "Mills Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -26,15 +26,88 @@
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Rem Bco de Valo",
+      "porcentaje": 21.4
+    },
+    {
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 13.5
+    },
+    {
+      "nombre": "Lecer X29Y6",
+      "porcentaje": 7.9
+    },
+    {
+      "nombre": "Lecap S29Y6",
+      "porcentaje": 7.7
+    },
+    {
+      "nombre": "Bono Boncer TZX26",
+      "porcentaje": 6.8
+    },
+    {
+      "nombre": "Bono Dual TXMJ8",
+      "porcentaje": 5.4
+    },
+    {
+      "nombre": "Bono Dual TTJ26",
+      "porcentaje": 4.3
+    },
+    {
+      "nombre": "Bono Boncer TZXS7",
+      "porcentaje": 4.2
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional T31Y7",
+      "porcentaje": 4
+    },
+    {
+      "nombre": "Bono Boncer TXMJ9",
+      "porcentaje": 3.6
+    },
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 3.5
+    },
+    {
+      "nombre": "Bono Boncer TZXD7",
+      "porcentaje": 3.5
+    },
+    {
+      "nombre": "Letra Tesoro Nac T30A7",
+      "porcentaje": 3.2
+    },
+    {
+      "nombre": "Lecap S30N6",
+      "porcentaje": 2.9
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional T15E7",
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "Letra Tamar TEM M31G6",
+      "porcentaje": 2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.5
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 2,
+    "honorarioDepositaria": 0,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },

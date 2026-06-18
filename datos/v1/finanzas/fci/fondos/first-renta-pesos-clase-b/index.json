@@ -2,62 +2,70 @@
   "fondoId": "744",
   "claseId": "1630",
   "nombre": "First Renta Pesos - Clase B",
-  "fecha": "2026-05-28",
+  "fecha": "2026-06-04",
   "administradora": "First Capital Markets S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
   "region": "Argentina",
-  "benchmark": "Badlar",
+  "benchmark": "Otro",
   "horizonte": "Corto Plazo",
-  "duracion": "Menor o Igual a 1 Año",
+  "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Peso Argentina",
   "codigoCNV": "915",
-  "patrimonio": 262605799.87,
-  "inversionMinima": 10000,
+  "patrimonio": 263832068.5,
+  "inversionMinima": 1000000000,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 55156.161,
-    "ultimos7Dias": 0.3997,
-    "unMes": 1.9742,
-    "noventaDias": 7.3195,
-    "cientoOchentaDias": 17.2342,
-    "enElAnio": 13.927,
-    "doceMeses": 44.4276
+    "valorCuotaparte": 55413.719,
+    "ultimos7Dias": 0.467,
+    "unMes": 2.0556,
+    "noventaDias": 7.0758,
+    "cientoOchentaDias": 16.7152,
+    "enElAnio": 14.459,
+    "doceMeses": 44.2138
   },
   "composicionCartera": [
     {
       "nombre": "Bono Dual TTJ26",
-      "porcentaje": 21
+      "porcentaje": 18.9
     },
     {
-      "nombre": "Lecer X15Y6",
-      "porcentaje": 11.7
+      "nombre": "Cta Cte $ Bco de Valores",
+      "porcentaje": 10.3
     },
     {
       "nombre": "Letra Tamar TEM M31G6",
-      "porcentaje": 11.3
+      "porcentaje": 10.1
+    },
+    {
+      "nombre": "Lecap S29Y6",
+      "porcentaje": 7.3
     },
     {
       "nombre": "Lecer X29Y6",
-      "porcentaje": 6.4
+      "porcentaje": 5.7
     },
     {
       "nombre": "Bono Dual TTS26",
-      "porcentaje": 6.3
+      "porcentaje": 5.7
     },
     {
       "nombre": "Pase Colocador ARS MAV",
-      "porcentaje": 5.2
+      "porcentaje": 4.6
+    },
+    {
+      "nombre": "FCI MEGAQM Pesos - Clase B",
+      "porcentaje": 4.1
     },
     {
       "nombre": "Caucion Colocadora $ Merval",
-      "porcentaje": 3.1
+      "porcentaje": 2.8
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 35.2
+      "porcentaje": 30
     }
   ],
   "calificaciones": [],

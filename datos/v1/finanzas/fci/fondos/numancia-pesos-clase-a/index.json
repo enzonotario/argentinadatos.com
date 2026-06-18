@@ -2,7 +2,7 @@
   "fondoId": "1278",
   "claseId": "3558",
   "nombre": "Numancia Pesos - Clase A",
-  "fecha": "2026-05-28",
+  "fecha": "2026-06-04",
   "administradora": "Zofingen Investment S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -29,13 +29,17 @@
   "composicionCartera": [
     {
       "nombre": "Pagare #UMV011260003",
-      "porcentaje": 100
+      "porcentaje": 99.9
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.1
     }
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": 0.75,
-    "honorarioDepositaria": 0,
+    "honorarioGerente": 0.63,
+    "honorarioDepositaria": 0.12,
     "comisionIngreso": 0,
     "comisionEgreso": 0,
     "comisionTransferencia": 0,

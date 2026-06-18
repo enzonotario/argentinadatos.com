@@ -2,7 +2,7 @@
   "fondoId": "73",
   "claseId": "3636",
   "nombre": "Alpha Ahorro - Clase J",
-  "fecha": "2026-05-27",
+  "fecha": "2026-06-04",
   "administradora": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "ICBC (Arg) S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,31 +13,23 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Peso Argentina",
   "codigoCNV": "111",
-  "patrimonio": 0,
+  "patrimonio": 10021627269.54,
   "inversionMinima": 1,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1447.548,
-    "ultimos7Dias": 0,
-    "unMes": 0,
-    "noventaDias": 0,
-    "cientoOchentaDias": 0,
-    "enElAnio": 0,
-    "doceMeses": 0
+    "valorCuotaparte": 1450.679,
+    "ultimos7Dias": 0.2163,
+    "unMes": 0.2163,
+    "noventaDias": 0.2163,
+    "cientoOchentaDias": 0.2163,
+    "enElAnio": 0.2163,
+    "doceMeses": 0.2163
   },
   "composicionCartera": [
     {
       "nombre": "Bono Boncer TZX26",
-      "porcentaje": 12.5
-    },
-    {
-      "nombre": "Bono Boncer TX26",
-      "porcentaje": 10.9
-    },
-    {
-      "nombre": "Lecer X29Y6",
-      "porcentaje": 9.1
+      "porcentaje": 12.6
     },
     {
       "nombre": "Pzo Fi $ Bco Saenz",
@@ -52,12 +44,28 @@
       "porcentaje": 5.6
     },
     {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 5.5
+    },
+    {
       "nombre": "Lecap S17L6",
       "porcentaje": 5.1
     },
     {
-      "nombre": "Lecap S15Y6",
-      "porcentaje": 3.8
+      "nombre": "Pzo Fi $ Bco BBVA",
+      "porcentaje": 5
+    },
+    {
+      "nombre": "Lecap S30S6",
+      "porcentaje": 4.8
+    },
+    {
+      "nombre": "Lecer X29Y6",
+      "porcentaje": 4.6
+    },
+    {
+      "nombre": "Lecap S14G6",
+      "porcentaje": 4.6
     },
     {
       "nombre": "Lecer X30N6",
@@ -65,14 +73,14 @@
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 38.6
+      "porcentaje": 37.7
     }
   ],
   "calificaciones": [
     {
       "calificadora": "FIX SCR S.A.",
-      "calificacion": "AAf(arg)",
-      "fecha": "2025-03-03"
+      "calificacion": "AA+f(arg)",
+      "fecha": "2026-05-27"
     }
   ],
   "honorarios": {

@@ -2,7 +2,7 @@
   "fondoId": "1721",
   "claseId": "5846",
   "nombre": "CMA Dólar Dinamico - Clase D",
-  "fecha": "2026-05-28",
+  "fecha": "2026-06-04",
   "administradora": "Capital Markets Argentina Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,31 +13,35 @@
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1644",
-  "patrimonio": 1377115.89,
+  "patrimonio": 1518455.15,
   "inversionMinima": 1000,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1027.94,
-    "ultimos7Dias": -0.331,
-    "unMes": 0.0221,
-    "noventaDias": 1.0445,
-    "cientoOchentaDias": 2.4303,
-    "enElAnio": 2.2811,
+    "valorCuotaparte": 1032.213,
+    "ultimos7Dias": 0.4157,
+    "unMes": 0.2869,
+    "noventaDias": 1.3752,
+    "cientoOchentaDias": 3.3901,
+    "enElAnio": 2.7062,
     "doceMeses": null
   },
   "composicionCartera": [
     {
       "nombre": "ON Loma Negra C5",
-      "porcentaje": 7.1
+      "porcentaje": 7.2
     },
     {
       "nombre": "Cta Cte U$S Bco Comafi",
-      "porcentaje": 6.8
+      "porcentaje": 5.8
     },
     {
       "nombre": "Bono del Tesoro Nacional AO27",
       "porcentaje": 5.5
+    },
+    {
+      "nombre": "US Treasury Bill 291026",
+      "porcentaje": 5.3
     },
     {
       "nombre": "FCI Allaria Dólar Ahorro - Clase B",
@@ -45,15 +49,15 @@
     },
     {
       "nombre": "ON YPF Clase 38",
-      "porcentaje": 4.8
+      "porcentaje": 4.9
+    },
+    {
+      "nombre": "US Treasury Bill 020726",
+      "porcentaje": 4.5
     },
     {
       "nombre": "ON Scania Credit C2",
-      "porcentaje": 4.4
-    },
-    {
-      "nombre": "US Treasury Bill 291026",
-      "porcentaje": 4.4
+      "porcentaje": 4.5
     },
     {
       "nombre": "ON Scania Credit C1",
@@ -66,10 +70,6 @@
     {
       "nombre": "ON BBVA Frances Cl 40",
       "porcentaje": 4
-    },
-    {
-      "nombre": "US Treasury Bill 020726",
-      "porcentaje": 3.8
     },
     {
       "nombre": "CL Rep Chile 2027",
@@ -89,12 +89,12 @@
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 35.1
+      "porcentaje": 34.1
     }
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": 1.15,
+    "honorarioGerente": 1,
     "honorarioDepositaria": 0.2,
     "comisionIngreso": 0,
     "comisionEgreso": 0,

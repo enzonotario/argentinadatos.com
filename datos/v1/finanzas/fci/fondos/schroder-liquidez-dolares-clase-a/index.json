@@ -2,7 +2,7 @@
   "fondoId": "1879",
   "claseId": "6498",
   "nombre": "Schroder Liquidez Dolares - Clase A",
-  "fecha": "2026-05-28",
+  "fecha": "2026-06-04",
   "administradora": "Schroder S.A.S.G.F.C.I.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -26,15 +26,36 @@
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Pzo Fi U$S Bco Nacion",
+      "porcentaje": 20
+    },
+    {
+      "nombre": "Pzo Fi U$S Bco Galicia",
+      "porcentaje": 20
+    },
+    {
+      "nombre": "Pzo Fi U$S Bco BBVA",
+      "porcentaje": 20
+    },
+    {
+      "nombre": "Cta Cte U$S . Bco Comaf",
+      "porcentaje": 20
+    },
+    {
+      "nombre": "Caucion Colocadora USB Merval",
+      "porcentaje": 20
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 0.15,
+    "honorarioDepositaria": 0.08,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },

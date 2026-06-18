@@ -2,7 +2,7 @@
   "fondoId": "1874",
   "claseId": "6478",
   "nombre": "Argenfunds Calificado I - Clase A",
-  "fecha": "2026-05-27",
+  "fecha": "2026-06-04",
   "administradora": "Argenfunds S.A.",
   "depositaria": "Banco Macro S.A.",
   "tipoRenta": "Renta Fija",
@@ -26,7 +26,12 @@
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Bco Macro Ban",
+      "porcentaje": 100
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 1,

@@ -2,7 +2,7 @@
   "fondoId": "723",
   "claseId": "1566",
   "nombre": "CMA Renta Dólar - Clase A",
-  "fecha": "2026-05-28",
+  "fecha": "2026-06-04",
   "administradora": "Capital Markets Argentina Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,43 +13,47 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "878",
-  "patrimonio": 15681884.43,
+  "patrimonio": 15888768.13,
   "inversionMinima": 10000,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 77.622,
-    "ultimos7Dias": -0.1556,
-    "unMes": -0.1877,
-    "noventaDias": 1.3938,
-    "cientoOchentaDias": 3.838,
-    "enElAnio": 3.17,
-    "doceMeses": 7.7739
+    "valorCuotaparte": 77.956,
+    "ultimos7Dias": 0.4303,
+    "unMes": 0.1413,
+    "noventaDias": 1.8061,
+    "cientoOchentaDias": 4.7556,
+    "enElAnio": 3.6139,
+    "doceMeses": 8.1416
   },
   "composicionCartera": [
     {
+      "nombre": "Cta Cte USC Citibank",
+      "porcentaje": 8.1
+    },
+    {
       "nombre": "ON Loma Negra C5",
-      "porcentaje": 7.3
-    },
-    {
-      "nombre": "US Treasury Bill 140526",
-      "porcentaje": 6.2
-    },
-    {
-      "nombre": "Cta Cte U$S Bco Valores",
-      "porcentaje": 5.8
+      "porcentaje": 7.5
     },
     {
       "nombre": "ON Transp Gas Sur Cl 3",
-      "porcentaje": 4.8
+      "porcentaje": 4.9
     },
     {
       "nombre": "FCI Megaqm Liquidez Dólar - Clase B",
-      "porcentaje": 4.5
+      "porcentaje": 4.6
     },
     {
       "nombre": "BR Brasil 2035",
       "porcentaje": 3.6
+    },
+    {
+      "nombre": "Cta Cte U$S Bco Valores",
+      "porcentaje": 3.6
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional AO27",
+      "porcentaje": 3.1
     },
     {
       "nombre": "BR Brasil LTN 091231",
@@ -61,19 +65,15 @@
     },
     {
       "nombre": "ON Camuzzi Gas C1 USD",
-      "porcentaje": 2.5
-    },
-    {
-      "nombre": "ON Pan American C36",
-      "porcentaje": 2.5
+      "porcentaje": 2.6
     },
     {
       "nombre": "US Treasury Bill 110626",
       "porcentaje": 2.5
     },
     {
-      "nombre": "Bono del Tesoro Nacional AO27",
-      "porcentaje": 2.1
+      "nombre": "ON Pan American C36",
+      "porcentaje": 2.4
     },
     {
       "nombre": "BC Adecoagro 2027",
@@ -81,16 +81,16 @@
     },
     {
       "nombre": "ON YPF Luz C18 YFCJO",
-      "porcentaje": 2
+      "porcentaje": 2.1
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 47.9
+      "porcentaje": 47
     }
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": 1.93,
+    "honorarioGerente": 1.75,
     "honorarioDepositaria": 0.15,
     "comisionIngreso": 0,
     "comisionEgreso": 0,

@@ -2,7 +2,7 @@
   "fondoId": "1879",
   "claseId": "6499",
   "nombre": "Schroder Liquidez Dolares - Clase B",
-  "fecha": "2026-05-28",
+  "fecha": "2026-06-04",
   "administradora": "Schroder S.A.S.G.F.C.I.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,28 +13,49 @@
   "duracion": "No Registrada",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1694",
-  "patrimonio": 5251598.42,
+  "patrimonio": 5252452.84,
   "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1000.313,
-    "ultimos7Dias": 0.8081,
+    "valorCuotaparte": 1000.476,
+    "ultimos7Dias": 0.8497,
     "unMes": null,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Pzo Fi U$S Bco Nacion",
+      "porcentaje": 20
+    },
+    {
+      "nombre": "Pzo Fi U$S Bco Galicia",
+      "porcentaje": 20
+    },
+    {
+      "nombre": "Pzo Fi U$S Bco BBVA",
+      "porcentaje": 20
+    },
+    {
+      "nombre": "Cta Cte U$S . Bco Comaf",
+      "porcentaje": 20
+    },
+    {
+      "nombre": "Caucion Colocadora USB Merval",
+      "porcentaje": 20
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 0.1,
+    "honorarioDepositaria": 0.08,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },

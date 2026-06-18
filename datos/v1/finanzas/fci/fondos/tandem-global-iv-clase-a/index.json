@@ -2,7 +2,7 @@
   "fondoId": "1866",
   "claseId": "6451",
   "nombre": "Tandem Global IV - Clase A",
-  "fecha": "2026-05-28",
+  "fecha": "2026-06-04",
   "administradora": "Tandem Capital S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -26,7 +26,12 @@
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte USD MEP Banco de Valores",
+      "porcentaje": 100
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 0,

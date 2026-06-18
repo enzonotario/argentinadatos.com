@@ -2,7 +2,7 @@
   "fondoId": "1331",
   "claseId": "3800",
   "nombre": "IEB Multiestrategia II - Clase B",
-  "fecha": "2026-05-28",
+  "fecha": "2026-06-04",
   "administradora": "IEB S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,29 +13,33 @@
   "duracion": "Mayor a 3 Años",
   "moneda": "Peso Argentina",
   "codigoCNV": "1315",
-  "patrimonio": 9986.55,
+  "patrimonio": 10141.85,
   "inversionMinima": 1000,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 22910.1,
-    "ultimos7Dias": 1.2172,
-    "unMes": -5.0992,
-    "noventaDias": -2.9324,
-    "cientoOchentaDias": 0.8185,
-    "enElAnio": -1.6523,
-    "doceMeses": 15.9899
+    "valorCuotaparte": 23266.4,
+    "ultimos7Dias": 1.5552,
+    "unMes": -3.6744,
+    "noventaDias": -2.2215,
+    "cientoOchentaDias": 1.9468,
+    "enElAnio": -0.1228,
+    "doceMeses": 16.9407
   },
   "composicionCartera": [
     {
       "nombre": "Cta Cte $ Bco Comafi",
-      "porcentaje": 100
+      "porcentaje": 99.9
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.1
     }
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": 1,
-    "honorarioDepositaria": 0.13,
+    "honorarioGerente": 0,
+    "honorarioDepositaria": 0,
     "comisionIngreso": 0,
     "comisionEgreso": 0,
     "comisionTransferencia": 0,

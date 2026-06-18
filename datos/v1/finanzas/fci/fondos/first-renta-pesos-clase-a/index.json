@@ -2,62 +2,70 @@
   "fondoId": "744",
   "claseId": "1629",
   "nombre": "First Renta Pesos - Clase A",
-  "fecha": "2026-05-28",
+  "fecha": "2026-06-04",
   "administradora": "First Capital Markets S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
   "region": "Argentina",
-  "benchmark": "Badlar",
+  "benchmark": "Otro",
   "horizonte": "Corto Plazo",
-  "duracion": "Menor o Igual a 1 Año",
+  "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Peso Argentina",
   "codigoCNV": "915",
-  "patrimonio": 2982853229.68,
+  "patrimonio": 2982081704.56,
   "inversionMinima": 10000,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 64969.316,
-    "ultimos7Dias": 0.39,
-    "unMes": 1.9323,
-    "noventaDias": 7.1886,
-    "cientoOchentaDias": 16.9468,
-    "enElAnio": 13.696,
-    "doceMeses": 43.7062
+    "valorCuotaparte": 65266.43,
+    "ultimos7Dias": 0.4573,
+    "unMes": 2.0122,
+    "noventaDias": 6.9436,
+    "cientoOchentaDias": 16.4258,
+    "enElAnio": 14.2159,
+    "doceMeses": 43.4934
   },
   "composicionCartera": [
     {
       "nombre": "Bono Dual TTJ26",
-      "porcentaje": 21
+      "porcentaje": 18.9
     },
     {
-      "nombre": "Lecer X15Y6",
-      "porcentaje": 11.7
+      "nombre": "Cta Cte $ Bco de Valores",
+      "porcentaje": 10.3
     },
     {
       "nombre": "Letra Tamar TEM M31G6",
-      "porcentaje": 11.3
+      "porcentaje": 10.1
+    },
+    {
+      "nombre": "Lecap S29Y6",
+      "porcentaje": 7.3
     },
     {
       "nombre": "Lecer X29Y6",
-      "porcentaje": 6.4
+      "porcentaje": 5.7
     },
     {
       "nombre": "Bono Dual TTS26",
-      "porcentaje": 6.3
+      "porcentaje": 5.7
     },
     {
       "nombre": "Pase Colocador ARS MAV",
-      "porcentaje": 5.2
+      "porcentaje": 4.6
+    },
+    {
+      "nombre": "FCI MEGAQM Pesos - Clase B",
+      "porcentaje": 4.1
     },
     {
       "nombre": "Caucion Colocadora $ Merval",
-      "porcentaje": 3.1
+      "porcentaje": 2.8
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 35.2
+      "porcentaje": 30
     }
   ],
   "calificaciones": [],

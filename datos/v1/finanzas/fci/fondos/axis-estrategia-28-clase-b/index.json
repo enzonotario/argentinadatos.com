@@ -2,7 +2,7 @@
   "fondoId": "1619",
   "claseId": "5348",
   "nombre": "Axis Estrategia 28 - Clase B",
-  "fecha": "2026-05-28",
+  "fecha": "2026-06-04",
   "administradora": "Axis S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,28 +13,33 @@
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Peso Argentina",
   "codigoCNV": "1624",
-  "patrimonio": 1965346498.9,
+  "patrimonio": 4135721108.78,
   "inversionMinima": 10000,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1008.119,
-    "ultimos7Dias": 0.7033,
+    "valorCuotaparte": 1015.534,
+    "ultimos7Dias": 0.7355,
     "unMes": null,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Bco Comafi",
+      "porcentaje": 100
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 2.25,
+    "honorarioDepositaria": 0.15,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.3,
     "comisionExito": null,
     "otros": null
   },

@@ -2,7 +2,7 @@
   "fondoId": "1864",
   "claseId": "6442",
   "nombre": "Cocos Dólar Money Market - Clase B",
-  "fecha": "2026-05-28",
+  "fecha": "2026-06-04",
   "administradora": "Cocos Asset Management S.A.",
   "depositaria": "Banco Industrial S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,20 +13,29 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1913",
-  "patrimonio": 20003724.91,
+  "patrimonio": 16436315.36,
   "inversionMinima": 10,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1000.173,
-    "ultimos7Dias": 0.4119,
+    "valorCuotaparte": 1000.306,
+    "ultimos7Dias": 0.6934,
     "unMes": null,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Caucion Colocadora U$S Merval",
+      "porcentaje": 92
+    },
+    {
+      "nombre": "Cta Cte U$S Bco Industrial",
+      "porcentaje": 8
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 0.4,
