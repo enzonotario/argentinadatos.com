@@ -3,6 +3,7 @@ import {
   guardarHistoricoFondo,
   guardarListaFondos,
 } from '@/finanzas/fci/fondos/guardado/guardarDetallesFondos.js'
+import { guardarComparatasas } from '@/finanzas/fci/fondos/guardado/guardarComparatasas.js'
 import { FciFondosDatabaseService } from '@/finanzas/fci/fondos/database/service.js'
 import { logError, logGrupo, logMensaje } from '@/log.js'
 
@@ -37,6 +38,11 @@ export default async function fondosComando() {
     }
 
     await guardarListaFondos({
+      fechaActualizacion: snapshot.fechaActualizacion,
+      fondos,
+    })
+
+    await guardarComparatasas({
       fechaActualizacion: snapshot.fechaActualizacion,
       fondos,
     })
