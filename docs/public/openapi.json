@@ -429,7 +429,8 @@
         },
         "operationId": "get-finanzas-tasas-plazo-fijo",
         "x-data-source": [
-          "[BCRA](https://www.bcra.gob.ar/api/endpoints/plazos-fijos.php)"
+          "[BCRA](https://www.bcra.gob.ar/api/endpoints/plazos-fijos.php)",
+          "[Voii](https://www.voii.com.ar/plazo-fijo-web/)"
         ]
       }
     },
@@ -1850,6 +1851,31 @@
             "example": 123.45,
             "format": "float",
             "nullable": true
+          },
+          "enlace": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true,
+            "description": "URL de la fuente o página del producto"
+          },
+          "tasas": {
+            "type": "array",
+            "nullable": true,
+            "description": "Tramos de TNA cuando la entidad publica distintas tasas según monto y/o plazo",
+            "items": {
+              "$ref": "#/components/schemas/TramoPlazoFijo"
+            }
+          },
+          "condiciones": {
+            "type": "string",
+            "nullable": true,
+            "description": "Condiciones o aclaraciones del producto"
+          },
+          "condicionesCorto": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 100,
+            "description": "Resumen breve de condiciones"
           }
         },
         "x-examples": {
@@ -1859,6 +1885,48 @@
             "tnaNoClientes": 123.45,
             "logo": null,
             "link": null
+          }
+        }
+      },
+      "TramoPlazoFijo": {
+        "title": "TramoPlazoFijo",
+        "type": "object",
+        "description": "TNA para un rango de monto y/o plazo dentro de una entidad de plazo fijo",
+        "properties": {
+          "montoMinimo": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Monto mínimo en pesos ARS del tramo"
+          },
+          "montoMaximo": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Monto máximo en pesos ARS del tramo"
+          },
+          "plazoMinDias": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Mínimo de días del rango de plazo"
+          },
+          "plazoMaxDias": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Máximo de días del rango de plazo"
+          },
+          "tna": {
+            "type": "number",
+            "description": "Tasa Nominal Anual del tramo",
+            "format": "float"
+          }
+        },
+        "required": ["tna"],
+        "x-examples": {
+          "Example 1": {
+            "montoMinimo": null,
+            "montoMaximo": 999999,
+            "plazoMinDias": 30,
+            "plazoMaxDias": 44,
+            "tna": 0.23
           }
         }
       },

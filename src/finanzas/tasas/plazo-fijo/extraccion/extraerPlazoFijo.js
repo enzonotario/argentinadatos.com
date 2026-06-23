@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { extraerUalaPlazoFijo } from '@/finanzas/tasas/plazo-fijo/extraccion/extraerUala.js'
+import { extraerVoiiPlazoFijo } from '@/finanzas/tasas/plazo-fijo/extraccion/extraerVoii.js'
 import { porcentajeADecimal } from '@/finanzas/compartido/utils/tasas.js'
 import { logGrupo, logError } from '@/log.js'
 
@@ -11,9 +12,34 @@ const log = logGrupo({
 const URL_PLAZOS_FIJOS_BCRA =
   'https://www.bcra.gob.ar/api/endpoints/plazos-fijos.php'
 
+export function enriquecerPlazoFijoConVoii(items, detalleVoii) {
+  if (!detalleVoii) {
+    return items
+  }
+
+  return items.map(item => {
+    if (!item.entidad?.toUpperCase().includes('VOII')) {
+      return item
+    }
+
+    return {
+      ...item,
+      ...detalleVoii,
+    }
+  })
+}
+
 export async function extraerPlazoFijo() {
   try {
-    return [...(await obtenerRespuesta()), await extraerUalaPlazoFijo()]
+    const [items, uala, detalleVoii] = await Promise.all([
+      obtenerRespuesta(),
+      extraerUalaPlazoFijo(),
+      extraerVoiiPlazoFijo(),
+    ])
+
+    const enriquecidos = enriquecerPlazoFijoConVoii(items, detalleVoii)
+
+    return [...enriquecidos, uala]
   } catch (error) {
     logError(log, error)
     return []

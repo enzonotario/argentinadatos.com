@@ -1,6 +1,10 @@
 import { describe, expect, it } from 'vitest'
 import { extraerPlazoFijo } from '@/finanzas/tasas/plazo-fijo/extraccion/extraerPlazoFijo.js'
 
+const tieneFirecrawl =
+  Boolean(import.meta.env.VITE_FIRECRAWL_API_KEY) &&
+  Boolean(import.meta.env.VITE_FIRECRAWL_BASE_URL)
+
 describe('extraerPlazoFijo', () => {
   it(
     'extrae los plazos fijos',
@@ -25,10 +29,38 @@ describe('extraerPlazoFijo', () => {
         if (item.enlace !== null) {
           expect(typeof item.enlace).toBe('string')
         }
+        if (item.tasas !== undefined && item.tasas !== null) {
+          expect(Array.isArray(item.tasas)).toBe(true)
+          for (const tramo of item.tasas) {
+            expect(typeof tramo.tna).toBe('number')
+          }
+        }
+        if (item.condiciones !== undefined && item.condiciones !== null) {
+          expect(typeof item.condiciones).toBe('string')
+        }
+        if (
+          item.condicionesCorto !== undefined &&
+          item.condicionesCorto !== null
+        ) {
+          expect(typeof item.condicionesCorto).toBe('string')
+        }
+      }
+
+      const voii = items.find(item => item.entidad?.toUpperCase().includes('VOII'))
+
+      expect(voii).toBeDefined()
+
+      if (tieneFirecrawl) {
+        expect(voii.tasas).toBeInstanceOf(Array)
+        expect(voii.tasas.length).toBeGreaterThanOrEqual(2)
+        expect(voii.tasas.some(tramo => tramo.montoMaximo === 999999)).toBe(
+          true,
+        )
+        expect(voii.tasas.some(tramo => tramo.montoMinimo === 1000000)).toBe(
+          true,
+        )
       }
     },
-    {
-      timeout: 10000,
-    },
+    tieneFirecrawl ? 60000 : 10000,
   )
 })
