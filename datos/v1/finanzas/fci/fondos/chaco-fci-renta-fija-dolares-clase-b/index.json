@@ -2,7 +2,7 @@
   "fondoId": "1630",
   "claseId": "5407",
   "nombre": "Chaco FCI Renta Fija Dólares - Clase B",
-  "fecha": "2026-06-18",
+  "fecha": "2026-06-22",
   "administradora": "Nuevo Chaco Fondos S.A.S.G.F.C.I.",
   "depositaria": "Nuevo Banco del Chaco S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,31 +13,35 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1639",
-  "patrimonio": 10222850.72,
+  "patrimonio": 10456460.24,
   "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1100.4894,
-    "ultimos7Dias": 0.1469,
-    "unMes": 0.5406,
-    "noventaDias": 1.3595,
-    "cientoOchentaDias": 4.557,
-    "enElAnio": 4.2507,
-    "doceMeses": 8.6011
+    "valorCuotaparte": 1100.8797,
+    "ultimos7Dias": 0.0852,
+    "unMes": 0.4849,
+    "noventaDias": 1.3954,
+    "cientoOchentaDias": 4.4315,
+    "enElAnio": 4.2877,
+    "doceMeses": 8.5812
   },
   "composicionCartera": [
     {
       "nombre": "Cta Cte U$S Bco Chaco",
-      "porcentaje": 12
+      "porcentaje": 9.3
+    },
+    {
+      "nombre": "ON Tarj Naranja C67 S2",
+      "porcentaje": 5
     },
     {
       "nombre": "ON Oldelval Clase 6",
-      "porcentaje": 4.2
+      "porcentaje": 4.1
     },
     {
       "nombre": "ON Pampa Energia C27",
-      "porcentaje": 4
+      "porcentaje": 4.1
     },
     {
       "nombre": "ON Bco Galicia Clase 16",
@@ -49,14 +53,10 @@
     },
     {
       "nombre": "ON Banco Comafi C19",
-      "porcentaje": 3.1
+      "porcentaje": 3.2
     },
     {
       "nombre": "ON Banco Comafi C21",
-      "porcentaje": 3.1
-    },
-    {
-      "nombre": "ON Tarj Naranja C67 S2",
       "porcentaje": 3.1
     },
     {
@@ -72,11 +72,11 @@
       "porcentaje": 2.7
     },
     {
-      "nombre": "ON Telecom C28",
-      "porcentaje": 2.5
+      "nombre": "ON Pan American C37",
+      "porcentaje": 2.6
     },
     {
-      "nombre": "ON Pan American C37",
+      "nombre": "ON Telecom C28",
       "porcentaje": 2.5
     },
     {
@@ -85,11 +85,7 @@
     },
     {
       "nombre": "ON YPF Clase 43",
-      "porcentaje": 2.4
-    },
-    {
-      "nombre": "ON YPF Clase 42",
-      "porcentaje": 2.3
+      "porcentaje": 2.5
     },
     {
       "nombre": "ON Loma Negra C5",
@@ -104,12 +100,20 @@
       "porcentaje": 2.2
     },
     {
+      "nombre": "ON YPF Clase 42",
+      "porcentaje": 2.2
+    },
+    {
       "nombre": "ON Pan American C41",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "ON YPF Clase 33",
       "porcentaje": 2
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 34
+      "porcentaje": 32.6
     }
   ],
   "calificaciones": [],

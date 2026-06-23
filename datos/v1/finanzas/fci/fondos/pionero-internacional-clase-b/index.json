@@ -2,7 +2,7 @@
   "fondoId": "1878",
   "claseId": "6496",
   "nombre": "Pionero Internacional - Clase B",
-  "fecha": "2026-06-18",
+  "fecha": "2026-06-22",
   "administradora": "Macro Fondos S.G.F.C.I.S.A.",
   "depositaria": "Banco Macro S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,14 @@
   "duracion": "Mayor a 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1849",
-  "patrimonio": 2239882.22,
+  "patrimonio": 2240031.68,
   "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense Billete",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 999.525,
-    "ultimos7Dias": 0.3285,
-    "unMes": null,
+    "valorCuotaparte": 999.591,
+    "ultimos7Dias": 0.056,
+    "unMes": -0.0248,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -28,20 +28,24 @@
   },
   "composicionCartera": [
     {
+      "nombre": "MFS Meridian Funds - Global Credit Fund IF1",
+      "porcentaje": 32.3
+    },
+    {
+      "nombre": "MFS Meridian Funds - Global High Yield Fund I1",
+      "porcentaje": 25.9
+    },
+    {
       "nombre": "Overnight USD JP Morgan",
-      "porcentaje": 71.4
+      "porcentaje": 18.1
     },
     {
       "nombre": "ETF State Street SPDR Bloomberg Investment Grade Floating Rate",
-      "porcentaje": 17.8
+      "porcentaje": 15.5
     },
     {
       "nombre": "ETF IShares JPM USD EM Corp ACC",
-      "porcentaje": 9.3
-    },
-    {
-      "nombre": "Resto de Activos",
-      "porcentaje": 1.5
+      "porcentaje": 8.1
     }
   ],
   "calificaciones": [],

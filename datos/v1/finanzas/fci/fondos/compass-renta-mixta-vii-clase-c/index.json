@@ -2,7 +2,7 @@
   "fondoId": "1875",
   "claseId": "6483",
   "nombre": "Compass Renta Mixta VII - Clase C",
-  "fecha": "2026-06-18",
+  "fecha": "2026-06-22",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -18,15 +18,36 @@
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1012.823,
-    "ultimos7Dias": 0.1128,
+    "valorCuotaparte": 1005.535,
+    "ultimos7Dias": -0.7018,
     "unMes": null,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Bono del Tesoro Nacional TMG28",
+      "porcentaje": 25
+    },
+    {
+      "nombre": "Lecap S15S6",
+      "porcentaje": 25
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional T15E7",
+      "porcentaje": 25
+    },
+    {
+      "nombre": "Lecap S30S6",
+      "porcentaje": 24.9
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.1
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 1.5,

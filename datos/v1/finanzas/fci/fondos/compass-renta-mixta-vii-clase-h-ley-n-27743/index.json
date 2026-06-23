@@ -2,7 +2,7 @@
   "fondoId": "1875",
   "claseId": "6484",
   "nombre": "Compass Renta Mixta VII - Clase H Ley N° 27.743",
-  "fecha": "2026-06-18",
+  "fecha": "2026-06-22",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -26,7 +26,28 @@
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Bono del Tesoro Nacional TMG28",
+      "porcentaje": 25
+    },
+    {
+      "nombre": "Lecap S15S6",
+      "porcentaje": 25
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional T15E7",
+      "porcentaje": 25
+    },
+    {
+      "nombre": "Lecap S30S6",
+      "porcentaje": 24.9
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.1
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": null,
