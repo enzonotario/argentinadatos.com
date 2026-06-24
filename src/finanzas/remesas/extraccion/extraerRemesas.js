@@ -5,6 +5,10 @@ import { extraerCocosRemesas } from '@/finanzas/remesas/extraccion/extraerCocosR
 const REMESAS_URL = 'https://www.dolarito.ar/remotito'
 const PREFIJO_NEXT_PUSH = 'self.__next_f.push('
 
+const ALIAS_COMPANIA_REMESA = {
+  global666: 'global66',
+}
+
 const CAMPOS_CON_DETALLE = [
   'cuentaPropia',
   'moneda',
@@ -137,6 +141,18 @@ function normalizarTexto(valor) {
   return texto || null
 }
 
+export function normalizarCompaniaRemesa(compania) {
+  const texto = normalizarTexto(compania)
+
+  if (!texto) {
+    return null
+  }
+
+  const clave = texto.toLowerCase()
+
+  return ALIAS_COMPANIA_REMESA[clave] ?? texto
+}
+
 export function normalizarDetallesRemesa(rawDetalles) {
   if (
     !rawDetalles ||
@@ -167,7 +183,7 @@ function combinarDetallesRemesa(...detalleSets) {
 
 export function normalizarRemesa(raw) {
   return {
-    compania: normalizarTexto(raw.compania),
+    compania: normalizarCompaniaRemesa(raw.compania),
     cuentaPropia: normalizarBooleano(raw.cuentaPropia),
     moneda: normalizarTexto(raw.moneda),
     inversiones: normalizarBooleano(raw.inversiones),

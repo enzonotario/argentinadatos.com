@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import {
   enriquecerRemesasConDetalles,
   extraerRemesas,
+  normalizarCompaniaRemesa,
   normalizarDetallesRemesa,
   normalizarRemesa,
   parsearRemesasDesdeHtml,
@@ -14,6 +15,18 @@ import {
 const tieneFirecrawl =
   Boolean(import.meta.env.VITE_FIRECRAWL_API_KEY) &&
   Boolean(import.meta.env.VITE_FIRECRAWL_BASE_URL)
+
+describe('normalizarCompaniaRemesa', () => {
+  it('corrige alias conocidos de dolarito', () => {
+    expect(normalizarCompaniaRemesa('global666')).toBe('global66')
+    expect(normalizarCompaniaRemesa('Global666')).toBe('global66')
+  })
+
+  it('conserva nombres sin alias', () => {
+    expect(normalizarCompaniaRemesa('takenos')).toBe('takenos')
+    expect(normalizarCompaniaRemesa('  Wise  ')).toBe('Wise')
+  })
+})
 
 describe('normalizarRemesa', () => {
   it('conserva detalles por columna sin pisar el valor principal', () => {
@@ -52,6 +65,19 @@ describe('normalizarRemesa', () => {
       },
       calificacionAndroid: 4.2,
       calificacionIos: 4.2,
+    })
+  })
+
+  it('normaliza alias de compañía al mapear remesa', () => {
+    expect(
+      normalizarRemesa({
+        compania: 'global666',
+        cuentaPropia: true,
+        inversiones: false,
+        tarjetaUsa: true,
+      }),
+    ).toMatchObject({
+      compania: 'global66',
     })
   })
 
