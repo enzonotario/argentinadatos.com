@@ -32,6 +32,7 @@ export const comparatasasFondos = [
   'iol-cash-management-clase-a',
   'iol-dolar-ahorro-plus-clase-d',
   'mercado-fondo-clase-a',
+  'mp-ahorro-clase-a',
   'pionero-acciones',
   'pionero-money-market-dolar-clase-a',
   'pionero-pesos-clase-a',
