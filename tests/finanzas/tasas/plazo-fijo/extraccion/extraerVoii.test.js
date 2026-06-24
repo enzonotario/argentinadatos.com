@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import {
   URL_VOII_PLAZO_FIJO,
+  URL_VOII_TASAS_PASIVAS,
+  combinarTasasVoii,
   extraerVoiiPlazoFijo,
   normalizarVoiiPlazoFijo,
 } from '@/finanzas/tasas/plazo-fijo/extraccion/extraerVoii.js'
@@ -55,15 +57,106 @@ describe('normalizarVoiiPlazoFijo', () => {
   })
 })
 
+describe('combinarTasasVoii', () => {
+  it('combina tramos por monto del plazo fijo web con plazos restantes de tasas pasivas', () => {
+    const resultado = combinarTasasVoii(
+      {
+        tasas: [
+          {
+            montoMinimo: null,
+            montoMaximo: 999999,
+            plazoMinDias: 30,
+            plazoMaxDias: 44,
+            tna: 0.23,
+          },
+          {
+            montoMinimo: 1000000,
+            montoMaximo: null,
+            plazoMinDias: 30,
+            plazoMaxDias: 44,
+            tna: 0.24,
+          },
+        ],
+        condiciones: 'Plazo fijo web.',
+        condicionesCorto: 'Hasta $999.999 23%, desde $1M 24%',
+      },
+      {
+        tasas: [
+          {
+            montoMinimo: null,
+            montoMaximo: null,
+            plazoMinDias: 30,
+            plazoMaxDias: 44,
+            tna: 0.23,
+          },
+          {
+            montoMinimo: null,
+            montoMaximo: null,
+            plazoMinDias: 45,
+            plazoMaxDias: 59,
+            tna: 0.225,
+          },
+          {
+            montoMinimo: null,
+            montoMaximo: null,
+            plazoMinDias: 180,
+            plazoMaxDias: null,
+            tna: 0.18,
+          },
+        ],
+        condiciones: 'Garantía Ley 24.485.',
+        condicionesCorto: null,
+      },
+    )
+
+    expect(resultado.tasas).toHaveLength(4)
+    expect(resultado.tasas).toEqual([
+      {
+        montoMinimo: null,
+        montoMaximo: 999999,
+        plazoMinDias: 30,
+        plazoMaxDias: 44,
+        tna: 0.23,
+      },
+      {
+        montoMinimo: 1000000,
+        montoMaximo: null,
+        plazoMinDias: 30,
+        plazoMaxDias: 44,
+        tna: 0.24,
+      },
+      {
+        montoMinimo: null,
+        montoMaximo: null,
+        plazoMinDias: 45,
+        plazoMaxDias: 59,
+        tna: 0.225,
+      },
+      {
+        montoMinimo: null,
+        montoMaximo: null,
+        plazoMinDias: 180,
+        plazoMaxDias: null,
+        tna: 0.18,
+      },
+    ])
+    expect(resultado.condiciones).toBe('Plazo fijo web. Garantía Ley 24.485.')
+    expect(resultado.condicionesCorto).toBe('Hasta $999.999 23%, desde $1M 24%')
+  })
+})
+
 describe.skipIf(!tieneFirecrawl)('extraerVoiiPlazoFijo (Firecrawl real)', () => {
-  it('extrae tramos de TNA desde la web de Voii', async () => {
+  it('extrae tramos de TNA desde la web de Voii y tasas pasivas', async () => {
     expect(URL_VOII_PLAZO_FIJO).toBe('https://www.voii.com.ar/plazo-fijo-web/')
+    expect(URL_VOII_TASAS_PASIVAS).toBe(
+      'https://www.voii.com.ar/tasas-de-interes-activas/#TasasPFW',
+    )
 
     const resultado = await extraerVoiiPlazoFijo()
 
     expect(resultado).not.toBeNull()
     expect(Array.isArray(resultado.tasas)).toBe(true)
-    expect(resultado.tasas.length).toBeGreaterThanOrEqual(2)
+    expect(resultado.tasas.length).toBeGreaterThanOrEqual(7)
 
     for (const tramo of resultado.tasas) {
       expect(typeof tramo.tna).toBe('number')
@@ -95,6 +188,22 @@ describe.skipIf(!tieneFirecrawl)('extraerVoiiPlazoFijo (Firecrawl real)', () => 
     expect(tramoHasta999999.tna).toBeGreaterThan(0)
     expect(tramoDesde1000000.tna).toBeGreaterThan(tramoHasta999999.tna)
 
+    const tramos30a44 = resultado.tasas.filter(
+      tramo => tramo.plazoMinDias === 30 && tramo.plazoMaxDias === 44,
+    )
+    expect(tramos30a44).toHaveLength(2)
+
+    const tramo45a59 = resultado.tasas.find(
+      tramo => tramo.plazoMinDias === 45 && tramo.plazoMaxDias === 59,
+    )
+    const tramo180oMas = resultado.tasas.find(
+      tramo => tramo.plazoMinDias === 180 && tramo.plazoMaxDias === null,
+    )
+
+    expect(tramo45a59).toBeDefined()
+    expect(tramo180oMas).toBeDefined()
+    expect(tramo45a59.tna).toBeGreaterThan(tramo180oMas.tna)
+
     if (resultado.condiciones) {
       expect(typeof resultado.condiciones).toBe('string')
     }
@@ -102,5 +211,5 @@ describe.skipIf(!tieneFirecrawl)('extraerVoiiPlazoFijo (Firecrawl real)', () => 
       expect(typeof resultado.condicionesCorto).toBe('string')
       expect(resultado.condicionesCorto.length).toBeLessThanOrEqual(100)
     }
-  }, 60000)
+  }, 120000)
 })

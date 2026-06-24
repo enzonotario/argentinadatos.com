@@ -52,15 +52,25 @@ describe('extraerPlazoFijo', () => {
 
       if (tieneFirecrawl) {
         expect(voii.tasas).toBeInstanceOf(Array)
-        expect(voii.tasas.length).toBeGreaterThanOrEqual(2)
+        expect(voii.tasas.length).toBeGreaterThanOrEqual(7)
         expect(voii.tasas.some(tramo => tramo.montoMaximo === 999999)).toBe(
           true,
         )
         expect(voii.tasas.some(tramo => tramo.montoMinimo === 1000000)).toBe(
           true,
         )
+        expect(
+          voii.tasas.some(
+            tramo => tramo.plazoMinDias === 45 && tramo.plazoMaxDias === 59,
+          ),
+        ).toBe(true)
+        expect(
+          voii.tasas.some(
+            tramo => tramo.plazoMinDias === 180 && tramo.plazoMaxDias === null,
+          ),
+        ).toBe(true)
       }
     },
-    tieneFirecrawl ? 60000 : 10000,
+    tieneFirecrawl ? 120000 : 10000,
   )
 })
