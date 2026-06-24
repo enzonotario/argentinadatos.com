@@ -47,6 +47,9 @@ export default {
     () => import('./ChartSenadoresProvinciaPartido.vue'),
   ),
   ChartPlazoFijo: defineAsyncComponent(() => import('./ChartPlazoFijo.vue')),
+  ChartPlazoFijoTasasPorPlazo: defineAsyncComponent(
+    () => import('./ChartPlazoFijoTasasPorPlazo.vue'),
+  ),
   ChartCuentasRemuneradasUsd: defineAsyncComponent(
     () => import('./ChartCuentasRemuneradasUsd.vue'),
   ),
