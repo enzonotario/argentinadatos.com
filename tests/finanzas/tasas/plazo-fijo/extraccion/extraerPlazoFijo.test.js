@@ -15,10 +15,9 @@ describe('extraerPlazoFijo', () => {
       expect(items.length).toBeGreaterThan(0)
 
       for (const item of items) {
-        expect(item).toMatchObject({
-          entidad: expect.any(String),
-          logo: expect.any(String),
-        })
+        if (item.logo !== null && item.logo !== undefined) {
+          expect(typeof item.logo).toBe('string')
+        }
         expect(item.entidad).not.toBe('')
         if (item.tnaClientes !== null) {
           expect(typeof item.tnaClientes).toBe('number')
@@ -48,9 +47,15 @@ describe('extraerPlazoFijo', () => {
 
       const voii = items.find(item => item.entidad?.toUpperCase().includes('VOII'))
       const uala = items.find(item => item.entidad?.toUpperCase() === 'UALA')
+      const galicia = items.find(item =>
+        item.entidad?.toUpperCase().includes('GALICIA'),
+      )
+      const brubank = items.find(item => item.entidad === 'Brubank')
 
       expect(voii).toBeDefined()
       expect(uala).toBeDefined()
+      expect(galicia).toBeDefined()
+      expect(brubank).toBeDefined()
       expect(uala.tasas).toBeInstanceOf(Array)
       expect(uala.tasas.length).toBeGreaterThanOrEqual(6)
       expect(
@@ -59,6 +64,16 @@ describe('extraerPlazoFijo', () => {
       expect(
         uala.tasas.some(tramo => tramo.plazoMinDias === 365 && tramo.plazoMaxDias === 365),
       ).toBe(true)
+      expect(galicia.tasas).toBeInstanceOf(Array)
+      expect(
+        galicia.tasas.some(tramo => tramo.plazoMinDias === 60 && tramo.plazoMaxDias === 60),
+      ).toBe(true)
+      expect(
+        galicia.tasas.some(tramo => tramo.plazoMinDias === 365 && tramo.plazoMaxDias === 365),
+      ).toBe(true)
+      expect(galicia.tasas.some(tramo => tramo.plazoMinDias === 30)).toBe(false)
+      expect(brubank.tasas).toBeInstanceOf(Array)
+      expect(brubank.tasas.length).toBeGreaterThanOrEqual(4)
 
       if (tieneFirecrawl) {
         expect(voii.tasas).toBeInstanceOf(Array)

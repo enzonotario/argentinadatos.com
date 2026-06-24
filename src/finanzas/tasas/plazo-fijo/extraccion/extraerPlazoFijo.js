@@ -1,4 +1,8 @@
 import axios from 'axios'
+import {
+  enriquecerPlazoFijoConTuPlazoFijo,
+  extraerTuPlazoFijoHomebanking,
+} from '@/finanzas/tasas/plazo-fijo/extraccion/extraerTuPlazoFijo.js'
 import { extraerUalaPlazoFijo } from '@/finanzas/tasas/plazo-fijo/extraccion/extraerUala.js'
 import { extraerVoiiPlazoFijo } from '@/finanzas/tasas/plazo-fijo/extraccion/extraerVoii.js'
 import { porcentajeADecimal } from '@/finanzas/compartido/utils/tasas.js'
@@ -31,13 +35,18 @@ export function enriquecerPlazoFijoConVoii(items, detalleVoii) {
 
 export async function extraerPlazoFijo() {
   try {
-    const [items, uala, detalleVoii] = await Promise.all([
+    const [items, uala, detalleVoii, registrosTuPlazoFijo] = await Promise.all([
       obtenerRespuesta(),
       extraerUalaPlazoFijo(),
       extraerVoiiPlazoFijo(),
+      extraerTuPlazoFijoHomebanking(),
     ])
 
-    const enriquecidos = enriquecerPlazoFijoConVoii(items, detalleVoii)
+    const conVoii = enriquecerPlazoFijoConVoii(items, detalleVoii)
+    const enriquecidos = enriquecerPlazoFijoConTuPlazoFijo(
+      conVoii,
+      registrosTuPlazoFijo,
+    )
 
     return [...enriquecidos, uala]
   } catch (error) {
