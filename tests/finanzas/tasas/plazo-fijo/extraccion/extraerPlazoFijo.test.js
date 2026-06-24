@@ -47,8 +47,18 @@ describe('extraerPlazoFijo', () => {
       }
 
       const voii = items.find(item => item.entidad?.toUpperCase().includes('VOII'))
+      const uala = items.find(item => item.entidad?.toUpperCase() === 'UALA')
 
       expect(voii).toBeDefined()
+      expect(uala).toBeDefined()
+      expect(uala.tasas).toBeInstanceOf(Array)
+      expect(uala.tasas.length).toBeGreaterThanOrEqual(6)
+      expect(
+        uala.tasas.some(tramo => tramo.plazoMinDias === 30 && tramo.plazoMaxDias === 30),
+      ).toBe(true)
+      expect(
+        uala.tasas.some(tramo => tramo.plazoMinDias === 365 && tramo.plazoMaxDias === 365),
+      ).toBe(true)
 
       if (tieneFirecrawl) {
         expect(voii.tasas).toBeInstanceOf(Array)
