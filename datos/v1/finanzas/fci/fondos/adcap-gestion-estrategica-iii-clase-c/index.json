@@ -2,7 +2,7 @@
   "fondoId": "1580",
   "claseId": "5143",
   "nombre": "Adcap Gestión Estratégica III - Clase C",
-  "fecha": "2026-06-19",
+  "fecha": "2026-06-24",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -18,15 +18,20 @@
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1010.324,
-    "ultimos7Dias": 0.7634,
+    "valorCuotaparte": 1009.254,
+    "ultimos7Dias": 0.4706,
     "unMes": null,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Bco de Valores",
+      "porcentaje": 100
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": null,
