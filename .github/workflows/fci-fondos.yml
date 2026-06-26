@@ -2,6 +2,7 @@ name: Actualizar FCI Fondos
 
 on:
   schedule:
+    - cron: '0 13 * * *' # 10:00 ART
     - cron: '0 23 * * *' # 20:00 ART
   workflow_dispatch:
 
