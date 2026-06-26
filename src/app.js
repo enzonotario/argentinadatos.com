@@ -16,6 +16,7 @@ import cuentasRemuneradasUsdComando from '@/finanzas/cuentas-remuneradas-usd/cue
 import remComando from '@/finanzas/rem/rem.comando.js'
 import fondosFciComando from '@/finanzas/fci/fondos/fondos.comando.js'
 import presidentesComando from '@/presidentes/presidentes.comando.js'
+import deployComparatasas from '@/deploy/comparatasas.comando.js'
 import { actualizarOpenApiAño } from '@/utils/actualizarOpenApiAño.js'
 
 const predefinidos = {
@@ -137,6 +138,10 @@ export async function iniciar(comando) {
 
     case 'actualizar-openapi-year':
       await actualizarOpenApiAño()
+      break
+
+    case 'deploy:comparatasas':
+      await deployComparatasas()
       break
 
     default:

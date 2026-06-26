@@ -32,6 +32,7 @@ on:
           - pnpm run cron /v1/finanzas/bonos-cer
           - pnpm run senado:test:run
           - pnpm run diputados:test:run
+          - pnpm run cron deploy:comparatasas
       needs_build:
         description: 'Ejecutar build antes del comando'
         required: false

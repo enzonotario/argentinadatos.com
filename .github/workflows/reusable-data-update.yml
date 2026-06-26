@@ -58,6 +58,7 @@ jobs:
           echo "VITE_FIRECRAWL_API_KEY=${{ secrets.VITE_FIRECRAWL_API_KEY }}" >> .env
           echo "VITE_PROXY_URL=${{ secrets.VITE_PROXY_URL }}" >> .env
           echo "VITE_PROXY_TOKEN=${{ secrets.VITE_PROXY_TOKEN }}" >> .env
+          echo "VITE_COMPARATASAS_DEPLOY_HOOK_URL=${{ secrets.VITE_COMPARATASAS_DEPLOY_HOOK_URL }}" >> .env
 
       - name: Create .env file (full)
         if: inputs.env_preset == 'full'
@@ -108,6 +109,7 @@ jobs:
           echo "VITE_FIRECRAWL_API_KEY=${{ secrets.VITE_FIRECRAWL_API_KEY }}" >> .env
           echo "VITE_PROXY_URL=${{ secrets.VITE_PROXY_URL }}" >> .env
           echo "VITE_PROXY_TOKEN=${{ secrets.VITE_PROXY_TOKEN }}" >> .env
+          echo "VITE_COMPARATASAS_DEPLOY_HOOK_URL=${{ secrets.VITE_COMPARATASAS_DEPLOY_HOOK_URL }}" >> .env
 
       - name: Install dependencies
         run: pnpm install
