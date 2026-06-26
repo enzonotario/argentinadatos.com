@@ -12,10 +12,6 @@ const URL_NARANJA_BLOG_TNA =
 const schemaNaranja = {
   tna: { type: 'number' },
   tope: { anyOf: [{ type: 'number' }, { type: 'null' }] },
-  condiciones: { anyOf: [{ type: 'string' }, { type: 'null' }] },
-  condicionesCorto: {
-    anyOf: [{ type: 'string', maxLength: 200 }, { type: 'null' }],
-  },
 }
 
 export async function extraerNaranjaX() {
@@ -29,9 +25,9 @@ export async function extraerNaranjaX() {
       url: URL_NARANJA_BLOG_TNA,
       markdownSource: 'defuddle',
       prompt:
-        'El markdown es el artículo del blog de Naranja X. Extraé la TNA nominal anual vigente de la cuenta remunerada en pesos, el tope máximo de saldo remunerado si figura (monto en pesos, sin puntos de miles en el número), y un resumen breve de condiciones si aplica. TNA en decimal (ej. 0.19 para 19%). tope null si no se indica límite claro.',
+        'El markdown es el artículo del blog de Naranja X. Extraé la TNA nominal anual vigente de la cuenta remunerada en pesos y el tope máximo de saldo remunerado si figura (monto en pesos, sin puntos de miles en el número). TNA en decimal (ej. 0.19 para 19%). tope null si no se indica límite claro.',
       schema: schemaNaranja,
-      required: ['tna', 'tope', 'condiciones', 'condicionesCorto'],
+      required: ['tna', 'tope'],
     })
 
     if (!datos || typeof datos.tna !== 'number') {
@@ -46,9 +42,8 @@ export async function extraerNaranjaX() {
       tna,
       tea: calcularTeaDesdeTna(tna),
       tope: datos.tope === undefined ? null : datos.tope,
-      condiciones: datos.condiciones === undefined ? null : datos.condiciones,
-      condicionesCorto:
-        datos.condicionesCorto === undefined ? null : datos.condicionesCorto,
+      condiciones: null,
+      condicionesCorto: null,
       fecha: format(new Date(), 'yyyy-MM-dd'),
     }
   } catch (error) {
