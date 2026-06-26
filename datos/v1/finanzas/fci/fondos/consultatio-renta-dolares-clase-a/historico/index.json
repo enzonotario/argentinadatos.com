@@ -2,7 +2,7 @@
   "fondoId": "824",
   "claseId": "2306",
   "nombre": "Consultatio Renta Dolares - Clase A",
-  "fechaActualizacion": "2026-06-25T01:26:57.000Z",
+  "fechaActualizacion": "2026-06-26T01:28:46.000Z",
   "historico": [
     {
       "slug": "consultatio-renta-dolares-clase-a",
@@ -8274,6 +8274,38 @@
       "retornoDiario": 0.060641,
       "retornoAcumulado": 174.368663,
       "flujoEstimado": -0.00391,
+      "origen": "cafci-detail"
+    },
+    {
+      "slug": "consultatio-renta-dolares-clase-a",
+      "fondoId": "824",
+      "claseId": "2306",
+      "nombre": "Consultatio Renta Dolares - Clase A",
+      "fecha": "2026-06-24",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 148452.771,
+      "patrimonio": 1757207.5,
+      "retornoDiario": -0.335182,
+      "retornoAcumulado": 173.44903,
+      "flujoEstimado": 0.001326,
+      "origen": "cafci-detail"
+    },
+    {
+      "slug": "consultatio-renta-dolares-clase-a",
+      "fondoId": "824",
+      "claseId": "2306",
+      "nombre": "Consultatio Renta Dolares - Clase A",
+      "fecha": "2026-06-25",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 148192.649,
+      "patrimonio": 1754128.49,
+      "retornoDiario": -0.175222,
+      "retornoAcumulado": 172.969887,
+      "flujoEstimado": 0.004126,
       "origen": "cafci-detail"
     }
   ]
