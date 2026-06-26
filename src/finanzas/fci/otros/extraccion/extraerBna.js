@@ -15,15 +15,22 @@ export async function extraerBnaCuentaRemunerada() {
   try {
     const datos = await extractWithAI(log, {
       url: 'https://bna.com.ar/Personas/cuentasueldo',
-      prompt:
-        'Extrae la tasa de la cuenta remunerada en pesos en formato JSON. Para la TNA usa números decimales (por ejemplo 0.2 para 2%). En condiciones/condicionesCorto aclará para qué tipo de Cuentas/Clientes es.',
+      prompt: `Extraé datos de la Cuenta Remunerada en pesos del BNA (página Cuenta Sueldo).
+
+La TNA y el tope máximo remunerado figuran en el acordeón "Términos y condiciones" (panel #collapseOne4, div.content_legales), dentro del bloque titulado "CUENTA REMUNERADA EN PESOS". Ignorá los demás bloques legales del mismo acordeón (+HOGARES CON BNA, PRÉSTAMOS PREAPROBADOS, CUENTA NACION, FONDOS COMUNES DE INVERSIÓN, etc.).
+
+Devolvé:
+- tna: TNA nominal anual en decimal (ej. 0.14 para 14%)
+- tope: saldo máximo remunerado en pesos como entero sin separadores (ej. 2000000 para $2.000.000)
+- condiciones: texto legal completo y literal del bloque "CUENTA REMUNERADA EN PESOS", incluyendo el título y el párrafo legal tal como aparece (montos, TNA, TEA, vigencia, restricciones de clientes/cuentas, etc.). No resumas ni parafrasees.
+- condicionesCorto: resumen en menos de 100 caracteres para qué clientes/cuentas aplica el beneficio`,
       schema: {
         tna: { type: 'number' },
         tope: { type: 'number' },
         condiciones: { type: 'string' },
         condicionesCorto: { type: 'string', maxLength: 100 },
       },
-      required: ['tna', 'tope'],
+      required: ['tna', 'tope', 'condiciones'],
     })
 
     if (!datos || typeof datos.tna !== 'number') {
