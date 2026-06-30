@@ -2,7 +2,7 @@
   "fondoId": "731",
   "claseId": "5016",
   "nombre": "IAM Renta Dólares - Clase Ley Nº 27.743",
-  "fecha": "2026-06-25",
+  "fecha": "2026-06-29",
   "administradora": "Industrial Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Industrial S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,24 +13,20 @@
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "914",
-  "patrimonio": 146346.37,
+  "patrimonio": 146267.52,
   "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1135.539,
-    "ultimos7Dias": -0.0568,
-    "unMes": 0.4752,
-    "noventaDias": 2.6631,
-    "cientoOchentaDias": 6.0302,
-    "enElAnio": 5.8844,
-    "doceMeses": 10.3949
+    "valorCuotaparte": 1134.927,
+    "ultimos7Dias": -0.1655,
+    "unMes": 0.3214,
+    "noventaDias": 2.2224,
+    "cientoOchentaDias": 5.8273,
+    "enElAnio": 5.8273,
+    "doceMeses": 10.4585
   },
   "composicionCartera": [
-    {
-      "nombre": "Caucion Colocadora U$S BYMA",
-      "porcentaje": 10.3
-    },
     {
       "nombre": "ON Tecpetrol C12",
       "porcentaje": 6.8
@@ -45,11 +41,15 @@
     },
     {
       "nombre": "FCI Cocos Ahorro Dólares - Clase B",
-      "porcentaje": 5.6
+      "porcentaje": 5.9
     },
     {
       "nombre": "ON Genneia Clase 49",
       "porcentaje": 5.5
+    },
+    {
+      "nombre": "ON John Deere Cia. Fin C20",
+      "porcentaje": 5.1
     },
     {
       "nombre": "ON Futuros y Opciones.com S4 CA",
@@ -61,38 +61,42 @@
     },
     {
       "nombre": "ON Oldelval Clase 7",
-      "porcentaje": 4.1
+      "porcentaje": 4
+    },
+    {
+      "nombre": "Caucion Colocadora U$S BYMA",
+      "porcentaje": 3.5
     },
     {
       "nombre": "ON Banco Macro Clase G",
-      "porcentaje": 3.2
+      "porcentaje": 3.3
     },
     {
       "nombre": "ON Banco Macro Clase H Reg S",
-      "porcentaje": 2.8
+      "porcentaje": 2.9
     },
     {
-      "nombre": "ON Oldelval Clase 5",
+      "nombre": "ON Bco Galicia Clase 16",
       "porcentaje": 2.8
-    },
-    {
-      "nombre": "ON Pluspetrol Clase 6",
-      "porcentaje": 2.7
     },
     {
       "nombre": "ON Petroqui C Rivadavia Clase Q",
       "porcentaje": 2.7
     },
     {
-      "nombre": "ON Raghsa 2032",
+      "nombre": "ON Oldelval Clase 5",
       "porcentaje": 2.7
     },
     {
-      "nombre": "ON Bco Galicia Clase 16",
+      "nombre": "ON Pluspetrol Clase 6",
       "porcentaje": 2.7
     },
     {
       "nombre": "ON Pecom C3",
+      "porcentaje": 2.6
+    },
+    {
+      "nombre": "ON Raghsa 2032",
       "porcentaje": 2.6
     },
     {
@@ -105,7 +109,7 @@
     },
     {
       "nombre": "ON Havanna S1",
-      "porcentaje": 2.2
+      "porcentaje": 2.3
     },
     {
       "nombre": "ON Tecpetrol C11",
@@ -113,7 +117,7 @@
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 15.4
+      "porcentaje": 16.4
     }
   ],
   "calificaciones": [

@@ -2,7 +2,7 @@
   "fondoId": "1474",
   "claseId": "4360",
   "nombre": "Balanz Performance XII - Clase A",
-  "fecha": "2026-06-25",
+  "fecha": "2026-06-29",
   "administradora": "Balanz S.G.F.C.I.S.A.U.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,13 +13,13 @@
   "duracion": "Mayor a 3 Años",
   "moneda": "Peso Argentina",
   "codigoCNV": "1292",
-  "patrimonio": 11773616962.85,
+  "patrimonio": 11805511219.99,
   "inversionMinima": 1000,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1004.652,
-    "ultimos7Dias": 0.3779,
+    "valorCuotaparte": 1007.373,
+    "ultimos7Dias": 0.4842,
     "unMes": null,
     "noventaDias": null,
     "cientoOchentaDias": null,
@@ -28,16 +28,28 @@
   },
   "composicionCartera": [
     {
+      "nombre": "Fut Reg ARS",
+      "porcentaje": 36.7
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TZV26",
+      "porcentaje": 36.2
+    },
+    {
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 29.9
+    },
+    {
+      "nombre": "Pzo Fi $ Banco VOII",
+      "porcentaje": 22.5
+    },
+    {
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 7.5
+    },
+    {
       "nombre": "FCI Schroder Liquidez - Clase B",
-      "porcentaje": 97
-    },
-    {
-      "nombre": "Cta Cte USC Citibank",
-      "porcentaje": 2.7
-    },
-    {
-      "nombre": "Resto de Activos",
-      "porcentaje": 0.3
+      "porcentaje": 3.8
     }
   ],
   "calificaciones": [],

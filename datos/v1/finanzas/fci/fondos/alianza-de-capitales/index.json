@@ -2,10 +2,10 @@
   "fondoId": "1",
   "claseId": "1",
   "nombre": "Alianza de Capitales",
-  "fecha": "2026-06-17",
-  "administradora": "Administradora de Titulos Valores S.G.F.C.I.S.A.",
-  "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "Renta Fija",
+  "fecha": "2026-06-29",
+  "administradora": "Blacktoro Asset Management S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Mixta",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Badlar",
@@ -13,47 +13,51 @@
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Peso Argentina",
   "codigoCNV": "52",
-  "patrimonio": 1427309250.22,
+  "patrimonio": 2104488740.87,
   "inversionMinima": 1,
   "monedaInversion": "Peso Argentina",
-  "plazoLiquidacionDias": 3,
+  "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 222941.86,
-    "ultimos7Dias": -0.0429,
-    "unMes": 1.8796,
-    "noventaDias": 4.7247,
-    "cientoOchentaDias": 11.8347,
-    "enElAnio": 11.4874,
-    "doceMeses": 36.3587
+    "valorCuotaparte": 224565.534,
+    "ultimos7Dias": 0.3919,
+    "unMes": 2.1377,
+    "noventaDias": 3.1249,
+    "cientoOchentaDias": 12.2993,
+    "enElAnio": 12.2993,
+    "doceMeses": 35.8113
   },
   "composicionCartera": [
     {
-      "nombre": "Lecap S12J6",
-      "porcentaje": 32.7
+      "nombre": "FCI Pionero Pesos Plus - Clase B",
+      "porcentaje": 22.2
     },
     {
-      "nombre": "Lecap S30S6",
-      "porcentaje": 20.6
+      "nombre": "Lecap S14G6",
+      "porcentaje": 19.1
+    },
+    {
+      "nombre": "Lecap S17L6",
+      "porcentaje": 17.8
     },
     {
       "nombre": "Lecap S31G6",
-      "porcentaje": 18.1
+      "porcentaje": 14.9
+    },
+    {
+      "nombre": "Lecap S30S6",
+      "porcentaje": 12.2
     },
     {
       "nombre": "Bono Boncer TZX26",
-      "porcentaje": 17.7
-    },
-    {
-      "nombre": "FF AMFAyS S46 Clase B",
-      "porcentaje": 6.1
+      "porcentaje": 10.5
     },
     {
       "nombre": "FF AMFAyS S48 Clase B",
-      "porcentaje": 4.7
+      "porcentaje": 2.9
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 0.2
+      "porcentaje": 0.3
     }
   ],
   "calificaciones": [
@@ -76,13 +80,13 @@
   "sociedades": [
     {
       "tipo": "Sociedad Gerente:",
-      "nombre": "Administradora de Titulos Valores S.G.F.C.I.S.A.",
+      "nombre": "Blacktoro Asset Management S.A.",
       "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00011G-5feac20e.jpg"
     },
     {
       "tipo": "Sociedad Depositaria:",
-      "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
     }
   ]
 }

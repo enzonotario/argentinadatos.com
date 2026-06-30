@@ -2,7 +2,7 @@
   "fondoId": "789",
   "claseId": "1800",
   "nombre": "GMC Retorno Total - Clase B",
-  "fechaActualizacion": "2026-06-26T01:28:46.000Z",
+  "fechaActualizacion": "2026-06-30T01:31:20.000Z",
   "historico": [
     {
       "slug": "gmc-retorno-total-clase-b",
@@ -898,6 +898,22 @@
       "retornoDiario": -0.00103,
       "retornoAcumulado": -2.961793,
       "flujoEstimado": 10461.539834,
+      "origen": "cafci-detail"
+    },
+    {
+      "slug": "gmc-retorno-total-clase-b",
+      "fondoId": "789",
+      "claseId": "1800",
+      "nombre": "GMC Retorno Total - Clase B",
+      "fecha": "2026-06-26",
+      "categoria": "Retorno Total",
+      "categoriaKey": "retornoTotal",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 9.703,
+      "patrimonio": 2310328105.24,
+      "retornoDiario": -99.900015,
+      "retornoAcumulado": -99.902977,
+      "flujoEstimado": 2308017764.226982,
       "origen": "cafci-detail"
     }
   ]
