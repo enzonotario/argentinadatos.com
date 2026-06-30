@@ -31,7 +31,10 @@ function valoresIguales(item1, item2) {
     normalizarValor(item1.tope) === normalizarValor(item2.tope) &&
     normalizarValor(item1.condiciones) === normalizarValor(item2.condiciones) &&
     normalizarValor(item1.condicionesCorto) ===
-      normalizarValor(item2.condicionesCorto)
+      normalizarValor(item2.condicionesCorto) &&
+    normalizarValor(item1.plazoMinDias) ===
+      normalizarValor(item2.plazoMinDias) &&
+    normalizarValor(item1.plazoMaxDias) === normalizarValor(item2.plazoMaxDias)
   )
 }
 
@@ -97,6 +100,8 @@ async function inicializarBaseDatos(db) {
         fecha TEXT NOT NULL,
         condiciones TEXT,
         condicionesCorto TEXT,
+        plazoMinDias INTEGER,
+        plazoMaxDias INTEGER,
         timestamp TEXT NOT NULL,
         created_at TEXT NOT NULL DEFAULT (datetime('now'))
       )
@@ -121,12 +126,36 @@ async function inicializarBaseDatos(db) {
 
     console.log('Migración 001 completada: esquema inicial creado exitosamente')
   }
+
+  if (!executedMigrations.has(2)) {
+    console.log('Ejecutando migración 002: agregando columnas de plazo...')
+
+    for (const columna of ['plazoMinDias', 'plazoMaxDias']) {
+      try {
+        await db.execute(`
+          ALTER TABLE fci_otros ADD COLUMN ${columna} INTEGER
+        `)
+      } catch (error) {
+        if (!String(error).includes(`duplicate column name: ${columna}`)) {
+          throw error
+        }
+      }
+    }
+
+    await db.execute({
+      sql: 'INSERT INTO migrations (scope, version, name) VALUES (?, ?, ?)',
+      args: ['fci-otros', 2, 'add_plazo_columns'],
+    })
+
+    console.log('Migración 002 completada: columnas de plazo agregadas')
+  }
 }
 
 async function getLatestFciOtrosByFondo(db, fondo) {
   const resultado = await db.execute({
     sql: `
-      SELECT id, fondo, tna, tea, tope, fecha, condiciones, condicionesCorto, timestamp
+      SELECT id, fondo, tna, tea, tope, fecha, condiciones, condicionesCorto,
+             plazoMinDias, plazoMaxDias, timestamp
       FROM fci_otros
       WHERE fondo = ?
       ORDER BY timestamp DESC, created_at DESC
@@ -147,6 +176,8 @@ async function getLatestFciOtrosByFondo(db, fondo) {
     fecha: row.fecha,
     condiciones: row.condiciones,
     condicionesCorto: row.condicionesCorto,
+    plazoMinDias: row.plazoMinDias ?? null,
+    plazoMaxDias: row.plazoMaxDias ?? null,
     timestamp: row.timestamp,
   }
 }
@@ -160,12 +191,17 @@ async function insertFciOtros(
   fecha,
   condiciones,
   condicionesCorto,
+  plazoMinDias,
+  plazoMaxDias,
   timestamp,
 ) {
   await db.execute({
     sql: `
-      INSERT INTO fci_otros (fondo, tna, tea, tope, fecha, condiciones, condicionesCorto, timestamp)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+      INSERT INTO fci_otros (
+        fondo, tna, tea, tope, fecha, condiciones, condicionesCorto,
+        plazoMinDias, plazoMaxDias, timestamp
+      )
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `,
     args: [
       fondo,
@@ -175,6 +211,8 @@ async function insertFciOtros(
       fecha,
       condiciones,
       condicionesCorto,
+      plazoMinDias,
+      plazoMaxDias,
       timestamp,
     ],
   })
@@ -213,6 +251,8 @@ async function procesarArchivos() {
       fecha: item.fecha,
       condiciones: normalizarValor(item.condiciones),
       condicionesCorto: normalizarValor(item.condicionesCorto),
+      plazoMinDias: normalizarValor(item.plazoMinDias),
+      plazoMaxDias: normalizarValor(item.plazoMaxDias),
     })
   }
 
@@ -282,7 +322,9 @@ async function main() {
         ultimo.tea !== item.tea ||
         ultimo.tope !== item.tope ||
         ultimo.condiciones !== item.condiciones ||
-        ultimo.condicionesCorto !== item.condicionesCorto
+        ultimo.condicionesCorto !== item.condicionesCorto ||
+        ultimo.plazoMinDias !== item.plazoMinDias ||
+        ultimo.plazoMaxDias !== item.plazoMaxDias
       ) {
         const timestamp = parse(
           item.fecha,
@@ -298,6 +340,8 @@ async function main() {
           item.fecha,
           item.condiciones,
           item.condicionesCorto,
+          item.plazoMinDias,
+          item.plazoMaxDias,
           timestamp,
         )
         insertados++

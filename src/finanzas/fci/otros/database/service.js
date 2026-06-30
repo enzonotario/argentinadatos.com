@@ -1,6 +1,22 @@
 import { MigrationRunner } from './migrations/migration-runner.js'
 import { crearClienteLibsql } from '@/utils/libsql.js'
 
+function mapFciOtrosRow(row) {
+  return {
+    id: row.id,
+    fondo: row.fondo,
+    tna: row.tna,
+    tea: row.tea,
+    tope: row.tope,
+    fecha: row.fecha,
+    condiciones: row.condiciones,
+    condicionesCorto: row.condicionesCorto,
+    plazoMinDias: row.plazoMinDias ?? null,
+    plazoMaxDias: row.plazoMaxDias ?? null,
+    timestamp: row.timestamp,
+  }
+}
+
 export class FciOtrosDatabaseService {
   constructor(url, authToken) {
     this.db = crearClienteLibsql({
@@ -23,12 +39,17 @@ export class FciOtrosDatabaseService {
     fecha,
     condiciones,
     condicionesCorto,
+    plazoMinDias,
+    plazoMaxDias,
     timestamp,
   ) {
     await this.db.execute({
       sql: `
-        INSERT INTO fci_otros (fondo, tna, tea, tope, fecha, condiciones, condicionesCorto, timestamp)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        INSERT INTO fci_otros (
+          fondo, tna, tea, tope, fecha, condiciones, condicionesCorto,
+          plazoMinDias, plazoMaxDias, timestamp
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `,
       args: [
         fondo,
@@ -38,6 +59,8 @@ export class FciOtrosDatabaseService {
         fecha,
         condiciones,
         condicionesCorto,
+        plazoMinDias,
+        plazoMaxDias,
         timestamp,
       ],
     })
@@ -46,7 +69,8 @@ export class FciOtrosDatabaseService {
   async getLatestFciOtrosByFondo(fondo) {
     const resultado = await this.db.execute({
       sql: `
-        SELECT id, fondo, tna, tea, tope, fecha, condiciones, condicionesCorto, timestamp
+        SELECT id, fondo, tna, tea, tope, fecha, condiciones, condicionesCorto,
+               plazoMinDias, plazoMaxDias, timestamp
         FROM fci_otros
         WHERE fondo = ?
         ORDER BY timestamp DESC, created_at DESC
@@ -59,19 +83,7 @@ export class FciOtrosDatabaseService {
       return null
     }
 
-    const row = resultado.rows[0]
-
-    return {
-      id: row.id,
-      fondo: row.fondo,
-      tna: row.tna,
-      tea: row.tea,
-      tope: row.tope,
-      fecha: row.fecha,
-      condiciones: row.condiciones,
-      condicionesCorto: row.condicionesCorto,
-      timestamp: row.timestamp,
-    }
+    return mapFciOtrosRow(resultado.rows[0])
   }
 
   async getAllLatestFciOtros() {
@@ -89,17 +101,7 @@ export class FciOtrosDatabaseService {
       `,
     })
 
-    return resultado.rows.map(row => ({
-      id: row.id,
-      fondo: row.fondo,
-      tna: row.tna,
-      tea: row.tea,
-      tope: row.tope,
-      fecha: row.fecha,
-      condiciones: row.condiciones,
-      condicionesCorto: row.condicionesCorto,
-      timestamp: row.timestamp,
-    }))
+    return resultado.rows.map(mapFciOtrosRow)
   }
 
   async getFciOtrosByFecha(fecha) {
@@ -119,17 +121,7 @@ export class FciOtrosDatabaseService {
       args: [fecha],
     })
 
-    return resultado.rows.map(row => ({
-      id: row.id,
-      fondo: row.fondo,
-      tna: row.tna,
-      tea: row.tea,
-      tope: row.tope,
-      fecha: row.fecha,
-      condiciones: row.condiciones,
-      condicionesCorto: row.condicionesCorto,
-      timestamp: row.timestamp,
-    }))
+    return resultado.rows.map(mapFciOtrosRow)
   }
 
   async getPenultimoFciOtros() {
@@ -152,23 +144,14 @@ export class FciOtrosDatabaseService {
       `,
     })
 
-    return resultado.rows.map(row => ({
-      id: row.id,
-      fondo: row.fondo,
-      tna: row.tna,
-      tea: row.tea,
-      tope: row.tope,
-      fecha: row.fecha,
-      condiciones: row.condiciones,
-      condicionesCorto: row.condicionesCorto,
-      timestamp: row.timestamp,
-    }))
+    return resultado.rows.map(mapFciOtrosRow)
   }
 
   async getHistorialPorFondo(fondo) {
     const resultado = await this.db.execute({
       sql: `
-        SELECT id, fondo, tna, tea, tope, fecha, condiciones, condicionesCorto, timestamp
+        SELECT id, fondo, tna, tea, tope, fecha, condiciones, condicionesCorto,
+               plazoMinDias, plazoMaxDias, timestamp
         FROM fci_otros
         WHERE fondo = ?
         ORDER BY fecha ASC, timestamp ASC
@@ -176,17 +159,7 @@ export class FciOtrosDatabaseService {
       args: [fondo],
     })
 
-    return resultado.rows.map(row => ({
-      id: row.id,
-      fondo: row.fondo,
-      tna: row.tna,
-      tea: row.tea,
-      tope: row.tope,
-      fecha: row.fecha,
-      condiciones: row.condiciones,
-      condicionesCorto: row.condicionesCorto,
-      timestamp: row.timestamp,
-    }))
+    return resultado.rows.map(mapFciOtrosRow)
   }
 
   async getAllFondos() {

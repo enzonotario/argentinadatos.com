@@ -1,7 +1,8 @@
 import { migration_001_initial_schema } from './001_initial_schema.js'
+import { migration_002_add_plazo_columns } from './002_add_plazo_columns.js'
 import { logGrupo, logError, logMensaje } from '@/log.js'
 
-const MIGRATIONS = [migration_001_initial_schema]
+const MIGRATIONS = [migration_001_initial_schema, migration_002_add_plazo_columns]
 
 export class MigrationRunner {
   constructor(db, scope = 'fci-otros') {

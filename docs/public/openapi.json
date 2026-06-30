@@ -929,6 +929,7 @@
           "[Fiwind](https://www.fiwind.io/)",
           "[Montemar Pay](https://www.montemarpay.com.ar/)",
           "[Naranja X](https://www.naranjax.com/)",
+          "[Naranja X Frascos](https://www.naranjax.com/frascos)",
           "[Supervielle](https://www.supervielle.com.ar/)",
           "[Voii](https://www.voii.com.ar/app-mobile/)"
         ]
@@ -2305,6 +2306,24 @@
           },
           "tope": {
             "type": "number"
+          },
+          "condiciones": {
+            "type": "string",
+            "nullable": true
+          },
+          "condicionesCorto": {
+            "type": "string",
+            "nullable": true
+          },
+          "plazoMinDias": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Mínimo de días del rango de plazo"
+          },
+          "plazoMaxDias": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Máximo de días del rango de plazo"
           }
         },
         "x-examples": {

@@ -33,6 +33,8 @@ describe('FciOtrosDatabaseService', () => {
       '2026-01-12',
       null,
       null,
+      null,
+      null,
       timestamp,
     )
 
@@ -59,6 +61,8 @@ describe('FciOtrosDatabaseService', () => {
       '2026-01-12',
       null,
       null,
+      null,
+      null,
       timestamp1,
     )
     await db.insertFciOtros(
@@ -67,6 +71,8 @@ describe('FciOtrosDatabaseService', () => {
       0.28,
       1200000,
       '2026-01-13',
+      null,
+      null,
       null,
       null,
       timestamp2,
@@ -90,6 +96,8 @@ describe('FciOtrosDatabaseService', () => {
       '2026-01-12',
       null,
       null,
+      null,
+      null,
       timestamp,
     )
     await db.insertFciOtros(
@@ -98,6 +106,8 @@ describe('FciOtrosDatabaseService', () => {
       0.3769,
       750000,
       '2026-01-12',
+      null,
+      null,
       null,
       null,
       timestamp,
@@ -126,6 +136,8 @@ describe('FciOtrosDatabaseService', () => {
       '2026-01-12',
       null,
       'Solo Clientes Plan Sueldo.',
+      null,
+      null,
       timestamp,
     )
 
@@ -133,6 +145,27 @@ describe('FciOtrosDatabaseService', () => {
 
     expect(ultimo.condiciones).toBeNull()
     expect(ultimo.condicionesCorto).toBe('Solo Clientes Plan Sueldo.')
+  })
+
+  it('guarda plazoMinDias y plazoMaxDias', async () => {
+    const timestamp = new Date().toISOString()
+    await db.insertFciOtros(
+      'NARANJA X FRASCOS 7-13',
+      0.18,
+      0.1972,
+      null,
+      '2026-06-30',
+      null,
+      null,
+      7,
+      13,
+      timestamp,
+    )
+
+    const ultimo = await db.getLatestFciOtrosByFondo('NARANJA X FRASCOS 7-13')
+
+    expect(ultimo.plazoMinDias).toBe(7)
+    expect(ultimo.plazoMaxDias).toBe(13)
   })
 
   it('obtiene FCI otros por fecha', async () => {
@@ -147,6 +180,8 @@ describe('FciOtrosDatabaseService', () => {
       '2026-01-12',
       null,
       null,
+      null,
+      null,
       timestamp1,
     )
     await db.insertFciOtros(
@@ -155,6 +190,8 @@ describe('FciOtrosDatabaseService', () => {
       0.28,
       1200000,
       '2026-01-13',
+      null,
+      null,
       null,
       null,
       timestamp2,

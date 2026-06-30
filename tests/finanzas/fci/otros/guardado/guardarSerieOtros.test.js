@@ -134,6 +134,37 @@ describe('guardarSerieOtros', () => {
     expect(ultimo.condicionesCorto).toBe('Solo Clientes Plan Sueldo.')
   })
 
+  it('guarda frascos con plazo en el endpoint estatico', async () => {
+    const items = [
+      {
+        fondo: 'NARANJA X FRASCOS 7-13',
+        tna: 0.18,
+        tea: 0.1972,
+        tope: null,
+        fecha: '2026-06-30',
+        plazoMinDias: 7,
+        plazoMaxDias: 13,
+      },
+    ]
+
+    await guardarSerieOtros(items, testDb.url, testDb.authToken)
+
+    const guardado = leerRuta('/finanzas/fci/otros/ultimo')
+    const frasco = guardado.find(r => r.fondo === 'NARANJA X FRASCOS 7-13')
+
+    expect(frasco).toEqual({
+      fondo: 'NARANJA X FRASCOS 7-13',
+      tna: 0.18,
+      tea: 0.1972,
+      tope: null,
+      fecha: '2026-06-30',
+      condiciones: null,
+      condicionesCorto: null,
+      plazoMinDias: 7,
+      plazoMaxDias: 13,
+    })
+  })
+
   it('genera el endpoint estatico correctamente', async () => {
     const items = [
       {
@@ -163,6 +194,8 @@ describe('guardarSerieOtros', () => {
       fecha: '2026-01-12',
       condiciones: null,
       condicionesCorto: null,
+      plazoMinDias: null,
+      plazoMaxDias: null,
     })
   })
 })

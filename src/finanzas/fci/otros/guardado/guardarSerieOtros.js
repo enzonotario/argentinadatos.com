@@ -2,6 +2,45 @@ import { FciOtrosDatabaseService } from '../database/service.js'
 import { escribirRuta } from '@/utils/rutas.js'
 import { normalizarSlugParaRuta } from '@/finanzas/compartido/utils/nombres.js'
 
+function mapItemParaEndpoint(row) {
+  return {
+    fondo: row.fondo,
+    tna: row.tna,
+    tea: row.tea,
+    tope: row.tope,
+    fecha: row.fecha,
+    condiciones: row.condiciones,
+    condicionesCorto: row.condicionesCorto,
+    plazoMinDias: row.plazoMinDias ?? null,
+    plazoMaxDias: row.plazoMaxDias ?? null,
+  }
+}
+
+function mapHistorialItem(row) {
+  return {
+    tna: row.tna,
+    tea: row.tea,
+    tope: row.tope,
+    fecha: row.fecha,
+    condiciones: row.condiciones,
+    condicionesCorto: row.condicionesCorto,
+    plazoMinDias: row.plazoMinDias ?? null,
+    plazoMaxDias: row.plazoMaxDias ?? null,
+  }
+}
+
+function historialCambio(item, prev) {
+  return (
+    item.tna !== prev.tna ||
+    item.tea !== prev.tea ||
+    item.tope !== prev.tope ||
+    item.condiciones !== prev.condiciones ||
+    item.condicionesCorto !== prev.condicionesCorto ||
+    item.plazoMinDias !== prev.plazoMinDias ||
+    item.plazoMaxDias !== prev.plazoMaxDias
+  )
+}
+
 export async function guardarSerieOtros(items, url, authToken) {
   const db = new FciOtrosDatabaseService(url, authToken)
 
@@ -20,7 +59,9 @@ export async function guardarSerieOtros(items, url, authToken) {
           ultimo.tea !== item.tea ||
           ultimo.tope !== item.tope ||
           ultimo.condiciones !== (item.condiciones || null) ||
-          ultimo.condicionesCorto !== (item.condicionesCorto || null))
+          ultimo.condicionesCorto !== (item.condicionesCorto || null) ||
+          ultimo.plazoMinDias !== (item.plazoMinDias ?? null) ||
+          ultimo.plazoMaxDias !== (item.plazoMaxDias ?? null))
 
       if (!ultimo || (valoresCambiaron && item.fecha >= ultimo.fecha)) {
         itemsToInsert.push(item)
@@ -32,6 +73,8 @@ export async function guardarSerieOtros(items, url, authToken) {
           item.fecha,
           item.condiciones || null,
           item.condicionesCorto || null,
+          item.plazoMinDias ?? null,
+          item.plazoMaxDias ?? null,
           timestamp,
         )
       }
@@ -51,28 +94,12 @@ export async function guardarSerieOtros(items, url, authToken) {
 
 async function generarEndpointsEstaticos(db) {
   const todosLosDatos = await db.getAllLatestFciOtros()
-  const resultado = todosLosDatos.map(row => ({
-    fondo: row.fondo,
-    tna: row.tna,
-    tea: row.tea,
-    tope: row.tope,
-    fecha: row.fecha,
-    condiciones: row.condiciones,
-    condicionesCorto: row.condicionesCorto,
-  }))
+  const resultado = todosLosDatos.map(mapItemParaEndpoint)
 
   escribirRuta('/finanzas/fci/otros/ultimo', resultado)
 
   const penultimo = await db.getPenultimoFciOtros()
-  const penultimoResultado = penultimo.map(row => ({
-    fondo: row.fondo,
-    tna: row.tna,
-    tea: row.tea,
-    tope: row.tope,
-    fecha: row.fecha,
-    condiciones: row.condiciones,
-    condicionesCorto: row.condicionesCorto,
-  }))
+  const penultimoResultado = penultimo.map(mapItemParaEndpoint)
 
   if (penultimoResultado.length > 0) {
     escribirRuta('/finanzas/fci/otros/penultimo', penultimoResultado)
@@ -83,26 +110,11 @@ async function generarEndpointsEstaticos(db) {
   for (const fondo of fondos) {
     const historial = await db.getHistorialPorFondo(fondo)
     const historialResultado = historial
-      .map(row => ({
-        tna: row.tna,
-        tea: row.tea,
-        tope: row.tope,
-        fecha: row.fecha,
-        condiciones: row.condiciones,
-        condicionesCorto: row.condicionesCorto,
-      }))
+      .map(mapHistorialItem)
       .filter((item, index, arr) => {
         if (index === 0) return true
 
-        const prev = arr[index - 1]
-
-        return (
-          item.tna !== prev.tna ||
-          item.tea !== prev.tea ||
-          item.tope !== prev.tope ||
-          item.condiciones !== prev.condiciones ||
-          item.condicionesCorto !== prev.condicionesCorto
-        )
+        return historialCambio(item, arr[index - 1])
       })
 
     escribirRuta(
