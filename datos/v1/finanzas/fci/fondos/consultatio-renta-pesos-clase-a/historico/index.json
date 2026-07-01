@@ -2,7 +2,7 @@
   "fondoId": "647",
   "claseId": "1331",
   "nombre": "Consultatio Renta Pesos - Clase A",
-  "fechaActualizacion": "2026-06-30T01:31:20.000Z",
+  "fechaActualizacion": "2026-07-01T02:11:40.000Z",
   "historico": [
     {
       "slug": "consultatio-renta-pesos-clase-a",
@@ -546,6 +546,22 @@
       "retornoDiario": 0.297872,
       "retornoAcumulado": 7.809502,
       "flujoEstimado": 0.197431,
+      "origen": "cafci-detail"
+    },
+    {
+      "slug": "consultatio-renta-pesos-clase-a",
+      "fondoId": "647",
+      "claseId": "1331",
+      "nombre": "Consultatio Renta Pesos - Clase A",
+      "fecha": "2026-06-30",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 28426.413,
+      "patrimonio": 10295831.98,
+      "retornoDiario": 0.244525,
+      "retornoAcumulado": 8.073123,
+      "flujoEstimado": -0.20248,
       "origen": "cafci-detail"
     }
   ]
