@@ -1922,7 +1922,9 @@
             "format": "float"
           }
         },
-        "required": ["tna"],
+        "required": [
+          "tna"
+        ],
         "x-examples": {
           "Example 1": {
             "montoMinimo": null,
