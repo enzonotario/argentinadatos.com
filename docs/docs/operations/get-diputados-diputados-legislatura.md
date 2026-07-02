@@ -1,7 +1,7 @@
 ---
 aside: false
 outline: false
-title: Feriados bancarios
+title: Diputados por legislatura
 ---
 
 <script setup>
@@ -11,7 +11,7 @@ import { OAMarkdown } from 'vitepress-openapi/client'
 const route = useRoute()
 </script>
 
-<OAOperation operation-id="get-feriados-bancarios">
+<OAOperation operation-id="get-diputados-diputados-legislatura">
 
 <template #description="description">
 
@@ -23,7 +23,7 @@ const route = useRoute()
 
 <template #footer="footer">
 
-<!--@include: ./parts/get-feriados-bancarios-footer.md -->
+<!--@include: ./parts/get-diputados-diputados-legislatura-footer.md -->
 
 </template>
 

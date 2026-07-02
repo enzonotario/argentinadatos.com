@@ -1,8 +1,6 @@
 import { getStaticPublicUrl } from '@argentinadatos/core/src/utils/getStaticPublicUrl.ts'
-import { readEndpoint } from '@argentinadatos/core/src/utils/readEndpoint.ts'
 import { readStaticBuffer } from '@argentinadatos/core/src/utils/readStaticBuffer.ts'
 import { titleCaseSpanish } from '@argentinadatos/core/src/utils/titleCaseSpanish.ts'
-import { writeEndpoint } from '@argentinadatos/core/src/utils/writeEndpoint.ts'
 import { writeStaticBuffer } from '@argentinadatos/core/src/utils/writeStaticBuffer.ts'
 import { shouldWriteJsonFiles, shouldWriteFromDatabase } from '@argentinadatos/core/src/utils/database-mode.ts'
 import axios from 'axios'
@@ -11,6 +9,7 @@ import { collect } from 'collect.js'
 import { formatISO, parseISO } from 'date-fns'
 import iconv from 'iconv-lite'
 import { BASE_URL, USER_AGENT } from '../../constants.ts'
+import { readAllDiputados, writeDiputadosEndpoints } from './diputadosEndpoint.ts'
 import { DiputadosDatabaseService } from './database/service.ts'
 
 export interface Diputado {
@@ -33,9 +32,7 @@ export interface Diputado {
   foto: string | null
 }
 
-const currentValues = JSON.parse(
-  readEndpoint('diputados/diputados') || '[]',
-) as Diputado[]
+const currentValues = readAllDiputados()
 
 export async function crawlDiputados(): Promise<Diputado[]> {
   const page = await parsePage(`${BASE_URL}/dataset/legisladores`)
@@ -63,7 +60,7 @@ export async function crawlDiputados(): Promise<Diputado[]> {
   }
 
   if (shouldWriteJsonFiles()) {
-    writeEndpoint('diputados/diputados', diputados)
+    writeDiputadosEndpoints(diputados)
   }
 
   const TURSO_DATABASE_URL = process.env.VITE_TURSO_DATABASE_URL
@@ -97,7 +94,7 @@ export async function crawlDiputados(): Promise<Diputado[]> {
 async function generateEndpointEstatico(db: DiputadosDatabaseService) {
   const todosLosDatos = await db.getAllDiputados()
 
-  writeEndpoint('diputados/diputados', todosLosDatos)
+  writeDiputadosEndpoints(todosLosDatos)
 }
 
 async function parsePage(url: string) {
