@@ -2,7 +2,7 @@
   "fondoId": "1672",
   "claseId": "5601",
   "nombre": "ConoSur Crédito Privado - Clase C",
-  "fechaActualizacion": "2026-07-02T02:09:45.000Z",
+  "fechaActualizacion": "2026-07-03T01:31:30.000Z",
   "historico": [
     {
       "slug": "conosur-credito-privado-clase-c",
@@ -18,6 +18,22 @@
       "retornoDiario": null,
       "retornoAcumulado": 0,
       "flujoEstimado": null,
+      "origen": "cafci-detail"
+    },
+    {
+      "slug": "conosur-credito-privado-clase-c",
+      "fondoId": "1672",
+      "claseId": "5601",
+      "nombre": "ConoSur Crédito Privado - Clase C",
+      "fecha": "2026-07-02",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1304.236,
+      "patrimonio": 932585491,
+      "retornoDiario": 0.066673,
+      "retornoAcumulado": 0.066673,
+      "flujoEstimado": 5999792.596979,
       "origen": "cafci-detail"
     }
   ]
