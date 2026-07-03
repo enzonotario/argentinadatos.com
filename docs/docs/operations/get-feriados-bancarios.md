@@ -21,7 +21,7 @@ const route = useRoute()
 
 </template>
 
-<template #footer="footer">
+<template #footer>
 
 <!--@include: ./parts/get-feriados-bancarios-footer.md -->
 

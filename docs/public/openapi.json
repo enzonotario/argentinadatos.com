@@ -1196,49 +1196,7 @@
         "tags": [
           "Diputados"
         ],
-        "description": "Devuelve las legislaturas disponibles.",
-        "responses": {
-          "200": {
-            "description": "Devuelve una lista de años de legislatura disponibles",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "integer"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get-diputados-diputados",
-        "x-data-source": [
-          "[Diputados](https://datos.hcdn.gob.ar)"
-        ]
-      }
-    },
-    "/v1/diputados/diputados/{legislatura}": {
-      "get": {
-        "summary": "Diputados por legislatura",
-        "tags": [
-          "Diputados"
-        ],
-        "description": "Devuelve los diputados de la legislatura indicada.",
-        "parameters": [
-          {
-            "name": "legislatura",
-            "in": "path",
-            "description": "Año de inicio de la legislatura",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "minimum": 2007,
-              "maximum": 2026
-            },
-            "example": 2026
-          }
-        ],
+        "description": "Devuelve los diputados.",
         "responses": {
           "200": {
             "description": "Devuelve una lista de diputados",
@@ -1254,7 +1212,7 @@
             }
           }
         },
-        "operationId": "get-diputados-diputados-legislatura",
+        "operationId": "get-diputados-diputados",
         "x-data-source": [
           "[Diputados](https://datos.hcdn.gob.ar)"
         ]

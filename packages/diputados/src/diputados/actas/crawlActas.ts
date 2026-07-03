@@ -3,7 +3,6 @@ import { shouldWriteFromDatabase, shouldWriteJsonFiles } from '@argentinadatos/c
 import { readEndpoint } from '@argentinadatos/core/src/utils/readEndpoint.ts'
 import { titleCaseSpanish } from '@argentinadatos/core/src/utils/titleCaseSpanish.ts'
 import { writeEndpoint } from '@argentinadatos/core/src/utils/writeEndpoint.ts'
-import { readAllDiputados } from '../diputados/diputadosEndpoint.ts'
 import axios from 'axios'
 import * as cheerio from 'cheerio'
 import { collect } from 'collect.js'
@@ -44,7 +43,7 @@ interface Acta {
 
 const currentValues = JSON.parse(readEndpoint('diputados/actas') || '[]')
 
-const diputados = readAllDiputados()
+const diputados = JSON.parse(readEndpoint('diputados/diputados') || '[]')
 
 export async function crawlActas(): Promise<Acta[]> {
   const currentIds = collect(currentValues).pluck('id').all() as string[]
@@ -86,6 +85,8 @@ export async function crawlActas(): Promise<Acta[]> {
           .all(),
       }))
       .each(({ year, actas }) => writeEndpoint(`diputados/actas/${year}`, actas))
+
+    writeEndpoint('diputados/diputados', diputados)
   }
 
   const TURSO_DATABASE_URL = process.env.VITE_TURSO_DATABASE_URL

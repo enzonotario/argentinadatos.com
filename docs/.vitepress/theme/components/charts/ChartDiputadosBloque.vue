@@ -14,7 +14,7 @@ watch(theme, async () => {
 
 async function fetchData() {
   try {
-    const data = await api.getDiputados()
+    const data = await api.get('/diputados/diputados')
     const hoy = new Date().toISOString().split('T')[0]
     
     // 1. Filter for entries where mandate is active today

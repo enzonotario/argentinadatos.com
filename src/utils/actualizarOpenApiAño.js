@@ -12,17 +12,16 @@ export async function actualizarOpenApiAño() {
     '/v1/feriados-bancarios/{año}',
     '/v1/senado/actas/{año}',
     '/v1/diputados/actas/{año}',
-    '/v1/diputados/diputados/{legislatura}',
   ]
 
   rutasAActualizar.forEach(ruta => {
     if (especificacion.paths[ruta]) {
       const parametros = especificacion.paths[ruta].get.parameters
-      const parametro = parametros.find(p => p.name === 'año' || p.name === 'legislatura')
+      const parametroAño = parametros.find(p => p.name === 'año')
 
-      if (parametro) {
-        parametro.schema.maximum = añoActual
-        parametro.example = añoActual
+      if (parametroAño) {
+        parametroAño.schema.maximum = añoActual
+        parametroAño.example = añoActual
       }
     }
   })
