@@ -18,99 +18,77 @@ on:
         type: string
         default: 'full'
 
-permissions:
-  contents: write
-
 concurrency:
-  group: 'data-update'
+  group: data-update-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
+    timeout-minutes: 180
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          registry-url: https://registry.npmjs.org/
-          node-version: 22
+      - name: Setup Node.js and pnpm
+        uses: ./.github/actions/setup-node-pnpm
 
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
-
-      - name: Create .env file (minimal)
-        if: inputs.env_preset == 'minimal'
-        run: |
-          touch .env
-          echo "VITE_TURSO_DATABASE_URL=${{ secrets.VITE_TURSO_DATABASE_URL }}" >> .env
-          echo "VITE_TURSO_AUTH_TOKEN=${{ secrets.VITE_TURSO_AUTH_TOKEN }}" >> .env
-          echo "VITE_FIRECRAWL_BASE_URL=${{ secrets.VITE_FIRECRAWL_BASE_URL }}" >> .env
-          echo "VITE_FIRECRAWL_API_KEY=${{ secrets.VITE_FIRECRAWL_API_KEY }}" >> .env
-          echo "VITE_PROXY_URL=${{ secrets.VITE_PROXY_URL }}" >> .env
-          echo "VITE_PROXY_TOKEN=${{ secrets.VITE_PROXY_TOKEN }}" >> .env
-          echo "VITE_COMPARATASAS_DEPLOY_HOOK_URL=${{ secrets.VITE_COMPARATASAS_DEPLOY_HOOK_URL }}" >> .env
-
-      - name: Create .env file (full)
-        if: inputs.env_preset == 'full'
-        run: |
-          touch .env
-          echo "VITE_AXIOM_ORG_ID=${{ secrets.VITE_AXIOM_ORG_ID }}" >> .env
-          echo "VITE_AXIOM_TOKEN=${{ secrets.VITE_AXIOM_TOKEN }}" >> .env
-          echo "VITE_AXIOM_DATASET=${{ secrets.VITE_AXIOM_DATASET }}" >> .env
-          echo "VITE_BANXICO_TOKEN=${{ secrets.VITE_BANXICO_TOKEN }}" >> .env
-          echo "VITE_FINANZAS_RENDIMIENTOS_NEXO_URL=${{ secrets.VITE_FINANZAS_RENDIMIENTOS_NEXO_URL }}" >> .env
-          echo "VITE_FINANZAS_RENDIMIENTOS_NEXO_API_KEY=${{ secrets.VITE_FINANZAS_RENDIMIENTOS_NEXO_API_KEY }}" >> .env
-          echo "VITE_FINANZAS_RENDIMIENTOS_FIWIND_URL=${{ secrets.VITE_FINANZAS_RENDIMIENTOS_FIWIND_URL }}" >> .env
-          echo "VITE_FINANZAS_RENDIMIENTOS_LETSBIT_URL=${{ secrets.VITE_FINANZAS_RENDIMIENTOS_LETSBIT_URL }}" >> .env
-          echo "VITE_FINANZAS_RENDIMIENTOS_BELO_URL=${{ secrets.VITE_FINANZAS_RENDIMIENTOS_BELO_URL }}" >> .env
-          echo "VITE_FINANZAS_RENDIMIENTOS_LEMONCASH_URL=${{ secrets.VITE_FINANZAS_RENDIMIENTOS_LEMONCASH_URL }}" >> .env
-          echo "VITE_FINANZAS_RENDIMIENTOS_RIPIO_URL=${{ secrets.VITE_FINANZAS_RENDIMIENTOS_RIPIO_URL }}" >> .env
-          echo "VITE_FINANZAS_RENDIMIENTOS_SATOSHITANGO_URL=${{ secrets.VITE_FINANZAS_RENDIMIENTOS_SATOSHITANGO_URL }}" >> .env
-          echo "VITE_FINANZAS_RENDIMIENTOS_LUCAMONEY_URL=${{ secrets.VITE_FINANZAS_RENDIMIENTOS_LUCAMONEY_URL }}" >> .env
-          echo "VITE_FINANZAS_RENDIMIENTOS_LUNEFI_URL=${{ secrets.VITE_FINANZAS_RENDIMIENTOS_LUNEFI_URL }}" >> .env
-          echo "VITE_FINANZAS_RENDIMIENTOS_DECRYPTO_URL=${{ secrets.VITE_FINANZAS_RENDIMIENTOS_DECRYPTO_URL }}" >> .env
-          echo "VITE_FINANZAS_RENDIMIENTOS_VESSEO_URL=${{ secrets.VITE_FINANZAS_RENDIMIENTOS_VESSEO_URL }}" >> .env
-          echo "VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_URL=${{ secrets.VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_URL }}" >> .env
-          echo "VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_CLIENT_ID=${{ secrets.VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_CLIENT_ID }}" >> .env
-          echo "VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_CLIENT_SECRET=${{ secrets.VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_CLIENT_SECRET }}" >> .env
-          echo "VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_AUDIENCE=${{ secrets.VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_AUDIENCE }}" >> .env
-          echo "VITE_FINANZAS_PLAZOFIJO_NARANJAX_URL=${{ secrets.VITE_FINANZAS_PLAZOFIJO_NARANJAX_URL }}" >> .env
-          echo "VITE_FINANZAS_RENDIMIENTOS_UALA_TOKEN_URL=${{ secrets.VITE_FINANZAS_RENDIMIENTOS_UALA_TOKEN_URL }}" >> .env
-          echo "VITE_FINANZAS_RENDIMIENTOS_UALA_USERNAME=${{ secrets.VITE_FINANZAS_RENDIMIENTOS_UALA_USERNAME }}" >> .env
-          echo "VITE_FINANZAS_RENDIMIENTOS_UALA_PASSWORD=${{ secrets.VITE_FINANZAS_RENDIMIENTOS_UALA_PASSWORD }}" >> .env
-          echo "VITE_FINANZAS_RENDIMIENTOS_UALA_URL=${{ secrets.VITE_FINANZAS_RENDIMIENTOS_UALA_URL }}" >> .env
-          echo "VITE_CARREFOUR_API_URL=${{ secrets.VITE_CARREFOUR_API_URL }}" >> .env
-          echo "VITE_GLOBAL66_API_URL=${{ secrets.VITE_GLOBAL66_API_URL }}" >> .env
-          echo "VITE_GLOBAL66_API_KEY=${{ secrets.VITE_GLOBAL66_API_KEY }}" >> .env
-          echo "VITE_FINANZAS_CRESIUM_URL=${{ secrets.VITE_FINANZAS_CRESIUM_URL }}" >> .env
-          echo "VITE_FINANZAS_BELO_CUENTA_REMUNERADA_URL=${{ secrets.VITE_FINANZAS_BELO_CUENTA_REMUNERADA_URL }}" >> .env
-          echo "VITE_FINANZAS_CAPYFI_API_URL=${{ secrets.VITE_FINANZAS_CAPYFI_API_URL }}" >> .env
-          echo "VITE_FINANZAS_CAPYFI_TOKEN=${{ secrets.VITE_FINANZAS_CAPYFI_TOKEN }}" >> .env
-          echo "VITE_FINANZAS_CAPYFI_CHAIN_ID=${{ secrets.VITE_FINANZAS_CAPYFI_CHAIN_ID }}" >> .env
-          echo "VITE_FINANZAS_CAPYFI_CTOKEN_ADDRESS=${{ secrets.VITE_FINANZAS_CAPYFI_CTOKEN_ADDRESS }}" >> .env
-          echo "VITE_TURSO_DATABASE_URL=${{ secrets.VITE_TURSO_DATABASE_URL }}" >> .env
-          echo "VITE_TURSO_AUTH_TOKEN=${{ secrets.VITE_TURSO_AUTH_TOKEN }}" >> .env
-          echo "VITE_GSHEETS_API_KEY=${{ secrets.VITE_GSHEETS_API_KEY }}" >> .env
-          echo "VITE_GSHEETS_ASTROPAY_SPREADSHEET_ID=${{ secrets.VITE_GSHEETS_ASTROPAY_SPREADSHEET_ID }}" >> .env
-          echo "VITE_GSHEETS_LETRAS_SPREADSHEET_ID=${{ secrets.VITE_GSHEETS_LETRAS_SPREADSHEET_ID }}" >> .env
-          echo "VITE_OPENAI_API_KEY=${{ secrets.VITE_OPENAI_API_KEY }}" >> .env
-          echo "VITE_TABSTACK_API_KEY=${{ secrets.VITE_TABSTACK_API_KEY }}" >> .env
-          echo "VITE_FIRECRAWL_BASE_URL=${{ secrets.VITE_FIRECRAWL_BASE_URL }}" >> .env
-          echo "VITE_FIRECRAWL_API_KEY=${{ secrets.VITE_FIRECRAWL_API_KEY }}" >> .env
-          echo "VITE_PROXY_URL=${{ secrets.VITE_PROXY_URL }}" >> .env
-          echo "VITE_PROXY_TOKEN=${{ secrets.VITE_PROXY_TOKEN }}" >> .env
-          echo "VITE_COMPARATASAS_DEPLOY_HOOK_URL=${{ secrets.VITE_COMPARATASAS_DEPLOY_HOOK_URL }}" >> .env
-
-      - name: Install dependencies
-        run: pnpm install
+      - name: Create .env file
+        env:
+          VITE_AXIOM_ORG_ID: ${{ secrets.VITE_AXIOM_ORG_ID }}
+          VITE_AXIOM_TOKEN: ${{ secrets.VITE_AXIOM_TOKEN }}
+          VITE_AXIOM_DATASET: ${{ secrets.VITE_AXIOM_DATASET }}
+          VITE_BANXICO_TOKEN: ${{ secrets.VITE_BANXICO_TOKEN }}
+          VITE_FINANZAS_RENDIMIENTOS_NEXO_URL: ${{ secrets.VITE_FINANZAS_RENDIMIENTOS_NEXO_URL }}
+          VITE_FINANZAS_RENDIMIENTOS_NEXO_API_KEY: ${{ secrets.VITE_FINANZAS_RENDIMIENTOS_NEXO_API_KEY }}
+          VITE_FINANZAS_RENDIMIENTOS_FIWIND_URL: ${{ secrets.VITE_FINANZAS_RENDIMIENTOS_FIWIND_URL }}
+          VITE_FINANZAS_RENDIMIENTOS_LETSBIT_URL: ${{ secrets.VITE_FINANZAS_RENDIMIENTOS_LETSBIT_URL }}
+          VITE_FINANZAS_RENDIMIENTOS_BELO_URL: ${{ secrets.VITE_FINANZAS_RENDIMIENTOS_BELO_URL }}
+          VITE_FINANZAS_RENDIMIENTOS_LEMONCASH_URL: ${{ secrets.VITE_FINANZAS_RENDIMIENTOS_LEMONCASH_URL }}
+          VITE_FINANZAS_RENDIMIENTOS_RIPIO_URL: ${{ secrets.VITE_FINANZAS_RENDIMIENTOS_RIPIO_URL }}
+          VITE_FINANZAS_RENDIMIENTOS_SATOSHITANGO_URL: ${{ secrets.VITE_FINANZAS_RENDIMIENTOS_SATOSHITANGO_URL }}
+          VITE_FINANZAS_RENDIMIENTOS_LUCAMONEY_URL: ${{ secrets.VITE_FINANZAS_RENDIMIENTOS_LUCAMONEY_URL }}
+          VITE_FINANZAS_RENDIMIENTOS_LUNEFI_URL: ${{ secrets.VITE_FINANZAS_RENDIMIENTOS_LUNEFI_URL }}
+          VITE_FINANZAS_RENDIMIENTOS_DECRYPTO_URL: ${{ secrets.VITE_FINANZAS_RENDIMIENTOS_DECRYPTO_URL }}
+          VITE_FINANZAS_RENDIMIENTOS_VESSEO_URL: ${{ secrets.VITE_FINANZAS_RENDIMIENTOS_VESSEO_URL }}
+          VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_URL: ${{ secrets.VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_URL }}
+          VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_CLIENT_ID: ${{ secrets.VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_CLIENT_ID }}
+          VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_CLIENT_SECRET: ${{ secrets.VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_CLIENT_SECRET }}
+          VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_AUDIENCE: ${{ secrets.VITE_FINANZAS_PLAZOFIJO_NARANJAX_TOKEN_AUDIENCE }}
+          VITE_FINANZAS_PLAZOFIJO_NARANJAX_URL: ${{ secrets.VITE_FINANZAS_PLAZOFIJO_NARANJAX_URL }}
+          VITE_FINANZAS_RENDIMIENTOS_UALA_TOKEN_URL: ${{ secrets.VITE_FINANZAS_RENDIMIENTOS_UALA_TOKEN_URL }}
+          VITE_FINANZAS_RENDIMIENTOS_UALA_USERNAME: ${{ secrets.VITE_FINANZAS_RENDIMIENTOS_UALA_USERNAME }}
+          VITE_FINANZAS_RENDIMIENTOS_UALA_PASSWORD: ${{ secrets.VITE_FINANZAS_RENDIMIENTOS_UALA_PASSWORD }}
+          VITE_FINANZAS_RENDIMIENTOS_UALA_URL: ${{ secrets.VITE_FINANZAS_RENDIMIENTOS_UALA_URL }}
+          VITE_CARREFOUR_API_URL: ${{ secrets.VITE_CARREFOUR_API_URL }}
+          VITE_GLOBAL66_API_URL: ${{ secrets.VITE_GLOBAL66_API_URL }}
+          VITE_GLOBAL66_API_KEY: ${{ secrets.VITE_GLOBAL66_API_KEY }}
+          VITE_FINANZAS_CRESIUM_URL: ${{ secrets.VITE_FINANZAS_CRESIUM_URL }}
+          VITE_FINANZAS_BELO_CUENTA_REMUNERADA_URL: ${{ secrets.VITE_FINANZAS_BELO_CUENTA_REMUNERADA_URL }}
+          VITE_FINANZAS_CAPYFI_API_URL: ${{ secrets.VITE_FINANZAS_CAPYFI_API_URL }}
+          VITE_FINANZAS_CAPYFI_TOKEN: ${{ secrets.VITE_FINANZAS_CAPYFI_TOKEN }}
+          VITE_FINANZAS_CAPYFI_CHAIN_ID: ${{ secrets.VITE_FINANZAS_CAPYFI_CHAIN_ID }}
+          VITE_FINANZAS_CAPYFI_CTOKEN_ADDRESS: ${{ secrets.VITE_FINANZAS_CAPYFI_CTOKEN_ADDRESS }}
+          VITE_TURSO_DATABASE_URL: ${{ secrets.VITE_TURSO_DATABASE_URL }}
+          VITE_TURSO_AUTH_TOKEN: ${{ secrets.VITE_TURSO_AUTH_TOKEN }}
+          VITE_GSHEETS_API_KEY: ${{ secrets.VITE_GSHEETS_API_KEY }}
+          VITE_GSHEETS_ASTROPAY_SPREADSHEET_ID: ${{ secrets.VITE_GSHEETS_ASTROPAY_SPREADSHEET_ID }}
+          VITE_GSHEETS_LETRAS_SPREADSHEET_ID: ${{ secrets.VITE_GSHEETS_LETRAS_SPREADSHEET_ID }}
+          VITE_OPENAI_API_KEY: ${{ secrets.VITE_OPENAI_API_KEY }}
+          VITE_TABSTACK_API_KEY: ${{ secrets.VITE_TABSTACK_API_KEY }}
+          VITE_FIRECRAWL_BASE_URL: ${{ secrets.VITE_FIRECRAWL_BASE_URL }}
+          VITE_FIRECRAWL_API_KEY: ${{ secrets.VITE_FIRECRAWL_API_KEY }}
+          VITE_PROXY_URL: ${{ secrets.VITE_PROXY_URL }}
+          VITE_PROXY_TOKEN: ${{ secrets.VITE_PROXY_TOKEN }}
+          VITE_COMPARATASAS_DEPLOY_HOOK_URL: ${{ secrets.VITE_COMPARATASAS_DEPLOY_HOOK_URL }}
+        run: bash .github/scripts/write-env.sh "${{ inputs.env_preset }}"
 
       - name: Download CAFCI worker SQLite from R2
-        if: inputs.run_command == 'pnpm run cron /v1/finanzas/fci/fondos'
+        if: contains(inputs.run_command, 'fci-fondos') || contains(inputs.run_command, '/v1/finanzas/fci/fondos')
         env:
           CAFCI_WORKER_R2_ACCOUNT_ID: ${{ secrets.CAFCI_WORKER_R2_ACCOUNT_ID }}
           CAFCI_WORKER_R2_ACCESS_KEY_ID: ${{ secrets.CAFCI_WORKER_R2_ACCESS_KEY_ID }}

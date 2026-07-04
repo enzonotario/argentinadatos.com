@@ -1,0 +1,17 @@
+name: Setup Node.js and pnpm
+description: Install pinned Node.js, pnpm and dependencies with cache
+runs:
+  using: composite
+  steps:
+    - uses: pnpm/action-setup@v4
+      with:
+        version: 10.24.0
+
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 22.22.2
+        cache: pnpm
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install --frozen-lockfile

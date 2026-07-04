@@ -3,63 +3,13 @@ name: Actualización de datos de Diputados
 on:
   schedule:
     - cron: '10 21 * * *' # Actualiza a las 21:10 UTC (18:10 ART)
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-permissions:
-  contents: write
-
-concurrency:
-  group: "diputados"
-  cancel-in-progress: false
-
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set timezone
-        uses: szenius/set-timezone@v2.0
-        with:
-          timezoneLinux: "America/Argentina/Buenos_Aires"
-          timezoneMacos: "America/Argentina/Buenos_Aires"
-          timezoneWindows: "Argentina Standard Time"
-
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          registry-url: https://registry.npmjs.org/
-          node-version: 22
-
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
-
-      - name: Create .env file
-        run: |
-          touch .env
-          echo "VITE_TURSO_DATABASE_URL=${{ secrets.VITE_TURSO_DATABASE_URL }}" >> .env
-          echo "VITE_TURSO_AUTH_TOKEN=${{ secrets.VITE_TURSO_AUTH_TOKEN }}" >> .env
-          echo "VITE_FIRECRAWL_BASE_URL=${{ secrets.VITE_FIRECRAWL_BASE_URL }}" >> .env
-          echo "VITE_FIRECRAWL_API_KEY=${{ secrets.VITE_FIRECRAWL_API_KEY }}" >> .env
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Run diputados:test:run
-        run: pnpm run diputados:test:run
-
-      - name: Commit and push if changes
-        run: |
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
-          
-          git add -A
-          timestamp=$(date -u)
-          timestampArg=$(date -u -d "3 hours")
-          git commit -m "Latest data: ${timestampArg}" || exit 0
-          git push
+  update:
+    uses: ./.github/workflows/reusable-data-update.yml
+    with:
+      run_command: pnpm run diputados:test:run
+      needs_build: false
+      env_preset: minimal
+    secrets: inherit
