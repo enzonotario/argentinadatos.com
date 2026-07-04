@@ -2,7 +2,7 @@
   "fondoId": "379",
   "claseId": "681",
   "nombre": "FBA Renta Fija Pesos I - Clase A",
-  "fecha": "2026-07-02",
+  "fecha": "2026-07-03",
   "administradora": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "BBVA Argentina S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,47 +13,51 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Peso Argentina",
   "codigoCNV": "510",
-  "patrimonio": 90373606325.42,
+  "patrimonio": 91461615275.65,
   "inversionMinima": 1000,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 13885.719,
-    "ultimos7Dias": 0.5578,
-    "unMes": 1.7089,
-    "noventaDias": 5.5131,
-    "cientoOchentaDias": 14.5724,
-    "enElAnio": 14.9217,
-    "doceMeses": 36.4703
+    "valorCuotaparte": 13919.532,
+    "ultimos7Dias": 0.6229,
+    "unMes": 1.905,
+    "noventaDias": 5.77,
+    "cientoOchentaDias": 14.8514,
+    "enElAnio": 15.2015,
+    "doceMeses": 36.6228
   },
   "composicionCartera": [
     {
+      "nombre": "Bono Dual TTS26",
+      "porcentaje": 19.4
+    },
+    {
       "nombre": "Bono Dual TTJ26",
-      "porcentaje": 22
+      "porcentaje": 17.1
     },
     {
       "nombre": "Bono Boncer TZX26",
-      "porcentaje": 18.8
-    },
-    {
-      "nombre": "Letra Tamar TEM M31G6",
       "porcentaje": 14.6
     },
     {
+      "nombre": "Letra Tamar TEM M31G6",
+      "porcentaje": 13.5
+    },
+    {
       "nombre": "Pzo Fi $ Bco Nacion",
-      "porcentaje": 12.7
+      "porcentaje": 9.8
     },
     {
       "nombre": "Lecap T30J6",
-      "porcentaje": 7.4
+      "porcentaje": 5.8
     },
     {
-      "nombre": "Bono Dual TTS26",
-      "porcentaje": 4.7
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 5.4
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 19.8
+      "porcentaje": 14.6
     }
   ],
   "calificaciones": [

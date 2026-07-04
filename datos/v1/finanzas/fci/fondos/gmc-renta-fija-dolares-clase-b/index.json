@@ -2,7 +2,7 @@
   "fondoId": "1893",
   "claseId": "6539",
   "nombre": "GMC Renta Fija Dolares - Clase B",
-  "fecha": "2026-07-02",
+  "fecha": "2026-07-03",
   "administradora": "GMC Asset Management S.A.U.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -26,7 +26,20 @@
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "FCI Allaria Dólar Ahorro - Clase B",
+      "porcentaje": 80.2
+    },
+    {
+      "nombre": "FCI Wise Capital Dollar Money Market - Clase B",
+      "porcentaje": 19.7
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.1
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": null,

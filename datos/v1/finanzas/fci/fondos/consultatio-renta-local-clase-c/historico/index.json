@@ -2,7 +2,7 @@
   "fondoId": "538",
   "claseId": "1088",
   "nombre": "Consultatio Renta Local - Clase C",
-  "fechaActualizacion": "2026-07-03T01:31:30.000Z",
+  "fechaActualizacion": "2026-07-04T01:22:12.000Z",
   "historico": [
     {
       "slug": "consultatio-renta-local-clase-c",
@@ -8386,6 +8386,22 @@
       "retornoDiario": 0.036157,
       "retornoAcumulado": 123.872989,
       "flujoEstimado": 0.750487,
+      "origen": "cafci-detail"
+    },
+    {
+      "slug": "consultatio-renta-local-clase-c",
+      "fondoId": "538",
+      "claseId": "1088",
+      "nombre": "Consultatio Renta Local - Clase C",
+      "fecha": "2026-07-03",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 123366.828,
+      "patrimonio": 1146941.4,
+      "retornoDiario": 0.241791,
+      "retornoAcumulado": 124.414294,
+      "flujoEstimado": 0.008116,
       "origen": "cafci-detail"
     }
   ]

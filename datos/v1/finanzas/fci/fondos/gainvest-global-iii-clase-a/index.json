@@ -2,7 +2,7 @@
   "fondoId": "895",
   "claseId": "2652",
   "nombre": "Gainvest Global III - Clase A",
-  "fecha": "2026-07-02",
+  "fecha": "2026-07-03",
   "administradora": "StoneX Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -29,7 +29,11 @@
   "composicionCartera": [
     {
       "nombre": "Cta Cte $ Bco de Valores",
-      "porcentaje": 100
+      "porcentaje": 99.9
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.1
     }
   ],
   "calificaciones": [],

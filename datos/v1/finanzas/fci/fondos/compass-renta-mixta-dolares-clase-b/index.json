@@ -2,7 +2,7 @@
   "fondoId": "426",
   "claseId": "792",
   "nombre": "Compass Renta Mixta Dólares - Clase B",
-  "fecha": "2026-07-02",
+  "fecha": "2026-07-03",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Variable",
@@ -13,35 +13,43 @@
   "duracion": "No Aplicable",
   "moneda": "Dolar Estadounidense Billete",
   "codigoCNV": "564",
-  "patrimonio": 15871130.25,
+  "patrimonio": 15871952.21,
   "inversionMinima": 1000,
   "monedaInversion": "Dolar Estadounidense Billete",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 715.467,
-    "ultimos7Dias": -0.1079,
-    "unMes": -0.4084,
-    "noventaDias": 2.0793,
-    "cientoOchentaDias": 3.517,
-    "enElAnio": 3.313,
-    "doceMeses": 8.6715
+    "valorCuotaparte": 715.504,
+    "ultimos7Dias": -0.3251,
+    "unMes": -0.5269,
+    "noventaDias": 2.0846,
+    "cientoOchentaDias": 3.5223,
+    "enElAnio": 3.3183,
+    "doceMeses": 8.6042
   },
   "composicionCartera": [
     {
       "nombre": "Cta Cte U$S Bco Valores",
-      "porcentaje": 4.8
+      "porcentaje": 4.5
+    },
+    {
+      "nombre": "Overnight USD Citibank NY",
+      "porcentaje": 3.6
     },
     {
       "nombre": "BC AES Clase 8.15% 2055",
       "porcentaje": 2.4
     },
     {
+      "nombre": "BC ACUPET 7.5%",
+      "porcentaje": 2.3
+    },
+    {
       "nombre": "BC Compañia Minera Volcan S2",
-      "porcentaje": 2.4
+      "porcentaje": 2.3
     },
     {
       "nombre": "BC Banorte 8.375%",
-      "porcentaje": 2.4
+      "porcentaje": 2.3
     },
     {
       "nombre": "BC Pretorio 6.75% 101530",
@@ -49,19 +57,15 @@
     },
     {
       "nombre": "BC CAP 3.9%",
-      "porcentaje": 2.3
+      "porcentaje": 2.2
     },
     {
       "nombre": "BC CMPC 120957",
-      "porcentaje": 2.3
-    },
-    {
-      "nombre": "Overnight USD Citibank NY",
       "porcentaje": 2.2
     },
     {
       "nombre": "BC Bco de Crédito 7.5%",
-      "porcentaje": 2.1
+      "porcentaje": 2
     },
     {
       "nombre": "BC Petrobras Global Finance 2033",
@@ -76,16 +80,8 @@
       "porcentaje": 2
     },
     {
-      "nombre": "ON Aeropuertos 2000 Regs 2031",
-      "porcentaje": 2
-    },
-    {
-      "nombre": "BC Eletrobras 110135",
-      "porcentaje": 2
-    },
-    {
       "nombre": "Resto de Activos",
-      "porcentaje": 66.7
+      "porcentaje": 68.2
     }
   ],
   "calificaciones": [],

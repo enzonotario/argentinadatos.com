@@ -2,7 +2,7 @@
   "fondoId": "1714",
   "claseId": "5763",
   "nombre": "Pellegrini Liquidez Pesos Clase A",
-  "fecha": "2026-07-02",
+  "fecha": "2026-07-03",
   "administradora": "Pellegrini S.A.S.G.F.C.I.",
   "depositaria": "Banco de La Nacion Argentina",
   "tipoRenta": "Mercado de Dinero",
@@ -13,23 +13,31 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Peso Argentina",
   "codigoCNV": "1701",
-  "patrimonio": 88.75,
+  "patrimonio": 88.79,
   "inversionMinima": 100,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1232.744,
-    "ultimos7Dias": 19.4619,
-    "unMes": 19.7833,
-    "noventaDias": 17.8376,
-    "cientoOchentaDias": 13.6071,
-    "enElAnio": 13.3852,
+    "valorCuotaparte": 1233.299,
+    "ultimos7Dias": 18.8568,
+    "unMes": 19.6326,
+    "noventaDias": 17.8304,
+    "cientoOchentaDias": 13.6287,
+    "enElAnio": 13.4077,
     "doceMeses": null
   },
   "composicionCartera": [
     {
       "nombre": "Cta Cte $ Bco Nacion",
-      "porcentaje": 100
+      "porcentaje": 87.5
+    },
+    {
+      "nombre": "Caucion Colocadora $ MAE",
+      "porcentaje": 10
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Santander Ri",
+      "porcentaje": 2.5
     }
   ],
   "calificaciones": [],
