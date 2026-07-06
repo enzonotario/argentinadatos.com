@@ -9,6 +9,10 @@ on:
     - cron: '30 14 * * *' # 11:30 ART
   workflow_dispatch:
 
+concurrency:
+  group: data-update-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 

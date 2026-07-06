@@ -106,12 +106,4 @@ jobs:
         run: ${{ inputs.run_command }}
 
       - name: Commit and push if changes
-        run: |
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
-
-          git add -A
-          timestamp=$(date -u)
-          timestampArg=$(date -u -d "3 hours")
-          git commit -m "Latest data: ${timestampArg}" || exit 0
-          git push
+        run: bash .github/scripts/commit-and-push-data.sh

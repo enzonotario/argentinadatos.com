@@ -47,6 +47,10 @@ on:
           - minimal
         default: full
 
+concurrency:
+  group: data-update-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
