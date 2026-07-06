@@ -25,11 +25,9 @@
     "docs:dev": "cd docs && pnpm run dev",
     "docs:build": "cd docs && pnpm run build",
     "docs:preview": "cd docs && pnpm run preview",
-    "api:dev": "vite --config vite.api.config.js --host",
-    "api:build": "vite build --config vite.api.config.js --ssr --mode=production",
-    "api:serve": "node apps/static-api/index.js",
-    "docker:api:build": "docker build -t argentinadatos-api .",
-    "docker:api:run": "docker run --rm -p 3000:3000 argentinadatos-api",
+    "static-api:serve": "node apps/static-api/index.js",
+    "static-api:docker:build": "docker build -t argentinadatos-api .",
+    "static-api:docker:run": "docker run --rm -p 3000:3000 argentinadatos-api",
     "format": "prettier --write src tests apps",
     "senado:test": "cd packages/senado && pnpm test",
     "senado:test:run": "cd packages/senado && pnpm run test:run",
@@ -49,7 +47,6 @@
   },
   "devDependencies": {
     "@es-js/vite-plugin-esjs": "^0.1.0-beta.2",
-    "@hono/vite-dev-server": "^0.23.0",
     "axios": "^1.13.2",
     "cheerio": "1.0.0-rc.12",
     "collect.js": "^4.36.1",
@@ -57,7 +54,6 @@
     "dotenv": "^16.6.1",
     "fs": "0.0.1-security",
     "glob": "^13.0.0",
-    "hono": "^4.10.7",
     "parse-decimal-number": "^1.0.0",
     "path": "^0.12.7",
     "pino": "^10.1.0",
@@ -79,7 +75,6 @@
   "dependencies": {
     "@libsql/client": "^0.15.15",
     "better-sqlite3": "^12.5.0",
-    "db-static-api": "0.0.1-alpha.0",
     "defuddle": "^0.18.1",
     "xlsx": "^0.18.5"
   }

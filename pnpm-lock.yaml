@@ -14,9 +14,6 @@ importers:
       better-sqlite3:
         specifier: ^12.5.0
         version: 12.5.0
-      db-static-api:
-        specifier: 0.0.1-alpha.0
-        version: 0.0.1-alpha.0
       defuddle:
         specifier: ^0.18.1
         version: 0.18.1
@@ -27,9 +24,6 @@ importers:
       '@es-js/vite-plugin-esjs':
         specifier: ^0.1.0-beta.2
         version: 0.1.0-beta.2(@types/node@24.10.1)
-      '@hono/vite-dev-server':
-        specifier: ^0.23.0
-        version: 0.23.0(hono@4.10.7)(miniflare@4.20260424.0)(wrangler@4.85.0(@cloudflare/workers-types@4.20260426.1))
       axios:
         specifier: ^1.13.2
         version: 1.13.2
@@ -51,9 +45,6 @@ importers:
       glob:
         specifier: ^13.0.0
         version: 13.0.0
-      hono:
-        specifier: ^4.10.7
-        version: 4.10.7
       parse-decimal-number:
         specifier: ^1.0.0
         version: 1.0.0
@@ -1485,25 +1476,6 @@ packages:
 
   '@floating-ui/vue@1.1.6':
     resolution: {integrity: sha512-XFlUzGHGv12zbgHNk5FN2mUB7ROul3oG2ENdTpWdE+qMFxyNxWSRmsoyhiEnpmabNm6WnUvR1OvJfUfN4ojC1A==}
-
-  '@hono/node-server@1.19.6':
-    resolution: {integrity: sha512-Shz/KjlIeAhfiuE93NDKVdZ7HdBVLQAfdbaXEaoAVO3ic9ibRSLGIQGkcBbFyuLr+7/1D5ZCINM8B+6IvXeMtw==}
-    engines: {node: '>=18.14.1'}
-    peerDependencies:
-      hono: ^4
-
-  '@hono/vite-dev-server@0.23.0':
-    resolution: {integrity: sha512-tHV86xToed9Up0j/dubQW2PDP4aYNFDSfQrjcV6Ra7bqCGrxhtg/zZBmbgSco3aTxKOEPzDXKK+6seAAfsbIXw==}
-    engines: {node: '>=18.14.1'}
-    peerDependencies:
-      hono: '*'
-      miniflare: '*'
-      wrangler: '*'
-    peerDependenciesMeta:
-      miniflare:
-        optional: true
-      wrangler:
-        optional: true
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -3292,9 +3264,6 @@ packages:
   dateformat@4.6.3:
     resolution: {integrity: sha512-2P0p0pFGzHS5EMnhdxQi7aJN+iMheud0UhG4dlE1DLAlvL8JHjJJTX/CSm4JXwV0Ka5nGk3zC5mcb5bUQUxxMA==}
 
-  db-static-api@0.0.1-alpha.0:
-    resolution: {integrity: sha512-TOKlWByoKy54/+BllX1mNytl27Mxdhq8+TtOkYiqk1EpezvrgQzlQa3BvOB+OjW+7ITYxFutZywO8/s3H5+3BQ==}
-
   debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
     peerDependencies:
@@ -4285,10 +4254,6 @@ packages:
 
   hmac-drbg@1.0.1:
     resolution: {integrity: sha512-Tti3gMqLdZfhOQY1Mzf/AanLiqh1WTiJgEj26ZuYQ9fbkLomzGchCws4FyrSd4VkpBfiNhaE1On+lOz894jvXg==}
-
-  hono@4.10.7:
-    resolution: {integrity: sha512-icXIITfw/07Q88nLSkB9aiUrd8rYzSweK681Kjo/TSggaGbOX4RRyxxm71v+3PC8C/j+4rlxGeoTRxQDkaJkUw==}
-    engines: {node: '>=16.9.0'}
 
   hookable@5.5.3:
     resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
@@ -7734,19 +7699,6 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
-  '@hono/node-server@1.19.6(hono@4.10.7)':
-    dependencies:
-      hono: 4.10.7
-
-  '@hono/vite-dev-server@0.23.0(hono@4.10.7)(miniflare@4.20260424.0)(wrangler@4.85.0(@cloudflare/workers-types@4.20260426.1))':
-    dependencies:
-      '@hono/node-server': 1.19.6(hono@4.10.7)
-      hono: 4.10.7
-      minimatch: 9.0.5
-    optionalDependencies:
-      miniflare: 4.20260424.0
-      wrangler: 4.85.0(@cloudflare/workers-types@4.20260426.1)
-
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.6':
@@ -9610,8 +9562,6 @@ snapshots:
 
   dateformat@4.6.3: {}
 
-  db-static-api@0.0.1-alpha.0: {}
-
   debug@2.6.9:
     dependencies:
       ms: 2.0.0
@@ -10920,8 +10870,6 @@ snapshots:
       hash.js: 1.1.7
       minimalistic-assert: 1.0.1
       minimalistic-crypto-utils: 1.0.1
-
-  hono@4.10.7: {}
 
   hookable@5.5.3: {}
 
