@@ -5,10 +5,6 @@ on:
     - cron: '10 22 * * *' # Actualiza a las 22:10 UTC (19:10 ART)
   workflow_dispatch:
 
-concurrency:
-  group: data-update-${{ github.ref }}
-  cancel-in-progress: false
-
 permissions:
   contents: write
 
