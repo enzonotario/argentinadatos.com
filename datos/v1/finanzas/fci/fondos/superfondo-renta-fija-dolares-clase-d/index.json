@@ -2,7 +2,7 @@
   "fondoId": "654",
   "claseId": "1349",
   "nombre": "Superfondo Renta Fija Dólares - Clase D",
-  "fecha": "2026-07-03",
+  "fecha": "2026-07-06",
   "administradora": "Santander Asset Management G.F.C.I.S.A.",
   "depositaria": "Banco Santander Argentina S.A.",
   "tipoRenta": "Renta Fija",
@@ -18,34 +18,38 @@
   "monedaInversion": "Dolar Estadounidense Billete",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 455.909,
-    "ultimos7Dias": 0.0841,
-    "unMes": 0.5962,
-    "noventaDias": 1.2121,
-    "cientoOchentaDias": 3.1557,
-    "enElAnio": 2.9751,
-    "doceMeses": 5.671
+    "valorCuotaparte": 456.16,
+    "ultimos7Dias": -0.0004,
+    "unMes": 0.3275,
+    "noventaDias": 1.1459,
+    "cientoOchentaDias": 3.1868,
+    "enElAnio": 3.0318,
+    "doceMeses": 5.6777
   },
   "composicionCartera": [
     {
-      "nombre": "Cta Cte U$S Bco Santander",
-      "porcentaje": 11.1
+      "nombre": "Bono del Tesoro Nacional AO27",
+      "porcentaje": 10.5
     },
     {
-      "nombre": "Bono del Tesoro Nacional AO27",
-      "porcentaje": 10.4
+      "nombre": "Cta Cte U$S Bco Santander",
+      "porcentaje": 9.2
     },
     {
       "nombre": "Bono Bopreal 2027 Serie 1 Clase D BPOD7",
-      "porcentaje": 8.2
+      "porcentaje": 8.3
     },
     {
       "nombre": "Bono Bopreal 2027 Serie 1 Clase C BPOC7",
-      "porcentaje": 7.5
+      "porcentaje": 7.6
     },
     {
       "nombre": "Pzo Fi U$S Bco Nacion",
       "porcentaje": 5.5
+    },
+    {
+      "nombre": "Pzo Fi U$S Bco Patagonia",
+      "porcentaje": 4.9
     },
     {
       "nombre": "Bono del Tesoro Nacional AO28",
@@ -64,10 +68,6 @@
       "porcentaje": 3.2
     },
     {
-      "nombre": "Pzo Fi U$S Bco Patagonia",
-      "porcentaje": 3.2
-    },
-    {
       "nombre": "Cta Cte USD JP Morgan",
       "porcentaje": 2.6
     },
@@ -77,7 +77,7 @@
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 34.1
+      "porcentaje": 34.3
     }
   ],
   "calificaciones": [
