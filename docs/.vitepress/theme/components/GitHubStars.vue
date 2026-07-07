@@ -30,6 +30,8 @@ onMounted(async () => {
 </template>
 
 <style scoped>
+@reference "tailwindcss";
+
 .stars {
   @apply hidden sm:block;
 }

@@ -1,4 +1,5 @@
 import { URL, fileURLToPath } from 'node:url'
+import tailwindcss from '@tailwindcss/vite'
 import { defineConfig, loadEnv } from 'vitepress'
 import { useSidebar } from 'vitepress-openapi'
 import { SitemapStream } from 'sitemap'
@@ -238,6 +239,7 @@ export default defineConfig({
   ],
 
   vite: {
+    plugins: [tailwindcss()],
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./', import.meta.url)),

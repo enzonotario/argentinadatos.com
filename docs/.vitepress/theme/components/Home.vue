@@ -321,6 +321,8 @@ const dataSources = {
 </template>
 
 <style scoped>
+@reference "tailwindcss";
+
 .home-container {
   --accent-primary: #18181b;
   --accent-secondary: #3f3f46;
