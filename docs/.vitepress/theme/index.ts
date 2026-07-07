@@ -1,4 +1,4 @@
-import { generateCodeSample, theme, useOpenapi } from 'vitepress-openapi/client'
+import { generateCodeSample, theme, useOpenapi, useTheme } from 'vitepress-openapi/client'
 import DefaultTheme from 'vitepress/theme'
 import { setDefaultOptions } from 'date-fns'
 import { es } from 'date-fns/locale'
@@ -20,6 +20,8 @@ export default {
   enhanceApp({ app }) {
     setDefaultOptions({ locale: es })
 
+    const defaultLanguages = useTheme().getCodeSamplesAvailableLanguages()
+
     const openapi = useOpenapi({
       spec,
       config: {
@@ -27,12 +29,25 @@ export default {
           locale: 'es',
         },
         codeSamples: {
-          generator: async (lang, request) => {
-            if (lang === 'curl') {
+          defaultLang: 'url',
+          availableLanguages: [
+            {
+              lang: 'url',
+              label: 'URL',
+              highlighter: 'plain',
+            },
+            ...defaultLanguages,
+          ],
+          generator: async (langConfig, request) => {
+            if (langConfig.lang === 'url') {
+              return request.url.href
+            }
+
+            if (langConfig.lang === 'curl') {
               return `curl -L '${request.url}'`
             }
 
-            return generateCodeSample(lang, request)
+            return generateCodeSample(langConfig, request)
           },
         },
       },
