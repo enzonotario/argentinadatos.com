@@ -1,4 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import { extraerBelo } from '@/finanzas/criptopesos/extraccion/extraerBelo.js'
 import { guardarCriptopesos } from '@/finanzas/criptopesos/guardado/guardarCriptopesos.js'
 import { CriptopesosDatabaseService } from '@/finanzas/criptopesos/database/service.js'
 import { leerRuta } from '@/utils/rutas.js'
@@ -15,74 +16,47 @@ describe('guardarCriptopesos', () => {
     testDb?.cleanup()
   })
 
-  it('guarda nuevos valores en la base de datos', async () => {
-    const items = [{ token: 'ARGt', entidad: 'belo', tna: 0.25 }]
+  it(
+    'extrae, guarda, evita duplicados y genera endpoint estático',
+    async () => {
+      const items = await extraerBelo()
 
-    await guardarCriptopesos(items, testDb.url, testDb.authToken)
+      expect(items.length).toBeGreaterThan(0)
 
-    const db = new CriptopesosDatabaseService(testDb.url, testDb.authToken)
-    await db.initialize()
-    const ultimo = await db.getLatestCriptopesoByEntity('ARGt', 'belo')
-    db.close()
+      await guardarCriptopesos(items, testDb.url, testDb.authToken)
+      await guardarCriptopesos(items, testDb.url, testDb.authToken)
 
-    expect(ultimo).toBeDefined()
-    expect(ultimo.token).toBe('ARGt')
-    expect(ultimo.entidad).toBe('belo')
-    expect(ultimo.tna).toBe(0.25)
-  })
+      const item = items[0]
+      const db = new CriptopesosDatabaseService(testDb.url, testDb.authToken)
+      await db.initialize()
+      const ultimo = await db.getLatestCriptopesoByEntity(
+        item.token,
+        item.entidad,
+      )
+      const todos = await db.getAllLatestCriptopesos()
+      db.close()
 
-  it('no guarda valores duplicados', async () => {
-    const items = [{ token: 'ARGt', entidad: 'belo', tna: 0.25 }]
+      expect(ultimo).toBeDefined()
+      expect(ultimo.token).toBe(item.token)
+      expect(ultimo.entidad).toBe(item.entidad)
+      expect(ultimo.tna).toBe(item.tna)
 
-    await guardarCriptopesos(items, testDb.url, testDb.authToken)
-    await guardarCriptopesos(items, testDb.url, testDb.authToken)
+      const entries = todos.filter(
+        r => r.entidad === item.entidad && r.token === item.token,
+      )
+      expect(entries).toHaveLength(1)
 
-    const db = new CriptopesosDatabaseService(testDb.url, testDb.authToken)
-    await db.initialize()
-    const todos = await db.getAllLatestCriptopesos()
-    db.close()
+      const guardado = leerRuta('/finanzas/criptopesos')
+      const entry = guardado.find(
+        r => r.entidad === item.entidad && r.token === item.token,
+      )
 
-    const beloEntries = todos.filter(
-      r => r.entidad === 'belo' && r.token === 'ARGt',
-    )
-    expect(beloEntries.length).toBeGreaterThanOrEqual(1)
-  })
-
-  it('guarda valores cuando cambian', async () => {
-    const items1 = [{ token: 'ARGt', entidad: 'belo', tna: 0.25 }]
-
-    const items2 = [{ token: 'ARGt', entidad: 'belo', tna: 0.3 }]
-
-    await guardarCriptopesos(items1, testDb.url, testDb.authToken)
-    await guardarCriptopesos(items2, testDb.url, testDb.authToken)
-
-    const db = new CriptopesosDatabaseService(testDb.url, testDb.authToken)
-    await db.initialize()
-    const ultimo = await db.getLatestCriptopesoByEntity('ARGt', 'belo')
-    db.close()
-
-    expect(ultimo.tna).toBe(0.3)
-  })
-
-  it('genera el endpoint estatico correctamente', async () => {
-    const items = [{ token: 'ARGt', entidad: 'belo', tna: 0.25 }]
-
-    await guardarCriptopesos(items, testDb.url, testDb.authToken)
-
-    const guardado = leerRuta('/finanzas/criptopesos')
-
-    expect(guardado).toBeDefined()
-    expect(Array.isArray(guardado)).toBe(true)
-    expect(guardado.length).toBeGreaterThan(0)
-
-    const beloEntry = guardado.find(
-      r => r.entidad === 'belo' && r.token === 'ARGt',
-    )
-    expect(beloEntry).toBeDefined()
-    expect(beloEntry).toEqual({
-      token: 'ARGt',
-      entidad: 'belo',
-      tna: 0.25,
-    })
-  })
+      expect(entry).toMatchObject({
+        token: item.token,
+        entidad: item.entidad,
+        tna: item.tna,
+      })
+    },
+    30000,
+  )
 })

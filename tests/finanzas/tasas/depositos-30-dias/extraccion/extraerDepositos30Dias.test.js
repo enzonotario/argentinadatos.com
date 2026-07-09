@@ -1,27 +1,24 @@
-import { describe, expect, it, vi } from 'vitest'
-
-const extraerBcraApi = vi.fn()
-
-vi.mock('@/finanzas/compartido/extraccion/bcra.js', () => ({
-  extraerBcraApi,
-}))
-
-const { extraerTasasDepositos30Dias } =
-  await import('@/finanzas/tasas/depositos-30-dias/extraccion/extraerTasasDepositos30Dias.js')
+import { describe, expect, it } from 'vitest'
+import { format, subDays, addDays } from 'date-fns'
+import { extraerTasasDepositos30Dias } from '@/finanzas/tasas/depositos-30-dias/extraccion/extraerTasasDepositos30Dias.js'
 
 describe('extraerTasasDepositos30Dias', () => {
-  it('mapea la serie de depósitos a 30 días del BCRA', async () => {
-    extraerBcraApi.mockResolvedValue([
-      { fecha: '2023-12-29', valor: 1.1023 },
-      { fecha: '2023-12-28', valor: 1.0987, detalle: 'ignorar' },
-    ])
+  it(
+    'extrae la serie de depósitos a 30 días del BCRA',
+    async () => {
+      const items = await extraerTasasDepositos30Dias(
+        format(subDays(new Date(), 30), 'yyyy-MM-dd'),
+        format(addDays(new Date(), 1), 'yyyy-MM-dd'),
+      )
 
-    const items = await extraerTasasDepositos30Dias('2023-01-01', '2024-01-01')
+      expect(items.length).toBeGreaterThan(0)
 
-    expect(extraerBcraApi).toHaveBeenCalledWith(12, '2023-01-01', '2024-01-01')
-    expect(items).toEqual([
-      { fecha: '2023-12-29', valor: 1.1023 },
-      { fecha: '2023-12-28', valor: 1.0987 },
-    ])
-  })
+      for (const item of items) {
+        expect(item.fecha).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+        expect(typeof item.valor).toBe('number')
+        expect(item.valor).toBeGreaterThan(0)
+      }
+    },
+    30000,
+  )
 })

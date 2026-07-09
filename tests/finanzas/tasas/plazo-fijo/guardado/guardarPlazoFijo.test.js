@@ -4,7 +4,9 @@ import { extraerPlazoFijo } from '@/finanzas/tasas/plazo-fijo/extraccion/extraer
 import { guardarPlazoFijo } from '@/finanzas/tasas/plazo-fijo/guardado/guardarPlazoFijo.js'
 
 describe('guardarPlazoFijo', () => {
-  it('guarda los plazos fijos', async () => {
+  it(
+    'guarda los plazos fijos',
+    async () => {
     const items = await extraerPlazoFijo()
 
     expect(items.length).toBeGreaterThan(0)
@@ -18,5 +20,7 @@ describe('guardarPlazoFijo', () => {
     for (const item of items) {
       expect(guardado).toContainEqual(item)
     }
-  })
+  },
+  120000,
+  )
 })

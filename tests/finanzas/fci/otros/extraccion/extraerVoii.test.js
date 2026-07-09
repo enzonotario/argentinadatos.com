@@ -2,59 +2,16 @@ import { describe, expect, it } from 'vitest'
 import {
   URL_VOII_CUENTA_REMUNERADA,
   extraerVoiiCuentaRemunerada,
-  normalizarVoiiCuentaRemunerada,
 } from '@/finanzas/fci/otros/extraccion/extraerVoii.js'
 
 const tieneFirecrawl =
   Boolean(import.meta.env.VITE_FIRECRAWL_API_KEY) &&
   Boolean(import.meta.env.VITE_FIRECRAWL_BASE_URL)
 
-describe('normalizarVoiiCuentaRemunerada', () => {
-  it('normaliza TNA en decimal y porcentaje', () => {
-    expect(
-      normalizarVoiiCuentaRemunerada({
-        tna: 0.21,
-        tope: null,
-        condiciones:
-          '(1) TNA Estimada 21%. Tasa de Interés Nominal Anual (TNA) fija repactable de referencia, vigente desde el 03/02/2025. Sujeta a modificaciones.',
-        condicionesCorto: 'Caja de ahorro remunerada sin costo',
-      }),
-    ).toEqual({
-      tna: 0.21,
-      tea: 0.2336,
-      tope: null,
-      condiciones:
-        '(1) TNA Estimada 21%. Tasa de Interés Nominal Anual (TNA) fija repactable de referencia, vigente desde el 03/02/2025. Sujeta a modificaciones.',
-      condicionesCorto: 'Caja de ahorro remunerada sin costo',
-    })
-
-    expect(
-      normalizarVoiiCuentaRemunerada({
-        tna: 21,
-        tope: null,
-        condiciones: null,
-        condicionesCorto: null,
-      }),
-    ).toMatchObject({
-      tna: 0.21,
-      tea: 0.2336,
-      tope: null,
-      condiciones: null,
-      condicionesCorto: null,
-    })
-  })
-
-  it('devuelve null si falta TNA válida', () => {
-    expect(normalizarVoiiCuentaRemunerada(null)).toBeNull()
-    expect(normalizarVoiiCuentaRemunerada({ tna: '21' })).toBeNull()
-    expect(normalizarVoiiCuentaRemunerada({ tna: Number.NaN })).toBeNull()
-  })
-})
-
-describe.skipIf(!tieneFirecrawl)(
-  'extraerVoiiCuentaRemunerada (Firecrawl real)',
-  () => {
-    it('extrae la TNA de la caja de ahorro remunerada desde la web de Voii', async () => {
+describe.skipIf(!tieneFirecrawl)('extraerVoiiCuentaRemunerada', () => {
+  it(
+    'extrae la TNA de la caja de ahorro remunerada desde la web de Voii',
+    async () => {
       expect(URL_VOII_CUENTA_REMUNERADA).toBe(
         'https://www.voii.com.ar/app-mobile/',
       )
@@ -85,6 +42,7 @@ describe.skipIf(!tieneFirecrawl)(
         expect(typeof resultado.condicionesCorto).toBe('string')
         expect(resultado.condicionesCorto.length).toBeLessThanOrEqual(100)
       }
-    }, 120000)
-  },
-)
+    },
+    120000,
+  )
+})

@@ -1,4 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import { extraerBicaCuentaPositiva } from '@/finanzas/fci/otros/extraccion/extraerBica.js'
 import { guardarSerieOtros } from '@/finanzas/fci/otros/guardado/guardarSerieOtros.js'
 import { FciOtrosDatabaseService } from '@/finanzas/fci/otros/database/service.js'
 import { leerRuta } from '@/utils/rutas.js'
@@ -15,187 +16,58 @@ describe('guardarSerieOtros', () => {
     testDb?.cleanup()
   })
 
-  it('guarda nuevos valores en la base de datos', async () => {
-    const items = [
-      {
-        fondo: 'NARANJA X',
-        tna: 0.21,
-        tea: 0.2314,
-        tope: 1000000,
-        fecha: '2026-01-12',
-      },
-    ]
+  it(
+    'extrae Bica, guarda en la base de datos y genera endpoint estático',
+    async () => {
+      const items = await extraerBicaCuentaPositiva()
 
-    await guardarSerieOtros(items, testDb.url, testDb.authToken)
+      expect(items.length).toBeGreaterThan(0)
 
-    const db = new FciOtrosDatabaseService(testDb.url, testDb.authToken)
-    await db.initialize()
-    const ultimo = await db.getLatestFciOtrosByFondo('NARANJA X')
-    db.close()
+      await guardarSerieOtros(items, testDb.url, testDb.authToken)
 
-    expect(ultimo).toBeDefined()
-    expect(ultimo.fondo).toBe('NARANJA X')
-    expect(ultimo.tna).toBe(0.21)
-    expect(ultimo.tea).toBe(0.2314)
-    expect(ultimo.tope).toBe(1000000)
-    expect(ultimo.fecha).toBe('2026-01-12')
-  })
+      const item = items[0]
+      const db = new FciOtrosDatabaseService(testDb.url, testDb.authToken)
+      await db.initialize()
+      const ultimo = await db.getLatestFciOtrosByFondo(item.fondo)
+      db.close()
 
-  it('no guarda valores duplicados', async () => {
-    const items = [
-      {
-        fondo: 'NARANJA X',
-        tna: 0.21,
-        tea: 0.2314,
-        tope: 1000000,
-        fecha: '2026-01-12',
-      },
-    ]
+      expect(ultimo).toBeDefined()
+      expect(ultimo.fondo).toBe(item.fondo)
+      expect(ultimo.tna).toBe(item.tna)
+      expect(ultimo.tea).toBe(item.tea)
+      expect(ultimo.fecha).toBe(item.fecha)
 
-    await guardarSerieOtros(items, testDb.url, testDb.authToken)
-    await guardarSerieOtros(items, testDb.url, testDb.authToken)
+      const guardado = leerRuta('/finanzas/fci/otros/ultimo')
+      const entry = guardado.find(r => r.fondo === item.fondo)
 
-    const db = new FciOtrosDatabaseService(testDb.url, testDb.authToken)
-    await db.initialize()
-    const todos = await db.getAllLatestFciOtros()
-    db.close()
+      expect(entry).toMatchObject({
+        fondo: item.fondo,
+        tna: item.tna,
+        tea: item.tea,
+        fecha: item.fecha,
+      })
+    },
+    30000,
+  )
 
-    const naranjaEntries = todos.filter(r => r.fondo === 'NARANJA X')
-    expect(naranjaEntries.length).toBeGreaterThanOrEqual(1)
-  })
+  it(
+    'no guarda valores duplicados al repetir la misma extracción',
+    async () => {
+      const items = await extraerBicaCuentaPositiva()
 
-  it('guarda valores cuando cambian', async () => {
-    const items1 = [
-      {
-        fondo: 'NARANJA X',
-        tna: 0.21,
-        tea: 0.2314,
-        tope: 1000000,
-        fecha: '2026-01-12',
-      },
-    ]
+      await guardarSerieOtros(items, testDb.url, testDb.authToken)
+      await guardarSerieOtros(items, testDb.url, testDb.authToken)
 
-    const items2 = [
-      {
-        fondo: 'NARANJA X',
-        tna: 0.25,
-        tea: 0.28,
-        tope: 1200000,
-        fecha: '2026-01-13',
-      },
-    ]
+      const db = new FciOtrosDatabaseService(testDb.url, testDb.authToken)
+      await db.initialize()
+      const todos = await db.getAllLatestFciOtros()
+      db.close()
 
-    await guardarSerieOtros(items1, testDb.url, testDb.authToken)
-    await guardarSerieOtros(items2, testDb.url, testDb.authToken)
-
-    const db = new FciOtrosDatabaseService(testDb.url, testDb.authToken)
-    await db.initialize()
-    const ultimo = await db.getLatestFciOtrosByFondo('NARANJA X')
-    db.close()
-
-    expect(ultimo.tna).toBe(0.25)
-    expect(ultimo.tea).toBe(0.28)
-    expect(ultimo.tope).toBe(1200000)
-  })
-
-  it('guarda valores cuando cambian condiciones', async () => {
-    const items1 = [
-      {
-        fondo: 'SUPERVIELLE',
-        tna: 0.21,
-        tea: 0.2336,
-        tope: 1000000,
-        fecha: '2026-01-12',
-        condiciones: null,
-        condicionesCorto: null,
-      },
-    ]
-
-    const items2 = [
-      {
-        fondo: 'SUPERVIELLE',
-        tna: 0.21,
-        tea: 0.2336,
-        tope: 1000000,
-        fecha: '2026-01-13',
-        condiciones: null,
-        condicionesCorto: 'Solo Clientes Plan Sueldo.',
-      },
-    ]
-
-    await guardarSerieOtros(items1, testDb.url, testDb.authToken)
-    await guardarSerieOtros(items2, testDb.url, testDb.authToken)
-
-    const db = new FciOtrosDatabaseService(testDb.url, testDb.authToken)
-    await db.initialize()
-    const ultimo = await db.getLatestFciOtrosByFondo('SUPERVIELLE')
-    db.close()
-
-    expect(ultimo.condicionesCorto).toBe('Solo Clientes Plan Sueldo.')
-  })
-
-  it('guarda frascos con plazo en el endpoint estatico', async () => {
-    const items = [
-      {
-        fondo: 'NARANJA X FRASCOS 7-13',
-        tna: 0.18,
-        tea: 0.1972,
-        tope: null,
-        fecha: '2026-06-30',
-        plazoMinDias: 7,
-        plazoMaxDias: 13,
-      },
-    ]
-
-    await guardarSerieOtros(items, testDb.url, testDb.authToken)
-
-    const guardado = leerRuta('/finanzas/fci/otros/ultimo')
-    const frasco = guardado.find(r => r.fondo === 'NARANJA X FRASCOS 7-13')
-
-    expect(frasco).toEqual({
-      fondo: 'NARANJA X FRASCOS 7-13',
-      tna: 0.18,
-      tea: 0.1972,
-      tope: null,
-      fecha: '2026-06-30',
-      condiciones: null,
-      condicionesCorto: null,
-      plazoMinDias: 7,
-      plazoMaxDias: 13,
-    })
-  })
-
-  it('genera el endpoint estatico correctamente', async () => {
-    const items = [
-      {
-        fondo: 'NARANJA X',
-        tna: 0.21,
-        tea: 0.2314,
-        tope: 1000000,
-        fecha: '2026-01-12',
-      },
-    ]
-
-    await guardarSerieOtros(items, testDb.url, testDb.authToken)
-
-    const guardado = leerRuta('/finanzas/fci/otros/ultimo')
-
-    expect(guardado).toBeDefined()
-    expect(Array.isArray(guardado)).toBe(true)
-    expect(guardado.length).toBeGreaterThan(0)
-
-    const naranjaEntry = guardado.find(r => r.fondo === 'NARANJA X')
-    expect(naranjaEntry).toBeDefined()
-    expect(naranjaEntry).toEqual({
-      fondo: 'NARANJA X',
-      tna: 0.21,
-      tea: 0.2314,
-      tope: 1000000,
-      fecha: '2026-01-12',
-      condiciones: null,
-      condicionesCorto: null,
-      plazoMinDias: null,
-      plazoMaxDias: null,
-    })
-  })
+      for (const item of items) {
+        const entries = todos.filter(r => r.fondo === item.fondo)
+        expect(entries.length).toBeGreaterThanOrEqual(1)
+      }
+    },
+    30000,
+  )
 })

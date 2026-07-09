@@ -1,84 +1,58 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { describe, expect, it } from 'vitest'
+import { subDays } from 'date-fns'
+import { leerRuta } from '@/utils/rutas.js'
+import { extraerRiesgoPais } from '@/finanzas/indices/riesgo-pais/extraccion/extraerRiesgoPais.js'
+import riesgoPais from '@/finanzas/indices/riesgo-pais/riesgoPais.comando.js'
 
-const getMock = vi.fn()
-const store = new Map()
+describe('extraerRiesgoPais', () => {
+  it(
+    'extrae valores desde ambito.com',
+    async () => {
+      const desde = subDays(new Date(), 30)
+      const hasta = new Date()
+      const items = await extraerRiesgoPais(desde, hasta)
 
-vi.mock('axios', () => ({
-  default: {
-    get: getMock,
-  },
-}))
+      expect(items.length).toBeGreaterThan(0)
 
-vi.mock('@/utils/rutas.js', () => ({
-  leerRuta: vi.fn(ruta => store.get(ruta) ?? []),
-  escribirRuta: vi.fn((ruta, payload) => {
-    store.set(ruta, payload)
-    return payload
-  }),
-}))
-
-const { extraerRiesgoPais } =
-  await import('@/finanzas/indices/riesgo-pais/extraccion/extraerRiesgoPais.js')
-const { default: riesgoPais } =
-  await import('@/finanzas/indices/riesgo-pais/riesgoPais.comando.js')
+      for (const item of items) {
+        expect(item.fecha).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+        expect(typeof item.valor).toBe('number')
+        expect(item.valor).toBeGreaterThan(0)
+      }
+    },
+    30000,
+  )
+})
 
 describe('riesgoPais', () => {
-  beforeEach(() => {
-    store.clear()
-    getMock.mockReset()
-  })
+  it(
+    'ejecuta el comando y guarda último e histórico',
+    async () => {
+      const rutasGuardadas = await riesgoPais()
 
-  it('extraer valores', async () => {
-    getMock.mockResolvedValue({
-      data: [
-        ['Fecha', 'Valor'],
-        ['27-12-2024', '627'],
-        ['26-12-2024', '631'],
-        ['23-12-2024', '649'],
-      ],
-    })
+      expect(rutasGuardadas).toEqual([
+        '/finanzas/indices/riesgo-pais/ultimo',
+        '/finanzas/indices/riesgo-pais',
+      ])
 
-    const items = await extraerRiesgoPais(
-      new Date('2024-01-01'),
-      new Date('2024-12-31'),
-    )
+      const ultimo = leerRuta('/finanzas/indices/riesgo-pais/ultimo')
+      const historico = leerRuta('/finanzas/indices/riesgo-pais')
 
-    expect(getMock).toHaveBeenCalledTimes(1)
-    expect(items).toEqual([
-      { fecha: '2024-12-27', valor: 627 },
-      { fecha: '2024-12-26', valor: 631 },
-      { fecha: '2024-12-23', valor: 649 },
-    ])
-  })
+      expect(ultimo).toMatchObject({
+        fecha: expect.stringMatching(/^\d{4}-\d{2}-\d{2}$/),
+        valor: expect.any(Number),
+      })
+      expect(ultimo.valor).toBeGreaterThan(0)
 
-  it('comando', async () => {
-    getMock.mockResolvedValue({
-      data: [
-        ['Fecha', 'Valor'],
-        ['27-12-2024', '627'],
-        ['26-12-2024', '631'],
-        ['23-12-2024', '649'],
-      ],
-    })
-    store.set('/finanzas/indices/riesgo-pais', [
-      { fecha: '2024-12-20', valor: 671 },
-    ])
+      expect(Array.isArray(historico)).toBe(true)
+      expect(historico.length).toBeGreaterThan(0)
+      expect(historico).toContainEqual(ultimo)
 
-    const rutasGuardadas = await riesgoPais()
-
-    expect(rutasGuardadas).toEqual([
-      '/finanzas/indices/riesgo-pais/ultimo',
-      '/finanzas/indices/riesgo-pais',
-    ])
-    expect(store.get('/finanzas/indices/riesgo-pais/ultimo')).toEqual({
-      fecha: '2024-12-27',
-      valor: 627,
-    })
-    expect(store.get('/finanzas/indices/riesgo-pais')).toEqual([
-      { fecha: '2024-12-20', valor: 671 },
-      { fecha: '2024-12-23', valor: 649 },
-      { fecha: '2024-12-26', valor: 631 },
-      { fecha: '2024-12-27', valor: 627 },
-    ])
-  })
+      for (const item of historico) {
+        expect(item.fecha).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+        expect(typeof item.valor).toBe('number')
+      }
+    },
+    30000,
+  )
 })

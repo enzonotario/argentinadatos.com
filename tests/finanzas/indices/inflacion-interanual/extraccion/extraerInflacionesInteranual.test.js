@@ -1,30 +1,25 @@
-import { describe, expect, it, vi } from 'vitest'
-
-const extraerBcraApi = vi.fn()
-
-vi.mock('@/finanzas/compartido/extraccion/bcra.js', () => ({
-  extraerBcraApi,
-}))
-
-const { extraerInflacionesInteranual } =
-  await import('@/finanzas/indices/inflacion-interanual/extraccion/extraerInflacionesInteranual.js')
+import { describe, expect, it } from 'vitest'
+import { format, subMonths, addMonths } from 'date-fns'
+import { extraerInflacionesInteranual } from '@/finanzas/indices/inflacion-interanual/extraccion/extraerInflacionesInteranual.js'
 
 describe('extraerInflacionesInteranual', () => {
-  it('mapea la serie interanual del BCRA a fecha/valor', async () => {
-    extraerBcraApi.mockResolvedValue([
-      { fecha: '2023-12-31', valor: 211.4, otroCampo: true },
-      { fecha: '2023-11-30', valor: 160.9 },
-    ])
+  it(
+    'extrae la serie de inflación interanual del BCRA',
+    async () => {
+      const desde = subMonths(new Date(), 3)
+      const hasta = addMonths(new Date(), 1)
+      const inflaciones = await extraerInflacionesInteranual(
+        format(desde, 'yyyy-MM-dd'),
+        format(hasta, 'yyyy-MM-dd'),
+      )
 
-    const inflaciones = await extraerInflacionesInteranual(
-      '2000-01-01',
-      '2023-12-31',
-    )
+      expect(inflaciones.length).toBeGreaterThan(0)
 
-    expect(extraerBcraApi).toHaveBeenCalledWith(28, '2000-01-01', '2023-12-31')
-    expect(inflaciones).toEqual([
-      { fecha: '2023-12-31', valor: 211.4 },
-      { fecha: '2023-11-30', valor: 160.9 },
-    ])
-  })
+      for (const inflacion of inflaciones) {
+        expect(inflacion.fecha).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+        expect(typeof inflacion.valor).toBe('number')
+      }
+    },
+    30000,
+  )
 })

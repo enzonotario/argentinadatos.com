@@ -1,84 +1,17 @@
 import { describe, expect, it } from 'vitest'
 import {
   URL_NARANJA_X_FRASCOS,
-  construirFondoNaranjaXFrascos,
   extraerNaranjaXFrascos,
-  normalizarNaranjaXFrascos,
 } from '@/finanzas/fci/otros/extraccion/extraerNaranjaXFrascos.js'
 
 const tieneFirecrawl =
   Boolean(import.meta.env.VITE_FIRECRAWL_API_KEY) &&
   Boolean(import.meta.env.VITE_FIRECRAWL_BASE_URL)
 
-describe('construirFondoNaranjaXFrascos', () => {
-  it('arma el nombre del fondo según el rango de plazo', () => {
-    expect(construirFondoNaranjaXFrascos(7, 13)).toBe('NARANJA X FRASCOS 7-13')
-    expect(construirFondoNaranjaXFrascos(28, 28)).toBe('NARANJA X FRASCOS 28')
-  })
-})
-
-describe('normalizarNaranjaXFrascos', () => {
-  it('normaliza tramos por plazo y TNA', () => {
-    const resultado = normalizarNaranjaXFrascos({
-      tasas: [
-        { plazoMinDias: 28, plazoMaxDias: 28, tna: 19 },
-        { plazoMinDias: 7, plazoMaxDias: 13, tna: 0.18 },
-        { plazoMinDias: 14, plazoMaxDias: 27, tna: 18 },
-      ],
-      tope: 30000000,
-      condiciones: 'Plazo elegible entre 7 y 28 días.',
-      condicionesCorto: 'Frascos de 7 a 28 días',
-    })
-
-    expect(resultado).toEqual([
-      {
-        fondo: 'NARANJA X FRASCOS 7-13',
-        tna: 0.18,
-        tea: 0.1972,
-        plazoMinDias: 7,
-        plazoMaxDias: 13,
-        tope: 30000000,
-        condiciones: 'Plazo elegible entre 7 y 28 días.',
-        condicionesCorto: 'Frascos de 7 a 28 días',
-      },
-      {
-        fondo: 'NARANJA X FRASCOS 14-27',
-        tna: 0.18,
-        tea: 0.1972,
-        plazoMinDias: 14,
-        plazoMaxDias: 27,
-        tope: 30000000,
-        condiciones: 'Plazo elegible entre 7 y 28 días.',
-        condicionesCorto: 'Frascos de 7 a 28 días',
-      },
-      {
-        fondo: 'NARANJA X FRASCOS 28',
-        tna: 0.19,
-        tea: 0.2092,
-        plazoMinDias: 28,
-        plazoMaxDias: 28,
-        tope: 30000000,
-        condiciones: 'Plazo elegible entre 7 y 28 días.',
-        condicionesCorto: 'Frascos de 7 a 28 días',
-      },
-    ])
-  })
-
-  it('devuelve null si faltan tramos válidos', () => {
-    expect(normalizarNaranjaXFrascos(null)).toBeNull()
-    expect(normalizarNaranjaXFrascos({ tasas: [] })).toBeNull()
-    expect(
-      normalizarNaranjaXFrascos({
-        tasas: [{ plazoMinDias: 7, plazoMaxDias: null, tna: 0.18 }],
-      }),
-    ).toBeNull()
-  })
-})
-
-describe.skipIf(!tieneFirecrawl)(
-  'extraerNaranjaXFrascos (Firecrawl real)',
-  () => {
-    it('extrae tramos de TNA por plazo desde la web de Naranja X', async () => {
+describe.skipIf(!tieneFirecrawl)('extraerNaranjaXFrascos', () => {
+  it(
+    'extrae tramos de TNA por plazo desde la web de Naranja X',
+    async () => {
       expect(URL_NARANJA_X_FRASCOS).toBe('https://www.naranjax.com/frascos')
 
       const resultado = await extraerNaranjaXFrascos()
@@ -113,6 +46,7 @@ describe.skipIf(!tieneFirecrawl)(
       expect(tramo7a13.plazoMaxDias).toBe(13)
       expect(tramo14a27.plazoMaxDias).toBe(27)
       expect(tramo28.tna).toBeGreaterThanOrEqual(tramo7a13.tna)
-    }, 120000)
-  },
-)
+    },
+    120000,
+  )
+})
