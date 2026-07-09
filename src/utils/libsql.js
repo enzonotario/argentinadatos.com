@@ -6,14 +6,6 @@ function leerEnv(nombre) {
   return import.meta.env?.[nombre] ?? process.env[nombre]
 }
 
-function esProduccion() {
-  return (
-    import.meta.env?.PROD === true ||
-    import.meta.env?.MODE === 'production' ||
-    process.env.NODE_ENV === 'production'
-  )
-}
-
 export function esSqliteLocal(url) {
   return typeof url === 'string' && url.startsWith('file:')
 }
@@ -53,16 +45,10 @@ export function resolverConexionLibsql({
     }
   }
 
-  if (esProduccion()) {
-    if (!urlDesdeEnv) {
-      throw new Error(
-        `Falta configurar VITE_TURSO_DATABASE_URL para el scope "${scope}" en producción`,
-      )
-    }
-
+  if (urlDesdeEnv && authTokenDesdeEnv) {
     return {
       url: urlDesdeEnv,
-      authToken: authToken ?? authTokenDesdeEnv,
+      authToken: authTokenDesdeEnv,
     }
   }
 
