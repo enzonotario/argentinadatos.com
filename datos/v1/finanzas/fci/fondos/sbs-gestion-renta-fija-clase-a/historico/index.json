@@ -2,7 +2,7 @@
   "fondoId": "470",
   "claseId": "924",
   "nombre": "SBS Gestion Renta Fija - Clase A",
-  "fechaActualizacion": "2026-07-08T02:54:05.000Z",
+  "fechaActualizacion": "2026-07-09T03:10:11.000Z",
   "historico": [
     {
       "slug": "sbs-gestion-renta-fija-clase-a",
@@ -8434,6 +8434,22 @@
       "retornoDiario": 0.060161,
       "retornoAcumulado": 161.214509,
       "flujoEstimado": 60601721.894737,
+      "origen": "cafci-detail"
+    },
+    {
+      "slug": "sbs-gestion-renta-fija-clase-a",
+      "fondoId": "470",
+      "claseId": "924",
+      "nombre": "SBS Gestion Renta Fija - Clase A",
+      "fecha": "2026-07-08",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 40065.033,
+      "patrimonio": 36367727821.62,
+      "retornoDiario": 0.195534,
+      "retornoAcumulado": 161.725273,
+      "flujoEstimado": -29700921.880402,
       "origen": "cafci-detail"
     }
   ]
