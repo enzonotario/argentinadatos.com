@@ -9,7 +9,7 @@ const log = logGrupo({
 const BCRA_BASE_URL = 'https://www.bcra.gob.ar'
 const BCRA_ULTIMOS_INFORMES_URL = `${BCRA_BASE_URL}/ultimos-informes/`
 const BCRA_PUBLICACIONES_API_URL = `${BCRA_BASE_URL}/wp-json/bcra/v1/publicaciones?category=informes%2Cestadisticas&lang=es&action=total`
-const CANTIDAD_INFORMES_REM = 100
+const CANTIDAD_INFORMES_REM = 12
 
 const MESES = {
   ene: 0,
