@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import {
   extraerRem,
   obtenerPublicacionesRem,
+  obtenerUrlsPublicacionesRemDesdeUltimosInformes,
 } from '@/finanzas/rem/extraccion/extraerRem.js'
 
 const URLS_REM_2026 = [
@@ -10,6 +11,29 @@ const URLS_REM_2026 = [
 ]
 
 describe('extraerRem', () => {
+  it(
+    'descubre publicaciones REM desde la API de publicaciones del BCRA',
+    async () => {
+      const urls = await obtenerUrlsPublicacionesRemDesdeUltimosInformes(
+        undefined,
+        12,
+      )
+
+      expect(urls.length).toBeGreaterThan(0)
+      expect(urls.length).toBeLessThanOrEqual(12)
+
+      for (const url of urls) {
+        expect(url).toMatch(
+          /^https:\/\/www\.bcra\.gob\.ar\/publicaciones\/relevamiento-de-expectativas-de-mercado/i,
+        )
+        expect(url).not.toContain('sitiopublico.desa.bcra.net')
+      }
+
+      expect(urls[0]).toContain('junio-2026')
+    },
+    30000,
+  )
+
   it(
     'obtiene publicaciones REM con enlaces XLSX válidos',
     async () => {

@@ -8,7 +8,8 @@ const log = logGrupo({
 
 const BCRA_BASE_URL = 'https://www.bcra.gob.ar'
 const BCRA_ULTIMOS_INFORMES_URL = `${BCRA_BASE_URL}/ultimos-informes/`
-const CANTIDAD_INFORMES_REM = 12
+const BCRA_PUBLICACIONES_API_URL = `${BCRA_BASE_URL}/wp-json/bcra/v1/publicaciones?category=informes%2Cestadisticas&lang=es&action=total`
+const CANTIDAD_INFORMES_REM = 100
 
 const MESES = {
   ene: 0,
@@ -294,6 +295,39 @@ export function parsearInformeDesdeUrl(url) {
   return `${anio}-${String(mes + 1).padStart(2, '0')}`
 }
 
+function esPublicacionRem(titulo, url) {
+  const tituloNormalizado = normalizarTexto(titulo)
+  const urlNormalizada = normalizarTexto(url)
+
+  return (
+    tituloNormalizado.includes('relevamiento de expectativas de mercado') ||
+    urlNormalizada.includes('relevamiento-de-expectativas-de-mercado')
+  )
+}
+
+export function obtenerUrlsPublicacionesRemDesdeApiPublicaciones(
+  payload,
+  limite = CANTIDAD_INFORMES_REM,
+) {
+  const publicaciones =
+    payload?.data?.publicaciones ?? payload?.publicaciones ?? []
+
+  const urls = []
+  const vistos = new Set()
+
+  for (const publicacion of publicaciones) {
+    const url = resolverUrl(publicacion.url, BCRA_BASE_URL)
+
+    if (!url || !esPublicacionRem(publicacion.titulo, url)) continue
+    if (vistos.has(url)) continue
+
+    vistos.add(url)
+    urls.push(url)
+  }
+
+  return urls.slice(0, limite)
+}
+
 export function obtenerUrlsPublicacionesRemDesdeHtmlUltimosInformes(
   html,
   baseUrl = BCRA_ULTIMOS_INFORMES_URL,
@@ -307,17 +341,12 @@ export function obtenerUrlsPublicacionesRemDesdeHtmlUltimosInformes(
 
   for (const coincidencia of coincidencias) {
     const href = coincidencia[1]
-    const texto = normalizarTexto(coincidencia[2].replace(/<[^>]+>/g, ' '))
+    const texto = coincidencia[2].replace(/<[^>]+>/g, ' ')
     const url = resolverUrl(href, baseUrl)
 
     if (!url) continue
 
-    const urlNormalizada = normalizarTexto(url)
-    const esRem =
-      texto.includes('relevamiento de expectativas de mercado') ||
-      urlNormalizada.includes('relevamiento-de-expectativas-de-mercado')
-
-    if (!esRem || vistos.has(url)) continue
+    if (!esPublicacionRem(texto, url) || vistos.has(url)) continue
 
     vistos.add(url)
     urls.push(url)
@@ -327,20 +356,22 @@ export function obtenerUrlsPublicacionesRemDesdeHtmlUltimosInformes(
 }
 
 export async function obtenerUrlsPublicacionesRemDesdeUltimosInformes(
-  informesUrl = BCRA_ULTIMOS_INFORMES_URL,
+  publicacionesUrl = BCRA_PUBLICACIONES_API_URL,
   limite = CANTIDAD_INFORMES_REM,
 ) {
-  const respuesta = await fetchConTimeout(informesUrl)
+  const respuesta = await fetchConTimeout(publicacionesUrl, {
+    headers: {
+      Accept: 'application/json',
+    },
+  })
 
   if (!respuesta.ok) return []
 
-  const html = await respuesta.text()
+  const payload = await respuesta.json()
 
-  return obtenerUrlsPublicacionesRemDesdeHtmlUltimosInformes(
-    html,
-    informesUrl,
-    limite,
-  )
+  if (payload?.success === false) return []
+
+  return obtenerUrlsPublicacionesRemDesdeApiPublicaciones(payload, limite)
 }
 
 export function resolverUrl(href, baseUrl = BCRA_BASE_URL) {
