@@ -43,10 +43,10 @@ export default defineConfig({
     sidebar: [
       {
         text: `<span class="OASidebarItem">
-        <svg class="i-mdi-home w-5 h-5" />
-        <span class="OASidebarItem-text">Inicio</span>
+        <svg class="i-mdi-book-open-page-variant w-5 h-5" />
+        <span class="OASidebarItem-text">Introducción</span>
       </span>`,
-        link: '/',
+        link: '/docs',
       },
       {
         text: `<span class="OASidebarItem">
