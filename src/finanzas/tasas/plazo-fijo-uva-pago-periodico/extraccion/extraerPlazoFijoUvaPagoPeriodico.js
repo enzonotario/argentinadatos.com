@@ -1,11 +1,15 @@
 import axios from 'axios'
 import { load } from 'cheerio'
-import { logGrupo, logError } from '@/log.js'
+import { logGrupo, logError, logMensaje } from '@/log.js'
+import { construirRequestConProxy } from '@/utils/proxy.js'
 
 const log = logGrupo({
   fuente: 'extraerPlazoFijoUvaPagoPeriodico',
   tipo: 'extraccion',
 })
+
+const URL_BNA_PLAZO_FIJO_ELECTRONICO =
+  'https://www.bna.com.ar/Personas/PlazoFijoElectronico'
 
 export async function extraerPlazoFijoUvaPagoPeriodico() {
   try {
@@ -20,9 +24,15 @@ export async function extraerPlazoFijoUvaPagoPeriodico() {
 
 async function extraerBna() {
   try {
-    const respuesta = await axios.get(
-      'https://www.bna.com.ar/Personas/PlazoFijoElectronico',
-    )
+    const request = construirRequestConProxy(URL_BNA_PLAZO_FIJO_ELECTRONICO)
+
+    if (request.usaProxy) {
+      logMensaje(log, 'Consultando BNA via proxy')
+    }
+
+    const respuesta = await axios.get(request.url, {
+      headers: request.opciones.headers,
+    })
 
     const $ = load(respuesta.data)
 
