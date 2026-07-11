@@ -34,6 +34,8 @@ async function extraerBna() {
       headers: request.opciones.headers,
     })
 
+    console.log({ respuesta })
+
     logMensaje(log, 'Respuesta recibida de BNA', {
       status: respuesta.status,
       data: respuesta.data,
@@ -86,6 +88,7 @@ async function extraerBna() {
       },
     ]
   } catch (error) {
+    console.log({ error })
     logError(log, error)
     return []
   }
