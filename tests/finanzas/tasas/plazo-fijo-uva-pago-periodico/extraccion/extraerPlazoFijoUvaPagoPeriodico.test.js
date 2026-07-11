@@ -36,7 +36,7 @@ describe('extraerPlazoFijoUvaPagoPeriodico', () => {
       }
     },
     {
-      timeout: 60000,
+      timeout: 15000,
     },
   )
 })
