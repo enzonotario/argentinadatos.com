@@ -1,116 +1,160 @@
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue'
-import colors from 'tailwindcss/colors'
+import { computed, onMounted, ref } from 'vue'
+import { useDark } from '@pureadmin/utils'
+import { VueUiHorizontalBar } from 'vue-data-ui/vue-ui-horizontal-bar'
+import type {
+  VueUiHorizontalBarConfig,
+  VueUiHorizontalBarDatasetItem,
+} from 'vue-data-ui'
+import 'vue-data-ui/style.css'
 import { useApi } from '../../composables/useApi'
-import { useEcharts } from '../../composables/useEcharts'
 
-const chartRef = ref()
-const { setOptions, theme } = useEcharts(chartRef)
+type TipoTna = 'tnaClientes' | 'tnaNoClientes'
+
+interface EntidadTna {
+  entidad: string
+  tnaClientes: number
+  tnaNoClientes: number | null
+}
+
 const api = useApi()
+const { isDark } = useDark()
 
-const tipo = ref('tnaClientes')
+const tipo = ref<TipoTna>('tnaClientes')
 const loading = ref(false)
+const entidades = ref<EntidadTna[]>([])
+
+const theme = computed(() => (isDark.value ? 'dark' : ''))
+const bg = computed(() => (isDark.value ? '#1b1b1f' : '#FFFFFF'))
+const fg = computed(() => (isDark.value ? '#E5E7EB' : '#2D353C'))
+const muted = computed(() => (isDark.value ? '#9CA3AF' : '#6B7280'))
+
+const dataset = computed<VueUiHorizontalBarDatasetItem[]>(() => {
+  return [...entidades.value]
+    .filter((d) => {
+      const value = d[tipo.value]
+      return value != null && Number.isFinite(value) && value > 0
+    })
+    .sort((a, b) => (b[tipo.value] ?? 0) - (a[tipo.value] ?? 0))
+    .map(d => ({
+      name: d.entidad,
+      value: d[tipo.value] as number,
+    }))
+})
+
+const config = computed<VueUiHorizontalBarConfig>(() => ({
+  theme: theme.value,
+  responsive: true,
+  loading: loading.value,
+  style: {
+    fontFamily: 'inherit',
+    chart: {
+      backgroundColor: bg.value,
+      color: fg.value,
+      title: {
+        text: 'Tasas de Plazo Fijo',
+        color: fg.value,
+        subtitle: {
+          text: tipo.value === 'tnaClientes'
+            ? 'TNA clientes · referencia BCRA ($100.000 / 30 días)'
+            : 'TNA no clientes · referencia BCRA ($100.000 / 30 días)',
+          color: muted.value,
+        },
+      },
+      legend: { show: false },
+      layout: {
+        bars: {
+          sort: 'desc',
+          dataLabels: {
+            color: fg.value,
+            value: {
+              show: true,
+              roundingValue: 2,
+              suffix: '%',
+            },
+            percentage: { show: false },
+          },
+        },
+      },
+    },
+  },
+  userOptions: { show: false },
+}))
+
+const chartHeight = computed(() => {
+  const rows = Math.max(dataset.value.length, 1)
+  return 1000
+})
 
 async function fetchData() {
   loading.value = true
   try {
     const data = await api.get('/finanzas/tasas/plazoFijo')
-    return data.map((d: any) => ({
-      entidad: d.entidad,
-      tnaClientes: Number((d.tnaClientes * 100).toFixed(2)),
-      tnaNoClientes: d.tnaNoClientes ? Number((d.tnaNoClientes * 100).toFixed(2)) : null,
-    })).sort((a: any, b: any) => b[tipo.value] - a[tipo.value])
+    entidades.value = (Array.isArray(data) ? data : []).map((d: any) => ({
+      entidad: String(d.entidad ?? ''),
+      tnaClientes: Number((Number(d.tnaClientes) * 100).toFixed(2)),
+      tnaNoClientes: d.tnaNoClientes
+        ? Number((Number(d.tnaNoClientes) * 100).toFixed(2))
+        : null,
+    }))
   }
-  catch (error) {
-    return []
+  catch {
+    entidades.value = []
   }
   finally {
     loading.value = false
   }
 }
 
-async function setChartOptions() {
-  const data = await fetchData()
-  const isDark = theme.value === 'dark'
-
-  setOptions({
-    tooltip: {
-      trigger: 'axis',
-      axisPointer: { type: 'shadow' },
-      formatter: (params: any) => {
-        const item = params[0]
-        return `${item.name}<br/>TNA: <b>${item.value.toLocaleString('es-AR')}%</b>`
-      }
-    },
-    grid: {
-      left: '3%',
-      right: '10%',
-      bottom: '3%',
-      containLabel: true
-    },
-    xAxis: {
-      type: 'value',
-      axisLabel: {
-        color: isDark ? colors.gray[100] : colors.gray[800],
-        formatter: (value: number) => {
-          return `${value.toLocaleString('es-AR')}%`
-        }
-      }
-    },
-    yAxis: {
-      type: 'category',
-      data: data.map((d: any) => d.entidad),
-      inverse: true,
-      axisLabel: {
-        color: isDark ? colors.gray[100] : colors.gray[800],
-      }
-    },
-    series: [
-      {
-        name: 'TNA',
-        type: 'bar',
-        data: data.map((d: any) => d[tipo.value]),
-        itemStyle: {
-          color: colors.indigo[500]
-        },
-        label: {
-          show: true,
-          position: 'right',
-          color: isDark ? colors.gray[100] : colors.gray[800],
-          formatter: (params: any) => {
-            return `${params.value.toLocaleString('es-AR')}%`
-          }
-        }
-      }
-    ]
-  })
-}
-
-watch([tipo, theme], async () => {
-  await setChartOptions()
-})
-
 onMounted(async () => {
-  await setChartOptions()
+  await fetchData()
 })
 </script>
 
 <template>
-  <div class="flex flex-col gap-4">
-    <div class="flex items-center gap-4">
-      <h3 class="m-0">Tasas de Plazo Fijo</h3>
-      <div class="flex items-center gap-2">
-        <label class="flex items-center gap-1 cursor-pointer">
-          <input type="radio" v-model="tipo" value="tnaClientes" class="cursor-pointer" />
+  <div class="not-prose flex flex-col gap-4">
+    <div class="flex flex-wrap items-center gap-4">
+      <div class="flex items-center gap-2 text-sm">
+        <label class="flex cursor-pointer items-center gap-1">
+          <input
+            v-model="tipo"
+            type="radio"
+            value="tnaClientes"
+            class="cursor-pointer"
+          >
           <span>Clientes</span>
         </label>
-        <label class="flex items-center gap-1 cursor-pointer">
-          <input type="radio" v-model="tipo" value="tnaNoClientes" class="cursor-pointer" />
+        <label class="flex cursor-pointer items-center gap-1">
+          <input
+            v-model="tipo"
+            type="radio"
+            value="tnaNoClientes"
+            class="cursor-pointer"
+          >
           <span>No Clientes</span>
         </label>
       </div>
-      <span v-if="loading" class="animate-spin h-5 w-5 border-t-2 border-b-2 border-indigo-500 rounded-full"></span>
+      <span
+        v-if="loading"
+        class="h-5 w-5 animate-spin rounded-full border-b-2 border-t-2 border-indigo-500"
+      />
     </div>
-    <div ref="chartRef" class="h-[60rem]" />
+
+    <div
+      class="w-full overflow-auto"
+      :style="{ height: 1000 }"
+    >
+      <VueUiHorizontalBar
+        v-if="dataset.length || loading"
+        :dataset="dataset"
+        :config="config"
+      />
+      <p
+        v-else
+        class="p-4 text-sm text-gray-500"
+      >
+        No hay tasas disponibles para esta selección.
+      </p>
+    </div>
   </div>
 </template>

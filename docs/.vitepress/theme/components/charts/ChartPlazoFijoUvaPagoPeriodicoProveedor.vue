@@ -1,7 +1,12 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue'
-import colors from 'tailwindcss/colors'
-import { useEcharts } from '../../composables/useEcharts'
+import { computed } from 'vue'
+import { useDark } from '@pureadmin/utils'
+import { VueUiHorizontalBar } from 'vue-data-ui/vue-ui-horizontal-bar'
+import type {
+  VueUiHorizontalBarConfig,
+  VueUiHorizontalBarDatasetItem,
+} from 'vue-data-ui'
+import 'vue-data-ui/style.css'
 
 interface TasaPlazo {
   nombre: string
@@ -22,8 +27,12 @@ const props = defineProps<{
   proveedor: ProveedorPlazoFijoUva
 }>()
 
-const chartRef = ref()
-const { setOptions, theme } = useEcharts(chartRef)
+const { isDark } = useDark()
+
+const theme = computed(() => (isDark.value ? 'dark' : ''))
+const bg = computed(() => (isDark.value ? '#1b1b1f' : '#FFFFFF'))
+const fg = computed(() => (isDark.value ? '#E5E7EB' : '#2D353C'))
+const muted = computed(() => (isDark.value ? '#9CA3AF' : '#6B7280'))
 
 const titulo = computed(() => props.proveedor.entidad?.trim() || props.proveedor.id)
 
@@ -31,121 +40,86 @@ function etiquetaPlazo(t: TasaPlazo) {
   return `${t.plazoMinDias}–${t.plazoMaxDias} días`
 }
 
-const alturaGraficoRem = computed(() => {
-  const n = props.proveedor.tasas?.length ?? 0
-  return Math.min(80, Math.max(16, n * 2.6))
-})
-
-function seriesDesdeProveedor() {
-  const filas = (props.proveedor.tasas || [])
-    .map(t => ({
-      label: etiquetaPlazo(t),
-      plazoMinDias: t.plazoMinDias,
-      tna: Number((t.tna * 100).toFixed(2)),
-      tea: Number((t.tea * 100).toFixed(2)),
-    }))
+const dataset = computed<VueUiHorizontalBarDatasetItem[]>(() => {
+  return [...(props.proveedor.tasas || [])]
     .sort((a, b) => a.plazoMinDias - b.plazoMinDias)
-
-  return {
-    labels: filas.map(r => r.label),
-    tna: filas.map(r => r.tna),
-    tea: filas.map(r => r.tea),
-  }
-}
-
-function aplicarOpcionesGrafico() {
-  const { labels, tna, tea } = seriesDesdeProveedor()
-  const isDark = theme.value === 'dark'
-  const axisColor = isDark ? colors.gray[100] : colors.gray[800]
-
-  setOptions({
-    tooltip: {
-      trigger: 'axis',
-      axisPointer: { type: 'shadow' },
-      formatter: (params: any) => {
-        if (!params?.length)
-          return ''
-        const lines = params.map(
-          (item: any) => `${item.marker}${item.seriesName}: <b>${Number(item.value).toLocaleString('es-AR')}%</b>`,
-        )
-        return `${params[0].name}<br/>${lines.join('<br/>')}`
-      },
-    },
-    legend: {
-      left: 'left',
-      data: ['TNA', 'TEA'],
-      textStyle: { color: axisColor },
-    },
-    grid: {
-      left: '3%',
-      right: '12%',
-      bottom: '3%',
-      containLabel: true,
-    },
-    xAxis: {
-      type: 'value',
-      axisLabel: {
-        color: axisColor,
-        formatter: (value: number) => `${value.toLocaleString('es-AR')}%`,
-      },
-    },
-    yAxis: {
-      type: 'category',
-      data: labels,
-      inverse: true,
-      axisLabel: { color: axisColor },
-    },
-    series: [
-      {
-        name: 'TNA',
-        type: 'bar',
-        data: tna,
-        itemStyle: { color: colors.indigo[500] },
-        label: {
-          show: true,
-          position: 'right',
-          color: axisColor,
-          formatter: (params: any) => `${params.value.toLocaleString('es-AR')}%`,
+    .map(t => ({
+      name: etiquetaPlazo(t),
+      value: Number((t.tna * 100).toFixed(2)),
+      children: [
+        {
+          name: 'TNA',
+          value: Number((t.tna * 100).toFixed(2)),
         },
-      },
-      {
-        name: 'TEA',
-        type: 'bar',
-        data: tea,
-        itemStyle: { color: colors.violet[500] },
-        label: {
-          show: true,
-          position: 'right',
-          color: axisColor,
-          formatter: (params: any) => `${params.value.toLocaleString('es-AR')}%`,
+        {
+          name: 'TEA',
+          value: Number((t.tea * 100).toFixed(2)),
         },
-      },
-    ],
-  })
-}
-
-watch(theme, () => {
-  aplicarOpcionesGrafico()
+      ],
+    }))
 })
 
-watch(() => props.proveedor, () => {
-  aplicarOpcionesGrafico()
-}, { deep: true })
+const config = computed<VueUiHorizontalBarConfig>(() => ({
+  theme: theme.value,
+  responsive: true,
+  customPalette: ['#6366F1', '#8B5CF6'],
+  style: {
+    fontFamily: 'inherit',
+    chart: {
+      backgroundColor: bg.value,
+      color: fg.value,
+      title: {
+        text: titulo.value,
+        color: fg.value,
+        subtitle: {
+          text: 'TNA y TEA por tramo de plazo',
+          color: muted.value,
+        },
+      },
+      legend: {
+        show: true,
+        color: fg.value,
+      },
+      layout: {
+        bars: {
+          sort: 'none',
+          dataLabels: {
+            color: fg.value,
+            value: {
+              show: true,
+              roundingValue: 2,
+              suffix: '%',
+            },
+            percentage: { show: false },
+          },
+        },
+      },
+    },
+  },
+  userOptions: { show: false },
+}))
 
-onMounted(() => {
-  aplicarOpcionesGrafico()
+const chartHeight = computed(() => {
+  const n = dataset.value.length
+  return `${Math.min(80, Math.max(16, n * 3.2))}rem`
 })
 </script>
 
 <template>
-  <div class="flex flex-col gap-3">
-    <h4 class="m-0 text-lg font-semibold">
-      {{ titulo }}
-    </h4>
-    <div
-      ref="chartRef"
-      class="w-full"
-      :style="{ height: `${alturaGraficoRem}rem` }"
+  <div
+    class="w-full overflow-auto rounded-lg border border-gray-200 dark:border-zinc-700"
+    :style="{ height: chartHeight }"
+  >
+    <VueUiHorizontalBar
+      v-if="dataset.length"
+      :dataset="dataset"
+      :config="config"
     />
+    <p
+      v-else
+      class="p-4 text-sm text-gray-500"
+    >
+      Sin tasas publicadas para {{ titulo }}.
+    </p>
   </div>
 </template>

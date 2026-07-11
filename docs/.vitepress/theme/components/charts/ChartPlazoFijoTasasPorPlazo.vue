@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
+import { useDark } from '@pureadmin/utils'
+import { VueUiTable } from 'vue-data-ui/vue-ui-table'
+import type { VueUiTableConfig, VueUiTableDataset } from 'vue-data-ui'
+import 'vue-data-ui/style.css'
 import { useApi } from '../../composables/useApi'
 
 interface TramoPlazoFijo {
@@ -19,17 +23,24 @@ interface EntidadPlazoFijo {
 const PLAZOS_COLUMNAS = [30, 60, 90, 365]
 
 const api = useApi()
+const { isDark } = useDark()
 const loading = ref(false)
 const entidades = ref<EntidadPlazoFijo[]>([])
 
+const bg = computed(() => (isDark.value ? '#1b1b1f' : '#FFFFFF'))
+const fg = computed(() => (isDark.value ? '#E5E7EB' : '#2D353C'))
+const muted = computed(() => (isDark.value ? '#9CA3AF' : '#6B7280'))
+
 function formatearTna(tna: number) {
-  return `${(tna * 100).toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}%`
+  return `${(tna * 100).toLocaleString('es-AR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })}%`
 }
 
 function tramoCoincideConPlazo(tramo: TramoPlazoFijo, plazoDias: number) {
   const min = tramo.plazoMinDias ?? 0
   const max = tramo.plazoMaxDias ?? Number.POSITIVE_INFINITY
-
   return plazoDias >= min && plazoDias <= max
 }
 
@@ -37,7 +48,6 @@ function prioridadTramo(tramo: TramoPlazoFijo, plazoDias: number) {
   const exacto =
     tramo.plazoMinDias === plazoDias && tramo.plazoMaxDias === plazoDias
   const sinMonto = tramo.montoMinimo == null && tramo.montoMaximo == null
-
   return (exacto ? 0 : 1) + (sinMonto ? 0 : 2)
 }
 
@@ -50,9 +60,8 @@ function valorTnaNumericoParaPlazo(
     .filter(tramo => tramoCoincideConPlazo(tramo, plazoDias))
     .sort((a, b) => prioridadTramo(a, plazoDias) - prioridadTramo(b, plazoDias))
 
-  if (coincidentes.length === 0) {
+  if (coincidentes.length === 0)
     return plazoDias === 30 && tnaFallback != null ? tnaFallback : null
-  }
 
   return Math.max(...coincidentes.map(tramo => tramo.tna))
 }
@@ -67,42 +76,80 @@ function tnaParaPlazo(
     .sort((a, b) => prioridadTramo(a, plazoDias) - prioridadTramo(b, plazoDias))
 
   if (coincidentes.length === 0) {
-    if (plazoDias === 30 && tnaFallback != null) {
+    if (plazoDias === 30 && tnaFallback != null)
       return formatearTna(tnaFallback)
-    }
-
-    return null
+    return '—'
   }
 
-  const valores = [...new Set(coincidentes.map(tramo => formatearTna(tramo.tna)))]
-
-  return valores.join(' / ')
+  return [...new Set(coincidentes.map(tramo => formatearTna(tramo.tna)))].join(
+    ' / ',
+  )
 }
 
-const filas = computed(() => {
-  return entidades.value
+const dataset = computed<VueUiTableDataset>(() => {
+  const filas = entidades.value
     .filter(item => Array.isArray(item.tasas) && item.tasas.length > 0)
     .map(item => ({
       entidad: item.entidad,
-      tasas: item.tasas!,
-      tna30Dias: valorTnaNumericoParaPlazo(item.tasas!, 30, item.tnaClientes),
+      tna30: valorTnaNumericoParaPlazo(item.tasas!, 30, item.tnaClientes),
       celdas: PLAZOS_COLUMNAS.map(plazo =>
         tnaParaPlazo(item.tasas!, plazo, item.tnaClientes),
       ),
     }))
-    .sort((a, b) => (b.tna30Dias ?? -1) - (a.tna30Dias ?? -1))
+    .sort((a, b) => (b.tna30 ?? -1) - (a.tna30 ?? -1))
+
+  return {
+    header: [
+      { name: 'Entidad', type: 'text', isSearch: true, isSort: true },
+      ...PLAZOS_COLUMNAS.map(plazo => ({
+        name: `${plazo} días`,
+        type: 'text' as const,
+      })),
+    ],
+    body: filas.map(fila => ({
+      td: [fila.entidad, ...fila.celdas],
+    })),
+  }
 })
+
+const config = computed<VueUiTableConfig>(() => ({
+  fontFamily: 'inherit',
+  maxHeight: 1000,
+  rowsPerPage: Math.max(dataset.value.body.length, 1),
+  style: {
+    title: {
+      text: 'Tasas por plazo',
+      color: fg.value,
+      backgroundColor: bg.value,
+      subtitle: {
+        text: 'TNA según tramos publicados por cada entidad',
+        color: muted.value,
+      },
+    },
+    th: {
+      backgroundColor: isDark.value ? '#27272A' : '#F9FAFB',
+      color: fg.value,
+    },
+    rows: {
+      even: {
+        backgroundColor: isDark.value ? '#18181B' : '#FFFFFF',
+        color: fg.value,
+      },
+      odd: {
+        backgroundColor: isDark.value ? '#27272A' : '#F9FAFB',
+        color: fg.value,
+      },
+    },
+  },
+}))
 
 async function fetchData() {
   loading.value = true
-
   try {
     entidades.value = await api.get('/finanzas/tasas/plazoFijo')
-  }
-  catch {
+  } catch {
     entidades.value = []
-  }
-  finally {
+  } finally {
     loading.value = false
   }
 }
@@ -113,59 +160,42 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-4">
-    <div class="flex items-center gap-3">
-      <h3 class="m-0 text-lg font-semibold">
-        Tasas por plazo
-      </h3>
+  <div class="not-prose flex flex-col gap-4">
+    <div v-if="loading" class="flex items-center gap-2 text-sm text-gray-500">
       <span
-        v-if="loading"
         class="h-5 w-5 animate-spin rounded-full border-b-2 border-t-2 border-indigo-500"
       />
+      Cargando tasas por plazo...
     </div>
 
     <p
-      v-if="!loading && filas.length === 0"
+      v-else-if="dataset.body.length === 0"
       class="m-0 text-sm text-gray-500 dark:text-gray-400"
     >
       No hay entidades con tasas desglosadas por plazo en este momento.
     </p>
 
-    <div v-else class="overflow-x-auto">
-      <table class="w-full border-collapse rounded-lg bg-white shadow-sm dark:bg-gray-900">
-        <thead>
-          <tr class="bg-gray-50 dark:bg-gray-800">
-            <th class="border-b border-gray-200 px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:border-gray-700 dark:text-gray-400">
-              Entidad
-            </th>
-            <th
-              v-for="plazo in PLAZOS_COLUMNAS"
-              :key="plazo"
-              class="border-b border-gray-200 px-4 py-3 text-right text-xs font-medium uppercase tracking-wider text-gray-500 dark:border-gray-700 dark:text-gray-400"
-            >
-              {{ plazo }} días
-            </th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-          <tr
-            v-for="fila in filas"
-            :key="fila.entidad"
-            class="transition-colors hover:bg-gray-50 dark:hover:bg-gray-800"
-          >
-            <td class="px-4 py-3 text-sm font-medium text-gray-900 dark:text-gray-100">
-              {{ fila.entidad }}
-            </td>
-            <td
-              v-for="(valor, index) in fila.celdas"
-              :key="`${fila.entidad}-${PLAZOS_COLUMNAS[index]}`"
-              class="px-4 py-3 text-right text-sm text-gray-900 dark:text-gray-100"
-            >
-              {{ valor ?? '—' }}
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div
+      v-else
+      class="plazo-tasas-table"
+    >
+      <VueUiTable :dataset="dataset" :config="config" />
     </div>
   </div>
 </template>
+
+<style scoped>
+.plazo-tasas-table :deep(.vue-ui-table-paginator),
+.plazo-tasas-table :deep(.vue-ui-table-pagination),
+.plazo-tasas-table :deep(.vue-ui-table-navigation),
+.plazo-tasas-table :deep(.vue-ui-table-navigation-indicator),
+.plazo-tasas-table :deep(.vue-ui-table-size-warning),
+.plazo-tasas-table :deep(.td-selector-info) {
+  display: none !important;
+}
+
+.plazo-tasas-table :deep(.vue-ui-table__wrapper) {
+  max-height: none !important;
+  overflow: visible !important;
+}
+</style>

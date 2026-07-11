@@ -144,31 +144,49 @@ function shortName(indicador: string) {
 }
 
 function formatValor(value: number | null, digits = 2) {
-  if (value == null)
-    return '—'
+  if (value == null) return '—'
   return Number.isInteger(value)
     ? value.toLocaleString('es-AR')
     : value.toLocaleString('es-AR', { maximumFractionDigits: digits })
 }
 
-const filasTodos = computed(() => filas.value.filter(r => r.muestra === 'todos'))
+const filasTodos = computed(() =>
+  filas.value.filter(r => r.muestra === 'todos'),
+)
 
 function serie(indicador: string, periodoTipo: string) {
   return filasTodos.value
-    .filter(r => r.indicador === indicador && r.periodoTipo === periodoTipo && r.promedio != null)
-    .sort((a, b) => (a.periodoDesde || a.periodo).localeCompare(b.periodoDesde || b.periodo))
+    .filter(
+      r =>
+        r.indicador === indicador &&
+        r.periodoTipo === periodoTipo &&
+        r.promedio != null,
+    )
+    .sort((a, b) =>
+      (a.periodoDesde || a.periodo).localeCompare(b.periodoDesde || b.periodo),
+    )
 }
 
-function ultima(indicador: string, preferTipos: string[] = ['anual', 'proximos_12_meses', 'mensual', 'trimestral']) {
+function ultima(
+  indicador: string,
+  preferTipos: string[] = [
+    'anual',
+    'proximos_12_meses',
+    'mensual',
+    'trimestral',
+  ],
+) {
   for (const tipo of preferTipos) {
     const rows = serie(indicador, tipo)
-    if (rows.length)
-      return rows.at(-1)!
+    if (rows.length) return rows.at(-1)!
   }
   return null
 }
 
-function sparkFrom(indicador: string, periodoTipo = 'mensual'): VueUiSparklineDatasetItem[] {
+function sparkFrom(
+  indicador: string,
+  periodoTipo = 'mensual',
+): VueUiSparklineDatasetItem[] {
   return serie(indicador, periodoTipo).map(r => ({
     period: r.periodo,
     value: r.promedio,
@@ -187,10 +205,9 @@ interface KpiItem {
 }
 
 const kpis = computed<KpiItem[]>(() => {
-  return KPI_ORDER.map((indicador) => {
+  return KPI_ORDER.map(indicador => {
     const row = ultima(indicador)
-    if (!row || row.promedio == null)
-      return null
+    if (!row || row.promedio == null) return null
     const spark = sparkFrom(indicador, 'mensual')
     return {
       key: indicador,
@@ -236,12 +253,13 @@ function sparkConfig(color = '#6366F1'): VueUiSparklineConfig {
   }
 }
 
-const ipcMensualLabels = computed(() => serie(IPC, 'mensual').map(r => r.periodo))
+const ipcMensualLabels = computed(() =>
+  serie(IPC, 'mensual').map(r => r.periodo),
+)
 
 const ipcXyDataset = computed<VueUiXyDatasetItem[]>(() => {
   const rows = serie(IPC, 'mensual')
-  if (!rows.length)
-    return []
+  if (!rows.length) return []
   return [
     {
       name: 'Promedio',
@@ -270,8 +288,7 @@ const ipcXyDataset = computed<VueUiXyDatasetItem[]>(() => {
 
 const tcXyDataset = computed<VueUiXyDatasetItem[]>(() => {
   const rows = serie(TC, 'mensual')
-  if (!rows.length)
-    return []
+  if (!rows.length) return []
   return [
     {
       name: 'Tipo de cambio',
@@ -290,11 +307,14 @@ const tcLabels = computed(() => serie(TC, 'mensual').map(r => r.periodo))
 const comercioXyDataset = computed<VueUiXyDatasetItem[]>(() => {
   const exp = serie(EXPORTACIONES, 'mensual')
   const imp = serie(IMPORTACIONES, 'mensual')
-  if (!exp.length && !imp.length)
-    return []
-  const labels = [...new Set([...exp, ...imp].map(r => r.periodoDesde || r.periodo))].sort()
+  if (!exp.length && !imp.length) return []
+  const labels = [
+    ...new Set([...exp, ...imp].map(r => r.periodoDesde || r.periodo)),
+  ].sort()
   const byPeriod = (rows: RemDato[]) => {
-    const map = new Map(rows.map(r => [r.periodoDesde || r.periodo, r.promedio]))
+    const map = new Map(
+      rows.map(r => [r.periodoDesde || r.periodo, r.promedio]),
+    )
     return labels.map(l => map.get(l) ?? null)
   }
   return [
@@ -316,14 +336,20 @@ const comercioXyDataset = computed<VueUiXyDatasetItem[]>(() => {
 const comercioLabels = computed(() => {
   const exp = serie(EXPORTACIONES, 'mensual')
   const imp = serie(IMPORTACIONES, 'mensual')
-  const keys = [...new Set([...exp, ...imp].map(r => r.periodoDesde || r.periodo))].sort()
+  const keys = [
+    ...new Set([...exp, ...imp].map(r => r.periodoDesde || r.periodo)),
+  ].sort()
   const labelMap = new Map(
     [...exp, ...imp].map(r => [r.periodoDesde || r.periodo, r.periodo]),
   )
   return keys.map(k => labelMap.get(k) || k)
 })
 
-function xyConfig(title: string, subtitle: string, labels: string[]): VueUiXyConfig {
+function xyConfig(
+  title: string,
+  subtitle: string,
+  labels: string[],
+): VueUiXyConfig {
   return {
     theme: theme.value,
     responsive: true,
@@ -360,22 +386,35 @@ function xyConfig(title: string, subtitle: string, labels: string[]): VueUiXyCon
 }
 
 const ipcXyConfig = computed(() =>
-  xyConfig('IPC mensual', 'Expectativa promedio, mínimo y máximo', ipcMensualLabels.value),
+  xyConfig(
+    'IPC mensual',
+    'Expectativa promedio, mínimo y máximo',
+    ipcMensualLabels.value,
+  ),
 )
 const tcXyConfig = computed(() =>
-  xyConfig('Tipo de cambio nominal', 'Expectativa mensual ($/USD)', tcLabels.value),
+  xyConfig(
+    'Tipo de cambio nominal',
+    'Expectativa mensual ($/USD)',
+    tcLabels.value,
+  ),
 )
 const comercioXyConfig = computed(() =>
-  xyConfig('Comercio exterior', 'Exportaciones vs importaciones (millones USD)', comercioLabels.value),
+  xyConfig(
+    'Comercio exterior',
+    'Exportaciones vs importaciones (millones USD)',
+    comercioLabels.value,
+  ),
 )
 
 const anualesPctDataset = computed<VueUiHorizontalBarDatasetItem[]>(() => {
   const indicadores = [IPC, IPC_NUCLEO, PIB, DESOCUPACION, TAMAR]
   return indicadores
-    .map((indicador) => {
-      const row = serie(indicador, 'anual').at(-1) || serie(indicador, 'proximos_12_meses').at(-1)
-      if (!row || row.promedio == null)
-        return null
+    .map(indicador => {
+      const row =
+        serie(indicador, 'anual').at(-1) ||
+        serie(indicador, 'proximos_12_meses').at(-1)
+      if (!row || row.promedio == null) return null
       return {
         name: `${shortName(indicador)} (${row.periodo})`,
         value: row.promedio,
@@ -434,13 +473,14 @@ interface DispersionStat {
 }
 
 function pctInRange(value: number, min: number, max: number) {
-  if (max <= min)
-    return 0
+  if (max <= min) return 0
   return ((value - min) / (max - min)) * 100
 }
 
 const ipcDispersion = computed<DispersionStat | null>(() => {
-  const row = serie(IPC, 'anual').find(r => r.periodo === '2026') || serie(IPC, 'anual').at(-1)
+  const row =
+    serie(IPC, 'anual').find(r => r.periodo === '2026') ||
+    serie(IPC, 'anual').at(-1)
   if (!row || row.promedio == null || row.minimo == null || row.maximo == null)
     return null
   return {
@@ -460,12 +500,12 @@ const ipcDispersion = computed<DispersionStat | null>(() => {
 const dispersionDumbbellDataset = computed<VueUiDumbbellDataset[]>(() => {
   const indicadores = [IPC, IPC_NUCLEO, DESOCUPACION, TAMAR, PIB]
   return indicadores
-    .map((indicador) => {
-      const row = serie(indicador, 'anual').find(r => r.periodo === '2026')
-        || serie(indicador, 'anual').at(-1)
-        || serie(indicador, 'proximos_12_meses').at(-1)
-      if (!row || row.minimo == null || row.maximo == null)
-        return null
+    .map(indicador => {
+      const row =
+        serie(indicador, 'anual').find(r => r.periodo === '2026') ||
+        serie(indicador, 'anual').at(-1) ||
+        serie(indicador, 'proximos_12_meses').at(-1)
+      if (!row || row.minimo == null || row.maximo == null) return null
       return {
         name: `${shortName(indicador)} (${row.periodo})`,
         start: row.minimo,
@@ -521,10 +561,9 @@ const dispersionDumbbellConfig = computed<VueUiDumbbellConfig>(() => ({
 const tableSparkDataset = computed<VueUiTableSparklineDatasetItem[]>(() => {
   const indicadores = [IPC, IPC_NUCLEO, TC, TAMAR, EXPORTACIONES, IMPORTACIONES]
   return indicadores
-    .map((indicador) => {
+    .map(indicador => {
       const rows = serie(indicador, 'mensual')
-      if (rows.length < 2)
-        return null
+      if (rows.length < 2) return null
       return {
         name: shortName(indicador),
         values: rows.map(r => r.promedio),
@@ -536,8 +575,7 @@ const tableSparkDataset = computed<VueUiTableSparklineDatasetItem[]>(() => {
 
 const tableSparkColNames = computed(() => {
   const rows = serie(IPC, 'mensual')
-  if (rows.length)
-    return rows.map(r => r.periodo)
+  if (rows.length) return rows.map(r => r.periodo)
   return serie(TC, 'mensual').map(r => r.periodo)
 })
 
@@ -584,10 +622,19 @@ const tableSparkConfig = computed<VueUiTableSparklineConfig>(() => ({
 }))
 
 const detailTableDataset = computed<VueUiTableDataset>(() => {
-  const preferidos = [IPC, IPC_NUCLEO, TC, TAMAR, PIB, DESOCUPACION, EXPORTACIONES, IMPORTACIONES, RESULTADO]
-  const rows = filasTodos.value.filter((r) => {
-    if (!preferidos.includes(r.indicador))
-      return false
+  const preferidos = [
+    IPC,
+    IPC_NUCLEO,
+    TC,
+    TAMAR,
+    PIB,
+    DESOCUPACION,
+    EXPORTACIONES,
+    IMPORTACIONES,
+    RESULTADO,
+  ]
+  const rows = filasTodos.value.filter(r => {
+    if (!preferidos.includes(r.indicador)) return false
     // Una fila representativa por indicador+tipo: la más cercana / última
     return true
   })
@@ -604,8 +651,7 @@ const detailTableDataset = computed<VueUiTableDataset>(() => {
   const ordered = [...best.values()].sort((a, b) => {
     const ai = preferidos.indexOf(a.indicador)
     const bi = preferidos.indexOf(b.indicador)
-    if (ai !== bi)
-      return ai - bi
+    if (ai !== bi) return ai - bi
     return a.periodoTipo.localeCompare(b.periodoTipo)
   })
 
@@ -669,18 +715,18 @@ const detailTableConfig = computed<VueUiTableConfig>(() => ({
 }))
 
 const prox12 = computed(() =>
-  filasTodos.value.filter(r => r.periodoTipo === 'proximos_12_meses' && r.promedio != null),
+  filasTodos.value.filter(
+    r => r.periodoTipo === 'proximos_12_meses' && r.promedio != null,
+  ),
 )
 
 async function cargarIndiceHistorico() {
   const paths = (await api.get('/rems')) as string[]
-  if (!Array.isArray(paths))
-    throw new Error('Indice REM invalido')
+  if (!Array.isArray(paths)) throw new Error('Indice REM invalido')
   const periodos = paths.filter(p => /^\/rems\/\d{4}\/\d{2}$/.test(p))
   periodosDisponibles.value = periodos
   periodoSeleccionado.value = periodos[1] ?? periodos[0] ?? ''
-  if (!periodoSeleccionado.value)
-    throw new Error('Sin periodos en indice')
+  if (!periodoSeleccionado.value) throw new Error('Sin periodos en indice')
 }
 
 async function cargarDatosParaPath(path: string) {
@@ -707,43 +753,37 @@ async function cargar() {
       periodoSeleccionado.value = ''
       subtitulo.value = 'Último informe publicado'
       await cargarDatosParaPath('/rems/ultimo')
-    }
-    else {
+    } else {
       await cargarIndiceHistorico()
       subtitulo.value = ''
       await cargarDatosParaPath(periodoSeleccionado.value)
     }
-  }
-  catch {
+  } catch {
     error.value = true
     filas.value = []
     informe.value = ''
     fechaInforme.value = null
     periodosDisponibles.value = []
     periodoSeleccionado.value = ''
-  }
-  finally {
+  } finally {
     loading.value = false
   }
 }
 
 async function onSeleccionPeriodo() {
-  if (props.fuente !== 'historico' || !periodoSeleccionado.value)
-    return
+  if (props.fuente !== 'historico' || !periodoSeleccionado.value) return
   recargando.value = true
   error.value = false
   try {
     subtitulo.value = ''
     await cargarDatosParaPath(periodoSeleccionado.value)
     await nextTick()
-  }
-  catch {
+  } catch {
     error.value = true
     filas.value = []
     informe.value = ''
     fechaInforme.value = null
-  }
-  finally {
+  } finally {
     recargando.value = false
   }
 }
@@ -764,21 +804,23 @@ onMounted(async () => {
   <div class="not-prose my-6 space-y-5">
     <div class="flex flex-wrap items-end justify-between gap-3">
       <div>
-        <h3 class="text-lg font-semibold">
-          Dashboard REM
-        </h3>
+        <h3 class="text-lg font-semibold">Dashboard REM</h3>
         <p class="text-sm text-gray-600 dark:text-gray-400">
           <span v-if="subtitulo">{{ subtitulo }} · </span>
           <span v-if="informe">
             Informe
-            <code class="rounded bg-gray-100 px-1 text-xs dark:bg-gray-800">{{ informe }}</code>
+            <code class="rounded bg-gray-100 px-1 text-xs dark:bg-gray-800">{{
+              informe
+            }}</code>
           </span>
           <span v-if="fechaInforme"> · {{ fechaInforme }}</span>
         </p>
       </div>
 
       <div
-        v-if="fuente === 'historico' && periodosDisponibles.length > 0 && !loading"
+        v-if="
+          fuente === 'historico' && periodosDisponibles.length > 0 && !loading
+        "
         class="flex flex-wrap items-center gap-2"
       >
         <label
@@ -793,25 +835,17 @@ onMounted(async () => {
           class="min-w-[10rem] rounded-md border bg-muted px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
           @change="onSeleccionPeriodo"
         >
-          <option
-            v-for="p in periodosDisponibles"
-            :key="p"
-            :value="p"
-          >
+          <option v-for="p in periodosDisponibles" :key="p" :value="p">
             {{ periodoLabelDesdePath(p) }}
           </option>
         </select>
-        <span
-          v-if="recargando"
-          class="text-xs text-gray-500"
-        >Actualizando...</span>
+        <span v-if="recargando" class="text-xs text-gray-500"
+          >Actualizando...</span
+        >
       </div>
     </div>
 
-    <div
-      v-if="loading"
-      class="text-sm text-gray-500"
-    >
+    <div v-if="loading" class="text-sm text-gray-500">
       Cargando dashboard...
     </div>
     <div
@@ -824,15 +858,8 @@ onMounted(async () => {
     <template v-else>
       <!-- KPIs -->
       <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-        <div
-          v-for="item in kpis"
-          :key="item.key"
-          :class="cardClass"
-        >
-          <VueUiKpi
-            :dataset="item.value"
-            :config="kpiConfig(item)"
-          >
+        <div v-for="item in kpis" :key="item.key" :class="cardClass">
+          <VueUiKpi :dataset="item.value" :config="kpiConfig(item)">
             <template #comment-before>
               <div class="mb-1 text-xs text-gray-500 dark:text-gray-400">
                 {{ item.periodo }}
@@ -841,15 +868,9 @@ onMounted(async () => {
                 </span>
               </div>
             </template>
-            <template
-              v-if="item.spark.length >= 2"
-              #comment-after
-            >
+            <template v-if="item.spark.length >= 2" #comment-after>
               <div class="mt-2 h-14 w-full">
-                <VueUiSparkline
-                  :dataset="item.spark"
-                  :config="sparkConfig()"
-                />
+                <VueUiSparkline :dataset="item.spark" :config="sparkConfig()" />
               </div>
             </template>
           </VueUiKpi>
@@ -857,10 +878,7 @@ onMounted(async () => {
       </div>
 
       <!-- Expectativas a 12 meses -->
-      <div
-        v-if="prox12.length"
-        :class="cardClass"
-      >
+      <div v-if="prox12.length" :class="cardClass">
         <h4 class="mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
           Próximos 12 meses
         </h4>
@@ -875,7 +893,9 @@ onMounted(async () => {
             </div>
             <div class="text-lg font-semibold tabular-nums">
               {{ formatValor(row.promedio) }}
-              <span class="text-xs font-normal text-gray-500">{{ row.unidad }}</span>
+              <span class="text-xs font-normal text-gray-500">{{
+                row.unidad
+              }}</span>
             </div>
           </div>
         </div>
@@ -883,26 +903,12 @@ onMounted(async () => {
 
       <!-- Charts principales -->
       <div class="grid gap-4 xl:grid-cols-2">
-        <div
-          v-if="ipcXyDataset.length"
-          :class="cardClass"
-          class="h-[22rem]"
-        >
-          <VueUiXy
-            :dataset="ipcXyDataset"
-            :config="ipcXyConfig"
-          />
+        <div v-if="ipcXyDataset.length" :class="cardClass" class="h-[22rem]">
+          <VueUiXy :dataset="ipcXyDataset" :config="ipcXyConfig" />
         </div>
 
-        <div
-          v-if="tcXyDataset.length"
-          :class="cardClass"
-          class="h-[22rem]"
-        >
-          <VueUiXy
-            :dataset="tcXyDataset"
-            :config="tcXyConfig"
-          />
+        <div v-if="tcXyDataset.length" :class="cardClass" class="h-[22rem]">
+          <VueUiXy :dataset="tcXyDataset" :config="tcXyConfig" />
         </div>
 
         <div
@@ -910,10 +916,7 @@ onMounted(async () => {
           :class="cardClass"
           class="h-[22rem]"
         >
-          <VueUiXy
-            :dataset="comercioXyDataset"
-            :config="comercioXyConfig"
-          />
+          <VueUiXy :dataset="comercioXyDataset" :config="comercioXyConfig" />
         </div>
 
         <div
@@ -930,41 +933,67 @@ onMounted(async () => {
 
       <!-- Dispersión IPC + rangos -->
       <div class="grid gap-4 xl:grid-cols-2">
-        <div
-          v-if="ipcDispersion"
-          :class="cardClass"
-        >
+        <div v-if="ipcDispersion" :class="cardClass">
           <h4 class="text-sm font-semibold text-gray-800 dark:text-gray-100">
             {{ ipcDispersion.label }} {{ ipcDispersion.periodo }} · dispersión
           </h4>
           <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
-            Rango completo del REM (mín–máx). La banda verde es el consenso (p25–p75).
+            Rango completo del REM (mín–máx). La banda verde es el consenso
+            (p25–p75).
           </p>
 
           <div class="mt-4 grid grid-cols-3 gap-2 text-center sm:grid-cols-6">
             <div>
-              <div class="text-[10px] uppercase tracking-wide text-gray-500">Mín</div>
-              <div class="text-sm font-semibold tabular-nums">{{ formatValor(ipcDispersion.minimo, 1) }}</div>
+              <div class="text-[10px] uppercase tracking-wide text-gray-500">
+                Mín
+              </div>
+              <div class="text-sm font-semibold tabular-nums">
+                {{ formatValor(ipcDispersion.minimo, 1) }}
+              </div>
             </div>
             <div>
-              <div class="text-[10px] uppercase tracking-wide text-gray-500">p25</div>
-              <div class="text-sm font-semibold tabular-nums">{{ formatValor(ipcDispersion.p25, 1) }}</div>
+              <div class="text-[10px] uppercase tracking-wide text-gray-500">
+                p25
+              </div>
+              <div class="text-sm font-semibold tabular-nums">
+                {{ formatValor(ipcDispersion.p25, 1) }}
+              </div>
             </div>
             <div>
-              <div class="text-[10px] uppercase tracking-wide text-gray-500">Mediana</div>
-              <div class="text-sm font-semibold tabular-nums text-emerald-600 dark:text-emerald-400">{{ formatValor(ipcDispersion.mediana, 1) }}</div>
+              <div class="text-[10px] uppercase tracking-wide text-gray-500">
+                Mediana
+              </div>
+              <div
+                class="text-sm font-semibold tabular-nums text-emerald-600 dark:text-emerald-400"
+              >
+                {{ formatValor(ipcDispersion.mediana, 1) }}
+              </div>
             </div>
             <div>
-              <div class="text-[10px] uppercase tracking-wide text-gray-500">Promedio</div>
-              <div class="text-sm font-semibold tabular-nums text-indigo-600 dark:text-indigo-400">{{ formatValor(ipcDispersion.promedio, 1) }}</div>
+              <div class="text-[10px] uppercase tracking-wide text-gray-500">
+                Promedio
+              </div>
+              <div
+                class="text-sm font-semibold tabular-nums text-indigo-600 dark:text-indigo-400"
+              >
+                {{ formatValor(ipcDispersion.promedio, 1) }}
+              </div>
             </div>
             <div>
-              <div class="text-[10px] uppercase tracking-wide text-gray-500">p75</div>
-              <div class="text-sm font-semibold tabular-nums">{{ formatValor(ipcDispersion.p75, 1) }}</div>
+              <div class="text-[10px] uppercase tracking-wide text-gray-500">
+                p75
+              </div>
+              <div class="text-sm font-semibold tabular-nums">
+                {{ formatValor(ipcDispersion.p75, 1) }}
+              </div>
             </div>
             <div>
-              <div class="text-[10px] uppercase tracking-wide text-gray-500">Máx</div>
-              <div class="text-sm font-semibold tabular-nums">{{ formatValor(ipcDispersion.maximo, 1) }}</div>
+              <div class="text-[10px] uppercase tracking-wide text-gray-500">
+                Máx
+              </div>
+              <div class="text-sm font-semibold tabular-nums">
+                {{ formatValor(ipcDispersion.maximo, 1) }}
+              </div>
             </div>
           </div>
 
@@ -979,12 +1008,16 @@ onMounted(async () => {
               />
               <div
                 class="rem-range__marker rem-range__marker--mediana"
-                :style="{ left: `${pctInRange(ipcDispersion.mediana, ipcDispersion.minimo, ipcDispersion.maximo)}%` }"
+                :style="{
+                  left: `${pctInRange(ipcDispersion.mediana, ipcDispersion.minimo, ipcDispersion.maximo)}%`,
+                }"
                 :title="`Mediana ${formatValor(ipcDispersion.mediana, 1)}`"
               />
               <div
                 class="rem-range__marker rem-range__marker--promedio"
-                :style="{ left: `${pctInRange(ipcDispersion.promedio, ipcDispersion.minimo, ipcDispersion.maximo)}%` }"
+                :style="{
+                  left: `${pctInRange(ipcDispersion.promedio, ipcDispersion.minimo, ipcDispersion.maximo)}%`,
+                }"
                 :title="`Promedio ${formatValor(ipcDispersion.promedio, 1)}`"
               />
             </div>
@@ -992,9 +1025,13 @@ onMounted(async () => {
               <span>{{ formatValor(ipcDispersion.minimo, 1) }}%</span>
               <span>{{ formatValor(ipcDispersion.maximo, 1) }}%</span>
             </div>
-            <div class="mt-2 flex flex-wrap gap-3 text-[11px] text-gray-500 dark:text-gray-400">
+            <div
+              class="mt-2 flex flex-wrap gap-3 text-[11px] text-gray-500 dark:text-gray-400"
+            >
               <span class="inline-flex items-center gap-1">
-                <span class="inline-block h-2 w-4 rounded-sm bg-emerald-300 dark:bg-emerald-500/70" />
+                <span
+                  class="inline-block h-2 w-4 rounded-sm bg-emerald-300 dark:bg-emerald-500/70"
+                />
                 Consenso p25–p75
               </span>
               <span class="inline-flex items-center gap-1">
@@ -1022,10 +1059,7 @@ onMounted(async () => {
       </div>
 
       <!-- Table sparkline -->
-      <div
-        v-if="tableSparkDataset.length"
-        :class="cardClass"
-      >
+      <div v-if="tableSparkDataset.length" :class="cardClass">
         <VueUiTableSparkline
           :dataset="tableSparkDataset"
           :config="tableSparkConfig"
@@ -1034,10 +1068,7 @@ onMounted(async () => {
 
       <!-- Detail table -->
       <div :class="[cardClass, 'rem-detail-table']">
-        <VueUiTable
-          :dataset="detailTableDataset"
-          :config="detailTableConfig"
-        />
+        <VueUiTable :dataset="detailTableDataset" :config="detailTableConfig" />
       </div>
     </template>
   </div>
@@ -1048,7 +1079,8 @@ onMounted(async () => {
 .rem-detail-table :deep(.vue-ui-table-pagination),
 .rem-detail-table :deep(.vue-ui-table-navigation),
 .rem-detail-table :deep(.vue-ui-table-navigation-indicator),
-.rem-detail-table :deep(.vue-ui-table-size-warning) {
+.rem-detail-table :deep(.vue-ui-table-size-warning),
+.rem-detail-table :deep(.td-selector-info) {
   display: none !important;
 }
 

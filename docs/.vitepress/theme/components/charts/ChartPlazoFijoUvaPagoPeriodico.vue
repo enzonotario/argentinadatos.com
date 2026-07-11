@@ -3,6 +3,7 @@ import { onMounted, ref } from 'vue'
 import { useApi } from '../../composables/useApi'
 import ChartPlazoFijoUvaPagoPeriodicoProveedor from './ChartPlazoFijoUvaPagoPeriodicoProveedor.vue'
 import type { ProveedorPlazoFijoUva } from './ChartPlazoFijoUvaPagoPeriodicoProveedor.vue'
+import 'vue-data-ui/style.css'
 
 const api = useApi()
 
@@ -29,17 +30,30 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-10">
+  <div class="not-prose flex flex-col gap-6">
     <div class="flex flex-wrap items-center gap-4">
-      <h3 class="m-0">
+      <h3 class="m-0 text-lg font-semibold">
         Plazo fijo UVA con pago periódico
       </h3>
-      <span v-if="loading" class="animate-spin h-5 w-5 border-t-2 border-b-2 border-indigo-500 rounded-full shrink-0" />
+      <span
+        v-if="loading"
+        class="h-5 w-5 shrink-0 animate-spin rounded-full border-b-2 border-t-2 border-indigo-500"
+      />
     </div>
-    <ChartPlazoFijoUvaPagoPeriodicoProveedor
-      v-for="p in proveedores"
-      :key="p.id"
-      :proveedor="p"
-    />
+
+    <p
+      v-if="!loading && proveedores.length === 0"
+      class="m-0 text-sm text-gray-500 dark:text-gray-400"
+    >
+      No hay proveedores con tasas UVA de pago periódico en este momento.
+    </p>
+
+    <div class="flex flex-col gap-6">
+      <ChartPlazoFijoUvaPagoPeriodicoProveedor
+        v-for="p in proveedores"
+        :key="p.id"
+        :proveedor="p"
+      />
+    </div>
   </div>
 </template>
