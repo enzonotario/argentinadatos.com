@@ -34,6 +34,11 @@ async function extraerBna() {
       headers: request.opciones.headers,
     })
 
+    logMensaje(log, 'Respuesta recibida de BNA', {
+      status: respuesta.status,
+      data: respuesta.data,
+    })
+
     const $ = load(respuesta.data)
 
     const tabla = $(
