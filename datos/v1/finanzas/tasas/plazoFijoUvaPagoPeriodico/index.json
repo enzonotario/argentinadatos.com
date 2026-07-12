@@ -1,1 +1,65 @@
-[]
+[
+  {
+    "id": "bna",
+    "entidad": "Banco de la Nación Argentina",
+    "logo": "https://www.bna.com.ar/Content/img/logo-bna.png",
+    "tasas": [
+      {
+        "nombre": "PF TRAD.EN UVA CON PAGO INTERÉS SUBPERÍODOS DE 30 DÍAS",
+        "plazoMinDias": 90,
+        "plazoMaxDias": 119,
+        "tna": 0.0025,
+        "tea": 0.0025
+      },
+      {
+        "nombre": "PF TRAD.EN UVA CON PAGO INTERÉS SUBPERÍODOS DE 30 DÍAS",
+        "plazoMinDias": 120,
+        "plazoMaxDias": 179,
+        "tna": 0.005,
+        "tea": 0.005
+      },
+      {
+        "nombre": "PF TRAD.EN UVA CON PAGO INTERÉS SUBPERÍODOS DE 30 DÍAS",
+        "plazoMinDias": 180,
+        "plazoMaxDias": 359,
+        "tna": 0.01,
+        "tea": 0.01
+      },
+      {
+        "nombre": "PF TRAD.EN UVA CON PAGO INTERÉS SUBPERÍODOS DE 30 DÍAS",
+        "plazoMinDias": 360,
+        "plazoMaxDias": 449,
+        "tna": 0.025,
+        "tea": 0.025
+      },
+      {
+        "nombre": "PF TRAD.EN UVA CON PAGO INTERÉS SUBPERÍODOS DE 30 DÍAS",
+        "plazoMinDias": 450,
+        "plazoMaxDias": 539,
+        "tna": 0.035,
+        "tea": 0.035
+      },
+      {
+        "nombre": "PF TRAD.EN UVA CON PAGO INTERÉS SUBPERÍODOS DE 30 DÍAS",
+        "plazoMinDias": 540,
+        "plazoMaxDias": 719,
+        "tna": 0.037000000000000005,
+        "tea": 0.036699999999999997
+      },
+      {
+        "nombre": "PF TRAD.EN UVA CON PAGO INTERÉS SUBPERÍODOS DE 30 DÍAS",
+        "plazoMinDias": 720,
+        "plazoMaxDias": 899,
+        "tna": 0.039,
+        "tea": 0.0383
+      },
+      {
+        "nombre": "PF TRAD.EN UVA CON PAGO INTERÉS SUBPERÍODOS DE 30 DÍAS",
+        "plazoMinDias": 900,
+        "plazoMaxDias": 1095,
+        "tna": 0.04,
+        "tea": 0.038900000000000004
+      }
+    ]
+  }
+]
