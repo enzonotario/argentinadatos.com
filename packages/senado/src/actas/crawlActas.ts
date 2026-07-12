@@ -27,18 +27,33 @@ export async function crawlActas({ year }: { year?: number } = {}): Promise<
 
   const actasRows = $('table#actasTable tbody tr')
 
-  const firstActaId = Number(
-    actasRows
-      .eq(0)
-      .find('td a')
-      .attr('href')
-      ?.split('/')
-      .pop(),
-  )
+  // Cada fila tiene varios <a> (expedientes sin href, OD, PDF, detalle, video).
+  // Hay que tomar específicamente el link a detalleActa; el primero de la fila
+  // suele ser "Ver Expedientes" sin href → Number(undefined) === NaN.
+  const actaIds = actasRows
+    .toArray()
+    .map((row) => {
+      const href = $(row).find('a[href*="detalleActa"]').attr('href')
+      return href ? Number(href.split('/').pop()) : NaN
+    })
+    .filter(id => Number.isFinite(id))
+
+  if (actaIds.length === 0) {
+    console.warn(`No se encontraron actas para el año ${yearToSearch}`)
+    return []
+  }
+
+  // La tabla viene ordenada de más antigua a más reciente. Un window fijo de
+  // ±50 alrededor del primer ID deja afuera actas nuevas a mitad de año.
+  const minActaId = Math.min(...actaIds)
+  const maxActaId = Math.max(...actaIds)
+  const padding = 5
+  const startId = minActaId - padding
+  const endId = maxActaId + padding
 
   const actas = await Promise.all(
-    Array.from({ length: 100 }, (_, i) => {
-      const actaId = firstActaId + i - 50
+    Array.from({ length: endId - startId + 1 }, (_, i) => {
+      const actaId = startId + i
 
       return processActa(actaId, '', yearToSearch)
     }),

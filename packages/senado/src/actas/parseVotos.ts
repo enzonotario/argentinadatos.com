@@ -1,7 +1,10 @@
 import type { VotoData } from './parseActa.ts'
+import type { VotosParser } from './votoUtils.ts'
 import { readStaticBuffer } from '@argentinadatos/core/src/utils/readStaticBuffer.ts'
 import { pdfToText } from 'pdf-ts'
-import { VotoEnum } from './parseActa.ts'
+import { parseVotosConBanca } from './parseVotosConBanca.ts'
+import { parseVotosSinBanca } from './parseVotosSinBanca.ts'
+import { stripVoteHeaders } from './votoUtils.ts'
 
 async function extract(pdfPath: string): Promise<string> {
   const dataBuffer = readStaticBuffer(pdfPath)
@@ -13,74 +16,32 @@ async function extract(pdfPath: string): Promise<string> {
   return await pdfToText(dataBuffer)
 }
 
+function detectVotosParser(lines: string[], headerIndex: number): VotosParser {
+  if (lines[headerIndex + 2] === 'Banca') {
+    return parseVotosConBanca
+  }
+
+  return parseVotosSinBanca
+}
+
+function votesStartOffset(lines: string[], headerIndex: number): number {
+  return lines[headerIndex + 2] === 'Banca' ? headerIndex + 3 : headerIndex + 2
+}
+
 export async function parseVotos(pdfPath: string): Promise<VotoData[]> {
   const text = await extract(pdfPath)
-
   const lines = text.split('\n').map(line => line.trim())
 
-  let votesLines: string[] = []
-
   for (let i = 0; i < lines.length; i++) {
-    const line = lines[i]
-
-    if (
-      line === 'Nombre Completo'
-      && lines[i + 1] === 'Voto'
-      && lines[i + 2] === 'Banca'
-    ) {
-      votesLines = lines
-        .slice(i + 3)
-        .filter(
-          line =>
-            line !== 'Nombre Completo' && line !== 'Voto' && line !== 'Banca',
-        )
-
-      break
+    if (lines[i] !== 'Nombre Completo' || lines[i + 1] !== 'Voto') {
+      continue
     }
+
+    const parser = detectVotosParser(lines, i)
+    const votesLines = stripVoteHeaders(lines.slice(votesStartOffset(lines, i)))
+
+    return parser(votesLines)
   }
 
-  return parseRows(votesLines)
-}
-
-function parseRows(lines: string[]): VotoData[] {
-  const row: VotoData[] = []
-
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i]
-
-    if (/^\d+\./.test(line)) {
-      const nombre = line.replace(/^\d+\.\s+/, '')
-      const voto = getVotoEnum(lines[i + 1].toLowerCase())
-
-      if (voto.toLowerCase() === 'ausente') {
-        row.push({ nombre, voto, banca: '' })
-      }
-      else {
-        const banca = lines[i + 2]
-        row.push({ nombre, voto, banca })
-      }
-    }
-  }
-
-  return row
-}
-
-function getVotoEnum(voto: string): VotoEnum | string {
-  switch (voto) {
-    case 'si':
-      return VotoEnum.Si
-    case 'no':
-      return VotoEnum.No
-    case 'ausente':
-      return VotoEnum.Ausente
-    case 'abs.':
-      return VotoEnum.Abstencion
-    case 'no emit.':
-      return VotoEnum.NoEmite
-    case 'lev.vot.':
-      return VotoEnum.LevVot
-    default:
-      console.warn(`Voto desconocido: ${voto}`)
-      return voto
-  }
+  return []
 }
