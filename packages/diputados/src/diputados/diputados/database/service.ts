@@ -18,17 +18,6 @@ export class DiputadosDatabaseService {
     await this.migrationRunner.runPendingMigrations()
   }
 
-  private sanitizeNumber(value: any): number | null {
-    if (value === null || value === undefined) {
-      return null
-    }
-    const num = Number(value)
-    if (isNaN(num) || !isFinite(num)) {
-      return null
-    }
-    return num
-  }
-
   async insertDiputado(diputado: Diputado, timestamp: string) {
     await this.db.execute({
       sql: `
@@ -36,7 +25,7 @@ export class DiputadosDatabaseService {
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `,
       args: [
-        this.sanitizeNumber(diputado.id),
+        diputado.id,
         diputado.nombre,
         diputado.apellido || null,
         diputado.genero || null,
@@ -69,7 +58,7 @@ export class DiputadosDatabaseService {
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `,
         args: [
-          this.sanitizeNumber(item.diputado.id),
+          item.diputado.id,
           item.diputado.nombre,
           item.diputado.apellido || null,
           item.diputado.genero || null,

@@ -38,11 +38,7 @@ const currentValues = JSON.parse(
 ) as Diputado[]
 
 export async function crawlDiputados(): Promise<Diputado[]> {
-  const page = await parsePage(`${BASE_URL}/dataset/legisladores`)
-
-  const csvPage = await parseCsvPage(page.csvPageUrl)
-
-  const csv = await getCsv(csvPage.csvUrl)
+  const csv = await fetchLegisladoresCsv(`${BASE_URL}/dataset/legisladores`)
 
   const newValues = parseCsv(csv)
 
@@ -100,42 +96,53 @@ async function generateEndpointEstatico(db: DiputadosDatabaseService) {
   writeEndpoint('diputados/diputados', todosLosDatos)
 }
 
-async function parsePage(url: string) {
-  const response = await fetch(url)
-
+/**
+ * El dataset publica varios recursos CSV/JSON. El primero ("Diputados") pasó a un
+ * esquema nuevo sin ID (8 columnas). El histórico con ID sigue en otro resource
+ * ("Composición Actual…"). Probamos los CSV hasta encontrar el schema esperado.
+ */
+async function fetchLegisladoresCsv(datasetUrl: string): Promise<string> {
+  const response = await fetch(datasetUrl)
   const html = await response.text()
-
   const $ = cheerio.load(html)
 
-  const csvPageRelativeUrl = $('a.heading').attr('href')
+  const resourceUrls = $('a.heading')
+    .map((_, el) => $(el).attr('href'))
+    .get()
+    .filter((href): href is string => Boolean(href))
+    .map(href => href.startsWith('http') ? href : `${BASE_URL}${href}`)
 
-  if (!csvPageRelativeUrl) {
+  if (resourceUrls.length === 0) {
     throw new Error('CSV Page URL not found')
   }
 
-  const csvPageUrl = `${BASE_URL}${csvPageRelativeUrl}`
+  const candidates: string[] = []
 
-  return {
-    csvPageUrl,
+  for (const resourceUrl of resourceUrls) {
+    const csvUrl = await parseCsvUrl(resourceUrl)
+    if (!csvUrl) {
+      continue
+    }
+
+    const csv = await getCsv(csvUrl)
+    if (hasHistorialSchema(csv)) {
+      return csv
+    }
+
+    candidates.push(csvUrl)
   }
+
+  throw new Error(
+    `No se encontró un CSV de legisladores con schema histórico (ID + 12 columnas). Recursos CSV: ${candidates.join(', ') || 'ninguno'}`,
+  )
 }
 
-async function parseCsvPage(url: string) {
-  const response = await fetch(url)
-
+async function parseCsvUrl(resourceUrl: string): Promise<string | null> {
+  const response = await fetch(resourceUrl)
   const html = await response.text()
-
   const $ = cheerio.load(html)
 
-  const csvUrl = $('a[href$=".csv"]').attr('href')
-
-  if (!csvUrl) {
-    throw new Error('CSV URL not found')
-  }
-
-  return {
-    csvUrl,
-  }
+  return $('a[href$=".csv"]').attr('href') || null
 }
 
 async function getCsv(url: string): Promise<string> {
@@ -143,7 +150,24 @@ async function getCsv(url: string): Promise<string> {
     responseType: 'arraybuffer',
   })
 
-  return iconv.decode(response.data, 'latin1')
+  const buffer = Buffer.from(response.data)
+
+  // Los CSV nuevos vienen en UTF-8; el histórico a veces en latin1.
+  const asUtf8 = buffer.toString('utf8')
+  if (!asUtf8.includes('\uFFFD') && /ID|APELLIDO/i.test(asUtf8.slice(0, 200))) {
+    return asUtf8
+  }
+
+  return iconv.decode(buffer, 'latin1')
+}
+
+function hasHistorialSchema(csv: string): boolean {
+  const header = csv.split(/\r?\n/, 1)[0] || ''
+  const fields = header
+    .split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/)
+    .map(field => field.trim().replace(/^"|"$/g, '').toUpperCase())
+
+  return fields.length === 12 && fields[0] === 'ID'
 }
 
 function parseCsv(csv: string): Diputado[] {
@@ -208,8 +232,13 @@ function parsePeriodo(inicio: string, fin: string) {
 }
 
 function parseFecha(fecha: string): string | null {
+  const value = fecha?.trim()
+  if (!value || value.toUpperCase() === 'NA') {
+    return null
+  }
+
   try {
-    return formatISO(parseISO(fecha.trim()))
+    return formatISO(parseISO(value))
   }
   catch (error) {
     console.warn('Invalid fecha', {
