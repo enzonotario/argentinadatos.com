@@ -48,8 +48,7 @@ const diputados = JSON.parse(readEndpoint('diputados/diputados') || '[]')
 export async function crawlActas(): Promise<Acta[]> {
   const currentIds = collect(currentValues).pluck('id').all() as string[]
 
-  const votacionesUrls = (await getVotacionesUrls(currentIds))
-    .slice(-50)
+  const votacionesUrls = await getVotacionesUrls(currentIds)
 
   const newValues = (
     await Promise.all(votacionesUrls.map(url => parseVotacionPage(url)))
@@ -140,14 +139,25 @@ async function generateEndpointEstatico(db: ActasDatabaseService, actas: Acta[])
 async function fetchWithRetry(url: string, retries = 3) {
   for (let i = 0; i < retries; i++) {
     try {
-      return await axios.get(url, {
+      const response = await axios.get(url, {
         headers: {
           'User-Agent': USER_AGENT,
         },
+        validateStatus: status => status < 500,
       })
+
+      if (response.status === 404 || response.status === 417 || response.status === 403) {
+        const error: any = new Error(`HTTP ${response.status}`)
+        error.response = response
+        throw error
+      }
+
+      return response
     }
     catch (error: any) {
-      if (i === retries - 1) {
+      const status = error?.response?.status
+      // 403/404/417 no tienen sentido reintentar.
+      if (status === 403 || status === 404 || status === 417 || i === retries - 1) {
         throw error
       }
     }
@@ -155,34 +165,86 @@ async function fetchWithRetry(url: string, retries = 3) {
 }
 
 async function getVotacionesUrls(currentIds: string[]) {
-  const response = await axios.get(VOTACIONES_BASE_URL, {
-    headers: {
-      'User-Agent': USER_AGENT,
-    },
-  })
+  const maxKnownId = resolveMaxId(currentIds)
+  const homeAnchorId = await resolveAnchorIdFromHome()
 
-  const html = response.data
+  // Siempre partir del máximo persistido para no saltear el hueco hasta lo nuevo.
+  // Si no hay datos locales, usar el ancla de la home.
+  const startFrom = Number.isFinite(maxKnownId) ? maxKnownId : homeAnchorId
 
-  const $ = cheerio.load(html)
+  if (!Number.isFinite(startFrom)) {
+    throw new Error('No se pudo determinar un id ancla de votaciones')
+  }
 
-  const linksElements = $('a[href^="/votacion/"]')
+  const hasKnownIds = Number.isFinite(maxKnownId)
+  // Sin home (captcha), no sabemos el techo: barrer más hacia adelante.
+  let forwardCount = Number.isFinite(homeAnchorId) ? 150 : 250
+  if (Number.isFinite(homeAnchorId) && homeAnchorId > startFrom) {
+    forwardCount = Math.max(forwardCount, homeAnchorId - startFrom + 40)
+  }
 
-  const links = linksElements
-    .map((_, element) => VOTACIONES_BASE_URL + $(element).attr('href'))
-    .get()
+  const forwardIds = Array.from({ length: forwardCount }, (_, i) =>
+    String(startFrom + i + (hasKnownIds ? 1 : 0)),
+  )
+  const backwardIds = Array.from({ length: hasKnownIds ? 15 : 40 }, (_, i) =>
+    String(startFrom - i - (hasKnownIds ? 0 : 1)),
+  )
 
-  const firstLink = links[0]
-
-  const firstId = firstLink.split('/').pop() as string
-
-  const idsToRight = Array.from({ length: 50 }, (_, i) => String(Number(firstId) + i))
-  const idsToLeft = Array.from({ length: 50 }, (_, i) => String(Number(firstId) - i - 1))
-
-  const allIds = [...idsToRight, ...idsToLeft]
+  const allIds = [...new Set([...forwardIds, ...backwardIds])]
 
   return allIds
-    .filter(id => !currentIds.includes(id))
+    .filter(id => Number(id) > 0 && !currentIds.includes(id))
     .map(id => `${VOTACIONES_BASE_URL}/votacion/${id}`)
+}
+
+function resolveMaxId(currentIds: string[]): number {
+  const numericIds = currentIds
+    .map(Number)
+    .filter(id => Number.isFinite(id) && id > 0)
+
+  if (numericIds.length === 0) {
+    return Number.NaN
+  }
+
+  return Math.max(...numericIds)
+}
+
+async function resolveAnchorIdFromHome(): Promise<number> {
+  try {
+    const response = await axios.get(VOTACIONES_BASE_URL, {
+      headers: {
+        'User-Agent': USER_AGENT,
+      },
+      validateStatus: status => status < 500,
+    })
+
+    if (response.status !== 200) {
+      console.warn(`Home de votaciones HTTP ${response.status}`)
+      return Number.NaN
+    }
+
+    const $ = cheerio.load(response.data)
+    const links = $('a[href^="/votacion/"]')
+      .map((_, element) => $(element).attr('href'))
+      .get()
+      .filter(Boolean) as string[]
+
+    if (links.length === 0) {
+      console.warn('Home de votaciones sin links /votacion/ (captcha o bloqueo)')
+      return Number.NaN
+    }
+
+    // Tomar el id más alto visible en la home, no el primero del DOM.
+    const ids = links
+      .map(href => Number(href.split('/').pop()))
+      .filter(id => Number.isFinite(id) && id > 0)
+
+    return ids.length ? Math.max(...ids) : Number.NaN
+  }
+  catch (error) {
+    console.warn('Error al consultar home de votaciones', error)
+    return Number.NaN
+  }
 }
 
 async function parseVotacionPage(url: string) {
@@ -198,11 +260,16 @@ async function parseVotacionPage(url: string) {
     return parseActa(id, response.data)
   }
   catch (error: any) {
-    if (error.response?.status === 404) {
-      console.warn('Votacion page not found', { url })
+    const status = error.response?.status
+    if (status === 404 || status === 417) {
+      // HCDN responde 417 cuando el acta no existe.
+      return null
     }
-    else if (error?.response?.status === 403) {
+    if (status === 403) {
       console.warn('Forbidden access', { url })
+    }
+    else {
+      console.warn('Error al obtener votacion', { url, status, message: error.message })
     }
     return null
   }
@@ -212,14 +279,23 @@ function parseActa(id: string, html: string): Acta | null {
   const $ = cheerio.load(html)
 
   const title = $('h5 b').text().trim()
+  if (!title) {
+    return null
+  }
+
   const [periodo, reunion, numeroActa] = title
     .split(' - ')
     .map(s => s.replace(/\D+/g, '')) // Extract numbers
-  const titulo = $('ul.col h4.black-opacity').text().trim()
+  const titulo = $('ul.col h4.black-opacity').clone().children('h5').remove().end().text().trim()
   const resultado = $('ul.col-in li.col-middle h3').text().trim().toLowerCase()
   const dateTime = $('ul.col h5.text-muted').text().trim()
   const [fecha, hora] = dateTime.split(' - ')
   const fechaHora = parseFechaHora(fecha, hora)
+
+  if (!fecha || !hora || Number.isNaN(fechaHora.getTime())) {
+    return null
+  }
+
   const presidente = titleCaseSpanish(
     $('div#custom-share h4 b').text().trim().toLowerCase(),
   )
@@ -252,7 +328,8 @@ function parseActa(id: string, html: string): Acta | null {
       $(row).find('td:nth-child(2)').text().trim().toLowerCase(),
     )
     const tipoVoto = parseTipoVoto(
-      $(row).find('td:nth-child(5) span.label').text().trim(),
+      $(row).find('td:nth-child(5) span.label').text().trim()
+      || $(row).find('td:nth-child(5)').text().trim(),
     )
     const videoButton = $(row).find('td:nth-child(6) button')
     const videoDiscurso
@@ -275,6 +352,10 @@ function parseActa(id: string, html: string): Acta | null {
       videoDiscurso,
     })
   })
+
+  if (votos.length === 0) {
+    return null
+  }
 
   return {
     id,
