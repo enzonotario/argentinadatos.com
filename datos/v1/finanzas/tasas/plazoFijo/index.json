@@ -367,8 +367,8 @@
   {
     "entidad": "BANCO DEL CHUBUT S.A.",
     "logo": "http://www.bcra.gob.ar/archivos/Imagenes/logosbancos/00083.png",
-    "tnaClientes": 0.185,
-    "tnaNoClientes": 0.185,
+    "tnaClientes": 0.19,
+    "tnaNoClientes": 0.19,
     "enlace": "https://www.bancochubut.com.ar/webinstitucional/personas/inversiones/inversionesbch/plazo_fijo_noclientes"
   },
   {
@@ -475,10 +475,17 @@
     "tasas": [
       {
         "montoMinimo": null,
-        "montoMaximo": null,
+        "montoMaximo": 999999,
         "plazoMinDias": 30,
         "plazoMaxDias": 44,
         "tna": 0.22
+      },
+      {
+        "montoMinimo": 1000000,
+        "montoMaximo": null,
+        "plazoMinDias": 30,
+        "plazoMaxDias": 44,
+        "tna": 0.2225
       },
       {
         "montoMinimo": null,
@@ -516,8 +523,8 @@
         "tna": 0.18
       }
     ],
-    "condiciones": "Los depósitos en pesos y en moneda extranjera cuentan con la garantía de hasta $ 50.000.000.",
-    "condicionesCorto": "Depósitos garantizados hasta $ 50.000.000."
+    "condiciones": "TNA 22% hasta $999.999, 22.25% desde $1.000.000. Los plazos son de 30 a 44 días. Se requiere un monto mínimo de $25.000. Los depósitos en pesos y en moneda extranjera cuentan con la garantía de hasta $ 50.000.000. En las operaciones a nombre de dos o más personas, la garantía se prorrateará entre sus titulares. En ningún caso, el total de la garantía por persona y por depósito podrá exceder de $ 50.000.000, cualquiera sea el número de cuentas y/o depósitos. Ley 24.485, Decreto 540/95 y Com. “A” 2337 y sus modificatorias y complementarias. Se encuentran excluidos los captados a tasas superiores a la de referencia conforme a los límites establecidos por el Banco Central, los adquiridos por endoso y los efectuados por personas vinculadas a la entidad financiera.",
+    "condicionesCorto": "TNA 22% hasta $999.999; 22.25% desde $1.000.000."
   },
   {
     "entidad": "BIBANK S.A.",
