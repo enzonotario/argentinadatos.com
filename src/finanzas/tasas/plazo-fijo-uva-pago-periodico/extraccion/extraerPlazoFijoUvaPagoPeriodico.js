@@ -1,6 +1,10 @@
 import axios from 'axios'
 import { load } from 'cheerio'
 import { logGrupo, logError, logMensaje } from '@/log.js'
+import {
+  convertHtmlToMarkdownWithDefuddle,
+  fetchDefuddleMarkdownFromUrl,
+} from '@/shared/extraction/defuddle.js'
 import { construirRequestConProxy } from '@/utils/proxy.js'
 
 const log = logGrupo({
@@ -10,6 +14,9 @@ const log = logGrupo({
 
 const URL_BNA_PLAZO_FIJO_ELECTRONICO =
   'https://www.bna.com.ar/Personas/PlazoFijoElectronico'
+
+const TITULO_TABLA =
+  'PF TRAD.EN UVA CON PAGO INTERÉS SUBPERÍODOS DE 30 DÍAS'
 
 export async function extraerPlazoFijoUvaPagoPeriodico() {
   try {
@@ -24,60 +31,13 @@ export async function extraerPlazoFijoUvaPagoPeriodico() {
 
 async function extraerBna() {
   try {
-    const request = construirRequestConProxy(URL_BNA_PLAZO_FIJO_ELECTRONICO)
+    const markdown = await obtenerMarkdownBna()
+    const tasas = parsearTasasUvaPagoPeriodicoDesdeMarkdown(markdown)
 
-    if (request.usaProxy) {
-      logMensaje(log, 'Consultando BNA via proxy')
-    }
-
-    const respuesta = await axios.get(request.url, {
-      headers: request.opciones.headers,
-    })
-
-    console.log({ respuesta })
-
-    logMensaje(log, 'Respuesta recibida de BNA', {
-      status: respuesta.status,
-      data: respuesta.data,
-    })
-
-    const $ = load(respuesta.data)
-
-    const tabla = $(
-      'table.plazoTable:contains("PF TRAD.EN UVA CON PAGO INTERÉS SUBPERÍODOS DE 30 DÍAS")',
-    )
-
-    if (!tabla.length) {
+    if (!tasas.length) {
+      logMensaje(log, 'No se encontraron tasas en el markdown de Defuddle')
       return []
     }
-
-    const filas = tabla.find('tbody tr')
-    const tasas = []
-
-    filas.each((i, fila) => {
-      const celdas = $(fila).find('td')
-
-      if (celdas.length === 3) {
-        const rangoTexto = $(celdas[0]).text().trim()
-
-        const plazos = parsearRangoPlazoDias(rangoTexto)
-
-        if (!plazos) {
-          return
-        }
-
-        const tna = parsearPorcentaje($(celdas[1]).text())
-        const tea = parsearPorcentaje($(celdas[2]).text())
-
-        tasas.push({
-          nombre: 'PF TRAD.EN UVA CON PAGO INTERÉS SUBPERÍODOS DE 30 DÍAS',
-          plazoMinDias: plazos.plazoMinDias,
-          plazoMaxDias: plazos.plazoMaxDias,
-          tna,
-          tea,
-        })
-      }
-    })
 
     return [
       {
@@ -88,10 +48,96 @@ async function extraerBna() {
       },
     ]
   } catch (error) {
-    console.log({ error })
     logError(log, error)
     return []
   }
+}
+
+async function obtenerMarkdownBna() {
+  try {
+    const request = construirRequestConProxy(URL_BNA_PLAZO_FIJO_ELECTRONICO)
+
+    if (request.usaProxy) {
+      logMensaje(log, 'Consultando BNA via proxy + Defuddle')
+    } else {
+      logMensaje(log, 'Consultando BNA via Defuddle')
+    }
+
+    const respuesta = await axios.get(request.url, {
+      headers: request.opciones.headers,
+    })
+
+    return convertHtmlToMarkdownWithDefuddle(
+      respuesta.data,
+      URL_BNA_PLAZO_FIJO_ELECTRONICO,
+    )
+  } catch (error) {
+    logMensaje(log, 'Fallback Defuddle fetch directo', {
+      message: error?.message,
+    })
+    return fetchDefuddleMarkdownFromUrl(URL_BNA_PLAZO_FIJO_ELECTRONICO)
+  }
+}
+
+/**
+ * Extrae tasas de la tabla "PF TRAD.EN UVA CON PAGO INTERÉS SUBPERÍODOS DE 30 DÍAS"
+ * embebida en el markdown de Defuddle (sin IA).
+ */
+export function parsearTasasUvaPagoPeriodicoDesdeMarkdown(markdown) {
+  const tablaHtml = extraerTablaHtml(markdown, TITULO_TABLA)
+
+  if (!tablaHtml) {
+    return []
+  }
+
+  const $ = load(tablaHtml)
+  const tasas = []
+
+  $('tr').each((_, fila) => {
+    const celdas = $(fila).find('td')
+
+    if (celdas.length !== 3) {
+      return
+    }
+
+    const rangoTexto = $(celdas[0]).text().trim()
+    const plazos = parsearRangoPlazoDias(rangoTexto)
+
+    if (!plazos) {
+      return
+    }
+
+    const tna = parsearPorcentaje($(celdas[1]).text())
+    const tea = parsearPorcentaje($(celdas[2]).text())
+
+    if (tna === null || tea === null) {
+      return
+    }
+
+    tasas.push({
+      nombre: TITULO_TABLA,
+      plazoMinDias: plazos.plazoMinDias,
+      plazoMaxDias: plazos.plazoMaxDias,
+      tna,
+      tea,
+    })
+  })
+
+  return tasas
+}
+
+function extraerTablaHtml(markdown, titulo) {
+  if (!markdown) {
+    return null
+  }
+
+  const tablas = markdown.match(/<table[\s\S]*?<\/table>/gi) || []
+
+  return (
+    tablas.find(tabla =>
+      tabla.toUpperCase().includes(titulo.toUpperCase()),
+    ) || null
+  )
 }
 
 function parsearRangoPlazoDias(texto) {
