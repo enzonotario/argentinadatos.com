@@ -1,11 +1,6 @@
-import axios from 'axios'
 import { load } from 'cheerio'
 import { logGrupo, logError, logMensaje } from '@/log.js'
-import {
-  convertHtmlToMarkdownWithDefuddle,
-  fetchDefuddleMarkdownFromUrl,
-} from '@/shared/extraction/defuddle.js'
-import { construirRequestConProxy } from '@/utils/proxy.js'
+import { fetchDefuddleMarkdownFromUrl } from '@/shared/extraction/defuddle.js'
 
 const log = logGrupo({
   fuente: 'extraerPlazoFijoUvaPagoPeriodico',
@@ -31,7 +26,11 @@ export async function extraerPlazoFijoUvaPagoPeriodico() {
 
 async function extraerBna() {
   try {
-    const markdown = await obtenerMarkdownBna()
+    logMensaje(log, 'Consultando BNA via Defuddle')
+
+    const markdown = await fetchDefuddleMarkdownFromUrl(
+      URL_BNA_PLAZO_FIJO_ELECTRONICO,
+    )
     const tasas = parsearTasasUvaPagoPeriodicoDesdeMarkdown(markdown)
 
     if (!tasas.length) {
@@ -50,32 +49,6 @@ async function extraerBna() {
   } catch (error) {
     logError(log, error)
     return []
-  }
-}
-
-async function obtenerMarkdownBna() {
-  try {
-    const request = construirRequestConProxy(URL_BNA_PLAZO_FIJO_ELECTRONICO)
-
-    if (request.usaProxy) {
-      logMensaje(log, 'Consultando BNA via proxy + Defuddle')
-    } else {
-      logMensaje(log, 'Consultando BNA via Defuddle')
-    }
-
-    const respuesta = await axios.get(request.url, {
-      headers: request.opciones.headers,
-    })
-
-    return convertHtmlToMarkdownWithDefuddle(
-      respuesta.data,
-      URL_BNA_PLAZO_FIJO_ELECTRONICO,
-    )
-  } catch (error) {
-    logMensaje(log, 'Fallback Defuddle fetch directo', {
-      message: error?.message,
-    })
-    return fetchDefuddleMarkdownFromUrl(URL_BNA_PLAZO_FIJO_ELECTRONICO)
   }
 }
 
