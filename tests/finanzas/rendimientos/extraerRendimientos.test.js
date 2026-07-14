@@ -12,6 +12,7 @@ import { extraerDecrypto } from '@/finanzas/rendimientos/extraerDecrypto.js'
 import { extraerVesseo } from '@/finanzas/rendimientos/extraerVesseo.js'
 import { extraerAstroPay } from '@/finanzas/rendimientos/extraerAstroPay.js'
 import { extraerLunefi } from '@/finanzas/rendimientos/extraerLunefi.js'
+import { extraerBerry } from '@/finanzas/rendimientos/extraerBerry.js'
 
 function testItems(items) {
   expect(items.length).toBeGreaterThan(0)
@@ -94,5 +95,12 @@ describe('extraerRendimientos', () => {
     const items = await extraerLunefi()
 
     testItems(items)
+  })
+
+  it('guarda berry', async () => {
+    const items = await extraerBerry()
+
+    testItems(items)
+    expect(items[0].moneda).toBe('USDC')
   })
 })

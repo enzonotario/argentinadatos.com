@@ -13,6 +13,7 @@ import { extraerDecrypto } from '@/finanzas/rendimientos/extraerDecrypto.js'
 import { extraerVesseo } from '@/finanzas/rendimientos/extraerVesseo.js'
 import { extraerAstroPay } from '@/finanzas/rendimientos/extraerAstroPay.js'
 import { extraerLunefi } from '@/finanzas/rendimientos/extraerLunefi.js'
+import { extraerBerry } from '@/finanzas/rendimientos/extraerBerry.js'
 
 export default async function () {
   const entidades = {
@@ -28,6 +29,7 @@ export default async function () {
     vesseo: await extraerVesseo(),
     astropay: await extraerAstroPay(),
     lunefi: await extraerLunefi(),
+    berry: await extraerBerry(),
   }
 
   for (const [entidad, rendimientos] of Object.entries(entidades)) {
