@@ -2,7 +2,7 @@
   "fondoId": "1899",
   "claseId": "6566",
   "nombre": "DXA Retorno Total - Clase B",
-  "fecha": "2026-07-13",
+  "fecha": "2026-07-14",
   "administradora": "Dracma Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Retorno Total",
@@ -13,20 +13,41 @@
   "duracion": "No Registrada",
   "moneda": "Peso Argentina",
   "codigoCNV": "1911",
-  "patrimonio": 7685336894.83,
+  "patrimonio": 7640954133.68,
   "inversionMinima": 10000,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1083.7,
-    "ultimos7Dias": -1.2934,
+    "valorCuotaparte": 1077.4,
+    "ultimos7Dias": -0.139,
     "unMes": null,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Grupo Fciero Galicia - B",
+      "porcentaje": 35.2
+    },
+    {
+      "nombre": "Transp Gas del Sur - B",
+      "porcentaje": 19.4
+    },
+    {
+      "nombre": "Pampa Energia",
+      "porcentaje": 18.3
+    },
+    {
+      "nombre": "BBVA Argentina",
+      "porcentaje": 17.2
+    },
+    {
+      "nombre": "Ternium - A",
+      "porcentaje": 10
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 1.52,

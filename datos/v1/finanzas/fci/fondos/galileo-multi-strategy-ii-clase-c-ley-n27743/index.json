@@ -2,7 +2,7 @@
   "fondoId": "1475",
   "claseId": "4819",
   "nombre": "Galileo Multi Strategy II - Clase C Ley N°27.743",
-  "fecha": "2026-07-13",
+  "fecha": "2026-07-14",
   "administradora": "Delta Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,27 +13,31 @@
   "duracion": "No Registrada",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1434",
-  "patrimonio": 242187.22,
+  "patrimonio": 242450.09,
   "inversionMinima": 0,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1110.679,
-    "ultimos7Dias": 0.1849,
-    "unMes": -0.0746,
-    "noventaDias": 0.1875,
-    "cientoOchentaDias": 4.0215,
-    "enElAnio": 5.0695,
-    "doceMeses": 9.0142
+    "valorCuotaparte": 1111.884,
+    "ultimos7Dias": -0.0467,
+    "unMes": 0.0338,
+    "noventaDias": 1.3238,
+    "cientoOchentaDias": 4.1806,
+    "enElAnio": 5.1835,
+    "doceMeses": 8.9391
   },
   "composicionCartera": [
+    {
+      "nombre": "ON Banco Macro Clase H Reg S",
+      "porcentaje": 16
+    },
     {
       "nombre": "ON Transp Gas Sur Cl 3",
       "porcentaje": 12.8
     },
     {
       "nombre": "ON Aeropuertos 2000 Regs 2031",
-      "porcentaje": 12.1
+      "porcentaje": 12.2
     },
     {
       "nombre": "ON Pluspetrol 8.5% 2032 (REGS)",
@@ -41,35 +45,31 @@
     },
     {
       "nombre": "ON Arcor C1 7.6%",
-      "porcentaje": 10.4
+      "porcentaje": 10.5
     },
     {
       "nombre": "ON Genneia Clase 49",
-      "porcentaje": 10.2
+      "porcentaje": 10.3
     },
     {
       "nombre": "ON Telecom 9.5% 2031",
-      "porcentaje": 9.3
-    },
-    {
-      "nombre": "ON Banco Macro Clase H Reg S",
-      "porcentaje": 8.8
+      "porcentaje": 9.4
     },
     {
       "nombre": "ON YPF Luz C18 YFCJO",
       "porcentaje": 8.7
     },
     {
-      "nombre": "Cta Cte U$S Bco Comafi",
-      "porcentaje": 8.5
-    },
-    {
       "nombre": "ON Pan Amer. Energy C 12",
-      "porcentaje": 4.8
+      "porcentaje": 5
     },
     {
       "nombre": "Cta Cte U$S Euroclear Lux",
       "porcentaje": 3.9
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.7
     }
   ],
   "calificaciones": [],

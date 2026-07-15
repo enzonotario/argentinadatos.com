@@ -2,7 +2,7 @@
   "fondoId": "723",
   "claseId": "4940",
   "nombre": "CMA Renta Dólar - Clase Ley N° 27.743",
-  "fecha": "2026-07-13",
+  "fecha": "2026-07-14",
   "administradora": "Capital Markets Argentina Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,31 +13,35 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "878",
-  "patrimonio": 2137016.02,
+  "patrimonio": 2130717.52,
   "inversionMinima": 1000,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1138.932,
-    "ultimos7Dias": 0.0517,
-    "unMes": 0.5135,
-    "noventaDias": 0.8837,
-    "cientoOchentaDias": 4.0714,
-    "enElAnio": 4.1496,
-    "doceMeses": 8.3948
+    "valorCuotaparte": 1135.575,
+    "ultimos7Dias": -0.2184,
+    "unMes": 0.2172,
+    "noventaDias": 0.4648,
+    "cientoOchentaDias": 3.7274,
+    "enElAnio": 3.8426,
+    "doceMeses": 8.138
   },
   "composicionCartera": [
     {
       "nombre": "ON Loma Negra C5",
-      "porcentaje": 7.2
+      "porcentaje": 7.1
     },
     {
       "nombre": "US Treasury Bill 200826",
       "porcentaje": 5.9
     },
     {
+      "nombre": "Cta Cte U$S Bco Valores",
+      "porcentaje": 4.9
+    },
+    {
       "nombre": "ON Transp Gas Sur Cl 3",
-      "porcentaje": 4.7
+      "porcentaje": 4.6
     },
     {
       "nombre": "Bono del Tesoro Nacional AO27",
@@ -45,10 +49,6 @@
     },
     {
       "nombre": "FCI Megaqm Liquidez Dólar - Clase B",
-      "porcentaje": 4.3
-    },
-    {
-      "nombre": "Cta Cte U$S Bco Valores",
       "porcentaje": 4.3
     },
     {
@@ -73,7 +73,7 @@
     },
     {
       "nombre": "ON Pan American C36",
-      "porcentaje": 2.4
+      "porcentaje": 2.3
     },
     {
       "nombre": "US Treasury Bill 171226",
@@ -84,12 +84,8 @@
       "porcentaje": 2
     },
     {
-      "nombre": "ON YPF Luz C18 YFCJO",
-      "porcentaje": 2
-    },
-    {
       "nombre": "Resto de Activos",
-      "porcentaje": 45.9
+      "porcentaje": 47.4
     }
   ],
   "calificaciones": [],

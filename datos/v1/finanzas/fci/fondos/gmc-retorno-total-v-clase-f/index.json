@@ -2,7 +2,7 @@
   "fondoId": "1898",
   "claseId": "6563",
   "nombre": "GMC Retorno Total V - Clase F",
-  "fecha": "2026-07-08",
+  "fecha": "2026-07-14",
   "administradora": "GMC Asset Management S.A.U.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,20 +13,41 @@
   "duracion": "Mayor a 3 Años",
   "moneda": "Peso Argentina",
   "codigoCNV": "1890",
-  "patrimonio": 45719679768.53,
+  "patrimonio": 45196528978.83,
   "inversionMinima": 100000001,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1010.103,
-    "ultimos7Dias": 0.3322,
+    "valorCuotaparte": 998.545,
+    "ultimos7Dias": -0.9055,
     "unMes": null,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZXD7",
+      "porcentaje": 39.6
+    },
+    {
+      "nombre": "Bono Boncer TZX28",
+      "porcentaje": 31.1
+    },
+    {
+      "nombre": "Bono Capitalizable T30J7",
+      "porcentaje": 17.9
+    },
+    {
+      "nombre": "Cta Cte U$S Bco Valores",
+      "porcentaje": 8.5
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 2.9
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 0.67,

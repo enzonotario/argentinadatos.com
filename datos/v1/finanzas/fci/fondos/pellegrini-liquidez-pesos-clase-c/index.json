@@ -2,7 +2,7 @@
   "fondoId": "1714",
   "claseId": "5765",
   "nombre": "Pellegrini Liquidez Pesos Clase C",
-  "fecha": "2026-07-13",
+  "fecha": "2026-07-14",
   "administradora": "Pellegrini S.A.S.G.F.C.I.",
   "depositaria": "Banco de La Nacion Argentina",
   "tipoRenta": "Mercado de Dinero",
@@ -13,31 +13,47 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Peso Argentina",
   "codigoCNV": "1701",
-  "patrimonio": 8224390723.7,
+  "patrimonio": 7686006425.54,
   "inversionMinima": 100,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1070.093,
-    "ultimos7Dias": 16.8899,
-    "unMes": 17.8447,
-    "noventaDias": 17.2568,
-    "cientoOchentaDias": 14.2133,
-    "enElAnio": 13.12,
+    "valorCuotaparte": 1070.61,
+    "ultimos7Dias": 17.0974,
+    "unMes": 17.8465,
+    "noventaDias": 17.2884,
+    "cientoOchentaDias": 14.3181,
+    "enElAnio": 13.1493,
     "doceMeses": null
   },
   "composicionCartera": [
     {
       "nombre": "Cta Cte $ Bco Nacion",
-      "porcentaje": 87.5
+      "porcentaje": 43.3
+    },
+    {
+      "nombre": "Cta Cte $ Rem Bco Galicia",
+      "porcentaje": 12.9
+    },
+    {
+      "nombre": "Pase Colocador ARS MAE",
+      "porcentaje": 12.9
+    },
+    {
+      "nombre": "Cta Cte $ Rem Bco Credico",
+      "porcentaje": 12.9
     },
     {
       "nombre": "Caucion Colocadora $ MAE",
-      "porcentaje": 10
+      "porcentaje": 10.3
     },
     {
       "nombre": "Pzo Fi $ Bco Santander Ri",
-      "porcentaje": 2.5
+      "porcentaje": 5.2
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Galicia",
+      "porcentaje": 2.6
     }
   ],
   "calificaciones": [],
