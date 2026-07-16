@@ -2,7 +2,7 @@
   "fondoId": "504",
   "claseId": "1020",
   "nombre": "MAF Pesos Plus - Clase C",
-  "fecha": "2026-07-14",
+  "fecha": "2026-07-15",
   "administradora": "Mariva Asset Management S.A.U.S.G.F.C.I.",
   "depositaria": "Banco Mariva S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,55 +13,67 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Peso Argentina",
   "codigoCNV": "636",
-  "patrimonio": 124263505.49,
+  "patrimonio": 124352659.66,
   "inversionMinima": 10000,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 172539.07,
-    "ultimos7Dias": 0.3839,
-    "unMes": 1.86,
-    "noventaDias": 5.8751,
-    "cientoOchentaDias": 14.7316,
-    "enElAnio": 16.502,
-    "doceMeses": 39.9292
+    "valorCuotaparte": 172662.86,
+    "ultimos7Dias": 0.2717,
+    "unMes": 1.9331,
+    "noventaDias": 5.8407,
+    "cientoOchentaDias": 14.6388,
+    "enElAnio": 16.5856,
+    "doceMeses": 39.9939
   },
   "composicionCartera": [
     {
       "nombre": "Bono Boncer TZX26",
-      "porcentaje": 29
+      "porcentaje": 25.8
     },
     {
       "nombre": "Letra Tamar TEM M31G6",
-      "porcentaje": 12.5
+      "porcentaje": 11.1
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TZV26",
+      "porcentaje": 6.6
     },
     {
       "nombre": "Lecap S15S6",
-      "porcentaje": 6.8
-    },
-    {
-      "nombre": "Pzo Fi $ Nvo Bco Santa Fe",
-      "porcentaje": 6.8
-    },
-    {
-      "nombre": "Pagare #MAV020760046",
-      "porcentaje": 3.3
-    },
-    {
-      "nombre": "Pagare #MAV160760067",
-      "porcentaje": 3.3
-    },
-    {
-      "nombre": "Pagare #MAV210760077",
-      "porcentaje": 3.3
+      "porcentaje": 6.1
     },
     {
       "nombre": "Bono Dual TTJ26",
-      "porcentaje": 2.7
+      "porcentaje": 5.3
+    },
+    {
+      "nombre": "Caucion Colocadora $ BYMA",
+      "porcentaje": 4.5
+    },
+    {
+      "nombre": "Lecap T30J6",
+      "porcentaje": 4.3
+    },
+    {
+      "nombre": "Pagare #MAV020760046",
+      "porcentaje": 3
+    },
+    {
+      "nombre": "Pagare #MAV160760067",
+      "porcentaje": 2.9
+    },
+    {
+      "nombre": "Pagare #MAV210760077",
+      "porcentaje": 2.9
+    },
+    {
+      "nombre": "Pagare #MAV230760042",
+      "porcentaje": 2.9
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 32.3
+      "porcentaje": 24
     }
   ],
   "calificaciones": [
