@@ -1,0 +1,19 @@
+# Companion ignore for root Dockerfile (static-api).
+# Keeps build context tiny: datos is bind-mounted at runtime.
+node_modules
+dist
+.git
+.env
+*.log
+.idea
+docs
+.github
+packages
+src
+tests
+scripts
+vite.config.js
+storage
+datos
+apps/cafci-worker
+*.md
