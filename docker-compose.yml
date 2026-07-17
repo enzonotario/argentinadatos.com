@@ -1,0 +1,23 @@
+services:
+  static-api:
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      STATIC_DIR: /app/datos
+      HTTP_PORT: '3000'
+    volumes:
+      # Coolify Compose: mounts the repo checkout's datos/ (refreshed on each deploy).
+      - ./datos:/app/datos:ro
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'node',
+          '-e',
+          "fetch('http://127.0.0.1:3000/health').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
