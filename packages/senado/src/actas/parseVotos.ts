@@ -28,6 +28,24 @@ function votesStartOffset(lines: string[], headerIndex: number): number {
   return lines[headerIndex + 2] === 'Banca' ? headerIndex + 3 : headerIndex + 2
 }
 
+/**
+ * PDFs del diario de sesiones (PageMaker/InDesign) traen resumen de la
+ * votación nominal pero no la tabla "Nombre Completo / Voto" con SI/NO.
+ * Esos hay que scrapearlos del HTML de detalleActa.
+ */
+export async function pdfTieneVotosIndividuales(pdfPath: string): Promise<boolean> {
+  const text = await extract(pdfPath)
+  const lines = text.split('\n').map(line => line.trim())
+
+  for (let i = 0; i < lines.length - 1; i++) {
+    if (lines[i] === 'Nombre Completo' && lines[i + 1] === 'Voto') {
+      return true
+    }
+  }
+
+  return false
+}
+
 export async function parseVotos(pdfPath: string): Promise<VotoData[]> {
   const text = await extract(pdfPath)
   const lines = text.split('\n').map(line => line.trim())

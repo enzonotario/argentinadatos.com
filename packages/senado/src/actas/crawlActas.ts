@@ -7,6 +7,12 @@ import { collect } from 'collect.js'
 import { ActasDatabaseService } from './database/service.ts'
 import { downloadPdf } from './downloadPdf.ts'
 import { parseActa } from './parseActa.ts'
+import { pdfTieneVotosIndividuales } from './parseVotos.ts'
+import {
+  fetchDetalleActaHtml,
+  parseDetalleActaHtml,
+  scrapeTituloFromHtml,
+} from './scrapeDetalleActa.ts'
 
 export async function crawlActas({ year }: { year?: number } = {}): Promise<
   ActaData[]
@@ -99,24 +105,6 @@ export async function crawlActas({ year }: { year?: number } = {}): Promise<
   return validActas
 }
 
-async function scrapeActas(actaId: number): Promise<string> {
-  try {
-    const url = `https://www.senado.gob.ar/votaciones/detalleActa/${actaId}`
-    const response = await fetch(url)
-    const html = await response.text()
-
-    const $ = cheerio.load(html)
-
-    const titulo = ($('div.row div.col-lg-6.col-sm-6:first-child p:nth-child(2)').text().trim()).replace(/[\n\t\r]/g, '').replace(/\s+/g, ' ')
-
-    return titulo
-  }
-  catch (error) {
-    console.error(`❌ Error al obtener título del Acta ${actaId}:`, error)
-    return ''
-  }
-}
-
 async function processActa(
   actaId: number,
   titulo: string,
@@ -129,11 +117,30 @@ async function processActa(
       return null
     }
 
-    const tituloFromHtml = await scrapeActas(actaId)
+    let html = ''
+    try {
+      html = await fetchDetalleActaHtml(actaId)
+    }
+    catch (error) {
+      console.error(`❌ Error al obtener HTML del Acta ${actaId}:`, error)
+    }
 
+    const tituloFromHtml = html ? scrapeTituloFromHtml(html) : ''
     const finalTitulo = tituloFromHtml || titulo
 
-    const acta = await parseActa(actaId, finalTitulo, pdfPath)
+    const tieneVotosPdf = await pdfTieneVotosIndividuales(pdfPath)
+
+    let acta: ActaData
+    if (tieneVotosPdf) {
+      acta = await parseActa(actaId, finalTitulo, pdfPath)
+    }
+    else if (html) {
+      console.log(`📄 Acta ${actaId}: PDF sin votos individuales, scrapeando HTML`)
+      acta = parseDetalleActaHtml(html, actaId, finalTitulo)
+    }
+    else {
+      acta = await parseActa(actaId, finalTitulo, pdfPath)
+    }
 
     if (shouldWriteJsonFiles()) {
       writeEndpoint(`/senado/actas/${yearToSearch}/${actaId}`, acta)
