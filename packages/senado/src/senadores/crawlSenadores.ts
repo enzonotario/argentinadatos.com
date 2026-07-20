@@ -33,6 +33,8 @@ export interface Senador {
 const JSON_URL
   = 'https://www.senado.gob.ar/micrositios/DatosAbiertos/ExportarListadoSenadoresHistorico/json'
 
+const WEB_URL = 'https://www.senado.gob.ar/senadores/listados/listaSenadoRes'
+
 export async function crawlSenadores(): Promise<Senador[]> {
   await processJson()
 
@@ -42,7 +44,13 @@ export async function crawlSenadores(): Promise<Senador[]> {
 }
 
 async function processJson() {
-  const currentValues = JSON.parse(readEndpoint('/senado/senadores') || '[]')
+  const currentValues = JSON.parse(readEndpoint('/senado/senadores') || '[]') as Senador[]
+  const fotosPorId = new Map<string, string>()
+  for (const s of currentValues) {
+    if (s.id && s.foto && !fotosPorId.has(String(s.id))) {
+      fotosPorId.set(String(s.id), s.foto)
+    }
+  }
 
   const json = await downloadJson()
 
@@ -50,12 +58,9 @@ async function processJson() {
 
   const photos = await Promise.all(
     senadores.map(async (senador: Senador) => {
-      const existingSenador = currentValues.find(
-        s => s.nombre === senador.nombre,
-      )
-
-      if (existingSenador) {
-        return existingSenador.foto
+      const existingFoto = fotosPorId.get(String(senador.id))
+      if (existingFoto) {
+        return existingFoto
       }
 
       try {
@@ -72,7 +77,9 @@ async function processJson() {
             dataBuffer,
           )
 
-          return getStaticPublicUrl(path)
+          const fotoUrl = getStaticPublicUrl(path)
+          fotosPorId.set(String(senador.id), fotoUrl)
+          return fotoUrl
         }
 
         return null
@@ -128,7 +135,7 @@ async function downloadJson() {
 
 function parseSenador(json: any): Senador {
   return {
-    id: json.ID,
+    id: String(json.ID),
     nombre: titleCaseSpanish(json.SENADOR.toLowerCase()),
     provincia: titleCaseSpanish(json.PROVINCIA.toLowerCase()),
     partido: titleCaseSpanish(json['PARTIDO POLITICO O ALIANZA'].toLowerCase()),
@@ -143,7 +150,7 @@ function parseSenador(json: any): Senador {
     reemplazo: json.REEMPLAZO
       ? titleCaseSpanish(json.REEMPLAZO.trim().toLowerCase())
       : null,
-    observaciones: json.OBSERVACIONES.trim() || null,
+    observaciones: (json.OBSERVACIONES || '').trim() || null,
     foto: null,
     email: null,
     telefono: null,
@@ -167,12 +174,23 @@ function parseFecha(fecha: string) {
   }
 }
 
-async function processWeb(): Promise<Senador[]> {
-  const senadores = JSON.parse(readEndpoint('/senado/senadores') || '[]')
+function extractSenadorIdFromHref(href: string | undefined): string | null {
+  if (!href) {
+    return null
+  }
+  const match = href.match(/\/senadores\/senador\/(\d+)/)
+  return match?.[1] ?? null
+}
 
-  const response = await fetch(
-    'https://www.senado.gob.ar/senadores/listados/listaSenadoRes',
-  )
+function nombresIguales(a: string, b: string): boolean {
+  return a.trim().replace(/\s+/g, ' ').toLowerCase()
+    === b.trim().replace(/\s+/g, ' ').toLowerCase()
+}
+
+async function processWeb(): Promise<Senador[]> {
+  const senadores = JSON.parse(readEndpoint('/senado/senadores') || '[]') as Senador[]
+
+  const response = await fetch(WEB_URL)
 
   const html = await response.text()
 
@@ -180,14 +198,17 @@ async function processWeb(): Promise<Senador[]> {
 
   $('tr').each((_, el) => {
     const $el = $(el)
+    const id = extractSenadorIdFromHref(
+      $el.find('a[href*="/senadores/senador/"]').first().attr('href'),
+    )
     const nombre = $el.find('a').eq(1).text().trim().replace(/\s+/g, ' ')
     const provincia = $el.find('td').eq(2).text().trim()
     const partido = $el.find('td').eq(3).text().trim()
     const email = $el.find('li').eq(0).text().trim()
     const telefono = $el.find('li').eq(1).text().trim()
     const redes = [
-      ...$el.find('li').map((_, el) => {
-        return String($(el).find('a').attr('href'))
+      ...$el.find('li').map((_, item) => {
+        return String($(item).find('a').attr('href'))
           .trim()
           .replace(/^mailto:/, '')
       }),
@@ -195,18 +216,28 @@ async function processWeb(): Promise<Senador[]> {
       .filter(Boolean)
       .filter(red => red !== 'undefined')
 
-    if (!nombre) {
+    if (!id && !nombre) {
       return
     }
 
-    const existingSenador = senadores.find(s => s.nombre === nombre)
+    const matches = id
+      ? senadores.filter(s => String(s.id) === id)
+      : senadores.filter(s => nombresIguales(s.nombre, nombre))
 
-    if (existingSenador) {
-      existingSenador.provincia = provincia
-      existingSenador.partido = partido
-      existingSenador.email = email
-      existingSenador.telefono = telefono
-      existingSenador.redes = redes
+    if (matches.length === 0) {
+      return
+    }
+
+    for (const existingSenador of matches) {
+      if (provincia) {
+        existingSenador.provincia = provincia
+      }
+      if (partido) {
+        existingSenador.partido = partido
+      }
+      existingSenador.email = email || existingSenador.email
+      existingSenador.telefono = telefono || existingSenador.telefono
+      existingSenador.redes = redes.length > 0 ? redes : existingSenador.redes
     }
   })
 
