@@ -7,8 +7,7 @@ import { writeStaticBuffer } from '@argentinadatos/core/src/utils/writeStaticBuf
 import { shouldWriteJsonFiles, shouldWriteFromDatabase } from '@argentinadatos/core/src/utils/database-mode.ts'
 import axios from 'axios'
 import * as cheerio from 'cheerio'
-import { collect } from 'collect.js'
-import { formatISO, parseISO } from 'date-fns'
+import { formatISO, isValid, parse, parseISO } from 'date-fns'
 import iconv from 'iconv-lite'
 import { BASE_URL, USER_AGENT } from '../../constants.ts'
 import { DiputadosDatabaseService } from './database/service.ts'
@@ -37,18 +36,24 @@ const currentValues = JSON.parse(
   readEndpoint('diputados/diputados') || '[]',
 ) as Diputado[]
 
+const DATASET_SLUG = 'legisladores'
+const CKAN_PACKAGE_SHOW = `${BASE_URL}/api/3/action/package_show`
+
 export async function crawlDiputados(): Promise<Diputado[]> {
-  const csv = await fetchLegisladoresCsv(`${BASE_URL}/dataset/legisladores`)
+  const newValues = await fetchLegisladores()
 
-  const newValues = parseCsv(csv)
-
-  const values = collect([
+  // Un mandato por (id, inicio). Preferimos el renglón con bloque más reciente
+  // (cambios de bloque dentro del mismo mandato).
+  const values = uniqueByMandato([
     ...currentValues,
     ...newValues,
-  ])
-    .sortBy('id')
-    .sortBy('periodoMandato.inicio')
-    .all() as Diputado[]
+  ]).sort((a, b) => {
+    const idCmp = String(a.id).localeCompare(String(b.id))
+    if (idCmp !== 0) return idCmp
+    return String(a.periodoMandato?.inicio || '').localeCompare(
+      String(b.periodoMandato?.inicio || ''),
+    )
+  })
 
   const diputados = []
 
@@ -90,6 +95,28 @@ export async function crawlDiputados(): Promise<Diputado[]> {
   return diputados
 }
 
+/** Clave estable de mandato: mismo id + mismo inicio de periodoMandato. */
+function mandatoKey(d: Diputado): string {
+  return `${d.id}|${d.periodoMandato?.inicio || ''}`
+}
+
+function bloqueInicioMs(d: Diputado): number {
+  return new Date(d.periodoBloque?.inicio || 0).getTime()
+}
+
+function uniqueByMandato(rows: Diputado[]): Diputado[] {
+  const byKey = new Map<string, Diputado>()
+  for (const row of rows) {
+    if (!row?.id || !row.periodoMandato?.inicio) continue
+    const key = mandatoKey(row)
+    const prev = byKey.get(key)
+    if (!prev || bloqueInicioMs(row) >= bloqueInicioMs(prev)) {
+      byKey.set(key, row)
+    }
+  }
+  return Array.from(byKey.values())
+}
+
 async function generateEndpointEstatico(db: DiputadosDatabaseService) {
   const todosLosDatos = await db.getAllDiputados()
 
@@ -97,11 +124,90 @@ async function generateEndpointEstatico(db: DiputadosDatabaseService) {
 }
 
 /**
- * El dataset publica varios recursos CSV/JSON. El primero ("Diputados") pasó a un
- * esquema nuevo sin ID (8 columnas). El histórico con ID sigue en otro resource
- * ("Composición Actual…"). Probamos los CSV hasta encontrar el schema esperado.
+ * El dataset publica CSV/JSON. Desde ~2025 los CSV “actuales” perdieron la
+ * columna ID (8 cols). El histórico con ID sigue en el JSON de
+ * “Composición Actual…”. Preferimos ese schema; si no hay, parseamos el
+ * CSV nuevo y reusamos IDs del endpoint local por nombre+distrito.
  */
-async function fetchLegisladoresCsv(datasetUrl: string): Promise<string> {
+async function fetchLegisladores(): Promise<Diputado[]> {
+  const downloadUrls = await listLegisladoresDownloadUrls()
+  const tried: string[] = []
+
+  for (const url of downloadUrls) {
+    tried.push(url)
+    try {
+      if (/\.json(?:$|\?)/i.test(url)) {
+        const rows = parseHistorialJson(await getJson(url))
+        if (rows.length) return rows
+        continue
+      }
+
+      const csv = await getCsv(url)
+      if (hasHistorialCsvSchema(csv)) {
+        const rows = parseHistorialCsv(csv)
+        if (rows.length) return rows
+      }
+      if (hasActualCsvSchema(csv)) {
+        const rows = parseActualCsv(csv)
+        if (rows.length) return rows
+      }
+    }
+    catch (error) {
+      console.warn('No se pudo leer recurso de legisladores', { url, error })
+    }
+  }
+
+  throw new Error(
+    `No se encontró un recurso de legisladores usable (histórico con ID o CSV actual). Intentados: ${tried.join(', ') || 'ninguno'}`,
+  )
+}
+
+async function listLegisladoresDownloadUrls(): Promise<string[]> {
+  const fromCkan = await listDownloadUrlsFromCkan()
+  if (fromCkan.length) {
+    return preferHistorialUrls(fromCkan)
+  }
+
+  const fromHtml = await listDownloadUrlsFromHtml(`${BASE_URL}/dataset/${DATASET_SLUG}`)
+  return preferHistorialUrls(fromHtml)
+}
+
+/**
+ * Preferir JSON/CSV históricos (con ID) antes que los CSV actuales de 8 cols.
+ */
+function preferHistorialUrls(urls: string[]): string[] {
+  const score = (url: string) => {
+    const u = url.toLowerCase()
+    if (u.includes('acual') || u.includes('actual')) return 0
+    if (u.endsWith('.json') || u.includes('.json')) return 1
+    if (u.includes('hist')) return 2
+    return 3
+  }
+  return [...urls].sort((a, b) => score(a) - score(b))
+}
+
+async function listDownloadUrlsFromCkan(): Promise<string[]> {
+  try {
+    const response = await axios.get(CKAN_PACKAGE_SHOW, {
+      params: { id: DATASET_SLUG },
+      timeout: 30_000,
+      headers: { 'User-Agent': USER_AGENT },
+    })
+    const resources = response.data?.result?.resources
+    if (!Array.isArray(resources)) return []
+
+    return resources
+      .map((r: { url?: string, format?: string }) => String(r?.url || '').trim())
+      .filter((url: string) => /\.(csv|json)(?:$|\?)/i.test(url))
+      .map((url: string) => url.replace(/^http:\/\//i, 'https://'))
+  }
+  catch (error) {
+    console.warn('CKAN package_show falló; se usa scrape HTML', { error })
+    return []
+  }
+}
+
+async function listDownloadUrlsFromHtml(datasetUrl: string): Promise<string[]> {
   const response = await fetch(datasetUrl)
   const html = await response.text()
   const $ = cheerio.load(html)
@@ -112,42 +218,29 @@ async function fetchLegisladoresCsv(datasetUrl: string): Promise<string> {
     .filter((href): href is string => Boolean(href))
     .map(href => href.startsWith('http') ? href : `${BASE_URL}${href}`)
 
-  if (resourceUrls.length === 0) {
-    throw new Error('CSV Page URL not found')
-  }
-
-  const candidates: string[] = []
-
+  const downloads: string[] = []
   for (const resourceUrl of resourceUrls) {
-    const csvUrl = await parseCsvUrl(resourceUrl)
-    if (!csvUrl) {
-      continue
-    }
-
-    const csv = await getCsv(csvUrl)
-    if (hasHistorialSchema(csv)) {
-      return csv
-    }
-
-    candidates.push(csvUrl)
+    const fileUrl = await parseResourceDownloadUrl(resourceUrl)
+    if (fileUrl) downloads.push(fileUrl)
   }
-
-  throw new Error(
-    `No se encontró un CSV de legisladores con schema histórico (ID + 12 columnas). Recursos CSV: ${candidates.join(', ') || 'ninguno'}`,
-  )
+  return downloads
 }
 
-async function parseCsvUrl(resourceUrl: string): Promise<string | null> {
+async function parseResourceDownloadUrl(resourceUrl: string): Promise<string | null> {
   const response = await fetch(resourceUrl)
   const html = await response.text()
   const $ = cheerio.load(html)
 
-  return $('a[href$=".csv"]').attr('href') || null
+  return $('a[href$=".json"]').attr('href')
+    || $('a[href$=".csv"]').attr('href')
+    || null
 }
 
 async function getCsv(url: string): Promise<string> {
   const response = await axios.get(url, {
     responseType: 'arraybuffer',
+    timeout: 60_000,
+    headers: { 'User-Agent': USER_AGENT },
   })
 
   const buffer = Buffer.from(response.data)
@@ -161,30 +254,80 @@ async function getCsv(url: string): Promise<string> {
   return iconv.decode(buffer, 'latin1')
 }
 
-function hasHistorialSchema(csv: string): boolean {
+async function getJson(url: string): Promise<unknown> {
+  const response = await axios.get(url, {
+    timeout: 60_000,
+    headers: { 'User-Agent': USER_AGENT },
+  })
+  return response.data
+}
+
+function splitCsvHeader(csv: string): string[] {
   const header = csv.split(/\r?\n/, 1)[0] || ''
-  const fields = header
+  return header
     .split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/)
     .map(field => field.trim().replace(/^"|"$/g, '').toUpperCase())
+}
 
+function hasHistorialCsvSchema(csv: string): boolean {
+  const fields = splitCsvHeader(csv)
   return fields.length === 12 && fields[0] === 'ID'
 }
 
-function parseCsv(csv: string): Diputado[] {
-  const lines = csv.split('\n')
+function hasActualCsvSchema(csv: string): boolean {
+  const fields = splitCsvHeader(csv)
+  return fields.includes('APELLIDO')
+    && fields.includes('NOMBRE')
+    && fields.includes('MANDATO')
+    && !fields.includes('ID')
+}
+
+function parseHistorialJson(data: unknown): Diputado[] {
+  if (!Array.isArray(data) || !data.length) return []
+  const sample = data[0]
+  if (!sample || typeof sample !== 'object' || !('ID' in sample)) return []
+
+  return data
+    .map((row: any) => {
+      const id = String(row.ID || '').trim()
+      if (!id) return null
+
+      return {
+        id,
+        nombre: parseNombreApellido(String(row.NOMBRE || '')),
+        apellido: parseNombreApellido(String(row.APELLIDO || '')),
+        genero: String(row.GENERO || row.SEXO || '').trim(),
+        provincia: titleCaseSpanish(String(row.DISTRITO || '').toLowerCase()),
+        periodoMandato: parsePeriodo(String(row.INICIO || ''), String(row.FIN || '')),
+        juramentoFecha: parseFecha(String(row.JURAMENTO || '')),
+        ceseFecha: parseFecha(String(row.CESE || '')),
+        bloque: titleCaseSpanish(String(row.BLOQUE || '').toLowerCase()),
+        periodoBloque: parsePeriodo(
+          String(row.BLOQUE_INICIO || ''),
+          String(row.BLOQUE_FIN || ''),
+        ),
+        foto: getFoto(id),
+      } as Diputado
+    })
+    .filter((diputado): diputado is Diputado =>
+      Boolean(diputado && diputado.periodoMandato.inicio),
+    )
+}
+
+function parseHistorialCsv(csv: string): Diputado[] {
+  const lines = csv.split(/\r?\n/)
 
   return lines
     .slice(1)
     .map((line) => {
       const fields = line
-        .split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/) // Split by comma, but ignore commas inside quotes.
-        .map(field => field.trim().replace(/^"|"$/g, '')) // Remove quotes around fields.
+        .split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/)
+        .map(field => field.trim().replace(/^"|"$/g, ''))
 
       if (fields.length !== 12) {
-        console.warn('Invalid line', {
-          line,
-          fields,
-        })
+        if (line.trim()) {
+          console.warn('Invalid historial line', { line, fields })
+        }
         return null
       }
 
@@ -217,7 +360,131 @@ function parseCsv(csv: string): Diputado[] {
         foto: getFoto(id),
       } as Diputado
     })
-    .filter(diputado => diputado && diputado.periodoMandato.inicio)
+    .filter((diputado): diputado is Diputado =>
+      Boolean(diputado && diputado.periodoMandato.inicio),
+    )
+}
+
+/**
+ * Schema nuevo (sin ID): APELLIDO,NOMBRE,SEXO,DISTRITO,MANDATO,FECHA_DE_JURA,FECHA_DE_INICIO,BLOQUE
+ * MANDATO = "2023-2027". Fechas = dd/MM/yyyy.
+ */
+function parseActualCsv(csv: string): Diputado[] {
+  const lines = csv.split(/\r?\n/)
+  const idIndex = buildExistingIdIndex()
+
+  return lines
+    .slice(1)
+    .map((line) => {
+      const fields = line
+        .split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/)
+        .map(field => field.trim().replace(/^"|"$/g, ''))
+
+      if (fields.length < 8) {
+        if (line.trim()) {
+          console.warn('Invalid actual line', { line, fields })
+        }
+        return null
+      }
+
+      const [
+        apellidoRaw,
+        nombreRaw,
+        genero,
+        provinciaRaw,
+        mandato,
+        juramentoRaw,
+        inicioRaw,
+        bloqueRaw,
+      ] = fields
+
+      const apellido = parseNombreApellido(apellidoRaw)
+      const nombre = parseNombreApellido(nombreRaw)
+      const provincia = titleCaseSpanish(provinciaRaw.toLowerCase())
+      const { inicio, fin } = parseMandatoRange(mandato, inicioRaw)
+      if (!inicio) return null
+
+      const id = resolveId(idIndex, apellido, nombre, provincia)
+        || synthesizeId(apellido, nombre, provincia, inicio)
+
+      return {
+        id,
+        nombre,
+        apellido,
+        genero,
+        provincia,
+        periodoMandato: { inicio, fin },
+        juramentoFecha: parseFecha(juramentoRaw),
+        ceseFecha: fin,
+        bloque: titleCaseSpanish(bloqueRaw.toLowerCase()),
+        periodoBloque: { inicio, fin },
+        foto: getFoto(id),
+      } as Diputado
+    })
+    .filter((diputado): diputado is Diputado => Boolean(diputado))
+}
+
+function buildExistingIdIndex(): Map<string, string> {
+  const index = new Map<string, string>()
+  for (const d of currentValues) {
+    const key = personKey(d.apellido, d.nombre, d.provincia)
+    if (key && d.id && !index.has(key)) {
+      index.set(key, d.id)
+    }
+  }
+  return index
+}
+
+function resolveId(
+  index: Map<string, string>,
+  apellido: string,
+  nombre: string,
+  provincia: string,
+): string | null {
+  return index.get(personKey(apellido, nombre, provincia)) || null
+}
+
+function personKey(apellido: string, nombre: string, provincia: string): string {
+  return [apellido, nombre, provincia].map(normalizeKeyPart).join('|')
+}
+
+function normalizeKeyPart(value: string): string {
+  return value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '')
+}
+
+function synthesizeId(
+  apellido: string,
+  nombre: string,
+  provincia: string,
+  inicio: string,
+): string {
+  const base = personKey(apellido, nombre, provincia).slice(0, 40) || 'diputado'
+  const year = (inicio.match(/\d{4}/) || ['0000'])[0]
+  return `HCDN-GEN-${base}-${year}`
+}
+
+function parseMandatoRange(mandato: string, inicioRaw: string): {
+  inicio: string | null
+  fin: string | null
+} {
+  const inicioFromFecha = parseFecha(inicioRaw)
+  const match = String(mandato || '').match(/(\d{4})\s*[-–]\s*(\d{4})/)
+  if (!match) {
+    return { inicio: inicioFromFecha, fin: null }
+  }
+
+  const startYear = Number(match[1])
+  const endYear = Number(match[2])
+  const inicio = inicioFromFecha
+    || parseFecha(`${startYear}-12-10`)
+  // El histórico HCDN usa fin = 09/12 del año final.
+  const fin = parseFecha(`${endYear}-12-09`)
+
+  return { inicio, fin }
 }
 
 function parseNombreApellido(texto: string) {
@@ -238,7 +505,17 @@ function parseFecha(fecha: string): string | null {
   }
 
   try {
-    return formatISO(parseISO(value))
+    // ISO (histórico): 2009-12-10T00:00:00 o con offset
+    if (/^\d{4}-\d{2}-\d{2}/.test(value)) {
+      const parsed = parseISO(value)
+      if (isValid(parsed)) return formatISO(parsed)
+    }
+
+    // Actual CSV: dd/MM/yyyy
+    if (/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(value)) {
+      const parsed = parse(value, 'dd/MM/yyyy', new Date())
+      if (isValid(parsed)) return formatISO(parsed)
+    }
   }
   catch (error) {
     console.warn('Invalid fecha', {
@@ -247,6 +524,9 @@ function parseFecha(fecha: string): string | null {
     })
     return null
   }
+
+  console.warn('Invalid fecha', { fecha })
+  return null
 }
 
 function getFoto(id: string): string | undefined | null {
@@ -293,7 +573,7 @@ async function saveFoto(path: string, foto: string) {
       break
     }
     catch (error) {
-      console.error('Error fetching foto', {
+      console.error('Error fetching photo', {
         path,
         foto,
         error,
@@ -303,7 +583,7 @@ async function saveFoto(path: string, foto: string) {
   }
 
   if (!response) {
-    throw new Error('Error fetching foto')
+    throw new Error('Error fetching photo')
   }
 
   writeStaticBuffer(path, response.data)

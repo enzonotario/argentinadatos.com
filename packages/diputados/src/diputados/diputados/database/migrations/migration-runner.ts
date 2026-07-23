@@ -1,7 +1,9 @@
 import { migration_001_initial_schema } from './001_initial_schema.ts'
+import { migration_002_diputado_periodo_unique } from './002_diputado_periodo_unique.ts'
 
 const MIGRATIONS = [
   migration_001_initial_schema,
+  migration_002_diputado_periodo_unique,
 ]
 
 export class MigrationRunner {
