@@ -1,75 +1,51 @@
 import axios from 'axios'
-import { getCafciUserAgent, getProxyConfig } from '../config.js'
 
 const cafciBaseUrl = 'https://estadisticas.cafci.org.ar'
+const cafciUserAgent =
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36'
 
 function buildCafciHeaders(extraHeaders = {}) {
   return {
-    'User-Agent': getCafciUserAgent(),
+    'User-Agent': cafciUserAgent,
     Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-    'Accept-Language': 'es-AR,es;q=0.9,en;q=0.8',
+    'Accept-Language': 'es-AR,es;q=0.9',
+    'Upgrade-Insecure-Requests': '1',
+    'Sec-Fetch-Dest': 'document',
+    'Sec-Fetch-Mode': 'navigate',
+    'Sec-Fetch-Site': 'same-origin',
+    'Sec-Fetch-User': '?1',
     Referer: `${cafciBaseUrl}/`,
     ...extraHeaders,
   }
 }
 
-function buildCafciRequest(url, options = {}) {
-  const { proxyUrl, proxyToken, usesProxy } = getProxyConfig()
-  const headers = buildCafciHeaders(options.headers)
-
-  if (usesProxy) {
-    return {
-      url: proxyUrl,
-      options: {
-        ...options,
-        headers: {
-          ...headers,
-          'x-proxy-token': proxyToken,
-          'x-target-url': url,
-        },
-      },
-      usesProxy: true,
-      targetUrl: url,
-    }
-  }
-
-  return {
-    url,
-    options: {
-      ...options,
-      headers,
-    },
-    usesProxy: false,
-    targetUrl: url,
-  }
-}
-
-function formatCafciHttpError(error, targetUrl, usesProxy) {
+function formatCafciHttpError(error, targetUrl) {
   const status = error.response?.status
   const statusText = error.response?.statusText
-  const statusLabel = status ? `${status} ${statusText ?? ''}`.trim() : 'network'
+  const statusLabel = status
+    ? `${status} ${statusText ?? ''}`.trim()
+    : 'network'
 
-  let hint = ''
+  const hint =
+    status === 403 ? ' CloudFront bloqueó el request. Probá desde otra IP.' : ''
 
-  if (status === 403) {
-    hint = usesProxy
-      ? ' CloudFront bloqueó el request incluso via proxy.'
-      : ' CloudFront bloqueó el request desde este servidor. Configurá CAFCI_WORKER_PROXY_URL y CAFCI_WORKER_PROXY_TOKEN (o VITE_PROXY_URL y VITE_PROXY_TOKEN).'
-  }
-
-  return new Error(`CAFCI request failed (${statusLabel}): ${targetUrl}.${hint}`, {
-    cause: error,
-  })
+  return new Error(
+    `CAFCI request failed (${statusLabel}): ${targetUrl}.${hint}`,
+    {
+      cause: error,
+    },
+  )
 }
 
 export async function cafciGet(url, options = {}) {
-  const request = buildCafciRequest(url, options)
-
   try {
-    return await axios.get(request.url, request.options)
+    return await axios.get(url, {
+      ...options,
+      headers: buildCafciHeaders(options.headers),
+    })
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      throw formatCafciHttpError(error, request.targetUrl, request.usesProxy)
+      throw formatCafciHttpError(error, url)
     }
 
     throw error
