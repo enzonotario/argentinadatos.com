@@ -2,7 +2,7 @@
   "fondoId": "1864",
   "claseId": "6441",
   "nombre": "Cocos Dólar Money Market - Clase A",
-  "fecha": "2026-07-17",
+  "fecha": "2026-07-24",
   "administradora": "Cocos Asset Management S.A.",
   "depositaria": "Banco Industrial S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,13 +13,13 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1913",
-  "patrimonio": 95.15,
+  "patrimonio": 0,
   "inversionMinima": 10,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
     "valorCuotaparte": 1000.434,
-    "ultimos7Dias": 0.8109,
+    "ultimos7Dias": 0,
     "unMes": 0.455,
     "noventaDias": null,
     "cientoOchentaDias": null,
@@ -28,32 +28,32 @@
   },
   "composicionCartera": [
     {
+      "nombre": "Caucion Colocadora U$S Merval",
+      "porcentaje": 36.7
+    },
+    {
       "nombre": "Pzo Fi U$S Bco Galicia",
-      "porcentaje": 23.4
+      "porcentaje": 17.6
     },
     {
       "nombre": "Pzo Fi U$S Bco BBVA",
-      "porcentaje": 16.4
+      "porcentaje": 12.3
     },
     {
       "nombre": "Cta Cte U$S Bco Industrial",
-      "porcentaje": 15.7
-    },
-    {
-      "nombre": "Caucion Colocadora U$S Merval",
-      "porcentaje": 14
+      "porcentaje": 10.6
     },
     {
       "nombre": "Pzo Fi $ Bco Supervielle",
-      "porcentaje": 11.7
+      "porcentaje": 8.8
     },
     {
       "nombre": "Pzo Fi U$S Bco Patagonia",
-      "porcentaje": 11.7
+      "porcentaje": 8.8
     },
     {
       "nombre": "Pzo Fi U$S Bco Hipot",
-      "porcentaje": 7
+      "porcentaje": 5.3
     }
   ],
   "calificaciones": [],

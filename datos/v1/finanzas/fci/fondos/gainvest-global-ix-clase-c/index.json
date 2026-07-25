@@ -2,7 +2,7 @@
   "fondoId": "1388",
   "claseId": "3999",
   "nombre": "Gainvest Global IX - Clase C",
-  "fecha": "2026-07-17",
+  "fecha": "2026-07-24",
   "administradora": "StoneX Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -29,7 +29,11 @@
   "composicionCartera": [
     {
       "nombre": "Cta Cte $ Bco de Valores",
-      "porcentaje": 100
+      "porcentaje": 99.9
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.1
     }
   ],
   "calificaciones": [],

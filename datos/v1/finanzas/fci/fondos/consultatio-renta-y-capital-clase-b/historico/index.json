@@ -2,7 +2,7 @@
   "fondoId": "643",
   "claseId": "1306",
   "nombre": "Consultatio Renta y Capital - Clase B",
-  "fechaActualizacion": "2026-07-20T01:40:35.000Z",
+  "fechaActualizacion": "2026-07-25T15:13:57.000Z",
   "historico": [
     {
       "slug": "consultatio-renta-y-capital-clase-b",
@@ -8530,6 +8530,22 @@
       "retornoDiario": 0.044049,
       "retornoAcumulado": 239.249194,
       "flujoEstimado": -0.057208,
+      "origen": "cafci-detail"
+    },
+    {
+      "slug": "consultatio-renta-y-capital-clase-b",
+      "fondoId": "643",
+      "claseId": "1306",
+      "nombre": "Consultatio Renta y Capital - Clase B",
+      "fecha": "2026-07-24",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Plazo Flexible",
+      "valorCuotaparte": 98219.674,
+      "patrimonio": 10636777.48,
+      "retornoDiario": 0.305284,
+      "retornoAcumulado": 240.284866,
+      "flujoEstimado": 0.051659,
       "origen": "cafci-detail"
     }
   ]

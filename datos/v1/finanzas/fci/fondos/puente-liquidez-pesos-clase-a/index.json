@@ -2,7 +2,7 @@
   "fondoId": "1890",
   "claseId": "6530",
   "nombre": "Puente Liquidez Pesos - Clase A",
-  "fecha": "2026-07-17",
+  "fecha": "2026-07-24",
   "administradora": "Puente Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,20 +13,57 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Peso Argentina",
   "codigoCNV": "1909",
-  "patrimonio": 4305423339.65,
+  "patrimonio": 1778856066.67,
   "inversionMinima": 1,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1006.2,
-    "ultimos7Dias": 14.3511,
+    "valorCuotaparte": 1009.064,
+    "ultimos7Dias": 14.8417,
     "unMes": null,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Pase Colocador ARS BYMA",
+      "porcentaje": 19.9
+    },
+    {
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 19.9
+    },
+    {
+      "nombre": "Cta Cte $ Bco Nacion",
+      "porcentaje": 19.5
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Santander Ri",
+      "porcentaje": 15.4
+    },
+    {
+      "nombre": "Cta Cte $ Bco Comafi",
+      "porcentaje": 12.6
+    },
+    {
+      "nombre": "Pzo Fi $ ICBC",
+      "porcentaje": 6.5
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Galicia",
+      "porcentaje": 2.6
+    },
+    {
+      "nombre": "Cta Cte $ ICBC",
+      "porcentaje": 2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.6
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": null,

@@ -2,7 +2,7 @@
   "fondoId": "1464",
   "claseId": "4331",
   "nombre": "Fundcorp Performance Multiestrategia - Clase C",
-  "fecha": "2026-07-17",
+  "fecha": "2026-07-24",
   "administradora": "CMF Asset Management S.A.U.",
   "depositaria": "Banco C.M.F. S.A.",
   "tipoRenta": "Retorno Total",
@@ -13,31 +13,27 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Peso Argentina",
   "codigoCNV": "1451",
-  "patrimonio": 37474093413.59,
+  "patrimonio": 42763860373.54,
   "inversionMinima": 500000,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 2574.986,
-    "ultimos7Dias": 0.1096,
-    "unMes": 1.9942,
-    "noventaDias": 6.9392,
-    "cientoOchentaDias": 20.4885,
-    "enElAnio": 21.6297,
-    "doceMeses": 48.5989
+    "valorCuotaparte": 2593.137,
+    "ultimos7Dias": 0.7049,
+    "unMes": 2.4913,
+    "noventaDias": 7.7021,
+    "cientoOchentaDias": 20.8686,
+    "enElAnio": 22.4871,
+    "doceMeses": 49.3568
   },
   "composicionCartera": [
     {
-      "nombre": "Bono Boncer TZXS8",
-      "porcentaje": 9.1
-    },
-    {
-      "nombre": "Bono Boncer TZX28",
-      "porcentaje": 8.7
-    },
-    {
       "nombre": "Letra Tesoro Nac D31L6",
       "porcentaje": 8.3
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TZXO7",
+      "porcentaje": 8.1
     },
     {
       "nombre": "Bono Boncer 2027 TZXM7",
@@ -52,20 +48,24 @@
       "porcentaje": 5.8
     },
     {
+      "nombre": "Bono Dual TXMD9",
+      "porcentaje": 5.2
+    },
+    {
       "nombre": "Letra Tamar TEM TMF27",
       "porcentaje": 4.9
     },
     {
       "nombre": "Bono Boncer TXMJ9",
-      "porcentaje": 4.4
+      "porcentaje": 4.5
     },
     {
       "nombre": "Fut Reg ARS",
-      "porcentaje": 4.1
+      "porcentaje": 4
     },
     {
-      "nombre": "Letra Tamar TEM M31G6",
-      "porcentaje": 3.4
+      "nombre": "Bono Boncer TZXS8",
+      "porcentaje": 3.7
     },
     {
       "nombre": "Bono Boncer TZXS7",
@@ -88,8 +88,16 @@
       "porcentaje": 2.8
     },
     {
+      "nombre": "Letra Tamar TEM M31G6",
+      "porcentaje": 2.4
+    },
+    {
+      "nombre": "Bono Boncer TZX28",
+      "porcentaje": 2.3
+    },
+    {
       "nombre": "Resto de Activos",
-      "porcentaje": 23.5
+      "porcentaje": 22.8
     }
   ],
   "calificaciones": [],

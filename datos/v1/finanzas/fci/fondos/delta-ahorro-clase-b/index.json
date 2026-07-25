@@ -2,7 +2,7 @@
   "fondoId": "371",
   "claseId": "664",
   "nombre": "Delta Ahorro - Clase B",
-  "fecha": "2026-07-17",
+  "fecha": "2026-07-24",
   "administradora": "Delta Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,35 +13,39 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Peso Argentina",
   "codigoCNV": "506",
-  "patrimonio": 223062344401.14,
+  "patrimonio": 227853520283.79,
   "inversionMinima": 1,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 339977.327,
-    "ultimos7Dias": 0.4525,
-    "unMes": 1.7079,
-    "noventaDias": 5.4708,
-    "cientoOchentaDias": 13.7983,
-    "enElAnio": 15.214,
-    "doceMeses": 38.0456
+    "valorCuotaparte": 341604.479,
+    "ultimos7Dias": 0.4786,
+    "unMes": 1.9202,
+    "noventaDias": 5.459,
+    "cientoOchentaDias": 13.7378,
+    "enElAnio": 15.7654,
+    "doceMeses": 38.0012
   },
   "composicionCartera": [
     {
+      "nombre": "FCI Gainvest Pesos - Clase B",
+      "porcentaje": 4.2
+    },
+    {
       "nombre": "Pzo Fi $ Bco Nacion",
-      "porcentaje": 5.9
+      "porcentaje": 4.2
     },
     {
       "nombre": "Caucion Colocadora $ BYMA",
-      "porcentaje": 5.1
-    },
-    {
-      "nombre": "ON BBVA Frances Cl 47",
-      "porcentaje": 3.2
+      "porcentaje": 4.1
     },
     {
       "nombre": "ON Banco Nacion Argentina Clase 1",
       "porcentaje": 3
+    },
+    {
+      "nombre": "ON BBVA Frances Cl 47",
+      "porcentaje": 2.8
     },
     {
       "nombre": "FF Mercado Credito 43 CA",
@@ -49,10 +53,6 @@
     },
     {
       "nombre": "ON Telecom C26",
-      "porcentaje": 2.4
-    },
-    {
-      "nombre": "Pzo Fi $ ICBC",
       "porcentaje": 2.4
     },
     {
@@ -68,15 +68,11 @@
       "porcentaje": 2.3
     },
     {
-      "nombre": "FCI Gainvest Pesos - Clase B",
-      "porcentaje": 2.2
-    },
-    {
-      "nombre": "Pzo Fi $ BNP Paribas",
+      "nombre": "ON ICBC Clase 5 110327",
       "porcentaje": 2.1
     },
     {
-      "nombre": "ON ICBC Clase 5 110327",
+      "nombre": "Pzo Fi $ BNP Paribas",
       "porcentaje": 2.1
     },
     {
@@ -84,12 +80,8 @@
       "porcentaje": 2
     },
     {
-      "nombre": "ON Santander Rio S 32",
-      "porcentaje": 2
-    },
-    {
       "nombre": "Resto de Activos",
-      "porcentaje": 56.9
+      "porcentaje": 62.4
     }
   ],
   "calificaciones": [

@@ -2,7 +2,7 @@
   "fondoId": "750",
   "claseId": "1645",
   "nombre": "Adcap Renta Dólar - Clase D",
-  "fecha": "2026-07-17",
+  "fecha": "2026-07-24",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,31 +13,35 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "944",
-  "patrimonio": 30778188.86,
+  "patrimonio": 31075716.9,
   "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 3,
   "rendimientos": {
-    "valorCuotaparte": 1344.787,
-    "ultimos7Dias": 0.0173,
-    "unMes": 0.4321,
-    "noventaDias": 0.7954,
-    "cientoOchentaDias": 4.0952,
-    "enElAnio": 4.1701,
-    "doceMeses": 7.2324
+    "valorCuotaparte": 1349.557,
+    "ultimos7Dias": 0.3547,
+    "unMes": 0.7789,
+    "noventaDias": 1.0634,
+    "cientoOchentaDias": 4.0078,
+    "enElAnio": 4.5396,
+    "doceMeses": 7.6419
   },
   "composicionCartera": [
     {
       "nombre": "BC Banco BTG Pactual 270726",
-      "porcentaje": 14.1
+      "porcentaje": 13.8
     },
     {
       "nombre": "FCI Cocos Dólar Money Market - Clase C",
-      "porcentaje": 10.5
+      "porcentaje": 6.8
     },
     {
       "nombre": "Bonos Rep Argentina 2030",
-      "porcentaje": 6.1
+      "porcentaje": 6
+    },
+    {
+      "nombre": "ON Edenor C11",
+      "porcentaje": 4.3
     },
     {
       "nombre": "ON Profertil C3",
@@ -45,15 +49,19 @@
     },
     {
       "nombre": "ON Telecom C28",
-      "porcentaje": 2.7
+      "porcentaje": 2.6
     },
     {
       "nombre": "ON Pampa Energia C27",
       "porcentaje": 2.6
     },
     {
-      "nombre": "BC  Minerva 2031",
+      "nombre": "ON Banco Mariva S3 060727",
       "porcentaje": 2.5
+    },
+    {
+      "nombre": "BC  Minerva 2031",
+      "porcentaje": 2.4
     },
     {
       "nombre": "ON Telecom C30",
@@ -61,11 +69,11 @@
     },
     {
       "nombre": "ON Farmacity C1",
-      "porcentaje": 2.4
+      "porcentaje": 2.3
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 53.5
+      "porcentaje": 51
     }
   ],
   "calificaciones": [

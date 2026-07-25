@@ -2,7 +2,7 @@
   "fondoId": "1539",
   "claseId": "4635",
   "nombre": "Toronto Trust Infraestructura - Clase B",
-  "fecha": "2026-07-17",
+  "fecha": "2026-07-24",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco Credito y Securitizacion S.A. (BACS)",
   "tipoRenta": "Infraestructura",
@@ -13,23 +13,27 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Peso Argentina",
   "codigoCNV": "1484",
-  "patrimonio": 7693818808.94,
+  "patrimonio": 7774363605.34,
   "inversionMinima": 1000,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1778.284,
-    "ultimos7Dias": -0.2523,
-    "unMes": 2.7756,
-    "noventaDias": 10.022,
-    "cientoOchentaDias": 12.9574,
-    "enElAnio": 12.3018,
-    "doceMeses": 31.4705
+    "valorCuotaparte": 1796.901,
+    "ultimos7Dias": 1.0469,
+    "unMes": 1.6895,
+    "noventaDias": 9.5077,
+    "cientoOchentaDias": 14.27,
+    "enElAnio": 13.4775,
+    "doceMeses": 32.4698
   },
   "composicionCartera": [
     {
+      "nombre": "Fut Rofex DLR072026",
+      "porcentaje": 9.3
+    },
+    {
       "nombre": "ON Oldelval Clase 3",
-      "porcentaje": 8
+      "porcentaje": 8.1
     },
     {
       "nombre": "ON YPF Clase 42",
@@ -37,11 +41,11 @@
     },
     {
       "nombre": "ON Vista Gas y Oil Arg C18",
-      "porcentaje": 7.8
+      "porcentaje": 7.9
     },
     {
       "nombre": "ON Vista Gas y Oil Arg C21",
-      "porcentaje": 7.7
+      "porcentaje": 7.6
     },
     {
       "nombre": "ON Pan American C40",
@@ -54,10 +58,6 @@
     {
       "nombre": "ON Pan American C26",
       "porcentaje": 6.2
-    },
-    {
-      "nombre": "Fut Rofex DLR072026",
-      "porcentaje": 5.7
     },
     {
       "nombre": "ON Vista Gas y Oil Arg C19",
@@ -80,24 +80,24 @@
       "porcentaje": 3.8
     },
     {
+      "nombre": "Letra Tesoro Nac D31L6",
+      "porcentaje": 3.7
+    },
+    {
       "nombre": "ON Pan American C33",
       "porcentaje": 3.6
     },
     {
       "nombre": "ON Pan Amer. Energy C 17",
-      "porcentaje": 3.6
+      "porcentaje": 3.4
     },
     {
       "nombre": "Bono Boncer TZXS8",
       "porcentaje": 2.9
     },
     {
-      "nombre": "ON YPF Clase 30",
-      "porcentaje": 2.8
-    },
-    {
       "nombre": "ON Genneia Clase 37",
-      "porcentaje": 2.4
+      "porcentaje": 2.5
     },
     {
       "nombre": "Bono Boncer TXMJ9",
@@ -106,10 +106,6 @@
     {
       "nombre": "ON Profertil C2",
       "porcentaje": 2
-    },
-    {
-      "nombre": "Resto de Activos",
-      "porcentaje": 2.4
     }
   ],
   "calificaciones": [],

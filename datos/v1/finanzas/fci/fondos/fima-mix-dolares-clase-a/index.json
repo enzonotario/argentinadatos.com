@@ -2,7 +2,7 @@
   "fondoId": "1459",
   "claseId": "4312",
   "nombre": "Fima Mix Dólares - Clase A",
-  "fecha": "2026-07-17",
+  "fecha": "2026-07-24",
   "administradora": "Galicia Asset Management S.A.U.",
   "depositaria": "Banco de Galicia y Buenos Aires S.A.",
   "tipoRenta": "Renta Variable",
@@ -13,35 +13,39 @@
   "duracion": "Mayor a 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1427",
-  "patrimonio": 113158404.75,
+  "patrimonio": 116769159.82,
   "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1540.848,
-    "ultimos7Dias": 0.8882,
-    "unMes": 2.1903,
-    "noventaDias": 4.7974,
-    "cientoOchentaDias": 8.7502,
-    "enElAnio": 9.4767,
-    "doceMeses": 18.9598
+    "valorCuotaparte": 1533.277,
+    "ultimos7Dias": -0.4914,
+    "unMes": 0.9395,
+    "noventaDias": 5.7903,
+    "cientoOchentaDias": 6.6886,
+    "enElAnio": 8.9388,
+    "doceMeses": 17.969
   },
   "composicionCartera": [
     {
+      "nombre": "Bonos Rep Argentina 2030",
+      "porcentaje": 25.7
+    },
+    {
       "nombre": "Bonos Rep Argentina AL35",
-      "porcentaje": 23.7
+      "porcentaje": 23.4
     },
     {
       "nombre": "Bonos Rep Argentina GD35",
-      "porcentaje": 22.9
-    },
-    {
-      "nombre": "Bonos Rep Argentina 2030",
-      "porcentaje": 22.1
+      "porcentaje": 20.5
     },
     {
       "nombre": "Bonos Rep Argentina AE38",
-      "porcentaje": 15.8
+      "porcentaje": 15.7
+    },
+    {
+      "nombre": "Bono Bopreal 2027 Serie 1 Clase D BPOD7",
+      "porcentaje": 6.2
     },
     {
       "nombre": "Bonos Rep Argentina GD38",
@@ -49,11 +53,7 @@
     },
     {
       "nombre": "Cta Cte U$S Bco Galicia",
-      "porcentaje": 5.1
-    },
-    {
-      "nombre": "Bono Bopreal 2027 Serie 1 Clase D BPOD7",
-      "porcentaje": 5
+      "porcentaje": 3.2
     }
   ],
   "calificaciones": [],

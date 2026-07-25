@@ -2,10 +2,10 @@
   "fondoId": "1",
   "claseId": "6572",
   "nombre": "Blacktoro Ahorro - Clase A",
-  "fecha": "2026-07-17",
+  "fecha": "2026-07-24",
   "administradora": "Blacktoro Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "Renta Mixta",
+  "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Badlar",
@@ -13,13 +13,13 @@
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Peso Argentina",
   "codigoCNV": "52",
-  "patrimonio": 0,
-  "inversionMinima": 10000,
+  "patrimonio": 5001.81,
+  "inversionMinima": 1000,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1,
-    "ultimos7Dias": null,
+    "valorCuotaparte": 1001.81,
+    "ultimos7Dias": 0.181,
     "unMes": null,
     "noventaDias": null,
     "cientoOchentaDias": null,
@@ -29,35 +29,35 @@
   "composicionCartera": [
     {
       "nombre": "Caucion Colocadora $ Merval",
-      "porcentaje": 29.4
-    },
-    {
-      "nombre": "Lecap S14G6",
-      "porcentaje": 20.2
+      "porcentaje": 19.2
     },
     {
       "nombre": "Lecap S17L6",
-      "porcentaje": 14.9
+      "porcentaje": 18
     },
     {
-      "nombre": "Lecap T30J6",
-      "porcentaje": 12.7
-    },
-    {
-      "nombre": "Lecap S31G6",
-      "porcentaje": 9.8
+      "nombre": "Letra Tesoro Nac S30O6",
+      "porcentaje": 15.1
     },
     {
       "nombre": "Lecap S30S6",
-      "porcentaje": 9.6
+      "porcentaje": 13.5
     },
     {
-      "nombre": "FF Mercado Credito 51 CA",
-      "porcentaje": 2
+      "nombre": "Lecap S13N6",
+      "porcentaje": 12.2
+    },
+    {
+      "nombre": "Lecap S14G6",
+      "porcentaje": 11.1
+    },
+    {
+      "nombre": "Lecap S31G6",
+      "porcentaje": 4.5
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 1.5
+      "porcentaje": 6.3
     }
   ],
   "calificaciones": [

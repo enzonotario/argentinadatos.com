@@ -2,7 +2,7 @@
   "fondoId": "1422",
   "claseId": "4155",
   "nombre": "IAM Renta Mixta - Clase C",
-  "fecha": "2026-07-17",
+  "fecha": "2026-07-24",
   "administradora": "Industrial Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Industrial S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,43 +13,47 @@
   "duracion": "Mayor a 3 Años",
   "moneda": "Peso Argentina",
   "codigoCNV": "808",
-  "patrimonio": 111801215.89,
+  "patrimonio": 113739632.44,
   "inversionMinima": 100,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 4309.735,
-    "ultimos7Dias": 1.385,
-    "unMes": 3.6379,
-    "noventaDias": -1.684,
-    "cientoOchentaDias": -6.3335,
-    "enElAnio": -2.6329,
-    "doceMeses": -3.9702
+    "valorCuotaparte": 4378.005,
+    "ultimos7Dias": 1.5841,
+    "unMes": 7.0311,
+    "noventaDias": 0.2628,
+    "cientoOchentaDias": -1.8631,
+    "enElAnio": -1.0905,
+    "doceMeses": -3.2607
   },
   "composicionCartera": [
     {
+      "nombre": "Fut Rofex BTC072026",
+      "porcentaje": 43.3
+    },
+    {
       "nombre": "Bono Boncer TZXD7",
-      "porcentaje": 27.5
+      "porcentaje": 27.2
     },
     {
       "nombre": "Lecer X30S6",
-      "porcentaje": 24.1
+      "porcentaje": 23.9
     },
     {
-      "nombre": "Bono Boncer TZX26",
-      "porcentaje": 23.6
+      "nombre": "Lecer X31L6",
+      "porcentaje": 21.2
     },
     {
       "nombre": "Ishares Bitcoin Trust ETF",
-      "porcentaje": 16.6
-    },
-    {
-      "nombre": "Fut Rofex BTC072026",
-      "porcentaje": 10.4
+      "porcentaje": 17.5
     },
     {
       "nombre": "Cedear Ishares Ethereum TR",
-      "porcentaje": 6.4
+      "porcentaje": 7.2
+    },
+    {
+      "nombre": "FCI MAF Money Market - Clase B",
+      "porcentaje": 3
     }
   ],
   "calificaciones": [],
