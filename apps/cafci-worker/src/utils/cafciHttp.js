@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { getProxyConfig } from '../config.js'
 
 const cafciBaseUrl = 'https://estadisticas.cafci.org.ar'
 const cafciUserAgent =
@@ -19,15 +20,51 @@ function buildCafciHeaders(extraHeaders = {}) {
   }
 }
 
-function formatCafciHttpError(error, targetUrl) {
+function buildCafciRequest(url, options = {}) {
+  const { proxyUrl, proxyToken, usesProxy } = getProxyConfig()
+  const headers = buildCafciHeaders(options.headers)
+
+  if (usesProxy) {
+    return {
+      url: proxyUrl,
+      options: {
+        ...options,
+        headers: {
+          ...headers,
+          'x-proxy-token': proxyToken,
+          'x-target-url': url,
+        },
+      },
+      usesProxy: true,
+      targetUrl: url,
+    }
+  }
+
+  return {
+    url,
+    options: {
+      ...options,
+      headers,
+    },
+    usesProxy: false,
+    targetUrl: url,
+  }
+}
+
+function formatCafciHttpError(error, targetUrl, usesProxy) {
   const status = error.response?.status
   const statusText = error.response?.statusText
   const statusLabel = status
     ? `${status} ${statusText ?? ''}`.trim()
     : 'network'
 
-  const hint =
-    status === 403 ? ' CloudFront bloqueó el request. Probá desde otra IP.' : ''
+  let hint = ''
+
+  if (status === 403) {
+    hint = usesProxy
+      ? ' CloudFront bloqueó el request incluso via proxy.'
+      : ' CloudFront bloqueó el request desde este servidor. Configurá CAFCI_WORKER_PROXY_URL y CAFCI_WORKER_PROXY_TOKEN (o VITE_PROXY_URL y VITE_PROXY_TOKEN).'
+  }
 
   return new Error(
     `CAFCI request failed (${statusLabel}): ${targetUrl}.${hint}`,
@@ -38,14 +75,13 @@ function formatCafciHttpError(error, targetUrl) {
 }
 
 export async function cafciGet(url, options = {}) {
+  const request = buildCafciRequest(url, options)
+
   try {
-    return await axios.get(url, {
-      ...options,
-      headers: buildCafciHeaders(options.headers),
-    })
+    return await axios.get(request.url, request.options)
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      throw formatCafciHttpError(error, url)
+      throw formatCafciHttpError(error, request.targetUrl, request.usesProxy)
     }
 
     throw error

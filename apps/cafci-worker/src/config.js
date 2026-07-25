@@ -107,3 +107,14 @@ export function isR2BackupConfigured() {
     config.bucket,
   )
 }
+
+export function getProxyConfig() {
+  const proxyUrl = readEnv('CAFCI_WORKER_PROXY_URL', 'VITE_PROXY_URL')
+  const proxyToken = readEnv('CAFCI_WORKER_PROXY_TOKEN', 'VITE_PROXY_TOKEN')
+
+  return {
+    proxyUrl,
+    proxyToken,
+    usesProxy: Boolean(proxyUrl && proxyToken),
+  }
+}
