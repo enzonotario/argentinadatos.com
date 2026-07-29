@@ -8,10 +8,11 @@ export const useEcharts = (chartRef) => {
     return isDark.value ? 'dark' : 'default'
   })
 
-  const { setOptions } = useECharts(chartRef, { theme, renderer: 'svg' })
+  const { setOptions, getInstance } = useECharts(chartRef, { theme, renderer: 'svg' })
 
   return {
     setOptions,
+    getInstance,
     theme,
   }
 }
