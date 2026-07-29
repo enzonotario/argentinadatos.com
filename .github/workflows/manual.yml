@@ -14,6 +14,7 @@ on:
           - pnpm run cron fci
           - pnpm run cron fciIA
           - pnpm run cron riesgoPais
+          - pnpm run cron confianzaGobierno
           - pnpm run cron /v1/feriados
           - pnpm run cron /v1/feriados-bancarios
           - pnpm run cron /v1/cotizaciones
@@ -22,6 +23,7 @@ on:
           - pnpm run cron /v1/finanzas/fci/fondos
           - pnpm run cron /v1/finanzas/fciIA
           - pnpm run cron /v1/finanzas/riesgo-pais
+          - pnpm run cron /v1/politica/indices/confianza-gobierno
           - pnpm run cron /v1/finanzas/rendimientos
           - pnpm run cron /v1/finanzas/criptopesos
           - pnpm run cron /v1/finanzas/plazo-fijo

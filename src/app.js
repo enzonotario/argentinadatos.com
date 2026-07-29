@@ -5,6 +5,7 @@ import { cronFinanzas } from '@/finanzas/finanzas.cron.js'
 import fci from '@/finanzas/fci/fci.comando.js'
 import fciIA from '@/finanzas/fci/fciIA.comando.js'
 import riesgoPais from '@/finanzas/indices/riesgo-pais/riesgoPais.comando.js'
+import confianzaGobierno from '@/politica/indices/confianza-gobierno/confianzaGobierno.comando.js'
 import rendimientos from '@/finanzas/rendimientos/rendimientos.comando.js'
 import criptopesos from '@/finanzas/criptopesos/criptopesos.comando.js'
 import plazoFijoComando from '@/finanzas/tasas/plazo-fijo/plazoFijo.comando.js'
@@ -26,11 +27,13 @@ const predefinidos = {
     '/v1/feriados-bancarios',
     '/v1/finanzas/cuentas-remuneradas-usd',
     '/v1/finanzas/remesas',
+    '/v1/politica/indices/confianza-gobierno',
   ],
   fci: ['/v1/finanzas/fci'],
   'fci-fondos': ['/v1/finanzas/fci/fondos'],
   fciIA: ['/v1/finanzas/fciIA'],
   riesgoPais: ['/v1/finanzas/riesgo-pais'],
+  confianzaGobierno: ['/v1/politica/indices/confianza-gobierno'],
   rendimientos: ['/v1/finanzas/rendimientos'],
   criptopesos: ['/v1/finanzas/criptopesos'],
   rem: ['/v1/finanzas/rem'],
@@ -55,6 +58,7 @@ export async function iniciar(comando) {
     case 'fci-fondos':
     case 'fciIA':
     case 'riesgoPais':
+    case 'confianzaGobierno':
     case 'rendimientos':
     case 'criptopesos':
     case 'rem':
@@ -94,6 +98,10 @@ export async function iniciar(comando) {
 
     case '/v1/finanzas/riesgo-pais':
       await riesgoPais()
+      break
+
+    case '/v1/politica/indices/confianza-gobierno':
+      await confianzaGobierno()
       break
 
     case '/v1/finanzas/rendimientos':

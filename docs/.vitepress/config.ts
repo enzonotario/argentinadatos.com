@@ -159,6 +159,18 @@ export default defineConfig({
         ],
       },
       {
+        text: 'Política',
+        items: [
+          addDocsPrefix({
+            ...sidebar.generateSidebarGroup({
+              tag: ['Política', 'Índices'],
+              text: 'Índices',
+            }),
+            collapsed: true,
+          }),
+        ],
+      },
+      {
         text: 'Senado',
         items: [
           addDocsPrefix(

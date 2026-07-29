@@ -404,6 +404,61 @@
         ]
       }
     },
+    "/v1/politica/indices/confianza-gobierno": {
+      "get": {
+        "summary": "Índice de Confianza en el Gobierno",
+        "tags": [
+          "Política",
+          "Índices"
+        ],
+        "description": "Devuelve la serie mensual del Índice de Confianza en el Gobierno (ICG) de la Universidad Torcuato Di Tella. Para obtener el último valor, consultar `/v1/politica/indices/confianza-gobierno/ultimo`.",
+        "responses": {
+          "200": {
+            "description": "Devuelve la serie mensual del ICG",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IndiceConfianzaGobierno"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-politica-indices-confianza-gobierno",
+        "x-data-source": [
+          "[UTDT - Índice de Confianza en el Gobierno](https://www.utdt.edu/icg)"
+        ]
+      }
+    },
+    "/v1/politica/indices/confianza-gobierno/ultimo": {
+      "get": {
+        "summary": "Índice de Confianza en el Gobierno (último)",
+        "tags": [
+          "Política",
+          "Índices"
+        ],
+        "description": "Devuelve el último valor publicado del Índice de Confianza en el Gobierno (ICG).",
+        "responses": {
+          "200": {
+            "description": "Devuelve el último valor del ICG",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IndiceConfianzaGobierno"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-politica-indices-confianza-gobierno-ultimo",
+        "x-data-source": [
+          "[UTDT - Índice de Confianza en el Gobierno](https://www.utdt.edu/icg)"
+        ]
+      }
+    },
     "/v1/finanzas/tasas/plazoFijo": {
       "get": {
         "summary": "Plazo fijo",
@@ -1825,6 +1880,31 @@
           "Example 1": {
             "fecha": "2020-01-01",
             "valor": 123.45
+          }
+        }
+      },
+      "IndiceConfianzaGobierno": {
+        "title": "IndiceConfianzaGobierno",
+        "type": "object",
+        "properties": {
+          "fecha": {
+            "type": "string",
+            "description": "Fecha del mes (primer día), en formato YYYY-MM-DD"
+          },
+          "valor": {
+            "type": "number",
+            "description": "Valor del Índice de Confianza en el Gobierno"
+          },
+          "variacion": {
+            "type": "number",
+            "description": "Variación mensual relativa del ICG respecto al mes anterior"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "fecha": "2026-07-01",
+            "valor": 1.935553,
+            "variacion": -0.06461
           }
         }
       },

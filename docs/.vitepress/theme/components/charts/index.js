@@ -28,6 +28,9 @@ export default {
   ChartIndicesRiesgoPais: defineAsyncComponent(
     () => import('./ChartIndicesRiesgoPais.vue'),
   ),
+  ChartIndicesConfianzaGobierno: defineAsyncComponent(
+    () => import('./ChartIndicesConfianzaGobierno.vue'),
+  ),
   ChartDiputadosBloque: defineAsyncComponent(
     () => import('./ChartDiputadosBloque.vue'),
   ),
