@@ -2,7 +2,7 @@
   "fondoId": "576",
   "claseId": "1169",
   "nombre": "MAF Renta Mixta",
-  "fechaActualizacion": "2026-07-28T03:01:54.000Z",
+  "fechaActualizacion": "2026-07-29T06:24:45.000Z",
   "historico": [
     {
       "slug": "maf-renta-mixta",
@@ -8738,6 +8738,22 @@
       "retornoDiario": 0.468378,
       "retornoAcumulado": 141.204336,
       "flujoEstimado": 18.640438,
+      "origen": "cafci-detail"
+    },
+    {
+      "slug": "maf-renta-mixta",
+      "fondoId": "576",
+      "claseId": "1169",
+      "nombre": "MAF Renta Mixta",
+      "fecha": "2026-07-28",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Plazo Flexible",
+      "valorCuotaparte": 208337.953,
+      "patrimonio": 19939958772.48,
+      "retornoDiario": 0.123775,
+      "retornoAcumulado": 141.502888,
+      "flujoEstimado": -325593.113411,
       "origen": "cafci-detail"
     }
   ]
