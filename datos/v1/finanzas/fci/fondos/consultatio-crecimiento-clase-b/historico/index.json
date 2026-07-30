@@ -2,7 +2,7 @@
   "fondoId": "585",
   "claseId": "1184",
   "nombre": "Consultatio Crecimiento - Clase B",
-  "fechaActualizacion": "2026-07-29T06:24:45.000Z",
+  "fechaActualizacion": "2026-07-30T06:16:40.000Z",
   "historico": [
     {
       "slug": "consultatio-crecimiento-clase-b",
@@ -8578,6 +8578,22 @@
       "retornoDiario": 0.010441,
       "retornoAcumulado": 126.935637,
       "flujoEstimado": 16.781951,
+      "origen": "cafci-detail"
+    },
+    {
+      "slug": "consultatio-crecimiento-clase-b",
+      "fondoId": "585",
+      "claseId": "1184",
+      "nombre": "Consultatio Crecimiento - Clase B",
+      "fecha": "2026-07-29",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Plazo Flexible",
+      "valorCuotaparte": 212213.301,
+      "patrimonio": 6354938419.95,
+      "retornoDiario": -0.131102,
+      "retornoAcumulado": 126.638119,
+      "flujoEstimado": -22.33531,
       "origen": "cafci-detail"
     }
   ]
