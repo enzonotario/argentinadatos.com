@@ -25,8 +25,8 @@ importers:
         specifier: ^0.1.0-beta.2
         version: 0.1.0-beta.2(@types/node@24.10.1)(lightningcss@1.32.0)
       axios:
-        specifier: ^1.13.2
-        version: 1.13.2
+        specifier: ^1.13.5
+        version: 1.13.5
       cheerio:
         specifier: 1.0.0-rc.12
         version: 1.0.0-rc.12
@@ -132,10 +132,10 @@ importers:
         version: 4.3.2
       vitepress:
         specifier: ^1.6.4
-        version: 1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.13.2)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3)
+        version: 1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.13.5)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3)
       vitepress-openapi:
         specifier: ^0.2.0
-        version: 0.2.1(vitepress@1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.13.2)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3))(vue@3.5.13(typescript@5.9.3))
+        version: 0.2.1(vitepress@1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.13.5)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3))(vue@3.5.13(typescript@5.9.3))
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.9.3)
@@ -2927,6 +2927,9 @@ packages:
   axios@1.13.2:
     resolution: {integrity: sha512-VPk9ebNqPcy5lRGuSlKx752IlDatOjT9paPlm8A7yOuW2Fbvp4X3JznJtT4f0GzGLLiWE9W8onz51SqLYwzGaA==}
 
+  axios@1.13.5:
+    resolution: {integrity: sha512-cz4ur7Vb0xS4/KUN0tPWe44eqxrIu31me+fbang3ijiNscE129POzipJJA6zniq2C/Z6sJCjMimjS8Lc/GAs8Q==}
+
   axios@1.8.4:
     resolution: {integrity: sha512-eBSYY4Y68NNlHbHBMdeDmKNtDgXWhQsJcGqzO3iLUM0GraQFSS9cVgPX5I9b3lbdFKyYoAEGAZF1DwhTaljNAw==}
 
@@ -4117,6 +4120,15 @@ packages:
 
   follow-redirects@1.15.9:
     resolution: {integrity: sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+
+  follow-redirects@1.16.0:
+    resolution: {integrity: sha512-y5rN/uOsadFT/JfYwhxRS5R7Qce+g3zG97+JrtFZlC9klX/W5hD7iiLzScI4nZqUS7DNUdhPgw4xI8W2LuXlUw==}
     engines: {node: '>=4.0'}
     peerDependencies:
       debug: '*'
@@ -7135,7 +7147,7 @@ snapshots:
 
   '@axiomhq/axiom-node@0.12.0':
     dependencies:
-      axios: 1.13.2
+      axios: 1.13.5
       axios-retry: 3.9.1
       to-time: 1.0.2
       winston-transport: 4.9.0
@@ -8919,13 +8931,13 @@ snapshots:
       '@vueuse/shared': 14.2.1(vue@3.5.13(typescript@5.9.3))
       vue: 3.5.13(typescript@5.9.3)
 
-  '@vueuse/integrations@12.8.2(axios@1.13.2)(change-case@5.4.4)(focus-trap@7.6.4)(typescript@5.9.3)':
+  '@vueuse/integrations@12.8.2(axios@1.13.5)(change-case@5.4.4)(focus-trap@7.6.4)(typescript@5.9.3)':
     dependencies:
       '@vueuse/core': 12.8.2(typescript@5.9.3)
       '@vueuse/shared': 12.8.2(typescript@5.9.3)
       vue: 3.5.13(typescript@5.9.3)
     optionalDependencies:
-      axios: 1.13.2
+      axios: 1.13.5
       change-case: 5.4.4
       focus-trap: 7.6.4
     transitivePeerDependencies:
@@ -9168,6 +9180,14 @@ snapshots:
   axios@1.13.2:
     dependencies:
       follow-redirects: 1.15.9
+      form-data: 4.0.5
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
+
+  axios@1.13.5:
+    dependencies:
+      follow-redirects: 1.16.0
       form-data: 4.0.5
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -10775,6 +10795,8 @@ snapshots:
       tabbable: 6.2.0
 
   follow-redirects@1.15.9: {}
+
+  follow-redirects@1.16.0: {}
 
   for-in@1.0.2: {}
 
@@ -13361,7 +13383,7 @@ snapshots:
       lightningcss: 1.32.0
       yaml: 2.8.3
 
-  vitepress-openapi@0.2.1(vitepress@1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.13.2)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3))(vue@3.5.13(typescript@5.9.3)):
+  vitepress-openapi@0.2.1(vitepress@1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.13.5)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3))(vue@3.5.13(typescript@5.9.3)):
     dependencies:
       '@vueuse/core': 14.2.1(vue@3.5.13(typescript@5.9.3))
       class-variance-authority: 0.7.1
@@ -13369,12 +13391,12 @@ snapshots:
       lucide-vue-next: 1.0.0(vue@3.5.13(typescript@5.9.3))
       markdown-it-link-attributes: 4.0.1
       reka-ui: 2.10.1(vue@3.5.13(typescript@5.9.3))
-      vitepress: 1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.13.2)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3)
+      vitepress: 1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.13.5)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3)
       vue: 3.5.13(typescript@5.9.3)
     transitivePeerDependencies:
       - '@vue/composition-api'
 
-  vitepress@1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.13.2)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3):
+  vitepress@1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.13.5)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3):
     dependencies:
       '@docsearch/css': 3.8.2
       '@docsearch/js': 3.8.2(@algolia/client-search@5.23.3)(search-insights@2.17.3)
@@ -13387,7 +13409,7 @@ snapshots:
       '@vue/devtools-api': 7.7.2
       '@vue/shared': 3.5.13
       '@vueuse/core': 12.8.2(typescript@5.9.3)
-      '@vueuse/integrations': 12.8.2(axios@1.13.2)(change-case@5.4.4)(focus-trap@7.6.4)(typescript@5.9.3)
+      '@vueuse/integrations': 12.8.2(axios@1.13.5)(change-case@5.4.4)(focus-trap@7.6.4)(typescript@5.9.3)
       focus-trap: 7.6.4
       mark.js: 8.11.1
       minisearch: 7.1.2
