@@ -2,7 +2,7 @@
   "fondoId": "662",
   "claseId": "1368",
   "nombre": "Consultatio Retorno Absoluto - Clase B",
-  "fechaActualizacion": "2026-07-30T06:16:40.000Z",
+  "fechaActualizacion": "2026-07-31T05:37:16.000Z",
   "historico": [
     {
       "slug": "consultatio-retorno-absoluto-clase-b",
@@ -8594,6 +8594,22 @@
       "retornoDiario": 0.030734,
       "retornoAcumulado": 216.322337,
       "flujoEstimado": 0.003506,
+      "origen": "cafci-detail"
+    },
+    {
+      "slug": "consultatio-retorno-absoluto-clase-b",
+      "fondoId": "662",
+      "claseId": "1368",
+      "nombre": "Consultatio Retorno Absoluto - Clase B",
+      "fecha": "2026-07-30",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 255244.233,
+      "patrimonio": 3449637.45,
+      "retornoDiario": -0.008882,
+      "retornoAcumulado": 216.29424,
+      "flujoEstimado": -868760.475825,
       "origen": "cafci-detail"
     }
   ]
