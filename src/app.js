@@ -21,7 +21,11 @@ import deployComparatasas from '@/deploy/comparatasas.comando.js'
 import { actualizarOpenApiAño } from '@/utils/actualizarOpenApiAño.js'
 
 const predefinidos = {
-  diario: ['/v1/cotizaciones', '/v1/finanzas'],
+  diario: [
+    '/v1/cotizaciones',
+    '/v1/finanzas',
+    '/v1/politica/indices/confianza-gobierno',
+  ],
   mensual: [
     '/v1/feriados',
     '/v1/feriados-bancarios',
