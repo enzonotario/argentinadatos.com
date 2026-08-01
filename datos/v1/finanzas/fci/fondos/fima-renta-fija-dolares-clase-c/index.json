@@ -2,7 +2,7 @@
   "fondoId": "1460",
   "claseId": "4317",
   "nombre": "Fima Renta Fija Dólares - Clase C",
-  "fecha": "2026-07-30",
+  "fecha": "2026-07-31",
   "administradora": "Galicia Asset Management S.A.U.",
   "depositaria": "Banco de Galicia y Buenos Aires S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,43 +13,47 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1426",
-  "patrimonio": 146178615.94,
+  "patrimonio": 147494359.99,
   "inversionMinima": 250000,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1129.296,
-    "ultimos7Dias": 0.1331,
-    "unMes": 0.9043,
-    "noventaDias": 1.5573,
-    "cientoOchentaDias": 4.2232,
-    "enElAnio": 5.5718,
-    "doceMeses": 9.4736
+    "valorCuotaparte": 1126.614,
+    "ultimos7Dias": -0.4051,
+    "unMes": 0.6647,
+    "noventaDias": 1.3161,
+    "cientoOchentaDias": 3.9757,
+    "enElAnio": 5.321,
+    "doceMeses": 9.2944
   },
   "composicionCartera": [
     {
       "nombre": "Bono Bopreal 2027 Serie 1 Clase B BPOB7",
-      "porcentaje": 5.9
+      "porcentaje": 5.7
+    },
+    {
+      "nombre": "Cta Cte U$S Bco Galicia",
+      "porcentaje": 4
     },
     {
       "nombre": "ON Banco Macro Clase G",
-      "porcentaje": 3.5
+      "porcentaje": 3.6
     },
     {
       "nombre": "ON Tecpetrol C12",
-      "porcentaje": 3.5
-    },
-    {
-      "nombre": "Bono Bopreal 2027 Serie 1 Clase C BPOC7",
       "porcentaje": 3.4
     },
     {
-      "nombre": "Bono Bopreal 2027 Serie 1 Clase D BPOD7",
+      "nombre": "Bono Bopreal 2027 Serie 1 Clase C BPOC7",
       "porcentaje": 3.3
     },
     {
-      "nombre": "ON Pluspetrol Clase 6",
+      "nombre": "Bono Bopreal 2027 Serie 1 Clase D BPOD7",
       "porcentaje": 3.2
+    },
+    {
+      "nombre": "ON Pluspetrol Clase 6",
+      "porcentaje": 3.1
     },
     {
       "nombre": "ON YPF Clase 42",
@@ -60,19 +64,15 @@
       "porcentaje": 2.9
     },
     {
-      "nombre": "ON Pampa Energia C27",
-      "porcentaje": 2.2
-    },
-    {
-      "nombre": "Caucion Colocadora U$S BYMA",
-      "porcentaje": 2.2
-    },
-    {
-      "nombre": "Pzo Fi U$S Bco Nacion",
-      "porcentaje": 2.2
+      "nombre": "ON YPF Clase 43",
+      "porcentaje": 2.8
     },
     {
       "nombre": "ON Banco Macro Clase H Reg S",
+      "porcentaje": 2.4
+    },
+    {
+      "nombre": "ON Pampa Energia C27",
       "porcentaje": 2.1
     },
     {
@@ -81,11 +81,11 @@
     },
     {
       "nombre": "ON Tecpetrol C13",
-      "porcentaje": 2.1
+      "porcentaje": 2
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 58.2
+      "porcentaje": 55.7
     }
   ],
   "calificaciones": [],

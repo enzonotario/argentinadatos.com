@@ -2,7 +2,7 @@
   "fondoId": "1785",
   "claseId": "6095",
   "nombre": "BAVSA Global Dólar - Clase A",
-  "fecha": "2026-07-30",
+  "fecha": "2026-07-31",
   "administradora": "BAVSA Fondos S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,23 +13,27 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1751",
-  "patrimonio": 1124442.47,
+  "patrimonio": 1135199.19,
   "inversionMinima": 0,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1037.891,
-    "ultimos7Dias": 0.112,
-    "unMes": 0.3099,
-    "noventaDias": 1.5113,
-    "cientoOchentaDias": 3.7974,
+    "valorCuotaparte": 1038.127,
+    "ultimos7Dias": -0.0221,
+    "unMes": 0.3328,
+    "noventaDias": 1.5344,
+    "cientoOchentaDias": 3.821,
     "enElAnio": null,
     "doceMeses": null
   },
   "composicionCartera": [
     {
       "nombre": "FCI Argenfunds Liquidez Dólares - Clase B",
-      "porcentaje": 9.5
+      "porcentaje": 8.8
+    },
+    {
+      "nombre": "FCI Allaria Dólar Ahorro - Clase B",
+      "porcentaje": 5.1
     },
     {
       "nombre": "Bono del Tesoro Nacional AO27",
@@ -37,47 +41,43 @@
     },
     {
       "nombre": "ON Mirgor Clase 4",
-      "porcentaje": 3.8
+      "porcentaje": 3.5
     },
     {
       "nombre": "ON Sidersa Clase 1",
-      "porcentaje": 2.9
+      "porcentaje": 2.6
     },
     {
       "nombre": "ON Mirgor Clase 3",
-      "porcentaje": 2.8
+      "porcentaje": 2.6
     },
     {
       "nombre": "ON TGS C4",
-      "porcentaje": 2.5
-    },
-    {
-      "nombre": "ON YPF Energia Electrica C21",
-      "porcentaje": 2.5
-    },
-    {
-      "nombre": "ON Edenor Clase 3",
-      "porcentaje": 2.4
-    },
-    {
-      "nombre": "ON John Deere Cia. Fin C17",
-      "porcentaje": 2.4
-    },
-    {
-      "nombre": "ON Camuzzi Gas C1 USD",
       "porcentaje": 2.3
     },
     {
-      "nombre": "FCI Allaria Dólar Ahorro - Clase B",
-      "porcentaje": 2
+      "nombre": "ON John Deere Cia. Fin C17",
+      "porcentaje": 2.3
     },
     {
-      "nombre": "ON Telecom C27",
+      "nombre": "ON YPF Energia Electrica C21",
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "ON Edenor Clase 3",
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "ON Camuzzi Gas C1 USD",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "Bonos Rep Argentina AE38",
       "porcentaje": 2
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 59.3
+      "porcentaje": 59.1
     }
   ],
   "calificaciones": [],

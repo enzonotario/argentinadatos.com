@@ -2,7 +2,7 @@
   "fondoId": "723",
   "claseId": "4940",
   "nombre": "CMA Renta Dólar - Clase Ley N° 27.743",
-  "fecha": "2026-07-30",
+  "fecha": "2026-07-31",
   "administradora": "Capital Markets Argentina Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,23 +13,27 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "878",
-  "patrimonio": 1812088.84,
+  "patrimonio": 1809657.92,
   "inversionMinima": 1000,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1140.938,
-    "ultimos7Dias": -0.0755,
-    "unMes": 0.6724,
-    "noventaDias": 0.9553,
-    "cientoOchentaDias": 2.9255,
-    "enElAnio": 4.333,
-    "doceMeses": 8.43
+    "valorCuotaparte": 1139.407,
+    "ultimos7Dias": -0.2295,
+    "unMes": 0.5373,
+    "noventaDias": 0.8198,
+    "cientoOchentaDias": 2.7873,
+    "enElAnio": 4.193,
+    "doceMeses": 8.2175
   },
   "composicionCartera": [
     {
       "nombre": "ON Loma Negra C5",
-      "porcentaje": 7.4
+      "porcentaje": 7.2
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional AO27",
+      "porcentaje": 6.1
     },
     {
       "nombre": "US Treasury Bill 200826",
@@ -37,10 +41,6 @@
     },
     {
       "nombre": "ON Transp Gas Sur Cl 3",
-      "porcentaje": 4.7
-    },
-    {
-      "nombre": "Bono del Tesoro Nacional AO27",
       "porcentaje": 4.7
     },
     {
@@ -53,19 +53,15 @@
     },
     {
       "nombre": "BR Brasil 2035",
-      "porcentaje": 3.4
+      "porcentaje": 3.5
     },
     {
       "nombre": "BR Brasil LTN 091231",
       "porcentaje": 2.9
     },
     {
-      "nombre": "Cta Cte U$S Bco Valores",
-      "porcentaje": 2.8
-    },
-    {
       "nombre": "ON YPF Energia Electrica C21",
-      "porcentaje": 2.8
+      "porcentaje": 2.7
     },
     {
       "nombre": "ON Camuzzi Gas C1 USD",
@@ -89,7 +85,7 @@
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 45.9
+      "porcentaje": 47.5
     }
   ],
   "calificaciones": [],

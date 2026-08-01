@@ -2,7 +2,7 @@
   "fondoId": "121",
   "claseId": "121",
   "nombre": "Pellegrini Renta",
-  "fecha": "2026-07-30",
+  "fecha": "2026-07-31",
   "administradora": "Pellegrini S.A.S.G.F.C.I.",
   "depositaria": "Banco de La Nacion Argentina",
   "tipoRenta": "Mercado de Dinero",
@@ -13,34 +13,38 @@
   "duracion": "No Aplicable",
   "moneda": "Peso Argentina",
   "codigoCNV": "163",
-  "patrimonio": 60323162.06,
+  "patrimonio": 60352760.52,
   "inversionMinima": 100,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 7017.608,
-    "ultimos7Dias": 17.3934,
-    "unMes": 16.2945,
-    "noventaDias": 15.5036,
-    "cientoOchentaDias": 16.8012,
-    "enElAnio": 18.0106,
-    "doceMeses": 24.4548
+    "valorCuotaparte": 7021.051,
+    "ultimos7Dias": 17.4738,
+    "unMes": 16.3543,
+    "noventaDias": 15.5373,
+    "cientoOchentaDias": 16.8155,
+    "enElAnio": 18.019,
+    "doceMeses": 24.4244
   },
   "composicionCartera": [
     {
-      "nombre": "Cta Cte $ Bco Nacion",
-      "porcentaje": 37.8
+      "nombre": "Cta Cte $ Rem Bco Supervi",
+      "porcentaje": 25.3
     },
     {
-      "nombre": "Cta Cte $ Rem Bco Supervi",
-      "porcentaje": 25.4
+      "nombre": "Cta Cte $ Bco Nacion",
+      "porcentaje": 20.9
     },
     {
       "nombre": "Pzo Fi $ Bco Galicia",
-      "porcentaje": 20
+      "porcentaje": 20.1
     },
     {
       "nombre": "Pzo Fi $ Bco Santander Ri",
+      "porcentaje": 16.9
+    },
+    {
+      "nombre": "Pzo Fi $ Nvo Bco Indus",
       "porcentaje": 16.8
     }
   ],

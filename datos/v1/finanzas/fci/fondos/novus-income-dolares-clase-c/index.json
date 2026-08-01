@@ -2,7 +2,7 @@
   "fondoId": "1645",
   "claseId": "5478",
   "nombre": "Novus Income Dólares - Clase C",
-  "fecha": "2026-07-30",
+  "fecha": "2026-07-31",
   "administradora": "Novus Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,23 +13,51 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1550",
-  "patrimonio": 1331041.59,
+  "patrimonio": 1328900.53,
   "inversionMinima": 1000000,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 996.743,
-    "ultimos7Dias": -0.6768,
-    "unMes": -0.3257,
-    "noventaDias": -0.3257,
-    "cientoOchentaDias": -0.3257,
-    "enElAnio": -0.3257,
-    "doceMeses": -0.3257
+    "valorCuotaparte": 995.14,
+    "ultimos7Dias": -0.9944,
+    "unMes": -0.486,
+    "noventaDias": -0.486,
+    "cientoOchentaDias": -0.486,
+    "enElAnio": -0.486,
+    "doceMeses": -0.486
   },
   "composicionCartera": [
     {
       "nombre": "Cta Cte U$S Bco Valores",
-      "porcentaje": 100
+      "porcentaje": 40.4
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional AO28",
+      "porcentaje": 24.2
+    },
+    {
+      "nombre": "Bonos Rep Argentina AE38",
+      "porcentaje": 12.4
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional AN29",
+      "porcentaje": 10.3
+    },
+    {
+      "nombre": "ON YPF Clase 34",
+      "porcentaje": 3.9
+    },
+    {
+      "nombre": "ON Vista Energy 33",
+      "porcentaje": 3.6
+    },
+    {
+      "nombre": "ON Banco Mariva S3 060727",
+      "porcentaje": 3.6
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.7
     }
   ],
   "calificaciones": [],

@@ -2,7 +2,7 @@
   "fondoId": "407",
   "claseId": "736",
   "nombre": "1822 Raices Valores Fiduciarios",
-  "fecha": "2026-07-30",
+  "fecha": "2026-07-31",
   "administradora": "Provinfondos S.A.S.G.F.C.I.",
   "depositaria": "Banco Provincia de Buenos Aires",
   "tipoRenta": "Renta Fija",
@@ -13,20 +13,24 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Peso Argentina",
   "codigoCNV": "508",
-  "patrimonio": 235019070007.95,
+  "patrimonio": 243136019530.66,
   "inversionMinima": 1000,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 234724.41,
-    "ultimos7Dias": 0.4276,
-    "unMes": 1.9088,
-    "noventaDias": 6.231,
-    "cientoOchentaDias": 15.437,
-    "enElAnio": 18.9228,
-    "doceMeses": 43.2923
+    "valorCuotaparte": 235198.069,
+    "ultimos7Dias": 0.4585,
+    "unMes": 2.1144,
+    "noventaDias": 6.4454,
+    "cientoOchentaDias": 15.6699,
+    "enElAnio": 19.1627,
+    "doceMeses": 43.2708
   },
   "composicionCartera": [
+    {
+      "nombre": "Caucion Colocadora $ BYMA",
+      "porcentaje": 7.7
+    },
     {
       "nombre": "FF Mercado Credito 47 CA",
       "porcentaje": 6.2
@@ -41,7 +45,7 @@
     },
     {
       "nombre": "FF Mercado Credito 49 CA",
-      "porcentaje": 4.3
+      "porcentaje": 4.4
     },
     {
       "nombre": "FF Mercado Credito 45 CA",
@@ -52,20 +56,8 @@
       "porcentaje": 4.2
     },
     {
-      "nombre": "FCI Fima Premium Clase B",
-      "porcentaje": 4.2
-    },
-    {
-      "nombre": "FF Cuotas Cencosud S57 VDFA",
-      "porcentaje": 3.4
-    },
-    {
-      "nombre": "FF Mercado Credito 43 CA",
-      "porcentaje": 2.7
-    },
-    {
       "nombre": "FF Cuotas Cencosud S58 VDFA",
-      "porcentaje": 2.6
+      "porcentaje": 2.7
     },
     {
       "nombre": "FF Mercado Credito 50 CA",
@@ -73,23 +65,31 @@
     },
     {
       "nombre": "FF Mercado Credito 51 CA",
-      "porcentaje": 2.5
+      "porcentaje": 2.6
+    },
+    {
+      "nombre": "FF Cuotas Cencosud S57 VDFA",
+      "porcentaje": 2.4
     },
     {
       "nombre": "FF Megabono 345 Clase A",
       "porcentaje": 2.3
     },
     {
+      "nombre": "Lecap S30S6",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "Lecap S31G6",
+      "porcentaje": 2.2
+    },
+    {
       "nombre": "FF Megabono 349 Clase A",
       "porcentaje": 2.2
     },
     {
-      "nombre": "FF Creditech S6 CA",
-      "porcentaje": 2.1
-    },
-    {
       "nombre": "Resto de Activos",
-      "porcentaje": 46.3
+      "porcentaje": 43
     }
   ],
   "calificaciones": [

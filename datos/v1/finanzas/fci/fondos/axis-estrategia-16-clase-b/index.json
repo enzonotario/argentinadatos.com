@@ -2,7 +2,7 @@
   "fondoId": "1452",
   "claseId": "4287",
   "nombre": "Axis Estrategia 16 - Clase B",
-  "fecha": "2026-07-30",
+  "fecha": "2026-07-31",
   "administradora": "Axis S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,26 +13,30 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Peso Argentina",
   "codigoCNV": "1446",
-  "patrimonio": 10282887765.69,
+  "patrimonio": 10285923218.09,
   "inversionMinima": 10000,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 2091.66,
-    "ultimos7Dias": 0.4196,
-    "unMes": 2.004,
-    "noventaDias": 7.4312,
-    "cientoOchentaDias": 15.7512,
-    "enElAnio": 18.9309,
-    "doceMeses": 39.3563
+    "valorCuotaparte": 2092.277,
+    "ultimos7Dias": 0.3199,
+    "unMes": 2.0341,
+    "noventaDias": 7.4629,
+    "cientoOchentaDias": 15.7853,
+    "enElAnio": 18.966,
+    "doceMeses": 39.2944
   },
   "composicionCartera": [
     {
       "nombre": "Cheque E *MAV270701016",
-      "porcentaje": 4
+      "porcentaje": 4.1
     },
     {
       "nombre": "FCI MEGAQM Pesos - Clase B",
+      "porcentaje": 4.1
+    },
+    {
+      "nombre": "Cheque E *MAV260801205",
       "porcentaje": 4
     },
     {
@@ -40,8 +44,8 @@
       "porcentaje": 4
     },
     {
-      "nombre": "Cheque E *MAV260801205",
-      "porcentaje": 3.9
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 3.7
     },
     {
       "nombre": "Factura E %ASF290700008",
@@ -52,19 +56,15 @@
       "porcentaje": 3.3
     },
     {
-      "nombre": "Caucion Colocadora $ Merval",
-      "porcentaje": 2.7
-    },
-    {
       "nombre": "Pase Colocador ARS MAV",
       "porcentaje": 2.3
     },
     {
-      "nombre": "Pagare #UMV180860032",
+      "nombre": "Cheque E *MAV100801447",
       "porcentaje": 2.3
     },
     {
-      "nombre": "Cheque E *MAV100801447",
+      "nombre": "Pagare #UMV180860032",
       "porcentaje": 2.3
     },
     {
@@ -73,11 +73,15 @@
     },
     {
       "nombre": "Pagare #MAV261060020",
-      "porcentaje": 2.1
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "Pagare #MAV091160012",
+      "porcentaje": 2
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 62.6
+      "porcentaje": 59.4
     }
   ],
   "calificaciones": [],

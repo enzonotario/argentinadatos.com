@@ -2,7 +2,7 @@
   "fondoId": "1552",
   "claseId": "4788",
   "nombre": "BAVSA Ahorro Dólar - Clase B",
-  "fecha": "2026-07-30",
+  "fecha": "2026-07-31",
   "administradora": "BAVSA Fondos S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,55 +13,63 @@
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1571",
-  "patrimonio": 20093894.19,
+  "patrimonio": 17007602.75,
   "inversionMinima": 0,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1020.335,
-    "ultimos7Dias": 0.7564,
-    "unMes": 0.8305,
-    "noventaDias": 0.8339,
-    "cientoOchentaDias": 0.9061,
-    "enElAnio": 0.9546,
-    "doceMeses": 1.076
+    "valorCuotaparte": 1020.36,
+    "ultimos7Dias": 0.7718,
+    "unMes": 0.8326,
+    "noventaDias": 0.8346,
+    "cientoOchentaDias": 0.906,
+    "enElAnio": 0.9543,
+    "doceMeses": 1.0742
   },
   "composicionCartera": [
     {
+      "nombre": "Cta Cte U$S Bco Comafi",
+      "porcentaje": 25.6
+    },
+    {
       "nombre": "Pzo Fi U$S Bco Sol",
-      "porcentaje": 25.2
+      "porcentaje": 20.3
     },
     {
       "nombre": "Pzo Fi U$S Bco Nacion",
-      "porcentaje": 22.6
-    },
-    {
-      "nombre": "Caucion Colocadora $ Merval",
-      "porcentaje": 21.3
-    },
-    {
-      "nombre": "Cta Cte U$S Bco Comafi",
-      "porcentaje": 9.9
+      "porcentaje": 19.5
     },
     {
       "nombre": "Pzo Fi U$S Bco Patagonia",
-      "porcentaje": 8.1
+      "porcentaje": 9.1
     },
     {
-      "nombre": "Pzo Fi U$S Bco Hipot",
-      "porcentaje": 4.8
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 6
     },
     {
       "nombre": "Pzo Fi U$S Bco Galicia",
-      "porcentaje": 3.2
+      "porcentaje": 5.2
+    },
+    {
+      "nombre": "Pzo Fi U$S Bco Hipot",
+      "porcentaje": 3.9
+    },
+    {
+      "nombre": "Pzo Fi U$S Bco BBVA",
+      "porcentaje": 3.9
+    },
+    {
+      "nombre": "Pzo Fi U$S Bco CMF",
+      "porcentaje": 2.6
     },
     {
       "nombre": "Pzo Fi $ Nvo Bco Indus",
-      "porcentaje": 3.2
+      "porcentaje": 2.6
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 1.6
+      "porcentaje": 1.3
     }
   ],
   "calificaciones": [],

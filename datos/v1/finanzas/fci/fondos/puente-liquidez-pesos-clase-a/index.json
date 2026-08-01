@@ -2,7 +2,7 @@
   "fondoId": "1890",
   "claseId": "6530",
   "nombre": "Puente Liquidez Pesos - Clase A",
-  "fecha": "2026-07-30",
+  "fecha": "2026-07-31",
   "administradora": "Puente Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,13 +13,13 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Peso Argentina",
   "codigoCNV": "1909",
-  "patrimonio": 1315427774.7,
+  "patrimonio": 1211221328.76,
   "inversionMinima": 1,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1011.523,
-    "ultimos7Dias": 14.904,
+    "valorCuotaparte": 1012.024,
+    "ultimos7Dias": 15.2956,
     "unMes": null,
     "noventaDias": null,
     "cientoOchentaDias": null,
@@ -28,50 +28,54 @@
   },
   "composicionCartera": [
     {
-      "nombre": "Pase Colocador ARS BYMA",
-      "porcentaje": 19.9
-    },
-    {
       "nombre": "Caucion Colocadora $ Merval",
-      "porcentaje": 19.9
+      "porcentaje": 20.1
     },
     {
-      "nombre": "Cta Cte $ Bco Nacion",
-      "porcentaje": 19.5
+      "nombre": "Pase Colocador ARS BYMA",
+      "porcentaje": 19.7
     },
     {
       "nombre": "Pzo Fi $ Bco Santander Ri",
-      "porcentaje": 15.4
-    },
-    {
-      "nombre": "Cta Cte $ Bco Comafi",
-      "porcentaje": 12.6
-    },
-    {
-      "nombre": "Pzo Fi $ ICBC",
-      "porcentaje": 6.5
-    },
-    {
-      "nombre": "Pzo Fi $ Bco Galicia",
-      "porcentaje": 2.6
+      "porcentaje": 13.3
     },
     {
       "nombre": "Cta Cte $ ICBC",
-      "porcentaje": 2
+      "porcentaje": 12.6
+    },
+    {
+      "nombre": "Cta Cte $ Bco Patag Sud",
+      "porcentaje": 12.6
+    },
+    {
+      "nombre": "Cta Cte $ Bco Nacion",
+      "porcentaje": 12.6
+    },
+    {
+      "nombre": "Cta Cte $ Bco Comafi",
+      "porcentaje": 3.3
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Patagonia",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "Pzo Fi $ ICBC",
+      "porcentaje": 2.1
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 1.6
+      "porcentaje": 1.7
     }
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 2.75,
+    "honorarioDepositaria": 0.12,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },

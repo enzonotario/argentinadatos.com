@@ -2,7 +2,7 @@
   "fondoId": "1731",
   "claseId": "5852",
   "nombre": "Novus Dólar MM - Clase F",
-  "fecha": "2026-07-30",
+  "fecha": "2026-07-31",
   "administradora": "Novus Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,43 +13,47 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense Billete",
   "codigoCNV": "1776",
-  "patrimonio": 664060.27,
+  "patrimonio": 679595.35,
   "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1001.106,
-    "ultimos7Dias": 0.375,
-    "unMes": 0.4985,
-    "noventaDias": 0.4007,
+    "valorCuotaparte": 1001.119,
+    "ultimos7Dias": 0.3855,
+    "unMes": 0.4977,
+    "noventaDias": 0.4015,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
   },
   "composicionCartera": [
     {
+      "nombre": "Cta Cte U$S BBVA",
+      "porcentaje": 30.5
+    },
+    {
       "nombre": "Cta Cte U$S Bco Mariva",
-      "porcentaje": 21.7
+      "porcentaje": 18.5
     },
     {
       "nombre": "Caucion Colocadora U$S Merval",
-      "porcentaje": 20.1
-    },
-    {
-      "nombre": "Pzo Fi U$S Bco Nacion",
-      "porcentaje": 18.9
-    },
-    {
-      "nombre": "Cta Cte U$S Bco Galicia",
-      "porcentaje": 14.9
-    },
-    {
-      "nombre": "Cta Cte U$S BBVA",
-      "porcentaje": 13.8
+      "porcentaje": 18.5
     },
     {
       "nombre": "Pzo Fi U$S Bco Macro Ban",
-      "porcentaje": 10.7
+      "porcentaje": 13
+    },
+    {
+      "nombre": "Cta Cte U$S Bco Galicia",
+      "porcentaje": 12.7
+    },
+    {
+      "nombre": "Pzo Fi U$S Bco Patagonia",
+      "porcentaje": 5.7
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.2
     }
   ],
   "calificaciones": [],
