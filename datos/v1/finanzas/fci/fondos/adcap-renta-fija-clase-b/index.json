@@ -2,7 +2,7 @@
   "fondoId": "531",
   "claseId": "1071",
   "nombre": "Adcap Renta Fija - Clase B",
-  "fecha": "2026-07-31",
+  "fecha": "2026-08-03",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,34 +13,34 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Peso Argentina",
   "codigoCNV": "571",
-  "patrimonio": 1971532819.15,
+  "patrimonio": 1977619117.42,
   "inversionMinima": 0,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 207364.098,
-    "ultimos7Dias": 0.1896,
-    "unMes": 1.2237,
-    "noventaDias": 5.2085,
-    "cientoOchentaDias": 13.0375,
-    "enElAnio": 15.8905,
-    "doceMeses": 37.0982
+    "valorCuotaparte": 207568.335,
+    "ultimos7Dias": 0.224,
+    "unMes": 0.9316,
+    "noventaDias": 5.171,
+    "cientoOchentaDias": 12.8937,
+    "enElAnio": 16.0047,
+    "doceMeses": 36.8364
   },
   "composicionCartera": [
+    {
+      "nombre": "Lecap S13N6",
+      "porcentaje": 9.8
+    },
     {
       "nombre": "ON Mercado Pago C3",
       "porcentaje": 6.5
     },
     {
       "nombre": "ON Banco Hipotecario C13",
-      "porcentaje": 6.5
+      "porcentaje": 6.4
     },
     {
       "nombre": "Lecap S15S6",
-      "porcentaje": 6.5
-    },
-    {
-      "nombre": "ON BBVA Frances Cl 47",
       "porcentaje": 6.4
     },
     {
@@ -48,32 +48,28 @@
       "porcentaje": 6.4
     },
     {
+      "nombre": "ON BBVA Frances Cl 47",
+      "porcentaje": 6.4
+    },
+    {
       "nombre": "Bono del Tesoro Nacional T15E7",
       "porcentaje": 6.3
     },
     {
-      "nombre": "Bono Dual TXMJ8",
-      "porcentaje": 5.4
-    },
-    {
       "nombre": "Letra Tesoro Nac T30A7",
-      "porcentaje": 5.4
-    },
-    {
-      "nombre": "ON Banco Nacion Argentina Clase 1",
       "porcentaje": 5.3
     },
     {
-      "nombre": "Lecap S13N6",
-      "porcentaje": 4.5
+      "nombre": "ON Banco Nacion Argentina Clase 1",
+      "porcentaje": 5.2
+    },
+    {
+      "nombre": "FCI GMC Money Market - Clase C",
+      "porcentaje": 5
     },
     {
       "nombre": "ON Arcor C4",
       "porcentaje": 4.2
-    },
-    {
-      "nombre": "ON Bco Serv Transac C27",
-      "porcentaje": 4
     },
     {
       "nombre": "ON Angel Estrada C18",
@@ -82,6 +78,10 @@
     {
       "nombre": "Letra Prov Rio Negro S1 191225",
       "porcentaje": 3.8
+    },
+    {
+      "nombre": "ON Bco Serv Transac C27",
+      "porcentaje": 3.7
     },
     {
       "nombre": "ON Banco Prov Clase 6",
@@ -93,23 +93,15 @@
     },
     {
       "nombre": "ON Arcor C3",
-      "porcentaje": 2.6
-    },
-    {
-      "nombre": "FF Creditech S6 CA",
       "porcentaje": 2.5
     },
     {
-      "nombre": "FF Elebar XVI Clase A",
-      "porcentaje": 2.2
-    },
-    {
-      "nombre": "ON Lab. Richmond S7 Clase A",
+      "nombre": "FF Creditech S6 CA",
       "porcentaje": 2
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 9.5
+      "porcentaje": 10
     }
   ],
   "calificaciones": [

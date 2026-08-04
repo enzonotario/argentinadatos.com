@@ -2,7 +2,7 @@
   "fondoId": "617",
   "claseId": "2256",
   "nombre": "Galileo Renta Fija - Clase C",
-  "fechaActualizacion": "2026-08-03T06:11:48.000Z",
+  "fechaActualizacion": "2026-08-04T06:21:58.000Z",
   "historico": [
     {
       "slug": "galileo-renta-fija-clase-c",
@@ -1234,6 +1234,22 @@
       "retornoDiario": 0.505563,
       "retornoAcumulado": 13.108495,
       "flujoEstimado": 0.001911,
+      "origen": "cafci-detail"
+    },
+    {
+      "slug": "galileo-renta-fija-clase-c",
+      "fondoId": "617",
+      "claseId": "2256",
+      "nombre": "Galileo Renta Fija - Clase C",
+      "fecha": "2026-08-03",
+      "categoria": "Retorno Total",
+      "categoriaKey": "retornoTotal",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 180.214,
+      "patrimonio": 1.6,
+      "retornoDiario": -0.601748,
+      "retornoAcumulado": 12.427866,
+      "flujoEstimado": -0.000312,
       "origen": "cafci-detail"
     }
   ]
