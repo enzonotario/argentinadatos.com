@@ -2,7 +2,7 @@
   "fondoId": "617",
   "claseId": "2255",
   "nombre": "Galileo Renta Fija - Clase B",
-  "fechaActualizacion": "2026-08-04T06:21:58.000Z",
+  "fechaActualizacion": "2026-08-05T05:48:31.000Z",
   "historico": [
     {
       "slug": "galileo-renta-fija-clase-b",
@@ -1250,6 +1250,22 @@
       "retornoDiario": 0.069555,
       "retornoAcumulado": 20.610344,
       "flujoEstimado": -70.646227,
+      "origen": "cafci-detail"
+    },
+    {
+      "slug": "galileo-renta-fija-clase-b",
+      "fondoId": "617",
+      "claseId": "2255",
+      "nombre": "Galileo Renta Fija - Clase B",
+      "fecha": "2026-08-04",
+      "categoria": "Retorno Total",
+      "categoriaKey": "retornoTotal",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 275526.589,
+      "patrimonio": 13919270969.73,
+      "retornoDiario": -0.046346,
+      "retornoAcumulado": 20.554446,
+      "flujoEstimado": -171777182.131033,
       "origen": "cafci-detail"
     }
   ]
