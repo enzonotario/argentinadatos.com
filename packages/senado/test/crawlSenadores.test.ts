@@ -55,8 +55,26 @@ it(
     // Mismo ID con varios mandatos (p.ej. Capitanich reelecto en 2025).
     expect((byId.get('285') || []).length).toBeGreaterThan(1)
 
-    const activos = result.filter(isActivo)
+    const latestById = new Map<string, (typeof result)[number]>()
+    for (const senador of result) {
+      const cur = latestById.get(senador.id)
+      if (!cur || (senador.periodoLegal.inicio || '') > (cur.periodoLegal.inicio || '')) {
+        latestById.set(senador.id, senador)
+      }
+    }
+
+    const activos = [...latestById.values()].filter(isActivo)
     expect(activos.length).toBe(72)
+
+    const sinFoto = activos.filter(s => !s.foto)
+    expect(
+      sinFoto.map(s => `${s.id} ${s.nombre}`),
+      `${sinFoto.length} senadores vigentes sin foto`,
+    ).toEqual([])
+
+    const monteverde = latestById.get('581')
+    expect(monteverde?.nombre).toMatch(/Monteverde/i)
+    expect(monteverde?.foto).toContain('/static/senado/senadores/581.')
   },
   {
     timeout: 0,

@@ -1,4 +1,6 @@
+import fs from 'node:fs'
 import { getStaticPublicUrl } from '@argentinadatos/core/src/utils/getStaticPublicUrl.ts'
+import { getStaticPath } from '@argentinadatos/core/src/utils/getStaticPath.ts'
 import { readEndpoint } from '@argentinadatos/core/src/utils/readEndpoint.ts'
 import { titleCaseSpanish } from '@argentinadatos/core/src/utils/titleCaseSpanish.ts'
 import { writeEndpoint } from '@argentinadatos/core/src/utils/writeEndpoint.ts'
@@ -35,6 +37,14 @@ const JSON_URL
 
 const WEB_URL = 'https://www.senado.gob.ar/senadores/listados/listaSenadoRes'
 
+const SENADO_ORIGIN = 'https://www.senado.gob.ar'
+
+const DEFAULT_FOTO_PATH = (id: string) =>
+  `/bundles/senadosenadores/images/fsena/${id}.gif`
+
+/** Evita martillar el Senado con cientos de GETs en paralelo. */
+const FOTO_DOWNLOAD_CONCURRENCY = 8
+
 export async function crawlSenadores(): Promise<Senador[]> {
   await processJson()
 
@@ -53,47 +63,23 @@ async function processJson() {
   }
 
   const json = await downloadJson()
-
   const senadores = json.map(parseSenador)
 
-  const photos = await Promise.all(
-    senadores.map(async (senador: Senador) => {
-      const existingFoto = fotosPorId.get(String(senador.id))
-      if (existingFoto) {
-        return existingFoto
-      }
+  // Una sola descarga por id (el histórico repite el mismo ID en varios mandatos).
+  const ids = [...new Set(senadores.map(s => String(s.id)))]
+  await mapPool(ids, FOTO_DOWNLOAD_CONCURRENCY, async (id) => {
+    if (fotosPorId.has(id)) {
+      return
+    }
+    const foto = await ensureSenadorFoto(id)
+    if (foto) {
+      fotosPorId.set(id, foto)
+    }
+  })
 
-      try {
-        const response = await axios.get(
-          `https://www.senado.gob.ar/bundles/senadosenadores/images/fsena/${senador.id}.gif`,
-          { responseType: 'arraybuffer' },
-        )
-
-        if (response.status === 200) {
-          const dataBuffer = Buffer.from(response.data)
-
-          const path = writeStaticBuffer(
-            `/senado/senadores/${senador.id}.gif`,
-            dataBuffer,
-          )
-
-          const fotoUrl = getStaticPublicUrl(path)
-          fotosPorId.set(String(senador.id), fotoUrl)
-          return fotoUrl
-        }
-
-        return null
-      }
-      catch (e: any) {
-        console.error(e)
-        return null
-      }
-    }),
-  )
-
-  const senadoresConFotos = senadores.map((senador: Senador, i: number) => ({
+  const senadoresConFotos = senadores.map((senador: Senador) => ({
     ...senador,
-    foto: photos[i],
+    foto: fotosPorId.get(String(senador.id)) || null,
   }))
 
   if (shouldWriteJsonFiles()) {
@@ -187,6 +173,138 @@ function nombresIguales(a: string, b: string): boolean {
     === b.trim().replace(/\s+/g, ' ').toLowerCase()
 }
 
+function resolveSenadoAssetUrl(src: string | undefined, id: string): string {
+  const fallback = `${SENADO_ORIGIN}${DEFAULT_FOTO_PATH(id)}`
+  if (!src) {
+    return fallback
+  }
+  if (src.startsWith('http://') || src.startsWith('https://')) {
+    return src
+  }
+  if (src.startsWith('//')) {
+    return `https:${src}`
+  }
+  if (src.startsWith('/')) {
+    return `${SENADO_ORIGIN}${src}`
+  }
+  return fallback
+}
+
+function extensionFromUrl(url: string, id: string): string {
+  const pathPart = url.split('?')[0] || ''
+  const match = pathPart.match(/\.([a-zA-Z0-9]+)$/)
+  if (match) {
+    return match[1].toLowerCase()
+  }
+  return 'gif'
+}
+
+function isImageBuffer(data: Buffer): boolean {
+  if (data.length < 4) {
+    return false
+  }
+  // GIF
+  if (data[0] === 0x47 && data[1] === 0x49 && data[2] === 0x46) {
+    return true
+  }
+  // JPEG
+  if (data[0] === 0xFF && data[1] === 0xD8 && data[2] === 0xFF) {
+    return true
+  }
+  // PNG
+  if (data[0] === 0x89 && data[1] === 0x50 && data[2] === 0x4E && data[3] === 0x47) {
+    return true
+  }
+  // WEBP (RIFF....WEBP)
+  if (
+    data.length >= 12
+    && data[0] === 0x52 && data[1] === 0x49 && data[2] === 0x46 && data[3] === 0x46
+    && data[8] === 0x57 && data[9] === 0x45 && data[10] === 0x42 && data[11] === 0x50
+  ) {
+    return true
+  }
+  return false
+}
+
+function localFotoPublicUrl(id: string, ext = 'gif'): string | null {
+  const relative = `/senado/senadores/${id}.${ext}`
+  const filePath = getStaticPath(relative)
+  if (fs.existsSync(filePath)) {
+    return getStaticPublicUrl(filePath)
+  }
+  // Recuperar si quedó guardado con otra extensión
+  for (const other of ['gif', 'jpg', 'jpeg', 'png', 'webp']) {
+    if (other === ext) {
+      continue
+    }
+    const alt = getStaticPath(`/senado/senadores/${id}.${other}`)
+    if (fs.existsSync(alt)) {
+      return getStaticPublicUrl(alt)
+    }
+  }
+  return null
+}
+
+/**
+ * Asegura foto en static/ y devuelve URL pública.
+ * Reusa archivo local si ya existe (aunque el JSON tenga foto null).
+ */
+export async function ensureSenadorFoto(
+  id: string,
+  srcFromWeb?: string | null,
+): Promise<string | null> {
+  const existing = localFotoPublicUrl(id)
+  if (existing) {
+    return existing
+  }
+
+  const url = resolveSenadoAssetUrl(srcFromWeb || undefined, id)
+  const ext = extensionFromUrl(url, id)
+
+  try {
+    const response = await axios.get(url, {
+      responseType: 'arraybuffer',
+      timeout: 20_000,
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (compatible; ArgentinaDatosBot/1.0)',
+        Accept: 'image/*,*/*',
+      },
+      validateStatus: status => status >= 200 && status < 300,
+    })
+
+    const dataBuffer = Buffer.from(response.data)
+    if (!isImageBuffer(dataBuffer)) {
+      console.error(`Foto de senador ${id} no es imagen válida (${url})`)
+      return null
+    }
+
+    const path = writeStaticBuffer(
+      `/senado/senadores/${id}.${ext}`,
+      dataBuffer,
+    )
+    return getStaticPublicUrl(path)
+  }
+  catch (e: any) {
+    console.error(`No se pudo descargar foto senador ${id} desde ${url}:`, e?.message || e)
+    return null
+  }
+}
+
+async function mapPool<T>(
+  items: T[],
+  concurrency: number,
+  worker: (item: T) => Promise<void>,
+): Promise<void> {
+  let index = 0
+  const runners = Array.from({ length: Math.min(concurrency, items.length) }, async () => {
+    while (index < items.length) {
+      const current = items[index++]
+      await worker(current)
+    }
+  })
+  await Promise.all(runners)
+}
+
 async function processWeb(): Promise<Senador[]> {
   const senadores = JSON.parse(readEndpoint('/senado/senadores') || '[]') as Senador[]
 
@@ -195,6 +313,8 @@ async function processWeb(): Promise<Senador[]> {
   const html = await response.text()
 
   const $ = cheerio.load(html)
+
+  const fotosPendientes = new Map<string, string | undefined>()
 
   $('tr').each((_, el) => {
     const $el = $(el)
@@ -206,6 +326,8 @@ async function processWeb(): Promise<Senador[]> {
     const partido = $el.find('td').eq(3).text().trim()
     const email = $el.find('li').eq(0).text().trim()
     const telefono = $el.find('li').eq(1).text().trim()
+    const fotoSrc = $el.find('img.lazy, td img').first().attr('src')
+      || $el.find('img').first().attr('src')
     const redes = [
       ...$el.find('li').map((_, item) => {
         return String($(item).find('a').attr('href'))
@@ -228,6 +350,10 @@ async function processWeb(): Promise<Senador[]> {
       return
     }
 
+    if (id) {
+      fotosPendientes.set(id, fotoSrc || undefined)
+    }
+
     for (const existingSenador of matches) {
       if (provincia) {
         existingSenador.provincia = provincia
@@ -238,6 +364,23 @@ async function processWeb(): Promise<Senador[]> {
       existingSenador.email = email || existingSenador.email
       existingSenador.telefono = telefono || existingSenador.telefono
       existingSenador.redes = redes.length > 0 ? redes : existingSenador.redes
+    }
+  })
+
+  // Completar fotos faltantes de los vigentes (HTML es la fuente de verdad del path).
+  const idsSinFoto = [...fotosPendientes.keys()].filter((id) => {
+    return senadores.some(s => String(s.id) === id && !s.foto)
+  })
+
+  await mapPool(idsSinFoto, FOTO_DOWNLOAD_CONCURRENCY, async (id) => {
+    const foto = await ensureSenadorFoto(id, fotosPendientes.get(id))
+    if (!foto) {
+      return
+    }
+    for (const s of senadores) {
+      if (String(s.id) === id) {
+        s.foto = foto
+      }
     }
   })
 
