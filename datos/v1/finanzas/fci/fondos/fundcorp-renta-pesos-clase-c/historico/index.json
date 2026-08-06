@@ -2,7 +2,7 @@
   "fondoId": "1916",
   "claseId": "6625",
   "nombre": "Fundcorp Renta Pesos - Clase C",
-  "fechaActualizacion": "2026-08-05T07:20:09.000Z",
+  "fechaActualizacion": "2026-08-06T10:07:38.000Z",
   "historico": [
     {
       "slug": "fundcorp-renta-pesos-clase-c",
@@ -34,6 +34,22 @@
       "retornoDiario": 100082,
       "retornoAcumulado": 100082,
       "flujoEstimado": -1000818.18,
+      "origen": "cafci-detail"
+    },
+    {
+      "slug": "fundcorp-renta-pesos-clase-c",
+      "fondoId": "1916",
+      "claseId": "6625",
+      "nombre": "Fundcorp Renta Pesos - Clase C",
+      "fecha": "2026-08-05",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Plazo Flexible",
+      "valorCuotaparte": 1002.28,
+      "patrimonio": 1002.28,
+      "retornoDiario": 0.045916,
+      "retornoAcumulado": 100128,
+      "flujoEstimado": 0.000004,
       "origen": "cafci-detail"
     }
   ]
