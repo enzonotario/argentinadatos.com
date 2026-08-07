@@ -1203,6 +1203,31 @@
         ]
       }
     },
+    "/v1/senado/viajes": {
+      "get": {
+        "summary": "Viajes nacionales e internacionales",
+        "tags": [
+          "Senado"
+        ],
+        "description": "Devuelve los viajes nacionales (pasajes aéreos mensuales) e internacionales (registro anual de viajes oficiales) publicados por el Senado.",
+        "responses": {
+          "200": {
+            "description": "Catálogo de documentos PDF y listados de viajes parseados",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ViajesSenado"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-senado-viajes",
+        "x-data-source": [
+          "[Senado](https://www.senado.gob.ar/administrativo/viajes)"
+        ]
+      }
+    },
     "/v1/senado/actas/{año}": {
       "get": {
         "summary": "Actas por año",
@@ -2781,6 +2806,199 @@
                 }
               }
             }
+          }
+        }
+      },
+      "ViajesSenado": {
+        "title": "ViajesSenado",
+        "type": "object",
+        "properties": {
+          "fuente": {
+            "type": "string",
+            "format": "uri"
+          },
+          "actualizado": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "documentos": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "ambito": {
+                  "type": "string",
+                  "enum": [
+                    "nacional",
+                    "internacional"
+                  ]
+                },
+                "anio": {
+                  "type": "integer"
+                },
+                "mes": {
+                  "type": "integer",
+                  "nullable": true
+                },
+                "mesNombre": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            }
+          },
+          "nacionales": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ViajeNacional"
+            }
+          },
+          "internacionales": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ViajeInternacional"
+            }
+          }
+        }
+      },
+      "ViajeNacional": {
+        "title": "ViajeNacional",
+        "type": "object",
+        "properties": {
+          "ambito": {
+            "type": "string",
+            "enum": [
+              "nacional"
+            ]
+          },
+          "anio": {
+            "type": "integer"
+          },
+          "mes": {
+            "type": "integer"
+          },
+          "mesNombre": {
+            "type": "string"
+          },
+          "documentoId": {
+            "type": "string"
+          },
+          "documentoUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "senadorId": {
+            "type": "string",
+            "nullable": true
+          },
+          "origen": {
+            "type": "string"
+          },
+          "origenCodigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "destino": {
+            "type": "string"
+          },
+          "destinoCodigo": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ViajeInternacional": {
+        "title": "ViajeInternacional",
+        "type": "object",
+        "properties": {
+          "ambito": {
+            "type": "string",
+            "enum": [
+              "internacional"
+            ]
+          },
+          "anio": {
+            "type": "integer"
+          },
+          "mes": {
+            "type": "integer",
+            "nullable": true
+          },
+          "mesNombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentoId": {
+            "type": "string"
+          },
+          "documentoUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "senadorId": {
+            "type": "string",
+            "nullable": true
+          },
+          "expediente": {
+            "type": "string"
+          },
+          "destino": {
+            "type": "string"
+          },
+          "fechaInicio": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "fechaFin": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "fechaTexto": {
+            "type": "string",
+            "nullable": true
+          },
+          "asistenciaAlViajero": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "viaticos": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "viaticosUsd": {
+            "type": "number",
+            "nullable": true
+          },
+          "viaticosEuro": {
+            "type": "number",
+            "nullable": true
+          },
+          "viaticosArs": {
+            "type": "number",
+            "nullable": true
+          },
+          "motivo": {
+            "type": "string",
+            "nullable": true
+          },
+          "bloque": {
+            "type": "string",
+            "nullable": true
           }
         }
       },

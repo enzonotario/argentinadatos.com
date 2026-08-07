@@ -18,6 +18,7 @@ import {
   applyComisionesMetaToSenadores,
   crawlComisiones,
 } from './crawlComisiones.ts'
+import { crawlViajes } from './crawlViajes.ts'
 import {
   applyDietasMecanismosMeta,
   scrapeDietasMecanismos,
@@ -75,6 +76,8 @@ export async function crawlSenadores(): Promise<Senador[]> {
   await processDietasMecanismos()
 
   await processComisiones()
+
+  await processViajes()
 
   return JSON.parse(readEndpoint('/senado/senadores') || '[]')
 }
@@ -505,6 +508,18 @@ async function processComisiones(): Promise<Senador[]> {
 
   await persistSenadores(senadores)
   return senadores
+}
+
+async function processViajes(): Promise<void> {
+  try {
+    const viajes = await crawlViajes({ force: false })
+    console.log(
+      `Viajes: ${viajes.nacionales.length} nacionales, ${viajes.internacionales.length} internacionales`,
+    )
+  }
+  catch (e: any) {
+    console.error('Viajes: no se pudo scrapear', e?.message || e)
+  }
 }
 
 async function processDietasMecanismos(): Promise<Senador[]> {
