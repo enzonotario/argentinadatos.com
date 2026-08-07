@@ -36,6 +36,7 @@ it(
         nombre: expect.any(String),
         provincia: expect.any(String),
         partido: expect.any(String),
+        bloque: expect.toBeOneOf([null, expect.any(String)]),
         periodoLegal: {
           inicio: expect.any(String),
           fin: expect.toBeOneOf([null, expect.any(String)]),
@@ -49,16 +50,7 @@ it(
         email: expect.toBeOneOf([null, expect.any(String)]),
         telefono: expect.toBeOneOf([null, expect.any(String)]),
         redes: expect.toBeOneOf([null, expect.any(Array)]),
-        meta: expect.toBeOneOf([
-          null,
-          expect.objectContaining({
-            dieta: expect.objectContaining({
-              renunciaAlAumento: expect.any(Boolean),
-              donacion: expect.any(Boolean),
-              aportesPartidarios: expect.any(Boolean),
-            }),
-          }),
-        ]),
+        meta: expect.toBeOneOf([null, expect.any(Object)]),
       })
     }
 
@@ -85,6 +77,15 @@ it(
     const monteverde = latestById.get('581')
     expect(monteverde?.nombre).toMatch(/Monteverde/i)
     expect(monteverde?.foto).toContain('/static/senado/senadores/581.')
+
+    const sinBloque = activos.filter(s => !s.bloque)
+    expect(
+      sinBloque.map(s => `${s.id} ${s.nombre}`),
+      `${sinBloque.length} senadores vigentes sin bloque`,
+    ).toEqual([])
+
+    const conComisiones = activos.filter(s => (s.meta?.comisiones?.length || 0) > 0)
+    expect(conComisiones.length).toBeGreaterThanOrEqual(50)
   },
   {
     timeout: 0,

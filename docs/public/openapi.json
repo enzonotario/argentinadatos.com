@@ -1175,6 +1175,34 @@
         ]
       }
     },
+    "/v1/senado/comisiones": {
+      "get": {
+        "summary": "Comisiones",
+        "tags": [
+          "Senado"
+        ],
+        "description": "Devuelve las comisiones del Senado con su tipo e integrantes (senadores y, en bicamerales, diputados).",
+        "responses": {
+          "200": {
+            "description": "Devuelve una lista de comisiones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ComisionSenado"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-senado-comisiones",
+        "x-data-source": [
+          "[Senado](https://www.senado.gob.ar/parlamentario/comisiones/)"
+        ]
+      }
+    },
     "/v1/senado/actas/{año}": {
       "get": {
         "summary": "Actas por año",
@@ -2599,6 +2627,11 @@
           "partido": {
             "type": "string"
           },
+          "bloque": {
+            "type": "string",
+            "nullable": true,
+            "description": "Bloque parlamentario actual (solo senadores vigentes). Distinto de partido/alianza electoral."
+          },
           "periodoLegal": {
             "type": "object",
             "properties": {
@@ -2657,6 +2690,97 @@
               "type": "string"
             },
             "nullable": true
+          },
+          "meta": {
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "dieta": {
+                "type": "object",
+                "properties": {
+                  "renunciaAlAumento": {
+                    "type": "boolean"
+                  },
+                  "donacion": {
+                    "type": "boolean"
+                  },
+                  "aportesPartidarios": {
+                    "type": "boolean"
+                  },
+                  "fuente": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "actualizado": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              },
+              "comisiones": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "nombre": {
+                      "type": "string"
+                    },
+                    "cargo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ComisionSenado": {
+        "title": "ComisionSenado",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "tipo": {
+            "type": "string",
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "integrantes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "nombre": {
+                  "type": "string"
+                },
+                "cargo": {
+                  "type": "string"
+                },
+                "camara": {
+                  "type": "string",
+                  "enum": [
+                    "senado",
+                    "diputados"
+                  ],
+                  "nullable": true
+                },
+                "senadorId": {
+                  "type": "string",
+                  "nullable": true
+                }
+              }
+            }
           }
         }
       },

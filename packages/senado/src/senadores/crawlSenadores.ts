@@ -11,16 +11,27 @@ import * as cheerio from 'cheerio'
 import { format, parse } from 'date-fns'
 import { SenadoresDatabaseService } from './database/service.ts'
 import {
+  applyBloquesToSenadores,
+  downloadSenadoresVigentes,
+} from './applyBloques.ts'
+import {
+  applyComisionesMetaToSenadores,
+  crawlComisiones,
+} from './crawlComisiones.ts'
+import {
   applyDietasMecanismosMeta,
   scrapeDietasMecanismos,
   type SenadorDietaMeta,
 } from './scrapeDietasMecanismos.ts'
+import type { SenadorComisionMeta } from './crawlComisiones.ts'
 
 export interface Senador {
   id: string
   nombre: string
   provincia: string
   partido: string
+  /** Bloque parlamentario actual (oficial, vigentes). */
+  bloque: string | null
   periodoLegal: {
     inicio: string | null
     fin: string | null
@@ -37,6 +48,7 @@ export interface Senador {
   redes: string[] | null
   meta: {
     dieta?: SenadorDietaMeta
+    comisiones?: SenadorComisionMeta[]
   } | null
 }
 
@@ -58,7 +70,11 @@ export async function crawlSenadores(): Promise<Senador[]> {
 
   await processWeb()
 
+  await processBloques()
+
   await processDietasMecanismos()
+
+  await processComisiones()
 
   return JSON.parse(readEndpoint('/senado/senadores') || '[]')
 }
@@ -135,6 +151,7 @@ function parseSenador(json: any): Senador {
     nombre: titleCaseSpanish(json.SENADOR.toLowerCase()),
     provincia: titleCaseSpanish(json.PROVINCIA.toLowerCase()),
     partido: titleCaseSpanish(json['PARTIDO POLITICO O ALIANZA'].toLowerCase()),
+    bloque: null,
     periodoLegal: parsePeriodo(
       json['INICIO PERIODO LEGAL'],
       json['CESE PERIODO LEGAL'],
@@ -427,26 +444,7 @@ async function processWeb(): Promise<Senador[]> {
   return senadores
 }
 
-async function processDietasMecanismos(): Promise<Senador[]> {
-  const senadores = JSON.parse(readEndpoint('/senado/senadores') || '[]') as Senador[]
-
-  try {
-    // Usa caché si existe; solo llama Firecrawl si no hay datos guardados
-    // (o VITE_DIETAS_FORCE_FIRECRAWL=1).
-    const cache = await scrapeDietasMecanismos({ force: false })
-    const { unmatchedRows } = applyDietasMecanismosMeta(senadores, cache)
-
-    if (unmatchedRows.length > 0) {
-      console.warn(
-        `Dietas/mecanismos: ${unmatchedRows.length} filas sin match`,
-        unmatchedRows.slice(0, 10).map(r => r.nombre),
-      )
-    }
-  }
-  catch (e: any) {
-    console.error('Dietas/mecanismos: no se pudo aplicar meta', e?.message || e)
-  }
-
+async function persistSenadores(senadores: Senador[]): Promise<void> {
   if (shouldWriteJsonFiles()) {
     writeEndpoint('/senado/senadores', senadores)
   }
@@ -475,7 +473,61 @@ async function processDietasMecanismos(): Promise<Senador[]> {
       db.close()
     }
   }
+}
 
+async function processBloques(): Promise<Senador[]> {
+  const senadores = JSON.parse(readEndpoint('/senado/senadores') || '[]') as Senador[]
+
+  try {
+    const vigentes = await downloadSenadoresVigentes()
+    const { matchedIds } = applyBloquesToSenadores(senadores, vigentes)
+    console.log(`Bloques: aplicados a ${matchedIds.length} senadores vigentes`)
+  }
+  catch (e: any) {
+    console.error('Bloques: no se pudo aplicar', e?.message || e)
+  }
+
+  await persistSenadores(senadores)
+  return senadores
+}
+
+async function processComisiones(): Promise<Senador[]> {
+  const senadores = JSON.parse(readEndpoint('/senado/senadores') || '[]') as Senador[]
+
+  try {
+    const comisiones = await crawlComisiones()
+    applyComisionesMetaToSenadores(senadores, comisiones)
+    console.log(`Comisiones: ${comisiones.length} scrapeadas`)
+  }
+  catch (e: any) {
+    console.error('Comisiones: no se pudo scrapear', e?.message || e)
+  }
+
+  await persistSenadores(senadores)
+  return senadores
+}
+
+async function processDietasMecanismos(): Promise<Senador[]> {
+  const senadores = JSON.parse(readEndpoint('/senado/senadores') || '[]') as Senador[]
+
+  try {
+    // Usa caché si existe; solo llama Firecrawl si no hay datos guardados
+    // (o VITE_DIETAS_FORCE_FIRECRAWL=1).
+    const cache = await scrapeDietasMecanismos({ force: false })
+    const { unmatchedRows } = applyDietasMecanismosMeta(senadores, cache)
+
+    if (unmatchedRows.length > 0) {
+      console.warn(
+        `Dietas/mecanismos: ${unmatchedRows.length} filas sin match`,
+        unmatchedRows.slice(0, 10).map(r => r.nombre),
+      )
+    }
+  }
+  catch (e: any) {
+    console.error('Dietas/mecanismos: no se pudo aplicar meta', e?.message || e)
+  }
+
+  await persistSenadores(senadores)
   return senadores
 }
 
