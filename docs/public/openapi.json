@@ -1209,7 +1209,7 @@
         "tags": [
           "Senado"
         ],
-        "description": "Devuelve los viajes nacionales (pasajes aéreos mensuales) e internacionales (registro anual de viajes oficiales) publicados por el Senado.",
+        "description": "Devuelve el índice completo de viajes (documentos PDF + listados nacionales e internacionales). También hay recortes en `/v1/senado/viajes/nacionales`, `/v1/senado/viajes/internacionales` y `/v1/senado/senadores/{id}/viajes`.",
         "responses": {
           "200": {
             "description": "Catálogo de documentos PDF y listados de viajes parseados",
@@ -1225,6 +1225,318 @@
         "operationId": "get-senado-viajes",
         "x-data-source": [
           "[Senado](https://www.senado.gob.ar/administrativo/viajes)"
+        ]
+      }
+    },
+    "/v1/senado/viajes/nacionales": {
+      "get": {
+        "summary": "Viajes nacionales",
+        "tags": [
+          "Senado"
+        ],
+        "description": "Devuelve todos los tramos aéreos nacionales parseados.",
+        "responses": {
+          "200": {
+            "description": "Lista de viajes nacionales",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ViajeNacional"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-senado-viajes-nacionales",
+        "x-data-source": [
+          "[Senado](https://www.senado.gob.ar/administrativo/viajes)"
+        ]
+      }
+    },
+    "/v1/senado/viajes/nacionales/{año}": {
+      "get": {
+        "summary": "Viajes nacionales por año",
+        "tags": [
+          "Senado"
+        ],
+        "description": "Devuelve los tramos aéreos nacionales del año indicado.",
+        "parameters": [
+          {
+            "name": "año",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 2018,
+              "maximum": 2026
+            },
+            "example": 2026
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de viajes nacionales del año",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ViajeNacional"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-senado-viajes-nacionales-año",
+        "x-data-source": [
+          "[Senado](https://www.senado.gob.ar/administrativo/viajes)"
+        ]
+      }
+    },
+    "/v1/senado/viajes/nacionales/{año}/{mes}": {
+      "get": {
+        "summary": "Viajes nacionales por año y mes",
+        "tags": [
+          "Senado"
+        ],
+        "description": "Devuelve los tramos aéreos nacionales del mes indicado (1–12).",
+        "parameters": [
+          {
+            "name": "año",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 2018,
+              "maximum": 2026
+            },
+            "example": 2026
+          },
+          {
+            "name": "mes",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 12
+            },
+            "example": 5
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de viajes nacionales del mes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ViajeNacional"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-senado-viajes-nacionales-año-mes",
+        "x-data-source": [
+          "[Senado](https://www.senado.gob.ar/administrativo/viajes)"
+        ]
+      }
+    },
+    "/v1/senado/viajes/internacionales": {
+      "get": {
+        "summary": "Viajes internacionales",
+        "tags": [
+          "Senado"
+        ],
+        "description": "Devuelve todos los viajes oficiales internacionales parseados.",
+        "responses": {
+          "200": {
+            "description": "Lista de viajes internacionales",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ViajeInternacional"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-senado-viajes-internacionales",
+        "x-data-source": [
+          "[Senado](https://www.senado.gob.ar/administrativo/viajes)"
+        ]
+      }
+    },
+    "/v1/senado/viajes/internacionales/{año}": {
+      "get": {
+        "summary": "Viajes internacionales por año",
+        "tags": [
+          "Senado"
+        ],
+        "description": "Devuelve los viajes oficiales internacionales del año indicado.",
+        "parameters": [
+          {
+            "name": "año",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 2012,
+              "maximum": 2026
+            },
+            "example": 2025
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de viajes internacionales del año",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ViajeInternacional"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-senado-viajes-internacionales-año",
+        "x-data-source": [
+          "[Senado](https://www.senado.gob.ar/administrativo/viajes)"
+        ]
+      }
+    },
+    "/v1/senado/senadores/{id}/viajes": {
+      "get": {
+        "summary": "Viajes de un senador",
+        "tags": [
+          "Senado"
+        ],
+        "description": "Devuelve los viajes nacionales e internacionales asociados a un senador (`senadorId`).",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "546"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Viajes del senador",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SenadorViajes"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-senado-senadores-id-viajes",
+        "x-data-source": [
+          "[Senado](https://www.senado.gob.ar/administrativo/viajes)"
+        ]
+      }
+    },
+    "/v1/senado/comisiones/{id}": {
+      "get": {
+        "summary": "Comisión por id",
+        "tags": [
+          "Senado"
+        ],
+        "description": "Devuelve el detalle de una comisión del Senado con sus integrantes.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "50"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Detalle de la comisión",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComisionSenado"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-senado-comisiones-id",
+        "x-data-source": [
+          "[Senado](https://www.senado.gob.ar/parlamentario/comisiones/)"
+        ]
+      }
+    },
+    "/v1/senado/senadores/{id}/comisiones": {
+      "get": {
+        "summary": "Comisiones de un senador",
+        "tags": [
+          "Senado"
+        ],
+        "description": "Devuelve las comisiones en las que participa un senador (id, nombre y cargo).",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "546"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de comisiones del senador",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "nombre": {
+                        "type": "string"
+                      },
+                      "cargo": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-senado-senadores-id-comisiones",
+        "x-data-source": [
+          "[Senado](https://www.senado.gob.ar/parlamentario/comisiones/)"
         ]
       }
     },
@@ -2999,6 +3311,27 @@
           "bloque": {
             "type": "string",
             "nullable": true
+          }
+        }
+      },
+      "SenadorViajes": {
+        "title": "SenadorViajes",
+        "type": "object",
+        "properties": {
+          "senadorId": {
+            "type": "string"
+          },
+          "nacionales": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ViajeNacional"
+            }
+          },
+          "internacionales": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ViajeInternacional"
+            }
           }
         }
       },

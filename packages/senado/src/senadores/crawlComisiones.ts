@@ -264,8 +264,37 @@ export async function crawlComisiones(): Promise<Comision[]> {
   })
 
   comisiones.sort((a, b) => Number(a.id) - Number(b.id))
-  writeEndpoint(COMISIONES_ENDPOINT, comisiones)
+  writeComisionesEndpoints(comisiones)
   return comisiones
+}
+
+/** Índice + /senado/comisiones/{id} + /senado/senadores/{id}/comisiones */
+export function writeComisionesEndpoints(comisiones: Comision[]): void {
+  writeEndpoint(COMISIONES_ENDPOINT, comisiones)
+
+  for (const comision of comisiones) {
+    writeEndpoint(`${COMISIONES_ENDPOINT}/${comision.id}`, comision)
+  }
+
+  const bySenador = new Map<string, SenadorComisionMeta[]>()
+  for (const comision of comisiones) {
+    for (const integrante of comision.integrantes) {
+      if (!integrante.senadorId || integrante.camara === 'diputados') {
+        continue
+      }
+      const list = bySenador.get(integrante.senadorId) || []
+      list.push({
+        id: comision.id,
+        nombre: comision.nombre,
+        cargo: integrante.cargo,
+      })
+      bySenador.set(integrante.senadorId, list)
+    }
+  }
+
+  for (const [senadorId, list] of [...bySenador.entries()].sort((a, b) => Number(a[0]) - Number(b[0]))) {
+    writeEndpoint(`/senado/senadores/${senadorId}/comisiones`, list)
+  }
 }
 
 /**

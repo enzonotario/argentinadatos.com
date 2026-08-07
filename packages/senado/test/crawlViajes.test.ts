@@ -1,11 +1,13 @@
 import { describe, expect, it } from 'vitest'
 import { readEndpoint } from '@argentinadatos/core/src/utils/readEndpoint.ts'
 import {
+  buildViajesEndpointMap,
   collectViajeDocumentos,
   crawlViajes,
   parseInternacionalPdfRows,
   parseLugar,
   parseNacionalPdfRows,
+  VIAJES_INDEX_URL,
   type ViajeDocumento,
 } from '../src/senadores/crawlViajes'
 
@@ -183,6 +185,73 @@ describe('collectViajeDocumentos', () => {
   })
 })
 
+describe('buildViajesEndpointMap', () => {
+  it('arma recortes por ámbito, año/mes y senador', () => {
+    const data = {
+      fuente: VIAJES_INDEX_URL,
+      actualizado: '2026-01-01T00:00:00.000Z',
+      documentos: [],
+      nacionales: [
+        {
+          ambito: 'nacional' as const,
+          anio: 2026,
+          mes: 5,
+          mesNombre: 'Mayo',
+          documentoId: '1',
+          documentoUrl: 'https://example.com/1',
+          nombre: 'Abad, Maximiliano',
+          senadorId: '546',
+          origen: 'Mar del Plata',
+          origenCodigo: 'MDQ',
+          destino: 'Buenos Aires',
+          destinoCodigo: 'BUE',
+        },
+      ],
+      internacionales: [
+        {
+          ambito: 'internacional' as const,
+          anio: 2025,
+          mes: 4,
+          mesNombre: 'Abril',
+          documentoId: '2',
+          documentoUrl: 'https://example.com/2',
+          nombre: 'De Pedro, Eduardo Enrique',
+          senadorId: '545',
+          expediente: '600/2025',
+          destino: 'Ecuador',
+          fechaInicio: '2025-04-13',
+          fechaFin: '2025-04-15',
+          fechaTexto: '13/04 al 15/04',
+          asistenciaAlViajero: true,
+          viaticos: true,
+          viaticosUsd: null,
+          viaticosEuro: null,
+          viaticosArs: null,
+          motivo: 'Test',
+          bloque: 'Unidad Ciudadana',
+        },
+      ],
+    }
+
+    const endpoints = buildViajesEndpointMap(data, ['546', '545', '999'])
+
+    expect(endpoints['/senado/viajes/nacionales']).toHaveLength(1)
+    expect(endpoints['/senado/viajes/nacionales/2026']).toHaveLength(1)
+    expect(endpoints['/senado/viajes/nacionales/2026/5']).toHaveLength(1)
+    expect(endpoints['/senado/viajes/internacionales/2025']).toHaveLength(1)
+    expect(endpoints['/senado/senadores/546/viajes']).toMatchObject({
+      senadorId: '546',
+      nacionales: [expect.objectContaining({ origenCodigo: 'MDQ' })],
+      internacionales: [],
+    })
+    expect(endpoints['/senado/senadores/999/viajes']).toEqual({
+      senadorId: '999',
+      nacionales: [],
+      internacionales: [],
+    })
+  })
+})
+
 describe('crawlViajes (red)', () => {
   it('descarga PDFs, parsea y persiste /senado/viajes', async () => {
     const data = await crawlViajes({ force: false })
@@ -204,5 +273,9 @@ describe('crawlViajes (red)', () => {
     const persisted = JSON.parse(readEndpoint('/senado/viajes') || '{}')
     expect(persisted.nacionales.length).toBe(data.nacionales.length)
     expect(persisted.internacionales.length).toBe(data.internacionales.length)
+
+    expect(JSON.parse(readEndpoint('/senado/viajes/nacionales/2026/5') || '[]').length).toBe(mayo2026.length)
+    const abadViajes = JSON.parse(readEndpoint('/senado/senadores/546/viajes') || '{}')
+    expect(abadViajes.nacionales.length).toBeGreaterThan(0)
   }, 300_000)
 })

@@ -112,5 +112,17 @@ describe('crawlComisiones + bloques (red)', () => {
 
     const persistedComisiones = JSON.parse(readEndpoint('/senado/comisiones') || '[]')
     expect(persistedComisiones.length).toBe(comisiones.length)
+
+    const primera = persistedComisiones[0]
+    const porId = JSON.parse(readEndpoint(`/senado/comisiones/${primera.id}`) || 'null')
+    expect(porId).toMatchObject({ id: primera.id, nombre: primera.nombre })
+
+    const conSenador = primera.integrantes.find((i: any) => i.senadorId)
+    if (conSenador?.senadorId) {
+      const senadorComisiones = JSON.parse(
+        readEndpoint(`/senado/senadores/${conSenador.senadorId}/comisiones`) || '[]',
+      )
+      expect(senadorComisiones.some((c: any) => c.id === primera.id)).toBe(true)
+    }
   }, 180_000)
 })

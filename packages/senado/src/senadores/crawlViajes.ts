@@ -722,6 +722,102 @@ export async function crawlViajes(options: { force?: boolean } = {}): Promise<Vi
     internacionales,
   }
 
-  writeEndpoint(VIAJES_ENDPOINT, data)
+  writeViajesEndpoints(data, senadores.map(s => String(s.id)))
   return data
+}
+
+export interface SenadorViajes {
+  senadorId: string
+  nacionales: ViajeNacional[]
+  internacionales: ViajeInternacional[]
+}
+
+/** Mapa endpoint → payload (sin escribir a disco). */
+export function buildViajesEndpointMap(
+  data: ViajesData,
+  senadorIds: string[] = [],
+): Record<string, unknown> {
+  const endpoints: Record<string, unknown> = {
+    [VIAJES_ENDPOINT]: data,
+    [`${VIAJES_ENDPOINT}/nacionales`]: data.nacionales,
+    [`${VIAJES_ENDPOINT}/internacionales`]: data.internacionales,
+  }
+
+  const nacionalesPorAnio = new Map<number, ViajeNacional[]>()
+  for (const viaje of data.nacionales) {
+    const list = nacionalesPorAnio.get(viaje.anio) || []
+    list.push(viaje)
+    nacionalesPorAnio.set(viaje.anio, list)
+  }
+  for (const [anio, viajesAnio] of [...nacionalesPorAnio.entries()].sort((a, b) => a[0] - b[0])) {
+    endpoints[`${VIAJES_ENDPOINT}/nacionales/${anio}`] = viajesAnio
+
+    const porMes = new Map<number, ViajeNacional[]>()
+    for (const viaje of viajesAnio) {
+      const list = porMes.get(viaje.mes) || []
+      list.push(viaje)
+      porMes.set(viaje.mes, list)
+    }
+    for (const [mes, viajesMes] of [...porMes.entries()].sort((a, b) => a[0] - b[0])) {
+      endpoints[`${VIAJES_ENDPOINT}/nacionales/${anio}/${mes}`] = viajesMes
+    }
+  }
+
+  const internacionalesPorAnio = new Map<number, ViajeInternacional[]>()
+  for (const viaje of data.internacionales) {
+    const list = internacionalesPorAnio.get(viaje.anio) || []
+    list.push(viaje)
+    internacionalesPorAnio.set(viaje.anio, list)
+  }
+  for (const [anio, viajesAnio] of [...internacionalesPorAnio.entries()].sort((a, b) => a[0] - b[0])) {
+    endpoints[`${VIAJES_ENDPOINT}/internacionales/${anio}`] = viajesAnio
+  }
+
+  const bySenador = new Map<string, SenadorViajes>()
+  const ensure = (id: string): SenadorViajes => {
+    let entry = bySenador.get(id)
+    if (!entry) {
+      entry = { senadorId: id, nacionales: [], internacionales: [] }
+      bySenador.set(id, entry)
+    }
+    return entry
+  }
+
+  for (const id of senadorIds) {
+    ensure(String(id))
+  }
+  for (const viaje of data.nacionales) {
+    if (!viaje.senadorId) {
+      continue
+    }
+    ensure(String(viaje.senadorId)).nacionales.push(viaje)
+  }
+  for (const viaje of data.internacionales) {
+    if (!viaje.senadorId) {
+      continue
+    }
+    ensure(String(viaje.senadorId)).internacionales.push(viaje)
+  }
+
+  for (const [id, entry] of [...bySenador.entries()].sort((a, b) => Number(a[0]) - Number(b[0]))) {
+    endpoints[`/senado/senadores/${id}/viajes`] = entry
+  }
+
+  return endpoints
+}
+
+/**
+ * Persiste el índice completo y los recortes:
+ * - /senado/viajes/nacionales[/año[/mes]]
+ * - /senado/viajes/internacionales[/año]
+ * - /senado/senadores/{id}/viajes
+ */
+export function writeViajesEndpoints(
+  data: ViajesData,
+  senadorIds: string[] = [],
+): void {
+  const endpoints = buildViajesEndpointMap(data, senadorIds)
+  for (const [endpoint, payload] of Object.entries(endpoints)) {
+    writeEndpoint(endpoint, payload)
+  }
 }
