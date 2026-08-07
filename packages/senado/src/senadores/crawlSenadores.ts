@@ -10,6 +10,11 @@ import axios from 'axios'
 import * as cheerio from 'cheerio'
 import { format, parse } from 'date-fns'
 import { SenadoresDatabaseService } from './database/service.ts'
+import {
+  applyDietasMecanismosMeta,
+  scrapeDietasMecanismos,
+  type SenadorDietaMeta,
+} from './scrapeDietasMecanismos.ts'
 
 export interface Senador {
   id: string
@@ -30,6 +35,9 @@ export interface Senador {
   email: string | null
   telefono: string | null
   redes: string[] | null
+  meta: {
+    dieta?: SenadorDietaMeta
+  } | null
 }
 
 const JSON_URL
@@ -49,6 +57,8 @@ export async function crawlSenadores(): Promise<Senador[]> {
   await processJson()
 
   await processWeb()
+
+  await processDietasMecanismos()
 
   return JSON.parse(readEndpoint('/senado/senadores') || '[]')
 }
@@ -141,6 +151,7 @@ function parseSenador(json: any): Senador {
     email: null,
     telefono: null,
     redes: null,
+    meta: null,
   }
 }
 
@@ -383,6 +394,58 @@ async function processWeb(): Promise<Senador[]> {
       }
     }
   })
+
+  if (shouldWriteJsonFiles()) {
+    writeEndpoint('/senado/senadores', senadores)
+  }
+
+  const TURSO_DATABASE_URL = process.env.VITE_TURSO_DATABASE_URL
+  const TURSO_AUTH_TOKEN = process.env.VITE_TURSO_AUTH_TOKEN
+
+  if (TURSO_DATABASE_URL && TURSO_AUTH_TOKEN && shouldWriteFromDatabase()) {
+    const db = new SenadoresDatabaseService(TURSO_DATABASE_URL, TURSO_AUTH_TOKEN)
+
+    try {
+      await db.initialize()
+
+      const timestamp = new Date().toISOString()
+
+      const itemsToInsert = senadores.map(senador => ({
+        senador,
+        timestamp,
+      }))
+
+      await db.insertBatchSenadores(itemsToInsert)
+
+      await generateEndpointEstatico(db)
+    }
+    finally {
+      db.close()
+    }
+  }
+
+  return senadores
+}
+
+async function processDietasMecanismos(): Promise<Senador[]> {
+  const senadores = JSON.parse(readEndpoint('/senado/senadores') || '[]') as Senador[]
+
+  try {
+    // Usa caché si existe; solo llama Firecrawl si no hay datos guardados
+    // (o VITE_DIETAS_FORCE_FIRECRAWL=1).
+    const cache = await scrapeDietasMecanismos({ force: false })
+    const { unmatchedRows } = applyDietasMecanismosMeta(senadores, cache)
+
+    if (unmatchedRows.length > 0) {
+      console.warn(
+        `Dietas/mecanismos: ${unmatchedRows.length} filas sin match`,
+        unmatchedRows.slice(0, 10).map(r => r.nombre),
+      )
+    }
+  }
+  catch (e: any) {
+    console.error('Dietas/mecanismos: no se pudo aplicar meta', e?.message || e)
+  }
 
   if (shouldWriteJsonFiles()) {
     writeEndpoint('/senado/senadores', senadores)

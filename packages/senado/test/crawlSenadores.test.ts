@@ -49,6 +49,16 @@ it(
         email: expect.toBeOneOf([null, expect.any(String)]),
         telefono: expect.toBeOneOf([null, expect.any(String)]),
         redes: expect.toBeOneOf([null, expect.any(Array)]),
+        meta: expect.toBeOneOf([
+          null,
+          expect.objectContaining({
+            dieta: expect.objectContaining({
+              renunciaAlAumento: expect.any(Boolean),
+              donacion: expect.any(Boolean),
+              aportesPartidarios: expect.any(Boolean),
+            }),
+          }),
+        ]),
       })
     }
 
