@@ -105,6 +105,7 @@ export interface ViajesConteo12m {
 }
 
 export const VIAJES_CONTEO_12M_ENDPOINT = `${VIAJES_ENDPOINT}/conteo-12m`
+export const VIAJES_CONTEO_ENDPOINT = `${VIAJES_ENDPOINT}/conteo`
 
 function anioMesToIndex(anio: number, mes: number): number {
   return anio * 12 + mes
@@ -186,6 +187,45 @@ export function buildViajesConteo12m(
     ventanaMeses: 12,
     desde,
     hasta,
+    actualizado: asOf.toISOString().slice(0, 10),
+    porSenador,
+  }
+}
+
+export type ViajesConteoTotal = {
+  actualizado: string
+  porSenador: Record<string, ViajesConteoSenador>
+}
+
+/**
+ * Cuenta todos los viajes nacionales + internacionales por senador
+ * (sin ventana temporal).
+ */
+export function buildViajesConteoTotal(
+  data: Pick<ViajesData, 'nacionales' | 'internacionales'>,
+  asOf: Date = new Date(),
+): ViajesConteoTotal {
+  const porSenador: Record<string, ViajesConteoSenador> = {}
+
+  const bump = (senadorId: string | null | undefined, kind: 'nacionales' | 'internacionales') => {
+    if (!senadorId) {
+      return
+    }
+    const id = String(senadorId)
+    const entry = porSenador[id] || { nacionales: 0, internacionales: 0, total: 0 }
+    entry[kind] += 1
+    entry.total += 1
+    porSenador[id] = entry
+  }
+
+  for (const viaje of data.nacionales) {
+    bump(viaje.senadorId, 'nacionales')
+  }
+  for (const viaje of data.internacionales) {
+    bump(viaje.senadorId, 'internacionales')
+  }
+
+  return {
     actualizado: asOf.toISOString().slice(0, 10),
     porSenador,
   }
@@ -844,6 +884,7 @@ export function buildViajesEndpointMap(
     [`${VIAJES_ENDPOINT}/nacionales`]: data.nacionales,
     [`${VIAJES_ENDPOINT}/internacionales`]: data.internacionales,
     [VIAJES_CONTEO_12M_ENDPOINT]: buildViajesConteo12m(data),
+    [VIAJES_CONTEO_ENDPOINT]: buildViajesConteoTotal(data),
   }
 
   const nacionalesPorAnio = new Map<number, ViajeNacional[]>()
@@ -914,6 +955,7 @@ export function buildViajesEndpointMap(
  * - /senado/viajes/nacionales[/año[/mes]]
  * - /senado/viajes/internacionales[/año]
  * - /senado/viajes/conteo-12m
+ * - /senado/viajes/conteo
  * - /senado/senadores/{id}/viajes
  */
 export function writeViajesEndpoints(

@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { readEndpoint } from '@argentinadatos/core/src/utils/readEndpoint.ts'
 import {
   buildViajesConteo12m,
+  buildViajesConteoTotal,
   buildViajesEndpointMap,
   collectViajeDocumentos,
   crawlViajes,
@@ -278,6 +279,78 @@ describe('buildViajesConteo12m', () => {
   })
 })
 
+describe('buildViajesConteoTotal', () => {
+  it('cuenta todos los viajes por senador sin ventana', () => {
+    const conteo = buildViajesConteoTotal({
+      nacionales: [
+        {
+          ambito: 'nacional',
+          anio: 2020,
+          mes: 1,
+          mesNombre: 'Enero',
+          documentoId: 'old',
+          documentoUrl: 'https://example.com/old',
+          nombre: 'A',
+          senadorId: '1',
+          origen: 'A',
+          origenCodigo: 'AAA',
+          destino: 'B',
+          destinoCodigo: 'BBB',
+        },
+        {
+          ambito: 'nacional',
+          anio: 2026,
+          mes: 5,
+          mesNombre: 'Mayo',
+          documentoId: 'new',
+          documentoUrl: 'https://example.com/new',
+          nombre: 'A',
+          senadorId: '1',
+          origen: 'A',
+          origenCodigo: 'AAA',
+          destino: 'B',
+          destinoCodigo: 'BBB',
+        },
+      ],
+      internacionales: [
+        {
+          ambito: 'internacional',
+          anio: 2025,
+          mes: 4,
+          mesNombre: 'Abril',
+          documentoId: 'i',
+          documentoUrl: 'https://example.com/i',
+          nombre: 'B',
+          senadorId: '2',
+          expediente: null,
+          destino: 'Chile',
+          fechaInicio: '2025-04-01',
+          fechaFin: '2025-04-02',
+          fechaTexto: null,
+          asistenciaAlViajero: null,
+          viaticos: null,
+          viaticosUsd: null,
+          viaticosEuro: null,
+          viaticosArs: null,
+          motivo: null,
+          bloque: null,
+        },
+      ],
+    })
+
+    expect(conteo.porSenador['1']).toEqual({
+      nacionales: 2,
+      internacionales: 0,
+      total: 2,
+    })
+    expect(conteo.porSenador['2']).toEqual({
+      nacionales: 0,
+      internacionales: 1,
+      total: 1,
+    })
+  })
+})
+
 describe('buildViajesEndpointMap', () => {
   it('arma recortes por ámbito, año/mes y senador', () => {
     const data = {
@@ -335,6 +408,12 @@ describe('buildViajesEndpointMap', () => {
     expect(endpoints['/senado/viajes/conteo-12m']).toMatchObject({
       ventanaMeses: 12,
       porSenador: expect.any(Object),
+    })
+    expect(endpoints['/senado/viajes/conteo']).toMatchObject({
+      porSenador: {
+        '546': { nacionales: 1, internacionales: 0, total: 1 },
+        '545': { nacionales: 0, internacionales: 1, total: 1 },
+      },
     })
     expect(endpoints['/senado/senadores/546/viajes']).toMatchObject({
       senadorId: '546',
