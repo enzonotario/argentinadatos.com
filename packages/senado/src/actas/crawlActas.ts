@@ -3,7 +3,6 @@ import { shouldWriteFromDatabase, shouldWriteJsonFiles } from '@argentinadatos/c
 import { readEndpoint } from '@argentinadatos/core/src/utils/readEndpoint.ts'
 import { writeEndpoint } from '@argentinadatos/core/src/utils/writeEndpoint.ts'
 import * as cheerio from 'cheerio'
-import { collect } from 'collect.js'
 import { ActasDatabaseService } from './database/service.ts'
 import { downloadPdf } from './downloadPdf.ts'
 import { parseActa } from './parseActa.ts'
@@ -126,7 +125,10 @@ async function processActa(
     }
 
     const tituloFromHtml = html ? scrapeTituloFromHtml(html) : ''
-    const finalTitulo = tituloFromHtml || titulo
+    const finalTitulo =
+      tituloFromHtml ||
+      titulo ||
+      readExistingTitulo(actaId, yearToSearch)
 
     const tieneVotosPdf = await pdfTieneVotosIndividuales(pdfPath)
 
@@ -155,20 +157,79 @@ async function processActa(
   }
 }
 
+function readExistingTitulo(actaId: number, year: number): string {
+  try {
+    const rawDetail = readEndpoint(`/senado/actas/${year}/${actaId}`)
+    if (rawDetail) {
+      const detail = JSON.parse(rawDetail)
+      const t = String(detail?.titulo || '').trim()
+      if (t) return t
+    }
+  }
+  catch {
+    // ignore
+  }
+
+  try {
+    const rawYear = readEndpoint(`/senado/actas/${year}`) || '[]'
+    const list = JSON.parse(rawYear)
+    if (Array.isArray(list)) {
+      const found = list.find((a: any) => Number(a?.actaId) === actaId)
+      const t = String(found?.titulo || '').trim()
+      if (t) return t
+    }
+  }
+  catch {
+    // ignore
+  }
+
+  return ''
+}
+
+/**
+ * Merge por actaId: la entrada nueva gana, pero no pisa un título bueno
+ * con string vacío (el scrape HTML a veces falla bajo carga paralela).
+ */
+function mergeActasById(incoming: ActaData[], existing: any[]): ActaData[] {
+  const byId = new Map<number, any>()
+
+  for (const acta of existing || []) {
+    if (acta?.actaId == null) continue
+    byId.set(Number(acta.actaId), acta)
+  }
+
+  for (const acta of incoming || []) {
+    if (acta?.actaId == null) continue
+    const id = Number(acta.actaId)
+    const prev = byId.get(id)
+    if (!prev) {
+      byId.set(id, acta)
+      continue
+    }
+
+    const newTitulo = String(acta.titulo || '').trim()
+    const prevTitulo = String(prev.titulo || '').trim()
+
+    byId.set(id, {
+      ...prev,
+      ...acta,
+      titulo: newTitulo || prevTitulo || acta.titulo || '',
+    })
+  }
+
+  return [...byId.values()].sort(
+    (a, b) => Number(a.actaId) - Number(b.actaId),
+  )
+}
+
 function saveByYear(data: any, year: number) {
   if (!shouldWriteJsonFiles()) {
     return data
   }
 
   const currentValues = readEndpoint(`/senado/actas/${year}`) || '[]'
-
   const currentData = JSON.parse(currentValues)
-
-  const newData = collect(data)
-    .merge(currentData)
-    .unique('actaId')
-    .sortBy('actaId')
-    .all()
+  const newData = mergeActasById(data, currentData)
 
   writeEndpoint(`/senado/actas/${year}`, newData)
 
@@ -181,14 +242,8 @@ function saveAll(data: any) {
   }
 
   const currentValues = readEndpoint('/senado/actas') || '[]'
-
   const currentData = JSON.parse(currentValues)
-
-  const newData = collect(data)
-    .merge(currentData)
-    .unique('actaId')
-    .sortBy('actaId')
-    .all()
+  const newData = mergeActasById(data, currentData)
 
   writeEndpoint('/senado/actas', newData)
 }
