@@ -89,6 +89,108 @@ export interface ViajesData {
   internacionales: ViajeInternacional[]
 }
 
+export interface ViajesConteoSenador {
+  nacionales: number
+  internacionales: number
+  total: number
+}
+
+/** Resumen compacto para listados (evita bajar el índice completo de viajes). */
+export interface ViajesConteo12m {
+  ventanaMeses: 12
+  desde: { anio: number, mes: number }
+  hasta: { anio: number, mes: number }
+  actualizado: string
+  porSenador: Record<string, ViajesConteoSenador>
+}
+
+export const VIAJES_CONTEO_12M_ENDPOINT = `${VIAJES_ENDPOINT}/conteo-12m`
+
+function anioMesToIndex(anio: number, mes: number): number {
+  return anio * 12 + mes
+}
+
+function indexToAnioMes(index: number): { anio: number, mes: number } {
+  const anio = Math.floor((index - 1) / 12)
+  const mes = ((index - 1) % 12) + 1
+  return { anio, mes }
+}
+
+function viajeInternacionalAnioMes(viaje: ViajeInternacional): { anio: number, mes: number } | null {
+  if (viaje.fechaInicio && /^\d{4}-\d{2}/.test(viaje.fechaInicio)) {
+    const anio = Number(viaje.fechaInicio.slice(0, 4))
+    const mes = Number(viaje.fechaInicio.slice(5, 7))
+    if (anio > 0 && mes >= 1 && mes <= 12) {
+      return { anio, mes }
+    }
+  }
+  if (viaje.anio > 0) {
+    const mes = viaje.mes != null && viaje.mes >= 1 && viaje.mes <= 12 ? viaje.mes : 1
+    return { anio: viaje.anio, mes }
+  }
+  return null
+}
+
+/**
+ * Cuenta viajes nacionales + internacionales por senador en la ventana
+ * móvil de 12 meses calendario inclusive hasta `asOf`.
+ */
+export function buildViajesConteo12m(
+  data: Pick<ViajesData, 'nacionales' | 'internacionales'>,
+  asOf: Date = new Date(),
+): ViajesConteo12m {
+  const hastaAnio = asOf.getUTCFullYear()
+  const hastaMes = asOf.getUTCMonth() + 1
+  const hastaIdx = anioMesToIndex(hastaAnio, hastaMes)
+  const desdeIdx = hastaIdx - 11
+  const desde = indexToAnioMes(desdeIdx)
+  const hasta = { anio: hastaAnio, mes: hastaMes }
+
+  const porSenador: Record<string, ViajesConteoSenador> = {}
+
+  const bump = (senadorId: string | null | undefined, kind: 'nacionales' | 'internacionales') => {
+    if (!senadorId) {
+      return
+    }
+    const id = String(senadorId)
+    const entry = porSenador[id] || { nacionales: 0, internacionales: 0, total: 0 }
+    entry[kind] += 1
+    entry.total += 1
+    porSenador[id] = entry
+  }
+
+  for (const viaje of data.nacionales) {
+    if (viaje.mes < 1 || viaje.mes > 12) {
+      continue
+    }
+    const idx = anioMesToIndex(viaje.anio, viaje.mes)
+    if (idx < desdeIdx || idx > hastaIdx) {
+      continue
+    }
+    bump(viaje.senadorId, 'nacionales')
+  }
+
+  for (const viaje of data.internacionales) {
+    const am = viajeInternacionalAnioMes(viaje)
+    if (!am) {
+      continue
+    }
+    const idx = anioMesToIndex(am.anio, am.mes)
+    if (idx < desdeIdx || idx > hastaIdx) {
+      continue
+    }
+    bump(viaje.senadorId, 'internacionales')
+  }
+
+  return {
+    ventanaMeses: 12,
+    desde,
+    hasta,
+    actualizado: asOf.toISOString().slice(0, 10),
+    porSenador,
+  }
+}
+
 async function mapPool<T>(
   items: T[],
   concurrency: number,
@@ -741,6 +843,7 @@ export function buildViajesEndpointMap(
     [VIAJES_ENDPOINT]: data,
     [`${VIAJES_ENDPOINT}/nacionales`]: data.nacionales,
     [`${VIAJES_ENDPOINT}/internacionales`]: data.internacionales,
+    [VIAJES_CONTEO_12M_ENDPOINT]: buildViajesConteo12m(data),
   }
 
   const nacionalesPorAnio = new Map<number, ViajeNacional[]>()
@@ -810,6 +913,7 @@ export function buildViajesEndpointMap(
  * Persiste el índice completo y los recortes:
  * - /senado/viajes/nacionales[/año[/mes]]
  * - /senado/viajes/internacionales[/año]
+ * - /senado/viajes/conteo-12m
  * - /senado/senadores/{id}/viajes
  */
 export function writeViajesEndpoints(

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { readEndpoint } from '@argentinadatos/core/src/utils/readEndpoint.ts'
 import {
+  buildViajesConteo12m,
   buildViajesEndpointMap,
   collectViajeDocumentos,
   crawlViajes,
@@ -185,6 +186,98 @@ describe('collectViajeDocumentos', () => {
   })
 })
 
+describe('buildViajesConteo12m', () => {
+  it('cuenta nacionales e internacionales en la ventana de 12 meses', () => {
+    const asOf = new Date('2026-08-08T12:00:00.000Z')
+    const conteo = buildViajesConteo12m(
+      {
+        nacionales: [
+          {
+            ambito: 'nacional',
+            anio: 2025,
+            mes: 8,
+            mesNombre: 'Agosto',
+            documentoId: 'old',
+            documentoUrl: 'https://example.com/old',
+            nombre: 'Fuera',
+            senadorId: '1',
+            origen: 'A',
+            origenCodigo: 'AAA',
+            destino: 'B',
+            destinoCodigo: 'BBB',
+          },
+          {
+            ambito: 'nacional',
+            anio: 2025,
+            mes: 9,
+            mesNombre: 'Septiembre',
+            documentoId: 'in',
+            documentoUrl: 'https://example.com/in',
+            nombre: 'Dentro',
+            senadorId: '1',
+            origen: 'A',
+            origenCodigo: 'AAA',
+            destino: 'B',
+            destinoCodigo: 'BBB',
+          },
+          {
+            ambito: 'nacional',
+            anio: 2026,
+            mes: 5,
+            mesNombre: 'Mayo',
+            documentoId: 'in2',
+            documentoUrl: 'https://example.com/in2',
+            nombre: 'Otro',
+            senadorId: '2',
+            origen: 'A',
+            origenCodigo: 'AAA',
+            destino: 'B',
+            destinoCodigo: 'BBB',
+          },
+        ],
+        internacionales: [
+          {
+            ambito: 'internacional',
+            anio: 2026,
+            mes: 3,
+            mesNombre: 'Marzo',
+            documentoId: 'intl',
+            documentoUrl: 'https://example.com/intl',
+            nombre: 'Dentro',
+            senadorId: '1',
+            expediente: '1/2026',
+            destino: 'Chile',
+            fechaInicio: '2026-03-10',
+            fechaFin: '2026-03-12',
+            fechaTexto: null,
+            asistenciaAlViajero: null,
+            viaticos: null,
+            viaticosUsd: null,
+            viaticosEuro: null,
+            viaticosArs: null,
+            motivo: null,
+            bloque: null,
+          },
+        ],
+      },
+      asOf,
+    )
+
+    expect(conteo.desde).toEqual({ anio: 2025, mes: 9 })
+    expect(conteo.hasta).toEqual({ anio: 2026, mes: 8 })
+    expect(conteo.porSenador['1']).toEqual({
+      nacionales: 1,
+      internacionales: 1,
+      total: 2,
+    })
+    expect(conteo.porSenador['2']).toEqual({
+      nacionales: 1,
+      internacionales: 0,
+      total: 1,
+    })
+  })
+})
+
 describe('buildViajesEndpointMap', () => {
   it('arma recortes por ámbito, año/mes y senador', () => {
     const data = {
@@ -239,6 +332,10 @@ describe('buildViajesEndpointMap', () => {
     expect(endpoints['/senado/viajes/nacionales/2026']).toHaveLength(1)
     expect(endpoints['/senado/viajes/nacionales/2026/5']).toHaveLength(1)
     expect(endpoints['/senado/viajes/internacionales/2025']).toHaveLength(1)
+    expect(endpoints['/senado/viajes/conteo-12m']).toMatchObject({
+      ventanaMeses: 12,
+      porSenador: expect.any(Object),
+    })
     expect(endpoints['/senado/senadores/546/viajes']).toMatchObject({
       senadorId: '546',
       nacionales: [expect.objectContaining({ origenCodigo: 'MDQ' })],
