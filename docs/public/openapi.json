@@ -1203,6 +1203,31 @@
         ]
       }
     },
+    "/v1/senado/presidencia": {
+      "get": {
+        "summary": "Presidencia del Senado",
+        "tags": [
+          "Senado"
+        ],
+        "description": "Devuelve los datos del presidente actual del Senado (vicepresidente de la Nación en ejercicio), scrapeados de la página oficial de Presidencia.",
+        "responses": {
+          "200": {
+            "description": "Datos de la Presidencia del Senado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PresidenciaSenado"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-senado-presidencia",
+        "x-data-source": [
+          "[Senado — Presidencia](https://www.senado.gob.ar/presidencia)"
+        ]
+      }
+    },
     "/v1/senado/viajes": {
       "get": {
         "summary": "Viajes nacionales e internacionales",
@@ -3120,6 +3145,61 @@
             }
           }
         }
+      },
+      "PresidenciaSenado": {
+        "title": "PresidenciaSenado",
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "example": "Victoria Eugenia Villarruel"
+          },
+          "cargo": {
+            "type": "string",
+            "example": "Presidente del Senado de la Nación"
+          },
+          "periodoInicio": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "periodoFin": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "foto": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
+            "type": "string",
+            "nullable": true
+          },
+          "direccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "curriculum": {
+            "type": "string",
+            "nullable": true,
+            "description": "Texto del currículum si está publicado; null si no está disponible"
+          },
+          "fuente": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "nombre",
+          "cargo",
+          "fuente"
+        ]
       },
       "ViajesSenado": {
         "title": "ViajesSenado",

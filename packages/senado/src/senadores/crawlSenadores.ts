@@ -18,6 +18,7 @@ import {
   applyComisionesMetaToSenadores,
   crawlComisiones,
 } from './crawlComisiones.ts'
+import { crawlPresidencia } from './crawlPresidencia.ts'
 import { crawlViajes } from './crawlViajes.ts'
 import {
   applyDietasMecanismosMeta,
@@ -76,6 +77,8 @@ export async function crawlSenadores(): Promise<Senador[]> {
   await processDietasMecanismos()
 
   await processComisiones()
+
+  await processPresidencia()
 
   await processViajes()
 
@@ -508,6 +511,16 @@ async function processComisiones(): Promise<Senador[]> {
 
   await persistSenadores(senadores)
   return senadores
+}
+
+async function processPresidencia(): Promise<void> {
+  try {
+    const presidencia = await crawlPresidencia()
+    console.log(`Presidencia: ${presidencia.nombre} (${presidencia.periodoInicio} – ${presidencia.periodoFin})`)
+  }
+  catch (e: any) {
+    console.error('Presidencia: no se pudo scrapear', e?.message || e)
+  }
 }
 
 async function processViajes(): Promise<void> {
