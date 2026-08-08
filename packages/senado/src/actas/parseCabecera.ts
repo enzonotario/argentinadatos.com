@@ -19,6 +19,8 @@ export async function parseCabecera(pdfPath: string): Promise<ActaData> {
     fecha: '',
     acta: '',
     mayoria: '',
+    votacion: '',
+    presidente: '',
     miembros: 0,
     afirmativos: 0,
     negativos: 0,
@@ -89,8 +91,14 @@ export async function parseCabecera(pdfPath: string): Promise<ActaData> {
           case 'Mayoría':
             result.mayoria = value
             break
+          case 'Votación':
+            result.votacion = value
+            break
           case 'Miembros del cuerpo':
             result.miembros = Number.parseInt(value) || 0
+            break
+          case 'Presidente':
+            result.presidente = value
             break
           case 'Afirmativos':
             result.afirmativos = Number.parseInt(value) || 0

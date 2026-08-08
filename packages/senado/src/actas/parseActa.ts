@@ -32,6 +32,10 @@ export interface ActaData {
   fecha: string
   acta: string
   mayoria: string
+  /** Tipo de votación (p. ej. NOMINAL). */
+  votacion?: string
+  /** Presidente según cabecera del PDF. */
+  presidente?: string
   miembros: number
   afirmativos: number
   negativos: number
