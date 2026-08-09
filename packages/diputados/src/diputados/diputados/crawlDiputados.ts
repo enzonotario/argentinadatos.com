@@ -11,6 +11,7 @@ import { formatISO, isValid, parse, parseISO } from 'date-fns'
 import iconv from 'iconv-lite'
 import { BASE_URL, USER_AGENT } from '../../constants.ts'
 import { DiputadosDatabaseService } from './database/service.ts'
+import { crawlViajes } from '../viajes/crawlViajes.ts'
 
 export interface Diputado {
   id: string
@@ -65,6 +66,20 @@ export async function crawlDiputados(): Promise<Diputado[]> {
 
   if (shouldWriteJsonFiles()) {
     writeEndpoint('diputados/diputados', diputados)
+  }
+
+  try {
+    // Matching usa datos/v1/diputados/diputados (existente o recién escrito).
+    if (shouldWriteJsonFiles()) {
+      writeEndpoint('/diputados/diputados', diputados)
+    }
+    const viajes = await crawlViajes()
+    console.log(
+      `Viajes: ${viajes.nacionales.length} nacionales (${viajes.recursos.length} CSVs)`,
+    )
+  }
+  catch (e: any) {
+    console.error('Viajes: no se pudo scrapear', e?.message || e)
   }
 
   const TURSO_DATABASE_URL = process.env.VITE_TURSO_DATABASE_URL

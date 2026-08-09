@@ -1663,6 +1663,120 @@
         ]
       }
     },
+    "/v1/diputados/viajes": {
+      "get": {
+        "summary": "Viajes nacionales de diputados",
+        "tags": [
+          "Diputados"
+        ],
+        "description": "Índice de viajes nacionales de diputados (CSVs de datos abiertos HCDN). También hay recortes en `/v1/diputados/viajes/nacionales`, `/v1/diputados/viajes/conteo-12m` y `/v1/diputados/diputados/{id}/viajes`.",
+        "responses": {
+          "200": {
+            "description": "Catálogo de recursos CSV y tramos nacionales parseados",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ViajesDiputados"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-diputados-viajes",
+        "x-data-source": [
+          "[HCDN — Viajes Nacionales](https://datos.hcdn.gob.ar/dataset/viajes-nacionales)"
+        ]
+      }
+    },
+    "/v1/diputados/viajes/nacionales": {
+      "get": {
+        "summary": "Viajes nacionales (lista)",
+        "tags": [
+          "Diputados"
+        ],
+        "description": "Todos los tramos nacionales parseados desde los CSV semestrales.",
+        "responses": {
+          "200": {
+            "description": "Lista de viajes nacionales",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ViajeNacionalDiputado"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-diputados-viajes-nacionales",
+        "x-data-source": [
+          "[HCDN — Viajes Nacionales](https://datos.hcdn.gob.ar/dataset/viajes-nacionales)"
+        ]
+      }
+    },
+    "/v1/diputados/viajes/conteo-12m": {
+      "get": {
+        "summary": "Conteo de viajes (últimos 12 meses)",
+        "tags": [
+          "Diputados"
+        ],
+        "description": "Cantidad de tramos nacionales por diputado en la ventana móvil de 12 meses.",
+        "responses": {
+          "200": {
+            "description": "Conteo por diputadoId",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ViajesConteo12mDiputados"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-diputados-viajes-conteo-12m",
+        "x-data-source": [
+          "[HCDN — Viajes Nacionales](https://datos.hcdn.gob.ar/dataset/viajes-nacionales)"
+        ]
+      }
+    },
+    "/v1/diputados/diputados/{id}/viajes": {
+      "get": {
+        "summary": "Viajes de un diputado",
+        "tags": [
+          "Diputados"
+        ],
+        "description": "Tramos nacionales asociados a un diputado.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "HCDN3178"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Viajes del diputado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiputadoViajes"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-diputados-diputado-viajes",
+        "x-data-source": [
+          "[HCDN — Viajes Nacionales](https://datos.hcdn.gob.ar/dataset/viajes-nacionales)"
+        ]
+      }
+    },
     "/v1/diputados/actas/{año}": {
       "get": {
         "summary": "Actas por año",
@@ -3503,6 +3617,103 @@
             "format": "uri",
             "nullable": true
           }
+        }
+      },
+      "ViajesDiputados": {
+        "title": "ViajesDiputados",
+        "type": "object",
+        "properties": {
+          "fuente": { "type": "string", "format": "uri" },
+          "actualizado": { "type": "string", "format": "date-time" },
+          "recursos": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "string" },
+                "nombre": { "type": "string" },
+                "url": { "type": "string", "format": "uri" },
+                "anio": { "type": "integer", "nullable": true },
+                "semestre": { "type": "integer", "nullable": true }
+              }
+            }
+          },
+          "nacionales": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/ViajeNacionalDiputado" }
+          },
+          "internacionales": {
+            "type": "array",
+            "items": {},
+            "description": "Vacío: HCDN aún no publica internacionales en este dataset"
+          }
+        }
+      },
+      "ViajeNacionalDiputado": {
+        "title": "ViajeNacionalDiputado",
+        "type": "object",
+        "properties": {
+          "ambito": { "type": "string", "enum": ["nacional"] },
+          "anio": { "type": "integer" },
+          "mes": { "type": "integer" },
+          "mesNombre": { "type": "string" },
+          "recursoId": { "type": "string" },
+          "recursoUrl": { "type": "string", "format": "uri" },
+          "recursoNombre": { "type": "string" },
+          "nombre": { "type": "string" },
+          "diputadoId": { "type": "string", "nullable": true },
+          "tipoSolicitud": { "type": "string", "nullable": true },
+          "origen": { "type": "string" },
+          "origenCodigo": { "type": "string", "nullable": true },
+          "destino": { "type": "string" },
+          "destinoCodigo": { "type": "string", "nullable": true },
+          "provincia": { "type": "string", "nullable": true },
+          "bloque": { "type": "string", "nullable": true }
+        }
+      },
+      "ViajesConteo12mDiputados": {
+        "title": "ViajesConteo12mDiputados",
+        "type": "object",
+        "properties": {
+          "ventanaMeses": { "type": "integer" },
+          "desde": {
+            "type": "object",
+            "properties": {
+              "anio": { "type": "integer" },
+              "mes": { "type": "integer" }
+            }
+          },
+          "hasta": {
+            "type": "object",
+            "properties": {
+              "anio": { "type": "integer" },
+              "mes": { "type": "integer" }
+            }
+          },
+          "actualizado": { "type": "string" },
+          "porDiputado": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "nacionales": { "type": "integer" },
+                "internacionales": { "type": "integer" },
+                "total": { "type": "integer" }
+              }
+            }
+          }
+        }
+      },
+      "DiputadoViajes": {
+        "title": "DiputadoViajes",
+        "type": "object",
+        "properties": {
+          "diputadoId": { "type": "string" },
+          "nacionales": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/ViajeNacionalDiputado" }
+          },
+          "internacionales": { "type": "array", "items": {} }
         }
       },
       "ActaDiputados": {
