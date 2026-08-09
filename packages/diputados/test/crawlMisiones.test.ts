@@ -59,6 +59,26 @@ describe('rowToMisionOficial', () => {
     })
   })
 
+  it('corrige typo HCDN "$ 3492.0.00" sin multiplicar por 1000', () => {
+    const csv = `fecha_inicio,fecha_fin,participa,lugar,motivo,viaticos_consumidos,moneda
+2022-01-25,2022-02-08,"VALDES, EDUARDO FELIX",Honduras,Comitiva,"$ 3492.0.00",U$S
+`
+    const rows = parseCsvText(csv)
+    const mision = rowToMisionOficial(rows[0]!, recurso)
+    expect(mision).toMatchObject({
+      viaticosUsd: 3492,
+      viaticosArs: null,
+    })
+  })
+
+  it('interpreta miles con punto ("1.234") como entero', () => {
+    const csv = `fecha_inicio,fecha_fin,participa,lugar,motivo,viaticos_consumidos,moneda
+2023-06-01,2023-06-05,"PRUEBA, UNO",Brasil,Reunion,"1.234",U$S
+`
+    const rows = parseCsvText(csv)
+    expect(rowToMisionOficial(rows[0]!, recurso)?.viaticosUsd).toBe(1234)
+  })
+
   it('omite filas placeholder', () => {
     const csv = `participa,motivo
 s/n,no se realizaron misiones

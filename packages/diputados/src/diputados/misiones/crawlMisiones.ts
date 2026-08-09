@@ -128,9 +128,49 @@ function mesNombre(mes: number): string | null {
 }
 
 function parseMoney(raw: string): number | null {
-  const s = String(raw || '').trim()
+  let s = String(raw || '').trim()
   if (!s || s === '-' || /^s\/?n$/i.test(s) || /^no$/i.test(s)) return null
-  const nums = s.replace(/\./g, '').replace(',', '.').match(/-?\d+(?:\.\d+)?/g)
+
+  // Quitar símbolos; dejar dígitos y separadores.
+  s = s
+    .replace(/U\$S/gi, '')
+    .replace(/USD|EUR|ARS|€|\$/gi, '')
+    .replace(/\s+/g, '')
+    .trim()
+  if (!s) return null
+
+  // Typo HCDN 2022: "$ 3492.0.00" / "$ 699.0.00" → 3492 / 699
+  const brokenCentavos = s.match(/^(-?\d+)\.0\.(\d{2})$/)
+  if (brokenCentavos) {
+    const n = Number(`${brokenCentavos[1]}.${brokenCentavos[2]}`)
+    return Number.isFinite(n) ? n : null
+  }
+
+  // "1.434,00" / "1434,00"
+  if (s.includes(',')) {
+    const n = Number(s.replace(/\./g, '').replace(',', '.'))
+    return Number.isFinite(n) ? n : null
+  }
+
+  // "1.234" / "12.345.678" — miles sin decimales (no usar Number(): 1.234 → 1.234)
+  if (/^-?\d{1,3}(\.\d{3})+$/.test(s)) {
+    const n = Number(s.replace(/\./g, ''))
+    return Number.isFinite(n) ? n : null
+  }
+
+  // "1.434.00" (miles + centavos con punto)
+  const milesCentavos = s.match(/^(-?\d{1,3}(?:\.\d{3})*)\.(\d{2})$/)
+  if (milesCentavos) {
+    const n = Number(
+      `${milesCentavos[1]!.replace(/\./g, '')}.${milesCentavos[2]}`,
+    )
+    return Number.isFinite(n) ? n : null
+  }
+
+  const direct = Number(s)
+  if (Number.isFinite(direct)) return direct
+
+  const nums = s.match(/-?\d+(?:\.\d+)?/g)
   if (!nums?.length) return null
   const n = Number(nums[nums.length - 1])
   return Number.isFinite(n) ? n : null
