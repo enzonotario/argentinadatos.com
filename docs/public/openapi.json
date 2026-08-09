@@ -1663,6 +1663,59 @@
         ]
       }
     },
+    "/v1/diputados/periodos": {
+      "get": {
+        "summary": "Períodos parlamentarios",
+        "tags": [
+          "Diputados"
+        ],
+        "description": "Períodos parlamentarios oficiales de la HCDN (dataset `periodos_p`). Cada ítem agrega los tramos ordinario/extraordinario/prórroga en un rango `inicio`–`fin`. La clave `periodo` coincide con `acta.periodo`. También `/v1/diputados/periodos/lista`.",
+        "responses": {
+          "200": {
+            "description": "Catálogo de períodos parlamentarios",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeriodosDiputados"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-diputados-periodos",
+        "x-data-source": [
+          "[HCDN — Períodos Parlamentarios](https://datos.hcdn.gob.ar/dataset/periodos_p)"
+        ]
+      }
+    },
+    "/v1/diputados/periodos/lista": {
+      "get": {
+        "summary": "Períodos parlamentarios (lista)",
+        "tags": [
+          "Diputados"
+        ],
+        "description": "Lista de períodos (sin metadatos de fuente).",
+        "responses": {
+          "200": {
+            "description": "Lista de períodos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PeriodoParlamentarioDiputados"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-diputados-periodos-lista",
+        "x-data-source": [
+          "[HCDN — Períodos Parlamentarios](https://datos.hcdn.gob.ar/dataset/periodos_p)"
+        ]
+      }
+    },
     "/v1/diputados/viajes": {
       "get": {
         "summary": "Viajes nacionales de diputados",
@@ -3616,6 +3669,57 @@
             "type": "string",
             "format": "uri",
             "nullable": true
+          }
+        }
+      },
+      "PeriodoParlamentarioDiputados": {
+        "title": "PeriodoParlamentarioDiputados",
+        "type": "object",
+        "properties": {
+          "periodo": {
+            "type": "string",
+            "description": "Número de período (coincide con acta.periodo)"
+          },
+          "inicio": {
+            "type": "string",
+            "format": "date"
+          },
+          "fin": {
+            "type": "string",
+            "format": "date"
+          },
+          "sesiones": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "tramos": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "string" },
+                "tipo": {
+                  "type": "string",
+                  "enum": ["ordinario", "extraordinario", "prorroga", "otro"]
+                },
+                "inicio": { "type": "string", "format": "date" },
+                "fin": { "type": "string", "format": "date" },
+                "sesiones": { "type": "string", "format": "date", "nullable": true }
+              }
+            }
+          }
+        }
+      },
+      "PeriodosDiputados": {
+        "title": "PeriodosDiputados",
+        "type": "object",
+        "properties": {
+          "fuente": { "type": "string", "format": "uri" },
+          "actualizado": { "type": "string", "format": "date-time" },
+          "periodos": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/PeriodoParlamentarioDiputados" }
           }
         }
       },

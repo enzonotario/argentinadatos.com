@@ -12,6 +12,7 @@ import iconv from 'iconv-lite'
 import { BASE_URL, USER_AGENT } from '../../constants.ts'
 import { DiputadosDatabaseService } from './database/service.ts'
 import { crawlViajes } from '../viajes/crawlViajes.ts'
+import { crawlPeriodos } from '../periodos/crawlPeriodos.ts'
 
 export interface Diputado {
   id: string
@@ -80,6 +81,14 @@ export async function crawlDiputados(): Promise<Diputado[]> {
   }
   catch (e: any) {
     console.error('Viajes: no se pudo scrapear', e?.message || e)
+  }
+
+  try {
+    const periodos = await crawlPeriodos()
+    console.log(`Periodos: ${periodos.periodos.length} parlamentarios`)
+  }
+  catch (e: any) {
+    console.error('Periodos: no se pudo scrapear', e?.message || e)
   }
 
   const TURSO_DATABASE_URL = process.env.VITE_TURSO_DATABASE_URL
