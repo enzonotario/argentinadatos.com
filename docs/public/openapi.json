@@ -1716,13 +1716,141 @@
         ]
       }
     },
-    "/v1/diputados/viajes": {
+    "/v1/diputados/misiones": {
       "get": {
-        "summary": "Viajes nacionales e internacionales de diputados",
+        "summary": "Misiones oficiales de diputados",
         "tags": [
           "Diputados"
         ],
-        "description": "Índice de viajes de diputados: nacionales (CSVs `viajes-nacionales`) e internacionales/misiones oficiales (CSVs `misiones-oficiales`). También hay recortes en `/v1/diputados/viajes/nacionales`, `/v1/diputados/viajes/internacionales`, `/v1/diputados/viajes/conteo-12m` y `/v1/diputados/diputados/{id}/viajes`.",
+        "description": "Índice de misiones oficiales al exterior (CSVs `misiones-oficiales`): `fuente`, `actualizado`, `recursos` y `misiones`. También `/v1/diputados/misiones/lista`, `/v1/diputados/misiones/{año}` y `/v1/diputados/diputados/{id}/misiones`.",
+        "responses": {
+          "200": {
+            "description": "Catálogo de recursos CSV y misiones parseadas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MisionesDiputados"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-diputados-misiones",
+        "x-data-source": [
+          "[HCDN — Misiones Oficiales](https://datos.hcdn.gob.ar/dataset/misiones-oficiales)"
+        ]
+      }
+    },
+    "/v1/diputados/misiones/lista": {
+      "get": {
+        "summary": "Misiones oficiales (lista)",
+        "tags": [
+          "Diputados"
+        ],
+        "description": "Lista plana de misiones oficiales parseadas.",
+        "responses": {
+          "200": {
+            "description": "Lista de misiones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MisionOficialDiputado"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-diputados-misiones-lista",
+        "x-data-source": [
+          "[HCDN — Misiones Oficiales](https://datos.hcdn.gob.ar/dataset/misiones-oficiales)"
+        ]
+      }
+    },
+    "/v1/diputados/misiones/{año}": {
+      "get": {
+        "summary": "Misiones oficiales por año",
+        "tags": [
+          "Diputados"
+        ],
+        "description": "Misiones oficiales del año indicado.",
+        "parameters": [
+          {
+            "name": "año",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "example": 2024
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de misiones del año",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MisionOficialDiputado"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-diputados-misiones-año",
+        "x-data-source": [
+          "[HCDN — Misiones Oficiales](https://datos.hcdn.gob.ar/dataset/misiones-oficiales)"
+        ]
+      }
+    },
+    "/v1/diputados/diputados/{id}/misiones": {
+      "get": {
+        "summary": "Misiones de un diputado",
+        "tags": [
+          "Diputados"
+        ],
+        "description": "Misiones oficiales asociadas a un diputado.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "HCDN3178"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Misiones del diputado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiputadoMisiones"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-diputados-diputado-misiones",
+        "x-data-source": [
+          "[HCDN — Misiones Oficiales](https://datos.hcdn.gob.ar/dataset/misiones-oficiales)"
+        ]
+      }
+    },
+    "/v1/diputados/viajes": {
+      "get": {
+        "summary": "Viajes nacionales de diputados",
+        "tags": [
+          "Diputados"
+        ],
+        "description": "Índice de viajes nacionales de diputados (CSVs `viajes-nacionales`). También hay recortes en `/v1/diputados/viajes/nacionales`, `/v1/diputados/viajes/conteo-12m` y `/v1/diputados/diputados/{id}/viajes`. Las misiones oficiales al exterior están en `/v1/diputados/misiones`.",
         "responses": {
           "200": {
             "description": "Catálogo de recursos CSV y tramos parseados",
@@ -1737,8 +1865,7 @@
         },
         "operationId": "get-diputados-viajes",
         "x-data-source": [
-          "[HCDN — Viajes Nacionales](https://datos.hcdn.gob.ar/dataset/viajes-nacionales)",
-          "[HCDN — Misiones Oficiales](https://datos.hcdn.gob.ar/dataset/misiones-oficiales)"
+          "[HCDN — Viajes Nacionales](https://datos.hcdn.gob.ar/dataset/viajes-nacionales)"
         ]
       }
     },
@@ -1770,41 +1897,13 @@
         ]
       }
     },
-    "/v1/diputados/viajes/internacionales": {
-      "get": {
-        "summary": "Viajes internacionales / misiones oficiales",
-        "tags": [
-          "Diputados"
-        ],
-        "description": "Misiones oficiales al exterior publicadas por la HCDN.",
-        "responses": {
-          "200": {
-            "description": "Lista de viajes internacionales",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ViajeInternacionalDiputado"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get-diputados-viajes-internacionales",
-        "x-data-source": [
-          "[HCDN — Misiones Oficiales](https://datos.hcdn.gob.ar/dataset/misiones-oficiales)"
-        ]
-      }
-    },
     "/v1/diputados/viajes/conteo-12m": {
       "get": {
         "summary": "Conteo de viajes (últimos 12 meses)",
         "tags": [
           "Diputados"
         ],
-        "description": "Cantidad de tramos nacionales e internacionales por diputado en la ventana móvil de 12 meses.",
+        "description": "Cantidad de tramos nacionales por diputado en la ventana móvil de 12 meses.",
         "responses": {
           "200": {
             "description": "Conteo por diputadoId",
@@ -1819,8 +1918,7 @@
         },
         "operationId": "get-diputados-viajes-conteo-12m",
         "x-data-source": [
-          "[HCDN — Viajes Nacionales](https://datos.hcdn.gob.ar/dataset/viajes-nacionales)",
-          "[HCDN — Misiones Oficiales](https://datos.hcdn.gob.ar/dataset/misiones-oficiales)"
+          "[HCDN — Viajes Nacionales](https://datos.hcdn.gob.ar/dataset/viajes-nacionales)"
         ]
       }
     },
@@ -1830,7 +1928,7 @@
         "tags": [
           "Diputados"
         ],
-        "description": "Tramos nacionales e internacionales asociados a un diputado.",
+        "description": "Tramos nacionales asociados a un diputado.",
         "parameters": [
           {
             "name": "id",
@@ -1856,8 +1954,7 @@
         },
         "operationId": "get-diputados-diputado-viajes",
         "x-data-source": [
-          "[HCDN — Viajes Nacionales](https://datos.hcdn.gob.ar/dataset/viajes-nacionales)",
-          "[HCDN — Misiones Oficiales](https://datos.hcdn.gob.ar/dataset/misiones-oficiales)"
+          "[HCDN — Viajes Nacionales](https://datos.hcdn.gob.ar/dataset/viajes-nacionales)"
         ]
       }
     },
@@ -1952,9 +2049,15 @@
                   "items": {
                     "type": "object",
                     "properties": {
-                      "id": { "type": "string" },
-                      "nombre": { "type": "string" },
-                      "cargo": { "type": "string" }
+                      "id": {
+                        "type": "string"
+                      },
+                      "nombre": {
+                        "type": "string"
+                      },
+                      "cargo": {
+                        "type": "string"
+                      }
                     }
                   }
                 }
@@ -3836,14 +3939,31 @@
             "items": {
               "type": "object",
               "properties": {
-                "id": { "type": "string" },
+                "id": {
+                  "type": "string"
+                },
                 "tipo": {
                   "type": "string",
-                  "enum": ["ordinario", "extraordinario", "prorroga", "otro"]
+                  "enum": [
+                    "ordinario",
+                    "extraordinario",
+                    "prorroga",
+                    "otro"
+                  ]
                 },
-                "inicio": { "type": "string", "format": "date" },
-                "fin": { "type": "string", "format": "date" },
-                "sesiones": { "type": "string", "format": "date", "nullable": true }
+                "inicio": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "fin": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "sesiones": {
+                  "type": "string",
+                  "format": "date",
+                  "nullable": true
+                }
               }
             }
           }
@@ -3853,11 +3973,19 @@
         "title": "PeriodosDiputados",
         "type": "object",
         "properties": {
-          "fuente": { "type": "string", "format": "uri" },
-          "actualizado": { "type": "string", "format": "date-time" },
+          "fuente": {
+            "type": "string",
+            "format": "uri"
+          },
+          "actualizado": {
+            "type": "string",
+            "format": "date-time"
+          },
           "periodos": {
             "type": "array",
-            "items": { "$ref": "#/components/schemas/PeriodoParlamentarioDiputados" }
+            "items": {
+              "$ref": "#/components/schemas/PeriodoParlamentarioDiputados"
+            }
           }
         }
       },
@@ -3865,29 +3993,45 @@
         "title": "ViajesDiputados",
         "type": "object",
         "properties": {
-          "fuente": { "type": "string", "format": "uri" },
-          "actualizado": { "type": "string", "format": "date-time" },
+          "fuente": {
+            "type": "string",
+            "format": "uri"
+          },
+          "actualizado": {
+            "type": "string",
+            "format": "date-time"
+          },
           "recursos": {
             "type": "array",
             "items": {
               "type": "object",
               "properties": {
-                "id": { "type": "string" },
-                "nombre": { "type": "string" },
-                "url": { "type": "string", "format": "uri" },
-                "anio": { "type": "integer", "nullable": true },
-                "semestre": { "type": "integer", "nullable": true }
+                "id": {
+                  "type": "string"
+                },
+                "nombre": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "anio": {
+                  "type": "integer",
+                  "nullable": true
+                },
+                "semestre": {
+                  "type": "integer",
+                  "nullable": true
+                }
               }
             }
           },
           "nacionales": {
             "type": "array",
-            "items": { "$ref": "#/components/schemas/ViajeNacionalDiputado" }
-          },
-          "internacionales": {
-            "type": "array",
-            "items": { "$ref": "#/components/schemas/ViajeInternacionalDiputado" },
-            "description": "Misiones oficiales HCDN (viajes al exterior)"
+            "items": {
+              "$ref": "#/components/schemas/ViajeNacionalDiputado"
+            }
           }
         }
       },
@@ -3895,82 +4039,109 @@
         "title": "ViajeNacionalDiputado",
         "type": "object",
         "properties": {
-          "ambito": { "type": "string", "enum": ["nacional"] },
-          "anio": { "type": "integer" },
-          "mes": { "type": "integer" },
-          "mesNombre": { "type": "string" },
-          "recursoId": { "type": "string" },
-          "recursoUrl": { "type": "string", "format": "uri" },
-          "recursoNombre": { "type": "string" },
-          "nombre": { "type": "string" },
-          "diputadoId": { "type": "string", "nullable": true },
-          "tipoSolicitud": { "type": "string", "nullable": true },
-          "origen": { "type": "string" },
-          "origenCodigo": { "type": "string", "nullable": true },
-          "destino": { "type": "string" },
-          "destinoCodigo": { "type": "string", "nullable": true },
-          "provincia": { "type": "string", "nullable": true },
-          "bloque": { "type": "string", "nullable": true }
-        }
-      },
-      "ViajeInternacionalDiputado": {
-        "title": "ViajeInternacionalDiputado",
-        "type": "object",
-        "properties": {
-          "ambito": { "type": "string", "enum": ["internacional"] },
-          "anio": { "type": "integer" },
-          "mes": { "type": "integer", "nullable": true },
-          "mesNombre": { "type": "string", "nullable": true },
-          "documentoId": { "type": "string" },
-          "documentoUrl": { "type": "string", "format": "uri" },
-          "recursoId": { "type": "string" },
-          "recursoUrl": { "type": "string", "format": "uri" },
-          "recursoNombre": { "type": "string" },
-          "nombre": { "type": "string" },
-          "senadorId": { "type": "string", "nullable": true },
-          "diputadoId": { "type": "string", "nullable": true },
-          "expediente": { "type": "string" },
-          "destino": { "type": "string" },
-          "fechaInicio": { "type": "string", "nullable": true },
-          "fechaFin": { "type": "string", "nullable": true },
-          "fechaTexto": { "type": "string", "nullable": true },
-          "asistenciaAlViajero": { "type": "boolean", "nullable": true },
-          "viaticos": { "type": "boolean", "nullable": true },
-          "viaticosUsd": { "type": "number", "nullable": true },
-          "viaticosEuro": { "type": "number", "nullable": true },
-          "viaticosArs": { "type": "number", "nullable": true },
-          "motivo": { "type": "string", "nullable": true },
-          "bloque": { "type": "string", "nullable": true }
+          "ambito": {
+            "type": "string",
+            "enum": [
+              "nacional"
+            ]
+          },
+          "anio": {
+            "type": "integer"
+          },
+          "mes": {
+            "type": "integer"
+          },
+          "mesNombre": {
+            "type": "string"
+          },
+          "recursoId": {
+            "type": "string"
+          },
+          "recursoUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "recursoNombre": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "diputadoId": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoSolicitud": {
+            "type": "string",
+            "nullable": true
+          },
+          "origen": {
+            "type": "string"
+          },
+          "origenCodigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "destino": {
+            "type": "string"
+          },
+          "destinoCodigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "provincia": {
+            "type": "string",
+            "nullable": true
+          },
+          "bloque": {
+            "type": "string",
+            "nullable": true
+          }
         }
       },
       "ViajesConteo12mDiputados": {
         "title": "ViajesConteo12mDiputados",
         "type": "object",
         "properties": {
-          "ventanaMeses": { "type": "integer" },
+          "ventanaMeses": {
+            "type": "integer"
+          },
           "desde": {
             "type": "object",
             "properties": {
-              "anio": { "type": "integer" },
-              "mes": { "type": "integer" }
+              "anio": {
+                "type": "integer"
+              },
+              "mes": {
+                "type": "integer"
+              }
             }
           },
           "hasta": {
             "type": "object",
             "properties": {
-              "anio": { "type": "integer" },
-              "mes": { "type": "integer" }
+              "anio": {
+                "type": "integer"
+              },
+              "mes": {
+                "type": "integer"
+              }
             }
           },
-          "actualizado": { "type": "string" },
+          "actualizado": {
+            "type": "string"
+          },
           "porDiputado": {
             "type": "object",
             "additionalProperties": {
               "type": "object",
               "properties": {
-                "nacionales": { "type": "integer" },
-                "internacionales": { "type": "integer" },
-                "total": { "type": "integer" }
+                "nacionales": {
+                  "type": "integer"
+                },
+                "total": {
+                  "type": "integer"
+                }
               }
             }
           }
@@ -3980,14 +4151,14 @@
         "title": "DiputadoViajes",
         "type": "object",
         "properties": {
-          "diputadoId": { "type": "string" },
+          "diputadoId": {
+            "type": "string"
+          },
           "nacionales": {
             "type": "array",
-            "items": { "$ref": "#/components/schemas/ViajeNacionalDiputado" }
-          },
-          "internacionales": {
-            "type": "array",
-            "items": { "$ref": "#/components/schemas/ViajeInternacionalDiputado" }
+            "items": {
+              "$ref": "#/components/schemas/ViajeNacionalDiputado"
+            }
           }
         }
       },
@@ -3995,26 +4166,67 @@
         "title": "ComisionDiputados",
         "type": "object",
         "properties": {
-          "id": { "type": "string" },
-          "nombre": { "type": "string" },
-          "tipo": { "type": "string", "nullable": true },
-          "tipoCodigo": { "type": "string", "nullable": true },
-          "grupo": { "type": "string", "nullable": true },
-          "periodoInicio": { "type": "string", "nullable": true },
-          "periodoFin": { "type": "string", "nullable": true },
-          "fechaInicio": { "type": "string", "nullable": true },
-          "fechaFin": { "type": "string", "nullable": true },
-          "url": { "type": "string", "format": "uri" },
+          "id": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "tipo": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoCodigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "grupo": {
+            "type": "string",
+            "nullable": true
+          },
+          "periodoInicio": {
+            "type": "string",
+            "nullable": true
+          },
+          "periodoFin": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaInicio": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaFin": {
+            "type": "string",
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
           "integrantes": {
             "type": "array",
             "items": {
               "type": "object",
               "properties": {
-                "nombre": { "type": "string" },
-                "cargo": { "type": "string" },
-                "distrito": { "type": "string", "nullable": true },
-                "bloque": { "type": "string", "nullable": true },
-                "diputadoId": { "type": "string", "nullable": true }
+                "nombre": {
+                  "type": "string"
+                },
+                "cargo": {
+                  "type": "string"
+                },
+                "distrito": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "bloque": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "diputadoId": {
+                  "type": "string",
+                  "nullable": true
+                }
               }
             }
           }
@@ -4809,6 +5021,143 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/FondoHistoricoSerieItem"
+            }
+          }
+        }
+      },
+      "MisionOficialDiputado": {
+        "title": "MisionOficialDiputado",
+        "type": "object",
+        "properties": {
+          "anio": {
+            "type": "integer"
+          },
+          "mes": {
+            "type": "integer",
+            "nullable": true
+          },
+          "mesNombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "recursoId": {
+            "type": "string"
+          },
+          "recursoUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "recursoNombre": {
+            "type": "string"
+          },
+          "documentoId": {
+            "type": "string"
+          },
+          "documentoUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "diputadoId": {
+            "type": "string",
+            "nullable": true
+          },
+          "destino": {
+            "type": "string"
+          },
+          "fechaInicio": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaFin": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaTexto": {
+            "type": "string",
+            "nullable": true
+          },
+          "institucion": {
+            "type": "string",
+            "nullable": true
+          },
+          "viaticos": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "viaticosUsd": {
+            "type": "number",
+            "nullable": true
+          },
+          "viaticosEuro": {
+            "type": "number",
+            "nullable": true
+          },
+          "viaticosArs": {
+            "type": "number",
+            "nullable": true
+          },
+          "motivo": {
+            "type": "string",
+            "nullable": true
+          },
+          "bloque": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "MisionesDiputados": {
+        "title": "MisionesDiputados",
+        "type": "object",
+        "properties": {
+          "fuente": {
+            "type": "string",
+            "format": "uri"
+          },
+          "actualizado": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "recursos": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "nombre": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            }
+          },
+          "misiones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MisionOficialDiputado"
+            }
+          }
+        }
+      },
+      "DiputadoMisiones": {
+        "title": "DiputadoMisiones",
+        "type": "object",
+        "properties": {
+          "diputadoId": {
+            "type": "string"
+          },
+          "misiones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MisionOficialDiputado"
             }
           }
         }

@@ -98,7 +98,7 @@ HCDN01136,ABDALA NORMA AMANDA,Buenos Aires,AEP,Santiago del Estero,SDE
 })
 
 describe('buildViajesEndpointMap', () => {
-  it('particiona por año/mes y por diputado', () => {
+  it('particiona por año/mes y por diputado (solo nacionales)', () => {
     const data = {
       fuente: 'x',
       actualizado: '2026-01-01',
@@ -123,55 +123,15 @@ describe('buildViajesEndpointMap', () => {
           bloque: null,
         },
       ],
-      internacionales: [],
     }
     const map = buildViajesEndpointMap(data, ['HCDN1', 'HCDN2'])
     expect(map['/diputados/viajes/nacionales/2026/6']).toHaveLength(1)
+    expect(map['/diputados/viajes/internacionales']).toBeUndefined()
     expect(map['/diputados/diputados/HCDN1/viajes']).toMatchObject({
       diputadoId: 'HCDN1',
       nacionales: [expect.objectContaining({ nombre: 'Test' })],
-      internacionales: [],
     })
     expect(map['/diputados/diputados/HCDN2/viajes']).toBeUndefined()
-  })
-
-  it('incluye internacionales por año y por diputado', () => {
-    const data = {
-      fuente: 'x',
-      actualizado: '2026-01-01',
-      recursos: [],
-      nacionales: [],
-      internacionales: [
-        {
-          ambito: 'internacional' as const,
-          anio: 2024,
-          mes: 3,
-          mesNombre: 'Marzo',
-          documentoId: 'm1',
-          documentoUrl: 'u',
-          nombre: 'Test',
-          senadorId: null,
-          diputadoId: 'HCDN1',
-          expediente: '',
-          destino: 'Brasil',
-          fechaInicio: '2024-03-10',
-          fechaFin: '2024-03-15',
-          fechaTexto: null,
-          asistenciaAlViajero: null,
-          viaticos: null,
-          viaticosUsd: null,
-          viaticosEuro: null,
-          viaticosArs: null,
-          motivo: null,
-          bloque: null,
-        },
-      ],
-    }
-    const map = buildViajesEndpointMap(data)
-    expect(map['/diputados/viajes/internacionales/2024']).toHaveLength(1)
-    expect(map['/diputados/diputados/HCDN1/viajes']).toMatchObject({
-      internacionales: [expect.objectContaining({ destino: 'Brasil' })],
-    })
   })
 })
 
@@ -184,17 +144,14 @@ describe('crawlViajes (red)', () => {
       expect(data.recursos.length).toBeGreaterThan(10)
       expect(data.nacionales.length).toBeGreaterThan(1000)
       expect(data.fuente).toContain('viajes-nacionales')
-      expect(data.internacionales.length).toBeGreaterThan(10)
+      expect((data as any).internacionales).toBeUndefined()
 
       const persisted = JSON.parse(readEndpoint('/diputados/viajes') || '{}')
       expect(persisted.nacionales.length).toBe(data.nacionales.length)
-      expect(persisted.internacionales.length).toBe(data.internacionales.length)
+      expect(persisted.internacionales).toBeUndefined()
       expect(
         JSON.parse(readEndpoint('/diputados/viajes/nacionales') || '[]').length,
       ).toBe(data.nacionales.length)
-      expect(
-        JSON.parse(readEndpoint('/diputados/viajes/internacionales') || '[]').length,
-      ).toBe(data.internacionales.length)
       expect(
         JSON.parse(readEndpoint('/diputados/viajes/conteo-12m') || '{}').porDiputado,
       ).toBeTruthy()

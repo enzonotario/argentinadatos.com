@@ -1,14 +1,16 @@
 import axios from 'axios'
+import { readEndpoint } from '@argentinadatos/core/src/utils/readEndpoint.ts'
 import { titleCaseSpanish } from '@argentinadatos/core/src/utils/titleCaseSpanish.ts'
+import { writeEndpoint } from '@argentinadatos/core/src/utils/writeEndpoint.ts'
 import { BASE_URL, USER_AGENT } from '../../constants.ts'
 import {
   claveApellidoNombre,
   parseCsvText,
-  type ViajeInternacional,
-} from './crawlViajes.ts'
+} from '../viajes/crawlViajes.ts'
 
 export const MISIONES_DATASET_SLUG = 'misiones-oficiales'
 export const MISIONES_DATASET_URL = `${BASE_URL}/dataset/${MISIONES_DATASET_SLUG}`
+export const MISIONES_ENDPOINT = '/diputados/misiones'
 
 const CKAN_PACKAGE_SHOW = `${BASE_URL}/api/3/action/package_show`
 const DOWNLOAD_CONCURRENCY = 4
@@ -17,6 +19,46 @@ export interface MisionRecurso {
   id: string
   nombre: string
   url: string
+}
+
+/** Misión oficial al exterior (CKAN `misiones-oficiales`). */
+export interface MisionOficial {
+  anio: number
+  mes: number | null
+  mesNombre: string | null
+  recursoId: string
+  recursoUrl: string
+  recursoNombre: string
+  /** Alias de `recursoId` para links de fuente. */
+  documentoId: string
+  /** Alias de `recursoUrl` para links de fuente. */
+  documentoUrl: string
+  nombre: string
+  diputadoId: string | null
+  destino: string
+  fechaInicio: string | null
+  fechaFin: string | null
+  fechaTexto: string | null
+  /** Institución que invita. */
+  institucion: string | null
+  viaticos: boolean | null
+  viaticosUsd: number | null
+  viaticosEuro: number | null
+  viaticosArs: number | null
+  motivo: string | null
+  bloque: string | null
+}
+
+export interface MisionesData {
+  fuente: string
+  actualizado: string
+  recursos: MisionRecurso[]
+  misiones: MisionOficial[]
+}
+
+export interface DiputadoMisiones {
+  diputadoId: string
+  misiones: MisionOficial[]
 }
 
 function fold(value: string): string {
@@ -36,7 +78,6 @@ function pick(row: Record<string, string>, ...keys: string[]): string {
     const hit = map.get(fold(key).replace(/\s+/g, '_'))
     if (hit != null && String(hit).trim()) return String(hit).trim()
   }
-  // fuzzy contains
   for (const [k, v] of map) {
     for (const key of keys) {
       const want = fold(key).replace(/\s+/g, '_')
@@ -89,10 +130,8 @@ function mesNombre(mes: number): string | null {
 function parseMoney(raw: string): number | null {
   const s = String(raw || '').trim()
   if (!s || s === '-' || /^s\/?n$/i.test(s)) return null
-  // "3 DIAS - U$S 354" / "1062" / "U$S 1665"
   const nums = s.replace(/\./g, '').replace(',', '.').match(/-?\d+(?:\.\d+)?/g)
   if (!nums?.length) return null
-  // prefer last number if "dias - monto"
   const n = Number(nums[nums.length - 1])
   return Number.isFinite(n) ? n : null
 }
@@ -103,9 +142,7 @@ function cleanParticipa(raw: string): string {
   if (!s || /^s\/?n$/i.test(s)) return ''
   if (!s.includes(',') && /\s/.test(s)) {
     const tokens = s.split(/\s+/)
-    // "TAIANA JORGE" or "MARGARITA, STO" already handled
     if (tokens.length >= 2 && tokens[0] === tokens[0]!.toUpperCase()) {
-      // assume APELLIDO NOMBRES
       s = `${tokens[0]}, ${tokens.slice(1).join(' ')}`
     }
   }
@@ -120,10 +157,10 @@ function isPlaceholderRow(row: Record<string, string>): boolean {
   return false
 }
 
-export function rowToViajeInternacional(
+export function rowToMisionOficial(
   row: Record<string, string>,
   recurso: MisionRecurso,
-): ViajeInternacional | null {
+): MisionOficial | null {
   if (isPlaceholderRow(row)) return null
 
   const fechaInicio = parseDateFlexible(
@@ -189,10 +226,17 @@ export function rowToViajeInternacional(
   const diputadoIdRaw = pick(row, 'diputado_id')
   const diputadoId = diputadoIdRaw ? diputadoIdRaw.toUpperCase() : null
 
-  const institucion = pick(row, 'institucion_que_invita', 'insituticion_que_invita', 'institucion que invita')
+  const institucionRaw = pick(
+    row,
+    'institucion_que_invita',
+    'insituticion_que_invita',
+    'institucion que invita',
+  )
+  const institucion = institucionRaw
+    ? titleCaseSpanish(institucionRaw.toLowerCase())
+    : null
 
   return {
-    ambito: 'internacional',
     anio,
     mes: mes && mes >= 1 && mes <= 12 ? mes : null,
     mesNombre: mes && mes >= 1 && mes <= 12 ? mesNombre(mes) : null,
@@ -202,9 +246,8 @@ export function rowToViajeInternacional(
     recursoUrl: recurso.url,
     recursoNombre: recurso.nombre,
     nombre,
-    senadorId: null,
     diputadoId,
-    expediente: institucion ? titleCaseSpanish(institucion.toLowerCase()) : '',
+    institucion,
     destino,
     fechaInicio,
     fechaFin,
@@ -212,7 +255,6 @@ export function rowToViajeInternacional(
       fechaInicio && fechaFin && fechaInicio !== fechaFin
         ? `${fechaInicio} – ${fechaFin}`
         : fechaInicio || fechaFin,
-    asistenciaAlViajero: null,
     viaticos: amount != null ? amount > 0 : null,
     viaticosUsd,
     viaticosEuro,
@@ -271,9 +313,9 @@ async function downloadCsv(url: string): Promise<string> {
 }
 
 export function matchMisionesDiputadoIds(
-  viajes: ViajeInternacional[],
+  misiones: MisionOficial[],
   diputados: Array<{ id: string, nombre: string, apellido: string }>,
-): ViajeInternacional[] {
+): MisionOficial[] {
   const byId = new Map(diputados.map(d => [String(d.id).toUpperCase(), d]))
   const byClave = new Map<string, string[]>()
   for (const d of diputados) {
@@ -284,34 +326,80 @@ export function matchMisionesDiputadoIds(
     byClave.set(clave, list)
   }
 
-  for (const viaje of viajes) {
-    if (viaje.diputadoId && byId.has(viaje.diputadoId.toUpperCase())) {
-      viaje.diputadoId = viaje.diputadoId.toUpperCase()
+  for (const mision of misiones) {
+    if (mision.diputadoId && byId.has(mision.diputadoId.toUpperCase())) {
+      mision.diputadoId = mision.diputadoId.toUpperCase()
       continue
     }
-    const clave = claveApellidoNombre(viaje.nombre)
+    const clave = claveApellidoNombre(mision.nombre)
     const ids = clave ? [...new Set(byClave.get(clave) || [])] : []
-    viaje.diputadoId = ids.length === 1 ? ids[0]! : null
+    mision.diputadoId = ids.length === 1 ? ids[0]! : null
   }
-  return viajes
+  return misiones
 }
 
-export async function crawlMisionesOficiales(): Promise<ViajeInternacional[]> {
+export function buildMisionesEndpointMap(
+  data: MisionesData,
+): Record<string, unknown> {
+  const endpoints: Record<string, unknown> = {
+    [MISIONES_ENDPOINT]: data,
+    [`${MISIONES_ENDPOINT}/lista`]: data.misiones,
+  }
+
+  const porAnio = new Map<number, MisionOficial[]>()
+  for (const mision of data.misiones) {
+    if (!mision.anio) continue
+    const list = porAnio.get(mision.anio) || []
+    list.push(mision)
+    porAnio.set(mision.anio, list)
+  }
+  for (const [anio, misionesAnio] of [...porAnio.entries()].sort((a, b) => a[0] - b[0])) {
+    endpoints[`${MISIONES_ENDPOINT}/${anio}`] = misionesAnio
+  }
+
+  const byDiputado = new Map<string, DiputadoMisiones>()
+  for (const mision of data.misiones) {
+    if (!mision.diputadoId) continue
+    const id = String(mision.diputadoId)
+    let entry = byDiputado.get(id)
+    if (!entry) {
+      entry = { diputadoId: id, misiones: [] }
+      byDiputado.set(id, entry)
+    }
+    entry.misiones.push(mision)
+  }
+  for (const [id, entry] of [...byDiputado.entries()].sort((a, b) =>
+    a[0].localeCompare(b[0]),
+  )) {
+    endpoints[`/diputados/diputados/${id}/misiones`] = entry
+  }
+
+  return endpoints
+}
+
+export function writeMisionesEndpoints(data: MisionesData): void {
+  const endpoints = buildMisionesEndpointMap(data)
+  for (const [endpoint, payload] of Object.entries(endpoints)) {
+    writeEndpoint(endpoint, payload)
+  }
+}
+
+export async function crawlMisiones(): Promise<MisionesData> {
   const recursos = await listMisionesCsvRecursos()
   if (!recursos.length) {
     throw new Error('Misiones oficiales: no hay CSVs en CKAN')
   }
 
-  const out: ViajeInternacional[] = []
+  const misiones: MisionOficial[] = []
   await mapPool(recursos, DOWNLOAD_CONCURRENCY, async (recurso) => {
     try {
       const csv = await downloadCsv(recurso.url)
       const rows = parseCsvText(csv)
       let n = 0
       for (const row of rows) {
-        const viaje = rowToViajeInternacional(row, recurso)
-        if (viaje) {
-          out.push(viaje)
+        const mision = rowToMisionOficial(row, recurso)
+        if (mision) {
+          misiones.push(mision)
           n++
         }
       }
@@ -322,11 +410,33 @@ export async function crawlMisionesOficiales(): Promise<ViajeInternacional[]> {
     }
   })
 
-  out.sort(
+  misiones.sort(
     (a, b) =>
       b.anio - a.anio
       || String(b.fechaInicio || '').localeCompare(String(a.fechaInicio || ''))
       || a.nombre.localeCompare(b.nombre, 'es'),
   )
-  return out
+
+  const diputados = JSON.parse(
+    readEndpoint('/diputados/diputados') || readEndpoint('diputados/diputados') || '[]',
+  ) as Array<{ id: string, nombre: string, apellido: string }>
+
+  if (diputados.length) {
+    matchMisionesDiputadoIds(misiones, diputados)
+  }
+
+  const matched = misiones.filter(m => m.diputadoId).length
+  console.log(
+    `Misiones oficiales: ${misiones.length} (${matched} matched, ${recursos.length} CSVs)`,
+  )
+
+  const data: MisionesData = {
+    fuente: MISIONES_DATASET_URL,
+    actualizado: new Date().toISOString(),
+    recursos: recursos.sort((a, b) => a.nombre.localeCompare(b.nombre, 'es')),
+    misiones,
+  }
+
+  writeMisionesEndpoints(data)
+  return data
 }

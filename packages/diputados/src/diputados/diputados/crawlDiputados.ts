@@ -15,6 +15,7 @@ import {
   applyComisionesMetaToDiputados,
   crawlComisiones,
 } from '../comisiones/crawlComisiones.ts'
+import { crawlMisiones } from '../misiones/crawlMisiones.ts'
 import { crawlViajes } from '../viajes/crawlViajes.ts'
 import { crawlPeriodos } from '../periodos/crawlPeriodos.ts'
 
@@ -83,13 +84,23 @@ export async function crawlDiputados(): Promise<Diputado[]> {
     }
     const viajes = await crawlViajes()
     console.log(
-      `Viajes: ${viajes.nacionales.length} nacionales, `
-      + `${viajes.internacionales.length} internacionales `
-      + `(${viajes.recursos.length} CSVs nacionales)`,
+      `Viajes: ${viajes.nacionales.length} nacionales `
+      + `(${viajes.recursos.length} CSVs)`,
     )
   }
   catch (e: any) {
     console.error('Viajes: no se pudo scrapear', e?.message || e)
+  }
+
+  try {
+    const misiones = await crawlMisiones()
+    console.log(
+      `Misiones: ${misiones.misiones.length} `
+      + `(${misiones.recursos.length} CSVs)`,
+    )
+  }
+  catch (e: any) {
+    console.error('Misiones: no se pudo scrapear', e?.message || e)
   }
 
   try {
