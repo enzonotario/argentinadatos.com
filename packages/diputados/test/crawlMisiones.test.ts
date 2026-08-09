@@ -33,6 +33,32 @@ describe('rowToMisionOficial', () => {
     expect(mision?.nombre).toMatch(/Alvarez/i)
   })
 
+  it('clasifica moneda U$S como dólares (no ARS por el $)', () => {
+    const csv = `fecha_inicio,fecha_fin,participa,lugar,motivo,viaticos_consumidos,moneda,viaticos_otorgados_dias_y_monto_segun_r_p_n_1164_12
+2026-04-11,2026-04-18,DIP. SABRINA AJMECHET,"WASHINGTON D.C., ESTADOS UNIDOS",Intercambio,1062,U$S,3 DIAS - U$S 354
+`
+    const rows = parseCsvText(csv)
+    const mision = rowToMisionOficial(rows[0]!, recurso)
+    expect(mision).toMatchObject({
+      anio: 2026,
+      viaticosUsd: 1062,
+      viaticosArs: null,
+    })
+  })
+
+  it('no toma días como monto cuando otorgados no trae cifra', () => {
+    const csv = `fecha_inicio,fecha_fin,participa,lugar,motivo,viaticos_consumidos,moneda,viaticos_otorgados_dias_y_monto_segun_r_p_n_1164_12
+2026-01-23,2026-01-27,DIP. TAIANA JORGE,"BOGOTA, COLOMBIA",Encuentro,-,U$S,1 DIA - U$S
+`
+    const rows = parseCsvText(csv)
+    const mision = rowToMisionOficial(rows[0]!, recurso)
+    expect(mision).toMatchObject({
+      viaticosUsd: null,
+      viaticosArs: null,
+      viaticos: null,
+    })
+  })
+
   it('omite filas placeholder', () => {
     const csv = `participa,motivo
 s/n,no se realizaron misiones

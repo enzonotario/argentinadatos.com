@@ -129,11 +129,59 @@ function mesNombre(mes: number): string | null {
 
 function parseMoney(raw: string): number | null {
   const s = String(raw || '').trim()
-  if (!s || s === '-' || /^s\/?n$/i.test(s)) return null
+  if (!s || s === '-' || /^s\/?n$/i.test(s) || /^no$/i.test(s)) return null
   const nums = s.replace(/\./g, '').replace(',', '.').match(/-?\d+(?:\.\d+)?/g)
   if (!nums?.length) return null
   const n = Number(nums[nums.length - 1])
   return Number.isFinite(n) ? n : null
+}
+
+/**
+ * Columna "viaticos otorgados días y monto": a veces solo trae días
+ * (`1 DIA - U$S`) sin cifra; no usar el conteo de días como monto.
+ */
+function parseOtorgadosMoney(raw: string): number | null {
+  const s = String(raw || '').trim()
+  if (!s || s === '-' || /^s\/?n$/i.test(s) || /^no$/i.test(s)) return null
+
+  const withCurrency = s.match(
+    /(?:U\$S|USD|EUR|€|ARS)\s*(-?[\d.]+(?:,\d+)?)/i,
+  )
+  if (withCurrency?.[1]) return parseMoney(withCurrency[1])
+
+  const amountThenCurrency = s.match(
+    /(-?[\d.]+(?:,\d+)?)\s*(?:U\$S|USD|EUR|€|ARS)/i,
+  )
+  if (amountThenCurrency?.[1]) return parseMoney(amountThenCurrency[1])
+
+  // Solo "N DIA(S) …" sin monto explícito.
+  if (/\d+\s*dias?\b/i.test(s)) return null
+
+  return parseMoney(s)
+}
+
+function classifyViaticosCurrency(monedaRaw: string): 'USD' | 'EUR' | 'ARS' {
+  const moneda = String(monedaRaw || '').toUpperCase().trim()
+  if (moneda.includes('EUR') || moneda.includes('€')) return 'EUR'
+  // U$S / USD antes de `$` suelto (ARS). `U$S`.includes('$') === true.
+  if (
+    moneda.includes('USD') ||
+    moneda.includes('U$S') ||
+    moneda.includes('U$') ||
+    moneda.includes('DOLAR') ||
+    moneda.includes('DÓLAR')
+  ) {
+    return 'USD'
+  }
+  if (
+    moneda.includes('ARS') ||
+    moneda.includes('PESO') ||
+    moneda === '$'
+  ) {
+    return 'ARS'
+  }
+  // Histórico HCDN: vacíos / códigos raros en misiones al exterior → USD.
+  return 'USD'
 }
 
 function cleanParticipa(raw: string): string {
@@ -201,17 +249,18 @@ export function rowToMisionOficial(
     'viaticos_otorgados',
     'viaticos_cantidad',
   )
-  const moneda = pick(row, 'moneda', 'moneda_id').toUpperCase()
+  const moneda = pick(row, 'moneda', 'moneda_id')
   const consumidos = parseMoney(viaticosRaw)
-  const otorgados = parseMoney(otorgadosRaw)
+  const otorgados = parseOtorgadosMoney(otorgadosRaw)
 
   let viaticosUsd: number | null = null
   let viaticosEuro: number | null = null
   let viaticosArs: number | null = null
   const amount = consumidos ?? otorgados
   if (amount != null) {
-    if (moneda.includes('EUR') || moneda.includes('€')) viaticosEuro = amount
-    else if (moneda.includes('ARS') || moneda.includes('$')) viaticosArs = amount
+    const currency = classifyViaticosCurrency(moneda)
+    if (currency === 'EUR') viaticosEuro = amount
+    else if (currency === 'ARS') viaticosArs = amount
     else viaticosUsd = amount
   }
 
