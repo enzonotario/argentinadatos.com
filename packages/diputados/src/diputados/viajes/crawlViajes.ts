@@ -68,13 +68,41 @@ export interface ViajeNacional {
   bloque: string | null
 }
 
+export interface ViajeInternacional {
+  ambito: 'internacional'
+  anio: number
+  mes: number | null
+  mesNombre: string | null
+  /** ID del recurso CSV HCDN (misiones oficiales). */
+  documentoId: string
+  documentoUrl: string
+  recursoId?: string
+  recursoUrl?: string
+  recursoNombre?: string
+  nombre: string
+  senadorId: string | null
+  diputadoId: string | null
+  expediente: string
+  destino: string
+  fechaInicio: string | null
+  fechaFin: string | null
+  fechaTexto: string | null
+  asistenciaAlViajero: boolean | null
+  viaticos: boolean | null
+  viaticosUsd: number | null
+  viaticosEuro: number | null
+  viaticosArs: number | null
+  motivo: string | null
+  bloque: string | null
+}
+
 export interface ViajesData {
   fuente: string
   actualizado: string
   recursos: ViajeRecurso[]
   nacionales: ViajeNacional[]
-  /** Reservado: HCDN aún no publica internacionales en este dataset. */
-  internacionales: []
+  /** Misiones oficiales HCDN (viajes al exterior). */
+  internacionales: ViajeInternacional[]
 }
 
 export interface ViajesConteoDiputado {
@@ -99,7 +127,7 @@ export type ViajesConteoTotal = {
 export interface DiputadoViajes {
   diputadoId: string
   nacionales: ViajeNacional[]
-  internacionales: []
+  internacionales: ViajeInternacional[]
 }
 
 function foldNombre(value: string): string {
@@ -462,7 +490,7 @@ export function matchViajesDiputadoIds(
 }
 
 export function buildViajesConteo12m(
-  data: Pick<ViajesData, 'nacionales'>,
+  data: Pick<ViajesData, 'nacionales' | 'internacionales'>,
   asOf: Date = new Date(),
 ): ViajesConteo12m {
   const hastaAnio = asOf.getUTCFullYear()
@@ -473,15 +501,33 @@ export function buildViajesConteo12m(
   const hasta = { anio: hastaAnio, mes: hastaMes }
   const porDiputado: Record<string, ViajesConteoDiputado> = {}
 
-  for (const viaje of data.nacionales) {
-    if (!viaje.diputadoId || viaje.mes < 1 || viaje.mes > 12) continue
-    const idx = anioMesToIndex(viaje.anio, viaje.mes)
-    if (idx < desdeIdx || idx > hastaIdx) continue
-    const id = String(viaje.diputadoId)
+  const bump = (diputadoId: string | null | undefined, kind: 'nacionales' | 'internacionales') => {
+    if (!diputadoId) return
+    const id = String(diputadoId)
     const entry = porDiputado[id] || { nacionales: 0, internacionales: 0, total: 0 }
-    entry.nacionales += 1
+    entry[kind] += 1
     entry.total += 1
     porDiputado[id] = entry
+  }
+
+  for (const viaje of data.nacionales) {
+    if (viaje.mes < 1 || viaje.mes > 12) continue
+    const idx = anioMesToIndex(viaje.anio, viaje.mes)
+    if (idx < desdeIdx || idx > hastaIdx) continue
+    bump(viaje.diputadoId, 'nacionales')
+  }
+
+  for (const viaje of data.internacionales || []) {
+    let anio = viaje.anio
+    let mes = viaje.mes
+    if (viaje.fechaInicio && /^\d{4}-\d{2}/.test(viaje.fechaInicio)) {
+      anio = Number(viaje.fechaInicio.slice(0, 4))
+      mes = Number(viaje.fechaInicio.slice(5, 7))
+    }
+    if (!anio || !mes || mes < 1 || mes > 12) continue
+    const idx = anioMesToIndex(anio, mes)
+    if (idx < desdeIdx || idx > hastaIdx) continue
+    bump(viaje.diputadoId, 'internacionales')
   }
 
   return {
@@ -494,7 +540,7 @@ export function buildViajesConteo12m(
 }
 
 export function buildViajesConteoTotal(
-  data: Pick<ViajesData, 'nacionales'>,
+  data: Pick<ViajesData, 'nacionales' | 'internacionales'>,
   asOf: Date = new Date(),
 ): ViajesConteoTotal {
   const porDiputado: Record<string, ViajesConteoDiputado> = {}
@@ -503,6 +549,14 @@ export function buildViajesConteoTotal(
     const id = String(viaje.diputadoId)
     const entry = porDiputado[id] || { nacionales: 0, internacionales: 0, total: 0 }
     entry.nacionales += 1
+    entry.total += 1
+    porDiputado[id] = entry
+  }
+  for (const viaje of data.internacionales || []) {
+    if (!viaje.diputadoId) continue
+    const id = String(viaje.diputadoId)
+    const entry = porDiputado[id] || { nacionales: 0, internacionales: 0, total: 0 }
+    entry.internacionales += 1
     entry.total += 1
     porDiputado[id] = entry
   }
@@ -543,6 +597,17 @@ export function buildViajesEndpointMap(
     }
   }
 
+  const intlPorAnio = new Map<number, ViajeInternacional[]>()
+  for (const viaje of data.internacionales || []) {
+    if (!viaje.anio) continue
+    const list = intlPorAnio.get(viaje.anio) || []
+    list.push(viaje)
+    intlPorAnio.set(viaje.anio, list)
+  }
+  for (const [anio, viajesAnio] of [...intlPorAnio.entries()].sort((a, b) => a[0] - b[0])) {
+    endpoints[`${VIAJES_ENDPOINT}/internacionales/${anio}`] = viajesAnio
+  }
+
   const byDiputado = new Map<string, DiputadoViajes>()
   const ensure = (id: string): DiputadoViajes => {
     let entry = byDiputado.get(id)
@@ -552,17 +617,15 @@ export function buildViajesEndpointMap(
     }
     return entry
   }
-  // Solo ids con viajes + ids explícitos pedidos (evita miles de archivos vacíos).
-  const withTrips = new Set<string>()
   for (const viaje of data.nacionales) {
     if (!viaje.diputadoId) continue
-    withTrips.add(String(viaje.diputadoId))
     ensure(String(viaje.diputadoId)).nacionales.push(viaje)
   }
-  for (const id of diputadoIds) {
-    if (withTrips.has(String(id))) continue
-    // no escribir vacíos masivos
+  for (const viaje of data.internacionales || []) {
+    if (!viaje.diputadoId) continue
+    ensure(String(viaje.diputadoId)).internacionales.push(viaje)
   }
+  void diputadoIds
   for (const [id, entry] of [...byDiputado.entries()].sort((a, b) =>
     a[0].localeCompare(b[0]),
   )) {
@@ -583,6 +646,10 @@ export function writeViajesEndpoints(
 }
 
 export async function crawlViajes(): Promise<ViajesData> {
+  const { crawlMisionesOficiales, matchMisionesDiputadoIds } = await import(
+    './crawlMisiones.ts'
+  )
+
   const recursos = await listViajesCsvRecursos()
   if (!recursos.length) {
     throw new Error('Viajes diputados: no se encontraron recursos CSV en CKAN')
@@ -619,9 +686,22 @@ export async function crawlViajes(): Promise<ViajesData> {
     matchViajesDiputadoIds(nacionales, diputados)
   }
 
-  const matched = nacionales.filter(v => v.diputadoId).length
+  let internacionales: ViajeInternacional[] = []
+  try {
+    internacionales = await crawlMisionesOficiales()
+    if (diputados.length) {
+      matchMisionesDiputadoIds(internacionales, diputados)
+    }
+  }
+  catch (e: any) {
+    console.error('Misiones oficiales: no se pudo scrapear', e?.message || e)
+  }
+
+  const matchedNat = nacionales.filter(v => v.diputadoId).length
+  const matchedIntl = internacionales.filter(v => v.diputadoId).length
   console.log(
-    `Viajes diputados: ${nacionales.length} tramos, ${matched} con diputadoId (${recursos.length} CSVs)`,
+    `Viajes diputados: ${nacionales.length} nacionales (${matchedNat} matched), `
+    + `${internacionales.length} internacionales/misiones (${matchedIntl} matched)`,
   )
 
   const data: ViajesData = {
@@ -631,7 +711,7 @@ export async function crawlViajes(): Promise<ViajesData> {
       (a, b) => (a.anio || 0) - (b.anio || 0) || (a.semestre || 0) - (b.semestre || 0),
     ),
     nacionales,
-    internacionales: [],
+    internacionales,
   }
 
   writeViajesEndpoints(

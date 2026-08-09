@@ -11,6 +11,10 @@ import { formatISO, isValid, parse, parseISO } from 'date-fns'
 import iconv from 'iconv-lite'
 import { BASE_URL, USER_AGENT } from '../../constants.ts'
 import { DiputadosDatabaseService } from './database/service.ts'
+import {
+  applyComisionesMetaToDiputados,
+  crawlComisiones,
+} from '../comisiones/crawlComisiones.ts'
 import { crawlViajes } from '../viajes/crawlViajes.ts'
 import { crawlPeriodos } from '../periodos/crawlPeriodos.ts'
 
@@ -32,6 +36,9 @@ export interface Diputado {
     fin: string | null
   }
   foto: string | null
+  meta?: {
+    comisiones?: Array<{ id: string, nombre: string, cargo: string }>
+  } | null
 }
 
 const currentValues = JSON.parse(
@@ -76,11 +83,26 @@ export async function crawlDiputados(): Promise<Diputado[]> {
     }
     const viajes = await crawlViajes()
     console.log(
-      `Viajes: ${viajes.nacionales.length} nacionales (${viajes.recursos.length} CSVs)`,
+      `Viajes: ${viajes.nacionales.length} nacionales, `
+      + `${viajes.internacionales.length} internacionales `
+      + `(${viajes.recursos.length} CSVs nacionales)`,
     )
   }
   catch (e: any) {
     console.error('Viajes: no se pudo scrapear', e?.message || e)
+  }
+
+  try {
+    const comisiones = await crawlComisiones()
+    applyComisionesMetaToDiputados(diputados, comisiones)
+    if (shouldWriteJsonFiles()) {
+      writeEndpoint('diputados/diputados', diputados)
+      writeEndpoint('/diputados/diputados', diputados)
+    }
+    console.log(`Comisiones: ${comisiones.length}`)
+  }
+  catch (e: any) {
+    console.error('Comisiones: no se pudo scrapear', e?.message || e)
   }
 
   try {

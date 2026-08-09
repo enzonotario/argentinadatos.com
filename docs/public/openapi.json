@@ -1718,14 +1718,14 @@
     },
     "/v1/diputados/viajes": {
       "get": {
-        "summary": "Viajes nacionales de diputados",
+        "summary": "Viajes nacionales e internacionales de diputados",
         "tags": [
           "Diputados"
         ],
-        "description": "Índice de viajes nacionales de diputados (CSVs de datos abiertos HCDN). También hay recortes en `/v1/diputados/viajes/nacionales`, `/v1/diputados/viajes/conteo-12m` y `/v1/diputados/diputados/{id}/viajes`.",
+        "description": "Índice de viajes de diputados: nacionales (CSVs `viajes-nacionales`) e internacionales/misiones oficiales (CSVs `misiones-oficiales`). También hay recortes en `/v1/diputados/viajes/nacionales`, `/v1/diputados/viajes/internacionales`, `/v1/diputados/viajes/conteo-12m` y `/v1/diputados/diputados/{id}/viajes`.",
         "responses": {
           "200": {
-            "description": "Catálogo de recursos CSV y tramos nacionales parseados",
+            "description": "Catálogo de recursos CSV y tramos parseados",
             "content": {
               "application/json": {
                 "schema": {
@@ -1737,7 +1737,8 @@
         },
         "operationId": "get-diputados-viajes",
         "x-data-source": [
-          "[HCDN — Viajes Nacionales](https://datos.hcdn.gob.ar/dataset/viajes-nacionales)"
+          "[HCDN — Viajes Nacionales](https://datos.hcdn.gob.ar/dataset/viajes-nacionales)",
+          "[HCDN — Misiones Oficiales](https://datos.hcdn.gob.ar/dataset/misiones-oficiales)"
         ]
       }
     },
@@ -1769,13 +1770,41 @@
         ]
       }
     },
+    "/v1/diputados/viajes/internacionales": {
+      "get": {
+        "summary": "Viajes internacionales / misiones oficiales",
+        "tags": [
+          "Diputados"
+        ],
+        "description": "Misiones oficiales al exterior publicadas por la HCDN.",
+        "responses": {
+          "200": {
+            "description": "Lista de viajes internacionales",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ViajeInternacionalDiputado"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-diputados-viajes-internacionales",
+        "x-data-source": [
+          "[HCDN — Misiones Oficiales](https://datos.hcdn.gob.ar/dataset/misiones-oficiales)"
+        ]
+      }
+    },
     "/v1/diputados/viajes/conteo-12m": {
       "get": {
         "summary": "Conteo de viajes (últimos 12 meses)",
         "tags": [
           "Diputados"
         ],
-        "description": "Cantidad de tramos nacionales por diputado en la ventana móvil de 12 meses.",
+        "description": "Cantidad de tramos nacionales e internacionales por diputado en la ventana móvil de 12 meses.",
         "responses": {
           "200": {
             "description": "Conteo por diputadoId",
@@ -1790,7 +1819,8 @@
         },
         "operationId": "get-diputados-viajes-conteo-12m",
         "x-data-source": [
-          "[HCDN — Viajes Nacionales](https://datos.hcdn.gob.ar/dataset/viajes-nacionales)"
+          "[HCDN — Viajes Nacionales](https://datos.hcdn.gob.ar/dataset/viajes-nacionales)",
+          "[HCDN — Misiones Oficiales](https://datos.hcdn.gob.ar/dataset/misiones-oficiales)"
         ]
       }
     },
@@ -1800,7 +1830,7 @@
         "tags": [
           "Diputados"
         ],
-        "description": "Tramos nacionales asociados a un diputado.",
+        "description": "Tramos nacionales e internacionales asociados a un diputado.",
         "parameters": [
           {
             "name": "id",
@@ -1826,7 +1856,115 @@
         },
         "operationId": "get-diputados-diputado-viajes",
         "x-data-source": [
-          "[HCDN — Viajes Nacionales](https://datos.hcdn.gob.ar/dataset/viajes-nacionales)"
+          "[HCDN — Viajes Nacionales](https://datos.hcdn.gob.ar/dataset/viajes-nacionales)",
+          "[HCDN — Misiones Oficiales](https://datos.hcdn.gob.ar/dataset/misiones-oficiales)"
+        ]
+      }
+    },
+    "/v1/diputados/comisiones": {
+      "get": {
+        "summary": "Comisiones de diputados",
+        "tags": [
+          "Diputados"
+        ],
+        "description": "Comisiones de la HCDN con tipología e integrantes. También `/v1/diputados/comisiones/{id}` y `/v1/diputados/diputados/{id}/comisiones`.",
+        "responses": {
+          "200": {
+            "description": "Lista de comisiones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ComisionDiputados"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-diputados-comisiones",
+        "x-data-source": [
+          "[HCDN — Comisiones](https://datos.hcdn.gob.ar/dataset/comisiones)"
+        ]
+      }
+    },
+    "/v1/diputados/comisiones/{id}": {
+      "get": {
+        "summary": "Comisión de diputados por ID",
+        "tags": [
+          "Diputados"
+        ],
+        "description": "Detalle de una comisión e integrantes.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Comisión",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComisionDiputados"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-diputados-comision",
+        "x-data-source": [
+          "[HCDN — Comisiones](https://datos.hcdn.gob.ar/dataset/comisiones)"
+        ]
+      }
+    },
+    "/v1/diputados/diputados/{id}/comisiones": {
+      "get": {
+        "summary": "Comisiones de un diputado",
+        "tags": [
+          "Diputados"
+        ],
+        "description": "Membresías de comisiones asociadas a un diputado.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "HCDN3178"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de comisiones del diputado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": { "type": "string" },
+                      "nombre": { "type": "string" },
+                      "cargo": { "type": "string" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-diputados-diputado-comisiones",
+        "x-data-source": [
+          "[HCDN — Comisiones](https://datos.hcdn.gob.ar/dataset/comisiones)"
         ]
       }
     },
@@ -3748,8 +3886,8 @@
           },
           "internacionales": {
             "type": "array",
-            "items": {},
-            "description": "Vacío: HCDN aún no publica internacionales en este dataset"
+            "items": { "$ref": "#/components/schemas/ViajeInternacionalDiputado" },
+            "description": "Misiones oficiales HCDN (viajes al exterior)"
           }
         }
       },
@@ -3772,6 +3910,36 @@
           "destino": { "type": "string" },
           "destinoCodigo": { "type": "string", "nullable": true },
           "provincia": { "type": "string", "nullable": true },
+          "bloque": { "type": "string", "nullable": true }
+        }
+      },
+      "ViajeInternacionalDiputado": {
+        "title": "ViajeInternacionalDiputado",
+        "type": "object",
+        "properties": {
+          "ambito": { "type": "string", "enum": ["internacional"] },
+          "anio": { "type": "integer" },
+          "mes": { "type": "integer", "nullable": true },
+          "mesNombre": { "type": "string", "nullable": true },
+          "documentoId": { "type": "string" },
+          "documentoUrl": { "type": "string", "format": "uri" },
+          "recursoId": { "type": "string" },
+          "recursoUrl": { "type": "string", "format": "uri" },
+          "recursoNombre": { "type": "string" },
+          "nombre": { "type": "string" },
+          "senadorId": { "type": "string", "nullable": true },
+          "diputadoId": { "type": "string", "nullable": true },
+          "expediente": { "type": "string" },
+          "destino": { "type": "string" },
+          "fechaInicio": { "type": "string", "nullable": true },
+          "fechaFin": { "type": "string", "nullable": true },
+          "fechaTexto": { "type": "string", "nullable": true },
+          "asistenciaAlViajero": { "type": "boolean", "nullable": true },
+          "viaticos": { "type": "boolean", "nullable": true },
+          "viaticosUsd": { "type": "number", "nullable": true },
+          "viaticosEuro": { "type": "number", "nullable": true },
+          "viaticosArs": { "type": "number", "nullable": true },
+          "motivo": { "type": "string", "nullable": true },
           "bloque": { "type": "string", "nullable": true }
         }
       },
@@ -3817,7 +3985,39 @@
             "type": "array",
             "items": { "$ref": "#/components/schemas/ViajeNacionalDiputado" }
           },
-          "internacionales": { "type": "array", "items": {} }
+          "internacionales": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/ViajeInternacionalDiputado" }
+          }
+        }
+      },
+      "ComisionDiputados": {
+        "title": "ComisionDiputados",
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "nombre": { "type": "string" },
+          "tipo": { "type": "string", "nullable": true },
+          "tipoCodigo": { "type": "string", "nullable": true },
+          "grupo": { "type": "string", "nullable": true },
+          "periodoInicio": { "type": "string", "nullable": true },
+          "periodoFin": { "type": "string", "nullable": true },
+          "fechaInicio": { "type": "string", "nullable": true },
+          "fechaFin": { "type": "string", "nullable": true },
+          "url": { "type": "string", "format": "uri" },
+          "integrantes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "nombre": { "type": "string" },
+                "cargo": { "type": "string" },
+                "distrito": { "type": "string", "nullable": true },
+                "bloque": { "type": "string", "nullable": true },
+                "diputadoId": { "type": "string", "nullable": true }
+              }
+            }
+          }
         }
       },
       "ActaDiputados": {
