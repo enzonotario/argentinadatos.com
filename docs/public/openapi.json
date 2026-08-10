@@ -726,6 +726,7 @@
           "[BBVA — Préstamos personales](https://www.bbva.com.ar/personas/productos/prestamos/personales.html)",
           "[Galicia — Préstamo personal](https://www.galicia.ar/personas/prestamos/prestamo-personal)",
           "[Macro — Préstamos personales](https://www.macro.com.ar/personas/prestamos/personales)",
+          "[Mercado Pago — Tasas vigentes](https://www.mercadopago.com.ar/ayuda/18691)",
           "[Santander — Préstamos personales](https://www.santander.com.ar/personas/prestamos/personales)",
           "[Supervielle — Préstamos personales](https://www.supervielle.com.ar/personas/prestamos/personales)"
         ]
@@ -3239,8 +3240,39 @@
           },
           "metadata": {
             "type": "object",
-            "description": "Detalle adicional (afectación de ingresos, CFT sin IVA, etc.)",
-            "additionalProperties": true
+            "description": "Detalle adicional. Puede incluir afectación de ingresos, CFT sin IVA, o `rango` cuando la entidad publica un intervalo de tasas (p. ej. Mercado Pago). A futuro también puede incluir tasas por plazo.",
+            "additionalProperties": true,
+            "properties": {
+              "rango": {
+                "type": "object",
+                "description": "Intervalo de tasas posibles según evaluación crediticia. Los campos top-level `tna`/`tea`/`cftTea` llevan el mínimo (mejor caso / desde).",
+                "properties": {
+                  "tna": {
+                    "type": "object",
+                    "properties": {
+                      "min": { "type": "number", "nullable": true },
+                      "max": { "type": "number", "nullable": true }
+                    }
+                  },
+                  "tea": {
+                    "type": "object",
+                    "properties": {
+                      "min": { "type": "number", "nullable": true },
+                      "max": { "type": "number", "nullable": true }
+                    }
+                  },
+                  "cftTea": {
+                    "type": "object",
+                    "properties": {
+                      "min": { "type": "number", "nullable": true },
+                      "max": { "type": "number", "nullable": true }
+                    }
+                  }
+                }
+              },
+              "plazoMinDias": { "type": "integer", "nullable": true },
+              "plazoMaxMeses": { "type": "integer", "nullable": true }
+            }
           }
         },
         "x-examples": {

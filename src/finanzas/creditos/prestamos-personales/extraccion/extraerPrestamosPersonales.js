@@ -3,6 +3,7 @@ import { extraerBnaNacionSueldos } from './extraerBnaNacionSueldos.js'
 import { extraerBbva } from './extraerBbva.js'
 import { extraerGalicia } from './extraerGalicia.js'
 import { extraerMacro } from './extraerMacro.js'
+import { extraerMercadoPago } from './extraerMercadoPago.js'
 import { extraerSantander } from './extraerSantander.js'
 import { extraerSupervielle } from './extraerSupervielle.js'
 import { logGrupo, logError } from '@/log.js'
@@ -20,6 +21,7 @@ export async function extraerPrestamosPersonales() {
       extraerBbva(),
       extraerGalicia(),
       extraerMacro(),
+      extraerMercadoPago(),
       extraerSantander(),
       extraerSupervielle(),
     ])

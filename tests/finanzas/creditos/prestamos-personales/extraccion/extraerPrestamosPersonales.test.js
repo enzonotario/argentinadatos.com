@@ -39,6 +39,15 @@ vi.mock(
 )
 
 vi.mock(
+  '@/finanzas/creditos/prestamos-personales/extraccion/extraerMercadoPago.js',
+  () => ({
+    extraerMercadoPago: vi.fn(async () => [
+      { entidad: 'MERCADOPAGO', tna: 0.48 },
+    ]),
+  }),
+)
+
+vi.mock(
   '@/finanzas/creditos/prestamos-personales/extraccion/extraerSantander.js',
   () => ({
     extraerSantander: vi.fn(async () => [{ entidad: 'SANTANDER', tna: 0.79 }]),
@@ -58,13 +67,14 @@ describe('extraerPrestamosPersonales', () => {
   it('aplana resultados de todos los bancos', async () => {
     const items = await extraerPrestamosPersonales()
 
-    expect(items).toHaveLength(7)
+    expect(items).toHaveLength(8)
     expect(items.map((i) => i.entidad)).toEqual([
       'BNA',
       'BNA',
       'BBVA',
       'GALICIA',
       'MACRO',
+      'MERCADOPAGO',
       'SANTANDER',
       'SUPERVIELLE',
     ])

@@ -7,6 +7,7 @@ import { parsearBnaNacionSueldos, extraerBnaNacionSueldos } from '@/finanzas/cre
 import { parsearBbva, extraerBbva } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerBbva.js'
 import { parsearGalicia, extraerGalicia } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerGalicia.js'
 import { parsearMacroPdf, extraerMacro } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerMacro.js'
+import { parsearMercadoPago, extraerMercadoPago } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerMercadoPago.js'
 import { parsearSantander } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerSantander.js'
 import {
   parsearSupervielle,
@@ -30,6 +31,9 @@ describe('guardarPrestamosPersonales', () => {
       ),
       ...parsearMacroPdf(
         readFileSync(join(fixturesDir, 'macro.pdf.txt'), 'utf8'),
+      ),
+      ...parsearMercadoPago(
+        readFileSync(join(fixturesDir, 'mercadopago.html'), 'utf8'),
       ),
       ...parsearSantander(
         readFileSync(join(fixturesDir, 'santander.html'), 'utf8'),
@@ -57,13 +61,14 @@ describe.skipIf(process.env.SKIP_NETWORK === '1')(
     it(
       'extrae ofertas de bancos alcanzables por HTTP',
       async () => {
-        const [bna, bnaSueldos, bbva, galicia, macro, supervielle] =
+        const [bna, bnaSueldos, bbva, galicia, macro, mercadoPago, supervielle] =
           await Promise.all([
             extraerBna(),
             extraerBnaNacionSueldos(),
             extraerBbva(),
             extraerGalicia(),
             extraerMacro(),
+            extraerMercadoPago(),
             extraerSupervielle(),
           ])
 
@@ -72,6 +77,7 @@ describe.skipIf(process.env.SKIP_NETWORK === '1')(
         expect(bbva.length).toBeGreaterThanOrEqual(1)
         expect(galicia.length).toBeGreaterThanOrEqual(1)
         expect(macro.length).toBeGreaterThanOrEqual(1)
+        expect(mercadoPago.length).toBeGreaterThanOrEqual(1)
         expect(supervielle.length).toBeGreaterThanOrEqual(1)
       },
       90000,

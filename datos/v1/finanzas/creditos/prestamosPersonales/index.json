@@ -263,6 +263,40 @@
     }
   },
   {
+    "entidad": "MERCADOPAGO",
+    "nombreComercial": "Mercado Pago",
+    "producto": "Préstamo personal / Línea de consumo",
+    "tna": 0.48,
+    "tea": 0.6012,
+    "cftTna": null,
+    "cftTea": 0.7636,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": true,
+    "condiciones": "Rango según solicitud",
+    "enlace": "https://www.mercadopago.com.ar/ayuda/18691",
+    "vigenciaDesde": null,
+    "vigenciaHasta": null,
+    "metadata": {
+      "plazoMinDias": 7,
+      "plazoMaxMeses": 24,
+      "rango": {
+        "tna": {
+          "min": 0.48,
+          "max": 2.49
+        },
+        "tea": {
+          "min": 0.6012,
+          "max": 8.6348
+        },
+        "cftTea": {
+          "min": 0.7636,
+          "max": 13.7594
+        }
+      }
+    }
+  },
+  {
     "entidad": "SANTANDER",
     "nombreComercial": "Santander",
     "producto": "Préstamo personal",
