@@ -331,5 +331,28 @@
     "metadata": {
       "cftTeaSinIva": 2.935
     }
+  },
+  {
+    "entidad": "UALA",
+    "nombreComercial": "Ualá",
+    "producto": "Préstamo personal",
+    "tna": 0.62,
+    "tea": 0.8307,
+    "cftTna": null,
+    "cftTea": 1.0709,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": true,
+    "condiciones": "Rango según solicitud",
+    "enlace": "https://www.uala.com.ar/prestamos",
+    "vigenciaDesde": null,
+    "vigenciaHasta": null,
+    "metadata": {
+      "rango": {
+        "tna": { "min": 0.62, "max": 1.7 },
+        "tea": { "min": 0.8307, "max": 3.9099 },
+        "cftTea": { "min": 1.0709, "max": 5.6894 }
+      }
+    }
   }
 ]

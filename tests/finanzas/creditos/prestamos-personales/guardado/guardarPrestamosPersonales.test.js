@@ -13,6 +13,7 @@ import {
   parsearSupervielle,
   extraerSupervielle,
 } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerSupervielle.js'
+import { parsearUala, extraerUala } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerUala.js'
 import { guardarPrestamosPersonales } from '@/finanzas/creditos/prestamos-personales/guardado/guardarPrestamosPersonales.js'
 import { leerRuta } from '@/utils/rutas.js'
 
@@ -41,6 +42,7 @@ describe('guardarPrestamosPersonales', () => {
       ...parsearSupervielle(
         readFileSync(join(fixturesDir, 'supervielle.html'), 'utf8'),
       ),
+      ...parsearUala(readFileSync(join(fixturesDir, 'uala.html'), 'utf8')),
     ]
 
     expect(items.length).toBeGreaterThan(0)
@@ -61,16 +63,25 @@ describe.skipIf(process.env.SKIP_NETWORK === '1')(
     it(
       'extrae ofertas de bancos alcanzables por HTTP',
       async () => {
-        const [bna, bnaSueldos, bbva, galicia, macro, mercadoPago, supervielle] =
-          await Promise.all([
-            extraerBna(),
-            extraerBnaNacionSueldos(),
-            extraerBbva(),
-            extraerGalicia(),
-            extraerMacro(),
-            extraerMercadoPago(),
-            extraerSupervielle(),
-          ])
+        const [
+          bna,
+          bnaSueldos,
+          bbva,
+          galicia,
+          macro,
+          mercadoPago,
+          supervielle,
+          uala,
+        ] = await Promise.all([
+          extraerBna(),
+          extraerBnaNacionSueldos(),
+          extraerBbva(),
+          extraerGalicia(),
+          extraerMacro(),
+          extraerMercadoPago(),
+          extraerSupervielle(),
+          extraerUala(),
+        ])
 
         expect(bna.length).toBeGreaterThanOrEqual(1)
         expect(bnaSueldos.length).toBeGreaterThanOrEqual(1)
@@ -79,6 +90,7 @@ describe.skipIf(process.env.SKIP_NETWORK === '1')(
         expect(macro.length).toBeGreaterThanOrEqual(1)
         expect(mercadoPago.length).toBeGreaterThanOrEqual(1)
         expect(supervielle.length).toBeGreaterThanOrEqual(1)
+        expect(uala.length).toBeGreaterThanOrEqual(1)
       },
       90000,
     )

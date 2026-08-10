@@ -6,6 +6,7 @@ import { extraerMacro } from './extraerMacro.js'
 import { extraerMercadoPago } from './extraerMercadoPago.js'
 import { extraerSantander } from './extraerSantander.js'
 import { extraerSupervielle } from './extraerSupervielle.js'
+import { extraerUala } from './extraerUala.js'
 import { logGrupo, logError } from '@/log.js'
 
 const log = logGrupo({
@@ -24,6 +25,7 @@ export async function extraerPrestamosPersonales() {
       extraerMercadoPago(),
       extraerSantander(),
       extraerSupervielle(),
+      extraerUala(),
     ])
 
     return resultados.flat()

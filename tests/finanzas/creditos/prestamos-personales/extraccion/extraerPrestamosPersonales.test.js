@@ -63,11 +63,18 @@ vi.mock(
   }),
 )
 
+vi.mock(
+  '@/finanzas/creditos/prestamos-personales/extraccion/extraerUala.js',
+  () => ({
+    extraerUala: vi.fn(async () => [{ entidad: 'UALA', tna: 0.62 }]),
+  }),
+)
+
 describe('extraerPrestamosPersonales', () => {
   it('aplana resultados de todos los bancos', async () => {
     const items = await extraerPrestamosPersonales()
 
-    expect(items).toHaveLength(8)
+    expect(items).toHaveLength(9)
     expect(items.map((i) => i.entidad)).toEqual([
       'BNA',
       'BNA',
@@ -77,6 +84,7 @@ describe('extraerPrestamosPersonales', () => {
       'MERCADOPAGO',
       'SANTANDER',
       'SUPERVIELLE',
+      'UALA',
     ])
   })
 })
