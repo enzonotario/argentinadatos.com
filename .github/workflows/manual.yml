@@ -29,6 +29,7 @@ on:
           - pnpm run cron /v1/finanzas/plazo-fijo
           - pnpm run cron /v1/finanzas/tasas/plazo-fijo-uva-pago-periodico
           - pnpm run cron /v1/finanzas/cuentas-remuneradas-usd
+          - pnpm run cron /v1/finanzas/creditos/prestamosPersonales
           - pnpm run cron /v1/finanzas/letras
           - pnpm run cron /v1/finanzas/rem
           - pnpm run cron /v1/finanzas/remesas
