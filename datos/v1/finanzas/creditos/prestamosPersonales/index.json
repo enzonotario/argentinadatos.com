@@ -178,8 +178,61 @@
     "vigenciaDesde": "2026-05-04",
     "vigenciaHasta": null,
     "metadata": {
+      "fuentePdf": true,
       "plazoMesesEjemplo": 60,
-      "fuentePdf": true
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 1,
+          "plazoMaxMeses": 12,
+          "tna": 0.61,
+          "tea": 0.813,
+          "cftTea": 1.0468
+        },
+        {
+          "plazoMinMeses": 13,
+          "plazoMaxMeses": 18,
+          "tna": 0.63,
+          "tea": 0.8478,
+          "cftTea": 1.094
+        },
+        {
+          "plazoMinMeses": 19,
+          "plazoMaxMeses": 24,
+          "tna": 0.67,
+          "tea": 0.9193,
+          "cftTea": 1.1913
+        },
+        {
+          "plazoMinMeses": 25,
+          "plazoMaxMeses": 36,
+          "tna": 0.7,
+          "tea": 0.9746,
+          "cftTea": 1.267
+        },
+        {
+          "plazoMinMeses": 37,
+          "plazoMaxMeses": 48,
+          "tna": 0.74,
+          "tea": 1.0505,
+          "cftTea": 1.3716
+        },
+        {
+          "plazoMinMeses": 49,
+          "plazoMaxMeses": 60,
+          "tna": 0.79,
+          "tea": 1.1492,
+          "cftTea": 1.5086
+        },
+        {
+          "plazoMinMeses": 61,
+          "plazoMaxMeses": 72,
+          "tna": 0.81,
+          "tea": 1.1899,
+          "cftTea": 1.5654
+        }
+      ],
+      "plazoMinMeses": 1,
+      "plazoMaxMeses": 72
     }
   },
   {
@@ -198,8 +251,61 @@
     "vigenciaDesde": "2026-05-04",
     "vigenciaHasta": null,
     "metadata": {
+      "fuentePdf": true,
       "plazoMesesEjemplo": 60,
-      "fuentePdf": true
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 1,
+          "plazoMaxMeses": 12,
+          "tna": 0.55,
+          "tea": 0.7122,
+          "cftTea": 0.9111
+        },
+        {
+          "plazoMinMeses": 13,
+          "plazoMaxMeses": 18,
+          "tna": 0.55,
+          "tea": 0.7122,
+          "cftTea": 0.9111
+        },
+        {
+          "plazoMinMeses": 19,
+          "plazoMaxMeses": 24,
+          "tna": 0.57,
+          "tea": 0.7452,
+          "cftTea": 0.9554
+        },
+        {
+          "plazoMinMeses": 25,
+          "plazoMaxMeses": 36,
+          "tna": 0.6,
+          "tea": 0.7959,
+          "cftTea": 1.0236
+        },
+        {
+          "plazoMinMeses": 37,
+          "plazoMaxMeses": 48,
+          "tna": 0.58,
+          "tea": 0.7619,
+          "cftTea": 0.9779
+        },
+        {
+          "plazoMinMeses": 49,
+          "plazoMaxMeses": 60,
+          "tna": 0.56,
+          "tea": 0.7286,
+          "cftTea": 0.9332
+        },
+        {
+          "plazoMinMeses": 61,
+          "plazoMaxMeses": 72,
+          "tna": 0.56,
+          "tea": 0.7286,
+          "cftTea": 0.9332
+        }
+      ],
+      "plazoMinMeses": 1,
+      "plazoMaxMeses": 72
     }
   },
   {
@@ -218,8 +324,112 @@
     "vigenciaDesde": "2026-05-04",
     "vigenciaHasta": null,
     "metadata": {
+      "fuentePdf": true,
       "plazoMesesEjemplo": 60,
-      "fuentePdf": true
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 1,
+          "plazoMaxMeses": 12,
+          "tna": 0.66,
+          "tea": 0.9012,
+          "cftTea": 1.1666
+        },
+        {
+          "plazoMinMeses": 13,
+          "plazoMaxMeses": 18,
+          "tna": 0.68,
+          "tea": 0.9376,
+          "cftTea": 1.2163
+        },
+        {
+          "plazoMinMeses": 19,
+          "plazoMaxMeses": 24,
+          "tna": 0.72,
+          "tea": 1.0122,
+          "cftTea": 1.3187
+        },
+        {
+          "plazoMinMeses": 25,
+          "plazoMaxMeses": 36,
+          "tna": 0.75,
+          "tea": 1.0699,
+          "cftTea": 1.3984
+        },
+        {
+          "plazoMinMeses": 37,
+          "plazoMaxMeses": 48,
+          "tna": 0.79,
+          "tea": 1.1492,
+          "cftTea": 1.5086
+        },
+        {
+          "plazoMinMeses": 49,
+          "plazoMaxMeses": 60,
+          "tna": 0.84,
+          "tea": 1.2522,
+          "cftTea": 1.6529
+        },
+        {
+          "plazoMinMeses": 61,
+          "plazoMaxMeses": 72,
+          "tna": 0.86,
+          "tea": 1.2947,
+          "cftTea": 1.7127
+        }
+      ],
+      "plazoMinMeses": 1,
+      "plazoMaxMeses": 72
+    }
+  },
+  {
+    "entidad": "MACRO",
+    "nombreComercial": "Macro",
+    "producto": "Préstamo personal",
+    "tna": 1.25,
+    "tea": 2.2841,
+    "cftTna": null,
+    "cftTea": 3.1558,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": false,
+    "condiciones": "Renta Presunta",
+    "enlace": "https://www.macro.com.ar/personas/prestamos/personales",
+    "vigenciaDesde": "2026-05-04",
+    "vigenciaHasta": null,
+    "metadata": {
+      "fuentePdf": true,
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 1,
+          "plazoMaxMeses": 12,
+          "tna": 0.96,
+          "tea": 1.5182,
+          "cftTea": 2.0306
+        },
+        {
+          "plazoMinMeses": 13,
+          "plazoMaxMeses": 18,
+          "tna": 1.02,
+          "tea": 1.6617,
+          "cftTea": 2.2374
+        },
+        {
+          "plazoMinMeses": 19,
+          "plazoMaxMeses": 24,
+          "tna": 1.08,
+          "tea": 1.8127,
+          "cftTea": 2.4571
+        },
+        {
+          "plazoMinMeses": 25,
+          "plazoMaxMeses": 36,
+          "tna": 1.25,
+          "tea": 2.2841,
+          "cftTea": 3.1558
+        }
+      ],
+      "plazoMinMeses": 1,
+      "plazoMaxMeses": 36
     }
   },
   {
@@ -238,8 +448,61 @@
     "vigenciaDesde": "2026-05-04",
     "vigenciaHasta": null,
     "metadata": {
+      "fuentePdf": true,
       "plazoMesesEjemplo": 60,
-      "fuentePdf": true
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 1,
+          "plazoMaxMeses": 12,
+          "tna": 0.55,
+          "tea": 0.7122,
+          "cftTea": 0.9111
+        },
+        {
+          "plazoMinMeses": 13,
+          "plazoMaxMeses": 18,
+          "tna": 0.55,
+          "tea": 0.7122,
+          "cftTea": 0.9111
+        },
+        {
+          "plazoMinMeses": 19,
+          "plazoMaxMeses": 24,
+          "tna": 0.57,
+          "tea": 0.7452,
+          "cftTea": 0.9554
+        },
+        {
+          "plazoMinMeses": 25,
+          "plazoMaxMeses": 36,
+          "tna": 0.6,
+          "tea": 0.7959,
+          "cftTea": 1.0236
+        },
+        {
+          "plazoMinMeses": 37,
+          "plazoMaxMeses": 48,
+          "tna": 0.58,
+          "tea": 0.7619,
+          "cftTea": 0.9779
+        },
+        {
+          "plazoMinMeses": 49,
+          "plazoMaxMeses": 60,
+          "tna": 0.56,
+          "tea": 0.7286,
+          "cftTea": 0.9332
+        },
+        {
+          "plazoMinMeses": 61,
+          "plazoMaxMeses": 72,
+          "tna": 0.56,
+          "tea": 0.7286,
+          "cftTea": 0.9332
+        }
+      ],
+      "plazoMinMeses": 1,
+      "plazoMaxMeses": 72
     }
   },
   {
@@ -258,8 +521,19 @@
     "vigenciaDesde": "2026-05-04",
     "vigenciaHasta": null,
     "metadata": {
+      "fuentePdf": true,
       "plazoMesesEjemplo": 12,
-      "fuentePdf": true
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 1,
+          "plazoMaxMeses": 12,
+          "tna": 0.66,
+          "tea": 0.9012,
+          "cftTea": 1.1666
+        }
+      ],
+      "plazoMinMeses": 1,
+      "plazoMaxMeses": 12
     }
   },
   {
@@ -349,9 +623,18 @@
     "vigenciaHasta": null,
     "metadata": {
       "rango": {
-        "tna": { "min": 0.62, "max": 1.7 },
-        "tea": { "min": 0.8307, "max": 3.9099 },
-        "cftTea": { "min": 1.0709, "max": 5.6894 }
+        "tna": {
+          "min": 0.62,
+          "max": 1.7
+        },
+        "tea": {
+          "min": 0.8307,
+          "max": 3.9099
+        },
+        "cftTea": {
+          "min": 1.0709,
+          "max": 5.6894
+        }
       }
     }
   }

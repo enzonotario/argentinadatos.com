@@ -3240,7 +3240,7 @@
           },
           "metadata": {
             "type": "object",
-            "description": "Detalle adicional. Puede incluir afectación de ingresos, CFT sin IVA, o `rango` cuando la entidad publica un intervalo de tasas (p. ej. Mercado Pago). A futuro también puede incluir tasas por plazo.",
+            "description": "Detalle adicional. Puede incluir afectación de ingresos, CFT sin IVA, `rango` cuando la entidad publica un intervalo de tasas (p. ej. Mercado Pago / Ualá), o `tasasPorPlazo` cuando hay tablas por tramo (p. ej. Macro).",
             "additionalProperties": true,
             "properties": {
               "rango": {
@@ -3270,6 +3270,26 @@
                   }
                 }
               },
+              "tasasPorPlazo": {
+                "type": "array",
+                "description": "Tasas por tramo de plazo en meses (decimal). Si está presente, el simulador debe usar el tramo que contenga el plazo pedido.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "plazoMinMeses": { "type": "integer" },
+                    "plazoMaxMeses": { "type": "integer" },
+                    "tna": { "type": "number", "nullable": true },
+                    "tea": { "type": "number", "nullable": true },
+                    "cftTea": { "type": "number", "nullable": true }
+                  }
+                }
+              },
+              "plazoMesesEjemplo": {
+                "type": "integer",
+                "nullable": true,
+                "description": "Plazo del ejemplo representativo publicado por el banco, si aplica"
+              },
+              "plazoMinMeses": { "type": "integer", "nullable": true },
               "plazoMinDias": { "type": "integer", "nullable": true },
               "plazoMaxMeses": { "type": "integer", "nullable": true }
             }
