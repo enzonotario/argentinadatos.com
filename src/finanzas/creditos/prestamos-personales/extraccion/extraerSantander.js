@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { logGrupo, logError } from '@/log.js'
+import { logGrupo, logError, logMensaje } from '@/log.js'
 import { scrapeHtmlWithFirecrawl } from '@/shared/extraction/firecrawl/scrapeHtmlWithFirecrawl.js'
 import { parsePorcentaje } from './parsePorcentaje.js'
 
@@ -17,26 +17,22 @@ const log = logGrupo({
 export function parsearSantander(htmlOrText) {
   const texto = String(htmlOrText).replace(/\s+/g, ' ')
 
-  const cftMatch = texto.match(/CFTEA:\s*([\d.,]+)\s*%/i)
-  const tnaMatch = texto.match(
-    /Tasa Fija Nominal Anual:\s*([\d.,]+)\s*%/i,
-  )
-  const teaMatch = texto.match(/Tasa Efectiva Anual:\s*([\d.,]+)\s*%/i)
+  const cftMatch =
+    texto.match(/CFTEA:\s*([\d.,]+)\s*%/i) ||
+    texto.match(/C\.?F\.?T\.?E\.?A\.?[^0-9%]{0,20}([\d.,]+)\s*%/i)
 
-  // Fallback ejemplo: "TNA del 79,00 % y CFTEA 150,86%"
-  const tna =
-    (tnaMatch ? parsePorcentaje(tnaMatch[1]) : null) ??
-    (texto.match(/TNA del\s*([\d.,]+)\s*%/i)
-      ? parsePorcentaje(texto.match(/TNA del\s*([\d.,]+)\s*%/i)[1])
-      : null)
+  const tnaMatch =
+    texto.match(/Tasa Fija Nominal Anual:\s*([\d.,]+)\s*%/i) ||
+    texto.match(/TNA del\s*([\d.,]+)\s*%/i) ||
+    texto.match(/\bTNA[:\s]+([\d.,]+)\s*%/i)
 
-  const cftTea =
-    (cftMatch ? parsePorcentaje(cftMatch[1]) : null) ??
-    (texto.match(/CFTEA\s+([\d.,]+)\s*%/i)
-      ? parsePorcentaje(texto.match(/CFTEA\s+([\d.,]+)\s*%/i)[1])
-      : null)
+  const teaMatch =
+    texto.match(/Tasa Efectiva Anual:\s*([\d.,]+)\s*%/i) ||
+    texto.match(/(?<![A-Z])TEA:\s*([\d.,]+)\s*%/i)
 
+  const tna = tnaMatch ? parsePorcentaje(tnaMatch[1]) : null
   const tea = teaMatch ? parsePorcentaje(teaMatch[1]) : null
+  const cftTea = cftMatch ? parsePorcentaje(cftMatch[1]) : null
 
   if (tna === null && cftTea === null) {
     return []
@@ -66,7 +62,7 @@ export function parsearSantander(htmlOrText) {
 async function fetchHtmlAxios() {
   const respuesta = await axios.get(URL, {
     responseType: 'text',
-    timeout: 15000,
+    timeout: 10000,
     headers: {
       'User-Agent':
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -79,24 +75,41 @@ async function fetchHtmlAxios() {
   return String(respuesta.data)
 }
 
+async function fetchHtml() {
+  const tieneFirecrawl = Boolean(import.meta.env.VITE_FIRECRAWL_API_KEY)
+
+  // En CI/redes restringidas axios a Santander suele timeout; Firecrawl primero.
+  if (tieneFirecrawl) {
+    try {
+      const scraped = await scrapeHtmlWithFirecrawl(log, URL)
+      const contenido = scraped.html || scraped.markdown || ''
+
+      if (contenido) return contenido
+    } catch (errorFirecrawl) {
+      logMensaje(log, 'Firecrawl Santander falló, pruebo axios', {
+        errorMessage: errorFirecrawl.message,
+      })
+    }
+  }
+
+  try {
+    return await fetchHtmlAxios()
+  } catch (errorAxios) {
+    logMensaje(log, 'Axios Santander no disponible', {
+      errorMessage: errorAxios.message,
+    })
+    throw errorAxios
+  }
+}
+
 export async function extraerSantander() {
   try {
-    let html = ''
+    const html = await fetchHtml()
+    const ofertas = parsearSantander(html)
 
-    try {
-      html = await fetchHtmlAxios()
-    } catch (errorAxios) {
-      logError(log, errorAxios)
+    logMensaje(log, 'Santander parseado', { ofertas: ofertas.length })
 
-      if (import.meta.env.VITE_FIRECRAWL_API_KEY) {
-        const scraped = await scrapeHtmlWithFirecrawl(log, URL)
-        html = scraped.html || scraped.markdown || ''
-      } else {
-        throw errorAxios
-      }
-    }
-
-    return parsearSantander(html)
+    return ofertas
   } catch (error) {
     logError(log, error)
     return []

@@ -34,10 +34,16 @@ export async function scrapeHtmlWithFirecrawl(log, url) {
       throw new Error(`Firecrawl returned success=false for URL: ${url}`)
     }
 
-    return {
-      markdown: payload.data.markdown || '',
-      html: payload.data.html || '',
-    }
+    const markdown = payload.data.markdown || ''
+    const html = payload.data.html || ''
+
+    logMensaje(log, 'Firecrawl HTML scrape succeeded', {
+      url,
+      markdownLength: markdown.length,
+      htmlLength: html.length,
+    })
+
+    return { markdown, html }
   } catch (error) {
     logError(log, error)
     logMensaje(log, 'Firecrawl HTML scrape failed', {

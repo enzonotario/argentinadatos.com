@@ -1,12 +1,14 @@
 import axios from 'axios'
 import pdf from 'pdf-parse/lib/pdf-parse.js'
 import { load } from 'cheerio'
-import { logGrupo, logError } from '@/log.js'
+import { logGrupo, logError, logMensaje } from '@/log.js'
 import { parseFechaSlash, parsePorcentaje } from './parsePorcentaje.js'
 
 const PAGE_URL = 'https://www.macro.com.ar/personas/prestamos/personales'
-const PDF_FALLBACK =
-  'https://www.macro.com.ar/1517351591909/tasas-de-prestamos-y-descubiertos-en-cuenta-corriente.pdf'
+const PDF_URLS = [
+  'https://www.macro.com.ar/1517351591909/tasas-de-prestamos-y-descubiertos-en-cuenta-corriente.pdf',
+  'https://www.macro.com.ar/1580936235559?d=Any',
+]
 
 const log = logGrupo({
   fuente: 'extraerMacroPrestamosPersonales',
@@ -27,7 +29,7 @@ export function resolverUrlPdfMacro(html) {
       .attr('href') ||
     $('a[href*="tasas-de-prestamos"]').first().attr('href')
 
-  if (!href) return PDF_FALLBACK
+  if (!href) return PDF_URLS[0]
 
   if (href.startsWith('http')) return href
 
@@ -88,38 +90,52 @@ export function parsearMacroPdf(textoPdf) {
   return ofertas
 }
 
+async function descargarPdf(url) {
+  const pdfRespuesta = await axios.get(url, {
+    responseType: 'arraybuffer',
+    timeout: 45000,
+    headers: {
+      'User-Agent':
+        'Mozilla/5.0 (compatible; ArgentinaDatos/1.0; +https://argentinadatos.com)',
+      Accept: 'application/pdf,*/*',
+    },
+    // El link ?d=Any a veces responde con content-type octet-stream
+    validateStatus: (status) => status >= 200 && status < 400,
+  })
+
+  return Buffer.from(pdfRespuesta.data)
+}
+
 export async function extraerMacro() {
   try {
-    let pdfUrl = PDF_FALLBACK
+    // La landing de Macro suele colgar; bajamos el PDF directo.
+    let lastError = null
 
-    try {
-      const pagina = await axios.get(PAGE_URL, {
-        responseType: 'text',
-        timeout: 12000,
-        headers: {
-          'User-Agent':
-            'Mozilla/5.0 (compatible; ArgentinaDatos/1.0; +https://argentinadatos.com)',
-        },
-      })
+    for (const pdfUrl of PDF_URLS) {
+      try {
+        logMensaje(log, 'Descargando PDF de tasas Macro', { pdfUrl })
+        const buffer = await descargarPdf(pdfUrl)
+        const parsed = await pdf(buffer)
+        const ofertas = parsearMacroPdf(parsed.text || '')
 
-      pdfUrl = resolverUrlPdfMacro(pagina.data)
-    } catch (errorPagina) {
-      logError(log, errorPagina)
+        if (ofertas.length > 0) {
+          logMensaje(log, 'Macro PDF parseado', { ofertas: ofertas.length })
+          return ofertas
+        }
+
+        lastError = new Error(`PDF sin ofertas parseables: ${pdfUrl}`)
+      } catch (errorPdf) {
+        lastError = errorPdf
+        logMensaje(log, 'Fallo descarga/parse PDF Macro, probando siguiente', {
+          pdfUrl,
+          errorMessage: errorPdf.message,
+        })
+      }
     }
 
-    const pdfRespuesta = await axios.get(pdfUrl, {
-      responseType: 'arraybuffer',
-      timeout: 45000,
-      headers: {
-        'User-Agent':
-          'Mozilla/5.0 (compatible; ArgentinaDatos/1.0; +https://argentinadatos.com)',
-        Accept: 'application/pdf,*/*',
-      },
-    })
+    if (lastError) throw lastError
 
-    const parsed = await pdf(Buffer.from(pdfRespuesta.data))
-
-    return parsearMacroPdf(parsed.text || '')
+    return []
   } catch (error) {
     logError(log, error)
     return []
