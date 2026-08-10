@@ -1,0 +1,76 @@
+[
+  {
+    "entidad": "BNA",
+    "nombreComercial": "BNA",
+    "producto": "Nación Destino Libre",
+    "tna": 0.74,
+    "tea": 1.0505,
+    "cftTna": 1.0426,
+    "cftTea": 1.7176,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": true,
+    "condiciones": "Con paquete Cuenta Nación",
+    "enlace": "https://www.bna.com.ar/Personas/naciondestinolibre",
+    "vigenciaDesde": null,
+    "vigenciaHasta": null,
+    "metadata": {
+      "afectacionIngresos": "30%"
+    }
+  },
+  {
+    "entidad": "BNA",
+    "nombreComercial": "BNA",
+    "producto": "Nación Destino Libre",
+    "tna": 0.91,
+    "tea": 1.404,
+    "cftTna": 1.1011,
+    "cftTea": 1.8676,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": false,
+    "condiciones": "Sin paquete Cuenta Nación",
+    "enlace": "https://www.bna.com.ar/Personas/naciondestinolibre",
+    "vigenciaDesde": null,
+    "vigenciaHasta": null,
+    "metadata": {
+      "afectacionIngresos": "30%"
+    }
+  },
+  {
+    "entidad": "BBVA",
+    "nombreComercial": "BBVA",
+    "producto": "Préstamo personal",
+    "tna": 1.29,
+    "tea": 2.4051,
+    "cftTna": null,
+    "cftTea": 3.23,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": true,
+    "condiciones": "Oferta exclusiva para clientes BBVA",
+    "enlace": "https://www.bbva.com.ar/personas/productos/prestamos/personales.html",
+    "vigenciaDesde": "2026-08-01",
+    "vigenciaHasta": "2026-08-31",
+    "metadata": {}
+  },
+  {
+    "entidad": "SUPERVIELLE",
+    "nombreComercial": "Supervielle",
+    "producto": "Préstamo personal",
+    "tna": 1.45,
+    "tea": 2.935,
+    "cftTna": null,
+    "cftTea": 4.1499,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": false,
+    "condiciones": "Cartera consumo",
+    "enlace": "https://www.supervielle.com.ar/personas/prestamos/personales",
+    "vigenciaDesde": "2026-04-23",
+    "vigenciaHasta": "2026-06-30",
+    "metadata": {
+      "cftTeaSinIva": 2.935
+    }
+  }
+]

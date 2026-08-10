@@ -696,6 +696,37 @@
         ]
       }
     },
+    "/v1/finanzas/creditos/prestamosPersonales": {
+      "get": {
+        "summary": "Préstamos personales",
+        "tags": [
+          "Finanzas",
+          "Créditos"
+        ],
+        "description": "Ofertas de préstamos personales relevadas desde landings bancarias (TNA, TEA, CFT). Lista plana de productos/variantes para facilitar ranking. Las tasas están en formato decimal (`0.74` = 74 %; pueden ser mayores a `1`, p. ej. CFTEA 323 % → `3.23`).",
+        "responses": {
+          "200": {
+            "description": "Lista de ofertas de préstamos personales",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PrestamoPersonal"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-finanzas-creditos-prestamos-personales",
+        "x-data-source": [
+          "[Banco Nación — Nación Destino Libre](https://www.bna.com.ar/Personas/naciondestinolibre)",
+          "[BBVA — Préstamos personales](https://www.bbva.com.ar/personas/productos/prestamos/personales.html)",
+          "[Supervielle — Préstamos personales](https://www.supervielle.com.ar/personas/prestamos/personales)"
+        ]
+      }
+    },
     "/v1/finanzas/cuentas-remuneradas-usd": {
       "get": {
         "summary": "Cuentas remuneradas en USD",
@@ -3123,6 +3154,109 @@
               "plazo_max_anios": 30,
               "relacion_cuota_ingreso": "25%",
               "financiamiento": "75%"
+            }
+          }
+        }
+      },
+      "PrestamoPersonal": {
+        "title": "PrestamoPersonal",
+        "type": "object",
+        "properties": {
+          "entidad": {
+            "type": "string",
+            "description": "Identificador de la entidad (p. ej. BNA, BBVA, SUPERVIELLE)"
+          },
+          "nombreComercial": {
+            "type": "string",
+            "description": "Nombre comercial de la entidad"
+          },
+          "producto": {
+            "type": "string",
+            "description": "Nombre del producto o línea de préstamo"
+          },
+          "tna": {
+            "type": "number",
+            "format": "float",
+            "nullable": true,
+            "description": "Tasa Nominal Anual en decimal (0.74 = 74 %). Puede ser mayor a 1."
+          },
+          "tea": {
+            "type": "number",
+            "format": "float",
+            "nullable": true,
+            "description": "Tasa Efectiva Anual en decimal"
+          },
+          "cftTna": {
+            "type": "number",
+            "format": "float",
+            "nullable": true,
+            "description": "Costo Financiero Total expresado como TNA (decimal)"
+          },
+          "cftTea": {
+            "type": "number",
+            "format": "float",
+            "nullable": true,
+            "description": "Costo Financiero Total expresado como TEA / CFTEA (decimal). Preferido para ranking."
+          },
+          "tipoTasa": {
+            "type": "string",
+            "description": "Tipo de tasa (p. ej. fija, variable)"
+          },
+          "moneda": {
+            "type": "string",
+            "description": "Moneda del préstamo (ARS)"
+          },
+          "requiereCliente": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "Si la oferta requiere ser cliente de la entidad o contratar un paquete"
+          },
+          "condiciones": {
+            "type": "string",
+            "nullable": true,
+            "description": "Condiciones comerciales resumidas"
+          },
+          "enlace": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL de la landing oficial"
+          },
+          "vigenciaDesde": {
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "description": "Inicio de vigencia de la oferta (YYYY-MM-DD), si se informa"
+          },
+          "vigenciaHasta": {
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "description": "Fin de vigencia de la oferta (YYYY-MM-DD), si se informa"
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Detalle adicional (afectación de ingresos, CFT sin IVA, etc.)",
+            "additionalProperties": true
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "entidad": "BNA",
+            "nombreComercial": "BNA",
+            "producto": "Nación Destino Libre",
+            "tna": 0.74,
+            "tea": 1.0505,
+            "cftTna": 1.0426,
+            "cftTea": 1.7176,
+            "tipoTasa": "fija",
+            "moneda": "ARS",
+            "requiereCliente": true,
+            "condiciones": "Con paquete Cuenta Nación",
+            "enlace": "https://www.bna.com.ar/Personas/naciondestinolibre",
+            "vigenciaDesde": null,
+            "vigenciaHasta": null,
+            "metadata": {
+              "afectacionIngresos": "30%"
             }
           }
         }
