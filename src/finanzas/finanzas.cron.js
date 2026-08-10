@@ -20,6 +20,8 @@ import { extraerCreditosHipotecariosUva } from '@/finanzas/creditos/hipotecarios
 import { guardarCreditosHipotecariosUva } from '@/finanzas/creditos/hipotecarios-uva/guardado/guardarCreditosHipotecariosUva.js'
 import { extraerPrestamosPersonales } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerPrestamosPersonales.js'
 import { guardarPrestamosPersonales } from '@/finanzas/creditos/prestamos-personales/guardado/guardarPrestamosPersonales.js'
+import { extraerPrestamosPersonalesBcra } from '@/finanzas/creditos/prestamos-personales-bcra/extraccion/extraerPrestamosPersonalesBcra.js'
+import { guardarPrestamosPersonalesBcra } from '@/finanzas/creditos/prestamos-personales-bcra/guardado/guardarPrestamosPersonalesBcra.js'
 import remComando from '@/finanzas/rem/rem.comando.js'
 import letrasComando from '@/finanzas/letras/letras.comando.js'
 import ejecutarBonosCer from '@/finanzas/bonos-cer/bonosCer.comando.js'
@@ -39,6 +41,7 @@ export async function cronFinanzas() {
   await ejecutarCriptopesos()
   await creditosHipotecariosUva()
   await prestamosPersonales()
+  await prestamosPersonalesBcra()
   await rem()
   await letras()
   await ejecutarBonosCer()
@@ -154,6 +157,16 @@ async function prestamosPersonales() {
     await guardarPrestamosPersonales(datos)
   } catch (error) {
     console.error('Error al extraer préstamos personales', error)
+  }
+}
+
+async function prestamosPersonalesBcra() {
+  try {
+    const datos = await extraerPrestamosPersonalesBcra()
+
+    await guardarPrestamosPersonalesBcra(datos)
+  } catch (error) {
+    console.error('Error al extraer préstamos personales BCRA', error)
   }
 }
 

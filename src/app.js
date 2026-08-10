@@ -15,6 +15,7 @@ import ejecutarBonosCer from '@/finanzas/bonos-cer/bonosCer.comando.js'
 import ejecutarRemesas from '@/finanzas/remesas/remesas.comando.js'
 import cuentasRemuneradasUsdComando from '@/finanzas/cuentas-remuneradas-usd/cuentas-remuneradas-usd.comando.js'
 import prestamosPersonalesComando from '@/finanzas/creditos/prestamos-personales/prestamos-personales.comando.js'
+import prestamosPersonalesBcraComando from '@/finanzas/creditos/prestamos-personales-bcra/prestamos-personales-bcra.comando.js'
 import remComando from '@/finanzas/rem/rem.comando.js'
 import fondosFciComando from '@/finanzas/fci/fondos/fondos.comando.js'
 import presidentesComando from '@/presidentes/presidentes.comando.js'
@@ -139,6 +140,10 @@ export async function iniciar(comando) {
 
     case '/v1/finanzas/creditos/prestamosPersonales':
       await prestamosPersonalesComando()
+      break
+
+    case '/v1/finanzas/creditos/prestamosPersonalesBcra':
+      await prestamosPersonalesBcraComando()
       break
 
     case '/v1/finanzas/remesas':

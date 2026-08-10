@@ -732,6 +732,35 @@
         ]
       }
     },
+    "/v1/finanzas/creditos/prestamosPersonalesBcra": {
+      "get": {
+        "summary": "Préstamos personales (techos BCRA)",
+        "tags": [
+          "Finanzas",
+          "Créditos"
+        ],
+        "description": "Ofertas de préstamos personales informadas al BCRA (`PERSONALES.CSV`): **TEA máxima** y **CFT máximo** regulatorios por producto/entidad, no tasas publicitadas de landings. Lista plana (v1 solo `ARS`). Las tasas están en decimal (`0.9332` = 93,32 %; pueden ser mayores a `1`). Pensado como fuente secundaria para enriquecer el comparador (join soft por `codigoEntidad` / `entidad`), no para mezclar en el ranking scrapeado.",
+        "responses": {
+          "200": {
+            "description": "Lista de ofertas BCRA (máximos regulatorios)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PrestamoPersonalBcra"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-finanzas-creditos-prestamos-personales-bcra",
+        "x-data-source": [
+          "[BCRA — PERSONALES.CSV](https://www.bcra.gob.ar/archivos/Pdfs/BCRAyVos/PERSONALES.CSV)"
+        ]
+      }
+    },
     "/v1/finanzas/cuentas-remuneradas-usd": {
       "get": {
         "summary": "Cuentas remuneradas en USD",
@@ -3313,6 +3342,135 @@
             "vigenciaHasta": null,
             "metadata": {
               "afectacionIngresos": "30%"
+            }
+          }
+        }
+      },
+      "PrestamoPersonalBcra": {
+        "title": "PrestamoPersonalBcra",
+        "type": "object",
+        "description": "Oferta de préstamo personal informada al BCRA. `teaMax` y `cftTeaMax` son **máximos** regulatorios (no una tasa puntual publicitada).",
+        "properties": {
+          "codigoEntidad": {
+            "type": "string",
+            "description": "Código de entidad BCRA (p. ej. `11`)"
+          },
+          "entidad": {
+            "type": "string",
+            "description": "Alias corto si está mapeado (BNA, BBVA, …) o descripción BCRA"
+          },
+          "nombreComercial": {
+            "type": "string",
+            "description": "Descripción oficial de la entidad en el CSV BCRA"
+          },
+          "producto": {
+            "type": "string",
+            "nullable": true,
+            "description": "Nombre completo del préstamo personal"
+          },
+          "productoCorto": {
+            "type": "string",
+            "nullable": true,
+            "description": "Nombre corto del préstamo personal"
+          },
+          "moneda": {
+            "type": "string",
+            "enum": ["ARS", "USD", "UVA"],
+            "description": "Moneda (v1 del endpoint publica solo ARS)"
+          },
+          "teaMax": {
+            "type": "number",
+            "format": "float",
+            "nullable": true,
+            "description": "TEA máxima informada al BCRA, en decimal"
+          },
+          "cftTeaMax": {
+            "type": "number",
+            "format": "float",
+            "nullable": true,
+            "description": "Costo financiero efectivo total máximo (CFTEA), en decimal"
+          },
+          "tipoTasa": {
+            "type": "string",
+            "nullable": true,
+            "description": "Tipo de tasa (p. ej. fija)"
+          },
+          "requiereCliente": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "Heurística a partir del campo Beneficiario"
+          },
+          "condiciones": {
+            "type": "string",
+            "nullable": true,
+            "description": "Texto de Beneficiario del CSV"
+          },
+          "vigenciaDesde": {
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "description": "Fecha de información del CSV (YYYY-MM-DD)"
+          },
+          "enlace": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL del CSV BCRA PERSONALES"
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Montos, plazos, afectación, territorio y notas del CSV",
+            "additionalProperties": true,
+            "properties": {
+              "montoMin": { "type": "integer", "nullable": true },
+              "montoMax": { "type": "integer", "nullable": true },
+              "plazoMaxMeses": { "type": "integer", "nullable": true },
+              "ingresoMinMensual": { "type": "integer", "nullable": true },
+              "antiguedadLaboralMinMeses": { "type": "integer", "nullable": true },
+              "edadMax": { "type": "integer", "nullable": true },
+              "afectacionIngresos": { "type": "string", "nullable": true },
+              "cargoCancelacionAnticipada": {
+                "type": "number",
+                "nullable": true,
+                "description": "Cargo máximo por cancelación anticipada en decimal"
+              },
+              "cuotaInicialPor10000": { "type": "number", "nullable": true },
+              "territorio": { "type": "string", "nullable": true },
+              "notas": { "type": "string", "nullable": true },
+              "fuente": {
+                "type": "string",
+                "enum": ["bcra-csv"]
+              }
+            }
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "codigoEntidad": "11",
+            "entidad": "BNA",
+            "nombreComercial": "BANCO DE LA NACION ARGENTINA",
+            "producto": "NACION SUELDOS TRAMO III",
+            "productoCorto": "NACION SUELDOS",
+            "moneda": "ARS",
+            "teaMax": 0.7286,
+            "cftTeaMax": 0.9332,
+            "tipoTasa": "fija",
+            "requiereCliente": true,
+            "condiciones": "Clientes que acrediten sueldos en la entidad",
+            "vigenciaDesde": "2026-08-10",
+            "enlace": "https://www.bcra.gob.ar/archivos/Pdfs/BCRAyVos/PERSONALES.CSV",
+            "metadata": {
+              "montoMin": 1000000,
+              "montoMax": 100000000,
+              "plazoMaxMeses": 72,
+              "ingresoMinMensual": 421284,
+              "antiguedadLaboralMinMeses": 3,
+              "edadMax": 74,
+              "afectacionIngresos": "35%",
+              "cargoCancelacionAnticipada": 0.04,
+              "cuotaInicialPor10000": 583,
+              "territorio": "Todo el territorio nacional",
+              "notas": null,
+              "fuente": "bcra-csv"
             }
           }
         }
