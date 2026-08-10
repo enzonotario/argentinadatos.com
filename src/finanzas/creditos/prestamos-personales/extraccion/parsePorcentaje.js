@@ -1,7 +1,7 @@
 import { porcentajeADecimal } from '@/finanzas/compartido/utils/tasas.js'
 
 /**
- * Convierte un porcentaje en texto argentino ("74,00%", "323%") a decimal.
+ * Convierte un porcentaje en texto ("74,00%", "114.92%", "323%") a decimal.
  * @param {string|number|null|undefined} texto
  * @param {number} [precision=4]
  * @returns {number|null}
@@ -9,14 +9,17 @@ import { porcentajeADecimal } from '@/finanzas/compartido/utils/tasas.js'
 export function parsePorcentaje(texto, precision = 4) {
   if (texto === null || texto === undefined) return null
 
-  const limpio = String(texto)
-    .replace(/%/g, '')
-    .replace(/\s/g, '')
-    .replace(/\./g, '')
-    .replace(',', '.')
-    .trim()
+  let limpio = String(texto).replace(/%/g, '').replace(/\s/g, '').trim()
 
   if (!limpio) return null
+
+  if (limpio.includes(',')) {
+    // Formato AR: miles con punto, decimal con coma
+    limpio = limpio.replace(/\./g, '').replace(',', '.')
+  } else if (!/^\d+\.\d{1,4}$/.test(limpio)) {
+    // Solo quitar puntos de miles si no parece decimal inglés (114.92)
+    limpio = limpio.replace(/\./g, '')
+  }
 
   const valor = Number.parseFloat(limpio)
 

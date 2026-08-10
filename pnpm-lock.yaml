@@ -17,6 +17,9 @@ importers:
       defuddle:
         specifier: ^0.18.1
         version: 0.18.1
+      pdf-parse:
+        specifier: 1.1.1
+        version: 1.1.1
       xlsx:
         specifier: ^0.18.5
         version: 0.18.5
@@ -11198,7 +11201,7 @@ snapshots:
 
   is-accessor-descriptor@1.0.1:
     dependencies:
-      hasown: 2.0.2
+      hasown: 2.0.4
 
   is-binary-path@1.0.1:
     dependencies:
@@ -11222,7 +11225,7 @@ snapshots:
 
   is-data-descriptor@1.0.1:
     dependencies:
-      hasown: 2.0.2
+      hasown: 2.0.4
 
   is-descriptor@0.1.7:
     dependencies:
