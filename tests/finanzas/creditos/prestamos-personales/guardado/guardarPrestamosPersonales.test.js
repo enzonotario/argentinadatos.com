@@ -26,6 +26,10 @@ import {
   parsearCiudad,
   extraerCiudad,
 } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerCiudad.js'
+import {
+  parsearPatagonia,
+  extraerPatagonia,
+} from '@/finanzas/creditos/prestamos-personales/extraccion/extraerPatagonia.js'
 import { guardarPrestamosPersonales } from '@/finanzas/creditos/prestamos-personales/guardado/guardarPrestamosPersonales.js'
 import { leerRuta } from '@/utils/rutas.js'
 
@@ -52,6 +56,9 @@ describe('guardarPrestamosPersonales', () => {
       ...parsearMacroPdf(
         readFileSync(join(fixturesDir, 'macro.pdf.txt'), 'utf8'),
       ),
+      ...parsearPatagonia(
+        readFileSync(join(fixturesDir, 'patagonia.html'), 'utf8'),
+      ),
       ...parsearSantander(
         readFileSync(join(fixturesDir, 'santander.html'), 'utf8'),
       ),
@@ -76,9 +83,9 @@ describe.skipIf(process.env.SKIP_NETWORK === '1')(
   'extractores de red (préstamos personales)',
   () => {
     it(
-      'extrae ofertas de Bancor, BBVA, Ciudad, Galicia, Hipotecario y Macro con tasas por tramo',
+      'extrae ofertas de Bancor, BBVA, Ciudad, Galicia, Hipotecario, Macro y Patagonia con tasas por tramo',
       async () => {
-        const [bancor, bbva, ciudad, galicia, hipotecario, macro] =
+        const [bancor, bbva, ciudad, galicia, hipotecario, macro, patagonia] =
           await Promise.all([
             extraerBancor(),
             extraerBbva(),
@@ -86,6 +93,7 @@ describe.skipIf(process.env.SKIP_NETWORK === '1')(
             extraerGalicia(),
             extraerHipotecario(),
             extraerMacro(),
+            extraerPatagonia(),
           ])
 
         expect(bancor.length).toBeGreaterThanOrEqual(1)
@@ -94,12 +102,14 @@ describe.skipIf(process.env.SKIP_NETWORK === '1')(
         expect(galicia.length).toBeGreaterThanOrEqual(3)
         expect(hipotecario.length).toBeGreaterThanOrEqual(1)
         expect(macro.length).toBeGreaterThanOrEqual(1)
+        expect(patagonia.length).toBeGreaterThanOrEqual(1)
         expect(bancor[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
         expect(bbva[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
         expect(ciudad[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
         expect(galicia[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
         expect(hipotecario[0].metadata?.tasasPorPlazo?.length).toBe(3)
         expect(macro[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
+        expect(patagonia[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
       },
       90000,
     )
