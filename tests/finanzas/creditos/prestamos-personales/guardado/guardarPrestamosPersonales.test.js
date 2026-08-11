@@ -22,6 +22,10 @@ import {
   parsearHipotecario,
   extraerHipotecario,
 } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerHipotecario.js'
+import {
+  parsearCiudad,
+  extraerCiudad,
+} from '@/finanzas/creditos/prestamos-personales/extraccion/extraerCiudad.js'
 import { guardarPrestamosPersonales } from '@/finanzas/creditos/prestamos-personales/guardado/guardarPrestamosPersonales.js'
 import { leerRuta } from '@/utils/rutas.js'
 
@@ -35,6 +39,9 @@ describe('guardarPrestamosPersonales', () => {
       ),
       ...parsearBbvaPdf(
         readFileSync(join(fixturesDir, 'bbva.pdf.txt'), 'utf8'),
+      ),
+      ...parsearCiudad(
+        readFileSync(join(fixturesDir, 'ciudad.html'), 'utf8'),
       ),
       ...parsearGalicia(
         readFileSync(join(fixturesDir, 'galicia.model.json'), 'utf8'),
@@ -69,23 +76,27 @@ describe.skipIf(process.env.SKIP_NETWORK === '1')(
   'extractores de red (préstamos personales)',
   () => {
     it(
-      'extrae ofertas de Bancor, BBVA, Galicia, Hipotecario y Macro con tasas por tramo',
+      'extrae ofertas de Bancor, BBVA, Ciudad, Galicia, Hipotecario y Macro con tasas por tramo',
       async () => {
-        const [bancor, bbva, galicia, hipotecario, macro] = await Promise.all([
-          extraerBancor(),
-          extraerBbva(),
-          extraerGalicia(),
-          extraerHipotecario(),
-          extraerMacro(),
-        ])
+        const [bancor, bbva, ciudad, galicia, hipotecario, macro] =
+          await Promise.all([
+            extraerBancor(),
+            extraerBbva(),
+            extraerCiudad(),
+            extraerGalicia(),
+            extraerHipotecario(),
+            extraerMacro(),
+          ])
 
         expect(bancor.length).toBeGreaterThanOrEqual(1)
         expect(bbva.length).toBeGreaterThanOrEqual(1)
+        expect(ciudad.length).toBeGreaterThanOrEqual(3)
         expect(galicia.length).toBeGreaterThanOrEqual(3)
         expect(hipotecario.length).toBeGreaterThanOrEqual(1)
         expect(macro.length).toBeGreaterThanOrEqual(1)
         expect(bancor[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
         expect(bbva[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
+        expect(ciudad[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
         expect(galicia[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
         expect(hipotecario[0].metadata?.tasasPorPlazo?.length).toBe(3)
         expect(macro[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)

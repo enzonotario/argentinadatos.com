@@ -16,6 +16,17 @@ vi.mock(
 )
 
 vi.mock(
+  '@/finanzas/creditos/prestamos-personales/extraccion/extraerCiudad.js',
+  () => ({
+    extraerCiudad: vi.fn(async () => [
+      { entidad: 'CIUDAD', condiciones: 'Plan Sueldo', tna: 0.7 },
+      { entidad: 'CIUDAD', condiciones: 'Jubilados y Pensionados ANSES', tna: 0.65 },
+      { entidad: 'CIUDAD', condiciones: 'Cliente Fiel', tna: 0.87 },
+    ]),
+  }),
+)
+
+vi.mock(
   '@/finanzas/creditos/prestamos-personales/extraccion/extraerGalicia.js',
   () => ({
     extraerGalicia: vi.fn(async () => [
@@ -53,10 +64,13 @@ describe('extraerPrestamosPersonales', () => {
   it('aplana resultados de bancos con tasas por tramo', async () => {
     const items = await extraerPrestamosPersonales()
 
-    expect(items).toHaveLength(8)
+    expect(items).toHaveLength(11)
     expect(items.map((i) => i.entidad)).toEqual([
       'BANCOR',
       'BBVA',
+      'CIUDAD',
+      'CIUDAD',
+      'CIUDAD',
       'GALICIA',
       'GALICIA',
       'GALICIA',

@@ -103,6 +103,96 @@
     }
   },
   {
+    "entidad": "CIUDAD",
+    "nombreComercial": "Banco Ciudad",
+    "producto": "Ciudad Veloz Plan Sueldo",
+    "tna": 0.7,
+    "tea": 0.9746,
+    "cftTna": null,
+    "cftTea": 1.267,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": true,
+    "condiciones": "Plan Sueldo",
+    "enlace": "https://bancociudad.com.ar/institucional/micrositio/PrestamoPersonalCiudadVeloz",
+    "vigenciaDesde": "2026-06-19",
+    "vigenciaHasta": "2026-08-31",
+    "metadata": {
+      "plazoMesesEjemplo": 72,
+      "plazoMinMeses": 1,
+      "plazoMaxMeses": 72,
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 1,
+          "plazoMaxMeses": 72,
+          "tna": 0.7,
+          "tea": 0.9746,
+          "cftTea": 1.267
+        }
+      ]
+    }
+  },
+  {
+    "entidad": "CIUDAD",
+    "nombreComercial": "Banco Ciudad",
+    "producto": "Ciudad Veloz Jubilados y Pensionados ANSES",
+    "tna": 0.65,
+    "tea": 0.8833,
+    "cftTna": null,
+    "cftTea": 1.1421,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": true,
+    "condiciones": "Jubilados y Pensionados ANSES",
+    "enlace": "https://bancociudad.com.ar/institucional/micrositio/PrestamoPersonalCiudadVeloz",
+    "vigenciaDesde": "2026-06-19",
+    "vigenciaHasta": "2026-08-31",
+    "metadata": {
+      "plazoMesesEjemplo": 72,
+      "plazoMinMeses": 1,
+      "plazoMaxMeses": 72,
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 1,
+          "plazoMaxMeses": 72,
+          "tna": 0.65,
+          "tea": 0.8833,
+          "cftTea": 1.1421
+        }
+      ]
+    }
+  },
+  {
+    "entidad": "CIUDAD",
+    "nombreComercial": "Banco Ciudad",
+    "producto": "Ciudad Veloz Cliente Fiel",
+    "tna": 0.87,
+    "tea": 1.3162,
+    "cftTna": null,
+    "cftTea": 1.743,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": true,
+    "condiciones": "Cliente Fiel",
+    "enlace": "https://bancociudad.com.ar/institucional/micrositio/PrestamoPersonalCiudadVeloz",
+    "vigenciaDesde": "2026-06-19",
+    "vigenciaHasta": "2026-08-31",
+    "metadata": {
+      "plazoMesesEjemplo": 72,
+      "plazoMinMeses": 1,
+      "plazoMaxMeses": 72,
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 1,
+          "plazoMaxMeses": 72,
+          "tna": 0.87,
+          "tea": 1.3162,
+          "cftTea": 1.743
+        }
+      ]
+    }
+  },
+  {
     "entidad": "GALICIA",
     "nombreComercial": "Galicia",
     "producto": "Préstamo personal Éminent",

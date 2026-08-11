@@ -1,5 +1,6 @@
 import { extraerBancor } from './extraerBancor.js'
 import { extraerBbva } from './extraerBbva.js'
+import { extraerCiudad } from './extraerCiudad.js'
 import { extraerGalicia } from './extraerGalicia.js'
 import { extraerHipotecario } from './extraerHipotecario.js'
 import { extraerMacro } from './extraerMacro.js'
@@ -16,6 +17,7 @@ export async function extraerPrestamosPersonales() {
     const resultados = await Promise.all([
       extraerBancor(),
       extraerBbva(),
+      extraerCiudad(),
       extraerGalicia(),
       extraerHipotecario(),
       extraerMacro(),
