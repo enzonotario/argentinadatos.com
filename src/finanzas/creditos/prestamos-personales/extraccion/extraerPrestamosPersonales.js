@@ -1,5 +1,6 @@
 import { extraerBancor } from './extraerBancor.js'
 import { extraerBbva } from './extraerBbva.js'
+import { extraerGalicia } from './extraerGalicia.js'
 import { extraerMacro } from './extraerMacro.js'
 import { extraerSantander } from './extraerSantander.js'
 import { logGrupo, logError } from '@/log.js'
@@ -14,6 +15,7 @@ export async function extraerPrestamosPersonales() {
     const resultados = await Promise.all([
       extraerBancor(),
       extraerBbva(),
+      extraerGalicia(),
       extraerMacro(),
       extraerSantander(),
     ])

@@ -14,6 +14,10 @@ import {
   parsearBancor,
   extraerBancor,
 } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerBancor.js'
+import {
+  parsearGalicia,
+  extraerGalicia,
+} from '@/finanzas/creditos/prestamos-personales/extraccion/extraerGalicia.js'
 import { guardarPrestamosPersonales } from '@/finanzas/creditos/prestamos-personales/guardado/guardarPrestamosPersonales.js'
 import { leerRuta } from '@/utils/rutas.js'
 
@@ -27,6 +31,9 @@ describe('guardarPrestamosPersonales', () => {
       ),
       ...parsearBbvaPdf(
         readFileSync(join(fixturesDir, 'bbva.pdf.txt'), 'utf8'),
+      ),
+      ...parsearGalicia(
+        readFileSync(join(fixturesDir, 'galicia.model.json'), 'utf8'),
       ),
       ...parsearMacroPdf(
         readFileSync(join(fixturesDir, 'macro.pdf.txt'), 'utf8'),
@@ -55,19 +62,22 @@ describe.skipIf(process.env.SKIP_NETWORK === '1')(
   'extractores de red (préstamos personales)',
   () => {
     it(
-      'extrae ofertas de Bancor, BBVA y Macro con tasas por tramo',
+      'extrae ofertas de Bancor, BBVA, Galicia y Macro con tasas por tramo',
       async () => {
-        const [bancor, bbva, macro] = await Promise.all([
+        const [bancor, bbva, galicia, macro] = await Promise.all([
           extraerBancor(),
           extraerBbva(),
+          extraerGalicia(),
           extraerMacro(),
         ])
 
         expect(bancor.length).toBeGreaterThanOrEqual(1)
         expect(bbva.length).toBeGreaterThanOrEqual(1)
+        expect(galicia.length).toBeGreaterThanOrEqual(3)
         expect(macro.length).toBeGreaterThanOrEqual(1)
         expect(bancor[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
         expect(bbva[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
+        expect(galicia[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
         expect(macro[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
       },
       90000,
