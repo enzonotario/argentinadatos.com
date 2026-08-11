@@ -16,6 +16,35 @@ const HOP_BY_HOP_HEADERS = new Set([
   'content-length',
 ])
 
+const PROXY_INBOUND_HEADERS = new Set([
+  'authorization',
+  'x-proxy-token',
+  'x-target-url',
+  'x-target-method',
+  'cf-connecting-ip',
+  'cf-ipcountry',
+  'cf-ray',
+  'cf-visitor',
+  'cf-ew-via',
+  'cf-worker',
+  'cdn-loop',
+  'true-client-ip',
+  'x-forwarded-for',
+  'x-forwarded-proto',
+  'x-forwarded-host',
+  'x-real-ip',
+])
+
+function shouldForwardHeader(name: string): boolean {
+  const lower = name.toLowerCase()
+
+  if (HOP_BY_HOP_HEADERS.has(lower) || PROXY_INBOUND_HEADERS.has(lower)) {
+    return false
+  }
+
+  return !lower.startsWith('cf-')
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     if (!isAuthorized(request, env.PROXY_TOKEN)) {
@@ -31,12 +60,6 @@ export default {
       request.headers.get('x-target-method')?.toUpperCase() ?? request.method
     let targetHeaders = cloneHeadersWithoutHopByHop(request.headers)
     let targetBody: BodyInit | null = null
-
-    // Nunca reenviar credenciales del proxy al destino.
-    targetHeaders.delete('authorization')
-    targetHeaders.delete('x-proxy-token')
-    targetHeaders.delete('x-target-url')
-    targetHeaders.delete('x-target-method')
 
     if (!targetUrl) {
       if (!request.headers.get('content-type')?.includes('application/json')) {
@@ -65,7 +88,7 @@ export default {
       if (payload.headers) {
         targetHeaders = new Headers()
         for (const [key, value] of Object.entries(payload.headers)) {
-          if (!HOP_BY_HOP_HEADERS.has(key.toLowerCase())) {
+          if (shouldForwardHeader(key)) {
             targetHeaders.set(key, value)
           }
         }
@@ -144,7 +167,7 @@ function cloneHeadersWithoutHopByHop(headers: Headers): Headers {
   const cleanHeaders = new Headers()
 
   for (const [key, value] of headers.entries()) {
-    if (!HOP_BY_HOP_HEADERS.has(key.toLowerCase())) {
+    if (shouldForwardHeader(key)) {
       cleanHeaders.set(key, value)
     }
   }
