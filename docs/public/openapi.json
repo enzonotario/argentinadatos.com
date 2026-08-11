@@ -703,7 +703,7 @@
           "Finanzas",
           "Créditos"
         ],
-        "description": "Ofertas de préstamos personales relevadas desde landings bancarias (TNA, TEA, CFT). Lista plana de productos/variantes para facilitar ranking. Las tasas están en formato decimal (`0.74` = 74 %; pueden ser mayores a `1`, p. ej. CFTEA 323 % → `3.23`).",
+        "description": "Ofertas de préstamos personales con **tasas por tramo de plazo** (`metadata.tasasPorPlazo`), relevadas desde PDFs/tablas oficiales (hoy BBVA y Macro). Lista plana de productos/variantes para facilitar ranking. Las tasas están en formato decimal (`0.74` = 74 %; pueden ser mayores a `1`, p. ej. CFTEA 323 % → `3.23`).",
         "responses": {
           "200": {
             "description": "Lista de ofertas de préstamos personales",
@@ -721,14 +721,9 @@
         },
         "operationId": "get-finanzas-creditos-prestamos-personales",
         "x-data-source": [
-          "[Banco Nación — Nación Destino Libre](https://www.bna.com.ar/Personas/naciondestinolibre)",
-          "[Banco Nación — Nación Sueldos](https://www.bna.com.ar/Personas/NacionSueldos-ConveniosGenerales)",
           "[BBVA — Préstamos personales](https://www.bbva.com.ar/personas/productos/prestamos/personales.html)",
-          "[Galicia — Préstamo personal](https://www.galicia.ar/personas/prestamos/prestamo-personal)",
-          "[Macro — Préstamos personales](https://www.macro.com.ar/personas/prestamos/personales)",
-          "[Mercado Pago — Tasas vigentes](https://www.mercadopago.com.ar/ayuda/18691)",
-          "[Santander — Préstamos personales](https://www.santander.com.ar/personas/prestamos/personales)",
-          "[Supervielle — Préstamos personales](https://www.supervielle.com.ar/personas/prestamos/personales)"
+          "[BBVA — Tasas PDF](https://www.bbva.com.ar/tablas/tasaprestpers.pdf)",
+          "[Macro — Préstamos personales](https://www.macro.com.ar/personas/prestamos/personales)"
         ]
       }
     },
@@ -3198,7 +3193,7 @@
         "properties": {
           "entidad": {
             "type": "string",
-            "description": "Identificador de la entidad (p. ej. BNA, BBVA, UALA, MERCADOPAGO)"
+            "description": "Identificador de la entidad (p. ej. BBVA, MACRO)"
           },
           "nombreComercial": {
             "type": "string",
@@ -3212,7 +3207,7 @@
             "type": "number",
             "format": "float",
             "nullable": true,
-            "description": "Tasa Nominal Anual en decimal (0.74 = 74 %). Puede ser mayor a 1."
+            "description": "Tasa Nominal Anual en decimal (0.74 = 74 %). Puede ser mayor a 1. Referencia (ej. tramo de ejemplo o mayor plazo)."
           },
           "tea": {
             "type": "number",
@@ -3248,7 +3243,7 @@
           "condiciones": {
             "type": "string",
             "nullable": true,
-            "description": "Condiciones comerciales resumidas"
+            "description": "Condiciones comerciales resumidas (segmento / paquete)"
           },
           "enlace": {
             "type": "string",
@@ -3269,39 +3264,12 @@
           },
           "metadata": {
             "type": "object",
-            "description": "Detalle adicional. Puede incluir afectación de ingresos, CFT sin IVA, `rango` cuando la entidad publica un intervalo de tasas (p. ej. Mercado Pago / Ualá), o `tasasPorPlazo` cuando hay tablas por tramo (p. ej. Macro).",
+            "description": "Detalle adicional. Incluye `tasasPorPlazo` (tablas por tramo de plazo; requerido en este endpoint).",
             "additionalProperties": true,
             "properties": {
-              "rango": {
-                "type": "object",
-                "description": "Intervalo de tasas posibles según evaluación crediticia. Los campos top-level `tna`/`tea`/`cftTea` llevan el mínimo (mejor caso / desde).",
-                "properties": {
-                  "tna": {
-                    "type": "object",
-                    "properties": {
-                      "min": { "type": "number", "nullable": true },
-                      "max": { "type": "number", "nullable": true }
-                    }
-                  },
-                  "tea": {
-                    "type": "object",
-                    "properties": {
-                      "min": { "type": "number", "nullable": true },
-                      "max": { "type": "number", "nullable": true }
-                    }
-                  },
-                  "cftTea": {
-                    "type": "object",
-                    "properties": {
-                      "min": { "type": "number", "nullable": true },
-                      "max": { "type": "number", "nullable": true }
-                    }
-                  }
-                }
-              },
               "tasasPorPlazo": {
                 "type": "array",
-                "description": "Tasas por tramo de plazo en meses (decimal). Si está presente, el simulador debe usar el tramo que contenga el plazo pedido.",
+                "description": "Tasas por tramo de plazo en meses (decimal). El simulador debe usar el tramo que contenga el plazo pedido.",
                 "items": {
                   "type": "object",
                   "properties": {
@@ -3319,29 +3287,41 @@
                 "description": "Plazo del ejemplo representativo publicado por el banco, si aplica"
               },
               "plazoMinMeses": { "type": "integer", "nullable": true },
-              "plazoMinDias": { "type": "integer", "nullable": true },
-              "plazoMaxMeses": { "type": "integer", "nullable": true }
+              "plazoMaxMeses": { "type": "integer", "nullable": true },
+              "fuentePdf": { "type": "boolean", "nullable": true }
             }
           }
         },
         "x-examples": {
           "Example 1": {
-            "entidad": "BNA",
-            "nombreComercial": "BNA",
-            "producto": "Nación Destino Libre",
-            "tna": 0.74,
-            "tea": 1.0505,
-            "cftTna": 1.0426,
-            "cftTea": 1.7176,
+            "entidad": "MACRO",
+            "nombreComercial": "Macro",
+            "producto": "Préstamo personal",
+            "tna": 0.79,
+            "tea": 1.1492,
+            "cftTna": null,
+            "cftTea": 1.5086,
             "tipoTasa": "fija",
             "moneda": "ARS",
             "requiereCliente": true,
-            "condiciones": "Con paquete Cuenta Nación",
-            "enlace": "https://www.bna.com.ar/Personas/naciondestinolibre",
-            "vigenciaDesde": null,
+            "condiciones": "Plan Sueldo",
+            "enlace": "https://www.macro.com.ar/personas/prestamos/personales",
+            "vigenciaDesde": "2026-05-04",
             "vigenciaHasta": null,
             "metadata": {
-              "afectacionIngresos": "30%"
+              "fuentePdf": true,
+              "plazoMesesEjemplo": 60,
+              "plazoMinMeses": 1,
+              "plazoMaxMeses": 72,
+              "tasasPorPlazo": [
+                {
+                  "plazoMinMeses": 1,
+                  "plazoMaxMeses": 12,
+                  "tna": 0.61,
+                  "tea": 0.813,
+                  "cftTea": 1.0468
+                }
+              ]
             }
           }
         }

@@ -2,21 +2,11 @@ import { describe, expect, it } from 'vitest'
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
-import { parsearBna, extraerBna } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerBna.js'
-import { parsearBnaNacionSueldos, extraerBnaNacionSueldos } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerBnaNacionSueldos.js'
 import {
   parsearBbvaPdf,
   extraerBbva,
 } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerBbva.js'
-import { parsearGalicia, extraerGalicia } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerGalicia.js'
 import { parsearMacroPdf, extraerMacro } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerMacro.js'
-import { parsearMercadoPago, extraerMercadoPago } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerMercadoPago.js'
-import { parsearSantander } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerSantander.js'
-import {
-  parsearSupervielle,
-  extraerSupervielle,
-} from '@/finanzas/creditos/prestamos-personales/extraccion/extraerSupervielle.js'
-import { parsearUala, extraerUala } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerUala.js'
 import { guardarPrestamosPersonales } from '@/finanzas/creditos/prestamos-personales/guardado/guardarPrestamosPersonales.js'
 import { leerRuta } from '@/utils/rutas.js'
 
@@ -25,32 +15,18 @@ const fixturesDir = join(dirname(fileURLToPath(import.meta.url)), '../fixtures')
 describe('guardarPrestamosPersonales', () => {
   it('guarda ofertas parseadas desde fixtures', async () => {
     const items = [
-      ...parsearBna(readFileSync(join(fixturesDir, 'bna.html'), 'utf8')),
-      ...parsearBnaNacionSueldos(
-        readFileSync(join(fixturesDir, 'bna-nacion-sueldos.html'), 'utf8'),
-      ),
       ...parsearBbvaPdf(
         readFileSync(join(fixturesDir, 'bbva.pdf.txt'), 'utf8'),
-      ),
-      ...parsearGalicia(
-        readFileSync(join(fixturesDir, 'galicia.model.json'), 'utf8'),
       ),
       ...parsearMacroPdf(
         readFileSync(join(fixturesDir, 'macro.pdf.txt'), 'utf8'),
       ),
-      ...parsearMercadoPago(
-        readFileSync(join(fixturesDir, 'mercadopago.html'), 'utf8'),
-      ),
-      ...parsearSantander(
-        readFileSync(join(fixturesDir, 'santander.html'), 'utf8'),
-      ),
-      ...parsearSupervielle(
-        readFileSync(join(fixturesDir, 'supervielle.html'), 'utf8'),
-      ),
-      ...parsearUala(readFileSync(join(fixturesDir, 'uala.html'), 'utf8')),
     ]
 
     expect(items.length).toBeGreaterThan(0)
+    expect(items.every((item) => item.metadata?.tasasPorPlazo?.length > 0)).toBe(
+      true,
+    )
 
     await guardarPrestamosPersonales(items)
 
@@ -66,36 +42,14 @@ describe.skipIf(process.env.SKIP_NETWORK === '1')(
   'extractores de red (préstamos personales)',
   () => {
     it(
-      'extrae ofertas de bancos alcanzables por HTTP',
+      'extrae ofertas de BBVA y Macro con tasas por tramo',
       async () => {
-        const [
-          bna,
-          bnaSueldos,
-          bbva,
-          galicia,
-          macro,
-          mercadoPago,
-          supervielle,
-          uala,
-        ] = await Promise.all([
-          extraerBna(),
-          extraerBnaNacionSueldos(),
-          extraerBbva(),
-          extraerGalicia(),
-          extraerMacro(),
-          extraerMercadoPago(),
-          extraerSupervielle(),
-          extraerUala(),
-        ])
+        const [bbva, macro] = await Promise.all([extraerBbva(), extraerMacro()])
 
-        expect(bna.length).toBeGreaterThanOrEqual(1)
-        expect(bnaSueldos.length).toBeGreaterThanOrEqual(1)
         expect(bbva.length).toBeGreaterThanOrEqual(1)
-        expect(galicia.length).toBeGreaterThanOrEqual(1)
         expect(macro.length).toBeGreaterThanOrEqual(1)
-        expect(mercadoPago.length).toBeGreaterThanOrEqual(1)
-        expect(supervielle.length).toBeGreaterThanOrEqual(1)
-        expect(uala.length).toBeGreaterThanOrEqual(1)
+        expect(bbva[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
+        expect(macro[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
       },
       90000,
     )
