@@ -108,8 +108,64 @@
     "condiciones": "Oferta exclusiva para clientes BBVA",
     "enlace": "https://www.bbva.com.ar/personas/productos/prestamos/personales.html",
     "vigenciaDesde": "2026-08-01",
-    "vigenciaHasta": "2026-08-31",
-    "metadata": {}
+    "vigenciaHasta": "2026-08-30",
+    "metadata": {
+      "fuentePdf": true,
+      "plazoMesesEjemplo": 72,
+      "plazoMinMeses": 1,
+      "plazoMaxMeses": 72,
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 1,
+          "plazoMaxMeses": 6,
+          "tna": 1.29,
+          "tea": 2.4051,
+          "cftTea": 3.2008
+        },
+        {
+          "plazoMinMeses": 7,
+          "plazoMaxMeses": 12,
+          "tna": 1.29,
+          "tea": 2.4051,
+          "cftTea": 3.2172
+        },
+        {
+          "plazoMinMeses": 13,
+          "plazoMaxMeses": 24,
+          "tna": 1.29,
+          "tea": 2.4051,
+          "cftTea": 3.227
+        },
+        {
+          "plazoMinMeses": 25,
+          "plazoMaxMeses": 36,
+          "tna": 1.29,
+          "tea": 2.4051,
+          "cftTea": 3.2289
+        },
+        {
+          "plazoMinMeses": 37,
+          "plazoMaxMeses": 48,
+          "tna": 1.29,
+          "tea": 2.4051,
+          "cftTea": 3.2296
+        },
+        {
+          "plazoMinMeses": 49,
+          "plazoMaxMeses": 60,
+          "tna": 1.29,
+          "tea": 2.4051,
+          "cftTea": 3.2299
+        },
+        {
+          "plazoMinMeses": 61,
+          "plazoMaxMeses": 72,
+          "tna": 1.29,
+          "tea": 2.4051,
+          "cftTea": 3.23
+        }
+      ]
+    }
   },
   {
     "entidad": "GALICIA",

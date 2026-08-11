@@ -4,7 +4,10 @@ import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 import { parsearBna, extraerBna } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerBna.js'
 import { parsearBnaNacionSueldos, extraerBnaNacionSueldos } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerBnaNacionSueldos.js'
-import { parsearBbva, extraerBbva } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerBbva.js'
+import {
+  parsearBbvaPdf,
+  extraerBbva,
+} from '@/finanzas/creditos/prestamos-personales/extraccion/extraerBbva.js'
 import { parsearGalicia, extraerGalicia } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerGalicia.js'
 import { parsearMacroPdf, extraerMacro } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerMacro.js'
 import { parsearMercadoPago, extraerMercadoPago } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerMercadoPago.js'
@@ -26,7 +29,9 @@ describe('guardarPrestamosPersonales', () => {
       ...parsearBnaNacionSueldos(
         readFileSync(join(fixturesDir, 'bna-nacion-sueldos.html'), 'utf8'),
       ),
-      ...parsearBbva(readFileSync(join(fixturesDir, 'bbva.html'), 'utf8')),
+      ...parsearBbvaPdf(
+        readFileSync(join(fixturesDir, 'bbva.pdf.txt'), 'utf8'),
+      ),
       ...parsearGalicia(
         readFileSync(join(fixturesDir, 'galicia.model.json'), 'utf8'),
       ),
