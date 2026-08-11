@@ -193,6 +193,50 @@
     }
   },
   {
+    "entidad": "HIPOTECARIO",
+    "nombreComercial": "Banco Hipotecario",
+    "producto": "Préstamo con destino libre",
+    "tna": 1.134,
+    "tea": 1.9571,
+    "cftTna": null,
+    "cftTea": 2.6698,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": false,
+    "condiciones": "Cartera general / Cartera de consumo",
+    "enlace": "https://www.hipotecario.com.ar/personas/prestamos-personales/prestamo-con-destino-libre/",
+    "vigenciaDesde": "2026-05-01",
+    "vigenciaHasta": "2026-06-30",
+    "metadata": {
+      "plazoMesesEjemplo": 12,
+      "plazoMinMeses": 10,
+      "plazoMaxMeses": 36,
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 10,
+          "plazoMaxMeses": 12,
+          "tna": 1.104,
+          "tea": 1.877,
+          "cftTea": 2.5518
+        },
+        {
+          "plazoMinMeses": 13,
+          "plazoMaxMeses": 24,
+          "tna": 1.124,
+          "tea": 1.9302,
+          "cftTea": 2.6301
+        },
+        {
+          "plazoMinMeses": 25,
+          "plazoMaxMeses": 36,
+          "tna": 1.134,
+          "tea": 1.9571,
+          "cftTea": 2.6698
+        }
+      ]
+    }
+  },
+  {
     "entidad": "MACRO",
     "nombreComercial": "Macro",
     "producto": "Préstamo personal",

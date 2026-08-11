@@ -27,6 +27,15 @@ vi.mock(
 )
 
 vi.mock(
+  '@/finanzas/creditos/prestamos-personales/extraccion/extraerHipotecario.js',
+  () => ({
+    extraerHipotecario: vi.fn(async () => [
+      { entidad: 'HIPOTECARIO', tna: 1.134 },
+    ]),
+  }),
+)
+
+vi.mock(
   '@/finanzas/creditos/prestamos-personales/extraccion/extraerMacro.js',
   () => ({
     extraerMacro: vi.fn(async () => [{ entidad: 'MACRO', tna: 0.56 }]),
@@ -44,13 +53,14 @@ describe('extraerPrestamosPersonales', () => {
   it('aplana resultados de bancos con tasas por tramo', async () => {
     const items = await extraerPrestamosPersonales()
 
-    expect(items).toHaveLength(7)
+    expect(items).toHaveLength(8)
     expect(items.map((i) => i.entidad)).toEqual([
       'BANCOR',
       'BBVA',
       'GALICIA',
       'GALICIA',
       'GALICIA',
+      'HIPOTECARIO',
       'MACRO',
       'SANTANDER',
     ])
