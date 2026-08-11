@@ -29,7 +29,8 @@ describe('extraerRem', () => {
         expect(url).not.toContain('sitiopublico.desa.bcra.net')
       }
 
-      expect(urls[0]).toContain('junio-2026')
+      // La API del BCRA lista publicaciones recientes primero.
+      expect(urls[0]).toContain('julio-de-2026')
     },
     30000,
   )

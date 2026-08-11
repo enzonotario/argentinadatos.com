@@ -10,6 +10,9 @@ const BCRA_BASE_URL = 'https://www.bcra.gob.ar'
 const BCRA_ULTIMOS_INFORMES_URL = `${BCRA_BASE_URL}/ultimos-informes/`
 const BCRA_PUBLICACIONES_API_URL = `${BCRA_BASE_URL}/wp-json/bcra/v1/publicaciones?category=informes%2Cestadisticas&lang=es&action=total`
 const CANTIDAD_INFORMES_REM = 12
+// La API de publicaciones del BCRA responde ~500KB y desde CI suele superar 8s.
+const TIMEOUT_PUBLICACIONES_API_MS = 30000
+const TIMEOUT_FETCH_MS = 15000
 
 const MESES = {
   ene: 0,
@@ -68,7 +71,7 @@ function esperarMs(ms) {
 async function fetchConTimeout(
   url,
   opciones = {},
-  timeoutMs = 8000,
+  timeoutMs = TIMEOUT_FETCH_MS,
   intentos = 3,
 ) {
   let ultimoError = null
@@ -83,9 +86,16 @@ async function fetchConTimeout(
         signal: controller.signal,
       })
     } catch (error) {
-      ultimoError = error
+      const abortado =
+        error?.name === 'AbortError' || error?.name === 'TimeoutError'
+      ultimoError = abortado
+        ? new Error(
+            `Timeout (${timeoutMs}ms) al pedir ${url} (intento ${intento}/${intentos})`,
+            { cause: error },
+          )
+        : error
 
-      if (intento === intentos) throw error
+      if (intento === intentos) throw ultimoError
 
       await esperarMs(500 * intento)
     } finally {
@@ -359,11 +369,15 @@ export async function obtenerUrlsPublicacionesRemDesdeUltimosInformes(
   publicacionesUrl = BCRA_PUBLICACIONES_API_URL,
   limite = CANTIDAD_INFORMES_REM,
 ) {
-  const respuesta = await fetchConTimeout(publicacionesUrl, {
-    headers: {
-      Accept: 'application/json',
+  const respuesta = await fetchConTimeout(
+    publicacionesUrl,
+    {
+      headers: {
+        Accept: 'application/json',
+      },
     },
-  })
+    TIMEOUT_PUBLICACIONES_API_MS,
+  )
 
   if (!respuesta.ok) return []
 
