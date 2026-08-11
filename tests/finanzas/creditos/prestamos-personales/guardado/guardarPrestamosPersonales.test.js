@@ -9,8 +9,11 @@ import {
 import { parsearMacroPdf, extraerMacro } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerMacro.js'
 import {
   parsearSantander,
-  extraerSantander,
 } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerSantander.js'
+import {
+  parsearBancor,
+  extraerBancor,
+} from '@/finanzas/creditos/prestamos-personales/extraccion/extraerBancor.js'
 import { guardarPrestamosPersonales } from '@/finanzas/creditos/prestamos-personales/guardado/guardarPrestamosPersonales.js'
 import { leerRuta } from '@/utils/rutas.js'
 
@@ -19,6 +22,9 @@ const fixturesDir = join(dirname(fileURLToPath(import.meta.url)), '../fixtures')
 describe('guardarPrestamosPersonales', () => {
   it('guarda ofertas parseadas desde fixtures', async () => {
     const items = [
+      ...parsearBancor(
+        readFileSync(join(fixturesDir, 'bancor.html'), 'utf8'),
+      ),
       ...parsearBbvaPdf(
         readFileSync(join(fixturesDir, 'bbva.pdf.txt'), 'utf8'),
       ),
@@ -49,12 +55,18 @@ describe.skipIf(process.env.SKIP_NETWORK === '1')(
   'extractores de red (préstamos personales)',
   () => {
     it(
-      'extrae ofertas de BBVA y Macro con tasas por tramo',
+      'extrae ofertas de Bancor, BBVA y Macro con tasas por tramo',
       async () => {
-        const [bbva, macro] = await Promise.all([extraerBbva(), extraerMacro()])
+        const [bancor, bbva, macro] = await Promise.all([
+          extraerBancor(),
+          extraerBbva(),
+          extraerMacro(),
+        ])
 
+        expect(bancor.length).toBeGreaterThanOrEqual(1)
         expect(bbva.length).toBeGreaterThanOrEqual(1)
         expect(macro.length).toBeGreaterThanOrEqual(1)
+        expect(bancor[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
         expect(bbva[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
         expect(macro[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
       },

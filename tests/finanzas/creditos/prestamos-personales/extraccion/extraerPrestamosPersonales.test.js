@@ -2,6 +2,13 @@ import { describe, expect, it, vi } from 'vitest'
 import { extraerPrestamosPersonales } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerPrestamosPersonales.js'
 
 vi.mock(
+  '@/finanzas/creditos/prestamos-personales/extraccion/extraerBancor.js',
+  () => ({
+    extraerBancor: vi.fn(async () => [{ entidad: 'BANCOR', tna: 0.65 }]),
+  }),
+)
+
+vi.mock(
   '@/finanzas/creditos/prestamos-personales/extraccion/extraerBbva.js',
   () => ({
     extraerBbva: vi.fn(async () => [{ entidad: 'BBVA', tna: 1.29 }]),
@@ -26,8 +33,9 @@ describe('extraerPrestamosPersonales', () => {
   it('aplana resultados de bancos con tasas por tramo', async () => {
     const items = await extraerPrestamosPersonales()
 
-    expect(items).toHaveLength(3)
+    expect(items).toHaveLength(4)
     expect(items.map((i) => i.entidad)).toEqual([
+      'BANCOR',
       'BBVA',
       'MACRO',
       'SANTANDER',
