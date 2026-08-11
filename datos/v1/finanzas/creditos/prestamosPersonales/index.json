@@ -12,8 +12,8 @@
     "requiereCliente": true,
     "condiciones": "Cartera de consumo",
     "enlace": "https://www.bancor.com.ar/personas/prestamos/prestamos-personales/bancon",
-    "vigenciaDesde": "2026-08-01",
-    "vigenciaHasta": "2026-08-31",
+    "vigenciaDesde": null,
+    "vigenciaHasta": null,
     "metadata": {
       "plazoMesesEjemplo": 72,
       "plazoMinMeses": 1,
@@ -698,36 +698,6 @@
       ],
       "plazoMinMeses": 1,
       "plazoMaxMeses": 12
-    }
-  },
-  {
-    "entidad": "PATAGONIA",
-    "nombreComercial": "Banco Patagonia",
-    "producto": "Préstamo personal online",
-    "tna": 0.98,
-    "tea": 1.5665,
-    "cftTna": null,
-    "cftTea": 2.0978,
-    "tipoTasa": "fija",
-    "moneda": "ARS",
-    "requiereCliente": true,
-    "condiciones": "Cartera de consumo",
-    "enlace": "https://www.bancopatagonia.com.ar/landings/prestamos-online.php",
-    "vigenciaDesde": "2025-11-13",
-    "vigenciaHasta": "2026-12-31",
-    "metadata": {
-      "plazoMesesEjemplo": 60,
-      "plazoMinMeses": 1,
-      "plazoMaxMeses": 60,
-      "tasasPorPlazo": [
-        {
-          "plazoMinMeses": 1,
-          "plazoMaxMeses": 60,
-          "tna": 0.98,
-          "tea": 1.5665,
-          "cftTea": 2.0978
-        }
-      ]
     }
   },
   {
