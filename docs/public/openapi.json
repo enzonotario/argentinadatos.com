@@ -703,7 +703,7 @@
           "Finanzas",
           "Créditos"
         ],
-        "description": "Ofertas de préstamos personales con **tasas por tramo de plazo** (`metadata.tasasPorPlazo`), relevadas desde PDFs/tablas oficiales (hoy BBVA y Macro). Lista plana de productos/variantes para facilitar ranking. Las tasas están en formato decimal (`0.74` = 74 %; pueden ser mayores a `1`, p. ej. CFTEA 323 % → `3.23`).",
+        "description": "Ofertas de préstamos personales con tasas por tramo de plazo.",
         "responses": {
           "200": {
             "description": "Lista de ofertas de préstamos personales",
@@ -734,10 +734,10 @@
           "Finanzas",
           "Créditos"
         ],
-        "description": "Ofertas de préstamos personales informadas al BCRA (`PERSONALES.CSV`): **TEA máxima** y **CFT máximo** regulatorios por producto/entidad, no tasas publicitadas de landings. Lista plana (v1 solo `ARS`). Las tasas están en decimal (`0.9332` = 93,32 %; pueden ser mayores a `1`). Pensado como fuente secundaria para enriquecer el comparador (join soft por `codigoEntidad` / `entidad`), no para mezclar en el ranking scrapeado.",
+        "description": "Ofertas de préstamos personales informadas al BCRA: TEA máxima y CFT máximo por producto y entidad.",
         "responses": {
           "200": {
-            "description": "Lista de ofertas BCRA (máximos regulatorios)",
+            "description": "Lista de ofertas BCRA",
             "content": {
               "application/json": {
                 "schema": {
@@ -2470,7 +2470,8 @@
         "properties": {
           "ticker": {
             "type": "string",
-            "description": "Código del instrumento (ej: S31G5, T17O5)"
+            "description": "Código del instrumento",
+            "example": "S31G5"
           },
           "fechaEmision": {
             "type": "string",
@@ -2511,7 +2512,8 @@
         "properties": {
           "ticker": {
             "type": "string",
-            "description": "Código del bono (ej. TZX26, TX26)"
+            "description": "Código del bono",
+            "example": "TZX26"
           },
           "precioArs": {
             "type": "number",
@@ -2879,7 +2881,8 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Identificador estable del proveedor (p. ej. bna)"
+            "description": "Identificador estable del proveedor",
+            "example": "bna"
           },
           "entidad": {
             "type": "string",
@@ -3088,12 +3091,14 @@
         "properties": {
           "entidad": {
             "type": "string",
-            "description": "Identificador de la entidad (p. ej. BNA, GALICIA, SUPERVIELLE)"
+            "description": "Identificador de la entidad",
+            "example": "BNA"
           },
           "tasa": {
             "type": "number",
             "format": "float",
-            "description": "Tasa de rendimiento anual en formato decimal (p. ej. 0.02 = 2 % anual)"
+            "description": "Tasa de rendimiento anual",
+            "example": 0.02
           },
           "tope": {
             "type": "number",
@@ -3116,7 +3121,8 @@
         "properties": {
           "token": {
             "type": "string",
-            "description": "Token del criptopeso (ej: ARGt, wARS)"
+            "description": "Token del criptopeso",
+            "example": "ARGt"
           },
           "entidad": {
             "type": "string",
@@ -3165,7 +3171,8 @@
               },
               "relacion_cuota_ingreso": {
                 "type": "string",
-                "description": "Relación cuota–ingreso indicada en la fuente (p. ej. porcentaje del ingreso)"
+                "description": "Relación cuota–ingreso indicada en la fuente",
+                "example": "30%"
               },
               "financiamiento": {
                 "type": "string",
@@ -3193,7 +3200,8 @@
         "properties": {
           "entidad": {
             "type": "string",
-            "description": "Identificador de la entidad (p. ej. BBVA, MACRO)"
+            "description": "Identificador de la entidad",
+            "example": "MACRO"
           },
           "nombreComercial": {
             "type": "string",
@@ -3207,33 +3215,38 @@
             "type": "number",
             "format": "float",
             "nullable": true,
-            "description": "Tasa Nominal Anual en decimal (0.74 = 74 %). Puede ser mayor a 1. Referencia (ej. tramo de ejemplo o mayor plazo)."
+            "description": "Tasa Nominal Anual",
+            "example": 0.79
           },
           "tea": {
             "type": "number",
             "format": "float",
             "nullable": true,
-            "description": "Tasa Efectiva Anual en decimal"
+            "description": "Tasa Efectiva Anual",
+            "example": 1.1492
           },
           "cftTna": {
             "type": "number",
             "format": "float",
             "nullable": true,
-            "description": "Costo Financiero Total expresado como TNA (decimal)"
+            "description": "Costo Financiero Total expresado como TNA"
           },
           "cftTea": {
             "type": "number",
             "format": "float",
             "nullable": true,
-            "description": "Costo Financiero Total expresado como TEA / CFTEA (decimal). Preferido para ranking."
+            "description": "Costo Financiero Total expresado como TEA",
+            "example": 1.5086
           },
           "tipoTasa": {
             "type": "string",
-            "description": "Tipo de tasa (p. ej. fija, variable)"
+            "description": "Tipo de tasa",
+            "example": "fija"
           },
           "moneda": {
             "type": "string",
-            "description": "Moneda del préstamo (ARS)"
+            "description": "Moneda del préstamo",
+            "example": "ARS"
           },
           "requiereCliente": {
             "type": "boolean",
@@ -3243,7 +3256,8 @@
           "condiciones": {
             "type": "string",
             "nullable": true,
-            "description": "Condiciones comerciales resumidas (segmento / paquete)"
+            "description": "Condiciones comerciales resumidas",
+            "example": "Plan Sueldo"
           },
           "enlace": {
             "type": "string",
@@ -3254,41 +3268,71 @@
             "type": "string",
             "format": "date",
             "nullable": true,
-            "description": "Inicio de vigencia de la oferta (YYYY-MM-DD), si se informa"
+            "description": "Inicio de vigencia de la oferta"
           },
           "vigenciaHasta": {
             "type": "string",
             "format": "date",
             "nullable": true,
-            "description": "Fin de vigencia de la oferta (YYYY-MM-DD), si se informa"
+            "description": "Fin de vigencia de la oferta"
           },
           "metadata": {
             "type": "object",
-            "description": "Detalle adicional. Incluye `tasasPorPlazo` (tablas por tramo de plazo; requerido en este endpoint).",
+            "description": "Detalle adicional",
             "additionalProperties": true,
             "properties": {
               "tasasPorPlazo": {
                 "type": "array",
-                "description": "Tasas por tramo de plazo en meses (decimal). El simulador debe usar el tramo que contenga el plazo pedido.",
+                "description": "Tasas por tramo de plazo en meses",
                 "items": {
                   "type": "object",
                   "properties": {
-                    "plazoMinMeses": { "type": "integer" },
-                    "plazoMaxMeses": { "type": "integer" },
-                    "tna": { "type": "number", "nullable": true },
-                    "tea": { "type": "number", "nullable": true },
-                    "cftTea": { "type": "number", "nullable": true }
+                    "plazoMinMeses": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "plazoMaxMeses": {
+                      "type": "integer",
+                      "example": 12
+                    },
+                    "tna": {
+                      "type": "number",
+                      "nullable": true,
+                      "example": 0.61
+                    },
+                    "tea": {
+                      "type": "number",
+                      "nullable": true,
+                      "example": 0.813
+                    },
+                    "cftTea": {
+                      "type": "number",
+                      "nullable": true,
+                      "example": 1.0468
+                    }
                   }
                 }
               },
               "plazoMesesEjemplo": {
                 "type": "integer",
                 "nullable": true,
-                "description": "Plazo del ejemplo representativo publicado por el banco, si aplica"
+                "description": "Plazo del ejemplo representativo publicado por el banco",
+                "example": 60
               },
-              "plazoMinMeses": { "type": "integer", "nullable": true },
-              "plazoMaxMeses": { "type": "integer", "nullable": true },
-              "fuentePdf": { "type": "boolean", "nullable": true }
+              "plazoMinMeses": {
+                "type": "integer",
+                "nullable": true,
+                "example": 1
+              },
+              "plazoMaxMeses": {
+                "type": "integer",
+                "nullable": true,
+                "example": 72
+              },
+              "fuentePdf": {
+                "type": "boolean",
+                "nullable": true
+              }
             }
           }
         },
@@ -3329,19 +3373,21 @@
       "PrestamoPersonalBcra": {
         "title": "PrestamoPersonalBcra",
         "type": "object",
-        "description": "Oferta de préstamo personal informada al BCRA. `teaMax` y `cftTeaMax` son **máximos** regulatorios (no una tasa puntual publicitada).",
+        "description": "Oferta de préstamo personal informada al BCRA",
         "properties": {
           "codigoEntidad": {
             "type": "string",
-            "description": "Código de entidad BCRA (p. ej. `11`)"
+            "description": "Código de entidad BCRA",
+            "example": "11"
           },
           "entidad": {
             "type": "string",
-            "description": "Alias corto si está mapeado (BNA, BBVA, …) o descripción BCRA"
+            "description": "Identificador de la entidad",
+            "example": "BNA"
           },
           "nombreComercial": {
             "type": "string",
-            "description": "Descripción oficial de la entidad en el CSV BCRA"
+            "description": "Nombre comercial de la entidad"
           },
           "producto": {
             "type": "string",
@@ -3355,70 +3401,114 @@
           },
           "moneda": {
             "type": "string",
-            "enum": ["ARS", "USD", "UVA"],
-            "description": "Moneda (v1 del endpoint publica solo ARS)"
+            "enum": [
+              "ARS",
+              "USD",
+              "UVA"
+            ],
+            "description": "Moneda",
+            "example": "ARS"
           },
           "teaMax": {
             "type": "number",
             "format": "float",
             "nullable": true,
-            "description": "TEA máxima informada al BCRA, en decimal"
+            "description": "TEA máxima",
+            "example": 0.7286
           },
           "cftTeaMax": {
             "type": "number",
             "format": "float",
             "nullable": true,
-            "description": "Costo financiero efectivo total máximo (CFTEA), en decimal"
+            "description": "Costo financiero efectivo total máximo",
+            "example": 0.9332
           },
           "tipoTasa": {
             "type": "string",
             "nullable": true,
-            "description": "Tipo de tasa (p. ej. fija)"
+            "description": "Tipo de tasa",
+            "example": "fija"
           },
           "requiereCliente": {
             "type": "boolean",
             "nullable": true,
-            "description": "Heurística a partir del campo Beneficiario"
+            "description": "Si la oferta requiere ser cliente de la entidad"
           },
           "condiciones": {
             "type": "string",
             "nullable": true,
-            "description": "Texto de Beneficiario del CSV"
+            "description": "Condiciones / beneficiarios"
           },
           "vigenciaDesde": {
             "type": "string",
             "format": "date",
             "nullable": true,
-            "description": "Fecha de información del CSV (YYYY-MM-DD)"
+            "description": "Fecha de información"
           },
           "enlace": {
             "type": "string",
             "format": "uri",
-            "description": "URL del CSV BCRA PERSONALES"
+            "description": "URL de la fuente"
           },
           "metadata": {
             "type": "object",
-            "description": "Montos, plazos, afectación, territorio y notas del CSV",
+            "description": "Detalle adicional",
             "additionalProperties": true,
             "properties": {
-              "montoMin": { "type": "integer", "nullable": true },
-              "montoMax": { "type": "integer", "nullable": true },
-              "plazoMaxMeses": { "type": "integer", "nullable": true },
-              "ingresoMinMensual": { "type": "integer", "nullable": true },
-              "antiguedadLaboralMinMeses": { "type": "integer", "nullable": true },
-              "edadMax": { "type": "integer", "nullable": true },
-              "afectacionIngresos": { "type": "string", "nullable": true },
+              "montoMin": {
+                "type": "integer",
+                "nullable": true
+              },
+              "montoMax": {
+                "type": "integer",
+                "nullable": true
+              },
+              "plazoMaxMeses": {
+                "type": "integer",
+                "nullable": true,
+                "example": 72
+              },
+              "ingresoMinMensual": {
+                "type": "integer",
+                "nullable": true
+              },
+              "antiguedadLaboralMinMeses": {
+                "type": "integer",
+                "nullable": true
+              },
+              "edadMax": {
+                "type": "integer",
+                "nullable": true
+              },
+              "afectacionIngresos": {
+                "type": "string",
+                "nullable": true,
+                "example": "35%"
+              },
               "cargoCancelacionAnticipada": {
                 "type": "number",
                 "nullable": true,
-                "description": "Cargo máximo por cancelación anticipada en decimal"
+                "description": "Cargo máximo por cancelación anticipada",
+                "example": 0.04
               },
-              "cuotaInicialPor10000": { "type": "number", "nullable": true },
-              "territorio": { "type": "string", "nullable": true },
-              "notas": { "type": "string", "nullable": true },
+              "cuotaInicialPor10000": {
+                "type": "number",
+                "nullable": true
+              },
+              "territorio": {
+                "type": "string",
+                "nullable": true,
+                "example": "Todo el territorio nacional"
+              },
+              "notas": {
+                "type": "string",
+                "nullable": true
+              },
               "fuente": {
                 "type": "string",
-                "enum": ["bcra-csv"]
+                "enum": [
+                  "bcra-csv"
+                ]
               }
             }
           }
@@ -4655,7 +4745,8 @@
           "periodoPresidencial": {
             "type": "string",
             "nullable": true,
-            "description": "Rango de años del período presidencial (ej: '2019-2023')"
+            "description": "Rango de años del período presidencial",
+            "example": "2019-2023"
           },
           "vicepresidente": {
             "type": "string",
@@ -4720,22 +4811,26 @@
           "costoRecibirPagos": {
             "type": "string",
             "nullable": true,
-            "description": "Costo por recibir pagos (ej. '0', '1%', '3 USD')"
+            "description": "Costo por recibir pagos",
+            "example": "0"
           },
           "costoMantenimientoTarjeta": {
             "type": "string",
             "nullable": true,
-            "description": "Costo de mantenimiento de tarjeta (ej. '0 USD', '29,95 USD')"
+            "description": "Costo de mantenimiento de tarjeta",
+            "example": "0 USD"
           },
           "costoTarjeta": {
             "type": "string",
             "nullable": true,
-            "description": "Costo de uso de tarjeta (ej. '0%', '1% a 3%')"
+            "description": "Costo de uso de tarjeta",
+            "example": "0%"
           },
           "retiroArs": {
             "type": "string",
             "nullable": true,
-            "description": "Costo de retiro en ARS (ej. '0', '2%', '1%')"
+            "description": "Costo de retiro en ARS",
+            "example": "0"
           },
           "detalles": {
             "type": "object",
