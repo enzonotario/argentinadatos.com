@@ -1,5 +1,6 @@
 import { extraerBbva } from './extraerBbva.js'
 import { extraerMacro } from './extraerMacro.js'
+import { extraerSantander } from './extraerSantander.js'
 import { logGrupo, logError } from '@/log.js'
 
 const log = logGrupo({
@@ -9,7 +10,11 @@ const log = logGrupo({
 
 export async function extraerPrestamosPersonales() {
   try {
-    const resultados = await Promise.all([extraerBbva(), extraerMacro()])
+    const resultados = await Promise.all([
+      extraerBbva(),
+      extraerMacro(),
+      extraerSantander(),
+    ])
 
     return resultados.flat()
   } catch (error) {

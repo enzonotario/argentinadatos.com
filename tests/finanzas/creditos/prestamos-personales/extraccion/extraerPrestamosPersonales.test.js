@@ -15,11 +15,22 @@ vi.mock(
   }),
 )
 
+vi.mock(
+  '@/finanzas/creditos/prestamos-personales/extraccion/extraerSantander.js',
+  () => ({
+    extraerSantander: vi.fn(async () => [{ entidad: 'SANTANDER', tna: 0.79 }]),
+  }),
+)
+
 describe('extraerPrestamosPersonales', () => {
   it('aplana resultados de bancos con tasas por tramo', async () => {
     const items = await extraerPrestamosPersonales()
 
-    expect(items).toHaveLength(2)
-    expect(items.map((i) => i.entidad)).toEqual(['BBVA', 'MACRO'])
+    expect(items).toHaveLength(3)
+    expect(items.map((i) => i.entidad)).toEqual([
+      'BBVA',
+      'MACRO',
+      'SANTANDER',
+    ])
   })
 })

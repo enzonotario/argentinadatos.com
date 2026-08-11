@@ -7,6 +7,10 @@ import {
   extraerBbva,
 } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerBbva.js'
 import { parsearMacroPdf, extraerMacro } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerMacro.js'
+import {
+  parsearSantander,
+  extraerSantander,
+} from '@/finanzas/creditos/prestamos-personales/extraccion/extraerSantander.js'
 import { guardarPrestamosPersonales } from '@/finanzas/creditos/prestamos-personales/guardado/guardarPrestamosPersonales.js'
 import { leerRuta } from '@/utils/rutas.js'
 
@@ -20,6 +24,9 @@ describe('guardarPrestamosPersonales', () => {
       ),
       ...parsearMacroPdf(
         readFileSync(join(fixturesDir, 'macro.pdf.txt'), 'utf8'),
+      ),
+      ...parsearSantander(
+        readFileSync(join(fixturesDir, 'santander.html'), 'utf8'),
       ),
     ]
 

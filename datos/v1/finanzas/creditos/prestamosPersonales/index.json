@@ -445,5 +445,35 @@
       "plazoMinMeses": 1,
       "plazoMaxMeses": 12
     }
+  },
+  {
+    "entidad": "SANTANDER",
+    "nombreComercial": "Santander",
+    "producto": "Préstamo personal",
+    "tna": 0.79,
+    "tea": 1.1492,
+    "cftTna": null,
+    "cftTea": 1.5086,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": false,
+    "condiciones": "Cartera de consumo",
+    "enlace": "https://www.santander.com.ar/personas/prestamos/personales",
+    "vigenciaDesde": null,
+    "vigenciaHasta": null,
+    "metadata": {
+      "plazoMesesEjemplo": 72,
+      "plazoMinMeses": 3,
+      "plazoMaxMeses": 72,
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 3,
+          "plazoMaxMeses": 72,
+          "tna": 0.79,
+          "tea": 1.1492,
+          "cftTea": 1.5086
+        }
+      ]
+    }
   }
 ]
