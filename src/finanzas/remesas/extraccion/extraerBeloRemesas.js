@@ -1,6 +1,8 @@
 import { scrapeWithFirecrawl } from '@/shared/extraction/firecrawl/scrapeWithFirecrawl.js'
 import { logMensaje } from '@/log.js'
 import { normalizarRemesa } from '@/finanzas/remesas/extraccion/extraerRemesas.js'
+import { obtenerCalificacionesAppStores } from '@/finanzas/remesas/extraccion/stores/obtenerCalificacionesAppStores.js'
+import { CALIFICACIONES_APPS_REMESAS } from '@/finanzas/remesas/extraccion/stores/calificacionesAppsRemesas.js'
 
 export const BELO_REMESAS_FUENTES = [
   {
@@ -350,13 +352,16 @@ async function scrapearFuenteBelo(log, fuente) {
 }
 
 export async function extraerBeloRemesas(log) {
-  const resultados = await Promise.allSettled(
-    BELO_REMESAS_FUENTES.map(fuente => scrapearFuenteBelo(log, fuente)),
-  )
+  const [resultadoFuentes, resultadoCalificaciones] = await Promise.all([
+    Promise.allSettled(
+      BELO_REMESAS_FUENTES.map(fuente => scrapearFuenteBelo(log, fuente)),
+    ),
+    obtenerCalificacionesAppStores(log, CALIFICACIONES_APPS_REMESAS.belo),
+  ])
 
   const extracciones = []
 
-  for (const resultado of resultados) {
+  for (const resultado of resultadoFuentes) {
     if (resultado.status === 'fulfilled') {
       extracciones.push(resultado.value)
       continue
@@ -371,13 +376,19 @@ export async function extraerBeloRemesas(log) {
     throw new Error('Firecrawl Belo remesas: fallaron todas las fuentes')
   }
 
-  const remesa = mapearBeloDesdeExtracciones(extracciones)
+  const remesa = {
+    ...mapearBeloDesdeExtracciones(extracciones),
+    calificacionAndroid: resultadoCalificaciones.calificacionAndroid,
+    calificacionIos: resultadoCalificaciones.calificacionIos,
+  }
 
   logMensaje(log, 'extraerBeloRemesas: Belo extraído', {
     fuentes: extracciones.map(item => item.fuente),
     costoRecibirPagos: remesa.costoRecibirPagos,
     tarjetaUsa: remesa.tarjetaUsa,
     moneda: remesa.moneda,
+    calificacionAndroid: remesa.calificacionAndroid,
+    calificacionIos: remesa.calificacionIos,
   })
 
   return remesa

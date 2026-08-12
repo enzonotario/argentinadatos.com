@@ -11,6 +11,13 @@ import {
   extraerRipioRemesas,
   mapearRipioDesdeExtracciones,
 } from '@/finanzas/remesas/extraccion/extraerRipioRemesas.js'
+import { parsearCalificacionPlayStore } from '@/finanzas/remesas/extraccion/stores/playStore.js'
+import {
+  parsearAppStoreIdDesdeUrl,
+  parsearCalificacionItunesLookup,
+} from '@/finanzas/remesas/extraccion/stores/appStore.js'
+import { obtenerCalificacionesAppStores } from '@/finanzas/remesas/extraccion/stores/obtenerCalificacionesAppStores.js'
+import { CALIFICACIONES_APPS_REMESAS } from '@/finanzas/remesas/extraccion/stores/calificacionesAppsRemesas.js'
 
 const tieneFirecrawl =
   Boolean(import.meta.env.VITE_FIRECRAWL_API_KEY) &&
@@ -101,6 +108,58 @@ describe('mapearBeloDesdeExtracciones', () => {
     expect(extraerPorcentajePrincipal('0,5% de la transacción')).toBe('0.5%')
     expect(extraerPorcentajePrincipal('sin dato')).toBeNull()
   })
+
+  it('parsea calificación de Play Store e iTunes Lookup', () => {
+    expect(
+      parsearCalificacionPlayStore(
+        'aria-label="Calificación: 4.5 de cinco estrellas" "ratingValue":"4.545845985412598"',
+      ),
+    ).toBe(4.5)
+
+    expect(
+      parsearCalificacionPlayStore('"ratingValue":"4.545845985412598"'),
+    ).toBe(4.55)
+
+    expect(
+      parsearCalificacionItunesLookup({
+        results: [{ averageUserRating: 4.82521 }],
+      }),
+    ).toBe(4.83)
+
+    expect(
+      parsearAppStoreIdDesdeUrl(
+        'https://apps.apple.com/ar/app/cocos-invert%C3%AD-ahorr%C3%A1-y-pag%C3%A1/id1634675415',
+      ),
+    ).toBe('1634675415')
+  })
+})
+
+describe('obtenerCalificacionesAppStores', () => {
+  it('obtiene ratings vivos de Belo desde Play Store e iTunes', async () => {
+    const log = logGrupo({ fuente: 'test', tipo: 'extraccion' })
+    const ratings = await obtenerCalificacionesAppStores(
+      log,
+      CALIFICACIONES_APPS_REMESAS.belo,
+    )
+
+    expect(ratings.calificacionAndroid).toBeGreaterThan(3)
+    expect(ratings.calificacionAndroid).toBeLessThanOrEqual(5)
+    expect(ratings.calificacionIos).toBeGreaterThan(3)
+    expect(ratings.calificacionIos).toBeLessThanOrEqual(5)
+  }, 60000)
+
+  it('obtiene ratings vivos de Cocos desde Play Store e iTunes', async () => {
+    const log = logGrupo({ fuente: 'test', tipo: 'extraccion' })
+    const ratings = await obtenerCalificacionesAppStores(
+      log,
+      CALIFICACIONES_APPS_REMESAS.cocos,
+    )
+
+    expect(ratings.calificacionAndroid).toBeGreaterThan(3)
+    expect(ratings.calificacionAndroid).toBeLessThanOrEqual(5)
+    expect(ratings.calificacionIos).toBeGreaterThan(3)
+    expect(ratings.calificacionIos).toBeLessThanOrEqual(5)
+  }, 60000)
 })
 
 describe.skipIf(!tieneFirecrawl)('extraerRemesas', () => {
@@ -285,7 +344,10 @@ describe('extraerCocosRemesas', () => {
     if (remesa.costoRecibirPagos) {
       expect(typeof remesa.costoRecibirPagos).toBe('string')
     }
-  }, 30000)
+
+    expect(remesa.calificacionAndroid).toBeGreaterThan(3)
+    expect(remesa.calificacionIos).toBeGreaterThan(3)
+  }, 60000)
 })
 
 describe.skipIf(!tieneFirecrawl)('extraerBeloRemesas', () => {
@@ -303,5 +365,7 @@ describe.skipIf(!tieneFirecrawl)('extraerBeloRemesas', () => {
     })
 
     expect(remesa.costoRecibirPagos).toMatch(/0\.?5%/)
+    expect(remesa.calificacionAndroid).toBeGreaterThan(3)
+    expect(remesa.calificacionIos).toBeGreaterThan(3)
   }, 180000)
 })

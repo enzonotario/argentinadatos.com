@@ -1,5 +1,7 @@
-import { logMensaje, logError } from '@/log.js'
+import { logMensaje } from '@/log.js'
 import { normalizarRemesa } from '@/finanzas/remesas/extraccion/extraerRemesas.js'
+import { obtenerCalificacionesAppStores } from '@/finanzas/remesas/extraccion/stores/obtenerCalificacionesAppStores.js'
+import { CALIFICACIONES_APPS_REMESAS } from '@/finanzas/remesas/extraccion/stores/calificacionesAppsRemesas.js'
 
 const RENDIMIENTOS_TTY_URL = 'https://rendimientos.co/tty.js'
 
@@ -13,7 +15,10 @@ export function extraerRemesasDesdeJs(js) {
   return new Function(`return ${match[1]}`)()
 }
 
-export function mapearCocosDesdeRendimientos(cocosRaw) {
+export function mapearCocosDesdeRendimientos(
+  cocosRaw,
+  { calificacionAndroid = null, calificacionIos = null } = {},
+) {
   const costoRecibirPagos = cocosRaw.fee != null ? `${cocosRaw.fee}%` : null
 
   const detalles = {}
@@ -39,8 +44,8 @@ export function mapearCocosDesdeRendimientos(cocosRaw) {
       cocosRaw.mantenimientoFree === true ? '0 USD' : null,
     costoTarjeta: '0%',
     retiroArs: '0',
-    calificacionAndroid: null,
-    calificacionIos: null,
+    calificacionAndroid,
+    calificacionIos,
     detalles: Object.keys(detalles).length > 0 ? detalles : null,
   })
 }
@@ -50,7 +55,10 @@ export async function extraerCocosRemesas(log) {
     url: RENDIMIENTOS_TTY_URL,
   })
 
-  const respuesta = await fetch(RENDIMIENTOS_TTY_URL)
+  const [respuesta, calificaciones] = await Promise.all([
+    fetch(RENDIMIENTOS_TTY_URL),
+    obtenerCalificacionesAppStores(log, CALIFICACIONES_APPS_REMESAS.cocos),
+  ])
 
   if (!respuesta.ok) {
     throw new Error(
@@ -66,11 +74,15 @@ export async function extraerCocosRemesas(log) {
     throw new Error('No se encontró Cocos en REMESAS de rendimientos.co')
   }
 
+  const remesa = mapearCocosDesdeRendimientos(cocos, calificaciones)
+
   logMensaje(log, 'rendimientos.co: Cocos extraído', {
     name: cocos.name,
     fee: cocos.fee,
     feeMin: cocos.feeMin,
+    calificacionAndroid: remesa.calificacionAndroid,
+    calificacionIos: remesa.calificacionIos,
   })
 
-  return mapearCocosDesdeRendimientos(cocos)
+  return remesa
 }
