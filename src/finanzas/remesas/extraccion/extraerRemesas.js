@@ -2,6 +2,7 @@ import { scrapeWithFirecrawl } from '@/shared/extraction/firecrawl/scrapeWithFir
 import { logMensaje, logError, logGrupo } from '@/log.js'
 import { extraerCocosRemesas } from '@/finanzas/remesas/extraccion/extraerCocosRemesas.js'
 import { extraerBeloRemesas } from '@/finanzas/remesas/extraccion/extraerBeloRemesas.js'
+import { extraerRipioRemesas } from '@/finanzas/remesas/extraccion/extraerRipioRemesas.js'
 
 const REMESAS_URL = 'https://www.dolarito.ar/remotito'
 const PREFIJO_NEXT_PUSH = 'self.__next_f.push('
@@ -383,6 +384,35 @@ Ejemplo Takenos:
   )
 }
 
+function agregarRemesaOpcional(
+  log,
+  remesas,
+  resultado,
+  { nombre, exito, fallo },
+) {
+  if (resultado.status === 'fulfilled') {
+    const yaExiste = remesas.some(
+      remesa => remesa.compania?.toLowerCase() === nombre.toLowerCase(),
+    )
+
+    if (!yaExiste) {
+      remesas.push(resultado.value)
+      logMensaje(log, exito)
+    } else {
+      logMensaje(
+        log,
+        `extraerRemesas: ${nombre} ya presente, se omite duplicado`,
+      )
+    }
+    return
+  }
+
+  logError(log, resultado.reason)
+  logMensaje(log, fallo, {
+    errorMessage: resultado.reason?.message,
+  })
+}
+
 export async function extraerRemesas() {
   const log = logGrupo({
     fuente: 'extraerRemesas',
@@ -390,11 +420,12 @@ export async function extraerRemesas() {
   })
 
   try {
-    const [resultadoPrincipal, resultadoCocos, resultadoBelo] =
+    const [resultadoPrincipal, resultadoCocos, resultadoBelo, resultadoRipio] =
       await Promise.allSettled([
         extraerFilasRemesas(log),
         extraerCocosRemesas(log),
         extraerBeloRemesas(log),
+        extraerRipioRemesas(log),
       ])
 
     const remesas =
@@ -410,23 +441,17 @@ export async function extraerRemesas() {
       })
     }
 
-    if (resultadoBelo.status === 'fulfilled') {
-      const yaExiste = remesas.some(
-        remesa => remesa.compania?.toLowerCase() === 'belo',
-      )
+    agregarRemesaOpcional(log, remesas, resultadoBelo, {
+      nombre: 'Belo',
+      exito: 'extraerRemesas: Belo desde belo.app agregado',
+      fallo: 'extraerRemesas: falló Belo desde belo.app',
+    })
 
-      if (!yaExiste) {
-        remesas.push(resultadoBelo.value)
-        logMensaje(log, 'extraerRemesas: Belo desde belo.app agregado')
-      } else {
-        logMensaje(log, 'extraerRemesas: Belo ya presente, se omite duplicado')
-      }
-    } else {
-      logError(log, resultadoBelo.reason)
-      logMensaje(log, 'extraerRemesas: falló Belo desde belo.app', {
-        errorMessage: resultadoBelo.reason?.message,
-      })
-    }
+    agregarRemesaOpcional(log, remesas, resultadoRipio, {
+      nombre: 'Ripio',
+      exito: 'extraerRemesas: Ripio desde ripio.com agregado',
+      fallo: 'extraerRemesas: falló Ripio desde ripio.com',
+    })
 
     if (remesas.length === 0 && resultadoPrincipal.status === 'rejected') {
       throw resultadoPrincipal.reason

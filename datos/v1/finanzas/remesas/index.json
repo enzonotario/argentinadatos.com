@@ -1,5 +1,5 @@
 {
-  "fechaActualizacion": "2026-08-12T14:36:06.841Z",
+  "fechaActualizacion": "2026-08-12T15:08:07.473Z",
   "remesas": [
     {
       "compania": "wallbit",
@@ -179,6 +179,29 @@
       },
       "calificacionAndroid": null,
       "calificacionIos": null
+    },
+    {
+      "compania": "Ripio",
+      "cuentaPropia": true,
+      "moneda": "CRIPTO",
+      "inversiones": true,
+      "tarjetaUsa": false,
+      "costoRecibirPagos": "1.5%",
+      "costoMantenimientoTarjeta": "0 USD",
+      "costoTarjeta": "0%",
+      "retiroArs": "0",
+      "detalles": {
+        "cuentaPropia": "Cuenta en el exterior (Bridge) para recibir USD desde EE.UU. vía ACH/Wire",
+        "moneda": "Los depósitos se acreditan como UXD (criptodólar)",
+        "inversiones": "Recompensa ~2% anual en UXD; rendimientos en criptos",
+        "tarjetaUsa": "Ripio Card Visa prepaga argentina (Digipayments); uso internacional, no emitida en EEUU",
+        "costoRecibirPagos": "1.5% + 0.50 USD (ACH) o + 20 USD (Wire). Mantenimiento cuenta exterior: 5 USD/año (persona física)",
+        "costoMantenimientoTarjeta": "Card sin mantenimiento; la cuenta exterior cobra 5 USD/año (persona física)",
+        "costoTarjeta": "Cashback desde 2% en cripto / 0.5% en ARS (no es fee de uso)",
+        "retiroArs": "Conversión/venta a ARS en la app; no confundir con extracción ATM"
+      },
+      "calificacionAndroid": 4.5,
+      "calificacionIos": 4.3
     }
   ]
 }

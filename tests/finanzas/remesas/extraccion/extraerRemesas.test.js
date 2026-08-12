@@ -7,6 +7,10 @@ import {
   extraerPorcentajePrincipal,
   mapearBeloDesdeExtracciones,
 } from '@/finanzas/remesas/extraccion/extraerBeloRemesas.js'
+import {
+  extraerRipioRemesas,
+  mapearRipioDesdeExtracciones,
+} from '@/finanzas/remesas/extraccion/extraerRipioRemesas.js'
 
 const tieneFirecrawl =
   Boolean(import.meta.env.VITE_FIRECRAWL_API_KEY) &&
@@ -150,6 +154,118 @@ describe.skipIf(!tieneFirecrawl)('extraerRemesas', () => {
       expect(belo.tarjetaUsa).toBe(true)
       expect(belo.costoRecibirPagos).toMatch(/0\.?5%/)
     }
+
+    const ripio = remesas.find(row => row.compania.toLowerCase() === 'ripio')
+
+    if (ripio) {
+      expect(ripio.compania).toBe('Ripio')
+      expect(ripio.cuentaPropia).toBe(true)
+      expect(ripio.moneda).toBe('CRIPTO')
+      expect(ripio.tarjetaUsa).toBe(false)
+      expect(ripio.costoRecibirPagos).toMatch(/1\.?5%/)
+    }
+  }, 180000)
+})
+
+describe('mapearRipioDesdeExtracciones', () => {
+  it('fusiona card + cuenta exterior priorizando fees y evitando cashback', () => {
+    const remesa = mapearRipioDesdeExtracciones([
+      {
+        fuente: 'tarjeta',
+        datos: {
+          compania: 'Ripio',
+          cuentaPropia: true,
+          moneda: 'CRIPTO',
+          inversiones: true,
+          tarjetaUsa: true,
+          costoRecibirPagos: '4% pagando con cripto y 1% pagando con ARS',
+          costoMantenimientoTarjeta: '0%',
+          costoTarjeta: 'Sin costo de mantenimiento',
+          retiroArs: 'No especificado',
+          calificacionAndroid: 4.5,
+          calificacionIos: 4.3,
+          detalles: {
+            costoRecibirPagos: '4% por cripto, 1% por ARS',
+            tarjetaUsa: 'Full funcionalidad internacional',
+            inversiones: 'Rendimientos en tus criptos',
+          },
+        },
+      },
+      {
+        fuente: 'cuentaExterior',
+        datos: {
+          compania: 'Ripio',
+          cuentaPropia: true,
+          moneda: 'CRIPTO',
+          inversiones: true,
+          tarjetaUsa: false,
+          costoRecibirPagos: '1.5%',
+          costoMantenimientoTarjeta: '5 USD (personas físicas)',
+          detalles: {
+            moneda: 'USD a UXD',
+            inversiones: '2% anual de recompensa',
+            tarjetaUsa: 'No es tarjeta emitida en EEUU',
+            costoRecibirPagos: '1.5% más 0.50 USD (ACH) o 20 USD (Wire)',
+            costoMantenimientoTarjeta: '5 USD anuales (físicas)',
+          },
+        },
+      },
+      {
+        fuente: 'ach',
+        datos: {
+          compania: 'Ripio',
+          cuentaPropia: true,
+          moneda: 'CRIPTO',
+          inversiones: false,
+          tarjetaUsa: false,
+          costoRecibirPagos: '1.5% + 0.50 USD',
+          retiroArs: '0.50 USD',
+          detalles: {
+            moneda: 'se acredita en forma de criptodólares a través de UXD',
+            costoRecibirPagos:
+              '1.5% del monto recibido más un costo fijo de 0.50 USD',
+          },
+        },
+      },
+    ])
+
+    expect(remesa).toMatchObject({
+      compania: 'Ripio',
+      cuentaPropia: true,
+      moneda: 'CRIPTO',
+      inversiones: true,
+      tarjetaUsa: false,
+      costoRecibirPagos: '1.5%',
+      costoMantenimientoTarjeta: '0 USD',
+      costoTarjeta: '0%',
+      retiroArs: '0',
+      calificacionAndroid: 4.5,
+      calificacionIos: 4.3,
+    })
+
+    expect(remesa.detalles?.costoRecibirPagos).toMatch(/1\.5%/)
+    expect(remesa.detalles?.costoRecibirPagos.toLowerCase()).toMatch(/ach|wire/)
+    expect(remesa.detalles?.costoRecibirPagos.toLowerCase()).not.toContain(
+      'cashback',
+    )
+  })
+})
+
+describe.skipIf(!tieneFirecrawl)('extraerRipioRemesas', () => {
+  it('extrae Ripio desde cripto-card + cuenta exterior', async () => {
+    const log = logGrupo({ fuente: 'test', tipo: 'extraccion' })
+    const remesa = await extraerRipioRemesas(log)
+
+    expect(remesa).toMatchObject({
+      compania: 'Ripio',
+      cuentaPropia: true,
+      moneda: 'CRIPTO',
+      inversiones: true,
+      tarjetaUsa: false,
+      costoMantenimientoTarjeta: '0 USD',
+    })
+
+    expect(remesa.costoRecibirPagos).toMatch(/1\.?5%/)
   }, 180000)
 })
 
