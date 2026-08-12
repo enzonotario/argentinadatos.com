@@ -36,6 +36,10 @@ import {
   parsearBnaNacionPrevisional,
   extraerBna,
 } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerBna.js'
+import {
+  parsearChubut,
+  extraerChubut,
+} from '@/finanzas/creditos/prestamos-personales/extraccion/extraerChubut.js'
 import { guardarPrestamosPersonales } from '@/finanzas/creditos/prestamos-personales/guardado/guardarPrestamosPersonales.js'
 import { leerRuta } from '@/utils/rutas.js'
 
@@ -58,6 +62,9 @@ describe('guardarPrestamosPersonales', () => {
       ),
       ...parsearBnaNacionPrevisional(
         readFileSync(join(fixturesDir, 'bna-nacion-previsional.html'), 'utf8'),
+      ),
+      ...parsearChubut(
+        readFileSync(join(fixturesDir, 'chubut.tasas.json'), 'utf8'),
       ),
       ...parsearCiudad(
         readFileSync(join(fixturesDir, 'ciudad.html'), 'utf8'),
@@ -98,12 +105,13 @@ describe.skipIf(process.env.SKIP_NETWORK === '1')(
   'extractores de red (préstamos personales)',
   () => {
     it(
-      'extrae ofertas de Bancor, BBVA, BNA, Ciudad, Galicia, Hipotecario, Macro y Patagonia con tasas por tramo',
+      'extrae ofertas de Bancor, BBVA, BNA, Chubut, Ciudad, Galicia, Hipotecario, Macro y Patagonia con tasas por tramo',
       async () => {
         const [
           bancor,
           bbva,
           bna,
+          chubut,
           ciudad,
           galicia,
           hipotecario,
@@ -113,6 +121,7 @@ describe.skipIf(process.env.SKIP_NETWORK === '1')(
           extraerBancor(),
           extraerBbva(),
           extraerBna(),
+          extraerChubut(),
           extraerCiudad(),
           extraerGalicia(),
           extraerHipotecario(),
@@ -123,6 +132,7 @@ describe.skipIf(process.env.SKIP_NETWORK === '1')(
         expect(bancor.length).toBeGreaterThanOrEqual(1)
         expect(bbva.length).toBeGreaterThanOrEqual(1)
         expect(bna.length).toBeGreaterThanOrEqual(7)
+        expect(chubut.length).toBeGreaterThanOrEqual(1)
         expect(ciudad.length).toBeGreaterThanOrEqual(3)
         expect(galicia.length).toBeGreaterThanOrEqual(3)
         expect(hipotecario.length).toBeGreaterThanOrEqual(1)
@@ -133,6 +143,7 @@ describe.skipIf(process.env.SKIP_NETWORK === '1')(
         expect(bna.every((o) => o.metadata?.tasasPorPlazo?.length > 0)).toBe(
           true,
         )
+        expect(chubut[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
         expect(ciudad[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
         expect(galicia[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
         expect(hipotecario[0].metadata?.tasasPorPlazo?.length).toBe(3)

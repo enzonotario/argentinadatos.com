@@ -1,6 +1,7 @@
 import { extraerBancor } from './extraerBancor.js'
 import { extraerBbva } from './extraerBbva.js'
 import { extraerBna } from './extraerBna.js'
+import { extraerChubut } from './extraerChubut.js'
 import { extraerCiudad } from './extraerCiudad.js'
 import { extraerGalicia } from './extraerGalicia.js'
 import { extraerHipotecario } from './extraerHipotecario.js'
@@ -20,6 +21,7 @@ export async function extraerPrestamosPersonales() {
       extraerBancor(),
       extraerBbva(),
       extraerBna(),
+      extraerChubut(),
       extraerCiudad(),
       extraerGalicia(),
       extraerHipotecario(),
