@@ -1,7 +1,6 @@
 import { extraerGetnet } from './extraerGetnet.js'
 import { extraerMercadoPago } from './extraerMercadoPago.js'
 import { extraerUala } from './extraerUala.js'
-import { extraerModo } from './extraerModo.js'
 import { extraerNaranjaX } from './extraerNaranjaX.js'
 import { logGrupo, logError, logMensaje } from '@/log.js'
 
@@ -16,7 +15,6 @@ export async function extraerComisionesCobro() {
       extraerGetnet(),
       extraerMercadoPago(),
       extraerUala(),
-      extraerModo(),
       extraerNaranjaX(),
     ])
 

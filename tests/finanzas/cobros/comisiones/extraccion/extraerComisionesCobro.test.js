@@ -8,7 +8,6 @@ import {
   parsearUalaBisQr,
   parsearUalaBisLectores,
 } from '@/finanzas/cobros/comisiones/extraccion/extraerUala.js'
-import { parsearModo } from '@/finanzas/cobros/comisiones/extraccion/extraerModo.js'
 import {
   parsearMercadoPagoMarkdown,
   extraerTablaGrupoDefault,
@@ -99,19 +98,6 @@ describe('parsearUalaBis', () => {
     expect(filas.find(f => f.canal === 'pos' && f.medioPago === 'debito')).toMatchObject({
       arancel: 0.029,
     })
-  })
-})
-
-describe('parsearModo', () => {
-  it('devuelve fila informativa con arancel 0', () => {
-    const [fila] = parsearModo()
-    expect(fila).toMatchObject({
-      entidad: 'modo',
-      arancel: 0,
-      arancelEsTope: false,
-      canal: 'qr',
-    })
-    expect(fila.condiciones).toMatch(/no cobra comisión propia/i)
   })
 })
 

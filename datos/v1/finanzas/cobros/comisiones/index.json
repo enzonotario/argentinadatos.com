@@ -922,29 +922,6 @@
           "prepaga"
         ]
       }
-    },
-    {
-      "entidad": "modo",
-      "nombreComercial": "MODO",
-      "producto": "QR interoperable",
-      "canal": "qr",
-      "medioPago": "qr_cuenta",
-      "arancel": 0,
-      "arancelEsTope": false,
-      "incluyeIva": false,
-      "ivaAdicional": false,
-      "acreditacionTipo": "desconocida",
-      "acreditacionPlazoHabiles": null,
-      "acreditacionLabel": "Según adquirente",
-      "moneda": "ARS",
-      "condiciones": "MODO no cobra comisión propia; pagás la del adquirente (Getnet, PosNet, Payway, etc.).",
-      "enlace": "https://www.modo.com.ar/comercios",
-      "vigenciaDesde": null,
-      "vigenciaHasta": null,
-      "metadata": {
-        "fuenteUrl": "https://www.modo.com.ar/comercios",
-        "nota": "Fila informativa: el arancel efectivo depende del adquirente vinculado."
-      }
     }
   ]
 }
