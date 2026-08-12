@@ -1,6 +1,7 @@
 import { scrapeWithFirecrawl } from '@/shared/extraction/firecrawl/scrapeWithFirecrawl.js'
 import { logMensaje, logError, logGrupo } from '@/log.js'
 import { extraerCocosRemesas } from '@/finanzas/remesas/extraccion/extraerCocosRemesas.js'
+import { extraerBeloRemesas } from '@/finanzas/remesas/extraccion/extraerBeloRemesas.js'
 
 const REMESAS_URL = 'https://www.dolarito.ar/remotito'
 const PREFIJO_NEXT_PUSH = 'self.__next_f.push('
@@ -389,10 +390,12 @@ export async function extraerRemesas() {
   })
 
   try {
-    const [resultadoPrincipal, resultadoCocos] = await Promise.allSettled([
-      extraerFilasRemesas(log),
-      extraerCocosRemesas(log),
-    ])
+    const [resultadoPrincipal, resultadoCocos, resultadoBelo] =
+      await Promise.allSettled([
+        extraerFilasRemesas(log),
+        extraerCocosRemesas(log),
+        extraerBeloRemesas(log),
+      ])
 
     const remesas =
       resultadoPrincipal.status === 'fulfilled' ? resultadoPrincipal.value : []
@@ -404,6 +407,24 @@ export async function extraerRemesas() {
       logError(log, resultadoCocos.reason)
       logMensaje(log, 'extraerRemesas: falló Cocos desde rendimientos.co', {
         errorMessage: resultadoCocos.reason?.message,
+      })
+    }
+
+    if (resultadoBelo.status === 'fulfilled') {
+      const yaExiste = remesas.some(
+        remesa => remesa.compania?.toLowerCase() === 'belo',
+      )
+
+      if (!yaExiste) {
+        remesas.push(resultadoBelo.value)
+        logMensaje(log, 'extraerRemesas: Belo desde belo.app agregado')
+      } else {
+        logMensaje(log, 'extraerRemesas: Belo ya presente, se omite duplicado')
+      }
+    } else {
+      logError(log, resultadoBelo.reason)
+      logMensaje(log, 'extraerRemesas: falló Belo desde belo.app', {
+        errorMessage: resultadoBelo.reason?.message,
       })
     }
 
