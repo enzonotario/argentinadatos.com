@@ -670,6 +670,39 @@
         ]
       }
     },
+    "/v1/finanzas/cobros/comisiones": {
+      "get": {
+        "summary": "Comisiones de cobro",
+        "tags": [
+          "Finanzas",
+          "Cobros"
+        ],
+        "description": "Aranceles (MDR) de cobro con POS, QR, link y checkout por entidad, medio de pago y plazo de acreditación.",
+        "responses": {
+          "200": {
+            "description": "Comisiones de cobro con metadata de corrida",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComisionesCobro"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-finanzas-cobros-comisiones",
+        "x-data-source": [
+          "[Getnet](https://www.getnet.net/ar/aranceles)",
+          "[Mercado Pago Point](https://www.mercadopago.com.ar/ayuda/2779)",
+          "[Mercado Pago QR](https://www.mercadopago.com.ar/ayuda/3605)",
+          "[Mercado Pago Link](https://www.mercadopago.com.ar/ayuda/33392)",
+          "[Mercado Pago Checkout](https://www.mercadopago.com.ar/ayuda/33399)",
+          "[Ualá Bis QR](https://www.ualabis.com.ar/qr)",
+          "[Ualá Bis Lectores](https://www.ualabis.com.ar/lectores)",
+          "[MODO](https://www.modo.com.ar/comercios)"
+        ]
+      }
+    },
     "/v1/finanzas/creditos/hipotecariosUva": {
       "get": {
         "summary": "Créditos Hipotecarios UVA",
@@ -2575,10 +2608,6 @@
             "items": {
               "$ref": "#/components/schemas/BonoSoberanoCer"
             }
-          },
-          "errorExtraccion": {
-            "type": "string",
-            "description": "Solo si falló la extracción: mensaje de error"
           }
         },
         "x-examples": {
@@ -4951,10 +4980,6 @@
             "items": {
               "$ref": "#/components/schemas/Remesa"
             }
-          },
-          "errorExtraccion": {
-            "type": "string",
-            "description": "Solo si falló la extracción: mensaje de error"
           }
         },
         "x-examples": {
@@ -5595,6 +5620,196 @@
             "items": {
               "$ref": "#/components/schemas/MisionOficialDiputado"
             }
+          }
+        }
+      },
+      "ComisionCobro": {
+        "title": "ComisionCobro",
+        "type": "object",
+        "properties": {
+          "entidad": {
+            "type": "string",
+            "description": "Slug estable de la entidad",
+            "example": "getnet"
+          },
+          "nombreComercial": {
+            "type": "string",
+            "description": "Nombre para mostrar",
+            "example": "Getnet"
+          },
+          "producto": {
+            "type": "string",
+            "description": "Etiqueta humana del producto",
+            "example": "Débito"
+          },
+          "canal": {
+            "type": "string",
+            "enum": [
+              "pos",
+              "qr",
+              "link",
+              "checkout",
+              "online",
+              "otro"
+            ],
+            "description": "Canal de cobro"
+          },
+          "medioPago": {
+            "type": "string",
+            "enum": [
+              "debito",
+              "credito",
+              "credito_cuotas",
+              "qr_cuenta",
+              "prepaga",
+              "amex",
+              "otro"
+            ],
+            "description": "Medio de pago"
+          },
+          "arancel": {
+            "type": "number",
+            "nullable": true,
+            "description": "Arancel en decimal",
+            "example": 0.0153
+          },
+          "arancelEsTope": {
+            "type": "boolean",
+            "description": "Si el arancel es un tope (hasta X%)"
+          },
+          "incluyeIva": {
+            "type": "boolean",
+            "description": "Si el porcentaje ya incluye IVA"
+          },
+          "ivaAdicional": {
+            "type": "boolean",
+            "description": "Si se suma IVA al arancel"
+          },
+          "acreditacionTipo": {
+            "type": "string",
+            "enum": [
+              "inmediata",
+              "anticipada",
+              "estandar",
+              "desconocida"
+            ],
+            "description": "Tipo de acreditación"
+          },
+          "acreditacionPlazoHabiles": {
+            "type": "number",
+            "nullable": true,
+            "description": "Plazo en días hábiles",
+            "example": 1
+          },
+          "acreditacionLabel": {
+            "type": "string",
+            "nullable": true,
+            "description": "Etiqueta legible del plazo"
+          },
+          "moneda": {
+            "type": "string",
+            "example": "ARS"
+          },
+          "condiciones": {
+            "type": "string",
+            "nullable": true,
+            "description": "Notas o footnotes"
+          },
+          "enlace": {
+            "type": "string",
+            "nullable": true,
+            "format": "uri",
+            "description": "URL de la fuente"
+          },
+          "vigenciaDesde": {
+            "type": "string",
+            "nullable": true,
+            "format": "date"
+          },
+          "vigenciaHasta": {
+            "type": "string",
+            "nullable": true,
+            "format": "date"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Campos adicionales (fuenteUrl, grupoProvincial, etc.)"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "entidad": "getnet",
+            "nombreComercial": "Getnet",
+            "producto": "Débito",
+            "canal": "pos",
+            "medioPago": "debito",
+            "arancel": 0.0153,
+            "arancelEsTope": true,
+            "incluyeIva": false,
+            "ivaAdicional": true,
+            "acreditacionTipo": "inmediata",
+            "acreditacionPlazoHabiles": 0,
+            "acreditacionLabel": "Acreditación inmediata",
+            "moneda": "ARS",
+            "condiciones": null,
+            "enlace": "https://www.getnet.net/ar/aranceles",
+            "vigenciaDesde": null,
+            "vigenciaHasta": null,
+            "metadata": {
+              "fuenteUrl": "https://www.getnet.net/ar/aranceles"
+            }
+          }
+        }
+      },
+      "ComisionesCobro": {
+        "title": "ComisionesCobro",
+        "type": "object",
+        "required": [
+          "fechaActualizacion",
+          "comisiones"
+        ],
+        "properties": {
+          "fechaActualizacion": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Instante en que se generó el recurso (UTC, ISO 8601)"
+          },
+          "comisiones": {
+            "type": "array",
+            "description": "Filas comparables de comisiones de cobro",
+            "items": {
+              "$ref": "#/components/schemas/ComisionCobro"
+            }
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "fechaActualizacion": "2026-08-12T21:23:23.281Z",
+            "comisiones": [
+              {
+                "entidad": "getnet",
+                "nombreComercial": "Getnet",
+                "producto": "Débito",
+                "canal": "pos",
+                "medioPago": "debito",
+                "arancel": 0.0153,
+                "arancelEsTope": true,
+                "incluyeIva": false,
+                "ivaAdicional": true,
+                "acreditacionTipo": "inmediata",
+                "acreditacionPlazoHabiles": 0,
+                "acreditacionLabel": "Acreditación inmediata",
+                "moneda": "ARS",
+                "condiciones": null,
+                "enlace": "https://www.getnet.net/ar/aranceles",
+                "vigenciaDesde": null,
+                "vigenciaHasta": null,
+                "metadata": {
+                  "fuenteUrl": "https://www.getnet.net/ar/aranceles"
+                }
+              }
+            ]
           }
         }
       }
