@@ -12,8 +12,8 @@
     "requiereCliente": true,
     "condiciones": "Cartera de consumo",
     "enlace": "https://www.bancor.com.ar/personas/prestamos/prestamos-personales/bancon",
-    "vigenciaDesde": null,
-    "vigenciaHasta": null,
+    "vigenciaDesde": "2026-08-01",
+    "vigenciaHasta": "2026-08-31",
     "metadata": {
       "plazoMesesEjemplo": 72,
       "plazoMinMeses": 1,
@@ -98,6 +98,221 @@
           "tna": 1.29,
           "tea": 2.4051,
           "cftTea": 3.23
+        }
+      ]
+    }
+  },
+  {
+    "entidad": "BNA",
+    "nombreComercial": "Banco Nación",
+    "producto": "Nación Sueldos",
+    "tna": 0.56,
+    "tea": 0.7286,
+    "cftTna": 0.6776,
+    "cftTea": 0.9332,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": true,
+    "condiciones": "Haberes en BNA · Convenios generales",
+    "enlace": "https://bna.com.ar/Personas/NacionSueldos-ConveniosGenerales",
+    "vigenciaDesde": null,
+    "vigenciaHasta": null,
+    "metadata": {
+      "plazoMesesEjemplo": 72,
+      "plazoMinMeses": 1,
+      "plazoMaxMeses": 72,
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 1,
+          "plazoMaxMeses": 72,
+          "tna": 0.56,
+          "tea": 0.7286,
+          "cftTea": 0.9332
+        }
+      ],
+      "afectacionIngresos": "35%"
+    }
+  },
+  {
+    "entidad": "BNA",
+    "nombreComercial": "Banco Nación",
+    "producto": "Nación Sueldos",
+    "tna": 0.64,
+    "tea": 0.8655,
+    "cftTna": 0.7744,
+    "cftTea": 1.1179,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": true,
+    "condiciones": "Empleados públicos nacionales con haberes en BNA",
+    "enlace": "https://bna.com.ar/Personas/NacionSueldos-ConveniosGenerales",
+    "vigenciaDesde": null,
+    "vigenciaHasta": null,
+    "metadata": {
+      "plazoMesesEjemplo": 72,
+      "plazoMinMeses": 1,
+      "plazoMaxMeses": 72,
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 1,
+          "plazoMaxMeses": 72,
+          "tna": 0.64,
+          "tea": 0.8655,
+          "cftTea": 1.1179
+        }
+      ],
+      "afectacionIngresos": "35%"
+    }
+  },
+  {
+    "entidad": "BNA",
+    "nombreComercial": "Banco Nación",
+    "producto": "Nación Sueldos",
+    "tna": 0.72,
+    "tea": 1.0122,
+    "cftTna": 0.8712,
+    "cftTea": 1.3187,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": false,
+    "condiciones": "Empleados públicos nacionales sin haberes en BNA",
+    "enlace": "https://bna.com.ar/Personas/NacionSueldos-ConveniosGenerales",
+    "vigenciaDesde": null,
+    "vigenciaHasta": null,
+    "metadata": {
+      "plazoMesesEjemplo": 72,
+      "plazoMinMeses": 1,
+      "plazoMaxMeses": 72,
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 1,
+          "plazoMaxMeses": 72,
+          "tna": 0.72,
+          "tea": 1.0122,
+          "cftTea": 1.3187
+        }
+      ],
+      "afectacionIngresos": "35%"
+    }
+  },
+  {
+    "entidad": "BNA",
+    "nombreComercial": "Banco Nación",
+    "producto": "Nación Destino Libre",
+    "tna": 0.74,
+    "tea": 1.0505,
+    "cftTna": 1.0426,
+    "cftTea": 1.7176,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": true,
+    "condiciones": "Con paquete Cuenta Nación",
+    "enlace": "https://bna.com.ar/Personas/NacionDestinoLibre",
+    "vigenciaDesde": null,
+    "vigenciaHasta": null,
+    "metadata": {
+      "plazoMesesEjemplo": 72,
+      "plazoMinMeses": 1,
+      "plazoMaxMeses": 72,
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 1,
+          "plazoMaxMeses": 72,
+          "tna": 0.74,
+          "tea": 1.0505,
+          "cftTea": 1.7176
+        }
+      ],
+      "afectacionIngresos": "30%"
+    }
+  },
+  {
+    "entidad": "BNA",
+    "nombreComercial": "Banco Nación",
+    "producto": "Nación Destino Libre",
+    "tna": 0.91,
+    "tea": 1.404,
+    "cftTna": 1.1011,
+    "cftTea": 1.8676,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": false,
+    "condiciones": "Sin paquete Cuenta Nación",
+    "enlace": "https://bna.com.ar/Personas/NacionDestinoLibre",
+    "vigenciaDesde": null,
+    "vigenciaHasta": null,
+    "metadata": {
+      "plazoMesesEjemplo": 72,
+      "plazoMinMeses": 1,
+      "plazoMaxMeses": 72,
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 1,
+          "plazoMaxMeses": 72,
+          "tna": 0.91,
+          "tea": 1.404,
+          "cftTea": 1.8676
+        }
+      ],
+      "afectacionIngresos": "30%"
+    }
+  },
+  {
+    "entidad": "BNA",
+    "nombreComercial": "Banco Nación",
+    "producto": "Nación Previsional BNA",
+    "tna": 0.56,
+    "tea": 0.7292,
+    "cftTna": 0.6777,
+    "cftTea": 0.9332,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": true,
+    "condiciones": "Jubilados con e@descuento obligatorio",
+    "enlace": "https://bna.com.ar/Personas/NacionPrevisionalBNA",
+    "vigenciaDesde": null,
+    "vigenciaHasta": null,
+    "metadata": {
+      "plazoMesesEjemplo": 36,
+      "plazoMinMeses": 1,
+      "plazoMaxMeses": 36,
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 1,
+          "plazoMaxMeses": 36,
+          "tna": 0.56,
+          "tea": 0.7292,
+          "cftTea": 0.9332
+        }
+      ]
+    }
+  },
+  {
+    "entidad": "BNA",
+    "nombreComercial": "Banco Nación",
+    "producto": "Nación Previsional BNA",
+    "tna": 0.56,
+    "tea": 0.7292,
+    "cftTna": 0.6777,
+    "cftTea": 0.9332,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": true,
+    "condiciones": "Jubilados con débito en cuenta",
+    "enlace": "https://bna.com.ar/Personas/NacionPrevisionalBNA",
+    "vigenciaDesde": null,
+    "vigenciaHasta": null,
+    "metadata": {
+      "plazoMesesEjemplo": 72,
+      "plazoMinMeses": 1,
+      "plazoMaxMeses": 72,
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 1,
+          "plazoMaxMeses": 72,
+          "tna": 0.56,
+          "tea": 0.7292,
+          "cftTea": 0.9332
         }
       ]
     }
@@ -698,6 +913,36 @@
       ],
       "plazoMinMeses": 1,
       "plazoMaxMeses": 12
+    }
+  },
+  {
+    "entidad": "PATAGONIA",
+    "nombreComercial": "Banco Patagonia",
+    "producto": "Préstamo personal online",
+    "tna": 0.98,
+    "tea": 1.5665,
+    "cftTna": null,
+    "cftTea": 2.0978,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": true,
+    "condiciones": "Cartera de consumo",
+    "enlace": "https://www.bancopatagonia.com.ar/landings/prestamos-online.php",
+    "vigenciaDesde": "2025-11-13",
+    "vigenciaHasta": "2026-12-31",
+    "metadata": {
+      "plazoMesesEjemplo": 60,
+      "plazoMinMeses": 1,
+      "plazoMaxMeses": 60,
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 1,
+          "plazoMaxMeses": 60,
+          "tna": 0.98,
+          "tea": 1.5665,
+          "cftTea": 2.0978
+        }
+      ]
     }
   },
   {

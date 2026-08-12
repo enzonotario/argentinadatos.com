@@ -16,6 +16,16 @@ vi.mock(
 )
 
 vi.mock(
+  '@/finanzas/creditos/prestamos-personales/extraccion/extraerBna.js',
+  () => ({
+    extraerBna: vi.fn(async () => [
+      { entidad: 'BNA', producto: 'Nación Sueldos', tna: 0.56 },
+      { entidad: 'BNA', producto: 'Nación Destino Libre', tna: 0.74 },
+    ]),
+  }),
+)
+
+vi.mock(
   '@/finanzas/creditos/prestamos-personales/extraccion/extraerCiudad.js',
   () => ({
     extraerCiudad: vi.fn(async () => [
@@ -71,10 +81,12 @@ describe('extraerPrestamosPersonales', () => {
   it('aplana resultados de bancos con tasas por tramo', async () => {
     const items = await extraerPrestamosPersonales()
 
-    expect(items).toHaveLength(12)
+    expect(items).toHaveLength(14)
     expect(items.map((i) => i.entidad)).toEqual([
       'BANCOR',
       'BBVA',
+      'BNA',
+      'BNA',
       'CIUDAD',
       'CIUDAD',
       'CIUDAD',

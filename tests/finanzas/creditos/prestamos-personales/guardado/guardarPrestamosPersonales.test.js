@@ -30,6 +30,12 @@ import {
   parsearPatagonia,
   extraerPatagonia,
 } from '@/finanzas/creditos/prestamos-personales/extraccion/extraerPatagonia.js'
+import {
+  parsearBnaDestinoLibre,
+  parsearBnaNacionSueldos,
+  parsearBnaNacionPrevisional,
+  extraerBna,
+} from '@/finanzas/creditos/prestamos-personales/extraccion/extraerBna.js'
 import { guardarPrestamosPersonales } from '@/finanzas/creditos/prestamos-personales/guardado/guardarPrestamosPersonales.js'
 import { leerRuta } from '@/utils/rutas.js'
 
@@ -43,6 +49,15 @@ describe('guardarPrestamosPersonales', () => {
       ),
       ...parsearBbvaPdf(
         readFileSync(join(fixturesDir, 'bbva.pdf.txt'), 'utf8'),
+      ),
+      ...parsearBnaNacionSueldos(
+        readFileSync(join(fixturesDir, 'bna-nacion-sueldos.html'), 'utf8'),
+      ),
+      ...parsearBnaDestinoLibre(
+        readFileSync(join(fixturesDir, 'bna-destino-libre.html'), 'utf8'),
+      ),
+      ...parsearBnaNacionPrevisional(
+        readFileSync(join(fixturesDir, 'bna-nacion-previsional.html'), 'utf8'),
       ),
       ...parsearCiudad(
         readFileSync(join(fixturesDir, 'ciudad.html'), 'utf8'),
@@ -83,21 +98,31 @@ describe.skipIf(process.env.SKIP_NETWORK === '1')(
   'extractores de red (préstamos personales)',
   () => {
     it(
-      'extrae ofertas de Bancor, BBVA, Ciudad, Galicia, Hipotecario, Macro y Patagonia con tasas por tramo',
+      'extrae ofertas de Bancor, BBVA, BNA, Ciudad, Galicia, Hipotecario, Macro y Patagonia con tasas por tramo',
       async () => {
-        const [bancor, bbva, ciudad, galicia, hipotecario, macro, patagonia] =
-          await Promise.all([
-            extraerBancor(),
-            extraerBbva(),
-            extraerCiudad(),
-            extraerGalicia(),
-            extraerHipotecario(),
-            extraerMacro(),
-            extraerPatagonia(),
-          ])
+        const [
+          bancor,
+          bbva,
+          bna,
+          ciudad,
+          galicia,
+          hipotecario,
+          macro,
+          patagonia,
+        ] = await Promise.all([
+          extraerBancor(),
+          extraerBbva(),
+          extraerBna(),
+          extraerCiudad(),
+          extraerGalicia(),
+          extraerHipotecario(),
+          extraerMacro(),
+          extraerPatagonia(),
+        ])
 
         expect(bancor.length).toBeGreaterThanOrEqual(1)
         expect(bbva.length).toBeGreaterThanOrEqual(1)
+        expect(bna.length).toBeGreaterThanOrEqual(7)
         expect(ciudad.length).toBeGreaterThanOrEqual(3)
         expect(galicia.length).toBeGreaterThanOrEqual(3)
         expect(hipotecario.length).toBeGreaterThanOrEqual(1)
@@ -105,6 +130,9 @@ describe.skipIf(process.env.SKIP_NETWORK === '1')(
         expect(patagonia.length).toBeGreaterThanOrEqual(1)
         expect(bancor[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
         expect(bbva[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
+        expect(bna.every((o) => o.metadata?.tasasPorPlazo?.length > 0)).toBe(
+          true,
+        )
         expect(ciudad[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
         expect(galicia[0].metadata?.tasasPorPlazo?.length).toBeGreaterThan(0)
         expect(hipotecario[0].metadata?.tasasPorPlazo?.length).toBe(3)
