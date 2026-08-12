@@ -118,7 +118,12 @@ export function inferirAcreditacionTipo(label) {
     return 'anticipada'
   }
 
-  if (/estandar|d[ií]as?\s*h[aá]bil|plazo/.test(texto)) {
+  // "2 días", "10 días hábiles", "plazo estándar", etc.
+  if (/estandar|d[ií]as?(?:\s+habililes?)?|plazo/.test(texto)) {
+    const dias = texto.match(/(\d+)\s*d[ií]as?/)
+    if (dias && Number.parseInt(dias[1], 10) === 1) {
+      return 'anticipada'
+    }
     return 'estandar'
   }
 

@@ -12,7 +12,7 @@ import {
   parsearMercadoPagoMarkdown,
   extraerTablaGrupoDefault,
 } from '@/finanzas/cobros/comisiones/extraccion/extraerMercadoPago.js'
-import { parseArancelTexto } from '@/finanzas/cobros/comisiones/extraccion/parseArancel.js'
+import { parseArancelTexto, inferirAcreditacionTipo } from '@/finanzas/cobros/comisiones/extraccion/parseArancel.js'
 
 const fixturesDir = join(dirname(fileURLToPath(import.meta.url)), 'fixtures')
 
@@ -35,6 +35,15 @@ describe('parseArancelTexto', () => {
 
   it('devuelve null para celda vacía', () => {
     expect(parseArancelTexto('-').arancel).toBeNull()
+  })
+})
+
+describe('inferirAcreditacionTipo', () => {
+  it('clasifica labels de Mercado Pago con N días', () => {
+    expect(inferirAcreditacionTipo('Al instante')).toBe('inmediata')
+    expect(inferirAcreditacionTipo('2 días')).toBe('estandar')
+    expect(inferirAcreditacionTipo('10 días')).toBe('estandar')
+    expect(inferirAcreditacionTipo('1 día')).toBe('anticipada')
   })
 })
 
@@ -127,6 +136,16 @@ describe('parsearMercadoPagoMarkdown', () => {
       arancel: 0.0314,
       ivaAdicional: true,
       canal: 'pos',
+    })
+
+    const debitoDosDias = comisiones.find(
+      c =>
+        c.medioPago === 'debito' &&
+        c.acreditacionPlazoHabiles === 2,
+    )
+    expect(debitoDosDias).toMatchObject({
+      acreditacionTipo: 'estandar',
+      acreditacionLabel: '2 días',
     })
   })
 
