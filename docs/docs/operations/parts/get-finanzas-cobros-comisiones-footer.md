@@ -1,1 +1,1 @@
-Los aranceles se expresan en decimal (`0.0153` = 1,53%). Mercado Pago publica costos por provincia; v1 usa el primer grupo provincial de cada tabla como referencia.
+Los aranceles se expresan en decimal (`0.0153` = 1,53%). Mercado Pago publica costos por provincia; v1 usa el primer grupo provincial de cada tabla como referencia. Banco Provincia publica aranceles de adhesión de comercios (Cuenta DNI) con adquirentes Fiserv y Payway.

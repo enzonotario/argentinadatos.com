@@ -1,5 +1,5 @@
 {
-  "fechaActualizacion": "2026-08-12T22:10:37.363Z",
+  "fechaActualizacion": "2026-08-13T12:54:04.716Z",
   "comisiones": [
     {
       "entidad": "getnet",
@@ -921,6 +921,379 @@
         "tambienAplicaA": [
           "prepaga"
         ]
+      }
+    },
+    {
+      "entidad": "payway",
+      "nombreComercial": "Payway",
+      "producto": "QR dinero en cuenta",
+      "canal": "qr",
+      "medioPago": "qr_cuenta",
+      "arancel": 0.008,
+      "arancelEsTope": true,
+      "incluyeIva": false,
+      "ivaAdicional": true,
+      "acreditacionTipo": "inmediata",
+      "acreditacionPlazoHabiles": 0,
+      "acreditacionLabel": "En el acto",
+      "moneda": "ARS",
+      "condiciones": "Sin comisión durante los primeros 3 meses , respecto de aquellos comercios que cumplan con las condiciones establecidas en el punto 6.3.1.1 del Texto Ordenado \"Sistema nacional de Pagos- Transferencias- Normas complementarias\" del BCRA.",
+      "enlace": "https://www.payway.com.ar/planes-precios",
+      "vigenciaDesde": null,
+      "vigenciaHasta": null,
+      "metadata": {
+        "fuenteUrl": "https://www.payway.com.ar/planes-precios",
+        "tituloOriginal": "DINERO EN CUENTA CON QR HASTA (***)"
+      }
+    },
+    {
+      "entidad": "payway",
+      "nombreComercial": "Payway",
+      "producto": "Débito",
+      "canal": "pos",
+      "medioPago": "debito",
+      "arancel": 0.012,
+      "arancelEsTope": true,
+      "incluyeIva": false,
+      "ivaAdicional": true,
+      "acreditacionTipo": "anticipada",
+      "acreditacionPlazoHabiles": 1,
+      "acreditacionLabel": "1 día hábil",
+      "moneda": "ARS",
+      "condiciones": "Ejemplo para terminales Payway con Visa emitidas en Argentina; 8 días hábiles (Com. A 7153 BCRA) para micro, pequeños comercios y personas humanas.",
+      "enlace": "https://www.payway.com.ar/planes-precios",
+      "vigenciaDesde": null,
+      "vigenciaHasta": null,
+      "metadata": {
+        "fuenteUrl": "https://www.payway.com.ar/planes-precios",
+        "tituloOriginal": "DÉBITO HASTA"
+      }
+    },
+    {
+      "entidad": "payway",
+      "nombreComercial": "Payway",
+      "producto": "Crédito 1 pago",
+      "canal": "pos",
+      "medioPago": "credito",
+      "arancel": 0.063,
+      "arancelEsTope": true,
+      "incluyeIva": false,
+      "ivaAdicional": true,
+      "acreditacionTipo": "anticipada",
+      "acreditacionPlazoHabiles": 1,
+      "acreditacionLabel": "1 día hábil",
+      "moneda": "ARS",
+      "condiciones": "El valor informado incluye el precio del servicio de Cobro Anticipado",
+      "enlace": "https://www.payway.com.ar/planes-precios",
+      "vigenciaDesde": null,
+      "vigenciaHasta": null,
+      "metadata": {
+        "fuenteUrl": "https://www.payway.com.ar/planes-precios",
+        "tituloOriginal": "CRÉDITO HASTA **"
+      }
+    },
+    {
+      "entidad": "payway",
+      "nombreComercial": "Payway",
+      "producto": "Crédito 1 pago",
+      "canal": "pos",
+      "medioPago": "credito",
+      "arancel": 0.02,
+      "arancelEsTope": true,
+      "incluyeIva": false,
+      "ivaAdicional": true,
+      "acreditacionTipo": "estandar",
+      "acreditacionPlazoHabiles": 8,
+      "acreditacionLabel": "8 días hábiles",
+      "moneda": "ARS",
+      "condiciones": "Ejemplo para terminales Payway con Visa emitidas en Argentina; 8 días hábiles (Com. A 7153 BCRA) para micro, pequeños comercios y personas humanas.",
+      "enlace": "https://www.payway.com.ar/planes-precios",
+      "vigenciaDesde": null,
+      "vigenciaHasta": null,
+      "metadata": {
+        "fuenteUrl": "https://www.payway.com.ar/planes-precios",
+        "tituloOriginal": "CRÉDITO HASTA"
+      }
+    },
+    {
+      "entidad": "provincia",
+      "nombreComercial": "Banco Provincia",
+      "producto": "Clave DNI",
+      "canal": "qr",
+      "medioPago": "qr_cuenta",
+      "arancel": 0.006,
+      "arancelEsTope": false,
+      "incluyeIva": false,
+      "ivaAdicional": false,
+      "acreditacionTipo": "inmediata",
+      "acreditacionPlazoHabiles": 0,
+      "acreditacionLabel": "Acreditación inmediata",
+      "moneda": "ARS",
+      "condiciones": null,
+      "enlace": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+      "vigenciaDesde": null,
+      "vigenciaHasta": null,
+      "metadata": {
+        "fuenteUrl": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+        "tituloOriginal": "Clave DNI:"
+      }
+    },
+    {
+      "entidad": "provincia",
+      "nombreComercial": "Banco Provincia",
+      "producto": "QR dinero en cuenta",
+      "canal": "qr",
+      "medioPago": "qr_cuenta",
+      "arancel": 0.008,
+      "arancelEsTope": false,
+      "incluyeIva": false,
+      "ivaAdicional": true,
+      "acreditacionTipo": "inmediata",
+      "acreditacionPlazoHabiles": 0,
+      "acreditacionLabel": "Acreditación inmediata",
+      "moneda": "ARS",
+      "condiciones": null,
+      "enlace": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+      "vigenciaDesde": null,
+      "vigenciaHasta": null,
+      "metadata": {
+        "fuenteUrl": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+        "tituloOriginal": "QR a través de dinero en cuenta:"
+      }
+    },
+    {
+      "entidad": "provincia",
+      "nombreComercial": "Banco Provincia",
+      "producto": "Débito Fiserv",
+      "canal": "pos",
+      "medioPago": "debito",
+      "arancel": 0.008,
+      "arancelEsTope": false,
+      "incluyeIva": false,
+      "ivaAdicional": true,
+      "acreditacionTipo": "anticipada",
+      "acreditacionPlazoHabiles": 1,
+      "acreditacionLabel": "24 horas hábiles",
+      "moneda": "ARS",
+      "condiciones": "También aplica a QR con tarjetas de crédito y débito (mismos aranceles que Tarjeta Presente).",
+      "enlace": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+      "vigenciaDesde": null,
+      "vigenciaHasta": null,
+      "metadata": {
+        "fuenteUrl": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+        "tituloOriginal": "Tarjetas de débito:",
+        "adquirente": "fiserv"
+      }
+    },
+    {
+      "entidad": "provincia",
+      "nombreComercial": "Banco Provincia",
+      "producto": "Débito Payway Visa",
+      "canal": "pos",
+      "medioPago": "debito",
+      "arancel": 0.012,
+      "arancelEsTope": false,
+      "incluyeIva": false,
+      "ivaAdicional": true,
+      "acreditacionTipo": "anticipada",
+      "acreditacionPlazoHabiles": 1,
+      "acreditacionLabel": "24 horas hábiles",
+      "moneda": "ARS",
+      "condiciones": "También aplica a QR con tarjetas de crédito y débito (mismos aranceles que Tarjeta Presente).",
+      "enlace": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+      "vigenciaDesde": null,
+      "vigenciaHasta": null,
+      "metadata": {
+        "fuenteUrl": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+        "tituloOriginal": "Tarjetas de débito:",
+        "adquirente": "payway",
+        "marca": "Visa"
+      }
+    },
+    {
+      "entidad": "provincia",
+      "nombreComercial": "Banco Provincia",
+      "producto": "Débito Payway Mastercard",
+      "canal": "pos",
+      "medioPago": "debito",
+      "arancel": 0.014,
+      "arancelEsTope": false,
+      "incluyeIva": false,
+      "ivaAdicional": true,
+      "acreditacionTipo": "anticipada",
+      "acreditacionPlazoHabiles": 1,
+      "acreditacionLabel": "24 horas hábiles",
+      "moneda": "ARS",
+      "condiciones": "También aplica a QR con tarjetas de crédito y débito (mismos aranceles que Tarjeta Presente).",
+      "enlace": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+      "vigenciaDesde": null,
+      "vigenciaHasta": null,
+      "metadata": {
+        "fuenteUrl": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+        "tituloOriginal": "Tarjetas de débito:",
+        "adquirente": "payway",
+        "marca": "Mastercard"
+      }
+    },
+    {
+      "entidad": "provincia",
+      "nombreComercial": "Banco Provincia",
+      "producto": "Crédito 1 pago Fiserv",
+      "canal": "pos",
+      "medioPago": "credito",
+      "arancel": 0.018,
+      "arancelEsTope": false,
+      "incluyeIva": false,
+      "ivaAdicional": true,
+      "acreditacionTipo": "estandar",
+      "acreditacionPlazoHabiles": 8,
+      "acreditacionLabel": "8, 10 o 18 días hábiles",
+      "moneda": "ARS",
+      "condiciones": "También aplica a QR con tarjetas de crédito y débito (mismos aranceles que Tarjeta Presente). Acreditación en 8, 10 o 18 días hábiles según la categoría del comercio para tarjetas de entidades financieras.",
+      "enlace": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+      "vigenciaDesde": null,
+      "vigenciaHasta": null,
+      "metadata": {
+        "fuenteUrl": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+        "tituloOriginal": "Tarjetas de crédito en un pago",
+        "adquirente": "fiserv",
+        "plazosHabiles": [
+          8,
+          10,
+          18
+        ]
+      }
+    },
+    {
+      "entidad": "provincia",
+      "nombreComercial": "Banco Provincia",
+      "producto": "Crédito 1 pago Payway",
+      "canal": "pos",
+      "medioPago": "credito",
+      "arancel": 0.02,
+      "arancelEsTope": false,
+      "incluyeIva": false,
+      "ivaAdicional": true,
+      "acreditacionTipo": "estandar",
+      "acreditacionPlazoHabiles": 8,
+      "acreditacionLabel": "8, 10 o 18 días hábiles",
+      "moneda": "ARS",
+      "condiciones": "También aplica a QR con tarjetas de crédito y débito (mismos aranceles que Tarjeta Presente). Acreditación en 8, 10 o 18 días hábiles según la categoría del comercio para tarjetas de entidades financieras.",
+      "enlace": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+      "vigenciaDesde": null,
+      "vigenciaHasta": null,
+      "metadata": {
+        "fuenteUrl": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+        "tituloOriginal": "Tarjetas de crédito en un pago",
+        "adquirente": "payway",
+        "plazosHabiles": [
+          8,
+          10,
+          18
+        ]
+      }
+    },
+    {
+      "entidad": "provincia",
+      "nombreComercial": "Banco Provincia",
+      "producto": "Crédito 1 pago Payway Amex",
+      "canal": "pos",
+      "medioPago": "amex",
+      "arancel": 0.028,
+      "arancelEsTope": false,
+      "incluyeIva": false,
+      "ivaAdicional": true,
+      "acreditacionTipo": "estandar",
+      "acreditacionPlazoHabiles": 8,
+      "acreditacionLabel": "8, 10 o 18 días hábiles",
+      "moneda": "ARS",
+      "condiciones": "También aplica a QR con tarjetas de crédito y débito (mismos aranceles que Tarjeta Presente). Acreditación en 8, 10 o 18 días hábiles según la categoría del comercio para tarjetas de entidades financieras.",
+      "enlace": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+      "vigenciaDesde": null,
+      "vigenciaHasta": null,
+      "metadata": {
+        "fuenteUrl": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+        "tituloOriginal": "Tarjetas de crédito en un pago",
+        "adquirente": "payway",
+        "marca": "Amex",
+        "plazosHabiles": [
+          8,
+          10,
+          18
+        ]
+      }
+    },
+    {
+      "entidad": "provincia",
+      "nombreComercial": "Banco Provincia",
+      "producto": "Crédito en cuotas Fiserv",
+      "canal": "pos",
+      "medioPago": "credito_cuotas",
+      "arancel": 0.018,
+      "arancelEsTope": false,
+      "incluyeIva": false,
+      "ivaAdicional": true,
+      "acreditacionTipo": "estandar",
+      "acreditacionPlazoHabiles": 2,
+      "acreditacionLabel": "48 horas hábiles",
+      "moneda": "ARS",
+      "condiciones": "También aplica a QR con tarjetas de crédito y débito (mismos aranceles que Tarjeta Presente).",
+      "enlace": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+      "vigenciaDesde": null,
+      "vigenciaHasta": null,
+      "metadata": {
+        "fuenteUrl": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+        "tituloOriginal": "Tarjetas de crédito en cuotas:",
+        "adquirente": "fiserv"
+      }
+    },
+    {
+      "entidad": "provincia",
+      "nombreComercial": "Banco Provincia",
+      "producto": "Crédito en cuotas Payway",
+      "canal": "pos",
+      "medioPago": "credito_cuotas",
+      "arancel": 0.02,
+      "arancelEsTope": false,
+      "incluyeIva": false,
+      "ivaAdicional": true,
+      "acreditacionTipo": "estandar",
+      "acreditacionPlazoHabiles": 2,
+      "acreditacionLabel": "48 horas hábiles",
+      "moneda": "ARS",
+      "condiciones": "También aplica a QR con tarjetas de crédito y débito (mismos aranceles que Tarjeta Presente).",
+      "enlace": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+      "vigenciaDesde": null,
+      "vigenciaHasta": null,
+      "metadata": {
+        "fuenteUrl": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+        "tituloOriginal": "Tarjetas de crédito en cuotas:",
+        "adquirente": "payway"
+      }
+    },
+    {
+      "entidad": "provincia",
+      "nombreComercial": "Banco Provincia",
+      "producto": "Crédito en cuotas Payway Amex",
+      "canal": "pos",
+      "medioPago": "amex",
+      "arancel": 0.028,
+      "arancelEsTope": false,
+      "incluyeIva": false,
+      "ivaAdicional": true,
+      "acreditacionTipo": "estandar",
+      "acreditacionPlazoHabiles": 2,
+      "acreditacionLabel": "48 horas hábiles",
+      "moneda": "ARS",
+      "condiciones": "También aplica a QR con tarjetas de crédito y débito (mismos aranceles que Tarjeta Presente).",
+      "enlace": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+      "vigenciaDesde": null,
+      "vigenciaHasta": null,
+      "metadata": {
+        "fuenteUrl": "https://www.bancoprovincia.com.ar/web/adhesion_comercios",
+        "tituloOriginal": "Tarjetas de crédito en cuotas:",
+        "adquirente": "payway",
+        "marca": "Amex"
       }
     }
   ]
