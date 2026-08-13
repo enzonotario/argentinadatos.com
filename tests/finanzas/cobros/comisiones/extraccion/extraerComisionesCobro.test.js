@@ -20,6 +20,12 @@ import { parsearOpenpay } from '@/finanzas/cobros/comisiones/extraccion/extraerO
 import { parsearViumi } from '@/finanzas/cobros/comisiones/extraccion/extraerViumi.js'
 import { parsearMaspagos } from '@/finanzas/cobros/comisiones/extraccion/extraerMaspagos.js'
 import {
+  parsearNaranjaX,
+  parsearNaranjaXTerminal,
+  parsearNaranjaXQr,
+  parsearNaranjaXTap,
+} from '@/finanzas/cobros/comisiones/extraccion/extraerNaranjaX.js'
+import {
   parseArancelTexto,
   inferirAcreditacionTipo,
 } from '@/finanzas/cobros/comisiones/extraccion/parseArancel.js'
@@ -592,5 +598,88 @@ describe('parsearMaspagos', () => {
         acreditacionPlazoHabiles: 1,
       },
     )
+  })
+})
+
+describe('parsearNaranjaX', () => {
+  it('extrae terminal, QR (con promo) y TAP', () => {
+    const terminal = readFileSync(
+      join(fixturesDir, 'naranjax-terminal.html'),
+      'utf8',
+    )
+    const qr = readFileSync(join(fixturesDir, 'naranjax-qr.html'), 'utf8')
+    const tap = readFileSync(join(fixturesDir, 'naranjax-tap.html'), 'utf8')
+
+    expect(parsearNaranjaXTerminal(terminal)).toHaveLength(9)
+    expect(parsearNaranjaXQr(qr)).toHaveLength(4)
+    expect(parsearNaranjaXTap(tap)).toHaveLength(2)
+
+    const filas = parsearNaranjaX({ terminal, qr, tap })
+    expect(filas).toHaveLength(15)
+    expect(filas.every(f => f.entidad === 'naranjax')).toBe(true)
+    expect(filas.every(f => f.ivaAdicional)).toBe(true)
+
+    expect(
+      filas.find(
+        f =>
+          f.producto === 'Terminal crédito NX 1 cuota' &&
+          f.acreditacionPlazoHabiles === 1,
+      ),
+    ).toMatchObject({
+      canal: 'pos',
+      medioPago: 'credito',
+      arancel: 0.044,
+    })
+    expect(
+      filas.find(
+        f =>
+          f.producto === 'Terminal crédito NX 1 cuota' &&
+          f.acreditacionLabel?.includes('Día NX'),
+      ),
+    ).toMatchObject({
+      arancel: 0,
+      acreditacionTipo: 'estandar',
+    })
+    expect(
+      filas.find(
+        f =>
+          f.producto === 'Terminal Plan Z' && f.acreditacionPlazoHabiles === 3,
+      ),
+    ).toMatchObject({
+      medioPago: 'credito_cuotas',
+      arancel: 0.1,
+    })
+
+    expect(
+      filas.find(f => f.producto === 'QR dinero en cuenta (promo 3 meses)'),
+    ).toMatchObject({
+      canal: 'qr',
+      medioPago: 'qr_cuenta',
+      arancel: 0,
+      acreditacionTipo: 'inmediata',
+      condiciones: expect.stringContaining('primeros 3 meses'),
+    })
+    expect(
+      filas.find(
+        f => f.producto === 'QR dinero en cuenta' && f.arancel === 0.008,
+      ),
+    ).toMatchObject({
+      acreditacionTipo: 'inmediata',
+    })
+    expect(filas.find(f => f.producto === 'QR débito')).toMatchObject({
+      arancel: 0.012,
+    })
+    expect(filas.find(f => f.producto === 'QR crédito')).toMatchObject({
+      arancel: 0.045,
+    })
+
+    expect(filas.find(f => f.producto === 'TAP débito')).toMatchObject({
+      canal: 'pos',
+      arancel: 0.012,
+      acreditacionTipo: 'inmediata',
+    })
+    expect(filas.find(f => f.producto === 'TAP crédito')).toMatchObject({
+      arancel: 0.045,
+    })
   })
 })
