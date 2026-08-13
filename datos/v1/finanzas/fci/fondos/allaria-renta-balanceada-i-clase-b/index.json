@@ -2,7 +2,7 @@
   "fondoId": "595",
   "claseId": "1206",
   "nombre": "Allaria Renta Balanceada I - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "714",
-  "patrimonio": 13067149213.05,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 13094615459.34,
+  "cantidadCuotapartes": 64035669.47,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 204060.476,
-    "ultimos7Dias": 0.0373,
-    "unMes": 0.953,
+    "valorCuotaparte": 204489.397,
+    "ultimos7Dias": 26.156,
+    "unMes": 16.0043,
     "noventaDias": 6.3843,
     "cientoOchentaDias": 18.4664,
     "enElAnio": 21.2393,
@@ -64,7 +65,13 @@
       "porcentaje": 5.6
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "AA(arg)f",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 0.899,
     "honorarioDepositaria": 0.1,
@@ -77,14 +84,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00356G-ea35a573.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

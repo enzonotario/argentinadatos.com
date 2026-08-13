@@ -2,25 +2,26 @@
   "fondoId": "879",
   "claseId": "2539",
   "nombre": "Argenfunds Renta Mixta Plus - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Argenfunds S.A.",
   "depositaria": "Banco Macro S.A.",
   "tipoRenta": "Renta Mixta",
   "tipoDD": "No Aplica",
-  "region": "Latinoamerica",
+  "region": "Latinoamérica",
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "No Aplicable",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1068",
-  "patrimonio": 1269571.45,
-  "inversionMinima": 1000,
+  "patrimonio": 1477478.45,
+  "cantidadCuotapartes": 1460908.08,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1005.539,
-    "ultimos7Dias": -0.3269,
-    "unMes": -0.6771,
+    "valorCuotaparte": 1011.343,
+    "ultimos7Dias": 9.3953,
+    "unMes": -3.7455,
     "noventaDias": 0.4954,
     "cientoOchentaDias": 1.6619,
     "enElAnio": 2.3231,
@@ -109,14 +110,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Argenfunds S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00377G-dc836163.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00377G-dc836163.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Macro S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00098-871484a2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00098-871484a2.jpg"
     }
   ]
 }

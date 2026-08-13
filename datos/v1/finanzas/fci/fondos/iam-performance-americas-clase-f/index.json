@@ -2,25 +2,26 @@
   "fondoId": "839",
   "claseId": "4094",
   "nombre": "IAM Performance Americas - Clase F",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Industrial Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Industrial S.A.",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
-  "region": "Latinoamerica",
+  "region": "Latinoamérica",
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1039",
-  "patrimonio": 3768836.79,
-  "inversionMinima": 100,
+  "patrimonio": 3781471.76,
+  "cantidadCuotapartes": 3135906.9,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 3,
   "rendimientos": {
-    "valorCuotaparte": 1201.833,
-    "ultimos7Dias": -0.27,
-    "unMes": 0.8403,
+    "valorCuotaparte": 1205.862,
+    "ultimos7Dias": 17.4803,
+    "unMes": 13.1388,
     "noventaDias": 0.3025,
     "cientoOchentaDias": 1.6551,
     "enElAnio": 2.2801,
@@ -95,14 +96,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Industrial Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00039G-d09ad373.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00039G-d09ad373.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Industrial S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00391-92ebcc0c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00391-92ebcc0c.jpg"
     }
   ]
 }

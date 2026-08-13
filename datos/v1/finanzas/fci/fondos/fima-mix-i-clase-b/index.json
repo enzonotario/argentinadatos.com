@@ -2,7 +2,7 @@
   "fondoId": "663",
   "claseId": "1371",
   "nombre": "Fima Mix I - Clase B",
-  "fecha": "2026-08-06",
+  "fecha": "2026-08-12",
   "administradora": "Galicia Asset Management S.A.U.",
   "depositaria": "Banco de Galicia y Buenos Aires S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "802",
-  "patrimonio": 5589009435.8,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 5536066894.21,
+  "cantidadCuotapartes": 87886442.78,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 62866.418,
-    "ultimos7Dias": 1.0325,
-    "unMes": 0.3699,
+    "valorCuotaparte": 62991.136,
+    "ultimos7Dias": 15.4145,
+    "unMes": 13.3864,
     "noventaDias": 5.6577,
     "cientoOchentaDias": 8.131,
     "enElAnio": 6.947,
@@ -96,7 +97,13 @@
       "porcentaje": 2.2
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "AA",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 1.5725,
     "honorarioDepositaria": 0.2775,
@@ -109,14 +116,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Galicia Asset Management S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00002G-01a59b57.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00002G-01a59b57.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Galicia y Buenos Aires S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00081-d14fcb5c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00081-d14fcb5c.jpg"
     }
   ]
 }

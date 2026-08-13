@@ -2,25 +2,26 @@
   "fondoId": "1406",
   "claseId": "4096",
   "nombre": "Dracma Abierto Pymes - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Dracma Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "PyMes",
+  "tipoRenta": "Retorno Total",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1323",
-  "patrimonio": 71863118.57,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 78538297.07,
+  "cantidadCuotapartes": 28805175.51,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 2714.663,
-    "ultimos7Dias": 0.4261,
-    "unMes": 2.0454,
+    "valorCuotaparte": 2726.534,
+    "ultimos7Dias": 22.8016,
+    "unMes": 22.9021,
     "noventaDias": 6.1995,
     "cientoOchentaDias": 13.728,
     "enElAnio": 17.2138,
@@ -119,14 +120,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Dracma Asset Management S.A.",
       "logo": null
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

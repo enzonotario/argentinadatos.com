@@ -2,7 +2,7 @@
   "fondoId": "1570",
   "claseId": "5102",
   "nombre": "IOL Dólar Ahorro Plus - Clase F",
-  "fecha": "2026-08-11",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -14,13 +14,14 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1516",
   "patrimonio": 0,
-  "inversionMinima": 1000,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1111.602,
-    "ultimos7Dias": 0.1168,
-    "unMes": 0.3833,
+    "valorCuotaparte": 1113.06,
+    "ultimos7Dias": 10.6747,
+    "unMes": 5.8255,
     "noventaDias": 1.5524,
     "cientoOchentaDias": 3.2207,
     "enElAnio": 4.2902,
@@ -101,14 +102,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

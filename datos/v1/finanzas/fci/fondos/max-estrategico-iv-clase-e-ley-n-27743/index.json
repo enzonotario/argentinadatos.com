@@ -2,7 +2,7 @@
   "fondoId": "1357",
   "claseId": "4736",
   "nombre": "Max Estrategico IV - Clase E Ley N° 27.743",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Max Capital Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -14,13 +14,14 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1284",
   "patrimonio": 0,
+  "cantidadCuotapartes": 0,
   "inversionMinima": 0,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1,
+    "valorCuotaparte": 1000,
     "ultimos7Dias": 0,
-    "unMes": 0,
+    "unMes": 1215450,
     "noventaDias": 0,
     "cientoOchentaDias": 0,
     "enElAnio": 0,
@@ -34,25 +35,25 @@
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 0,
+    "honorarioDepositaria": 0,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Max Capital Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03014G-5673e990.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03014G-5673e990.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "180",
   "claseId": "2140",
   "nombre": "Premier Renta Fija Crecimiento - Clase C",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Supervielle Asset Management S.A.",
   "depositaria": "Banco Supervielle S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "232",
   "patrimonio": 0,
-  "inversionMinima": 120000000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
     "valorCuotaparte": 5573.001,
     "ultimos7Dias": 0,
-    "unMes": 0.7946,
+    "unMes": 1.086,
     "noventaDias": 6.6885,
     "cientoOchentaDias": 24.2579,
     "enElAnio": 29.9467,
@@ -71,14 +72,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Supervielle Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00052G-7dab5db1.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00052G-7dab5db1.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Supervielle S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00097-9a7b1e3e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00097-9a7b1e3e.jpg"
     }
   ]
 }

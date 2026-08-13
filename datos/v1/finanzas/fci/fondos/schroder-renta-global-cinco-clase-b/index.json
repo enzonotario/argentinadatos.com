@@ -2,7 +2,7 @@
   "fondoId": "1292",
   "claseId": "3617",
   "nombre": "Schroder Renta Global Cinco - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Schroder S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1221",
-  "patrimonio": 76244980943.8,
-  "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 76565400149.5,
+  "cantidadCuotapartes": 4666165433.41,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 16339.965,
-    "ultimos7Dias": -0.2965,
-    "unMes": 1.4624,
+    "valorCuotaparte": 16408.634,
+    "ultimos7Dias": 21.9131,
+    "unMes": 19.0251,
     "noventaDias": 7.5117,
     "cientoOchentaDias": 10.8467,
     "enElAnio": 10.7934,
@@ -93,14 +94,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Schroder S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00051G-0c57ca49.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00051G-0c57ca49.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -2,25 +2,26 @@
   "fondoId": "1413",
   "claseId": "4125",
   "nombre": "GMC Retorno Total II - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "GMC Asset Management S.A.U.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "Retorno Total",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1379",
-  "patrimonio": 9106567748.69,
-  "inversionMinima": 100000001,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 9262049534.26,
+  "cantidadCuotapartes": 3605829005.17,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 2550.1,
-    "ultimos7Dias": 0.4768,
-    "unMes": 2.1552,
+    "valorCuotaparte": 2568.6,
+    "ultimos7Dias": 37.8276,
+    "unMes": 28.564,
     "noventaDias": 6.6274,
     "cientoOchentaDias": 18.2134,
     "enElAnio": 1.1623,
@@ -109,14 +110,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "GMC Asset Management S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00394G-6fce82d3.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00394G-6fce82d3.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

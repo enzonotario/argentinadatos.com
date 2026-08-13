@@ -2,7 +2,7 @@
   "fondoId": "184",
   "claseId": "766",
   "nombre": "Alpha Retorno Total - Clase A",
-  "fecha": "2026-08-11",
+  "fecha": "2026-08-12",
   "administradora": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "ICBC (Arg) S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "236",
-  "patrimonio": 7328774981.63,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 7289602187.84,
+  "cantidadCuotapartes": 213797.81,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 34265083.986,
-    "ultimos7Dias": -2.3198,
-    "unMes": -2.5675,
+    "valorCuotaparte": 34095775.394,
+    "ultimos7Dias": -146.1262,
+    "unMes": -41.6976,
     "noventaDias": 5.0371,
     "cientoOchentaDias": 6.108,
     "enElAnio": 5.9999,
@@ -111,14 +112,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00008G-f9ac58c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00008G-f9ac58c8.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "ICBC (Arg) S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00062-50a49656.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00062-50a49656.jpg"
     }
   ]
 }

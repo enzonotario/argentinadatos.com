@@ -2,7 +2,7 @@
   "fondoId": "832",
   "claseId": "2358",
   "nombre": "Balanz Opportunity - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Balanz S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,41 +11,42 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "946",
-  "patrimonio": 27065442.42,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 27170932.07,
+  "cantidadCuotapartes": 618501.1,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 43759.732,
-    "ultimos7Dias": -0.1371,
-    "unMes": 0.919,
-    "noventaDias": 6.1926,
-    "cientoOchentaDias": 15.8322,
-    "enElAnio": 18.13,
-    "doceMeses": 42.1471
+    "valorCuotaparte": 43930.289,
+    "ultimos7Dias": 20.3231,
+    "unMes": 12.7367,
+    "noventaDias": 6.1015,
+    "cientoOchentaDias": 15.9798,
+    "enElAnio": 18.5905,
+    "doceMeses": 44.9613
   },
   "composicionCartera": [
     {
       "nombre": "Bono Boncer TZXO6",
-      "porcentaje": 18.2
+      "porcentaje": 18
     },
     {
       "nombre": "Bono Boncer TZXD6",
-      "porcentaje": 15.8
+      "porcentaje": 15.6
     },
     {
       "nombre": "Bono Boncer 2027 TZXM7",
-      "porcentaje": 13.4
+      "porcentaje": 13.3
     },
     {
       "nombre": "Lelink D30S6",
-      "porcentaje": 12.7
+      "porcentaje": 12.6
     },
     {
       "nombre": "Bono Dual TXMD9",
-      "porcentaje": 10.1
+      "porcentaje": 10
     },
     {
       "nombre": "Bonos Rep Argentina 2030",
@@ -61,7 +62,7 @@
     },
     {
       "nombre": "Bono Boncer TXMJ9",
-      "porcentaje": 2.9
+      "porcentaje": 2.8
     },
     {
       "nombre": "Lecer X30N6",
@@ -72,8 +73,12 @@
       "porcentaje": 2.3
     },
     {
+      "nombre": "FCI Max Money Market - Clase B",
+      "porcentaje": 2.1
+    },
+    {
       "nombre": "Resto de Activos",
-      "porcentaje": 11.3
+      "porcentaje": 10.1
     }
   ],
   "calificaciones": [
@@ -95,14 +100,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Balanz S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00372G-cc6ce723.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00372G-cc6ce723.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

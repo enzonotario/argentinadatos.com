@@ -1,8 +1,8 @@
 {
   "fondoId": "818",
   "claseId": "2268",
-  "nombre": "Intervalores Total Return — Intervalores Dólar Total Return - Clase A",
-  "fecha": "2026-08-04",
+  "nombre": "Intervalores Dólar Total Return - Clase A",
+  "fecha": "2026-08-12",
   "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1016",
-  "patrimonio": 9401070.31,
-  "inversionMinima": 1000,
+  "patrimonio": 9562342.63,
+  "cantidadCuotapartes": 8576691,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1113.632,
-    "ultimos7Dias": 0.6865,
-    "unMes": 1.0821,
+    "valorCuotaparte": 1114.922,
+    "ultimos7Dias": 10.6944,
+    "unMes": 16.5685,
     "noventaDias": 1.1849,
     "cientoOchentaDias": 3.2973,
     "enElAnio": 3.9277,
@@ -72,7 +73,13 @@
       "porcentaje": 8.2
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "A-c(Arg)",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 1.75,
     "honorarioDepositaria": 0.1,
@@ -85,14 +92,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00356G-ea35a573.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

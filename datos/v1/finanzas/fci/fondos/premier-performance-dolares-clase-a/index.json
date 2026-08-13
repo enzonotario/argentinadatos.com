@@ -2,7 +2,7 @@
   "fondoId": "794",
   "claseId": "1856",
   "nombre": "Premier Performance Dólares - Clase A",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Supervielle Asset Management S.A.",
   "depositaria": "Banco Supervielle S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1000",
-  "patrimonio": 2570478.41,
-  "inversionMinima": 100000,
+  "patrimonio": 2567762.1,
+  "cantidadCuotapartes": 1395611.02,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1858.412,
-    "ultimos7Dias": 0.3882,
-    "unMes": 0.3653,
+    "valorCuotaparte": 1839.884,
+    "ultimos7Dias": -36.9695,
+    "unMes": -5.0712,
     "noventaDias": 3.5773,
     "cientoOchentaDias": 6.2091,
     "enElAnio": 8.1891,
@@ -75,14 +76,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Supervielle Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00052G-7dab5db1.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00052G-7dab5db1.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Supervielle S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00097-9a7b1e3e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00097-9a7b1e3e.jpg"
     }
   ]
 }

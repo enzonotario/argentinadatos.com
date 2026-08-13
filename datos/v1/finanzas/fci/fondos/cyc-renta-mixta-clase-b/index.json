@@ -2,7 +2,7 @@
   "fondoId": "815",
   "claseId": "2221",
   "nombre": "CYC Renta Mixta - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "C y C Administradora de Fondos S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "S&P Merval",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1007",
-  "patrimonio": 25039798136.37,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 24304110296.81,
+  "cantidadCuotapartes": 186070266.53,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 134708.6736,
-    "ultimos7Dias": -0.6143,
-    "unMes": 1.0802,
+    "valorCuotaparte": 130617.915,
+    "ultimos7Dias": -158.3446,
+    "unMes": -41.4824,
     "noventaDias": 6.0682,
     "cientoOchentaDias": 5.4208,
     "enElAnio": 4.2691,
@@ -92,7 +93,13 @@
       "porcentaje": 0.9
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "A",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 2,
     "honorarioDepositaria": 0.1815,
@@ -105,14 +112,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "C y C Administradora de Fondos S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02471G-04849e4d.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02471G-04849e4d.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

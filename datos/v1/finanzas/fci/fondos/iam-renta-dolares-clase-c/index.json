@@ -2,7 +2,7 @@
   "fondoId": "731",
   "claseId": "1591",
   "nombre": "IAM Renta Dólares - Clase C",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Industrial Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Industrial S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "914",
-  "patrimonio": 3708168.64,
-  "inversionMinima": 1000,
+  "patrimonio": 3711380.62,
+  "cantidadCuotapartes": 2053172.08,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1804.294,
-    "ultimos7Dias": 0.0873,
-    "unMes": 0.4856,
+    "valorCuotaparte": 1807.633,
+    "ultimos7Dias": 8.1328,
+    "unMes": 9.4232,
     "noventaDias": 2.0591,
     "cientoOchentaDias": 5.1265,
     "enElAnio": 7.3013,
@@ -147,14 +148,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Industrial Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00039G-d09ad373.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00039G-d09ad373.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Industrial S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00391-92ebcc0c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00391-92ebcc0c.jpg"
     }
   ]
 }

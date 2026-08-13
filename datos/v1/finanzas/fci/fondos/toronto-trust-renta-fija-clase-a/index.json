@@ -2,7 +2,7 @@
   "fondoId": "562",
   "claseId": "1138",
   "nombre": "Toronto Trust Renta Fija - Clase A",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco Credito y Securitizacion S.A. (BACS)",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "700",
-  "patrimonio": 14895249455.8,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 14486474653.36,
+  "cantidadCuotapartes": 191792945.66,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 75190.966,
-    "ultimos7Dias": 0.2133,
-    "unMes": 1.3462,
+    "valorCuotaparte": 75531.843,
+    "ultimos7Dias": 24.6842,
+    "unMes": 17.6349,
     "noventaDias": 5.4273,
     "cientoOchentaDias": 14.2675,
     "enElAnio": 18.0301,
@@ -123,12 +124,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Investis Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00021G-d9e0d02c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00021G-d9e0d02c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Credito y Securitizacion S.A. (BACS)",
       "logo": null
     }

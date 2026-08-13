@@ -2,7 +2,7 @@
   "fondoId": "740",
   "claseId": "4905",
   "nombre": "GSS Energia - Clase Ley N° 27.743",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Grupo SS S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "864",
   "patrimonio": 0,
+  "cantidadCuotapartes": 0,
   "inversionMinima": 10000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1,
+    "valorCuotaparte": 1000,
     "ultimos7Dias": 0,
-    "unMes": 0,
+    "unMes": 1215450,
     "noventaDias": 0,
     "cientoOchentaDias": 0,
     "enElAnio": 0,
@@ -105,14 +106,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Grupo SS S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00326G-57a9b0bd.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00326G-57a9b0bd.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

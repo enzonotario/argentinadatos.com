@@ -2,7 +2,7 @@
   "fondoId": "1286",
   "claseId": "3587",
   "nombre": "Novus Liquidez Plus - Clase D",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Novus Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1171",
-  "patrimonio": 1366301015.84,
-  "inversionMinima": 250000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 1373394099.39,
+  "cantidadCuotapartes": 81401625.72,
+  "inversionMinima": 5000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 16784.69,
-    "ultimos7Dias": 0.0875,
-    "unMes": 1.1766,
+    "valorCuotaparte": 16871.826,
+    "ultimos7Dias": 27.0694,
+    "unMes": 17.6708,
     "noventaDias": 4.9118,
     "cientoOchentaDias": 15.3877,
     "enElAnio": 19.9937,
@@ -71,14 +72,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Novus Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02887G-ef45d825.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02887G-ef45d825.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

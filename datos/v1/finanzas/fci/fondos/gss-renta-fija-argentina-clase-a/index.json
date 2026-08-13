@@ -2,7 +2,7 @@
   "fondoId": "685",
   "claseId": "1444",
   "nombre": "GSS Renta Fija Argentina - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Grupo SS S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "814",
-  "patrimonio": 1070259647.08,
+  "patrimonio": 1075151066.89,
+  "cantidadCuotapartes": 9454220,
   "inversionMinima": 10000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 112964.318,
-    "ultimos7Dias": -0.1889,
-    "unMes": 1.5824,
+    "valorCuotaparte": 113721.816,
+    "ultimos7Dias": 34.9651,
+    "unMes": 21.823,
     "noventaDias": 5.8015,
     "cientoOchentaDias": 21.3995,
     "enElAnio": 26.1563,
@@ -91,14 +92,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Grupo SS S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00326G-57a9b0bd.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00326G-57a9b0bd.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

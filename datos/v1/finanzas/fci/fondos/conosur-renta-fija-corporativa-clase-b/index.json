@@ -2,7 +2,7 @@
   "fondoId": "1670",
   "claseId": "5592",
   "nombre": "ConoSur Renta Fija Corporativa - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Cono Sur S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1674",
-  "patrimonio": 8574933.03,
-  "inversionMinima": 0,
+  "patrimonio": 8800056.11,
+  "cantidadCuotapartes": 8047218.37,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
-  "plazoLiquidacionDias": 1,
+  "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1090.499,
-    "ultimos7Dias": -0.0415,
-    "unMes": 0.8872,
+    "valorCuotaparte": 1093.553,
+    "ultimos7Dias": 14.6029,
+    "unMes": 10.9181,
     "noventaDias": 2.0899,
     "cientoOchentaDias": 4.9418,
     "enElAnio": 6.5531,
@@ -117,14 +118,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Cono Sur S.G.F.C.I.S.A.",
       "logo": null
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

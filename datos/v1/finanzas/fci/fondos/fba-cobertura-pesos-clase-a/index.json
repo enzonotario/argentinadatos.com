@@ -2,7 +2,7 @@
   "fondoId": "845",
   "claseId": "3550",
   "nombre": "FBA Cobertura Pesos - Clase A",
-  "fecha": "2026-08-06",
+  "fecha": "2026-08-12",
   "administradora": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "BBVA Argentina S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1048",
-  "patrimonio": 21249900930.57,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 21075589670.31,
+  "cantidadCuotapartes": 1103471273.7652,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 18926.419,
-    "ultimos7Dias": -0.42,
-    "unMes": 0.1427,
+    "valorCuotaparte": 19099.355,
+    "ultimos7Dias": 35.0267,
+    "unMes": 10.9529,
     "noventaDias": 3.7311,
     "cientoOchentaDias": 16.7527,
     "enElAnio": 21.6652,
@@ -77,14 +78,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00029G-9a6fc701.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00029G-9a6fc701.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "BBVA Argentina S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00079-a62ab0c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00079-a62ab0c8.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "1587",
   "claseId": "5182",
   "nombre": "Wise Capital Money Markets - Clase B",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Wise Capital Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1582",
-  "patrimonio": 5929820347.81,
+  "patrimonio": 6323376418.46,
+  "cantidadCuotapartes": 4156821037.84,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1515.123,
-    "ultimos7Dias": 17.7218,
-    "unMes": 16.3506,
+    "valorCuotaparte": 1521.205,
+    "ultimos7Dias": 18.3444,
+    "unMes": 17.0845,
     "noventaDias": 16.5708,
     "cientoOchentaDias": 18.81,
     "enElAnio": 20.3726,
@@ -75,14 +76,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Wise Capital Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03233G-77b3387a.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03233G-77b3387a.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

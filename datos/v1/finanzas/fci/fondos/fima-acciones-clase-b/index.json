@@ -11,16 +11,17 @@
   "benchmark": "S&P Mar",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "3",
   "patrimonio": 56004989955.95,
-  "inversionMinima": 5000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 193699582.31,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
     "valorCuotaparte": 289133.251,
-    "ultimos7Dias": -4.3502,
-    "unMes": -5.8469,
+    "ultimos7Dias": -226.8314,
+    "unMes": -83.1947,
     "noventaDias": 9.3114,
     "cientoOchentaDias": 4.7785,
     "enElAnio": -4.3097,
@@ -95,14 +96,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Galicia Asset Management S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00002G-01a59b57.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00002G-01a59b57.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Galicia y Buenos Aires S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00081-d14fcb5c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00081-d14fcb5c.jpg"
     }
   ]
 }

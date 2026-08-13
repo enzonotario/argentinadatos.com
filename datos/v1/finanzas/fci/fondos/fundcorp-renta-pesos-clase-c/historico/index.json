@@ -2,7 +2,7 @@
   "fondoId": "1916",
   "claseId": "6625",
   "nombre": "Fundcorp Renta Pesos - Clase C",
-  "fechaActualizacion": "2026-08-13T13:10:26.000Z",
+  "fechaActualizacion": "2026-08-13T21:23:19.000Z",
   "historico": [
     {
       "slug": "fundcorp-renta-pesos-clase-c",
@@ -13,12 +13,28 @@
       "categoria": "Renta Mixta",
       "categoriaKey": "rentaMixta",
       "horizonte": "Plazo Flexible",
-      "valorCuotaparte": 1,
+      "valorCuotaparte": 1000,
       "patrimonio": 1000,
       "retornoDiario": null,
-      "retornoAcumulado": 0,
+      "retornoAcumulado": 99900,
       "flujoEstimado": null,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "fundcorp-renta-pesos-clase-c",
+      "fondoId": "1916",
+      "claseId": "6625",
+      "nombre": "Fundcorp Renta Pesos - Clase C",
+      "fecha": "2026-08-03",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Plazo Flexible",
+      "valorCuotaparte": 1001.36,
+      "patrimonio": 1001.36,
+      "retornoDiario": 0.136,
+      "retornoAcumulado": 0.136,
+      "flujoEstimado": 0,
+      "origen": "cnv-excel"
     },
     {
       "slug": "fundcorp-renta-pesos-clase-c",
@@ -31,10 +47,10 @@
       "horizonte": "Plazo Flexible",
       "valorCuotaparte": 1001.82,
       "patrimonio": 1001.82,
-      "retornoDiario": 100082,
-      "retornoAcumulado": 100082,
-      "flujoEstimado": -1000818.18,
-      "origen": "cafci-detail"
+      "retornoDiario": 0.045938,
+      "retornoAcumulado": 0.182,
+      "flujoEstimado": -0.000005,
+      "origen": "cnv-excel"
     },
     {
       "slug": "fundcorp-renta-pesos-clase-c",
@@ -48,9 +64,89 @@
       "valorCuotaparte": 1002.28,
       "patrimonio": 1002.28,
       "retornoDiario": 0.045916,
-      "retornoAcumulado": 100128,
+      "retornoAcumulado": 0.228,
       "flujoEstimado": 0.000004,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "fundcorp-renta-pesos-clase-c",
+      "fondoId": "1916",
+      "claseId": "6625",
+      "nombre": "Fundcorp Renta Pesos - Clase C",
+      "fecha": "2026-08-06",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Plazo Flexible",
+      "valorCuotaparte": 1002.74,
+      "patrimonio": 1002.74,
+      "retornoDiario": 0.045895,
+      "retornoAcumulado": 0.274,
+      "flujoEstimado": 0.000004,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "fundcorp-renta-pesos-clase-c",
+      "fondoId": "1916",
+      "claseId": "6625",
+      "nombre": "Fundcorp Renta Pesos - Clase C",
+      "fecha": "2026-08-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Plazo Flexible",
+      "valorCuotaparte": 1003.2,
+      "patrimonio": 1003.2,
+      "retornoDiario": 0.045874,
+      "retornoAcumulado": 0.32,
+      "flujoEstimado": 0.000003,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "fundcorp-renta-pesos-clase-c",
+      "fondoId": "1916",
+      "claseId": "6625",
+      "nombre": "Fundcorp Renta Pesos - Clase C",
+      "fecha": "2026-08-10",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Plazo Flexible",
+      "valorCuotaparte": 1004.37,
+      "patrimonio": 1004.37,
+      "retornoDiario": 0.116627,
+      "retornoAcumulado": 0.437,
+      "flujoEstimado": -0.000002,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "fundcorp-renta-pesos-clase-c",
+      "fondoId": "1916",
+      "claseId": "6625",
+      "nombre": "Fundcorp Renta Pesos - Clase C",
+      "fecha": "2026-08-11",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Plazo Flexible",
+      "valorCuotaparte": 1001.34,
+      "patrimonio": 1001.34,
+      "retornoDiario": -0.301682,
+      "retornoAcumulado": 0.134,
+      "flujoEstimado": 0.000004,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "fundcorp-renta-pesos-clase-c",
+      "fondoId": "1916",
+      "claseId": "6625",
+      "nombre": "Fundcorp Renta Pesos - Clase C",
+      "fecha": "2026-08-12",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Plazo Flexible",
+      "valorCuotaparte": 1002.35,
+      "patrimonio": 1002.35,
+      "retornoDiario": 0.100865,
+      "retornoAcumulado": 0.235,
+      "flujoEstimado": -0.000002,
+      "origen": "cnv-excel"
     }
   ]
 }

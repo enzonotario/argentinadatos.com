@@ -2,7 +2,7 @@
   "fondoId": "1401",
   "claseId": "4063",
   "nombre": "Adcap Balanceado XXVI - Clase B",
-  "fecha": "2026-08-06",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,49 +11,54 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1384",
-  "patrimonio": 8964189719.85,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 9031947364.14,
+  "cantidadCuotapartes": 1263059581.05,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 7060.525,
-    "ultimos7Dias": -0.8311,
-    "unMes": 0.8543,
-    "noventaDias": 12.447,
-    "cientoOchentaDias": 20.3784,
-    "enElAnio": 23.5731,
-    "doceMeses": 68.7647
+    "valorCuotaparte": 7150.848,
+    "ultimos7Dias": -6.2504,
+    "unMes": 18.306,
+    "noventaDias": 14.2685,
+    "cientoOchentaDias": 22.1778,
+    "enElAnio": 25.1539,
+    "doceMeses": 69.7861
   },
   "composicionCartera": [
     {
       "nombre": "Bono Buenos Aires 2037",
-      "porcentaje": 47.7
+      "porcentaje": 51.5
     },
     {
       "nombre": "FCI Allaria Ahorro - Clase C",
-      "porcentaje": 3.4
+      "porcentaje": 4.3
     },
     {
       "nombre": "ON YPF C 18",
-      "porcentaje": 3.3
+      "porcentaje": 3.6
     },
     {
       "nombre": "ON YPF Clase 34",
-      "porcentaje": 2.7
+      "porcentaje": 2.8
     },
     {
       "nombre": "ON Pampa Energia C26",
-      "porcentaje": 2.2
+      "porcentaje": 2.4
     },
     {
       "nombre": "ON Pluspetrol Clase 5",
-      "porcentaje": 2.1
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "ON Vista Gas y Oil Arg C29",
+      "porcentaje": 2
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 33.4
+      "porcentaje": 27.1
     }
   ],
   "calificaciones": [],
@@ -69,14 +74,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

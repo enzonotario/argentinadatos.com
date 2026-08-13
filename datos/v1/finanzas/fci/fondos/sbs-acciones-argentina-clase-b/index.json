@@ -2,7 +2,7 @@
   "fondoId": "436",
   "claseId": "821",
   "nombre": "SBS Acciones Argentina - Clase B",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "SBS Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Variable",
@@ -11,16 +11,17 @@
   "benchmark": "S&P Merval",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "576",
-  "patrimonio": 22580840607.46,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 21342674426.14,
+  "cantidadCuotapartes": 11635148.21,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1940660.563,
-    "ultimos7Dias": -1.7978,
-    "unMes": 0.5638,
+    "valorCuotaparte": 1834327.68,
+    "ultimos7Dias": -229.5083,
+    "unMes": -80.1338,
     "noventaDias": 9.6577,
     "cientoOchentaDias": 7.9186,
     "enElAnio": 2.5337,
@@ -87,7 +88,7 @@
   "calificaciones": [
     {
       "calificadora": "Standard and Poors",
-      "calificacion": "raBBBc (nuevo)",
+      "calificacion": "A",
       "fecha": "2009-07-23"
     }
   ],
@@ -103,14 +104,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "SBS Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00347G-615b02d0.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00347G-615b02d0.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

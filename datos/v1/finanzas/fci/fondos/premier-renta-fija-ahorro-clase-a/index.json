@@ -2,7 +2,7 @@
   "fondoId": "282",
   "claseId": "282",
   "nombre": "Premier Renta Fija Ahorro - Clase A",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Supervielle Asset Management S.A.",
   "depositaria": "Banco Supervielle S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "361",
-  "patrimonio": 62318440792.73,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 59540180068.72,
+  "cantidadCuotapartes": 63322838.4,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 936033.466,
-    "ultimos7Dias": 0.3811,
-    "unMes": 1.6548,
+    "valorCuotaparte": 940263.917,
+    "ultimos7Dias": 24.0551,
+    "unMes": 20.8302,
     "noventaDias": 5.7792,
     "cientoOchentaDias": 14.9834,
     "enElAnio": 19.2375,
@@ -72,8 +73,8 @@
     }
   ],
   "honorarios": {
-    "honorarioGerente": 2.3,
-    "honorarioDepositaria": 0.2,
+    "honorarioGerente": 2.45,
+    "honorarioDepositaria": 0.05,
     "comisionIngreso": 0,
     "comisionEgreso": 0,
     "comisionTransferencia": 0,
@@ -83,14 +84,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Supervielle Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00052G-7dab5db1.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00052G-7dab5db1.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Supervielle S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00097-9a7b1e3e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00097-9a7b1e3e.jpg"
     }
   ]
 }

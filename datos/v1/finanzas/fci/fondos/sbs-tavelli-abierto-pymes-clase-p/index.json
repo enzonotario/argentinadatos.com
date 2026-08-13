@@ -2,25 +2,26 @@
   "fondoId": "549",
   "claseId": "1111",
   "nombre": "SBS Tavelli Abierto Pymes - Clase P",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "SBS Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "PyMes",
+  "tipoRenta": "Retorno Total",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Plazo Flexible",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "666",
-  "patrimonio": 10243396979.21,
-  "inversionMinima": 5000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 10280189118.86,
+  "cantidadCuotapartes": 142680608.49,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 3,
   "rendimientos": {
-    "valorCuotaparte": 71792.531,
-    "ultimos7Dias": 0.3352,
-    "unMes": 1.6307,
+    "valorCuotaparte": 72050.359,
+    "ultimos7Dias": 18.726,
+    "unMes": 18.5365,
     "noventaDias": 5.1124,
     "cientoOchentaDias": 12.2651,
     "enElAnio": 16.1876,
@@ -52,7 +53,13 @@
       "porcentaje": 65.8
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "Af.ar",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 2,
     "honorarioDepositaria": 0.1,
@@ -65,14 +72,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "SBS Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00347G-615b02d0.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00347G-615b02d0.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

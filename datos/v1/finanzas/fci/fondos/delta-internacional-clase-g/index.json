@@ -2,7 +2,7 @@
   "fondoId": "420",
   "claseId": "1930",
   "nombre": "Delta Internacional - Clase G",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Delta Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Variable",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "532",
   "patrimonio": 0,
-  "inversionMinima": 0,
-  "monedaInversion": "Dolar Estadounidense",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 60.504,
-    "ultimos7Dias": 0.882,
-    "unMes": -0.4279,
+    "valorCuotaparte": 60.074,
+    "ultimos7Dias": -37.0578,
+    "unMes": -14.3698,
     "noventaDias": -5.9197,
     "cientoOchentaDias": -5.0664,
     "enElAnio": -3.4932,
@@ -100,7 +101,13 @@
       "porcentaje": 17.4
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "raAAc",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 2.5,
     "honorarioDepositaria": 0.0908,
@@ -113,14 +120,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Delta Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00321G-78ba876b.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00321G-78ba876b.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

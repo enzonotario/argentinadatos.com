@@ -2,25 +2,26 @@
   "fondoId": "594",
   "claseId": "1203",
   "nombre": "Adcap Cima Abierto Pymes - Clase A",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "PyMes",
+  "tipoRenta": "Retorno Total",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Badlar",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "745",
-  "patrimonio": 3138491271.46,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 3147501999.33,
+  "cantidadCuotapartes": 143120114.31,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 21929.072,
-    "ultimos7Dias": 0.2837,
-    "unMes": 1.4443,
+    "valorCuotaparte": 21992.031,
+    "ultimos7Dias": 19.6035,
+    "unMes": 17.5583,
     "noventaDias": 5.5078,
     "cientoOchentaDias": 13.4987,
     "enElAnio": 16.675,
@@ -64,7 +65,13 @@
       "porcentaje": 71.8
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "A-bf.ar",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 1.5,
     "honorarioDepositaria": 0.1573,
@@ -77,14 +84,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "799",
   "claseId": "1987",
   "nombre": "SBS Patrimonio - Clase B",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "SBS Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "848",
-  "patrimonio": 40476360781.06,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 42597287587.05,
+  "cantidadCuotapartes": 952249241.06,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 44601.56,
-    "ultimos7Dias": -0.1343,
-    "unMes": 1.5577,
+    "valorCuotaparte": 44733.338,
+    "ultimos7Dias": 27.9644,
+    "unMes": 17.0042,
     "noventaDias": 7.8008,
     "cientoOchentaDias": 18.8553,
     "enElAnio": 21.6322,
@@ -93,14 +94,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "SBS Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00347G-615b02d0.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00347G-615b02d0.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

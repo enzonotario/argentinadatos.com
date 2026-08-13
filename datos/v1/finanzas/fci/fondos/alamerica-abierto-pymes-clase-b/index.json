@@ -2,34 +2,35 @@
   "fondoId": "1269",
   "claseId": "3534",
   "nombre": "Alamerica Abierto Pymes - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "PyMes",
+  "tipoRenta": "Retorno Total",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1217",
-  "patrimonio": 48390747301.67,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 48507612504.79,
+  "cantidadCuotapartes": 3060520589.11,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 15811.28,
-    "ultimos7Dias": 0.743,
-    "unMes": 1.7423,
-    "noventaDias": 5.1919,
-    "cientoOchentaDias": 12.7324,
-    "enElAnio": 16.095,
-    "doceMeses": 37.0623
+    "valorCuotaparte": 15849.465,
+    "ultimos7Dias": 23.0052,
+    "unMes": 21.3069,
+    "noventaDias": 5.2114,
+    "cientoOchentaDias": 12.3606,
+    "enElAnio": 16.3754,
+    "doceMeses": 37.2329
   },
   "composicionCartera": [
     {
       "nombre": "Bono Boncer 2027 TZXM7",
-      "porcentaje": 12.2
+      "porcentaje": 12.3
     },
     {
       "nombre": "Cheque #ARP180860001",
@@ -49,7 +50,7 @@
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 52.4
+      "porcentaje": 53.7
     }
   ],
   "calificaciones": [
@@ -71,14 +72,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00356G-ea35a573.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

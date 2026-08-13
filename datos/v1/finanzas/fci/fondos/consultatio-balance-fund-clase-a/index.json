@@ -2,25 +2,26 @@
   "fondoId": "89",
   "claseId": "1207",
   "nombre": "Consultatio Balance Fund - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "Retorno Total",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Otro",
   "horizonte": "Plazo Flexible",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "120",
-  "patrimonio": 10286375439.45,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 10490843638.21,
+  "cantidadCuotapartes": 2596887.84,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 4016281.633,
-    "ultimos7Dias": -0.3495,
-    "unMes": 0.6617,
+    "valorCuotaparte": 4039775.408,
+    "ultimos7Dias": 30.5017,
+    "unMes": 12.1582,
     "noventaDias": 6.3448,
     "cientoOchentaDias": 16.9446,
     "enElAnio": 19.9821,
@@ -87,7 +88,7 @@
   "calificaciones": [
     {
       "calificadora": "Standard and Poors",
-      "calificacion": "raAAc",
+      "calificacion": "EF-2",
       "fecha": "2013-09-17"
     }
   ],
@@ -103,14 +104,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00022G-3c173d8e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

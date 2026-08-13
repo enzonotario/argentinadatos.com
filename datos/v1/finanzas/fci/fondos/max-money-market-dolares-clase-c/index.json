@@ -2,7 +2,7 @@
   "fondoId": "1613",
   "claseId": "5311",
   "nombre": "Max Money Market Dólares - Clase C",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Max Capital Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1645",
-  "patrimonio": 426367.69,
+  "patrimonio": 426430.18,
+  "cantidadCuotapartes": 422594.62,
   "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1008.928,
-    "ultimos7Dias": 1.0442,
-    "unMes": 0.9273,
+    "valorCuotaparte": 1009.076,
+    "ultimos7Dias": 1.0957,
+    "unMes": 0.9569,
     "noventaDias": 0.8685,
     "cientoOchentaDias": 0.7572,
     "enElAnio": 0.825,
@@ -95,14 +96,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Max Capital Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03014G-5673e990.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03014G-5673e990.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

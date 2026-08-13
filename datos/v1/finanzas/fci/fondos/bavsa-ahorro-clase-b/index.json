@@ -2,7 +2,7 @@
   "fondoId": "1479",
   "claseId": "4377",
   "nombre": "BAVSA Ahorro - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "BAVSA Fondos S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1479",
-  "patrimonio": 47567071824.77,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 48874934799.38,
+  "cantidadCuotapartes": 23909658305.04,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 2036.351,
-    "ultimos7Dias": 20.016,
-    "unMes": 19.1946,
+    "valorCuotaparte": 2044.15,
+    "ultimos7Dias": 19.9701,
+    "unMes": 19.4849,
     "noventaDias": 19.0508,
     "cientoOchentaDias": 21.2415,
     "enElAnio": 22.1882,
@@ -85,14 +86,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "BAVSA Fondos S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03118G-d03fc40c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03118G-d03fc40c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

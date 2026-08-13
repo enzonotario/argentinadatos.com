@@ -2,7 +2,7 @@
   "fondoId": "15",
   "claseId": "15",
   "nombre": "Pionero Acciones Plus - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Macro Fondos S.G.F.C.I.S.A.",
   "depositaria": "Banco Macro S.A.",
   "tipoRenta": "Renta Variable",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "71",
-  "patrimonio": 2343157121.31,
-  "inversionMinima": 10000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 2255103717.11,
+  "cantidadCuotapartes": 6444152.41,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 363437.785,
-    "ultimos7Dias": -0.3928,
-    "unMes": 3.6635,
+    "valorCuotaparte": 349945.745,
+    "ultimos7Dias": -193.5719,
+    "unMes": -33.8091,
     "noventaDias": 10.8926,
     "cientoOchentaDias": 5.8661,
     "enElAnio": 3.0719,
@@ -103,14 +104,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Macro Fondos S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00054G-82963f72.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00054G-82963f72.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Macro S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00098-871484a2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00098-871484a2.jpg"
     }
   ]
 }

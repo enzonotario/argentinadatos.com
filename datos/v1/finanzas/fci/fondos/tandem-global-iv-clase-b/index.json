@@ -2,7 +2,7 @@
   "fondoId": "1866",
   "claseId": "6452",
   "nombre": "Tandem Global IV - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Tandem Capital S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -14,13 +14,14 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1931",
   "patrimonio": 0,
-  "inversionMinima": 1000,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1,
+    "valorCuotaparte": 1000,
     "ultimos7Dias": 0,
-    "unMes": 0,
+    "unMes": 1215450,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -101,14 +102,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Tandem Capital S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03163G-fbbfc93d.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03163G-fbbfc93d.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "1494",
   "claseId": "4457",
   "nombre": "Novus Renta Dólar - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Novus Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1494",
-  "patrimonio": 3801510.61,
-  "inversionMinima": 100,
+  "patrimonio": 3786560.63,
+  "cantidadCuotapartes": 2802087.86,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1356.671,
-    "ultimos7Dias": 0.0477,
-    "unMes": 1.0717,
+    "valorCuotaparte": 1351.335,
+    "ultimos7Dias": -20.5086,
+    "unMes": 4.8995,
     "noventaDias": 2.9696,
     "cientoOchentaDias": 6.2548,
     "enElAnio": 8.7684,
@@ -69,14 +70,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Novus Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02887G-ef45d825.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02887G-ef45d825.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

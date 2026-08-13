@@ -2,10 +2,10 @@
   "fondoId": "1910",
   "claseId": "6598",
   "nombre": "Special Situations Fund - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "CMF Asset Management S.A.U.",
   "depositaria": "Banco C.M.F. S.A.",
-  "tipoRenta": "Retorno Total",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Otro",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1974",
-  "patrimonio": 99.9,
-  "inversionMinima": 200000,
+  "patrimonio": 100.32,
+  "cantidadCuotapartes": 100,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 999,
-    "ultimos7Dias": -0.02,
-    "unMes": null,
+    "valorCuotaparte": 1003.2,
+    "ultimos7Dias": 21.9219,
+    "unMes": 21.9219,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -40,12 +41,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "CMF Asset Management S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00401G-76eff522.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00401G-76eff522.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco C.M.F. S.A.",
       "logo": null
     }

@@ -2,29 +2,30 @@
   "fondoId": "1227",
   "claseId": "3405",
   "nombre": "Alpha Abierto Pymes - Clase C",
-  "fecha": "2026-08-10",
+  "fecha": "2026-08-12",
   "administradora": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "ICBC (Arg) S.A.",
-  "tipoRenta": "PyMes",
+  "tipoRenta": "Retorno Total",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Badlar",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1167",
-  "patrimonio": 735431578.88,
-  "inversionMinima": 2000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 1383.93,
+  "cantidadCuotapartes": 145.22,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 9523.791,
-    "ultimos7Dias": 0.3573,
-    "unMes": 1.4544,
-    "noventaDias": 4.9746,
-    "cientoOchentaDias": 11.6538,
-    "enElAnio": 15.4688,
-    "doceMeses": 34.0102
+    "valorCuotaparte": 9529.735,
+    "ultimos7Dias": 11.7306,
+    "unMes": 17.2308,
+    "noventaDias": 4.9074,
+    "cientoOchentaDias": 11.5058,
+    "enElAnio": 15.5408,
+    "doceMeses": 34.2688
   },
   "composicionCartera": [
     {
@@ -83,14 +84,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00008G-f9ac58c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00008G-f9ac58c8.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "ICBC (Arg) S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00062-50a49656.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00062-50a49656.jpg"
     }
   ]
 }

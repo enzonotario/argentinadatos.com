@@ -2,25 +2,26 @@
   "fondoId": "485",
   "claseId": "961",
   "nombre": "Pellegrini Empresas Argentinas PyMES",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Pellegrini S.A.S.G.F.C.I.",
   "depositaria": "Banco de La Nacion Argentina",
-  "tipoRenta": "PyMes",
+  "tipoRenta": "Retorno Total",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "621",
-  "patrimonio": 69376428267.42,
+  "patrimonio": 68604391776.48,
+  "cantidadCuotapartes": 649392662.99,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 105197.298,
-    "ultimos7Dias": 0.29,
-    "unMes": 1.4156,
+    "valorCuotaparte": 105643.928,
+    "ultimos7Dias": 18.1849,
+    "unMes": 18.226,
     "noventaDias": 5.6608,
     "cientoOchentaDias": 13.9158,
     "enElAnio": 17.9117,
@@ -71,14 +72,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Pellegrini S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00041G-c2e70db2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00041G-c2e70db2.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de La Nacion Argentina",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00089-d9e4893d.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00089-d9e4893d.jpg"
     }
   ]
 }

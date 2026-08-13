@@ -2,7 +2,7 @@
   "fondoId": "1503",
   "claseId": "4498",
   "nombre": "BM Smart Corto Plazo - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Bull Market Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1169",
-  "patrimonio": 7103478043.52,
-  "inversionMinima": 4000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 7136278839.72,
+  "cantidadCuotapartes": 3470276660.96,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 2047.124,
-    "ultimos7Dias": 0.1654,
-    "unMes": 1.2113,
+    "valorCuotaparte": 2056.401,
+    "ultimos7Dias": 23.6297,
+    "unMes": 17.1896,
     "noventaDias": 5.5869,
     "cientoOchentaDias": 14.2857,
     "enElAnio": 18.4161,
@@ -85,14 +86,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Bull Market Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02507G-49489fb4.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02507G-49489fb4.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

@@ -2,25 +2,26 @@
   "fondoId": "623",
   "claseId": "1258",
   "nombre": "SBS Renta Dólar Latam - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "SBS Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
   "tipoDD": "No Aplica",
-  "region": "Latinoamerica",
+  "region": "Latinoamérica",
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "No Aplicable",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "753",
-  "patrimonio": 20783477.74,
-  "inversionMinima": 1000,
+  "patrimonio": 19797401.93,
+  "cantidadCuotapartes": 13341718.87,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1482.831,
-    "ultimos7Dias": 0.0551,
-    "unMes": 0.4094,
+    "valorCuotaparte": 1483.872,
+    "ultimos7Dias": 3.6606,
+    "unMes": 4.6767,
     "noventaDias": 0.9714,
     "cientoOchentaDias": 2.3231,
     "enElAnio": 2.686,
@@ -93,14 +94,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "SBS Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00347G-615b02d0.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00347G-615b02d0.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

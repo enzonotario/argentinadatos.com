@@ -2,7 +2,7 @@
   "fondoId": "527",
   "claseId": "1064",
   "nombre": "MEGAQM Performance II - Clase A",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "MEGA QM S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "669",
-  "patrimonio": 163748283.52,
+  "patrimonio": 163624556.14,
+  "cantidadCuotapartes": 535440.25,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 305839.775,
-    "ultimos7Dias": 0.4671,
-    "unMes": 1.1621,
+    "valorCuotaparte": 305588.826,
+    "ultimos7Dias": 7.3911,
+    "unMes": 13.7294,
     "noventaDias": 7.246,
     "cientoOchentaDias": 11.2957,
     "enElAnio": 10.0562,
@@ -79,14 +80,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "MEGA QM S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00378G-e0793717.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "517",
   "claseId": "1197",
   "nombre": "Consultatio Renta Mixta - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "652",
-  "patrimonio": 217317576809.76,
-  "inversionMinima": 40000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 217928459155.07,
+  "cantidadCuotapartes": 683976923.27,
+  "inversionMinima": 7000000000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 317726.475,
-    "ultimos7Dias": -0.0838,
-    "unMes": 1.0597,
+    "valorCuotaparte": 318619.608,
+    "ultimos7Dias": 14.6574,
+    "unMes": 12.3992,
     "noventaDias": 6.4913,
     "cientoOchentaDias": 17.6995,
     "enElAnio": 21.1397,
@@ -83,7 +84,7 @@
   "calificaciones": [
     {
       "calificadora": "Standard and Poors",
-      "calificacion": "raAc (nuevo)",
+      "calificacion": "Aa-bf.ar",
       "fecha": "2013-10-29"
     }
   ],
@@ -99,14 +100,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00022G-3c173d8e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

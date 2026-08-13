@@ -2,7 +2,7 @@
   "fondoId": "376",
   "claseId": "670",
   "nombre": "MEGAQM Estrategia 7",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "MEGA QM S.A.",
   "depositaria": "Banco de Servicios y Transacciones S.A. (BST)",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "514",
-  "patrimonio": 228933578204.48,
+  "patrimonio": 230222821191.94,
+  "cantidadCuotapartes": 355679035.21,
   "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 643652.157,
-    "ultimos7Dias": -0.6919,
-    "unMes": 0.3239,
+    "valorCuotaparte": 647276.894,
+    "ultimos7Dias": 29.3643,
+    "unMes": 5.3966,
     "noventaDias": 4.7591,
     "cientoOchentaDias": 18.3918,
     "enElAnio": 20.89,
@@ -83,14 +84,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "MEGA QM S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00378G-e0793717.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Servicios y Transacciones S.A. (BST)",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00387-5d5880dd.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00387-5d5880dd.jpg"
     }
   ]
 }

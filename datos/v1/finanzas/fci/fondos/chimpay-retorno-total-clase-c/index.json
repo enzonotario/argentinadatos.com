@@ -2,25 +2,26 @@
   "fondoId": "1806",
   "claseId": "6189",
   "nombre": "Chimpay Retorno Total - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Chimpay S.A.",
   "depositaria": "Banco Industrial S.A.",
-  "tipoRenta": "Retorno Total",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1856",
-  "patrimonio": 30633638428.52,
-  "inversionMinima": 1000000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 28959137979.66,
+  "cantidadCuotapartes": 27276597376.22,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1123.074,
-    "ultimos7Dias": -1.5031,
-    "unMes": -2.261,
+    "valorCuotaparte": 1061.684,
+    "ultimos7Dias": -285.0257,
+    "unMes": -92.9795,
     "noventaDias": 11.3892,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -101,14 +102,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Chimpay S.A.",
       "logo": null
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Industrial S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00391-92ebcc0c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00391-92ebcc0c.jpg"
     }
   ]
 }

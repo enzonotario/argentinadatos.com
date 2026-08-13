@@ -2,25 +2,26 @@
   "fondoId": "867",
   "claseId": "2495",
   "nombre": "Premier Global Dolares - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Supervielle Asset Management S.A.",
   "depositaria": "Banco Supervielle S.A.",
   "tipoRenta": "Renta Mixta",
   "tipoDD": "No Aplica",
-  "region": "Latinoamerica",
+  "region": "Latinoamérica",
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "No Aplicable",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1001",
-  "patrimonio": 38312.43,
-  "inversionMinima": 100,
+  "patrimonio": 38073.39,
+  "cantidadCuotapartes": 59732.03,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 640.929,
-    "ultimos7Dias": -0.7704,
-    "unMes": -3.4133,
+    "valorCuotaparte": 637.403,
+    "ultimos7Dias": -40.1251,
+    "unMes": -41.2411,
     "noventaDias": -10.2828,
     "cientoOchentaDias": -19.6521,
     "enElAnio": -23.2343,
@@ -53,14 +54,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Supervielle Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00052G-7dab5db1.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00052G-7dab5db1.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Supervielle S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00097-9a7b1e3e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00097-9a7b1e3e.jpg"
     }
   ]
 }

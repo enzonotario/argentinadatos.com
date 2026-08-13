@@ -2,7 +2,7 @@
   "fondoId": "1343",
   "claseId": "4883",
   "nombre": "Schroder Liquidez - Clase D Ley N° 27.743",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Schroder S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1248",
-  "patrimonio": 3455947.19,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 3469732.58,
+  "cantidadCuotapartes": 2154703.47,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1603.908,
-    "ultimos7Dias": 18.2137,
-    "unMes": 17.6363,
+    "valorCuotaparte": 1610.306,
+    "ultimos7Dias": 18.1802,
+    "unMes": 17.8542,
     "noventaDias": 17.8407,
     "cientoOchentaDias": 20.4336,
     "enElAnio": 21.5309,
@@ -83,14 +84,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Schroder S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00051G-0c57ca49.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00051G-0c57ca49.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

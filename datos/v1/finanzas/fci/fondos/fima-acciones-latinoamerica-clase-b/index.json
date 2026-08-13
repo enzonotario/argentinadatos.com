@@ -2,25 +2,26 @@
   "fondoId": "851",
   "claseId": "2427",
   "nombre": "Fima Acciones Latinoamerica - Clase B",
-  "fecha": "2026-08-06",
+  "fecha": "2026-08-12",
   "administradora": "Galicia Asset Management S.A.U.",
   "depositaria": "Banco de Galicia y Buenos Aires S.A.",
   "tipoRenta": "Renta Variable",
   "tipoDD": "No Aplica",
-  "region": "Latinoamerica",
+  "region": "Latinoamérica",
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1064",
-  "patrimonio": 234241.59,
-  "inversionMinima": 100,
+  "patrimonio": 225186.07,
+  "cantidadCuotapartes": 141509.98,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 3,
   "rendimientos": {
-    "valorCuotaparte": 1655.301,
-    "ultimos7Dias": -0.6151,
-    "unMes": 3.5789,
+    "valorCuotaparte": 1591.309,
+    "ultimos7Dias": -205.1792,
+    "unMes": -21.3072,
     "noventaDias": -4.66,
     "cientoOchentaDias": -0.2864,
     "enElAnio": 17.9789,
@@ -127,14 +128,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Galicia Asset Management S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00002G-01a59b57.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00002G-01a59b57.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Galicia y Buenos Aires S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00081-d14fcb5c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00081-d14fcb5c.jpg"
     }
   ]
 }

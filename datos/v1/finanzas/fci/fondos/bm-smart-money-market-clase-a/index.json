@@ -2,7 +2,7 @@
   "fondoId": "1239",
   "claseId": "3442",
   "nombre": "BM Smart Money Market - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Bull Market Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "No Registrada",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1138",
-  "patrimonio": 3197912385.7,
-  "inversionMinima": 100,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 2953910429.94,
+  "cantidadCuotapartes": 294800601.75,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 9982.8429,
-    "ultimos7Dias": 19.1218,
-    "unMes": 17.97,
+    "valorCuotaparte": 10020.029,
+    "ultimos7Dias": 19.4232,
+    "unMes": 18.4627,
     "noventaDias": 18.2746,
     "cientoOchentaDias": 20.7032,
     "enElAnio": 21.9918,
@@ -117,14 +118,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Bull Market Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02507G-49489fb4.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02507G-49489fb4.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

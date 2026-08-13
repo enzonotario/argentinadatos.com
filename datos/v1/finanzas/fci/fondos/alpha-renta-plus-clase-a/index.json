@@ -2,7 +2,7 @@
   "fondoId": "474",
   "claseId": "934",
   "nombre": "Alpha Renta Plus - Clase A",
-  "fecha": "2026-08-11",
+  "fecha": "2026-08-12",
   "administradora": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "ICBC (Arg) S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "614",
-  "patrimonio": 35559796705.39,
-  "inversionMinima": 50000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 35932243610.7,
+  "cantidadCuotapartes": 111471857.21,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 322202.776,
-    "ultimos7Dias": 0.4404,
-    "unMes": 1.4365,
+    "valorCuotaparte": 322343.635,
+    "ultimos7Dias": 25.2545,
+    "unMes": 18.3099,
     "noventaDias": 5.0385,
     "cientoOchentaDias": 13.9027,
     "enElAnio": 18.7022,
@@ -111,14 +112,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00008G-f9ac58c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00008G-f9ac58c8.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "ICBC (Arg) S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00062-50a49656.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00062-50a49656.jpg"
     }
   ]
 }

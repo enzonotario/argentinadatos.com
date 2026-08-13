@@ -2,7 +2,7 @@
   "fondoId": "683",
   "claseId": "2040",
   "nombre": "Argenfunds Renta Dinamica - Clase D",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Argenfunds S.A.",
   "depositaria": "Banco Macro S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "825",
   "patrimonio": 0,
-  "inversionMinima": 0,
-  "monedaInversion": "Dolar Estadounidense",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 0.871,
-    "ultimos7Dias": -0.4571,
-    "unMes": 0.2301,
+    "valorCuotaparte": 0.87,
+    "ultimos7Dias": -23.864,
+    "unMes": -4.181,
     "noventaDias": -6.3441,
     "cientoOchentaDias": -5.0164,
     "enElAnio": -2.7902,
@@ -111,14 +112,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Argenfunds S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00377G-dc836163.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00377G-dc836163.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Macro S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00098-871484a2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00098-871484a2.jpg"
     }
   ]
 }

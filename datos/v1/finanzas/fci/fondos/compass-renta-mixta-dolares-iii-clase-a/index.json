@@ -2,7 +2,7 @@
   "fondoId": "1673",
   "claseId": "5603",
   "nombre": "Compass Renta Mixta Dólares III\t- Clase A",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Dolar Estadounidense Billete",
+  "moneda": "USB",
   "codigoCNV": "1695",
-  "patrimonio": 4631504.91,
-  "inversionMinima": 0,
-  "monedaInversion": "Dolar Estadounidense Billete",
+  "patrimonio": 4639979.05,
+  "cantidadCuotapartes": 4619715.04,
+  "inversionMinima": 1,
+  "monedaInversion": "USB",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1000.78,
-    "ultimos7Dias": 0.4156,
-    "unMes": 1.1641,
+    "valorCuotaparte": 1004.386,
+    "ultimos7Dias": 15.5638,
+    "unMes": 18.8541,
     "noventaDias": -1.4725,
     "cientoOchentaDias": -0.4036,
     "enElAnio": -0.5233,
@@ -109,14 +110,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Investis Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00021G-d9e0d02c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00021G-d9e0d02c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

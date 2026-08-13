@@ -2,7 +2,7 @@
   "fondoId": "1916",
   "claseId": "6625",
   "nombre": "Fundcorp Renta Pesos - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "CMF Asset Management S.A.U.",
   "depositaria": "Banco C.M.F. S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Plazo Flexible",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1978",
-  "patrimonio": 1002.28,
+  "patrimonio": 1002.35,
+  "cantidadCuotapartes": 1000,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1002.28,
-    "ultimos7Dias": null,
-    "unMes": null,
+    "valorCuotaparte": 1002.35,
+    "ultimos7Dias": 0.3642,
+    "unMes": 0.3642,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -40,12 +41,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "CMF Asset Management S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00401G-76eff522.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00401G-76eff522.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco C.M.F. S.A.",
       "logo": null
     }

@@ -2,7 +2,7 @@
   "fondoId": "1409",
   "claseId": "4107",
   "nombre": "Pionero Multiestrategia Mix - Clase B",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Macro Fondos S.G.F.C.I.S.A.",
   "depositaria": "Banco Macro S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "IAMC",
   "horizonte": "Plazo Flexible",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1371",
-  "patrimonio": 21742020866.4,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 21835879950.64,
+  "cantidadCuotapartes": 12549256350.23,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1732.535,
-    "ultimos7Dias": 0.0511,
-    "unMes": 1.366,
+    "valorCuotaparte": 1740.014,
+    "ultimos7Dias": 27.9524,
+    "unMes": 19.1284,
     "noventaDias": 4.387,
     "cientoOchentaDias": 4.387,
     "enElAnio": 4.387,
@@ -85,14 +86,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Macro Fondos S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00054G-82963f72.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00054G-82963f72.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Macro S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00098-871484a2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00098-871484a2.jpg"
     }
   ]
 }

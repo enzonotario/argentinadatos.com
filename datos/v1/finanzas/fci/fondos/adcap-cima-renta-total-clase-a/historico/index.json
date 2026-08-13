@@ -2,7 +2,7 @@
   "fondoId": "640",
   "claseId": "1298",
   "nombre": "Adcap Cima Renta Total - Clase A",
-  "fechaActualizacion": "2026-08-13T13:10:26.000Z",
+  "fechaActualizacion": "2026-08-13T21:23:19.000Z",
   "historico": [
     {
       "slug": "adcap-cima-renta-total-clase-a",
@@ -2306,7 +2306,23 @@
       "retornoDiario": null,
       "retornoAcumulado": 1747.910177,
       "flujoEstimado": null,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "adcap-cima-renta-total-clase-a",
+      "fondoId": "640",
+      "claseId": "1298",
+      "nombre": "Adcap Cima Renta Total - Clase A",
+      "fecha": "2026-08-06",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 19147.769,
+      "patrimonio": null,
+      "retornoDiario": -0.067216,
+      "retornoAcumulado": 1746.668088,
+      "flujoEstimado": null,
+      "origen": "cnv-excel"
     },
     {
       "slug": "adcap-cima-renta-total-clase-a",
@@ -2319,10 +2335,10 @@
       "horizonte": "Largo Plazo",
       "valorCuotaparte": 19216.099,
       "patrimonio": null,
-      "retornoDiario": 0.2894,
+      "retornoDiario": 0.356856,
       "retornoAcumulado": 1753.258037,
       "flujoEstimado": null,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "adcap-cima-renta-total-clase-a",
@@ -2338,7 +2354,7 @@
       "retornoDiario": 0.114212,
       "retornoAcumulado": 1755.374671,
       "flujoEstimado": null,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "adcap-cima-renta-total-clase-a",
@@ -2354,7 +2370,23 @@
       "retornoDiario": 0.155801,
       "retornoAcumulado": 1758.265357,
       "flujoEstimado": null,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "adcap-cima-renta-total-clase-a",
+      "fondoId": "640",
+      "claseId": "1298",
+      "nombre": "Adcap Cima Renta Total - Clase A",
+      "fecha": "2026-08-12",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 19287.34,
+      "patrimonio": null,
+      "retornoDiario": 0.100275,
+      "retornoAcumulado": 1760.128732,
+      "flujoEstimado": null,
+      "origen": "cnv-excel"
     }
   ]
 }

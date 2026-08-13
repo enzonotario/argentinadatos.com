@@ -2,7 +2,7 @@
   "fondoId": "1638",
   "claseId": "5434",
   "nombre": "Crecer Acciones - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Ciudad Administradora de Activos S.A.U.",
   "depositaria": "Banco Ciudad de Buenos Aires",
   "tipoRenta": "Renta Variable",
@@ -11,16 +11,17 @@
   "benchmark": "S&P Merval",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1661",
-  "patrimonio": 2024019794.26,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 1940024634.72,
+  "cantidadCuotapartes": 1432523180.8,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1420.821,
-    "ultimos7Dias": -2.4495,
-    "unMes": -1.3204,
+    "valorCuotaparte": 1354.271,
+    "ultimos7Dias": -244.2325,
+    "unMes": -87.0901,
     "noventaDias": 10.5753,
     "cientoOchentaDias": 4.2263,
     "enElAnio": 1.4915,
@@ -101,14 +102,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Ciudad Administradora de Activos S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03255G-43d1241b.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03255G-43d1241b.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Ciudad de Buenos Aires",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00067-2efdbc54.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00067-2efdbc54.jpg"
     }
   ]
 }

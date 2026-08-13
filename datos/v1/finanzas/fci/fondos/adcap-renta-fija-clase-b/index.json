@@ -2,7 +2,7 @@
   "fondoId": "531",
   "claseId": "1071",
   "nombre": "Adcap Renta Fija - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,97 +11,102 @@
   "benchmark": "IAMC",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "571",
-  "patrimonio": 1982629072.04,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 1993546738.34,
+  "cantidadCuotapartes": 9572783.38,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 208204.374,
-    "ultimos7Dias": 0.4052,
-    "unMes": 1.0191,
-    "noventaDias": 5.0451,
-    "cientoOchentaDias": 12.9965,
-    "enElAnio": 16.3601,
-    "doceMeses": 37.0363
+    "valorCuotaparte": 208251.525,
+    "ultimos7Dias": 15.4232,
+    "unMes": 10.0399,
+    "noventaDias": 4.7338,
+    "cientoOchentaDias": 12.0142,
+    "enElAnio": 16.3865,
+    "doceMeses": 36.4421
   },
   "composicionCartera": [
     {
       "nombre": "Lecap S13N6",
-      "porcentaje": 9.8
+      "porcentaje": 10.4
+    },
+    {
+      "nombre": "Lecap S30N6",
+      "porcentaje": 7.2
     },
     {
       "nombre": "ON Mercado Pago C3",
-      "porcentaje": 6.5
+      "porcentaje": 6.9
     },
     {
       "nombre": "ON Banco Hipotecario C13",
-      "porcentaje": 6.4
-    },
-    {
-      "nombre": "Lecap S15S6",
-      "porcentaje": 6.4
-    },
-    {
-      "nombre": "ON Toyota Clase 39",
-      "porcentaje": 6.4
+      "porcentaje": 6.9
     },
     {
       "nombre": "ON BBVA Frances Cl 47",
-      "porcentaje": 6.4
+      "porcentaje": 6.7
+    },
+    {
+      "nombre": "ON Toyota Clase 39",
+      "porcentaje": 6.6
     },
     {
       "nombre": "Bono del Tesoro Nacional T15E7",
-      "porcentaje": 6.3
-    },
-    {
-      "nombre": "Letra Tesoro Nac T30A7",
-      "porcentaje": 5.3
+      "porcentaje": 6.6
     },
     {
       "nombre": "ON Banco Nacion Argentina Clase 1",
-      "porcentaje": 5.2
-    },
-    {
-      "nombre": "FCI GMC Money Market - Clase C",
-      "porcentaje": 5
+      "porcentaje": 5.6
     },
     {
       "nombre": "ON Arcor C4",
-      "porcentaje": 4.2
+      "porcentaje": 4.5
     },
     {
       "nombre": "ON Angel Estrada C18",
-      "porcentaje": 3.9
+      "porcentaje": 4.1
     },
     {
       "nombre": "Letra Prov Rio Negro S1 191225",
-      "porcentaje": 3.8
+      "porcentaje": 4.1
     },
     {
       "nombre": "ON Bco Serv Transac C27",
+      "porcentaje": 4
+    },
+    {
+      "nombre": "ON GEMSA y CTR C43",
       "porcentaje": 3.7
     },
     {
-      "nombre": "ON Banco Prov Clase 6",
-      "porcentaje": 3.2
+      "nombre": "FCI SBS Ahorro Pesos Cl B",
+      "porcentaje": 3.4
     },
     {
-      "nombre": "ON GEMSA Clase 27",
-      "porcentaje": 3.1
+      "nombre": "ON Banco Prov Clase 6",
+      "porcentaje": 3.4
     },
     {
       "nombre": "ON Arcor C3",
-      "porcentaje": 2.5
+      "porcentaje": 2.7
     },
     {
       "nombre": "FF Creditech S6 CA",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "ON Lab. Richmond S7 Clase A",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "ON Rombo Cia Fciera S64",
       "porcentaje": 2
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 10
+      "porcentaje": 7
     }
   ],
   "calificaciones": [
@@ -123,14 +128,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

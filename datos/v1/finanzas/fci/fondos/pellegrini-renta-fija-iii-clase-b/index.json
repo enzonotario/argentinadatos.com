@@ -2,7 +2,7 @@
   "fondoId": "1329",
   "claseId": "3795",
   "nombre": "Pellegrini Renta Fija III - Clase B",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Pellegrini S.A.S.G.F.C.I.",
   "depositaria": "Banco de La Nacion Argentina",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1269",
-  "patrimonio": 87830249098.57,
+  "patrimonio": 88098915295.76,
+  "cantidadCuotapartes": 7604063290.47,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 11549.347,
-    "ultimos7Dias": 0.0796,
-    "unMes": 0.8547,
+    "valorCuotaparte": 11585.768,
+    "ultimos7Dias": 24.92,
+    "unMes": 10.5607,
     "noventaDias": 4.2021,
     "cientoOchentaDias": 14.1307,
     "enElAnio": 18.0798,
@@ -107,14 +108,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Pellegrini S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00041G-c2e70db2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00041G-c2e70db2.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de La Nacion Argentina",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00089-d9e4893d.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00089-d9e4893d.jpg"
     }
   ]
 }

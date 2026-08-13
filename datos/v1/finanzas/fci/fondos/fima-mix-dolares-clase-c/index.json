@@ -14,13 +14,14 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1427",
   "patrimonio": 10589685.74,
-  "inversionMinima": 250000,
+  "cantidadCuotapartes": 6986717.44,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
     "valorCuotaparte": 1515.688,
-    "ultimos7Dias": -1.695,
-    "unMes": -1.4321,
+    "ultimos7Dias": -88.3825,
+    "unMes": -18.8062,
     "noventaDias": 2.6062,
     "cientoOchentaDias": 3.3199,
     "enElAnio": 7.1287,
@@ -69,14 +70,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Galicia Asset Management S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00002G-01a59b57.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00002G-01a59b57.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Galicia y Buenos Aires S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00081-d14fcb5c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00081-d14fcb5c.jpg"
     }
   ]
 }

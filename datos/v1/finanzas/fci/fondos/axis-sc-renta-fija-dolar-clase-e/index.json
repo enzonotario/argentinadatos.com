@@ -2,7 +2,7 @@
   "fondoId": "1471",
   "claseId": "4350",
   "nombre": "Axis S&C Renta Fija Dolar - Clase E",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Axis S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -14,13 +14,14 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1468",
   "patrimonio": 0,
-  "inversionMinima": 1000,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1,
+    "valorCuotaparte": 1000,
     "ultimos7Dias": 0,
-    "unMes": 0,
+    "unMes": 1215450,
     "noventaDias": 0,
     "cientoOchentaDias": 0,
     "enElAnio": 0,
@@ -93,14 +94,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Axis S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00384G-b6af83ec.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00384G-b6af83ec.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "fondoId": "770",
   "claseId": "1734",
-  "nombre": "Pellegrini Renta Dolares — Pellegrini Renta Dólares - Clase C",
-  "fecha": "2026-08-04",
+  "nombre": "Pellegrini Renta Dólares - Clase C",
+  "fecha": "2026-08-12",
   "administradora": "Pellegrini S.A.S.G.F.C.I.",
   "depositaria": "Banco de La Nacion Argentina",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "947",
-  "patrimonio": 7154609.92,
-  "inversionMinima": 100000,
+  "patrimonio": 7030195.66,
+  "cantidadCuotapartes": 2896632.27,
+  "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 2471.568,
-    "ultimos7Dias": 0.3055,
-    "unMes": 0.0039,
+    "valorCuotaparte": 2427.024,
+    "ultimos7Dias": -79.6693,
+    "unMes": -21.9685,
     "noventaDias": 4.57,
     "cientoOchentaDias": 5.3032,
     "enElAnio": 9.0286,
@@ -95,14 +96,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Pellegrini S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00041G-c2e70db2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00041G-c2e70db2.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de La Nacion Argentina",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00089-d9e4893d.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00089-d9e4893d.jpg"
     }
   ]
 }

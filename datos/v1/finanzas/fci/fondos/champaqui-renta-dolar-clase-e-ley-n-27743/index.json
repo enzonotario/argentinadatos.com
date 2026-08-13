@@ -2,7 +2,7 @@
   "fondoId": "1526",
   "claseId": "5048",
   "nombre": "Champaquí Renta Dólar - Clase E Ley N° 27.743",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Bancor Fondos S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Cordoba S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1492",
-  "patrimonio": 102079.41,
-  "inversionMinima": 1000,
+  "patrimonio": 102216.85,
+  "cantidadCuotapartes": 90103.72,
+  "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1132.9101,
-    "ultimos7Dias": 0.0206,
-    "unMes": 0.5256,
+    "valorCuotaparte": 1134.435,
+    "ultimos7Dias": 7.0189,
+    "unMes": 5.7786,
     "noventaDias": 1.7574,
     "cientoOchentaDias": 4.0805,
     "enElAnio": 5.8658,
@@ -103,12 +104,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Bancor Fondos S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02734G-9dbd2ace.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02734G-9dbd2ace.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Cordoba S.A.",
       "logo": null
     }

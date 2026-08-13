@@ -2,7 +2,7 @@
   "fondoId": "1521",
   "claseId": "4553",
   "nombre": "Adcap Balanceado XX - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,61 +11,58 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1521",
-  "patrimonio": 60892683048.5,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 60862440710.08,
+  "cantidadCuotapartes": 37464903345.58,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1625.326,
-    "ultimos7Dias": 0.5283,
-    "unMes": 0.8019,
-    "noventaDias": 8.1076,
-    "cientoOchentaDias": 6.7723,
-    "enElAnio": 6.4269,
-    "doceMeses": 18.4365
+    "valorCuotaparte": 1624.519,
+    "ultimos7Dias": -1.1905,
+    "unMes": 12.7274,
+    "noventaDias": 8.107,
+    "cientoOchentaDias": 9.1271,
+    "enElAnio": 6.3741,
+    "doceMeses": 19.7187
   },
   "composicionCartera": [
     {
-      "nombre": "FCI SBS Ahorro Pesos Cl B",
-      "porcentaje": 19.2
-    },
-    {
       "nombre": "Pagare #MAV131060034",
-      "porcentaje": 16.9
+      "porcentaje": 20.9
     },
     {
       "nombre": "Pagare #MAV131060029",
-      "porcentaje": 14.9
+      "porcentaje": 18.4
     },
     {
       "nombre": "Pagare #UMV220170004",
-      "porcentaje": 14.3
+      "porcentaje": 17.8
     },
     {
       "nombre": "Pagare #UMV250170067",
-      "porcentaje": 10.2
+      "porcentaje": 12.7
     },
     {
       "nombre": "Pagare #UMV170270025",
-      "porcentaje": 10.2
+      "porcentaje": 12.7
     },
     {
       "nombre": "Pagare #MAV131060028",
-      "porcentaje": 6.8
+      "porcentaje": 8.3
     },
     {
       "nombre": "ON San Miguel Serie 13 CA",
-      "porcentaje": 3.8
+      "porcentaje": 4.7
     },
     {
       "nombre": "ON Rizobacter S 11 CA",
-      "porcentaje": 2.8
+      "porcentaje": 3.5
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 0.7
+      "porcentaje": 0.8
     }
   ],
   "calificaciones": [],
@@ -81,14 +78,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

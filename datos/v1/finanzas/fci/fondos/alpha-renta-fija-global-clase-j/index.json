@@ -2,7 +2,7 @@
   "fondoId": "297",
   "claseId": "3665",
   "nombre": "Alpha Renta Fija Global - Clase J",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "ICBC (Arg) S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "391",
-  "patrimonio": 5819047.74,
+  "patrimonio": 5824014.65,
+  "cantidadCuotapartes": 5742363.89,
   "inversionMinima": 1,
-  "monedaInversion": "Dolar Estadounidense Billete",
+  "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1013.354,
-    "ultimos7Dias": 0.1422,
-    "unMes": 0.0307,
+    "valorCuotaparte": 1014.219,
+    "ultimos7Dias": 4.4509,
+    "unMes": 1.9754,
     "noventaDias": 0.2307,
     "cientoOchentaDias": 0.3284,
     "enElAnio": 0.3284,
@@ -127,14 +128,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00008G-f9ac58c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00008G-f9ac58c8.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "ICBC (Arg) S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00062-50a49656.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00062-50a49656.jpg"
     }
   ]
 }

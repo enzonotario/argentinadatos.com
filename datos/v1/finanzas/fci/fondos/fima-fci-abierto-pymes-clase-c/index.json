@@ -2,25 +2,26 @@
   "fondoId": "558",
   "claseId": "1129",
   "nombre": "Fima FCI Abierto Pymes - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Galicia Asset Management S.A.U.",
   "depositaria": "Banco de Galicia y Buenos Aires S.A.",
-  "tipoRenta": "PyMes",
+  "tipoRenta": "Retorno Total",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "698",
-  "patrimonio": 93377235853.3,
-  "inversionMinima": 500000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 93756276584.09,
+  "cantidadCuotapartes": 1021627639.09,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 91400.46,
-    "ultimos7Dias": 0.2629,
-    "unMes": 1.7598,
+    "valorCuotaparte": 91771.476,
+    "ultimos7Dias": 21.166,
+    "unMes": 20.3704,
     "noventaDias": 5.8824,
     "cientoOchentaDias": 13.7747,
     "enElAnio": 17.3459,
@@ -83,14 +84,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Galicia Asset Management S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00002G-01a59b57.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00002G-01a59b57.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Galicia y Buenos Aires S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00081-d14fcb5c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00081-d14fcb5c.jpg"
     }
   ]
 }

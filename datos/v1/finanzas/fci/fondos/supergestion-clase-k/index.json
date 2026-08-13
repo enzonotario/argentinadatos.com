@@ -2,7 +2,7 @@
   "fondoId": "226",
   "claseId": "3329",
   "nombre": "Supergestion - Clase K",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Santander Asset Management G.F.C.I.S.A.",
   "depositaria": "Banco Santander Argentina S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "252",
   "patrimonio": 0,
-  "inversionMinima": 1000,
-  "monedaInversion": "Dolar Estadounidense",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 36595.868,
-    "ultimos7Dias": -0.4419,
-    "unMes": 1.5291,
+    "valorCuotaparte": 36307.741,
+    "ultimos7Dias": -20.855,
+    "unMes": 2.1624,
     "noventaDias": 8.5024,
     "cientoOchentaDias": 13.3971,
     "enElAnio": 14.8194,
@@ -103,14 +104,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Santander Asset Management G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00049G-c03041ad.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00049G-c03041ad.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Santander Argentina S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00096-4e9f0233.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00096-4e9f0233.jpg"
     }
   ]
 }

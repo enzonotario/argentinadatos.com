@@ -2,7 +2,7 @@
   "fondoId": "453",
   "claseId": "1554",
   "nombre": "Allaria Renta Mixta II - Clase C",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "591",
-  "patrimonio": 2948288801.26,
-  "inversionMinima": 50000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 2946133972.34,
+  "cantidadCuotapartes": 1415599410.14,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 2082.714,
-    "ultimos7Dias": -0.1651,
-    "unMes": -0.7978,
+    "valorCuotaparte": 2081.192,
+    "ultimos7Dias": 15.5801,
+    "unMes": -10.5889,
     "noventaDias": -0.7978,
     "cientoOchentaDias": -0.7978,
     "enElAnio": -0.7978,
@@ -71,14 +72,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00356G-ea35a573.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

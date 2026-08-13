@@ -2,7 +2,7 @@
   "fondoId": "732",
   "claseId": "1593",
   "nombre": "Balanz Capital Renta Fija en Dólares - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Balanz S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "908",
-  "patrimonio": 48238193.49,
-  "inversionMinima": 1000,
+  "patrimonio": 46561597.41,
+  "cantidadCuotapartes": 31106481.11,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1521.489,
-    "ultimos7Dias": 0.2437,
-    "unMes": 0.2908,
+    "valorCuotaparte": 1496.846,
+    "ultimos7Dias": -84.4539,
+    "unMes": -18.7588,
     "noventaDias": 4.5711,
     "cientoOchentaDias": 6.4429,
     "enElAnio": 11.3903,
@@ -71,14 +72,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Balanz S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00372G-cc6ce723.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00372G-cc6ce723.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

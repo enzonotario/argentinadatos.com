@@ -2,25 +2,26 @@
   "fondoId": "274",
   "claseId": "336",
   "nombre": "Compass Renta Fija - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
-  "region": "Latinoamerica",
+  "region": "Latinoamérica",
   "benchmark": "Otro",
   "horizonte": "Plazo Flexible",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "353",
-  "patrimonio": 12316544.59,
-  "inversionMinima": 1,
+  "patrimonio": 12224670.26,
+  "cantidadCuotapartes": 4540171.16,
+  "inversionMinima": 50,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 2690.926,
-    "ultimos7Dias": 0.2262,
-    "unMes": -0.0335,
+    "valorCuotaparte": 2692.557,
+    "ultimos7Dias": 3.1604,
+    "unMes": 0.4041,
     "noventaDias": -0.0909,
     "cientoOchentaDias": 0.0012,
     "enElAnio": 0.299,
@@ -107,14 +108,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Investis Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00021G-d9e0d02c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00021G-d9e0d02c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

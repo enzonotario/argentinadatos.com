@@ -2,7 +2,7 @@
   "fondoId": "1456",
   "claseId": "4303",
   "nombre": "Axis Estrategia 20 - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Axis S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1450",
-  "patrimonio": 2400548266.49,
-  "inversionMinima": 10000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 2794973886.82,
+  "cantidadCuotapartes": 1316356565.16,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 2122.723,
-    "ultimos7Dias": 0.3905,
-    "unMes": 1.1301,
+    "valorCuotaparte": 2123.265,
+    "ultimos7Dias": 11.8589,
+    "unMes": 13.2798,
     "noventaDias": 4.2152,
     "cientoOchentaDias": 11.2049,
     "enElAnio": 13.7533,
@@ -87,14 +88,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Axis S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00384G-b6af83ec.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00384G-b6af83ec.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

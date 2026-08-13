@@ -2,7 +2,7 @@
   "fondoId": "1600",
   "claseId": "5263",
   "nombre": "Ciclo Nova Corto Plazo Dólar - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Ciclo Nova Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1622",
-  "patrimonio": 16396743.43,
-  "inversionMinima": 1000,
+  "patrimonio": 16461729.4,
+  "cantidadCuotapartes": 16066883.72,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1024.403,
-    "ultimos7Dias": 1.0029,
-    "unMes": 0.8547,
+    "valorCuotaparte": 1024.575,
+    "ultimos7Dias": 0.8755,
+    "unMes": 0.8556,
     "noventaDias": 0.8915,
     "cientoOchentaDias": 0.9642,
     "enElAnio": 1.0685,
@@ -93,14 +94,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Ciclo Nova Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02496G-cffb0731.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02496G-cffb0731.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "551",
   "claseId": "1114",
   "nombre": "Balanz Capital Ahorro - Clase A",
-  "fecha": "2026-08-10",
+  "fecha": "2026-08-12",
   "administradora": "Balanz S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,20 +11,21 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "684",
-  "patrimonio": 423118563263.69,
+  "patrimonio": 421282132766.42,
+  "cantidadCuotapartes": 1735593114.3,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 242301.498,
-    "ultimos7Dias": 0.372,
-    "unMes": 1.5091,
-    "noventaDias": 5.3262,
-    "cientoOchentaDias": 15.7966,
-    "enElAnio": 20.7009,
-    "doceMeses": 44.013
+    "valorCuotaparte": 242730.931,
+    "ultimos7Dias": 27.1147,
+    "unMes": 19.7049,
+    "noventaDias": 5.3056,
+    "cientoOchentaDias": 15.1658,
+    "enElAnio": 20.9148,
+    "doceMeses": 43.8883
   },
   "composicionCartera": [
     {
@@ -87,14 +88,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Balanz S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00372G-cc6ce723.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00372G-cc6ce723.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

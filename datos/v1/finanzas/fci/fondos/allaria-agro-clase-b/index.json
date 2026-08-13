@@ -2,7 +2,7 @@
   "fondoId": "1450",
   "claseId": "4280",
   "nombre": "Allaria Agro - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,37 +11,30 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1430",
-  "patrimonio": 2682445136.75,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 2141749236.18,
+  "cantidadCuotapartes": 1354917946.78,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1590.4,
-    "ultimos7Dias": 0.6094,
-    "unMes": 3.2092,
-    "noventaDias": 9.4646,
-    "cientoOchentaDias": 5.87,
-    "enElAnio": 3.082,
-    "doceMeses": 23.6067
+    "valorCuotaparte": 1580.722,
+    "ultimos7Dias": -3.6524,
+    "unMes": 19.1456,
+    "noventaDias": 4.8165,
+    "cientoOchentaDias": 8.3794,
+    "enElAnio": 2.4547,
+    "doceMeses": 23.2833
   },
   "composicionCartera": [
     {
       "nombre": "Fut Reg USB",
-      "porcentaje": 13167.9
+      "porcentaje": 4744
     },
     {
       "nombre": "FCI Gainvest Pesos - Clase B",
-      "porcentaje": 88.5
-    },
-    {
-      "nombre": "FCI Adcap Ahorro Pesos - Clase C",
-      "porcentaje": 4
-    },
-    {
-      "nombre": "Cta Cte $ Rem Bco Comafi",
-      "porcentaje": 3.8
+      "porcentaje": 95.4
     }
   ],
   "calificaciones": [],
@@ -57,14 +50,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00356G-ea35a573.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

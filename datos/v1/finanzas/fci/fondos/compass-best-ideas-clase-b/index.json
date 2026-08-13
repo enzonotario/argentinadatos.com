@@ -2,10 +2,10 @@
   "fondoId": "807",
   "claseId": "2104",
   "nombre": "Compass Best Ideas - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "Retorno Total",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Global",
   "benchmark": "No Registrado",
@@ -13,14 +13,15 @@
   "duracion": "No Registrada",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1010",
-  "patrimonio": 40045735.28,
-  "inversionMinima": 1000,
+  "patrimonio": 40229555.91,
+  "cantidadCuotapartes": 71297940.2,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 564.476,
-    "ultimos7Dias": 0.2976,
-    "unMes": 0.3335,
+    "valorCuotaparte": 564.246,
+    "ultimos7Dias": -2.1246,
+    "unMes": 1.6148,
     "noventaDias": 1.1135,
     "cientoOchentaDias": 3.4371,
     "enElAnio": 5.521,
@@ -119,14 +120,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Investis Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00021G-d9e0d02c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00021G-d9e0d02c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

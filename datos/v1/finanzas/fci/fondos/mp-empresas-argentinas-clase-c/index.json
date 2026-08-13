@@ -2,7 +2,7 @@
   "fondoId": "1804",
   "claseId": "6183",
   "nombre": "MP Empresas Argentinas - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Mercado Pago Asset Managemet S.A.",
   "depositaria": "Banco Industrial S.A.",
   "tipoRenta": "Renta Variable",
@@ -11,16 +11,17 @@
   "benchmark": "Rofex 20",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1802",
-  "patrimonio": 6895833.7,
-  "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 6582253.05,
+  "cantidadCuotapartes": 6952237.2046,
+  "inversionMinima": 0,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 991.887,
-    "ultimos7Dias": -2.2467,
-    "unMes": -0.7735,
+    "valorCuotaparte": 946.782,
+    "ultimos7Dias": -237.1141,
+    "unMes": -81.4387,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -101,14 +102,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mercado Pago Asset Managemet S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03265G-e5cf3c10.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03265G-e5cf3c10.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Industrial S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00391-92ebcc0c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00391-92ebcc0c.jpg"
     }
   ]
 }

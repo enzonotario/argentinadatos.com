@@ -2,7 +2,7 @@
   "fondoId": "548",
   "claseId": "1110",
   "nombre": "MAF Renta Balanceada 2 - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Mariva Asset Management S.A.U.S.G.F.C.I.",
   "depositaria": "Banco Mariva S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "No Registrada",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "680",
-  "patrimonio": 4509756440.96,
-  "inversionMinima": 80000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 4526329853.35,
+  "cantidadCuotapartes": 574856779.89,
+  "inversionMinima": 1000000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 7845.009,
-    "ultimos7Dias": -0.0452,
-    "unMes": 1.1533,
+    "valorCuotaparte": 7873.839,
+    "ultimos7Dias": 19.1622,
+    "unMes": 14.9858,
     "noventaDias": 5.8547,
     "cientoOchentaDias": 10.152,
     "enElAnio": 13.1328,
@@ -68,7 +69,13 @@
       "porcentaje": 1.1
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "A-c(arg)",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 1.5,
     "honorarioDepositaria": 0.2,
@@ -81,12 +88,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mariva Asset Management S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00371G-45045e78.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00371G-45045e78.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Mariva S.A.",
       "logo": null
     }

@@ -2,7 +2,7 @@
   "fondoId": "1597",
   "claseId": "5250",
   "nombre": "Champaquí Ahorro Mixto - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Bancor Fondos S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Cordoba S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1128",
-  "patrimonio": 2489144504.03,
+  "patrimonio": 2501281648.86,
+  "cantidadCuotapartes": 1508633932.78,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1649.9327,
-    "ultimos7Dias": -0.4532,
-    "unMes": 0.6015,
+    "valorCuotaparte": 1657.978,
+    "ultimos7Dias": 25.4246,
+    "unMes": 9.5152,
     "noventaDias": 4.4705,
     "cientoOchentaDias": 18.3629,
     "enElAnio": 21.9143,
@@ -77,12 +78,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Bancor Fondos S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02734G-9dbd2ace.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02734G-9dbd2ace.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Cordoba S.A.",
       "logo": null
     }

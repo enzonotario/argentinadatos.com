@@ -2,7 +2,7 @@
   "fondoId": "1268",
   "claseId": "3529",
   "nombre": "Pellegrini Retorno Total - Clase B",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Pellegrini S.A.S.G.F.C.I.",
   "depositaria": "Banco de La Nacion Argentina",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1193",
-  "patrimonio": 17235363678.06,
+  "patrimonio": 18249848144.42,
+  "cantidadCuotapartes": 708886070.64,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 25728.873,
-    "ultimos7Dias": -0.0122,
-    "unMes": 0.9417,
+    "valorCuotaparte": 25744.402,
+    "ultimos7Dias": 6.9745,
+    "unMes": 7.0919,
     "noventaDias": 4.9461,
     "cientoOchentaDias": 18.1608,
     "enElAnio": 21.0839,
@@ -99,14 +100,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Pellegrini S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00041G-c2e70db2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00041G-c2e70db2.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de La Nacion Argentina",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00089-d9e4893d.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00089-d9e4893d.jpg"
     }
   ]
 }

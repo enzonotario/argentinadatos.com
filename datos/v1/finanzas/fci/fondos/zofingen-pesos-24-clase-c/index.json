@@ -2,7 +2,7 @@
   "fondoId": "809",
   "claseId": "2129",
   "nombre": "Zofingen Pesos 24 - Clase C",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Zofingen Investment S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,11 +11,12 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1029",
   "patrimonio": 0,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
     "valorCuotaparte": 1837.234,
@@ -127,14 +128,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Zofingen Investment S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02450G-9d44acde.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02450G-9d44acde.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

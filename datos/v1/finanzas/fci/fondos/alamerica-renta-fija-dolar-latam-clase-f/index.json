@@ -2,7 +2,7 @@
   "fondoId": "893",
   "claseId": "2612",
   "nombre": "Alamerica Renta Fija Dolar Latam - Clase F",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,23 +13,24 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1059",
-  "patrimonio": 6229520.93,
-  "inversionMinima": 5000000,
+  "patrimonio": 6231901.87,
+  "cantidadCuotapartes": 5000000,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1245.904,
-    "ultimos7Dias": 0.3253,
-    "unMes": -0.202,
-    "noventaDias": -0.0885,
-    "cientoOchentaDias": 0.4974,
-    "enElAnio": 1.2217,
-    "doceMeses": 4.0021
+    "valorCuotaparte": 1246.38,
+    "ultimos7Dias": 7.4112,
+    "unMes": -0.8487,
+    "noventaDias": 0.0973,
+    "cientoOchentaDias": 0.3418,
+    "enElAnio": 1.2603,
+    "doceMeses": 3.7412
   },
   "composicionCartera": [
     {
       "nombre": "BC Falabella 150132",
-      "porcentaje": 18.6
+      "porcentaje": 18.5
     },
     {
       "nombre": "BC Banco Do Brasil 2029",
@@ -53,7 +54,7 @@
     },
     {
       "nombre": "Cta Cte U$S Citibank EEUU",
-      "porcentaje": 8.6
+      "porcentaje": 8.7
     },
     {
       "nombre": "Resto de Activos",
@@ -73,14 +74,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00356G-ea35a573.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

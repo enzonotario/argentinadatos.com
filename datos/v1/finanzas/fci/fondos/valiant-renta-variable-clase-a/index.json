@@ -2,7 +2,7 @@
   "fondoId": "855",
   "claseId": "2450",
   "nombre": "Valiant Renta Variable - Clase A",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Valiant Asset Management S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Variable",
@@ -11,16 +11,17 @@
   "benchmark": "S&P Merval",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1071",
-  "patrimonio": 129653932.26,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 122908446.69,
+  "cantidadCuotapartes": 3149218.02,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 41170.199,
-    "ultimos7Dias": -2.2016,
-    "unMes": -0.6044,
+    "valorCuotaparte": 39028.243,
+    "ultimos7Dias": -226.7213,
+    "unMes": -84.9944,
     "noventaDias": 8.7822,
     "cientoOchentaDias": 4.3643,
     "enElAnio": -1.0645,
@@ -105,14 +106,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Valiant Asset Management S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02545G-f1f63ca6.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02545G-f1f63ca6.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

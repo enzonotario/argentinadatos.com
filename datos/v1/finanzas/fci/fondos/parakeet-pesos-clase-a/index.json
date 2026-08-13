@@ -2,7 +2,7 @@
   "fondoId": "1561",
   "claseId": "5006",
   "nombre": "Parakeet Pesos - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Parakeet S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1575",
-  "patrimonio": 1827073864.05,
+  "patrimonio": 1511853971.09,
+  "cantidadCuotapartes": 947101221,
   "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1591.391,
-    "ultimos7Dias": 16.0981,
-    "unMes": 15.3692,
+    "valorCuotaparte": 1596.296,
+    "ultimos7Dias": 16.0715,
+    "unMes": 15.5089,
     "noventaDias": 15.4185,
     "cientoOchentaDias": 17.5965,
     "enElAnio": 18.8183,
@@ -73,14 +74,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Parakeet S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03222G-de7305da.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03222G-de7305da.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

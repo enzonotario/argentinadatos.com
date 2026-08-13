@@ -2,7 +2,7 @@
   "fondoId": "41",
   "claseId": "41",
   "nombre": "1822 Raices Valores Negociables",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Provinfondos S.A.S.G.F.C.I.",
   "depositaria": "Banco Provincia de Buenos Aires",
   "tipoRenta": "Renta Variable",
@@ -11,20 +11,21 @@
   "benchmark": "S&P Merval",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "107",
-  "patrimonio": 40914835273.35,
+  "patrimonio": 39900147982.82,
+  "cantidadCuotapartes": 1461812.62,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 28096056.686,
-    "ultimos7Dias": -6.2314,
-    "unMes": -4.4682,
-    "noventaDias": 10.4553,
-    "cientoOchentaDias": 1.7758,
-    "enElAnio": -0.8251,
-    "doceMeses": 26.5847
+    "valorCuotaparte": 27294981.262,
+    "ultimos7Dias": -260.2943,
+    "unMes": -91.1186,
+    "noventaDias": 8.2819,
+    "cientoOchentaDias": 4.5843,
+    "enElAnio": -3.6528,
+    "doceMeses": 24.9694
   },
   "composicionCartera": [
     {
@@ -107,14 +108,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Provinfondos S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00043G-f97d764c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00043G-f97d764c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Provincia de Buenos Aires",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00091-1272ada3.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00091-1272ada3.jpg"
     }
   ]
 }

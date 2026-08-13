@@ -2,7 +2,7 @@
   "fondoId": "407",
   "claseId": "736",
   "nombre": "1822 Raices Valores Fiduciarios",
-  "fecha": "2026-08-10",
+  "fecha": "2026-08-12",
   "administradora": "Provinfondos S.A.S.G.F.C.I.",
   "depositaria": "Banco Provincia de Buenos Aires",
   "tipoRenta": "Renta Fija",
@@ -11,20 +11,21 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "508",
-  "patrimonio": 242544193166.6,
+  "patrimonio": 249964504071.5,
+  "cantidadCuotapartes": 1055868886.68,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 236432.756,
-    "ultimos7Dias": 0.4592,
-    "unMes": 1.8533,
-    "noventaDias": 6.2901,
-    "cientoOchentaDias": 15.1281,
-    "enElAnio": 19.7883,
-    "doceMeses": 42.6756
+    "valorCuotaparte": 236738.204,
+    "ultimos7Dias": 24.7473,
+    "unMes": 23.5131,
+    "noventaDias": 6.2768,
+    "cientoOchentaDias": 14.616,
+    "enElAnio": 19.943,
+    "doceMeses": 42.5508
   },
   "composicionCartera": [
     {
@@ -103,14 +104,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Provinfondos S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00043G-f97d764c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00043G-f97d764c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Provincia de Buenos Aires",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00091-1272ada3.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00091-1272ada3.jpg"
     }
   ]
 }

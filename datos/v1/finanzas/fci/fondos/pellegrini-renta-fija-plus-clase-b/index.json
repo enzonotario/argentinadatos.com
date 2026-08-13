@@ -2,7 +2,7 @@
   "fondoId": "119",
   "claseId": "634",
   "nombre": "Pellegrini Renta Fija Plus - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Pellegrini S.A.S.G.F.C.I.",
   "depositaria": "Banco de La Nacion Argentina",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "164",
-  "patrimonio": 8085180112.48,
-  "inversionMinima": 100,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 7872068187,
+  "cantidadCuotapartes": 18667465.22,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 422438.862,
-    "ultimos7Dias": -0.0699,
-    "unMes": 1.0757,
+    "valorCuotaparte": 421699.898,
+    "ultimos7Dias": -9.1212,
+    "unMes": 8.7574,
     "noventaDias": 5.4772,
     "cientoOchentaDias": 16.3436,
     "enElAnio": 19.8997,
@@ -63,7 +64,7 @@
   "calificaciones": [
     {
       "calificadora": "FIX SCR S.A.",
-      "calificacion": "AA",
+      "calificacion": "AA+",
       "fecha": "2010-07-21"
     }
   ],
@@ -79,14 +80,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Pellegrini S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00041G-c2e70db2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00041G-c2e70db2.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de La Nacion Argentina",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00089-d9e4893d.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00089-d9e4893d.jpg"
     }
   ]
 }

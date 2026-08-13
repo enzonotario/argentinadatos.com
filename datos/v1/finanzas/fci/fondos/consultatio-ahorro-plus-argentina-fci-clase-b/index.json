@@ -2,7 +2,7 @@
   "fondoId": "493",
   "claseId": "994",
   "nombre": "Consultatio Ahorro Plus Argentina F.C.I. - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "629",
-  "patrimonio": 39038264448.23,
+  "patrimonio": 42820785198.58,
+  "cantidadCuotapartes": 177119747.67,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 240559.451,
-    "ultimos7Dias": 0.2311,
-    "unMes": 1.4609,
+    "valorCuotaparte": 241761.778,
+    "ultimos7Dias": 26.0612,
+    "unMes": 19.4811,
     "noventaDias": 5.587,
     "cientoOchentaDias": 14.9531,
     "enElAnio": 18.8403,
@@ -67,7 +68,7 @@
   "calificaciones": [
     {
       "calificadora": "Standard and Poors",
-      "calificacion": "raA+c",
+      "calificacion": "Aa-bf.ar",
       "fecha": "2013-09-17"
     }
   ],
@@ -83,14 +84,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00022G-3c173d8e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

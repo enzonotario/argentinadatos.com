@@ -2,7 +2,7 @@
   "fondoId": "1563",
   "claseId": "5019",
   "nombre": "Ualintec Renta Dólares - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Ualá Fondos S.A.U.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1563",
-  "patrimonio": 98658.22,
+  "patrimonio": 98672.53,
+  "cantidadCuotapartes": 95977.98,
   "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1027.926,
-    "ultimos7Dias": 0.2828,
-    "unMes": 1.3652,
+    "valorCuotaparte": 1028.075,
+    "ultimos7Dias": 0.7558,
+    "unMes": 11.5755,
     "noventaDias": 2.7926,
     "cientoOchentaDias": 2.7926,
     "enElAnio": 2.7926,
@@ -121,14 +122,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Ualá Fondos S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02923G-3d935475.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02923G-3d935475.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

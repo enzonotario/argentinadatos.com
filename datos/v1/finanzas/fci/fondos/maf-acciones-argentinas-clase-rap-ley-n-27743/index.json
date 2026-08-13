@@ -2,7 +2,7 @@
   "fondoId": "505",
   "claseId": "4928",
   "nombre": "MAF Acciones Argentinas - Clase RAP Ley N° 27.743",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Mariva Asset Management S.A.U.S.G.F.C.I.",
   "depositaria": "Banco Mariva S.A.",
   "tipoRenta": "Renta Variable",
@@ -11,11 +11,12 @@
   "benchmark": "S&P Merval",
   "horizonte": "Plazo Flexible",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "635",
   "patrimonio": 0,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
     "valorCuotaparte": 1126.356,
@@ -103,12 +104,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mariva Asset Management S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00371G-45045e78.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00371G-45045e78.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Mariva S.A.",
       "logo": null
     }

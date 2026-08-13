@@ -2,7 +2,7 @@
   "fondoId": "1353",
   "claseId": "3862",
   "nombre": "Max Renta Fija - Clase A",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Max Capital Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1290",
-  "patrimonio": 2853942063.94,
-  "inversionMinima": 100,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 2918604012.23,
+  "cantidadCuotapartes": 188683312.77,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 15376.989,
-    "ultimos7Dias": -0.4902,
-    "unMes": 0.138,
+    "valorCuotaparte": 15468.268,
+    "ultimos7Dias": 31.7934,
+    "unMes": 6.3693,
     "noventaDias": 4.4236,
     "cientoOchentaDias": 16.9774,
     "enElAnio": 21.6984,
@@ -75,14 +76,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Max Capital Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03014G-5673e990.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03014G-5673e990.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

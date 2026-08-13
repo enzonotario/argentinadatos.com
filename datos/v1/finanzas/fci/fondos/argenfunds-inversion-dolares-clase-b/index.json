@@ -2,7 +2,7 @@
   "fondoId": "1379",
   "claseId": "3964",
   "nombre": "Argenfunds Inversión Dólares - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Argenfunds S.A.",
   "depositaria": "Banco Macro S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Plazo Flexible",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Dolar Estadounidense Billete",
+  "moneda": "USB",
   "codigoCNV": "1349",
-  "patrimonio": 2174736.96,
-  "inversionMinima": 1000,
-  "monedaInversion": "Dolar Estadounidense Billete",
+  "patrimonio": 2178169.97,
+  "cantidadCuotapartes": 2175078.35,
+  "inversionMinima": 1,
+  "monedaInversion": "USB",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 999.843,
-    "ultimos7Dias": 0.074,
-    "unMes": 1.1125,
+    "valorCuotaparte": 1001.421,
+    "ultimos7Dias": 8.172,
+    "unMes": 11.4989,
     "noventaDias": 1.1472,
     "cientoOchentaDias": -7.3534,
     "enElAnio": -5.7667,
@@ -101,14 +102,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Argenfunds S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00377G-dc836163.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00377G-dc836163.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Macro S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00098-871484a2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00098-871484a2.jpg"
     }
   ]
 }

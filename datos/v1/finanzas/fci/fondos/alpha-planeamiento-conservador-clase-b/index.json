@@ -2,7 +2,7 @@
   "fondoId": "5",
   "claseId": "5",
   "nombre": "Alpha Planeamiento Conservador - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "ICBC (Arg) S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,20 +11,21 @@
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "113",
-  "patrimonio": 15188873804.28,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 14970700225.12,
+  "cantidadCuotapartes": 642754.16,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 23247677.385,
-    "ultimos7Dias": 0.2184,
-    "unMes": 1.0495,
-    "noventaDias": 5.5332,
-    "cientoOchentaDias": 15.9591,
-    "enElAnio": 19.3958,
-    "doceMeses": 44.3224
+    "valorCuotaparte": 23291487.204,
+    "ultimos7Dias": 24.5724,
+    "unMes": 14.725,
+    "noventaDias": 5.2151,
+    "cientoOchentaDias": 15.1432,
+    "enElAnio": 19.6208,
+    "doceMeses": 45.4959
   },
   "composicionCartera": [
     {
@@ -96,7 +97,13 @@
       "porcentaje": 24.9
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "NA",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 2.8394,
     "honorarioDepositaria": 0.3106,
@@ -109,14 +116,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00008G-f9ac58c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00008G-f9ac58c8.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "ICBC (Arg) S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00062-50a49656.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00062-50a49656.jpg"
     }
   ]
 }

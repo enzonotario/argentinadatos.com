@@ -2,7 +2,7 @@
   "fondoId": "120",
   "claseId": "120",
   "nombre": "Pellegrini Renta Pesos - Clase A",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Pellegrini S.A.S.G.F.C.I.",
   "depositaria": "Banco de La Nacion Argentina",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "162",
-  "patrimonio": 159601891210.76,
-  "inversionMinima": 100,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 156246832368.36,
+  "cantidadCuotapartes": 6117939234.2,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 25469.005,
-    "ultimos7Dias": 19.9455,
-    "unMes": 19.4072,
+    "valorCuotaparte": 25539.128,
+    "ultimos7Dias": 20.1311,
+    "unMes": 19.7229,
     "noventaDias": 19.445,
     "cientoOchentaDias": 22.6605,
     "enElAnio": 24.3316,
@@ -87,7 +88,7 @@
   "calificaciones": [
     {
       "calificadora": "FIX SCR S.A.",
-      "calificacion": "AA",
+      "calificacion": "AA+",
       "fecha": "2010-07-21"
     }
   ],
@@ -103,14 +104,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Pellegrini S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00041G-c2e70db2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00041G-c2e70db2.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de La Nacion Argentina",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00089-d9e4893d.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00089-d9e4893d.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "1742",
   "claseId": "5884",
   "nombre": "Wise Capital Focus II - Clase B",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Wise Capital Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1784",
-  "patrimonio": 1363381991.39,
+  "patrimonio": 1722792721.32,
+  "cantidadCuotapartes": 1541993396.86,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1111.708,
-    "ultimos7Dias": 0.4799,
-    "unMes": 1.2281,
+    "valorCuotaparte": 1117.25,
+    "ultimos7Dias": 22.7669,
+    "unMes": 20.8075,
     "noventaDias": 1.2783,
     "cientoOchentaDias": 5.0436,
     "enElAnio": 6.2501,
@@ -53,14 +54,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Wise Capital Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03233G-77b3387a.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03233G-77b3387a.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

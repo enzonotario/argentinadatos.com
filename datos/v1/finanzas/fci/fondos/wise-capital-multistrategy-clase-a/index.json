@@ -2,7 +2,7 @@
   "fondoId": "1589",
   "claseId": "5194",
   "nombre": "Wise Capital Multistrategy - Clase A",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Wise Capital Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1583",
-  "patrimonio": 2102093708.74,
+  "patrimonio": 2093222289.55,
+  "cantidadCuotapartes": 3472827835.37,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 602.02,
-    "ultimos7Dias": 0.4525,
-    "unMes": 0.9525,
+    "valorCuotaparte": 602.743,
+    "ultimos7Dias": 2.6745,
+    "unMes": 11.5827,
     "noventaDias": 3.9182,
     "cientoOchentaDias": -3.7507,
     "enElAnio": -7.3132,
@@ -91,14 +92,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Wise Capital Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03233G-77b3387a.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03233G-77b3387a.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

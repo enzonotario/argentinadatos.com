@@ -2,7 +2,7 @@
   "fondoId": "805",
   "claseId": "4904",
   "nombre": "Fundcorp Long Performance Plus - Clase D Ley N° 27.743",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "CMF Asset Management S.A.U.",
   "depositaria": "Banco C.M.F. S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1030",
-  "patrimonio": 101525.37,
+  "patrimonio": 101564.5,
+  "cantidadCuotapartes": 97304.32,
   "inversionMinima": 1000,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1043.38,
-    "ultimos7Dias": 0.0454,
-    "unMes": 0.2282,
+    "valorCuotaparte": 1043.782,
+    "ultimos7Dias": 2.009,
+    "unMes": 2.5567,
     "noventaDias": 0.5973,
     "cientoOchentaDias": 1.3361,
     "enElAnio": 1.7672,
@@ -57,12 +58,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "CMF Asset Management S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00401G-76eff522.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00401G-76eff522.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco C.M.F. S.A.",
       "logo": null
     }

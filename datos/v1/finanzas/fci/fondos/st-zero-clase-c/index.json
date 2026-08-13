@@ -2,7 +2,7 @@
   "fondoId": "1222",
   "claseId": "3387",
   "nombre": "ST Zero - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1158",
-  "patrimonio": 89248377489.29,
-  "inversionMinima": 50000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 104206103194.75,
+  "cantidadCuotapartes": 8586271318.06,
+  "inversionMinima": 500,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 12097.58,
-    "ultimos7Dias": 18.9946,
-    "unMes": 16.6951,
+    "valorCuotaparte": 12136.363,
+    "ultimos7Dias": 16.7162,
+    "unMes": 17.1413,
     "noventaDias": 16.8762,
     "cientoOchentaDias": 19.1436,
     "enElAnio": 20.3323,
@@ -91,14 +92,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00022G-3c173d8e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "1580",
   "claseId": "5143",
   "nombre": "Adcap Gestión Estratégica III - Clase C",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1558",
-  "patrimonio": 1441513.49,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 1442565.09,
+  "cantidadCuotapartes": 1396518.12,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1032.22,
-    "ultimos7Dias": 0.174,
-    "unMes": 0.7648,
+    "valorCuotaparte": 1032.973,
+    "ultimos7Dias": 24.5007,
+    "unMes": 10.6229,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -29,67 +30,71 @@
   "composicionCartera": [
     {
       "nombre": "Bono Boncer 2027 TZXM7",
-      "porcentaje": 15.6
+      "porcentaje": 14.3
     },
     {
       "nombre": "Bono Dual TXMJ8",
-      "porcentaje": 15.2
-    },
-    {
-      "nombre": "FCI Allaria Ahorro - Clase C",
-      "porcentaje": 8.9
-    },
-    {
-      "nombre": "Bono del Tesoro Nacional AO27",
-      "porcentaje": 8.9
+      "porcentaje": 13.9
     },
     {
       "nombre": "Bono del Tesoro 2.5% 2031",
-      "porcentaje": 7.1
+      "porcentaje": 10.1
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional AO27",
+      "porcentaje": 8.1
+    },
+    {
+      "nombre": "FCI Allaria Ahorro - Clase C",
+      "porcentaje": 8
     },
     {
       "nombre": "Bono Bocon 2029 PR17",
-      "porcentaje": 5.9
+      "porcentaje": 5.4
     },
     {
       "nombre": "Bono del Tesoro Nacional D31G6",
-      "porcentaje": 5.6
+      "porcentaje": 5.1
     },
     {
-      "nombre": "Lecap S31G6",
-      "porcentaje": 4.8
-    },
-    {
-      "nombre": "Letra Tesoro Nac D31M7",
+      "nombre": "Bono Boncer 2029 TZXM9",
       "porcentaje": 4.6
     },
     {
+      "nombre": "Lecap S31G6",
+      "porcentaje": 4.4
+    },
+    {
+      "nombre": "Letra Tesoro Nac D31M7",
+      "porcentaje": 4.2
+    },
+    {
       "nombre": "Bono Boncer TX26",
-      "porcentaje": 3.9
+      "porcentaje": 3.6
     },
     {
       "nombre": "Bono Dual TTD26",
-      "porcentaje": 2.9
+      "porcentaje": 2.7
     },
     {
       "nombre": "Bono del Tesoro Nacional TZV27",
-      "porcentaje": 2.9
+      "porcentaje": 2.7
     },
     {
       "nombre": "Lelink D30S6",
-      "porcentaje": 2.6
+      "porcentaje": 2.3
     },
     {
       "nombre": "Bono Boncer TZX28",
-      "porcentaje": 2.4
+      "porcentaje": 2.2
     },
     {
-      "nombre": "Bono Boncer TZXD8",
-      "porcentaje": 2.4
+      "nombre": "Bono Boncer TZXS8",
+      "porcentaje": 2.1
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 6.4
+      "porcentaje": 6.3
     }
   ],
   "calificaciones": [],
@@ -105,14 +110,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

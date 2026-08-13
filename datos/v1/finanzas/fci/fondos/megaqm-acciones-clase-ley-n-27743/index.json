@@ -2,7 +2,7 @@
   "fondoId": "378",
   "claseId": "5080",
   "nombre": "MEGAQM Acciones- Clase Ley Nº 27.743",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "MEGA QM S.A.",
   "depositaria": "Banco de Servicios y Transacciones S.A. (BST)",
   "tipoRenta": "Renta Variable",
@@ -11,11 +11,12 @@
   "benchmark": "Rofex 20",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "755",
   "patrimonio": 0,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
     "valorCuotaparte": 1475.104,
@@ -91,14 +92,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "MEGA QM S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00378G-e0793717.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Servicios y Transacciones S.A. (BST)",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00387-5d5880dd.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00387-5d5880dd.jpg"
     }
   ]
 }

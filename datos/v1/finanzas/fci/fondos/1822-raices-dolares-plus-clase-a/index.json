@@ -2,7 +2,7 @@
   "fondoId": "773",
   "claseId": "1738",
   "nombre": "1822 Raices Dólares Plus - Clase A",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Provinfondos S.A.S.G.F.C.I.",
   "depositaria": "Banco Provincia de Buenos Aires",
   "tipoRenta": "Renta Fija",
@@ -13,18 +13,19 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "973",
-  "patrimonio": 46362871.53,
-  "inversionMinima": 100,
+  "patrimonio": 45915049.58,
+  "cantidadCuotapartes": 34701856.54,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1324.83,
-    "ultimos7Dias": -0.4181,
-    "unMes": 0.0603,
-    "noventaDias": 2.1271,
-    "cientoOchentaDias": 4.4529,
-    "enElAnio": 6.2414,
-    "doceMeses": 9.0583
+    "valorCuotaparte": 1323.129,
+    "ultimos7Dias": -34.7889,
+    "unMes": -0.5276,
+    "noventaDias": 2.1148,
+    "cientoOchentaDias": 3.7751,
+    "enElAnio": 6.105,
+    "doceMeses": 8.6452
   },
   "composicionCartera": [
     {
@@ -119,14 +120,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Provinfondos S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00043G-f97d764c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00043G-f97d764c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Provincia de Buenos Aires",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00091-1272ada3.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00091-1272ada3.jpg"
     }
   ]
 }

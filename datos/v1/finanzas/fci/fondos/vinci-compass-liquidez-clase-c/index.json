@@ -2,7 +2,7 @@
   "fondoId": "1212",
   "claseId": "3354",
   "nombre": "Vinci Compass Liquidez - Clase C",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1156",
-  "patrimonio": 14729195731.25,
-  "inversionMinima": 1000000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 8083042568.64,
+  "cantidadCuotapartes": 601148163.55,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 13388.026,
-    "ultimos7Dias": 19.976,
-    "unMes": 19.2282,
+    "valorCuotaparte": 13446.007,
+    "ultimos7Dias": 19.8348,
+    "unMes": 19.6071,
     "noventaDias": 18.5388,
     "cientoOchentaDias": 20.3732,
     "enElAnio": 21.7166,
@@ -103,14 +104,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Investis Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00021G-d9e0d02c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00021G-d9e0d02c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

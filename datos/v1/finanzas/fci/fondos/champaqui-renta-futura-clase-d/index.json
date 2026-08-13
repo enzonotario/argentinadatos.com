@@ -2,7 +2,7 @@
   "fondoId": "1426",
   "claseId": "4167",
   "nombre": "Champaquí Renta Futura - Clase D",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Bancor Fondos S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Cordoba S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1366",
-  "patrimonio": 44149052906.51,
-  "inversionMinima": 3000000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 44303080721.52,
+  "cantidadCuotapartes": 9600512148.71,
+  "inversionMinima": 3000000000.01,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 4598.6143,
-    "ultimos7Dias": -0.3752,
-    "unMes": 0.3879,
+    "valorCuotaparte": 4614.658,
+    "ultimos7Dias": 18.192,
+    "unMes": 5.7251,
     "noventaDias": 6.2143,
     "cientoOchentaDias": 20.0681,
     "enElAnio": 23.793,
@@ -93,12 +94,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Bancor Fondos S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02734G-9dbd2ace.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02734G-9dbd2ace.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Cordoba S.A.",
       "logo": null
     }

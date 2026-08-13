@@ -2,7 +2,7 @@
   "fondoId": "1348",
   "claseId": "3845",
   "nombre": "Gainvest Global V - Clase A",
-  "fecha": "2026-08-11",
+  "fecha": "2026-08-12",
   "administradora": "StoneX Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1312",
-  "patrimonio": 7495556710.19,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 7476138290.86,
+  "cantidadCuotapartes": 1066055721,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 7030.774,
-    "ultimos7Dias": -0.1456,
-    "unMes": 0.8638,
+    "valorCuotaparte": 7012.896,
+    "ultimos7Dias": -15.2962,
+    "unMes": 2.2515,
     "noventaDias": 9.254,
     "cientoOchentaDias": 12.0139,
     "enElAnio": 11.0409,
@@ -105,14 +106,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "StoneX Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00311G-be0f6f28.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00311G-be0f6f28.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

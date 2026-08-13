@@ -2,25 +2,26 @@
   "fondoId": "1423",
   "claseId": "4160",
   "nombre": "ConoSur Visus - Clase D",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Cono Sur S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "Retorno Total",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Plazo Flexible",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1277",
-  "patrimonio": 1084625013.59,
-  "inversionMinima": 50000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 1050845627.31,
+  "cantidadCuotapartes": 166983154.53,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 6495.416,
-    "ultimos7Dias": -1.2921,
-    "unMes": -0.4779,
+    "valorCuotaparte": 6293.124,
+    "ultimos7Dias": -162.3927,
+    "unMes": -58.1346,
     "noventaDias": 12.0122,
     "cientoOchentaDias": 9.7598,
     "enElAnio": 9.2032,
@@ -97,14 +98,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Cono Sur S.G.F.C.I.S.A.",
       "logo": null
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

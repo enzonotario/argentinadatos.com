@@ -2,7 +2,7 @@
   "fondoId": "443",
   "claseId": "840",
   "nombre": "SBS Ahorro Pesos - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "SBS Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "No Registrada",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "577",
-  "patrimonio": 122508159313.12,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 153392660387.28,
+  "cantidadCuotapartes": 881543970.11,
+  "inversionMinima": 0.01,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 173544.385,
-    "ultimos7Dias": 18.6787,
-    "unMes": 18.2637,
+    "valorCuotaparte": 174004.548,
+    "ultimos7Dias": 19.3827,
+    "unMes": 18.4718,
     "noventaDias": 18.0486,
     "cientoOchentaDias": 20.7759,
     "enElAnio": 22.0682,
@@ -99,7 +100,7 @@
   "calificaciones": [
     {
       "calificadora": "Standard and Poors",
-      "calificacion": "raBBB+c (nuevo)",
+      "calificacion": "AA",
       "fecha": "2009-08-13"
     }
   ],
@@ -115,14 +116,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "SBS Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00347G-615b02d0.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00347G-615b02d0.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

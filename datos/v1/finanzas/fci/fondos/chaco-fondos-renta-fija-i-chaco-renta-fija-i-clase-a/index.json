@@ -1,8 +1,8 @@
 {
   "fondoId": "580",
   "claseId": "1176",
-  "nombre": "Chaco Fondos Renta Fija I — Chaco Renta Fija I - Clase A",
-  "fecha": "2026-08-05",
+  "nombre": "Chaco Renta Fija I - Clase A",
+  "fecha": "2026-08-12",
   "administradora": "Nuevo Chaco Fondos S.A.S.G.F.C.I.",
   "depositaria": "Nuevo Banco del Chaco S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "696",
-  "patrimonio": 839634602.03,
+  "patrimonio": 803912343.83,
+  "cantidadCuotapartes": 4030494.95,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 198494.5725,
-    "ultimos7Dias": -0.1252,
-    "unMes": 1.1625,
+    "valorCuotaparte": 199457.474,
+    "ultimos7Dias": 25.2946,
+    "unMes": 15.4413,
     "noventaDias": 4.754,
     "cientoOchentaDias": 16.5634,
     "enElAnio": 19.8449,
@@ -99,12 +100,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Nuevo Chaco Fondos S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00389G-62d37f9e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00389G-62d37f9e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Nuevo Banco del Chaco S.A.",
       "logo": null
     }

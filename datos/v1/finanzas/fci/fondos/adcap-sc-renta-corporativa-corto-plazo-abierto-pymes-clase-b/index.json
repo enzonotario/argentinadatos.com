@@ -2,46 +2,51 @@
   "fondoId": "1311",
   "claseId": "3728",
   "nombre": "Adcap S&C Renta Corporativa Corto Plazo Abierto Pymes - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "PyMes",
+  "tipoRenta": "Retorno Total",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Badlar",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1253",
-  "patrimonio": 31977481700.08,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 32306298983.18,
+  "cantidadCuotapartes": 2617627907.38,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 12306.893,
-    "ultimos7Dias": 0.3404,
-    "unMes": 1.5645,
-    "noventaDias": 6.2303,
-    "cientoOchentaDias": 15.4415,
-    "enElAnio": 19.2953,
-    "doceMeses": 38.7014
+    "valorCuotaparte": 12341.822,
+    "ultimos7Dias": 22.6871,
+    "unMes": 19.676,
+    "noventaDias": 6.0482,
+    "cientoOchentaDias": 14.9859,
+    "enElAnio": 19.6339,
+    "doceMeses": 38.8375
   },
   "composicionCartera": [
     {
-      "nombre": "Fut Rofex DLR072026",
-      "porcentaje": 7.6
+      "nombre": "Fut Rofex DLR082026",
+      "porcentaje": 10.5
     },
     {
       "nombre": "Bono Boncer TZXD7",
       "porcentaje": 6.4
     },
     {
-      "nombre": "Fut Rofex DLR082026",
-      "porcentaje": 5.3
+      "nombre": "Bono Dual TXMJ8",
+      "porcentaje": 4.7
     },
     {
-      "nombre": "Bono Dual TXMJ8",
+      "nombre": "Bono Boncer TZXS8",
       "porcentaje": 4.6
+    },
+    {
+      "nombre": "Fut Rofex DLR072026",
+      "porcentaje": 3.6
     },
     {
       "nombre": "Letra Tesoro Nac S30O6",
@@ -49,15 +54,11 @@
     },
     {
       "nombre": "Bono del Tesoro Nacional D31G6",
-      "porcentaje": 3.3
+      "porcentaje": 3.4
     },
     {
       "nombre": "Bono del Tesoro Nacional TML27",
-      "porcentaje": 3.3
-    },
-    {
-      "nombre": "Bono Boncer TZXS8",
-      "porcentaje": 3.2
+      "porcentaje": 3.4
     },
     {
       "nombre": "Cheque E *MAV070801264",
@@ -68,20 +69,16 @@
       "porcentaje": 2.4
     },
     {
-      "nombre": "Bono Boncer TXMJ9",
-      "porcentaje": 2.2
-    },
-    {
       "nombre": "Bono del Tesoro Nacional AO28",
       "porcentaje": 2.2
     },
     {
-      "nombre": "FCI MEGAQM Pesos - Clase B",
-      "porcentaje": 2.1
+      "nombre": "Bono Boncer TXMJ9",
+      "porcentaje": 2.2
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 37.5
+      "porcentaje": 36.8
     }
   ],
   "calificaciones": [],
@@ -97,14 +94,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

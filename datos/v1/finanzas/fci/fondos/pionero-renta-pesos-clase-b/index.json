@@ -2,25 +2,26 @@
   "fondoId": "343",
   "claseId": "565",
   "nombre": "Pionero Renta Pesos - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Macro Fondos S.G.F.C.I.S.A.",
   "depositaria": "Banco Macro S.A.",
-  "tipoRenta": "RG900",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "460",
-  "patrimonio": 14239456337.57,
-  "inversionMinima": 5000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 13968087806.01,
+  "cantidadCuotapartes": 126972236.93,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 109580.348,
-    "ultimos7Dias": 0.2317,
-    "unMes": 1.4739,
+    "valorCuotaparte": 110008.992,
+    "ultimos7Dias": 20.3967,
+    "unMes": 17.1281,
     "noventaDias": 5.2304,
     "cientoOchentaDias": 13.2433,
     "enElAnio": 17.2488,
@@ -83,14 +84,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Macro Fondos S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00054G-82963f72.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00054G-82963f72.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Macro S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00098-871484a2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00098-871484a2.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "296",
   "claseId": "5032",
   "nombre": "Alpha Renta Fija Serie 4 - Clase Q Ley N° 27.743",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "ICBC (Arg) S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "392",
-  "patrimonio": 454798790.79,
+  "patrimonio": 455543418.7,
+  "cantidadCuotapartes": 239664323.81,
   "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1897.649,
-    "ultimos7Dias": 0.363,
-    "unMes": 1.4615,
+    "valorCuotaparte": 1900.756,
+    "ultimos7Dias": 21.5216,
+    "unMes": 17.8406,
     "noventaDias": 5.1345,
     "cientoOchentaDias": 14.5053,
     "enElAnio": 17.6216,
@@ -68,7 +69,13 @@
       "porcentaje": 1.8
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "NA",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 2.866,
     "honorarioDepositaria": 0.301,
@@ -81,14 +88,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00008G-f9ac58c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00008G-f9ac58c8.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "ICBC (Arg) S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00062-50a49656.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00062-50a49656.jpg"
     }
   ]
 }

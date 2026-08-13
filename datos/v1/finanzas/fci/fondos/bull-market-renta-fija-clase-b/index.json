@@ -2,7 +2,7 @@
   "fondoId": "848",
   "claseId": "2411",
   "nombre": "Bull Market Renta Fija - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Bull Market Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1051",
-  "patrimonio": 54941395039.31,
-  "inversionMinima": 10000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 64850715387.57,
+  "cantidadCuotapartes": 2359140853.54,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 27300.691,
-    "ultimos7Dias": -2.5829,
-    "unMes": -8.9397,
+    "valorCuotaparte": 27489.124,
+    "ultimos7Dias": 35.9897,
+    "unMes": -86.3554,
     "noventaDias": -16.3903,
     "cientoOchentaDias": -12.2575,
     "enElAnio": -10.6718,
@@ -85,14 +86,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Bull Market Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02507G-49489fb4.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02507G-49489fb4.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

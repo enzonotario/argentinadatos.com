@@ -2,10 +2,10 @@
   "fondoId": "727",
   "claseId": "1579",
   "nombre": "FCIC Inmobiliario Al Rio Ley 27260 - Clase B",
-  "fecha": "2026-08-06",
+  "fecha": "2026-08-12",
   "administradora": "Cohen S.A.",
   "depositaria": "Deutsche Bank S.A.",
-  "tipoRenta": "Fondos Cerrados",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
@@ -13,14 +13,15 @@
   "duracion": "No Aplicable",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "926",
-  "patrimonio": 480211.54,
+  "patrimonio": 480211.88,
+  "cantidadCuotapartes": 800000,
   "inversionMinima": 250000,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 999,
   "rendimientos": {
-    "valorCuotaparte": 600.264,
+    "valorCuotaparte": 600.265,
     "ultimos7Dias": 0,
-    "unMes": -0.0002,
+    "unMes": 0,
     "noventaDias": -0.001,
     "cientoOchentaDias": -0.0003,
     "enElAnio": -0.0002,
@@ -45,14 +46,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Cohen S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00359G-614204e4.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00359G-614204e4.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Deutsche Bank S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00077-cd2f2598.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00077-cd2f2598.jpg"
     }
   ]
 }

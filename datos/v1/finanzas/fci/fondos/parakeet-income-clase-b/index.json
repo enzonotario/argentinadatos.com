@@ -2,7 +2,7 @@
   "fondoId": "1572",
   "claseId": "5112",
   "nombre": "Parakeet Income - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Parakeet S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1585",
-  "patrimonio": 8563763.92,
-  "inversionMinima": 100001,
+  "patrimonio": 8729488.5,
+  "cantidadCuotapartes": 7478584.62,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1165.01,
-    "ultimos7Dias": -0.1478,
-    "unMes": 0.6499,
+    "valorCuotaparte": 1167.265,
+    "ultimos7Dias": 10.0928,
+    "unMes": 12.1698,
     "noventaDias": 1.3539,
     "cientoOchentaDias": 4.2157,
     "enElAnio": 5.6424,
@@ -105,14 +106,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Parakeet S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03222G-de7305da.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03222G-de7305da.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

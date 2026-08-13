@@ -2,7 +2,7 @@
   "fondoId": "430",
   "claseId": "803",
   "nombre": "IAM Renta Variable - Clase A",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Industrial Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Industrial S.A.",
   "tipoRenta": "Renta Variable",
@@ -11,16 +11,17 @@
   "benchmark": "Rofex 20",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "568",
-  "patrimonio": 424029053.15,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 396019261.09,
+  "cantidadCuotapartes": 2251500.24,
+  "inversionMinima": 100,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 186460.258,
-    "ultimos7Dias": -1.8099,
-    "unMes": 0.1014,
+    "valorCuotaparte": 175891.281,
+    "ultimos7Dias": -239.3441,
+    "unMes": -86.2942,
     "noventaDias": 11.3109,
     "cientoOchentaDias": 8.4156,
     "enElAnio": 3.5334,
@@ -91,14 +92,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Industrial Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00039G-d09ad373.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00039G-d09ad373.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Industrial S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00391-92ebcc0c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00391-92ebcc0c.jpg"
     }
   ]
 }

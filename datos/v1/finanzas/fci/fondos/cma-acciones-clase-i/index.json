@@ -2,7 +2,7 @@
   "fondoId": "838",
   "claseId": "2386",
   "nombre": "CMA Acciones - Clase I",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Capital Markets Argentina Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Variable",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "993",
-  "patrimonio": 484050200.31,
-  "inversionMinima": 25000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 471406160.22,
+  "cantidadCuotapartes": 13899766.95,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 34824.118,
-    "ultimos7Dias": -0.9517,
-    "unMes": 0.279,
+    "valorCuotaparte": 33914.681,
+    "ultimos7Dias": -136.1718,
+    "unMes": -49.4178,
     "noventaDias": 5.0794,
     "cientoOchentaDias": 4.4792,
     "enElAnio": 2.6852,
@@ -101,14 +102,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Capital Markets Argentina Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00121G-95ac707c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00121G-95ac707c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

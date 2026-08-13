@@ -2,7 +2,7 @@
   "fondoId": "1906",
   "claseId": "6589",
   "nombre": "Pellegrini Renta Dolares II - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Pellegrini S.A.S.G.F.C.I.",
   "depositaria": "Banco de La Nacion Argentina",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1898",
-  "patrimonio": 150159.42,
+  "patrimonio": 150968.86,
+  "cantidadCuotapartes": 147600,
   "inversionMinima": 10000,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1017.34,
-    "ultimos7Dias": -0.0976,
-    "unMes": -0.0925,
+    "valorCuotaparte": 1022.824,
+    "ultimos7Dias": 15.7337,
+    "unMes": 2.2989,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -65,14 +66,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Pellegrini S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00041G-c2e70db2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00041G-c2e70db2.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de La Nacion Argentina",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00089-d9e4893d.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00089-d9e4893d.jpg"
     }
   ]
 }

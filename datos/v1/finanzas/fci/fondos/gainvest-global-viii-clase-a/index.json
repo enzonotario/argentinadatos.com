@@ -2,7 +2,7 @@
   "fondoId": "1387",
   "claseId": "3993",
   "nombre": "Gainvest Global VIII - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "StoneX Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1361",
-  "patrimonio": 2225464515.5,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 2202410241.47,
+  "cantidadCuotapartes": 1617033180.87,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1377.969,
-    "ultimos7Dias": 0.0025,
-    "unMes": 1.393,
+    "valorCuotaparte": 1362.007,
+    "ultimos7Dias": -60.4008,
+    "unMes": 2.3207,
     "noventaDias": 6.1443,
     "cientoOchentaDias": 15.0471,
     "enElAnio": 18.8007,
@@ -121,14 +122,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "StoneX Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00311G-be0f6f28.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00311G-be0f6f28.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

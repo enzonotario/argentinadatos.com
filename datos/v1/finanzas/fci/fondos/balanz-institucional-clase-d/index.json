@@ -2,7 +2,7 @@
   "fondoId": "791",
   "claseId": "1821",
   "nombre": "Balanz Institucional - Clase D",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Balanz S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "945",
-  "patrimonio": 42181646477.28,
-  "inversionMinima": 500000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 43960056878.25,
+  "cantidadCuotapartes": 1217791778.05,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 35861.654,
-    "ultimos7Dias": -0.4763,
-    "unMes": 0.9547,
+    "valorCuotaparte": 36098.172,
+    "ultimos7Dias": 34.3897,
+    "unMes": 15.1753,
     "noventaDias": 6.1737,
     "cientoOchentaDias": 21.5634,
     "enElAnio": 26.5967,
@@ -87,14 +88,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Balanz S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00372G-cc6ce723.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00372G-cc6ce723.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

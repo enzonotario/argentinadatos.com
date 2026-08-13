@@ -2,7 +2,7 @@
   "fondoId": "1544",
   "claseId": "4654",
   "nombre": "Champaquí Renta Pesos - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Bancor Fondos S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Cordoba S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1490",
-  "patrimonio": 4679846260.72,
+  "patrimonio": 4574160863.28,
+  "cantidadCuotapartes": 2282212828.41,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1994.3788,
-    "ultimos7Dias": -0.0568,
-    "unMes": 1.0688,
+    "valorCuotaparte": 2004.266,
+    "ultimos7Dias": 25.8495,
+    "unMes": 14.3556,
     "noventaDias": 5.1065,
     "cientoOchentaDias": 16.841,
     "enElAnio": 21.0932,
@@ -107,12 +108,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Bancor Fondos S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02734G-9dbd2ace.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02734G-9dbd2ace.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Cordoba S.A.",
       "logo": null
     }

@@ -2,25 +2,26 @@
   "fondoId": "1721",
   "claseId": "5847",
   "nombre": "CMA Dólar Dinamico - Clase E",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Capital Markets Argentina Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
-  "region": "Latinoamerica",
+  "region": "Latinoamérica",
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1644",
-  "patrimonio": 616835.84,
-  "inversionMinima": 1000,
+  "patrimonio": 1902416.92,
+  "cantidadCuotapartes": 1802326.31,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1053.998,
-    "ultimos7Dias": -0.2093,
-    "unMes": -0.3313,
+    "valorCuotaparte": 1055.534,
+    "ultimos7Dias": 7.5988,
+    "unMes": -0.5899,
     "noventaDias": 0.9293,
     "cientoOchentaDias": 2.1564,
     "enElAnio": 3.3991,
@@ -97,14 +98,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Capital Markets Argentina Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00121G-95ac707c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00121G-95ac707c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

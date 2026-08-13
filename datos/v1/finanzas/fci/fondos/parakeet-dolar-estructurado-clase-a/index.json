@@ -2,7 +2,7 @@
   "fondoId": "1748",
   "claseId": "5904",
   "nombre": "Parakeet Dólar Estructurado - Clase A",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Parakeet S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1741",
-  "patrimonio": 10594.67,
+  "patrimonio": 10604.1,
+  "cantidadCuotapartes": 10066.61,
   "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1052.457,
-    "ultimos7Dias": 0.0047,
-    "unMes": 0.6215,
+    "valorCuotaparte": 1053.394,
+    "ultimos7Dias": 3.497,
+    "unMes": 8.0595,
     "noventaDias": 1.7838,
     "cientoOchentaDias": 5.2457,
     "enElAnio": null,
@@ -109,14 +110,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Parakeet S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03222G-de7305da.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03222G-de7305da.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

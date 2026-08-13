@@ -2,7 +2,7 @@
   "fondoId": "1740",
   "claseId": "5878",
   "nombre": "Compass Renta Mixta VI - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1790",
-  "patrimonio": 80102384367.47,
-  "inversionMinima": 4000000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 80153302739.61,
+  "cantidadCuotapartes": 71776881538.59,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1120.304,
-    "ultimos7Dias": 0.0994,
-    "unMes": 0.8842,
+    "valorCuotaparte": 1116.701,
+    "ultimos7Dias": -16.7696,
+    "unMes": 1.9971,
     "noventaDias": 8.0884,
     "cientoOchentaDias": 11.4497,
     "enElAnio": 12.7644,
@@ -117,14 +118,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Investis Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00021G-d9e0d02c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00021G-d9e0d02c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "743",
   "claseId": "1625",
   "nombre": "First Renta Dolares - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "First Capital Markets S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "916",
-  "patrimonio": 3840385.37,
-  "inversionMinima": 1000,
+  "patrimonio": 4049334.97,
+  "cantidadCuotapartes": 2313154.45,
+  "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1746.127,
-    "ultimos7Dias": -0.3035,
-    "unMes": -0.6451,
+    "valorCuotaparte": 1750.568,
+    "ultimos7Dias": 13.2617,
+    "unMes": 0.3149,
     "noventaDias": 1.107,
     "cientoOchentaDias": 2.9439,
     "enElAnio": 5.4276,
@@ -65,14 +66,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "First Capital Markets S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00395-2ffc0cff.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00395-2ffc0cff.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -2,25 +2,26 @@
   "fondoId": "629",
   "claseId": "4764",
   "nombre": "MEGAQM Balanceado - Clase Ley Nº 27.743",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "MEGA QM S.A.",
   "depositaria": "Banco de Servicios y Transacciones S.A. (BST)",
-  "tipoRenta": "Retorno Total",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "769",
-  "patrimonio": 36357703.83,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 36507927.52,
+  "cantidadCuotapartes": 19460146.07,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1868.316,
-    "ultimos7Dias": 0.2446,
-    "unMes": 1.2983,
+    "valorCuotaparte": 1876.036,
+    "ultimos7Dias": 21.5458,
+    "unMes": 16.5815,
     "noventaDias": 5.0661,
     "cientoOchentaDias": 15.0915,
     "enElAnio": 19.0424,
@@ -87,14 +88,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "MEGA QM S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00378G-e0793717.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Servicios y Transacciones S.A. (BST)",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00387-5d5880dd.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00387-5d5880dd.jpg"
     }
   ]
 }

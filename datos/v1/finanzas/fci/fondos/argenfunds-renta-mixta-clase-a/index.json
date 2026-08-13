@@ -2,7 +2,7 @@
   "fondoId": "705",
   "claseId": "2047",
   "nombre": "Argenfunds Renta Mixta - Clase A",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Argenfunds S.A.",
   "depositaria": "Banco Macro S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "821",
-  "patrimonio": 501368579.01,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 497871591.42,
+  "cantidadCuotapartes": 172311974.07,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 2877.988,
-    "ultimos7Dias": 0.3321,
-    "unMes": 1.4406,
+    "valorCuotaparte": 2889.362,
+    "ultimos7Dias": 28.7596,
+    "unMes": 19.7059,
     "noventaDias": 4.968,
     "cientoOchentaDias": 14.5569,
     "enElAnio": 18.5592,
@@ -59,7 +60,7 @@
   "calificaciones": [
     {
       "calificadora": "Moodys Local Calif. Riesgo",
-      "calificacion": "(A)=A-bf.ar",
+      "calificacion": "AA",
       "fecha": "2017-06-12"
     }
   ],
@@ -75,14 +76,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Argenfunds S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00377G-dc836163.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00377G-dc836163.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Macro S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00098-871484a2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00098-871484a2.jpg"
     }
   ]
 }

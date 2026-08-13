@@ -2,7 +2,7 @@
   "fondoId": "827",
   "claseId": "2330",
   "nombre": "Ciclo Nova Ahorro Plus - Clase B",
-  "fecha": "2026-08-06",
+  "fecha": "2026-08-12",
   "administradora": "Ciclo Nova Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1041",
-  "patrimonio": 51379203458.44,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 51510383960.96,
+  "cantidadCuotapartes": 1311918171.28,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 39114.271,
-    "ultimos7Dias": 0.411,
-    "unMes": 1.6702,
+    "valorCuotaparte": 39263.412,
+    "ultimos7Dias": 22.4486,
+    "unMes": 20.4361,
     "noventaDias": 5.2983,
     "cientoOchentaDias": 13.1305,
     "enElAnio": 17.0582,
@@ -101,14 +102,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Ciclo Nova Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02496G-cffb0731.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02496G-cffb0731.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

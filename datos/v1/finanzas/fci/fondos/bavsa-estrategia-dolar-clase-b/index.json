@@ -2,7 +2,7 @@
   "fondoId": "1692",
   "claseId": "5645",
   "nombre": "BAVSA Estrategia Dolar - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "BAVSA Fondos S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1697",
-  "patrimonio": 6720824.62,
-  "inversionMinima": 0,
+  "patrimonio": 7311634.96,
+  "cantidadCuotapartes": 5830444.26,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1253.381,
-    "ultimos7Dias": 0.183,
-    "unMes": 1.2931,
+    "valorCuotaparte": 1254.044,
+    "ultimos7Dias": -4.3788,
+    "unMes": 11.4188,
     "noventaDias": 11.366,
     "cientoOchentaDias": 9.2127,
     "enElAnio": 7.6335,
@@ -129,14 +130,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "BAVSA Fondos S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03118G-d03fc40c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03118G-d03fc40c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

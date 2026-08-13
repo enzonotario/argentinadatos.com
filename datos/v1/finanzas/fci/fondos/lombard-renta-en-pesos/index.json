@@ -2,7 +2,7 @@
   "fondoId": "75",
   "claseId": "75",
   "nombre": "Lombard Renta en Pesos",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Patagonia Inversora S.A.S.G.F.C.I",
   "depositaria": "Banco Patagonia S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "30%+70%",
   "horizonte": "Corto Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "121",
-  "patrimonio": 1595343202103.36,
+  "patrimonio": 1568301595738.07,
+  "cantidadCuotapartes": 6427627360,
   "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 243328.135,
-    "ultimos7Dias": 20.2366,
-    "unMes": 19.5306,
+    "valorCuotaparte": 243993.858,
+    "ultimos7Dias": 19.9093,
+    "unMes": 19.6938,
     "noventaDias": 19.5931,
     "cientoOchentaDias": 22.4759,
     "enElAnio": 24.1714,
@@ -95,14 +96,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Patagonia Inversora S.A.S.G.F.C.I",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00017G-57ea7826.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00017G-57ea7826.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Patagonia S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00209-6f3e2645.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00209-6f3e2645.jpg"
     }
   ]
 }

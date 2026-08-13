@@ -2,7 +2,7 @@
   "fondoId": "1798",
   "claseId": "6153",
   "nombre": "Parakeet Gestion Activa - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Parakeet S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1847",
-  "patrimonio": 257136603.28,
-  "inversionMinima": 100000001,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 258271367.79,
+  "cantidadCuotapartes": 241376989.74,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1065.29,
-    "ultimos7Dias": 0.1147,
-    "unMes": 1.3469,
+    "valorCuotaparte": 1069.992,
+    "ultimos7Dias": 23.0149,
+    "unMes": 17.5842,
     "noventaDias": -1.1722,
     "cientoOchentaDias": 5.9605,
     "enElAnio": null,
@@ -61,14 +62,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Parakeet S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03222G-de7305da.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03222G-de7305da.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "1457",
   "claseId": "4306",
   "nombre": "Adcap Balanceado XVI - Clase A",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,69 +11,74 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1386",
-  "patrimonio": 3517990018.92,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 3654527797.89,
+  "cantidadCuotapartes": 613837692.22,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 5935.597,
-    "ultimos7Dias": 0.3511,
-    "unMes": 1.552,
-    "noventaDias": 5.5599,
-    "cientoOchentaDias": 13.4517,
-    "enElAnio": 17.2677,
-    "doceMeses": 36.7343
+    "valorCuotaparte": 5953.573,
+    "ultimos7Dias": 21.851,
+    "unMes": 19.6479,
+    "noventaDias": 5.3491,
+    "cientoOchentaDias": 13.1151,
+    "enElAnio": 17.6229,
+    "doceMeses": 36.639
   },
   "composicionCartera": [
     {
       "nombre": "Lecap S14G6",
-      "porcentaje": 20
-    },
-    {
-      "nombre": "Lecap S30S6",
       "porcentaje": 18.7
     },
     {
-      "nombre": "Pzo Fi $ Bco Coinag",
-      "porcentaje": 11.4
+      "nombre": "Lecap S30S6",
+      "porcentaje": 17.5
     },
     {
-      "nombre": "Lecap S13N6",
+      "nombre": "Pzo Fi $ Bco Coinag",
       "porcentaje": 10.6
     },
     {
+      "nombre": "Lecap S13N6",
+      "porcentaje": 9.9
+    },
+    {
       "nombre": "Lecap S15S6",
-      "porcentaje": 8.8
+      "porcentaje": 8.2
     },
     {
       "nombre": "Pzo Fi $ Nvo Bco Chaco",
-      "porcentaje": 8.6
+      "porcentaje": 8
+    },
+    {
+      "nombre": "Lecer X31L6",
+      "porcentaje": 6.2
+    },
+    {
+      "nombre": "FCI Allaria Ahorro - Clase C",
+      "porcentaje": 4.6
     },
     {
       "nombre": "Lecap S30N6",
-      "porcentaje": 4.5
+      "porcentaje": 4.2
     },
     {
       "nombre": "Pzo Fi $ Banco VOII",
-      "porcentaje": 4.3
+      "porcentaje": 4
     },
     {
-      "nombre": "FCI Cocos Ahorro - Clase C",
-      "porcentaje": 4.3
-    },
-    {
-      "nombre": "Pzo Fi $ Bco BACS",
-      "porcentaje": 4.3
+      "nombre": "FCI Balanz Capital Money Market  Clase B",
+      "porcentaje": 2.6
     },
     {
       "nombre": "Pzo Fi $ Bco Sol",
-      "porcentaje": 2.9
+      "porcentaje": 2.6
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 1.5
+      "porcentaje": 2.7
     }
   ],
   "calificaciones": [],
@@ -89,14 +94,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

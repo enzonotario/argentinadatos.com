@@ -2,7 +2,7 @@
   "fondoId": "335",
   "claseId": "2559",
   "nombre": "Schroder Capital Renta Fija Dolares - Clase B",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Schroder S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "429",
-  "patrimonio": 4504047.78,
+  "patrimonio": 4476957.98,
+  "cantidadCuotapartes": 30497572.54,
   "inversionMinima": 1,
-  "monedaInversion": "Dolar Estadounidense",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 147.685,
-    "ultimos7Dias": 0.4762,
-    "unMes": 0.8529,
+    "valorCuotaparte": 146.797,
+    "ultimos7Dias": -40.9156,
+    "unMes": 3.7995,
     "noventaDias": 2.0044,
     "cientoOchentaDias": 9.0216,
     "enElAnio": 12.0456,
@@ -103,14 +104,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Schroder S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00051G-0c57ca49.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00051G-0c57ca49.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

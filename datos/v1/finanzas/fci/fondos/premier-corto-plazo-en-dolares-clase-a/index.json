@@ -2,7 +2,7 @@
   "fondoId": "1691",
   "claseId": "5640",
   "nombre": "Premier Corto Plazo en Dólares - Clase A",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Supervielle Asset Management S.A.",
   "depositaria": "Banco Supervielle S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1698",
-  "patrimonio": 24396411.54,
-  "inversionMinima": 100,
+  "patrimonio": 24441136.2,
+  "cantidadCuotapartes": 24106663.9,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1013.669,
-    "ultimos7Dias": 0.7563,
-    "unMes": 0.8344,
+    "valorCuotaparte": 1013.875,
+    "ultimos7Dias": 0.9259,
+    "unMes": 0.8346,
     "noventaDias": 0.8765,
     "cientoOchentaDias": 0.9311,
     "enElAnio": 1.0034,
@@ -57,14 +58,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Supervielle Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00052G-7dab5db1.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00052G-7dab5db1.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Supervielle S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00097-9a7b1e3e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00097-9a7b1e3e.jpg"
     }
   ]
 }

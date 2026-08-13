@@ -2,29 +2,30 @@
   "fondoId": "1311",
   "claseId": "3729",
   "nombre": "Adcap S&C Renta Corporativa Corto Plazo Abierto Pymes - Clase C",
-  "fecha": "2026-08-11",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "PyMes",
+  "tipoRenta": "Retorno Total",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Badlar",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1253",
-  "patrimonio": 12601622851.51,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 12605425983.19,
+  "cantidadCuotapartes": 999616145.67,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 12606.462,
-    "ultimos7Dias": 0.4048,
-    "unMes": 1.6971,
-    "noventaDias": 6.0162,
-    "cientoOchentaDias": 14.9512,
-    "enElAnio": 19.5978,
-    "doceMeses": 38.7957
+    "valorCuotaparte": 12610.266,
+    "ultimos7Dias": 22.6867,
+    "unMes": 19.676,
+    "noventaDias": 6.0482,
+    "cientoOchentaDias": 14.9859,
+    "enElAnio": 19.6339,
+    "doceMeses": 38.8376
   },
   "composicionCartera": [
     {
@@ -93,14 +94,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

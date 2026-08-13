@@ -2,25 +2,26 @@
   "fondoId": "1291",
   "claseId": "3615",
   "nombre": "Argenfunds Infraestructura - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Argenfunds S.A.",
   "depositaria": "Banco Macro S.A.",
-  "tipoRenta": "Infraestructura",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1239",
-  "patrimonio": 7229930048.96,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 6970181358.58,
+  "cantidadCuotapartes": 4077092699.77,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1711.883,
-    "ultimos7Dias": 0.4146,
-    "unMes": 2.1676,
+    "valorCuotaparte": 1709.596,
+    "ultimos7Dias": -6.9661,
+    "unMes": 18.4612,
     "noventaDias": 8.3382,
     "cientoOchentaDias": 15.7583,
     "enElAnio": 18.8815,
@@ -76,7 +77,13 @@
       "porcentaje": 2.1
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "Af.ar",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 1.5,
     "honorarioDepositaria": 0.2,
@@ -89,14 +96,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Argenfunds S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00377G-dc836163.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00377G-dc836163.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Macro S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00098-871484a2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00098-871484a2.jpg"
     }
   ]
 }

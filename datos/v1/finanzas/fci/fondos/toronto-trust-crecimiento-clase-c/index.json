@@ -2,7 +2,7 @@
   "fondoId": "775",
   "claseId": "1746",
   "nombre": "Toronto Trust Crecimiento - Clase C",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco Credito y Securitizacion S.A. (BACS)",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "966",
-  "patrimonio": 631177.14,
-  "inversionMinima": 1000,
+  "patrimonio": 602130.67,
+  "cantidadCuotapartes": 2851362.64,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 215.824,
-    "ultimos7Dias": 0.8594,
-    "unMes": 0.4678,
+    "valorCuotaparte": 211.173,
+    "ultimos7Dias": -94.9573,
+    "unMes": -17.7476,
     "noventaDias": 5.6051,
     "cientoOchentaDias": 7.6155,
     "enElAnio": 11.0132,
@@ -79,12 +80,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Investis Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00021G-d9e0d02c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00021G-d9e0d02c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Credito y Securitizacion S.A. (BACS)",
       "logo": null
     }

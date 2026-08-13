@@ -2,7 +2,7 @@
   "fondoId": "275",
   "claseId": "275",
   "nombre": "1810 Renta Variable Argentina",
-  "fecha": "2026-08-10",
+  "fecha": "2026-08-12",
   "administradora": "Proahorro Administradora de Activos S.A.",
   "depositaria": "Banco Credicoop Coop. Ltdo.",
   "tipoRenta": "Renta Variable",
@@ -11,20 +11,21 @@
   "benchmark": "S&P Merval",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "351",
-  "patrimonio": 35488231209.93,
+  "patrimonio": 34037325931.24,
+  "cantidadCuotapartes": 14940064,
   "inversionMinima": 5000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 2376577.153,
-    "ultimos7Dias": -3.7678,
-    "unMes": -1.5064,
-    "noventaDias": 11.9347,
-    "cientoOchentaDias": 4.1868,
-    "enElAnio": 3.0667,
-    "doceMeses": 31.6414
+    "valorCuotaparte": 2278258.375,
+    "ultimos7Dias": -214.8567,
+    "unMes": -80.8298,
+    "noventaDias": 8.9004,
+    "cientoOchentaDias": 7.0482,
+    "enElAnio": -1.1971,
+    "doceMeses": 25.6483
   },
   "composicionCartera": [
     {
@@ -103,14 +104,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Proahorro Administradora de Activos S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00241G-5159107a.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00241G-5159107a.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Credicoop Coop. Ltdo.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00116-8cd1d90c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00116-8cd1d90c.jpg"
     }
   ]
 }

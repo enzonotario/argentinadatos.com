@@ -2,7 +2,7 @@
   "fondoId": "636",
   "claseId": "1432",
   "nombre": "IAM Ahorro Pesos - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Industrial Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Industrial S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "774",
-  "patrimonio": 1387330343.2,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 1237461596.12,
+  "cantidadCuotapartes": 31553055.87,
+  "inversionMinima": 100,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 39067.907,
-    "ultimos7Dias": 19.7811,
-    "unMes": 19.1927,
+    "valorCuotaparte": 39218.439,
+    "ultimos7Dias": 20.0911,
+    "unMes": 19.4206,
     "noventaDias": 19.3781,
     "cientoOchentaDias": 22.5236,
     "enElAnio": 23.8259,
@@ -99,14 +100,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Industrial Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00039G-d09ad373.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00039G-d09ad373.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Industrial S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00391-92ebcc0c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00391-92ebcc0c.jpg"
     }
   ]
 }

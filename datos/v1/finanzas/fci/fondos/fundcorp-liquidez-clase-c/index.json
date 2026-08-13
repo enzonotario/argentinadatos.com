@@ -2,7 +2,7 @@
   "fondoId": "888",
   "claseId": "2590",
   "nombre": "Fundcorp Liquidez - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "CMF Asset Management S.A.U.",
   "depositaria": "Banco C.M.F. S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1116",
-  "patrimonio": 105485584666.02,
-  "inversionMinima": 500000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 118913554809.91,
+  "cantidadCuotapartes": 6133689444.51,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 19313.159,
-    "ultimos7Dias": 19.9016,
-    "unMes": 19.0818,
+    "valorCuotaparte": 19386.954,
+    "ultimos7Dias": 19.9236,
+    "unMes": 19.4429,
     "noventaDias": 19.7234,
     "cientoOchentaDias": 22.2616,
     "enElAnio": 24.6485,
@@ -113,12 +114,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "CMF Asset Management S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00401G-76eff522.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00401G-76eff522.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco C.M.F. S.A.",
       "logo": null
     }

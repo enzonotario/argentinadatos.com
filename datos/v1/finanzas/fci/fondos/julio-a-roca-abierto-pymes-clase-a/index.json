@@ -2,25 +2,26 @@
   "fondoId": "1397",
   "claseId": "4049",
   "nombre": "Julio A. Roca Abierto Pymes - Clase A",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Tutelar Inversora S.A.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "PyMes",
+  "tipoRenta": "Retorno Total",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "30%+70%",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1214",
-  "patrimonio": 960048298.17,
+  "patrimonio": 952680071.12,
+  "cantidadCuotapartes": 202865001,
   "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 4732.4491,
-    "ultimos7Dias": 0.3105,
-    "unMes": 2.9043,
+    "valorCuotaparte": 4696.128,
+    "ultimos7Dias": -22.5551,
+    "unMes": 5712405.7333,
     "noventaDias": 9.0815,
     "cientoOchentaDias": 11.881,
     "enElAnio": 21.7712,
@@ -114,8 +115,8 @@
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": 0,
-    "honorarioDepositaria": 0,
+    "honorarioGerente": 5,
+    "honorarioDepositaria": 1,
     "comisionIngreso": 0,
     "comisionEgreso": 0,
     "comisionTransferencia": 0,
@@ -125,14 +126,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Tutelar Inversora S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02469G-82862ec5.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02469G-82862ec5.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

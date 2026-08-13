@@ -2,7 +2,7 @@
   "fondoId": "660",
   "claseId": "1363",
   "nombre": "Optimum Multi Asset Fund - Clase A",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "SAM Argentina S.G.F.C.I.S.A.U.",
   "depositaria": "BNP Paribas",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "789",
-  "patrimonio": 1869240751.84,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 1872002040.04,
+  "cantidadCuotapartes": 139988187.17,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 13304.509,
-    "ultimos7Dias": -0.0474,
-    "unMes": 1.3976,
+    "valorCuotaparte": 13372.571,
+    "ultimos7Dias": 33.1873,
+    "unMes": 17.271,
     "noventaDias": 5.2188,
     "cientoOchentaDias": 21.591,
     "enElAnio": 24.9488,
@@ -79,14 +80,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "SAM Argentina S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00016G-52d8d4aa.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00016G-52d8d4aa.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "BNP Paribas",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00070-12f7bb54.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00070-12f7bb54.jpg"
     }
   ]
 }

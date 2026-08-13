@@ -2,7 +2,7 @@
   "fondoId": "599",
   "claseId": "1217",
   "nombre": "Rofex 20 Renta Variable - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Variable",
@@ -11,16 +11,17 @@
   "benchmark": "Rofex 20",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "704",
-  "patrimonio": 38598620666.02,
-  "inversionMinima": 50000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 36701736579.97,
+  "cantidadCuotapartes": 117961826.03,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 327169.544,
-    "ultimos7Dias": -2.3098,
-    "unMes": -0.9231,
+    "valorCuotaparte": 311132.32,
+    "ultimos7Dias": -255.5943,
+    "unMes": -90.6697,
     "noventaDias": 12.6782,
     "cientoOchentaDias": 7.7645,
     "enElAnio": 5.1418,
@@ -93,14 +94,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00022G-3c173d8e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

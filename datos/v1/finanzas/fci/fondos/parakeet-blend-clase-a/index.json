@@ -2,7 +2,7 @@
   "fondoId": "1698",
   "claseId": "5671",
   "nombre": "Parakeet Blend - Clase A",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Parakeet S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1715",
-  "patrimonio": 6545025623.44,
-  "inversionMinima": 500000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 64436560.1,
+  "cantidadCuotapartes": 59869571.75,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1078.421,
-    "ultimos7Dias": 3.9813,
-    "unMes": 3.9204,
+    "valorCuotaparte": 1076.282,
+    "ultimos7Dias": 1.6041,
+    "unMes": 50.4697,
     "noventaDias": 7.8421,
     "cientoOchentaDias": 7.8421,
     "enElAnio": 7.8421,
@@ -105,14 +106,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Parakeet S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03222G-de7305da.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03222G-de7305da.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "1308",
   "claseId": "3717",
   "nombre": "Champaquí Estratégico - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Bancor Fondos S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Cordoba S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1130",
-  "patrimonio": 3982968926.57,
+  "patrimonio": 3885189837.18,
+  "cantidadCuotapartes": 302713200.77,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 12828.1143,
-    "ultimos7Dias": -0.5821,
-    "unMes": -0.167,
+    "valorCuotaparte": 12834.557,
+    "ultimos7Dias": 2.6189,
+    "unMes": 1.9712,
     "noventaDias": 6.6862,
     "cientoOchentaDias": 11.1817,
     "enElAnio": 9.7725,
@@ -83,12 +84,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Bancor Fondos S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02734G-9dbd2ace.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02734G-9dbd2ace.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Cordoba S.A.",
       "logo": null
     }

@@ -2,7 +2,7 @@
   "fondoId": "882",
   "claseId": "5562",
   "nombre": "Argenfunds Liquidez - Clase G Ley N° 27.743",
-  "fecha": "2026-08-06",
+  "fecha": "2026-08-12",
   "administradora": "Argenfunds S.A.",
   "depositaria": "Banco Macro S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "No Registrada",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1105",
-  "patrimonio": 26445.84,
-  "inversionMinima": 10,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 26519.23,
+  "cantidadCuotapartes": 20701.57,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1277.48,
-    "ultimos7Dias": 17.249,
-    "unMes": 16.3628,
+    "valorCuotaparte": 1281.025,
+    "ultimos7Dias": 16.902,
+    "unMes": 16.4655,
     "noventaDias": 16.2889,
     "cientoOchentaDias": 19.1992,
     "enElAnio": 20.2348,
@@ -101,14 +102,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Argenfunds S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00377G-dc836163.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00377G-dc836163.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Macro S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00098-871484a2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00098-871484a2.jpg"
     }
   ]
 }

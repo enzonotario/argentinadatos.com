@@ -2,7 +2,7 @@
   "fondoId": "1625",
   "claseId": "5393",
   "nombre": "MP Ahorro - Clase A",
-  "fecha": "2026-08-03",
+  "fecha": "2026-08-12",
   "administradora": "Mercado Pago Asset Managemet S.A.",
   "depositaria": "Banco Industrial S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1650",
-  "patrimonio": 211244847500.18,
-  "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 215357440873.33,
+  "cantidadCuotapartes": 184017432025.1311,
+  "inversionMinima": 0,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1163.758,
-    "ultimos7Dias": 0.3331,
-    "unMes": 1.5536,
+    "valorCuotaparte": 1170.31,
+    "ultimos7Dias": 25.4395,
+    "unMes": 20.6213,
     "noventaDias": 5.761,
     "cientoOchentaDias": 5.8783,
     "enElAnio": 5.8783,
@@ -101,14 +102,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mercado Pago Asset Managemet S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03265G-e5cf3c10.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03265G-e5cf3c10.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Industrial S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00391-92ebcc0c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00391-92ebcc0c.jpg"
     }
   ]
 }

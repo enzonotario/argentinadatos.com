@@ -2,7 +2,7 @@
   "fondoId": "593",
   "claseId": "4568",
   "nombre": "MEGAQM Pesos - Clase E",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "MEGA QM S.A.",
   "depositaria": "Banco de Servicios y Transacciones S.A. (BST)",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "737",
-  "patrimonio": 2677513600.61,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 2604002983.48,
+  "cantidadCuotapartes": 1587269596.3,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1634.982,
-    "ultimos7Dias": 17.9145,
-    "unMes": 16.6869,
+    "valorCuotaparte": 1640.555,
+    "ultimos7Dias": 17.7734,
+    "unMes": 17.0466,
     "noventaDias": 17.4773,
     "cientoOchentaDias": 20.54,
     "enElAnio": 21.9545,
@@ -111,14 +112,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "MEGA QM S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00378G-e0793717.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Servicios y Transacciones S.A. (BST)",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00387-5d5880dd.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00387-5d5880dd.jpg"
     }
   ]
 }

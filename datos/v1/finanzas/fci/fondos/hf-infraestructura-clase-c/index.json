@@ -2,10 +2,10 @@
   "fondoId": "897",
   "claseId": "3212",
   "nombre": "HF Infraestructura - Clase C",
-  "fecha": "2026-08-10",
+  "fecha": "2026-08-12",
   "administradora": "Galicia Asset Management S.A.U.",
   "depositaria": "Banco de Galicia y Buenos Aires S.A.",
-  "tipoRenta": "Infraestructura",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Otro",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1124",
-  "patrimonio": 29482011.73,
-  "inversionMinima": 0,
+  "patrimonio": 29580423.09,
+  "cantidadCuotapartes": 19775179.77,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 3,
   "rendimientos": {
-    "valorCuotaparte": 1490.859,
-    "ultimos7Dias": 0.2583,
-    "unMes": 0.7449,
+    "valorCuotaparte": 1495.836,
+    "ultimos7Dias": 17.5053,
+    "unMes": 4.9769,
     "noventaDias": 1.7498,
     "cientoOchentaDias": 4.1591,
     "enElAnio": 5.5316,
@@ -104,7 +105,13 @@
       "porcentaje": 13.4
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "s/c",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 0.8373,
     "honorarioDepositaria": 0.1478,
@@ -117,14 +124,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Galicia Asset Management S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00002G-01a59b57.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00002G-01a59b57.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Galicia y Buenos Aires S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00081-d14fcb5c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00081-d14fcb5c.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "1482",
   "claseId": "4395",
   "nombre": "Toronto Trust Renta Dólar - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco Credito y Securitizacion S.A. (BACS)",
   "tipoRenta": "Renta Mixta",
@@ -13,14 +13,15 @@
   "duracion": "No Aplicable",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1463",
-  "patrimonio": 1578576.01,
-  "inversionMinima": 1000,
+  "patrimonio": 1764476.87,
+  "cantidadCuotapartes": 1546746.34,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1138.116,
-    "ultimos7Dias": -0.1196,
-    "unMes": 0.4575,
+    "valorCuotaparte": 1140.767,
+    "ultimos7Dias": 12.1456,
+    "unMes": 9.9905,
     "noventaDias": 1.7471,
     "cientoOchentaDias": 3.607,
     "enElAnio": 5.0396,
@@ -87,12 +88,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Investis Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00021G-d9e0d02c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00021G-d9e0d02c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Credito y Securitizacion S.A. (BACS)",
       "logo": null
     }

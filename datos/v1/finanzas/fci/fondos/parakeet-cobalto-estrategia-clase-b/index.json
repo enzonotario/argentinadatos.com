@@ -2,7 +2,7 @@
   "fondoId": "1693",
   "claseId": "5655",
   "nombre": "Parakeet Cobalto Estrategia - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Parakeet S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1714",
-  "patrimonio": 17923597316.06,
-  "inversionMinima": 50000001,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 18682954480.98,
+  "cantidadCuotapartes": 11873469069.8,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1566.574,
-    "ultimos7Dias": -0.3155,
-    "unMes": 1.2697,
+    "valorCuotaparte": 1573.504,
+    "ultimos7Dias": 23.0663,
+    "unMes": 10.7271,
     "noventaDias": 8.0573,
     "cientoOchentaDias": 23.7984,
     "enElAnio": 28.986,
@@ -69,14 +70,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Parakeet S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03222G-de7305da.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03222G-de7305da.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

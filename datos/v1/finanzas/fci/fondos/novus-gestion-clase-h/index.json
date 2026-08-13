@@ -2,7 +2,7 @@
   "fondoId": "1486",
   "claseId": "4424",
   "nombre": "Novus Gestion - Clase H",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Novus Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Plazo Flexible",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1373",
-  "patrimonio": 6509049390.68,
-  "inversionMinima": 1000000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 6538626690.77,
+  "cantidadCuotapartes": 2833568477.2,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 2297.121,
-    "ultimos7Dias": 0.2842,
-    "unMes": 1.6846,
+    "valorCuotaparte": 2307.559,
+    "ultimos7Dias": 23.6934,
+    "unMes": 21.7511,
     "noventaDias": 6.3699,
     "cientoOchentaDias": 18.247,
     "enElAnio": 23.083,
@@ -77,14 +78,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Novus Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02887G-ef45d825.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02887G-ef45d825.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

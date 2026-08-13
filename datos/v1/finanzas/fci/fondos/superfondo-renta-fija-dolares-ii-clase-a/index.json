@@ -2,7 +2,7 @@
   "fondoId": "720",
   "claseId": "1565",
   "nombre": "Superfondo Renta Fija Dólares II - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Santander Asset Management G.F.C.I.S.A.",
   "depositaria": "Banco Santander Argentina S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Plazo Flexible",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Dolar Estadounidense Billete",
+  "moneda": "USB",
   "codigoCNV": "881",
-  "patrimonio": 122141785.72,
-  "inversionMinima": 1000,
-  "monedaInversion": "Dolar Estadounidense Billete",
+  "patrimonio": 121696296.06,
+  "cantidadCuotapartes": 94528139.73,
+  "inversionMinima": 1,
+  "monedaInversion": "USB",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1285.973,
-    "ultimos7Dias": 0.2173,
-    "unMes": -0.0956,
+    "valorCuotaparte": 1287.408,
+    "ultimos7Dias": 5.8186,
+    "unMes": 0.924,
     "noventaDias": -0.1096,
     "cientoOchentaDias": 0.3125,
     "enElAnio": 0.5774,
@@ -125,14 +126,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Santander Asset Management G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00049G-c03041ad.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00049G-c03041ad.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Santander Argentina S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00096-4e9f0233.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00096-4e9f0233.jpg"
     }
   ]
 }

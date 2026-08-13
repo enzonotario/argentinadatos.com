@@ -2,7 +2,7 @@
   "fondoId": "710",
   "claseId": "1522",
   "nombre": "Consultatio Liquidez Dólar - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "883",
-  "patrimonio": 33637354.62,
-  "inversionMinima": 250000,
+  "patrimonio": 28618974.91,
+  "cantidadCuotapartes": 38418707.4,
+  "inversionMinima": 20,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 744.831,
-    "ultimos7Dias": 0.0216,
-    "unMes": 0.0535,
+    "valorCuotaparte": 744.923,
+    "ultimos7Dias": 0.6441,
+    "unMes": 0.6013,
     "noventaDias": 0.1398,
     "cientoOchentaDias": 0.211,
     "enElAnio": 0.3089,
@@ -71,14 +72,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00022G-3c173d8e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

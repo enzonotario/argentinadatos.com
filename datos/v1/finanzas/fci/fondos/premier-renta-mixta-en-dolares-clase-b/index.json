@@ -2,7 +2,7 @@
   "fondoId": "699",
   "claseId": "1494",
   "nombre": "Premier Renta Mixta en Dólares - Clase B",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Supervielle Asset Management S.A.",
   "depositaria": "Banco Supervielle S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "860",
-  "patrimonio": 7223752.37,
-  "inversionMinima": 100,
+  "patrimonio": 7218916.61,
+  "cantidadCuotapartes": 6901101.02,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1044.231,
-    "ultimos7Dias": 0.313,
-    "unMes": 0.7362,
+    "valorCuotaparte": 1046.053,
+    "ultimos7Dias": 8.8479,
+    "unMes": 8.3982,
     "noventaDias": 1.2616,
     "cientoOchentaDias": 3.7001,
     "enElAnio": 4.7742,
@@ -99,14 +100,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Supervielle Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00052G-7dab5db1.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00052G-7dab5db1.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Supervielle S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00097-9a7b1e3e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00097-9a7b1e3e.jpg"
     }
   ]
 }

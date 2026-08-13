@@ -2,7 +2,7 @@
   "fondoId": "1703",
   "claseId": "5697",
   "nombre": "Consultatio Estrategia III - Clase A",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -14,13 +14,14 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1709",
   "patrimonio": 0,
-  "inversionMinima": 100000,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1216.798,
-    "ultimos7Dias": 2.5632,
-    "unMes": 2.932,
+    "valorCuotaparte": 1210.067,
+    "ultimos7Dias": -9.7204,
+    "unMes": 19.5869,
     "noventaDias": 5.1122,
     "cientoOchentaDias": 11.2393,
     "enElAnio": 12.7629,
@@ -125,14 +126,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00022G-3c173d8e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

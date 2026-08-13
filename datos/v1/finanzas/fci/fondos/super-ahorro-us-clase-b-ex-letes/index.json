@@ -2,7 +2,7 @@
   "fondoId": "152",
   "claseId": "402",
   "nombre": "Super Ahorro U$S - Clase B ex Letes",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Santander Asset Management G.F.C.I.S.A.",
   "depositaria": "Banco Santander Argentina S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,14 +13,15 @@
   "duracion": "No Aplicable",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "146",
-  "patrimonio": 29085.79,
+  "patrimonio": 29099.41,
+  "cantidadCuotapartes": 684854.19,
   "inversionMinima": 1000,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 3,
   "rendimientos": {
-    "valorCuotaparte": 42.4701,
-    "ultimos7Dias": -1.5465,
-    "unMes": -1.5526,
+    "valorCuotaparte": 42.49,
+    "ultimos7Dias": 2.4555,
+    "unMes": -0.621,
     "noventaDias": -1.5563,
     "cientoOchentaDias": -1.5611,
     "enElAnio": -1.5595,
@@ -32,7 +33,13 @@
       "porcentaje": 100
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "NA",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 0.736,
     "honorarioDepositaria": 0.8203,
@@ -45,14 +52,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Santander Asset Management G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00049G-c03041ad.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00049G-c03041ad.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Santander Argentina S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00096-4e9f0233.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00096-4e9f0233.jpg"
     }
   ]
 }

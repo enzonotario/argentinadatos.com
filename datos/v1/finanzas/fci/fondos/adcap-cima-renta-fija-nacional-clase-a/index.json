@@ -2,7 +2,7 @@
   "fondoId": "589",
   "claseId": "1191",
   "nombre": "Adcap Cima Renta Fija Nacional - Clase A",
-  "fecha": "2026-08-11",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,20 +11,21 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "734",
-  "patrimonio": 13146.03,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 13135.18,
+  "cantidadCuotapartes": 127.79,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 3,
   "rendimientos": {
-    "valorCuotaparte": 102869.019,
-    "ultimos7Dias": -0.3389,
-    "unMes": -2.3237,
-    "noventaDias": -0.3627,
-    "cientoOchentaDias": 3.5647,
-    "enElAnio": 5.2264,
-    "doceMeses": 23.3966
+    "valorCuotaparte": 102784.116,
+    "ultimos7Dias": -21.9589,
+    "unMes": -26.3053,
+    "noventaDias": -0.4449,
+    "cientoOchentaDias": 3.4792,
+    "enElAnio": 5.1396,
+    "doceMeses": 23.2948
   },
   "composicionCartera": [
     {
@@ -52,7 +53,13 @@
       "porcentaje": 1.8
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "A-bf ar",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 2.27,
     "honorarioDepositaria": 0.1573,
@@ -65,14 +72,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "266",
   "claseId": "321",
   "nombre": "Optimum Dynamic Balanced Fund - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "SAM Argentina S.G.F.C.I.S.A.U.",
   "depositaria": "BNP Paribas",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Plazo Flexible",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "305",
   "patrimonio": 0,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1254774.314,
-    "ultimos7Dias": -0.047,
-    "unMes": -0.2912,
+    "valorCuotaparte": 1254181.092,
+    "ultimos7Dias": -2.4652,
+    "unMes": -3.0444,
     "noventaDias": -0.7929,
     "cientoOchentaDias": -1.5797,
     "enElAnio": -1.9099,
@@ -51,14 +52,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "SAM Argentina S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00016G-52d8d4aa.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00016G-52d8d4aa.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "BNP Paribas",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00070-12f7bb54.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00070-12f7bb54.jpg"
     }
   ]
 }

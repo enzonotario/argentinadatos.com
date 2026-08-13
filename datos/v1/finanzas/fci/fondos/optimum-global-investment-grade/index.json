@@ -2,7 +2,7 @@
   "fondoId": "348",
   "claseId": "581",
   "nombre": "Optimum Global Investment Grade",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "SAM Argentina S.G.F.C.I.S.A.U.",
   "depositaria": "BNP Paribas",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "468",
-  "patrimonio": 58109523686.17,
+  "patrimonio": 58098040689.76,
+  "cantidadCuotapartes": 39961512.89,
   "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1456277.676,
-    "ultimos7Dias": 0.9294,
-    "unMes": 0.5083,
+    "valorCuotaparte": 1453849.879,
+    "ultimos7Dias": -8.6929,
+    "unMes": 7.602,
     "noventaDias": 7.0418,
     "cientoOchentaDias": 11.9036,
     "enElAnio": 12.3924,
@@ -103,14 +104,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "SAM Argentina S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00016G-52d8d4aa.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00016G-52d8d4aa.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "BNP Paribas",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00070-12f7bb54.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00070-12f7bb54.jpg"
     }
   ]
 }

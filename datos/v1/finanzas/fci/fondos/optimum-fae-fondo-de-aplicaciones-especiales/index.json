@@ -2,7 +2,7 @@
   "fondoId": "229",
   "claseId": "229",
   "nombre": "Optimum FAE (Fondo de Aplicaciones Especiales)",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "SAM Argentina S.G.F.C.I.S.A.U.",
   "depositaria": "BNP Paribas",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Plazo Flexible",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "276",
-  "patrimonio": 32088934437.3,
+  "patrimonio": 32012688495.34,
+  "cantidadCuotapartes": 44200289.46,
   "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 725344.395,
-    "ultimos7Dias": -0.1951,
-    "unMes": 0.4006,
+    "valorCuotaparte": 724264.227,
+    "ultimos7Dias": -0.1008,
+    "unMes": 1.0136,
     "noventaDias": 7.0243,
     "cientoOchentaDias": 14.6216,
     "enElAnio": 17.5966,
@@ -91,14 +92,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "SAM Argentina S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00016G-52d8d4aa.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00016G-52d8d4aa.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "BNP Paribas",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00070-12f7bb54.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00070-12f7bb54.jpg"
     }
   ]
 }

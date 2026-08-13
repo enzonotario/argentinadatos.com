@@ -2,7 +2,7 @@
   "fondoId": "784",
   "claseId": "1776",
   "nombre": "Consultatio SMSV Renta en Pesos - Clase C",
-  "fecha": "2026-08-06",
+  "fecha": "2026-08-12",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "987",
-  "patrimonio": 14959091519.18,
-  "inversionMinima": 15000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 15018408564.02,
+  "cantidadCuotapartes": 181082207.67,
+  "inversionMinima": 50000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 82608.844,
-    "ultimos7Dias": -0.0432,
-    "unMes": 0.8878,
+    "valorCuotaparte": 82936.964,
+    "ultimos7Dias": 12.9786,
+    "unMes": 12.7483,
     "noventaDias": 4.5256,
     "cientoOchentaDias": 18.6801,
     "enElAnio": 22.9171,
@@ -73,14 +74,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00022G-3c173d8e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

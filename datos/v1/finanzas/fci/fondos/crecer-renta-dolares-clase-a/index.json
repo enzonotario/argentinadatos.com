@@ -2,7 +2,7 @@
   "fondoId": "1637",
   "claseId": "5432",
   "nombre": "Crecer Renta Dólares - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Ciudad Administradora de Activos S.A.U.",
   "depositaria": "Banco Ciudad de Buenos Aires",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1663",
-  "patrimonio": 9848419.6,
-  "inversionMinima": 0,
+  "patrimonio": 9686400.81,
+  "cantidadCuotapartes": 8262522.68,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1186.128,
-    "ultimos7Dias": 0.2193,
-    "unMes": 0.0028,
+    "valorCuotaparte": 1172.33,
+    "ultimos7Dias": -60.6568,
+    "unMes": -14.3002,
     "noventaDias": 3.0464,
     "cientoOchentaDias": 5.9038,
     "enElAnio": 8.5598,
@@ -77,14 +78,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Ciudad Administradora de Activos S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03255G-43d1241b.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03255G-43d1241b.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Ciudad de Buenos Aires",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00067-2efdbc54.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00067-2efdbc54.jpg"
     }
   ]
 }

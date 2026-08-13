@@ -2,7 +2,7 @@
   "fondoId": "1534",
   "claseId": "5427",
   "nombre": "Benedit Multiestrategia - Clase X Ley N° 27.743",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Axis S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,25 +11,26 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1459",
-  "patrimonio": 810306323.75,
-  "inversionMinima": 10000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 798730522.4,
+  "cantidadCuotapartes": 709826848.73,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1141.555,
-    "ultimos7Dias": 0.5657,
-    "unMes": 2.1352,
-    "noventaDias": -1.2348,
-    "cientoOchentaDias": -7.4379,
-    "enElAnio": -1.8286,
-    "doceMeses": 8.2232
+    "valorCuotaparte": 1125.247,
+    "ultimos7Dias": -74.4901,
+    "unMes": 4.8895,
+    "noventaDias": -1.1543,
+    "cientoOchentaDias": -7.8408,
+    "enElAnio": -3.231,
+    "doceMeses": 7.9926
   },
   "composicionCartera": [
     {
       "nombre": "Cedear NU Holdings Ltd",
-      "porcentaje": 8.8
+      "porcentaje": 9.1
     },
     {
       "nombre": "Cedear Banco Bradesco ON N1",
@@ -37,15 +38,15 @@
     },
     {
       "nombre": "Cedear Itau Unibanco Holdings",
-      "porcentaje": 5.8
+      "porcentaje": 5.9
     },
     {
       "nombre": "Cedear Vale R Doce ON N1",
-      "porcentaje": 5.4
+      "porcentaje": 5.7
     },
     {
       "nombre": "YPF - D",
-      "porcentaje": 5.4
+      "porcentaje": 5.6
     },
     {
       "nombre": "Cheque MAVR270900076",
@@ -53,18 +54,14 @@
     },
     {
       "nombre": "Cedear Adecoagro",
-      "porcentaje": 4
-    },
-    {
-      "nombre": "Cedear ETF Global X Copper Miners",
-      "porcentaje": 3.2
+      "porcentaje": 4.1
     },
     {
       "nombre": "Cedear Shares MSCI Brazil ETF",
-      "porcentaje": 3
+      "porcentaje": 3.1
     },
     {
-      "nombre": "Caucion Colocadora $ Merval",
+      "nombre": "Cedear ETF Global X Copper Miners",
       "porcentaje": 2.9
     },
     {
@@ -76,12 +73,16 @@
       "porcentaje": 2.1
     },
     {
-      "nombre": "Comercial del Plata",
+      "nombre": "Cedear Vista Oil Gas",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "Pampa Energia",
       "porcentaje": 2
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 43.4
+      "porcentaje": 42.8
     }
   ],
   "calificaciones": [],
@@ -97,14 +98,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Axis S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00384G-b6af83ec.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00384G-b6af83ec.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

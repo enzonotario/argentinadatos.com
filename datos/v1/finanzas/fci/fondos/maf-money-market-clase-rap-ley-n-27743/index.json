@@ -2,7 +2,7 @@
   "fondoId": "503",
   "claseId": "4935",
   "nombre": "MAF Money Market - Clase RAP Ley N° 27.743",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Mariva Asset Management S.A.U.S.G.F.C.I.",
   "depositaria": "Banco Mariva S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "30%+70%",
   "horizonte": "Corto Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "637",
-  "patrimonio": 745661.32,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 748612.43,
+  "cantidadCuotapartes": 483317.25,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1542.7989,
-    "ultimos7Dias": 17.9643,
-    "unMes": 17.0718,
+    "valorCuotaparte": 1548.905,
+    "ultimos7Dias": 18.0966,
+    "unMes": 17.4699,
     "noventaDias": 17.0717,
     "cientoOchentaDias": 19.6245,
     "enElAnio": 21.0257,
@@ -107,12 +108,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mariva Asset Management S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00371G-45045e78.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00371G-45045e78.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Mariva S.A.",
       "logo": null
     }

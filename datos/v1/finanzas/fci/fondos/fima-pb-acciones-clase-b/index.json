@@ -2,7 +2,7 @@
   "fondoId": "22",
   "claseId": "1193",
   "nombre": "Fima PB Acciones - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Galicia Asset Management S.A.U.",
   "depositaria": "Banco de Galicia y Buenos Aires S.A.",
   "tipoRenta": "Renta Variable",
@@ -11,16 +11,17 @@
   "benchmark": "S&P Merval",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "105",
-  "patrimonio": 21425546597.45,
-  "inversionMinima": 5000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 20929575593.68,
+  "cantidadCuotapartes": 5868986.66,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 3718894.936,
-    "ultimos7Dias": -2.3097,
-    "unMes": -1.0583,
+    "valorCuotaparte": 3566131.056,
+    "ultimos7Dias": -214.1912,
+    "unMes": -76.3843,
     "noventaDias": 11.5054,
     "cientoOchentaDias": 7.0382,
     "enElAnio": 3.9299,
@@ -107,14 +108,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Galicia Asset Management S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00002G-01a59b57.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00002G-01a59b57.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Galicia y Buenos Aires S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00081-d14fcb5c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00081-d14fcb5c.jpg"
     }
   ]
 }

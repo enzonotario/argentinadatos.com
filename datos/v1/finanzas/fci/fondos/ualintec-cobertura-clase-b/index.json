@@ -2,7 +2,7 @@
   "fondoId": "1566",
   "claseId": "5028",
   "nombre": "Ualintec Cobertura - Clase B",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Ualá Fondos S.A.U.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1562",
-  "patrimonio": 143743376.68,
-  "inversionMinima": 100,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 143334313.97,
+  "cantidadCuotapartes": 132651218.59,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1083.619,
-    "ultimos7Dias": -0.4357,
-    "unMes": 0.4711,
+    "valorCuotaparte": 1080.535,
+    "ultimos7Dias": -7.7289,
+    "unMes": 5.7038,
     "noventaDias": 8.6752,
     "cientoOchentaDias": 8.3619,
     "enElAnio": 8.3619,
@@ -81,14 +82,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Ualá Fondos S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02923G-3d935475.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02923G-3d935475.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

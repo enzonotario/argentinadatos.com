@@ -2,7 +2,7 @@
   "fondoId": "1809",
   "claseId": "6203",
   "nombre": "Fundcorp Crecimiento - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "CMF Asset Management S.A.U.",
   "depositaria": "Banco C.M.F. S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "S&P Merval",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1589",
-  "patrimonio": 9210136305.72,
+  "patrimonio": 8966205725.01,
+  "cantidadCuotapartes": 2557215130514.82,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 3.618,
-    "ultimos7Dias": -0.3031,
-    "unMes": -0.4677,
+    "valorCuotaparte": 3.506,
+    "ultimos7Dias": -161.4151,
+    "unMes": -48.9924,
     "noventaDias": 4.7481,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -109,12 +110,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "CMF Asset Management S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00401G-76eff522.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00401G-76eff522.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco C.M.F. S.A.",
       "logo": null
     }

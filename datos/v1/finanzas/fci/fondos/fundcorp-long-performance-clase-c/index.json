@@ -2,7 +2,7 @@
   "fondoId": "806",
   "claseId": "2102",
   "nombre": "Fundcorp Long Performance - Clase C",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "CMF Asset Management S.A.U.",
   "depositaria": "Banco C.M.F. S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1031",
-  "patrimonio": 109981872.92,
-  "inversionMinima": 500000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 110449123.31,
+  "cantidadCuotapartes": 8522133.22,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 12905.439,
-    "ultimos7Dias": -0.0054,
-    "unMes": 1.6382,
+    "valorCuotaparte": 12960.267,
+    "ultimos7Dias": 28.3054,
+    "unMes": 18.3053,
     "noventaDias": 6.7137,
     "cientoOchentaDias": 20.4686,
     "enElAnio": 23.7366,
@@ -93,12 +94,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "CMF Asset Management S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00401G-76eff522.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00401G-76eff522.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco C.M.F. S.A.",
       "logo": null
     }

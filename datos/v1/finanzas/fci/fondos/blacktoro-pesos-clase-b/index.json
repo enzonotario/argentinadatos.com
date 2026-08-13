@@ -2,7 +2,7 @@
   "fondoId": "1901",
   "claseId": "6574",
   "nombre": "Blacktoro Pesos - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Blacktoro Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1960",
-  "patrimonio": 5293700965.66,
+  "patrimonio": 10917780650.54,
+  "cantidadCuotapartes": 10727994187.9,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1013.942,
-    "ultimos7Dias": 18.1857,
-    "unMes": null,
+    "valorCuotaparte": 1000,
+    "ultimos7Dias": 0,
+    "unMes": -3.2314,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -45,14 +46,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Blacktoro Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00011G-5feac20e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00011G-5feac20e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

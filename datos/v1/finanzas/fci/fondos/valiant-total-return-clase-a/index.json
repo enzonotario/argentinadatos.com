@@ -2,25 +2,26 @@
   "fondoId": "857",
   "claseId": "2454",
   "nombre": "Valiant Total Return - Clase A",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Valiant Asset Management S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "Retorno Total",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "A3500",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1073",
-  "patrimonio": 97385697.71,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 97179946.93,
+  "cantidadCuotapartes": 7629949.98,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 12763.609,
-    "ultimos7Dias": 0.4335,
-    "unMes": 1.9302,
+    "valorCuotaparte": 12736.643,
+    "ultimos7Dias": 3.6183,
+    "unMes": 14.8005,
     "noventaDias": 1.2959,
     "cientoOchentaDias": 4.6895,
     "enElAnio": 4.1233,
@@ -81,14 +82,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Valiant Asset Management S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02545G-f1f63ca6.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02545G-f1f63ca6.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

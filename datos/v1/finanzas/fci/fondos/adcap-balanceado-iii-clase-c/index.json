@@ -2,7 +2,7 @@
   "fondoId": "1402",
   "claseId": "4073",
   "nombre": "Adcap Balanceado III - Clase C",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-13",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -14,6 +14,7 @@
   "moneda": "Peso Argentina",
   "codigoCNV": "1382",
   "patrimonio": null,
+  "cantidadCuotapartes": null,
   "inversionMinima": 1000,
   "monedaInversion": "Peso Argentina",
   "plazoLiquidacionDias": 2,
@@ -29,15 +30,19 @@
   "composicionCartera": [
     {
       "nombre": "Pase Colocador ARS MAV",
-      "porcentaje": 14.8
+      "porcentaje": 14.4
     },
     {
       "nombre": "Cheque E *MAV070900904",
       "porcentaje": 6.9
     },
     {
-      "nombre": "Cheque E *MAV140801504",
-      "porcentaje": 3.5
+      "nombre": "FCI Gainvest Pesos - Clase B",
+      "porcentaje": 4.5
+    },
+    {
+      "nombre": "FCI SBS Ahorro Pesos Cl B",
+      "porcentaje": 3.6
     },
     {
       "nombre": "Cheque E *MAV140801392",
@@ -56,8 +61,8 @@
       "porcentaje": 2.1
     },
     {
-      "nombre": "Cheque E *MAV240800953",
-      "porcentaje": 2.1
+      "nombre": "Cheque MAVR210900076",
+      "porcentaje": 2
     },
     {
       "nombre": "Cheque MAVR280900057",
@@ -69,7 +74,7 @@
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 53.5
+      "porcentaje": 49
     }
   ],
   "calificaciones": [],
@@ -87,12 +92,12 @@
     {
       "tipo": "Sociedad Gerente:",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
       "tipo": "Sociedad Depositaria:",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

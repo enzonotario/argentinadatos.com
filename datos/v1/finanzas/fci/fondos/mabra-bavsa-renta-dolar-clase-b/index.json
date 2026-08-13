@@ -2,7 +2,7 @@
   "fondoId": "1720",
   "claseId": "5782",
   "nombre": "Mabra BAVSA Renta Dólar - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "BAVSA Fondos S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1749",
-  "patrimonio": 1222980.62,
-  "inversionMinima": 0,
+  "patrimonio": 1274353.64,
+  "cantidadCuotapartes": 1197955.94,
+  "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1062.469,
-    "ultimos7Dias": 0.1199,
-    "unMes": 0.5477,
+    "valorCuotaparte": 1063.773,
+    "ultimos7Dias": 6.3996,
+    "unMes": 5.8207,
     "noventaDias": 1.6182,
     "cientoOchentaDias": 3.55,
     "enElAnio": 4.4342,
@@ -73,14 +74,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "BAVSA Fondos S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03118G-d03fc40c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03118G-d03fc40c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

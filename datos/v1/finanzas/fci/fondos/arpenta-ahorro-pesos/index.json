@@ -2,7 +2,7 @@
   "fondoId": "513",
   "claseId": "1036",
   "nombre": "Arpenta Ahorro Pesos",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Mercofond S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "648",
-  "patrimonio": 312934384.04,
+  "patrimonio": 314517852.69,
+  "cantidadCuotapartes": 4243818.28,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 73738.875,
-    "ultimos7Dias": -0.4618,
-    "unMes": 0.8378,
+    "valorCuotaparte": 74111.998,
+    "ultimos7Dias": 26.3846,
+    "unMes": 12.9483,
     "noventaDias": 4.9741,
     "cientoOchentaDias": 16.0353,
     "enElAnio": 20.8481,
@@ -52,7 +53,13 @@
       "porcentaje": 2.2
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "BBB+",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 4,
     "honorarioDepositaria": 1,
@@ -65,14 +72,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mercofond S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00040G-5ca39baf.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00040G-5ca39baf.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "702",
   "claseId": "1501",
   "nombre": "SBS Dólar Plus Ley 27260 - Clase B",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "SBS Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "865",
-  "patrimonio": 178610931.65,
-  "inversionMinima": 1000,
+  "patrimonio": 178418344.75,
+  "cantidadCuotapartes": 197116689.68,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 904.647,
-    "ultimos7Dias": 0.0477,
-    "unMes": 0.2249,
+    "valorCuotaparte": 905.141,
+    "ultimos7Dias": 2.4898,
+    "unMes": 2.4891,
     "noventaDias": 0.6157,
     "cientoOchentaDias": 1.1851,
     "enElAnio": 1.4234,
@@ -49,14 +50,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "SBS Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00347G-615b02d0.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00347G-615b02d0.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

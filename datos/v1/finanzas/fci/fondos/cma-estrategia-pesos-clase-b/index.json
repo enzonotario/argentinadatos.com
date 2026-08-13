@@ -2,7 +2,7 @@
   "fondoId": "1634",
   "claseId": "5423",
   "nombre": "CMA Estrategia Pesos - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Capital Markets Argentina Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Plazo Flexible",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1643",
-  "patrimonio": 1165288330.26,
-  "inversionMinima": 10000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 1034197445.41,
+  "cantidadCuotapartes": 679312918.35,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1515.441,
-    "ultimos7Dias": -0.4638,
-    "unMes": 0.6153,
+    "valorCuotaparte": 1522.417,
+    "ultimos7Dias": 24.0028,
+    "unMes": 7.6948,
     "noventaDias": 5.3273,
     "cientoOchentaDias": 14.2244,
     "enElAnio": 16.8423,
@@ -113,14 +114,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Capital Markets Argentina Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00121G-95ac707c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00121G-95ac707c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

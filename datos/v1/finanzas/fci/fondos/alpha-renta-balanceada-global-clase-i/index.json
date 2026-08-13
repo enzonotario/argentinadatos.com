@@ -2,7 +2,7 @@
   "fondoId": "502",
   "claseId": "1030",
   "nombre": "Alpha Renta Balanceada Global - Clase I",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "ICBC (Arg) S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,20 +11,21 @@
   "benchmark": "IAMC",
   "horizonte": "Plazo Flexible",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "639",
   "patrimonio": 0,
-  "inversionMinima": 100000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 2.138,
-    "ultimos7Dias": -0.4192,
-    "unMes": 0.3285,
-    "noventaDias": -6.3103,
-    "cientoOchentaDias": -4.9355,
-    "enElAnio": -2.8182,
-    "doceMeses": -12.8769
+    "valorCuotaparte": 2.135,
+    "ultimos7Dias": -26.7275,
+    "unMes": -4.5419,
+    "noventaDias": -7.0122,
+    "cientoOchentaDias": -6.7278,
+    "enElAnio": -2.9545,
+    "doceMeses": -13.3523
   },
   "composicionCartera": [
     {
@@ -79,14 +80,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00008G-f9ac58c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00008G-f9ac58c8.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "ICBC (Arg) S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00062-50a49656.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00062-50a49656.jpg"
     }
   ]
 }

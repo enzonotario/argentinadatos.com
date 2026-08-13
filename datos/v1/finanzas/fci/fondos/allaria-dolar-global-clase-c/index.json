@@ -2,7 +2,7 @@
   "fondoId": "781",
   "claseId": "1761",
   "nombre": "Allaria Dólar Global - Clase C",
-  "fecha": "2026-08-11",
+  "fecha": "2026-08-12",
   "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,18 +13,19 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "985",
-  "patrimonio": 9427.56,
-  "inversionMinima": 500,
+  "patrimonio": 9412.18,
+  "cantidadCuotapartes": 6693.55,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1408.455,
-    "ultimos7Dias": -1.0618,
-    "unMes": -1.2555,
-    "noventaDias": 2.4785,
-    "cientoOchentaDias": 4.5381,
-    "enElAnio": 5.5177,
-    "doceMeses": 6.027
+    "valorCuotaparte": 1406.157,
+    "ultimos7Dias": -63.7807,
+    "unMes": -16.7391,
+    "noventaDias": 2.3113,
+    "cientoOchentaDias": 4.3675,
+    "enElAnio": 5.3455,
+    "doceMeses": 5.854
   },
   "composicionCartera": [
     {
@@ -83,14 +84,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00356G-ea35a573.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "1592",
   "claseId": "5222",
   "nombre": "Bull Market Ahorro Dólares - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Bull Market Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,54 +13,63 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1587",
-  "patrimonio": 11373356.15,
-  "inversionMinima": 100,
+  "patrimonio": 12013242.15,
+  "cantidadCuotapartes": 11173205.23,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1073.452,
-    "ultimos7Dias": -0.0171,
-    "unMes": 0.4865,
-    "noventaDias": 1.2043,
-    "cientoOchentaDias": 3.4309,
-    "enElAnio": 4.4878,
-    "doceMeses": 7.7283
+    "valorCuotaparte": 1075.183,
+    "ultimos7Dias": 8.4083,
+    "unMes": 6.5908,
+    "noventaDias": 1.2776,
+    "cientoOchentaDias": 3.3453,
+    "enElAnio": 4.6563,
+    "doceMeses": 7.4942
   },
   "composicionCartera": [
     {
       "nombre": "ON Transp Gas Sur Cl 3",
-      "porcentaje": 8.5
-    },
-    {
-      "nombre": "Caucion Colocadora U$S BYMA",
-      "porcentaje": 6.7
+      "porcentaje": 8.8
     },
     {
       "nombre": "Bono Bopreal 2027 Serie 1 Clase D BPOD7",
-      "porcentaje": 5.9
+      "porcentaje": 6
     },
     {
       "nombre": "ON Vista Gas y Oil Arg C29",
-      "porcentaje": 4.8
+      "porcentaje": 5
     },
     {
       "nombre": "ON Tecpetrol C12",
-      "porcentaje": 4.5
+      "porcentaje": 4.7
     },
     {
       "nombre": "Bono del Tesoro Nacional AO27",
+      "porcentaje": 4.2
+    },
+    {
+      "nombre": "Cta Cte U$S Bco Comafi",
       "porcentaje": 4
     },
     {
       "nombre": "ON Profertil C3",
-      "porcentaje": 2.4
+      "porcentaje": 2.5
     },
     {
       "nombre": "ON Pampa Energia 7.875%",
-      "porcentaje": 2.1
+      "porcentaje": 2.2
     },
     {
       "nombre": "FCI Gainvest Dólares Premium - Clase B",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "ON Banco de Galicia 30 BYCWO",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional AO28",
       "porcentaje": 2.1
     },
     {
@@ -72,16 +81,8 @@
       "porcentaje": 2
     },
     {
-      "nombre": "Bono del Tesoro Nacional AO28",
-      "porcentaje": 2
-    },
-    {
-      "nombre": "ON Banco de Galicia 30 BYCWO",
-      "porcentaje": 2
-    },
-    {
       "nombre": "Resto de Activos",
-      "porcentaje": 51
+      "porcentaje": 51.5
     }
   ],
   "calificaciones": [],
@@ -97,14 +98,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Bull Market Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02507G-49489fb4.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02507G-49489fb4.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

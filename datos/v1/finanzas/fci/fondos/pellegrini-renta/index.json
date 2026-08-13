@@ -2,7 +2,7 @@
   "fondoId": "121",
   "claseId": "121",
   "nombre": "Pellegrini Renta",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Pellegrini S.A.S.G.F.C.I.",
   "depositaria": "Banco de La Nacion Argentina",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "163",
-  "patrimonio": 60471939.05,
+  "patrimonio": 60711552.56,
+  "cantidadCuotapartes": 8595972.29,
   "inversionMinima": 100,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 7034.916,
-    "ultimos7Dias": 17.8818,
-    "unMes": 17.0793,
+    "valorCuotaparte": 7062.791,
+    "ultimos7Dias": 18.1061,
+    "unMes": 17.7344,
     "noventaDias": 15.6663,
     "cientoOchentaDias": 16.7484,
     "enElAnio": 18.0539,
@@ -48,7 +49,13 @@
       "porcentaje": 16.8
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "NA",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 0.45,
     "honorarioDepositaria": 0.15,
@@ -61,14 +68,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Pellegrini S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00041G-c2e70db2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00041G-c2e70db2.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de La Nacion Argentina",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00089-d9e4893d.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00089-d9e4893d.jpg"
     }
   ]
 }

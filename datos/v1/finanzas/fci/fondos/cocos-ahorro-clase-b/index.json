@@ -2,7 +2,7 @@
   "fondoId": "1469",
   "claseId": "4338",
   "nombre": "Cocos Ahorro - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Cocos Asset Management S.A.",
   "depositaria": "Banco Industrial S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1438",
-  "patrimonio": 52197146962.49,
+  "patrimonio": 51205005507.97,
+  "cantidadCuotapartes": 21552373378.12,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 2367.466,
-    "ultimos7Dias": 17.9656,
-    "unMes": 17.4993,
+    "valorCuotaparte": 2375.841,
+    "ultimos7Dias": 18.4457,
+    "unMes": 17.9235,
     "noventaDias": 18.4066,
     "cientoOchentaDias": 20.5385,
     "enElAnio": 21.7847,
@@ -73,14 +74,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Cocos Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02418G-8710fe48.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02418G-8710fe48.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Industrial S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00391-92ebcc0c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00391-92ebcc0c.jpg"
     }
   ]
 }

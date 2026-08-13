@@ -2,7 +2,7 @@
   "fondoId": "1336",
   "claseId": "3821",
   "nombre": "Champaquí Fondo Inmediato Plus - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Bancor Fondos S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Cordoba S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1319",
-  "patrimonio": 109633253019.66,
+  "patrimonio": 103985826444.99,
+  "cantidadCuotapartes": 13921486535.36,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 7441.089,
-    "ultimos7Dias": 19.8043,
-    "unMes": 19.3115,
+    "valorCuotaparte": 7469.448,
+    "ultimos7Dias": 19.8724,
+    "unMes": 19.5115,
     "noventaDias": 19.5543,
     "cientoOchentaDias": 22.6397,
     "enElAnio": 24.0563,
@@ -115,12 +116,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Bancor Fondos S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02734G-9dbd2ace.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02734G-9dbd2ace.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Cordoba S.A.",
       "logo": null
     }

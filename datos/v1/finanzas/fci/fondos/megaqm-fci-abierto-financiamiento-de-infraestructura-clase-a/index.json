@@ -2,25 +2,26 @@
   "fondoId": "628",
   "claseId": "1268",
   "nombre": "MEGAQM FCI Abierto Financiamiento de Infraestructura - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "MEGA QM S.A.",
   "depositaria": "Banco de Servicios y Transacciones S.A. (BST)",
-  "tipoRenta": "Infraestructura",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "768",
-  "patrimonio": 3533173.8,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 3539530.2,
+  "cantidadCuotapartes": 216681.99,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 16305.803,
-    "ultimos7Dias": -0.3112,
-    "unMes": 0.0057,
+    "valorCuotaparte": 16335.138,
+    "ultimos7Dias": 9.3808,
+    "unMes": 2.5664,
     "noventaDias": 7.0885,
     "cientoOchentaDias": 9.1334,
     "enElAnio": 9.0932,
@@ -119,14 +120,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "MEGA QM S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00378G-e0793717.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Servicios y Transacciones S.A. (BST)",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00387-5d5880dd.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00387-5d5880dd.jpg"
     }
   ]
 }

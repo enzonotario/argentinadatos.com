@@ -2,7 +2,7 @@
   "fondoId": "1749",
   "claseId": "5914",
   "nombre": "GMC Retorno Total III - Clase F",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "GMC Asset Management S.A.U.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1742",
-  "patrimonio": 13811487510.44,
-  "inversionMinima": 100000001,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 13842050765.78,
+  "cantidadCuotapartes": 11980113307.67,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1152.9,
-    "ultimos7Dias": 0.3744,
-    "unMes": 2.2437,
+    "valorCuotaparte": 1155.4,
+    "ultimos7Dias": 11.3069,
+    "unMes": 17.4502,
     "noventaDias": 6.6809,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -89,14 +90,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "GMC Asset Management S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00394G-6fce82d3.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00394G-6fce82d3.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

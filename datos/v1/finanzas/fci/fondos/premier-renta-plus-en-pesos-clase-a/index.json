@@ -2,7 +2,7 @@
   "fondoId": "395",
   "claseId": "717",
   "nombre": "Premier Renta Plus en Pesos - Clase A",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Supervielle Asset Management S.A.",
   "depositaria": "Banco Supervielle S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "482",
-  "patrimonio": 1633331289.08,
-  "inversionMinima": 25000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 1706566787.13,
+  "cantidadCuotapartes": 8837409.72,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 192502.145,
-    "ultimos7Dias": 2.4663,
-    "unMes": 3.9479,
+    "valorCuotaparte": 193107.125,
+    "ultimos7Dias": 14.0113,
+    "unMes": 46.6493,
     "noventaDias": 7.2943,
     "cientoOchentaDias": 14.0779,
     "enElAnio": 17.2571,
@@ -99,14 +100,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Supervielle Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00052G-7dab5db1.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00052G-7dab5db1.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Supervielle S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00097-9a7b1e3e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00097-9a7b1e3e.jpg"
     }
   ]
 }

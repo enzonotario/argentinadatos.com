@@ -2,7 +2,7 @@
   "fondoId": "712",
   "claseId": "1530",
   "nombre": "Adcap Ahorro Dólares - Clase C",
-  "fecha": "2026-08-11",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,14 +13,15 @@
   "duracion": "No Registrada",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "869",
-  "patrimonio": 30912782.41,
+  "patrimonio": 30914339.39,
+  "cantidadCuotapartes": 29705537.61,
   "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1040.641,
-    "ultimos7Dias": 1.7944,
-    "unMes": 1.6976,
+    "valorCuotaparte": 1040.693,
+    "ultimos7Dias": 1.7994,
+    "unMes": 1.7093,
     "noventaDias": 1.6203,
     "cientoOchentaDias": 1.6838,
     "enElAnio": 1.7795,
@@ -81,14 +82,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

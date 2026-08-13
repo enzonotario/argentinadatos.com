@@ -2,7 +2,7 @@
   "fondoId": "1908",
   "claseId": "6593",
   "nombre": "Puente Ahorro Pesos - Clase B",
-  "fechaActualizacion": "2026-08-13T13:10:26.000Z",
+  "fechaActualizacion": "2026-08-13T21:23:19.000Z",
   "historico": [
     {
       "slug": "puente-ahorro-pesos-clase-b",
@@ -13,12 +13,12 @@
       "categoria": "Renta Fija",
       "categoriaKey": "rentaFija",
       "horizonte": "Mediano Plazo",
-      "valorCuotaparte": 1,
+      "valorCuotaparte": 1000,
       "patrimonio": 10000000,
       "retornoDiario": null,
-      "retornoAcumulado": 0,
+      "retornoAcumulado": 99900,
       "flujoEstimado": null,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "puente-ahorro-pesos-clase-b",
@@ -31,10 +31,10 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 999.764,
       "patrimonio": 9997639.24,
-      "retornoDiario": 99876.4,
-      "retornoAcumulado": 99876.4,
-      "flujoEstimado": -9987642360.759998,
-      "origen": "cafci-detail"
+      "retornoDiario": -0.0236,
+      "retornoAcumulado": -0.0236,
+      "flujoEstimado": -0.76,
+      "origen": "cnv-excel"
     },
     {
       "slug": "puente-ahorro-pesos-clase-b",
@@ -48,9 +48,9 @@
       "valorCuotaparte": 1001.23,
       "patrimonio": 10012303.62,
       "retornoDiario": 0.146635,
-      "retornoAcumulado": 100023,
+      "retornoAcumulado": 0.123,
       "flujoEstimado": 4.3417,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "puente-ahorro-pesos-clase-b",
@@ -64,9 +64,9 @@
       "valorCuotaparte": 1002.145,
       "patrimonio": 10021449.3,
       "retornoDiario": 0.091388,
-      "retornoAcumulado": 100114.5,
+      "retornoAcumulado": 0.2145,
       "flujoEstimado": -4.364032,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "puente-ahorro-pesos-clase-b",
@@ -80,9 +80,9 @@
       "valorCuotaparte": 1003.01,
       "patrimonio": 10030102.2,
       "retornoDiario": 0.086315,
-      "retornoAcumulado": 100201,
+      "retornoAcumulado": 0.301,
       "flujoEstimado": 2.886037,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "puente-ahorro-pesos-clase-b",
@@ -96,9 +96,25 @@
       "valorCuotaparte": 1003.274,
       "patrimonio": 10032735.14,
       "retornoDiario": 0.026321,
-      "retornoAcumulado": 100227.4,
+      "retornoAcumulado": 0.3274,
       "flujoEstimado": -7.0832,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "puente-ahorro-pesos-clase-b",
+      "fondoId": "1908",
+      "claseId": "6593",
+      "nombre": "Puente Ahorro Pesos - Clase B",
+      "fecha": "2026-08-06",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1004.238,
+      "patrimonio": 36542383.3,
+      "retornoDiario": 0.096085,
+      "retornoAcumulado": 0.4238,
+      "flujoEstimado": 26500008.206441,
+      "origen": "cnv-excel"
     },
     {
       "slug": "puente-ahorro-pesos-clase-b",
@@ -111,10 +127,58 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1009.91,
       "patrimonio": 136748773.85,
-      "retornoDiario": 0.661434,
-      "retornoAcumulado": 100891,
-      "flujoEstimado": 126649678.788654,
-      "origen": "cafci-detail"
+      "retornoDiario": 0.564806,
+      "retornoAcumulado": 0.991,
+      "flujoEstimado": 99999996.976579,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "puente-ahorro-pesos-clase-b",
+      "fondoId": "1908",
+      "claseId": "6593",
+      "nombre": "Puente Ahorro Pesos - Clase B",
+      "fecha": "2026-08-10",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1011.325,
+      "patrimonio": 700440312.37,
+      "retornoDiario": 0.140111,
+      "retornoAcumulado": 1.1325,
+      "flujoEstimado": 563499938.445471,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "puente-ahorro-pesos-clase-b",
+      "fondoId": "1908",
+      "claseId": "6593",
+      "nombre": "Puente Ahorro Pesos - Clase B",
+      "fecha": "2026-08-11",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1012.351,
+      "patrimonio": 701151171.2,
+      "retornoDiario": 0.101451,
+      "retornoAcumulado": 1.2351,
+      "flujoEstimado": 255.128698,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "puente-ahorro-pesos-clase-b",
+      "fondoId": "1908",
+      "claseId": "6593",
+      "nombre": "Puente Ahorro Pesos - Clase B",
+      "fecha": "2026-08-12",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1012.329,
+      "patrimonio": 2303635974.9,
+      "retornoDiario": -0.002173,
+      "retornoAcumulado": 1.2329,
+      "flujoEstimado": 1602500039.71495,
+      "origen": "cnv-excel"
     }
   ]
 }

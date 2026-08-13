@@ -2,7 +2,7 @@
   "fondoId": "825",
   "claseId": "2313",
   "nombre": "Julio A. Roca Ahorro Pesos",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Tutelar Inversora S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1033",
-  "patrimonio": 166456735.55,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 165864956.45,
+  "cantidadCuotapartes": 2686939,
+  "inversionMinima": 0,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 61950.3217,
-    "ultimos7Dias": -2.1986,
-    "unMes": -0.7332,
+    "valorCuotaparte": 61730.079,
+    "ultimos7Dias": -18.5376,
+    "unMes": -11.5598,
     "noventaDias": 10.6967,
     "cientoOchentaDias": 15.9904,
     "enElAnio": 21.9499,
@@ -49,14 +50,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Tutelar Inversora S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02469G-82862ec5.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02469G-82862ec5.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

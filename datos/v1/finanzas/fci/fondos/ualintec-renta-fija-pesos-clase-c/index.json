@@ -2,7 +2,7 @@
   "fondoId": "1346",
   "claseId": "3841",
   "nombre": "Ualintec Renta Fija Pesos - Clase C",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Ualá Fondos S.A.U.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1201",
-  "patrimonio": 1446308.66,
+  "patrimonio": 2957728.36,
+  "cantidadCuotapartes": 219689.55,
   "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 13432.82,
-    "ultimos7Dias": 0.1528,
-    "unMes": 1.4088,
+    "valorCuotaparte": 13463.218,
+    "ultimos7Dias": 17.2171,
+    "unMes": 14.3491,
     "noventaDias": 5.5578,
     "cientoOchentaDias": 17.5288,
     "enElAnio": 21.6961,
@@ -111,14 +112,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Ualá Fondos S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02923G-3d935475.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02923G-3d935475.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

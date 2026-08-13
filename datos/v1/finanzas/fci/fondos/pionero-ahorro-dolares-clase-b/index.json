@@ -2,7 +2,7 @@
   "fondoId": "677",
   "claseId": "1420",
   "nombre": "Pionero Ahorro Dólares - Clase B",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Macro Fondos S.G.F.C.I.S.A.",
   "depositaria": "Banco Macro S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "842",
-  "patrimonio": 23287108.77,
-  "inversionMinima": 1000,
+  "patrimonio": 23669362.58,
+  "cantidadCuotapartes": 20851098.23,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1132.716,
-    "ultimos7Dias": 0.0153,
-    "unMes": 0.634,
+    "valorCuotaparte": 1135.161,
+    "ultimos7Dias": 4.984,
+    "unMes": 3.7909,
     "noventaDias": 1.2708,
     "cientoOchentaDias": 2.6468,
     "enElAnio": 3.5209,
@@ -103,14 +104,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Macro Fondos S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00054G-82963f72.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00054G-82963f72.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Macro S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00098-871484a2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00098-871484a2.jpg"
     }
   ]
 }

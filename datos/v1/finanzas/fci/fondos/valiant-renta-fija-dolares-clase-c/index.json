@@ -2,7 +2,7 @@
   "fondoId": "875",
   "claseId": "2515",
   "nombre": "Valiant Renta Fija Dolares - Clase C",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Valiant Asset Management S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1100",
-  "patrimonio": 1293468.62,
+  "patrimonio": 1261868.84,
+  "cantidadCuotapartes": 1134233.6,
   "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 3,
   "rendimientos": {
-    "valorCuotaparte": 1112.231,
-    "ultimos7Dias": 0.0777,
-    "unMes": 0.2145,
+    "valorCuotaparte": 1112.53,
+    "ultimos7Dias": 1.2892,
+    "unMes": 1.4749,
     "noventaDias": 0.9535,
     "cientoOchentaDias": 2.1559,
     "enElAnio": 2.9598,
@@ -105,14 +106,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Valiant Asset Management S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02545G-f1f63ca6.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02545G-f1f63ca6.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

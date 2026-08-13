@@ -2,7 +2,7 @@
   "fondoId": "1",
   "claseId": "6572",
   "nombre": "Blacktoro Ahorro - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Blacktoro Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "52",
-  "patrimonio": 1571387.97,
+  "patrimonio": 1583559.67,
+  "cantidadCuotapartes": 1567924.13,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1005.391,
-    "ultimos7Dias": 0.2308,
-    "unMes": null,
+    "valorCuotaparte": 1009.972,
+    "ultimos7Dias": 23.7586,
+    "unMes": 13.9992,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -28,50 +29,46 @@
   },
   "composicionCartera": [
     {
+      "nombre": "Lecap S30N6",
+      "porcentaje": 23.3
+    },
+    {
       "nombre": "Lecap S30S6",
-      "porcentaje": 22.3
+      "porcentaje": 21.6
     },
     {
       "nombre": "Lecap S13N6",
-      "porcentaje": 20.6
-    },
-    {
-      "nombre": "Lecap S14G6",
       "porcentaje": 19.9
     },
     {
-      "nombre": "FCI Pionero Pesos Plus - Clase B",
-      "porcentaje": 8.7
-    },
-    {
-      "nombre": "Caucion Colocadora $ Merval",
-      "porcentaje": 8.4
-    },
-    {
-      "nombre": "Lecap S30N6",
-      "porcentaje": 6.9
+      "nombre": "Lecap S14G6",
+      "porcentaje": 19.4
     },
     {
       "nombre": "FF Mercado Credito 47 CA",
-      "porcentaje": 3.4
+      "porcentaje": 2.9
+    },
+    {
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 2.9
     },
     {
       "nombre": "ON Banco Nacion Argentina Clase 1",
-      "porcentaje": 3.1
+      "porcentaje": 2.6
     },
     {
       "nombre": "ON Arcor C4",
-      "porcentaje": 3
+      "porcentaje": 2.5
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 3.7
+      "porcentaje": 4.9
     }
   ],
   "calificaciones": [
     {
       "calificadora": "Evaluadora Latinoamericana S.A",
-      "calificacion": "AA-",
+      "calificacion": "BBB",
       "fecha": "2008-12-23"
     }
   ],
@@ -87,14 +84,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Blacktoro Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00011G-5feac20e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00011G-5feac20e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

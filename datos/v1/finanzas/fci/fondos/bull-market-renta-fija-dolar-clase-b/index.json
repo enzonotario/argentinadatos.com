@@ -2,7 +2,7 @@
   "fondoId": "1752",
   "claseId": "5926",
   "nombre": "Bull Market Renta Fija Dólar - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Bull Market Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1787",
-  "patrimonio": 51867428.2,
-  "inversionMinima": 100,
+  "patrimonio": 52040208.12,
+  "cantidadCuotapartes": 49834440.52,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1050.881,
-    "ultimos7Dias": -0.0018,
-    "unMes": 0.0758,
+    "valorCuotaparte": 1044.262,
+    "ultimos7Dias": -32.8423,
+    "unMes": -6.6776,
     "noventaDias": 2.1742,
     "cientoOchentaDias": 3.3238,
     "enElAnio": 5.7338,
@@ -93,14 +94,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Bull Market Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02507G-49489fb4.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02507G-49489fb4.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

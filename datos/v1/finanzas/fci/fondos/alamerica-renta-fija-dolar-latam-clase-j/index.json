@@ -2,7 +2,7 @@
   "fondoId": "893",
   "claseId": "2616",
   "nombre": "Alamerica Renta Fija Dolar Latam - Clase J",
-  "fecha": "2026-08-10",
+  "fecha": "2026-08-12",
   "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,18 +13,19 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1059",
-  "patrimonio": 511749.2,
+  "patrimonio": 512250.04,
+  "cantidadCuotapartes": 439908.68,
   "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1164.052,
-    "ultimos7Dias": 0.2257,
-    "unMes": -0.1706,
-    "noventaDias": -0.0863,
-    "cientoOchentaDias": 0.2175,
-    "enElAnio": 0.8954,
-    "doceMeses": 3.4144
+    "valorCuotaparte": 1164.446,
+    "ultimos7Dias": 6.8602,
+    "unMes": -1.3974,
+    "noventaDias": -0.0384,
+    "cientoOchentaDias": 0.07,
+    "enElAnio": 0.9295,
+    "doceMeses": 3.243
   },
   "composicionCartera": [
     {
@@ -73,14 +74,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00356G-ea35a573.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -14,13 +14,14 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1920",
   "patrimonio": 39839679.82,
+  "cantidadCuotapartes": 39731666.9,
   "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
     "valorCuotaparte": 1002.719,
     "ultimos7Dias": 1.2587,
-    "unMes": 1.1693,
+    "unMes": 1.172,
     "noventaDias": 1.0503,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -109,14 +110,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Provinfondos S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00043G-f97d764c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00043G-f97d764c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Provincia de Buenos Aires",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00091-1272ada3.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00091-1272ada3.jpg"
     }
   ]
 }

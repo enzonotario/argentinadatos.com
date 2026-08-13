@@ -2,7 +2,7 @@
   "fondoId": "1564",
   "claseId": "5021",
   "nombre": "Ualintec Pesos Plus - Clase A",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Ualá Fondos S.A.U.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1565",
-  "patrimonio": 11899870549.12,
-  "inversionMinima": 100,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 11568128432.09,
+  "cantidadCuotapartes": 5918665579.56,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1949.731,
-    "ultimos7Dias": 0.385,
-    "unMes": 1.3464,
+    "valorCuotaparte": 1954.516,
+    "ultimos7Dias": 14.8137,
+    "unMes": 15.3559,
     "noventaDias": 5.6883,
     "cientoOchentaDias": 15.0342,
     "enElAnio": 18.9286,
@@ -69,14 +70,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Ualá Fondos S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02923G-3d935475.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02923G-3d935475.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

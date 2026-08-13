@@ -2,25 +2,26 @@
   "fondoId": "1411",
   "claseId": "4112",
   "nombre": "Zofingen Infraestructura - Clase A",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Zofingen Investment S.A.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "Infraestructura",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Badlar",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1385",
-  "patrimonio": 5080573378.6,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 5093060186.53,
+  "cantidadCuotapartes": 1667857276.61,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 3046.168,
-    "ultimos7Dias": 0.0682,
-    "unMes": 0.3169,
+    "valorCuotaparte": 3053.655,
+    "ultimos7Dias": 5.5777,
+    "unMes": 7.9509,
     "noventaDias": 8.616,
     "cientoOchentaDias": 10.1411,
     "enElAnio": 8.9623,
@@ -119,14 +120,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Zofingen Investment S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02450G-9d44acde.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02450G-9d44acde.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

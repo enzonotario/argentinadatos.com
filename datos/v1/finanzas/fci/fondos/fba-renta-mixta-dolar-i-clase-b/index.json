@@ -2,7 +2,7 @@
   "fondoId": "1786",
   "claseId": "6099",
   "nombre": "FBA Renta Mixta Dólar I - Clase B",
-  "fecha": "2026-08-06",
+  "fecha": "2026-08-12",
   "administradora": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "BBVA Argentina S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "No Registrada",
-  "moneda": "Dolar Estadounidense Billete",
+  "moneda": "USB",
   "codigoCNV": "1819",
-  "patrimonio": 99918.19,
+  "patrimonio": 99914.94,
+  "cantidadCuotapartes": 100000,
   "inversionMinima": 1,
-  "monedaInversion": "Dolar Estadounidense",
+  "monedaInversion": "USB",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 999.1819,
-    "ultimos7Dias": -0.004,
-    "unMes": -0.017,
+    "valorCuotaparte": 999.149,
+    "ultimos7Dias": -0.1983,
+    "unMes": -0.2008,
     "noventaDias": -0.0681,
     "cientoOchentaDias": -0.1275,
     "enElAnio": -0.0862,
@@ -45,14 +46,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00029G-9a6fc701.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00029G-9a6fc701.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "BBVA Argentina S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00079-a62ab0c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00079-a62ab0c8.jpg"
     }
   ]
 }

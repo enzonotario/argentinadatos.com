@@ -2,7 +2,7 @@
   "fondoId": "1665",
   "claseId": "5569",
   "nombre": "ConoSur Liquidez - Clase D",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Cono Sur S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1671",
-  "patrimonio": 6631798.11,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 6602209.18,
+  "cantidadCuotapartes": 5021057.13,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1311.449,
-    "ultimos7Dias": 18.7423,
-    "unMes": 18.7926,
+    "valorCuotaparte": 1314.904,
+    "ultimos7Dias": 19.1123,
+    "unMes": 18.9071,
     "noventaDias": 18.9257,
     "cientoOchentaDias": 21.5766,
     "enElAnio": 23.1837,
@@ -85,14 +86,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Cono Sur S.G.F.C.I.S.A.",
       "logo": null
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

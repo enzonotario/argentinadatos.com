@@ -2,7 +2,7 @@
   "fondoId": "621",
   "claseId": "1254",
   "nombre": "Allaria Renta Balanceada II - Clase B",
-  "fecha": "2026-08-11",
+  "fecha": "2026-08-12",
   "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,20 +11,21 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "761",
-  "patrimonio": 25319882161.2,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 25307422739.69,
+  "cantidadCuotapartes": 135108779.58,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 187170.707,
-    "ultimos7Dias": 0.4577,
-    "unMes": 2.2626,
-    "noventaDias": 6.2261,
-    "cientoOchentaDias": 15.2079,
-    "enElAnio": 21.3465,
-    "doceMeses": 45.2939
+    "valorCuotaparte": 187311.46,
+    "ultimos7Dias": 27.8068,
+    "unMes": 24.2212,
+    "noventaDias": 6.3059,
+    "cientoOchentaDias": 15.2945,
+    "enElAnio": 21.4378,
+    "doceMeses": 45.4031
   },
   "composicionCartera": [
     {
@@ -60,7 +61,13 @@
       "porcentaje": 14.5
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "NA",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 1.25,
     "honorarioDepositaria": 0.1,
@@ -73,14 +80,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00356G-ea35a573.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

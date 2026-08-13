@@ -2,7 +2,7 @@
   "fondoId": "800",
   "claseId": "1991",
   "nombre": "Alamerica Renta Fija Argentina - Clase D",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,14 +11,15 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1005",
   "patrimonio": 0,
+  "cantidadCuotapartes": 0,
   "inversionMinima": 1,
-  "monedaInversion": "Dolar Estadounidense",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
+    "valorCuotaparte": 1000000,
     "ultimos7Dias": 0,
     "unMes": 0,
     "noventaDias": 0,
@@ -28,31 +29,41 @@
   },
   "composicionCartera": [
     {
-      "nombre": "Cta Cte $ Bco de Valores",
-      "porcentaje": 100
+      "nombre": "FCI Adcap Ahorro Pesos - Clase C",
+      "porcentaje": 99.9
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.1
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "AA-",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 2,
+    "honorarioDepositaria": 0.08,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00356G-ea35a573.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

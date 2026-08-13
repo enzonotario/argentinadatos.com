@@ -2,10 +2,10 @@
   "fondoId": "808",
   "claseId": "4743",
   "nombre": "Compass Ahorro en Dolares - Clase H Ley 27.743",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "Retorno Total",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Global",
   "benchmark": "No Registrado",
@@ -13,14 +13,15 @@
   "duracion": "No Registrada",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1009",
-  "patrimonio": 1185368.35,
-  "inversionMinima": 0,
+  "patrimonio": 1159637.66,
+  "cantidadCuotapartes": 696362.93,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1702.228,
-    "ultimos7Dias": 1.1749,
-    "unMes": -0.744,
+    "valorCuotaparte": 1665.278,
+    "ultimos7Dias": -113.1857,
+    "unMes": -33.3643,
     "noventaDias": 4.359,
     "cientoOchentaDias": 4.7751,
     "enElAnio": 8.0629,
@@ -87,14 +88,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Investis Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00021G-d9e0d02c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00021G-d9e0d02c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

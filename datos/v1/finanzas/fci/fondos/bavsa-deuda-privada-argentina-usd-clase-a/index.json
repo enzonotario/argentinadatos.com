@@ -2,7 +2,7 @@
   "fondoId": "1770",
   "claseId": "6038",
   "nombre": "BAVSA Deuda Privada Argentina USD - Clase A",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "BAVSA Fondos S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1781",
-  "patrimonio": 18242840.25,
-  "inversionMinima": 0,
+  "patrimonio": 18272885.07,
+  "cantidadCuotapartes": 17539441.13,
+  "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1040.62,
-    "ultimos7Dias": 0.0354,
-    "unMes": 0.5618,
+    "valorCuotaparte": 1041.817,
+    "ultimos7Dias": 0.1702,
+    "unMes": 7.4009,
     "noventaDias": 1.4461,
     "cientoOchentaDias": 2.6643,
     "enElAnio": 4.0667,
@@ -73,14 +74,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "BAVSA Fondos S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03118G-d03fc40c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03118G-d03fc40c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

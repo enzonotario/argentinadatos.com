@@ -2,7 +2,7 @@
   "fondoId": "1621",
   "claseId": "5363",
   "nombre": "Bursátil X Retorno Absoluto - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Axis S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1626",
   "patrimonio": 0,
+  "cantidadCuotapartes": 0,
   "inversionMinima": 500000000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1,
+    "valorCuotaparte": 1000,
     "ultimos7Dias": 0,
-    "unMes": 0,
+    "unMes": 1215450,
     "noventaDias": 0,
     "cientoOchentaDias": 0,
     "enElAnio": 0,
@@ -29,46 +30,42 @@
   "composicionCartera": [
     {
       "nombre": "Lecap S30N6",
-      "porcentaje": 28.5
+      "porcentaje": 28.7
     },
     {
       "nombre": "Bono Boncer TZX28",
-      "porcentaje": 21.6
-    },
-    {
-      "nombre": "Fut Rofex DLR112026",
-      "porcentaje": 15.6
-    },
-    {
-      "nombre": "Fut Rofex DLR012027",
-      "porcentaje": 7.8
+      "porcentaje": 21.9
     },
     {
       "nombre": "Fut Rofex DLR102026",
-      "porcentaje": 7.8
+      "porcentaje": 7.9
+    },
+    {
+      "nombre": "Fut Rofex DLR122026",
+      "porcentaje": 7.9
     },
     {
       "nombre": "YPF - D",
-      "porcentaje": 6
+      "porcentaje": 6.4
     },
     {
       "nombre": "Pampa Energia",
-      "porcentaje": 5
+      "porcentaje": 5.4
     },
     {
       "nombre": "Bonos Rep Argentina 2030",
-      "porcentaje": 4.9
+      "porcentaje": 5
     },
     {
       "nombre": "Central Puerto",
+      "porcentaje": 4.8
+    },
+    {
+      "nombre": "Bono CER TZX27",
       "porcentaje": 4.5
     },
     {
       "nombre": "Bonos Rep Argentina GD35",
-      "porcentaje": 4.5
-    },
-    {
-      "nombre": "Bono CER TZX27",
       "porcentaje": 4.5
     },
     {
@@ -78,10 +75,6 @@
     {
       "nombre": "ON YPF Clase 39",
       "porcentaje": 2.6
-    },
-    {
-      "nombre": "FCI MEGAQM Pesos - Clase B",
-      "porcentaje": 2.4
     },
     {
       "nombre": "ON Irsa USD TF 8.75%",
@@ -101,14 +94,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Axis S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00384G-b6af83ec.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00384G-b6af83ec.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

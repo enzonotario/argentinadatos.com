@@ -2,7 +2,7 @@
   "fondoId": "750",
   "claseId": "1647",
   "nombre": "Adcap Renta Dólar - Clase F",
-  "fecha": "2026-08-11",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,18 +13,19 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "944",
-  "patrimonio": 2524788.46,
+  "patrimonio": 2526919.32,
+  "cantidadCuotapartes": 1793162.79,
   "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 3,
   "rendimientos": {
-    "valorCuotaparte": 1408.009,
-    "ultimos7Dias": 0.0218,
-    "unMes": 0.2769,
-    "noventaDias": 0.9884,
-    "cientoOchentaDias": 3.3944,
-    "enElAnio": 4.4406,
-    "doceMeses": 6.9141
+    "valorCuotaparte": 1409.197,
+    "ultimos7Dias": 5.5376,
+    "unMes": 3.1213,
+    "noventaDias": 1.0736,
+    "cientoOchentaDias": 3.4817,
+    "enElAnio": 4.5287,
+    "doceMeses": 7.0044
   },
   "composicionCartera": [
     {
@@ -99,14 +100,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

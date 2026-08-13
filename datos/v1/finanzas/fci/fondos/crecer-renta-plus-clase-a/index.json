@@ -2,7 +2,7 @@
   "fondoId": "1639",
   "claseId": "5436",
   "nombre": "Crecer Renta Plus - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Ciudad Administradora de Activos S.A.U.",
   "depositaria": "Banco Ciudad de Buenos Aires",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1662",
-  "patrimonio": 13114220002.78,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 12990993948.85,
+  "cantidadCuotapartes": 9263834637.62,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1395.464,
-    "ultimos7Dias": -0.1357,
-    "unMes": 0.9371,
+    "valorCuotaparte": 1402.334,
+    "ultimos7Dias": 25.6704,
+    "unMes": 14.7871,
     "noventaDias": 5.2918,
     "cientoOchentaDias": 16.5576,
     "enElAnio": 20.3918,
@@ -93,14 +94,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Ciudad Administradora de Activos S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03255G-43d1241b.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03255G-43d1241b.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Ciudad de Buenos Aires",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00067-2efdbc54.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00067-2efdbc54.jpg"
     }
   ]
 }

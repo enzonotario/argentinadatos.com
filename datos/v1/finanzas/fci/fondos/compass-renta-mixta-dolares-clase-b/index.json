@@ -2,25 +2,26 @@
   "fondoId": "426",
   "claseId": "792",
   "nombre": "Compass Renta Mixta Dólares - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Variable",
   "tipoDD": "No Aplica",
-  "region": "Latinoamerica",
+  "region": "Latinoamérica",
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Dolar Estadounidense Billete",
+  "moneda": "USB",
   "codigoCNV": "564",
-  "patrimonio": 20515720.36,
-  "inversionMinima": 1000,
-  "monedaInversion": "Dolar Estadounidense Billete",
+  "patrimonio": 21764703.58,
+  "cantidadCuotapartes": 30036014.22,
+  "inversionMinima": 1,
+  "monedaInversion": "USB",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 722.454,
-    "ultimos7Dias": -0.1661,
-    "unMes": 0.9713,
+    "valorCuotaparte": 724.62,
+    "ultimos7Dias": 15.633,
+    "unMes": 13.7471,
     "noventaDias": 0.5555,
     "cientoOchentaDias": 2.4259,
     "enElAnio": 4.3219,
@@ -72,7 +73,13 @@
       "porcentaje": 69.9
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "raAAc",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 1.25,
     "honorarioDepositaria": 0.1,
@@ -85,14 +92,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Investis Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00021G-d9e0d02c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00021G-d9e0d02c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

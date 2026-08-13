@@ -2,7 +2,7 @@
   "fondoId": "1668",
   "claseId": "5578",
   "nombre": "Balanz Credito Privado - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Balanz S.G.F.C.I.S.A.U.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,77 +11,90 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1294",
-  "patrimonio": 73657129149.89,
-  "inversionMinima": 1000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 75725085069.4,
+  "cantidadCuotapartes": 52389834783.53,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1439.387,
-    "ultimos7Dias": 0.4487,
-    "unMes": 2.0714,
-    "noventaDias": 6.0634,
-    "cientoOchentaDias": 14.2527,
-    "enElAnio": 18.2356,
-    "doceMeses": 41.1429
+    "valorCuotaparte": 1445.416,
+    "ultimos7Dias": 21.8405,
+    "unMes": 22.9508,
+    "noventaDias": 5.9884,
+    "cientoOchentaDias": 13.9273,
+    "enElAnio": 18.7308,
+    "doceMeses": 40.8332
   },
   "composicionCartera": [
     {
       "nombre": "ON BBVA Frances Cl 47",
-      "porcentaje": 5.9
-    },
-    {
-      "nombre": "Pzo Fi $ Bco Galicia",
-      "porcentaje": 4.9
-    },
-    {
-      "nombre": "FF AySA S1",
-      "porcentaje": 4.7
-    },
-    {
-      "nombre": "FF AySA S2",
-      "porcentaje": 4.5
-    },
-    {
-      "nombre": "FCI IEB Ahorro - Clase E",
-      "porcentaje": 3.9
-    },
-    {
-      "nombre": "Pzo Fi $ Bco Santander Ri",
-      "porcentaje": 3.9
-    },
-    {
-      "nombre": "ON Banco Nacion Argentina Clase 1",
-      "porcentaje": 3.1
-    },
-    {
-      "nombre": "Pzo Fi $ Bco Nacion",
-      "porcentaje": 3
+      "porcentaje": 6.3
     },
     {
       "nombre": "Pzo Fi $ Bco Patagonia",
-      "porcentaje": 2.9
+      "porcentaje": 6.2
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Galicia",
+      "porcentaje": 5.3
+    },
+    {
+      "nombre": "FF AySA S1",
+      "porcentaje": 5
+    },
+    {
+      "nombre": "FF AySA S2",
+      "porcentaje": 4.9
+    },
+    {
+      "nombre": "FCI Max Money Market - Clase B",
+      "porcentaje": 3.7
+    },
+    {
+      "nombre": "ON Banco Nacion Argentina Clase 1",
+      "porcentaje": 3.3
     },
     {
       "nombre": "FF Mercado Credito 51 CA",
-      "porcentaje": 2.6
-    },
-    {
-      "nombre": "Cheque E *MAV120801856",
-      "porcentaje": 2.2
+      "porcentaje": 2.8
     },
     {
       "nombre": "Lecap S30S6",
-      "porcentaje": 2.2
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "Cheque E *MAV120801856",
+      "porcentaje": 2.3
     },
     {
       "nombre": "Cheque E *MAV300701621",
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Santander Ri",
       "porcentaje": 2.1
     },
     {
+      "nombre": "FF Mercado Credito 46 CA",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "ON PSA Serie 37",
+      "porcentaje": 2
+    },
+    {
+      "nombre": "ON Volkswagen Financial Services C15",
+      "porcentaje": 2
+    },
+    {
+      "nombre": "FF Mercado Credito 50 CA",
+      "porcentaje": 2
+    },
+    {
       "nombre": "Resto de Activos",
-      "porcentaje": 51.4
+      "porcentaje": 42.4
     }
   ],
   "calificaciones": [],
@@ -97,14 +110,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Balanz S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00372G-cc6ce723.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00372G-cc6ce723.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

@@ -2,25 +2,26 @@
   "fondoId": "102",
   "claseId": "102",
   "nombre": "1822 Raices Abierto Pymes",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Provinfondos S.A.S.G.F.C.I.",
   "depositaria": "Banco Provincia de Buenos Aires",
-  "tipoRenta": "PyMes",
+  "tipoRenta": "Retorno Total",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "No Registrada",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "108",
-  "patrimonio": 39974990724.53,
+  "patrimonio": 39901350566.01,
+  "cantidadCuotapartes": 4152850.69,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 9594309.943,
-    "ultimos7Dias": 0.4409,
-    "unMes": 1.5159,
+    "valorCuotaparte": 9608183.27,
+    "ultimos7Dias": 21.3968,
+    "unMes": 18.6867,
     "noventaDias": 5.9151,
     "cientoOchentaDias": 13.1744,
     "enElAnio": 16.1553,
@@ -115,14 +116,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Provinfondos S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00043G-f97d764c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00043G-f97d764c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Provincia de Buenos Aires",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00091-1272ada3.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00091-1272ada3.jpg"
     }
   ]
 }

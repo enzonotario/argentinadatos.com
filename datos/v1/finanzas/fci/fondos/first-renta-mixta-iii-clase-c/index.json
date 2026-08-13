@@ -2,7 +2,7 @@
   "fondoId": "1238",
   "claseId": "3440",
   "nombre": "First Renta Mixta III - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "First Capital Markets S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "No Registrada",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1148",
-  "patrimonio": 1011168483.32,
-  "inversionMinima": 100000001,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 1012528750.75,
+  "cantidadCuotapartes": 55873128.2,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 18097.581,
-    "ultimos7Dias": -0.3808,
-    "unMes": 0.1747,
+    "valorCuotaparte": 18121.927,
+    "ultimos7Dias": 7.0146,
+    "unMes": 6.9406,
     "noventaDias": 5.8197,
     "cientoOchentaDias": 9.9711,
     "enElAnio": 11.2844,
@@ -85,14 +86,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "First Capital Markets S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00395-2ffc0cff.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00395-2ffc0cff.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

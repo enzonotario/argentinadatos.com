@@ -2,7 +2,7 @@
   "fondoId": "1568",
   "claseId": "5074",
   "nombre": "Balanz Performance XIII - Clase D",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Balanz S.G.F.C.I.S.A.U.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1293",
-  "patrimonio": 35060243700.78,
-  "inversionMinima": 5000000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 35155440103.33,
+  "cantidadCuotapartes": 22337937876.21,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1569.538,
-    "ultimos7Dias": -0.0441,
-    "unMes": 1.0776,
+    "valorCuotaparte": 1573.8,
+    "ultimos7Dias": 14.1591,
+    "unMes": 11.3855,
     "noventaDias": 5.3286,
     "cientoOchentaDias": 15.6303,
     "enElAnio": 17.9949,
@@ -89,14 +90,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Balanz S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00372G-cc6ce723.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00372G-cc6ce723.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

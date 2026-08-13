@@ -2,25 +2,26 @@
   "fondoId": "1261",
   "claseId": "3503",
   "nombre": "Quiron Agro Pymes - Clase C",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Quiron Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "PyMes",
+  "tipoRenta": "Retorno Total",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1218",
-  "patrimonio": 177322441.77,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 178064377.6,
+  "cantidadCuotapartes": 18230028.32,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 9726.943,
-    "ultimos7Dias": 0.2429,
-    "unMes": 1.3984,
+    "valorCuotaparte": 9767.641,
+    "ultimos7Dias": 20.3681,
+    "unMes": 17.34,
     "noventaDias": 4.6393,
     "cientoOchentaDias": 10.1369,
     "enElAnio": 12.9343,
@@ -119,14 +120,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Quiron Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00361G-20feb34f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00361G-20feb34f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

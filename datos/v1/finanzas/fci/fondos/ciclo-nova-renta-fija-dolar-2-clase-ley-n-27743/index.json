@@ -2,25 +2,26 @@
   "fondoId": "1434",
   "claseId": "4876",
   "nombre": "Ciclo Nova Renta Fija Dólar 2 - Clase Ley N° 27.743",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Ciclo Nova Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
-  "region": "Latinoamerica",
+  "region": "Latinoamérica",
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1346",
-  "patrimonio": 83.88,
-  "inversionMinima": 1000,
+  "patrimonio": 83.98,
+  "cantidadCuotapartes": 81,
+  "inversionMinima": 9999999999999998,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1035.565,
-    "ultimos7Dias": -0.0953,
-    "unMes": -0.131,
+    "valorCuotaparte": 1036.8,
+    "ultimos7Dias": 6.2185,
+    "unMes": -0.434,
     "noventaDias": 0.6238,
     "cientoOchentaDias": 1.0115,
     "enElAnio": 1.8189,
@@ -69,14 +70,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Ciclo Nova Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02496G-cffb0731.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02496G-cffb0731.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

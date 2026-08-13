@@ -2,7 +2,7 @@
   "fondoId": "1515",
   "claseId": "4529",
   "nombre": "Balanz Soja - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Balanz S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Variable",
@@ -11,11 +11,12 @@
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1254",
   "patrimonio": 0,
-  "inversionMinima": 1000000000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
     "valorCuotaparte": 1116.49,
@@ -29,31 +30,31 @@
   "composicionCartera": [
     {
       "nombre": "Fut Rofex SRO1126",
-      "porcentaje": 74
+      "porcentaje": 73.6
     },
     {
       "nombre": "Put SOJ.ROS/MAY27",
-      "porcentaje": 44.4
+      "porcentaje": 40.4
     },
     {
-      "nombre": "Letra Tesoro Nac D31L6",
-      "porcentaje": 38.6
-    },
-    {
-      "nombre": "ON Pan American C40",
-      "porcentaje": 21.4
-    },
-    {
-      "nombre": "Bono Prov de Buenos Aires TZV28",
-      "porcentaje": 19.4
+      "nombre": "Bono del Tesoro Nacional D31G6",
+      "porcentaje": 34.9
     },
     {
       "nombre": "Lelink D30S6",
-      "porcentaje": 17.6
+      "porcentaje": 23.1
+    },
+    {
+      "nombre": "ON Pan American C40",
+      "porcentaje": 19.3
+    },
+    {
+      "nombre": "Bono Prov de Buenos Aires TZV28",
+      "porcentaje": 17.3
     },
     {
       "nombre": "FCI Schroder Liquidez - Clase B",
-      "porcentaje": 3
+      "porcentaje": 5.3
     }
   ],
   "calificaciones": [],
@@ -69,14 +70,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Balanz S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00372G-cc6ce723.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00372G-cc6ce723.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

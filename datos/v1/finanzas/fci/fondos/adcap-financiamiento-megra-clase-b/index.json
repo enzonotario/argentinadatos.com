@@ -2,7 +2,7 @@
   "fondoId": "1610",
   "claseId": "5302",
   "nombre": "Adcap Financiamiento Megra - Clase B",
-  "fecha": "2026-08-10",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,20 +11,21 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1519",
-  "patrimonio": 17875368170.91,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 18865489910.88,
+  "cantidadCuotapartes": 10934064877.72,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1723.296,
-    "ultimos7Dias": 0.3566,
-    "unMes": 1.7443,
-    "noventaDias": 5.8708,
-    "cientoOchentaDias": 15.5306,
-    "enElAnio": 19.9322,
-    "doceMeses": 40.4872
+    "valorCuotaparte": 1725.387,
+    "ultimos7Dias": 22.8165,
+    "unMes": 21.0165,
+    "noventaDias": 5.8171,
+    "cientoOchentaDias": 15.3226,
+    "enElAnio": 20.0777,
+    "doceMeses": 40.1645
   },
   "composicionCartera": [
     {
@@ -73,14 +74,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

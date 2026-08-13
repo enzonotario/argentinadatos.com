@@ -2,7 +2,7 @@
   "fondoId": "382",
   "claseId": "4375",
   "nombre": "Superfondo Acciones Brasil - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Santander Asset Management G.F.C.I.S.A.",
   "depositaria": "Banco Santander Argentina S.A.",
   "tipoRenta": "Renta Variable",
@@ -13,14 +13,15 @@
   "duracion": "No Aplicable",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "520",
-  "patrimonio": 446758512.73,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 421986594.37,
+  "cantidadCuotapartes": 176667.91,
+  "inversionMinima": 1000,
+  "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 5,
   "rendimientos": {
-    "valorCuotaparte": 2528804.0262,
-    "ultimos7Dias": 1.0791,
-    "unMes": 4.3771,
+    "valorCuotaparte": 2388586.604,
+    "ultimos7Dias": -289.1223,
+    "unMes": -37.8454,
     "noventaDias": -0.3512,
     "cientoOchentaDias": 0.1396,
     "enElAnio": 14.0583,
@@ -103,7 +104,7 @@
   "calificaciones": [
     {
       "calificadora": "Standard and Poors",
-      "calificacion": "raAAAc",
+      "calificacion": "A+c(arg)",
       "fecha": "2010-11-11"
     }
   ],
@@ -119,14 +120,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Santander Asset Management G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00049G-c03041ad.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00049G-c03041ad.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Santander Argentina S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00096-4e9f0233.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00096-4e9f0233.jpg"
     }
   ]
 }

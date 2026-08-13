@@ -2,7 +2,7 @@
   "fondoId": "1247",
   "claseId": "3462",
   "nombre": "CYC Pesos Renta Fija - Clase U",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "C y C Administradora de Fondos S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1189",
-  "patrimonio": 16285681792.38,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 16534993117.52,
+  "cantidadCuotapartes": 789646908.06,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 20831.9253,
-    "ultimos7Dias": -0.1271,
-    "unMes": 0.302,
+    "valorCuotaparte": 20939.73,
+    "ultimos7Dias": 26.9839,
+    "unMes": 5.9488,
     "noventaDias": 4.8411,
     "cientoOchentaDias": 15.174,
     "enElAnio": 19.269,
@@ -112,7 +113,13 @@
       "porcentaje": 8.5
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "A+",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 1,
     "honorarioDepositaria": 0.1815,
@@ -125,14 +132,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "C y C Administradora de Fondos S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02471G-04849e4d.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02471G-04849e4d.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

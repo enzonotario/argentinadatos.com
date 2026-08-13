@@ -2,25 +2,26 @@
   "fondoId": "1464",
   "claseId": "4331",
   "nombre": "Fundcorp Performance Multiestrategia - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "CMF Asset Management S.A.U.",
   "depositaria": "Banco C.M.F. S.A.",
-  "tipoRenta": "Retorno Total",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1451",
-  "patrimonio": 42659158517.35,
-  "inversionMinima": 500000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 42817250501.64,
+  "cantidadCuotapartes": 16491167435.37,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 2586.788,
-    "ultimos7Dias": -0.1511,
-    "unMes": 1.1021,
+    "valorCuotaparte": 2596.375,
+    "ultimos7Dias": 19.3249,
+    "unMes": 13.2137,
     "noventaDias": 7.1299,
     "cientoOchentaDias": 18.7415,
     "enElAnio": 22.1872,
@@ -113,12 +114,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "CMF Asset Management S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00401G-76eff522.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00401G-76eff522.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco C.M.F. S.A.",
       "logo": null
     }

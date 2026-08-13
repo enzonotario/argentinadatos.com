@@ -2,25 +2,26 @@
   "fondoId": "1194",
   "claseId": "3237",
   "nombre": "Optimum Abierto Pymes - Clase B",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "SAM Argentina S.G.F.C.I.S.A.U.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "PyMes",
+  "tipoRenta": "Retorno Total",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1137",
-  "patrimonio": 29250.67,
-  "inversionMinima": 100000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 29234.32,
+  "cantidadCuotapartes": 1791.55,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 16327.015,
-    "ultimos7Dias": -0.049,
-    "unMes": -0.2239,
+    "valorCuotaparte": 16317.889,
+    "ultimos7Dias": -2.551,
+    "unMes": -2.5524,
     "noventaDias": 1.4845,
     "cientoOchentaDias": 7.6877,
     "enElAnio": 10.3841,
@@ -51,14 +52,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "SAM Argentina S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00016G-52d8d4aa.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00016G-52d8d4aa.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

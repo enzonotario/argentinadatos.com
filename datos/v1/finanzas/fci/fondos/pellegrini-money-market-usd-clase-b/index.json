@@ -2,7 +2,7 @@
   "fondoId": "1602",
   "claseId": "5269",
   "nombre": "Pellegrini Money Market USD - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Pellegrini S.A.S.G.F.C.I.",
   "depositaria": "Banco de La Nacion Argentina",
   "tipoRenta": "Mercado de Dinero",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1596",
-  "patrimonio": 41751120.78,
-  "inversionMinima": 10000,
+  "patrimonio": 38932257.57,
+  "cantidadCuotapartes": 38274668.11,
+  "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1017.019,
-    "ultimos7Dias": 1.1795,
-    "unMes": 0.9208,
+    "valorCuotaparte": 1017.181,
+    "ultimos7Dias": 0.8306,
+    "unMes": 0.8774,
     "noventaDias": 0.8576,
     "cientoOchentaDias": 0.7874,
     "enElAnio": 0.8239,
@@ -79,14 +80,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Pellegrini S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00041G-c2e70db2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00041G-c2e70db2.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de La Nacion Argentina",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00089-d9e4893d.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00089-d9e4893d.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "1562",
   "claseId": "5012",
   "nombre": "Parakeet Renta Pesos - Clase X Ley N° 27.743",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Parakeet S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1574",
-  "patrimonio": 260326374.69,
+  "patrimonio": 260963112.28,
+  "cantidadCuotapartes": 168728587.12,
   "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1542.871,
-    "ultimos7Dias": -0.0005,
-    "unMes": 1.1166,
+    "valorCuotaparte": 1546.644,
+    "ultimos7Dias": 18.0926,
+    "unMes": 13.1462,
     "noventaDias": 4.9801,
     "cientoOchentaDias": 13.8173,
     "enElAnio": 17.7017,
@@ -89,14 +90,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Parakeet S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03222G-de7305da.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03222G-de7305da.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

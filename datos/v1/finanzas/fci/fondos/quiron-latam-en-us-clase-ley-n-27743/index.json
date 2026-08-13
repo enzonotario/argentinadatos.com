@@ -2,25 +2,26 @@
   "fondoId": "450",
   "claseId": "4834",
   "nombre": "Quiron Latam en U$S - Clase Ley Nº 27.743",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Quiron Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
-  "region": "Latinoamerica",
+  "region": "Latinoamérica",
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "588",
-  "patrimonio": 124674.34,
-  "inversionMinima": 1000,
+  "patrimonio": 122609.1,
+  "cantidadCuotapartes": 62490.35,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1995.097,
-    "ultimos7Dias": 0.2514,
-    "unMes": -0.4,
+    "valorCuotaparte": 1962.048,
+    "ultimos7Dias": -78.0547,
+    "unMes": -26.7882,
     "noventaDias": 2.3464,
     "cientoOchentaDias": 2.555,
     "enElAnio": 4.2133,
@@ -111,14 +112,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Quiron Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00361G-20feb34f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00361G-20feb34f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

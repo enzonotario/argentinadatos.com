@@ -2,7 +2,7 @@
   "fondoId": "1366",
   "claseId": "3917",
   "nombre": "Pionero Renta Dólar Estrategia - Clase B",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Macro Fondos S.G.F.C.I.S.A.",
   "depositaria": "Banco Macro S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1321",
-  "patrimonio": 4988493.51,
-  "inversionMinima": 0,
+  "patrimonio": 5104552.47,
+  "cantidadCuotapartes": 3942172.26,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1292.168,
-    "ultimos7Dias": -0.0637,
-    "unMes": -0.0595,
+    "valorCuotaparte": 1294.858,
+    "ultimos7Dias": 6.1765,
+    "unMes": 0.7964,
     "noventaDias": 0.9204,
     "cientoOchentaDias": 2.2605,
     "enElAnio": 2.9642,
@@ -111,14 +112,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Macro Fondos S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00054G-82963f72.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00054G-82963f72.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Macro S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00098-871484a2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00098-871484a2.jpg"
     }
   ]
 }

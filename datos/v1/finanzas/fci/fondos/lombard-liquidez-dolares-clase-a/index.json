@@ -2,7 +2,7 @@
   "fondoId": "1733",
   "claseId": "5863",
   "nombre": "Lombard Liquidez Dolares - Clase A",
-  "fecha": "2026-08-10",
+  "fecha": "2026-08-12",
   "administradora": "Patagonia Inversora S.A.S.G.F.C.I",
   "depositaria": "Banco Patagonia S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1748",
-  "patrimonio": 46923024.92,
-  "inversionMinima": 100,
+  "patrimonio": 44428860.16,
+  "cantidadCuotapartes": 44068123,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1008.136,
-    "ultimos7Dias": 0.9622,
-    "unMes": 0.9158,
+    "valorCuotaparte": 1008.186,
+    "ultimos7Dias": 0.9363,
+    "unMes": 0.9106,
     "noventaDias": 0.8554,
     "cientoOchentaDias": 0.8262,
     "enElAnio": 0.9116,
@@ -93,14 +94,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Patagonia Inversora S.A.S.G.F.C.I",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00017G-57ea7826.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00017G-57ea7826.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Patagonia S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00209-6f3e2645.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00209-6f3e2645.jpg"
     }
   ]
 }

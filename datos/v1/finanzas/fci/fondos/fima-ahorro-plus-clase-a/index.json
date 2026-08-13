@@ -2,7 +2,7 @@
   "fondoId": "500",
   "claseId": "1008",
   "nombre": "Fima Ahorro Plus - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Galicia Asset Management S.A.U.",
   "depositaria": "Banco de Galicia y Buenos Aires S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,61 +11,62 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "641",
-  "patrimonio": 299174473447.58,
-  "inversionMinima": 100,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 299549911779.1,
+  "cantidadCuotapartes": 1871309446.75,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 159369.132,
-    "ultimos7Dias": 0.2104,
-    "unMes": 1.3369,
-    "noventaDias": 5.092,
-    "cientoOchentaDias": 14.7928,
-    "enElAnio": 18.5019,
-    "doceMeses": 38.0236
+    "valorCuotaparte": 160075.028,
+    "ultimos7Dias": 23.0957,
+    "unMes": 17.8631,
+    "noventaDias": 4.8176,
+    "cientoOchentaDias": 13.9379,
+    "enElAnio": 19.0267,
+    "doceMeses": 39.2932
   },
   "composicionCartera": [
     {
       "nombre": "Lecap S14G6",
-      "porcentaje": 14.2
+      "porcentaje": 14
     },
     {
       "nombre": "Lecap S30N6",
-      "porcentaje": 9.6
-    },
-    {
-      "nombre": "Lecap S13N6",
-      "porcentaje": 7.6
+      "porcentaje": 9.5
     },
     {
       "nombre": "Lecap S30S6",
-      "porcentaje": 7.3
+      "porcentaje": 7.9
+    },
+    {
+      "nombre": "Lecap S13N6",
+      "porcentaje": 7.4
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 5.6
     },
     {
       "nombre": "Lecap S15S6",
-      "porcentaje": 5.5
-    },
-    {
-      "nombre": "Pzo Fi $ Bco Macro Bansud",
-      "porcentaje": 4.7
+      "porcentaje": 5.4
     },
     {
       "nombre": "Bono Boncer TZXO6",
       "porcentaje": 4.6
     },
     {
+      "nombre": "Pzo Fi $ Bco Macro Bansud",
+      "porcentaje": 4.6
+    },
+    {
       "nombre": "Letra Tamar TEM M31G6",
-      "porcentaje": 4.2
+      "porcentaje": 4.1
     },
     {
       "nombre": "Lecer X30S6",
-      "porcentaje": 4
-    },
-    {
-      "nombre": "Bono Boncer TZXD6",
-      "porcentaje": 3.8
+      "porcentaje": 3.9
     },
     {
       "nombre": "Lecer X31L6",
@@ -73,11 +74,7 @@
     },
     {
       "nombre": "Bono Boncer 2027 TZXM7",
-      "porcentaje": 3.2
-    },
-    {
-      "nombre": "FCI Pionero Pesos - Clase A",
-      "porcentaje": 3
+      "porcentaje": 3.4
     },
     {
       "nombre": "Letra Tesoro Nac S30O6",
@@ -85,15 +82,15 @@
     },
     {
       "nombre": "Lecap S31G6",
-      "porcentaje": 2.8
+      "porcentaje": 2.7
     },
     {
-      "nombre": "Pzo Fi $ Bco Santander Ri",
-      "porcentaje": 2
+      "nombre": "FCI Pionero Pesos - Clase A",
+      "porcentaje": 2.2
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 16.9
+      "porcentaje": 18.1
     }
   ],
   "calificaciones": [
@@ -115,14 +112,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Galicia Asset Management S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00002G-01a59b57.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00002G-01a59b57.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Galicia y Buenos Aires S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00081-d14fcb5c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00081-d14fcb5c.jpg"
     }
   ]
 }

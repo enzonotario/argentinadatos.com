@@ -2,7 +2,7 @@
   "fondoId": "1885",
   "claseId": "6520",
   "nombre": "FBA Renta Fija Dolar II - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "BBVA Argentina S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "No Registrada",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1864",
-  "patrimonio": 99942.06,
+  "patrimonio": 99938.26,
+  "cantidadCuotapartes": 100000,
   "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 999.4206,
-    "ultimos7Dias": -0.004,
-    "unMes": -0.0181,
+    "valorCuotaparte": 999.383,
+    "ultimos7Dias": -0.1983,
+    "unMes": -0.1999,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -45,14 +46,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00029G-9a6fc701.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00029G-9a6fc701.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "BBVA Argentina S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00079-a62ab0c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00079-a62ab0c8.jpg"
     }
   ]
 }

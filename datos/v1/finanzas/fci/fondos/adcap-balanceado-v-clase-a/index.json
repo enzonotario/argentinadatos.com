@@ -2,7 +2,7 @@
   "fondoId": "1322",
   "claseId": "3765",
   "nombre": "Adcap Balanceado V - Clase A",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,19 +11,20 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1247",
-  "patrimonio": 3484711058.09,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 4215417943.59,
+  "cantidadCuotapartes": 26436175.51,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 158752.715,
-    "ultimos7Dias": 0.602,
-    "unMes": 3.7577,
-    "noventaDias": 15.5089,
-    "cientoOchentaDias": 34.2462,
-    "enElAnio": 41.9381,
+    "valorCuotaparte": 159456.421,
+    "ultimos7Dias": 32.5106,
+    "unMes": 41.4592,
+    "noventaDias": 14.7627,
+    "cientoOchentaDias": 33.3296,
+    "enElAnio": 42.5673,
     "doceMeses": null
   },
   "composicionCartera": [
@@ -37,19 +38,19 @@
     },
     {
       "nombre": "Pagare #MAV110860066",
-      "porcentaje": 10.3
+      "porcentaje": 10.4
     },
     {
       "nombre": "Pagare #MAV110860067",
-      "porcentaje": 10.3
+      "porcentaje": 10.4
     },
     {
       "nombre": "Pagare #MAV110860068",
-      "porcentaje": 10.3
+      "porcentaje": 10.4
     },
     {
       "nombre": "Pagare #MAV110860069",
-      "porcentaje": 10.3
+      "porcentaje": 10.4
     },
     {
       "nombre": "Pagare #MAV250860052",
@@ -64,8 +65,12 @@
       "porcentaje": 2.6
     },
     {
+      "nombre": "FCI Allaria Ahorro - Clase C",
+      "porcentaje": 2.1
+    },
+    {
       "nombre": "Resto de Activos",
-      "porcentaje": 23.8
+      "porcentaje": 21.5
     }
   ],
   "calificaciones": [],
@@ -81,14 +86,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

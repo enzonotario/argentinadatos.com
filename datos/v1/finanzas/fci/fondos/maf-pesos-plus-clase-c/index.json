@@ -2,7 +2,7 @@
   "fondoId": "504",
   "claseId": "1020",
   "nombre": "MAF Pesos Plus - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Mariva Asset Management S.A.U.S.G.F.C.I.",
   "depositaria": "Banco Mariva S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "636",
-  "patrimonio": 125862612.49,
-  "inversionMinima": 10000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 126451680.09,
+  "cantidadCuotapartes": 720205.02,
+  "inversionMinima": 2000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 174759.42,
-    "ultimos7Dias": 0.3898,
-    "unMes": 1.8116,
+    "valorCuotaparte": 175577.337,
+    "ultimos7Dias": 24.4041,
+    "unMes": 22.0061,
     "noventaDias": 5.6596,
     "cientoOchentaDias": 13.5452,
     "enElAnio": 18.0012,
@@ -87,12 +88,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mariva Asset Management S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00371G-45045e78.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00371G-45045e78.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Mariva S.A.",
       "logo": null
     }

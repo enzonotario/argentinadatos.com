@@ -2,7 +2,7 @@
   "fondoId": "785",
   "claseId": "1779",
   "nombre": "Consultatio Gestion IX - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "988",
-  "patrimonio": 10766424.43,
-  "inversionMinima": 15000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 10790990.05,
+  "cantidadCuotapartes": 745482.59,
+  "inversionMinima": 1000000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 14442.221,
-    "ultimos7Dias": -0.4902,
-    "unMes": 0.3812,
+    "valorCuotaparte": 14475.174,
+    "ultimos7Dias": 11.8975,
+    "unMes": 3.6942,
     "noventaDias": 1.0273,
     "cientoOchentaDias": 2.8482,
     "enElAnio": -1.1488,
@@ -61,14 +62,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00022G-3c173d8e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

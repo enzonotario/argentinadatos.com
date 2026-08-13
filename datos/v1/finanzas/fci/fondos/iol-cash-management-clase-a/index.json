@@ -2,7 +2,7 @@
   "fondoId": "1301",
   "claseId": "3697",
   "nombre": "IOL Cash Management - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,65 +11,70 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1246",
-  "patrimonio": 91464801877.9,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 92380917631.2,
+  "cantidadCuotapartes": 7777759564.81,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 11837.322,
-    "ultimos7Dias": 0.2926,
-    "unMes": 1.7318,
-    "noventaDias": 5.4,
-    "cientoOchentaDias": 13.5295,
-    "enElAnio": 17.6942,
-    "doceMeses": 26.7265
+    "valorCuotaparte": 11877.574,
+    "ultimos7Dias": 17.7308,
+    "unMes": 19.5163,
+    "noventaDias": 5.2356,
+    "cientoOchentaDias": 13.1036,
+    "enElAnio": 18.0944,
+    "doceMeses": 28.368
   },
   "composicionCartera": [
     {
       "nombre": "ON Banco Comafi C22",
-      "porcentaje": 7
+      "porcentaje": 6.9
     },
     {
       "nombre": "ON Banco de Valores C3",
-      "porcentaje": 6.8
+      "porcentaje": 6.7
     },
     {
       "nombre": "ON Mercado Pago C3",
-      "porcentaje": 6.8
+      "porcentaje": 6.6
     },
     {
       "nombre": "ON Banco Nacion Argentina Clase 1",
-      "porcentaje": 6.5
+      "porcentaje": 6.3
     },
     {
       "nombre": "ON BBVA Frances Cl 47",
-      "porcentaje": 5.7
+      "porcentaje": 5.6
     },
     {
       "nombre": "ON Arcor C3",
-      "porcentaje": 5.3
+      "porcentaje": 5.2
     },
     {
       "nombre": "Bono Boncer TZXS7",
-      "porcentaje": 5.1
+      "porcentaje": 5
     },
     {
       "nombre": "ON BBVA Frances Cl 46",
-      "porcentaje": 5
+      "porcentaje": 4.9
     },
     {
       "nombre": "ON BACS Clase 19",
-      "porcentaje": 5
+      "porcentaje": 4.9
     },
     {
       "nombre": "ON Arcor C4",
-      "porcentaje": 3.6
+      "porcentaje": 3.5
     },
     {
       "nombre": "ON Bco Provincia Cl 4",
-      "porcentaje": 3.4
+      "porcentaje": 3.3
+    },
+    {
+      "nombre": "ON Banco Prov Clase 6",
+      "porcentaje": 3.2
     },
     {
       "nombre": "Pzo Fi $ Bco Patagonia",
@@ -77,18 +82,14 @@
     },
     {
       "nombre": "Letra Tamar TEM M31G6",
-      "porcentaje": 2.7
-    },
-    {
-      "nombre": "ON Edenor Clase 9 DNC9O",
       "porcentaje": 2.6
     },
     {
-      "nombre": "ON Banco Hipotecario C13",
+      "nombre": "ON Edenor Clase 9 DNC9O",
       "porcentaje": 2.5
     },
     {
-      "nombre": "ON Banco Prov Clase 6",
+      "nombre": "ON Banco Hipotecario C13",
       "porcentaje": 2.5
     },
     {
@@ -97,7 +98,7 @@
     },
     {
       "nombre": "ON Bco Serv Transac C27",
-      "porcentaje": 2.1
+      "porcentaje": 2
     },
     {
       "nombre": "Pzo Fi $ Bco Sol",
@@ -105,7 +106,7 @@
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 20
+      "porcentaje": 21.2
     }
   ],
   "calificaciones": [],
@@ -121,14 +122,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

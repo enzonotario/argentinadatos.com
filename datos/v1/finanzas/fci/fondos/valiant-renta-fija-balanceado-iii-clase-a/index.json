@@ -2,7 +2,7 @@
   "fondoId": "1627",
   "claseId": "5399",
   "nombre": "Valiant Renta Fija Balanceado III - Clase A",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Valiant Asset Management S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1593",
-  "patrimonio": 727476357.59,
-  "inversionMinima": 100000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 728274560.07,
+  "cantidadCuotapartes": 564666015.43,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1288.33,
-    "ultimos7Dias": 0.0033,
-    "unMes": 0.2139,
+    "valorCuotaparte": 1289.744,
+    "ultimos7Dias": 4.0906,
+    "unMes": 2.6746,
     "noventaDias": 1.4918,
     "cientoOchentaDias": 6.7788,
     "enElAnio": 8.9545,
@@ -117,14 +118,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Valiant Asset Management S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02545G-f1f63ca6.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02545G-f1f63ca6.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

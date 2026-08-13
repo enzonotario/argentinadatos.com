@@ -2,7 +2,7 @@
   "fondoId": "1640",
   "claseId": "5438",
   "nombre": "Crecer Ahorro - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Ciudad Administradora de Activos S.A.U.",
   "depositaria": "Banco Ciudad de Buenos Aires",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1660",
-  "patrimonio": 25681067719,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 25129754280.21,
+  "cantidadCuotapartes": 17218915425.17,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1453.478,
-    "ultimos7Dias": 0.3527,
-    "unMes": 1.6185,
+    "valorCuotaparte": 1459.427,
+    "ultimos7Dias": 21.3418,
+    "unMes": 18.8112,
     "noventaDias": 5.0849,
     "cientoOchentaDias": 12.7537,
     "enElAnio": 16.7287,
@@ -125,14 +126,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Ciudad Administradora de Activos S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03255G-43d1241b.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03255G-43d1241b.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Ciudad de Buenos Aires",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00067-2efdbc54.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00067-2efdbc54.jpg"
     }
   ]
 }

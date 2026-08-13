@@ -2,7 +2,7 @@
   "fondoId": "1538",
   "claseId": "4633",
   "nombre": "Balanz Money Market USD - Clase E",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Balanz S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,35 +13,40 @@
   "duracion": "Mayor a 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1549",
-  "patrimonio": 6469416.57,
-  "inversionMinima": 0,
+  "patrimonio": 6470408.14,
+  "cantidadCuotapartes": 6376780.39,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1014.527,
-    "ultimos7Dias": 0.8636,
-    "unMes": 0.7648,
-    "noventaDias": 0.8432,
-    "cientoOchentaDias": 1.0031,
-    "enElAnio": 1.1393,
-    "doceMeses": 1.3456
+    "valorCuotaparte": 1014.683,
+    "ultimos7Dias": 0.8018,
+    "unMes": 0.7727,
+    "noventaDias": 0.8359,
+    "cientoOchentaDias": 0.9729,
+    "enElAnio": 1.129,
+    "doceMeses": 1.3235
   },
   "composicionCartera": [
     {
-      "nombre": "Pzo Fi U$S Bco Galicia",
+      "nombre": "Pzo Fi U$S Bco Nacion",
       "porcentaje": 20.5
     },
     {
-      "nombre": "Pzo Fi U$S Bco Nacion",
-      "porcentaje": 19.8
+      "nombre": "Pzo Fi U$S Bco Galicia",
+      "porcentaje": 20.1
     },
     {
       "nombre": "Caucion Colocadora U$S Merval",
-      "porcentaje": 19
+      "porcentaje": 18.2
+    },
+    {
+      "nombre": "Cta Cte U$S Bco Galicia",
+      "porcentaje": 8.8
     },
     {
       "nombre": "Cta Cte U$S Rem Bco Nacion",
-      "porcentaje": 11.7
+      "porcentaje": 7
     },
     {
       "nombre": "Pzo Fi U$S Bco Comafi",
@@ -52,20 +57,16 @@
       "porcentaje": 3.2
     },
     {
-      "nombre": "Cta Cte U$S Bco Galicia",
-      "porcentaje": 2.9
-    },
-    {
       "nombre": "Cta Cte U$S Rem Bco Patagonia",
       "porcentaje": 2.7
     },
     {
       "nombre": "Cta Cte USD Rem MEP Banco de Valores",
-      "porcentaje": 2.3
+      "porcentaje": 2.5
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 14.6
+      "porcentaje": 13.9
     }
   ],
   "calificaciones": [
@@ -87,14 +88,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Balanz S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00372G-cc6ce723.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00372G-cc6ce723.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

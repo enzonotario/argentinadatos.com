@@ -2,25 +2,26 @@
   "fondoId": "1267",
   "claseId": "3525",
   "nombre": "Consultatio ST Fondo Comun De Inversión ASG - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "ASG",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1211",
-  "patrimonio": 450679122.89,
-  "inversionMinima": 50000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 434540543.77,
+  "cantidadCuotapartes": 38429839.05,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 11337.07,
-    "ultimos7Dias": 0.0752,
-    "unMes": 0.7048,
+    "valorCuotaparte": 11307.374,
+    "ultimos7Dias": -13.6582,
+    "unMes": 1.5923,
     "noventaDias": 6.3306,
     "cientoOchentaDias": 13.8757,
     "enElAnio": 15.5189,
@@ -101,14 +102,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00022G-3c173d8e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "1724",
   "claseId": "5807",
   "nombre": "Alpha Renta Fija Corporativa Dólar - Clase C",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "ICBC (Arg) S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Dolar Estadounidense Billete",
+  "moneda": "USB",
   "codigoCNV": "1722",
-  "patrimonio": 23708087.34,
-  "inversionMinima": 100000,
-  "monedaInversion": "Dolar Estadounidense Billete",
+  "patrimonio": 10678562.36,
+  "cantidadCuotapartes": 10120513.35,
+  "inversionMinima": 1,
+  "monedaInversion": "USB",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1051.432,
-    "ultimos7Dias": -0.0982,
-    "unMes": -0.1956,
+    "valorCuotaparte": 1055.14,
+    "ultimos7Dias": 10.8004,
+    "unMes": 1.7934,
     "noventaDias": 1.4487,
     "cientoOchentaDias": 3.6428,
     "enElAnio": 4.9476,
@@ -83,14 +84,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00008G-f9ac58c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00008G-f9ac58c8.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "ICBC (Arg) S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00062-50a49656.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00062-50a49656.jpg"
     }
   ]
 }

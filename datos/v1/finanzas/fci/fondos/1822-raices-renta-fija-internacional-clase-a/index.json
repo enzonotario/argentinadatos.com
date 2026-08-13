@@ -2,7 +2,7 @@
   "fondoId": "1852",
   "claseId": "6390",
   "nombre": "1822 Raices Renta Fija Internacional - Clase A",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Provinfondos S.A.S.G.F.C.I.",
   "depositaria": "Banco Provincia de Buenos Aires",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "No Registrada",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1534",
-  "patrimonio": 2408408.72,
+  "patrimonio": 2379816.48,
+  "cantidadCuotapartes": 2367951.91,
   "inversionMinima": 1000,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1004.937,
-    "ultimos7Dias": 0.1361,
-    "unMes": 0.023,
+    "valorCuotaparte": 1005.01,
+    "ultimos7Dias": 0.96,
+    "unMes": 0.785,
     "noventaDias": 0.1336,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -73,14 +74,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Provinfondos S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00043G-f97d764c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00043G-f97d764c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Provincia de Buenos Aires",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00091-1272ada3.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00091-1272ada3.jpg"
     }
   ]
 }

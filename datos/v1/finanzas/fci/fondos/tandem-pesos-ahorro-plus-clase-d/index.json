@@ -2,7 +2,7 @@
   "fondoId": "1510",
   "claseId": "4514",
   "nombre": "Tandem Pesos Ahorro Plus - Clase D",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Tandem Capital S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1488",
-  "patrimonio": 23640216983.45,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 26160368567.47,
+  "cantidadCuotapartes": 17652596318.19,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1475.296,
-    "ultimos7Dias": 0.444,
-    "unMes": 2.019,
+    "valorCuotaparte": 1481.956,
+    "ultimos7Dias": 23.5391,
+    "unMes": 22.7782,
     "noventaDias": 5.5733,
     "cientoOchentaDias": 12.7208,
     "enElAnio": 16.6336,
@@ -93,14 +94,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Tandem Capital S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03163G-fbbfc93d.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03163G-fbbfc93d.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

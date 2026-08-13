@@ -2,7 +2,7 @@
   "fondoId": "543",
   "claseId": "1102",
   "nombre": "Galileo Premium - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Delta Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "675",
-  "patrimonio": 19899119284.74,
-  "inversionMinima": 15000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 18936808184.76,
+  "cantidadCuotapartes": 71733506.7,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 263609.279,
-    "ultimos7Dias": -0.2621,
-    "unMes": 0.4657,
+    "valorCuotaparte": 263988.324,
+    "ultimos7Dias": 7.4976,
+    "unMes": 8.2323,
     "noventaDias": 9.6531,
     "cientoOchentaDias": 9.0478,
     "enElAnio": 8.4914,
@@ -123,14 +124,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Delta Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00321G-78ba876b.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00321G-78ba876b.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

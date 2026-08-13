@@ -2,7 +2,7 @@
   "fondoId": "1302",
   "claseId": "3702",
   "nombre": "Adcap Balanceado IV - Clase C",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,20 +11,21 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1245",
-  "patrimonio": 6850029451.23,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 6867501254.41,
+  "cantidadCuotapartes": 84384728.13,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 81176.2,
-    "ultimos7Dias": 0.304,
-    "unMes": 1.4431,
-    "noventaDias": 5.7024,
-    "cientoOchentaDias": 17.8302,
-    "enElAnio": 22.5144,
-    "doceMeses": 36.6225
+    "valorCuotaparte": 81383.2,
+    "ultimos7Dias": 31.7729,
+    "unMes": 19.2302,
+    "noventaDias": 5.6792,
+    "cientoOchentaDias": 16.6517,
+    "enElAnio": 22.8268,
+    "doceMeses": 37.268
   },
   "composicionCartera": [
     {
@@ -37,7 +38,7 @@
     },
     {
       "nombre": "Bono Boncer TZXS7",
-      "porcentaje": 14.3
+      "porcentaje": 14.4
     },
     {
       "nombre": "Lecer X31L6",
@@ -45,11 +46,11 @@
     },
     {
       "nombre": "Lecap S30S6",
-      "porcentaje": 10.8
+      "porcentaje": 10.7
     },
     {
       "nombre": "Bono del Tesoro Nacional TZXO7",
-      "porcentaje": 9.6
+      "porcentaje": 9.7
     },
     {
       "nombre": "Lecer X30S6",
@@ -77,14 +78,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

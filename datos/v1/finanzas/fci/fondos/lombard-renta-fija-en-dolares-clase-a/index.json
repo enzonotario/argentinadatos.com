@@ -2,7 +2,7 @@
   "fondoId": "725",
   "claseId": "1572",
   "nombre": "Lombard Renta Fija en Dolares - Clase A",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Patagonia Inversora S.A.S.G.F.C.I",
   "depositaria": "Banco Patagonia S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "890",
-  "patrimonio": 151575537.59,
-  "inversionMinima": 500,
+  "patrimonio": 151873266.1,
+  "cantidadCuotapartes": 122230774,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1242.102,
-    "ultimos7Dias": 0.0785,
-    "unMes": 0.1533,
+    "valorCuotaparte": 1242.513,
+    "ultimos7Dias": 3.5401,
+    "unMes": 2.1325,
     "noventaDias": 0.3531,
     "cientoOchentaDias": 0.9532,
     "enElAnio": 1.2829,
@@ -100,7 +101,13 @@
       "porcentaje": 5
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "Baa-bf.ar",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 0.44,
     "honorarioDepositaria": 0.11,
@@ -113,14 +120,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Patagonia Inversora S.A.S.G.F.C.I",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00017G-57ea7826.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00017G-57ea7826.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Patagonia S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00209-6f3e2645.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00209-6f3e2645.jpg"
     }
   ]
 }

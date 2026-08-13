@@ -2,7 +2,7 @@
   "fondoId": "604",
   "claseId": "1224",
   "nombre": "Lombard Abierto Plus",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Patagonia Inversora S.A.S.G.F.C.I",
   "depositaria": "Banco Patagonia S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "733",
-  "patrimonio": 88201785341.76,
-  "inversionMinima": 10000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 88117548299.05,
+  "cantidadCuotapartes": 582211416,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 150329.782,
-    "ultimos7Dias": -0.1698,
-    "unMes": 1.0885,
+    "valorCuotaparte": 151349.743,
+    "ultimos7Dias": 35.378,
+    "unMes": 16.9825,
     "noventaDias": 5.4906,
     "cientoOchentaDias": 18.617,
     "enElAnio": 23.7576,
@@ -87,14 +88,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Patagonia Inversora S.A.S.G.F.C.I",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00017G-57ea7826.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00017G-57ea7826.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Patagonia S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00209-6f3e2645.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00209-6f3e2645.jpg"
     }
   ]
 }

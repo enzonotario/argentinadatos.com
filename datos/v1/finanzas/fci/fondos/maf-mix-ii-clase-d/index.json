@@ -2,7 +2,7 @@
   "fondoId": "1201",
   "claseId": "3289",
   "nombre": "MAF Mix II - Clase D",
-  "fecha": "2026-08-10",
+  "fecha": "2026-08-12",
   "administradora": "Mariva Asset Management S.A.U.S.G.F.C.I.",
   "depositaria": "Banco Mariva S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,14 +13,15 @@
   "duracion": "No Registrada",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1087",
-  "patrimonio": 12669966.69,
-  "inversionMinima": 0,
+  "patrimonio": 12697078.61,
+  "cantidadCuotapartes": 6730466.74,
+  "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1882.331,
-    "ultimos7Dias": 0.1985,
-    "unMes": 1.3169,
+    "valorCuotaparte": 1886.508,
+    "ultimos7Dias": 20.4115,
+    "unMes": 17.1948,
     "noventaDias": 1.6399,
     "cientoOchentaDias": 3.3902,
     "enElAnio": 4.5888,
@@ -113,12 +114,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mariva Asset Management S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00371G-45045e78.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00371G-45045e78.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Mariva S.A.",
       "logo": null
     }

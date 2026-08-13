@@ -2,7 +2,7 @@
   "fondoId": "1499",
   "claseId": "4902",
   "nombre": "Dracma Estrategia Dólar I - Clase E Ley N° 27.743",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Dracma Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1465",
-  "patrimonio": 4824993.35,
-  "inversionMinima": 0,
+  "patrimonio": 4786251.85,
+  "cantidadCuotapartes": 4326055.11,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1109.2,
-    "ultimos7Dias": -0.0451,
-    "unMes": 0.0812,
+    "valorCuotaparte": 1106.4,
+    "ultimos7Dias": -13.1626,
+    "unMes": -3.3994,
     "noventaDias": 1.2691,
     "cientoOchentaDias": 2.2022,
     "enElAnio": 3.0663,
@@ -117,14 +118,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Dracma Asset Management S.A.",
       "logo": null
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

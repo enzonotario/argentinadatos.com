@@ -2,7 +2,7 @@
   "fondoId": "1829",
   "claseId": "6288",
   "nombre": "Mills Renta Fija Dólares - Clase XDB1",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Mills Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1874",
-  "patrimonio": 4179349.42,
-  "inversionMinima": 100000,
-  "monedaInversion": "Dolar Estadounidense Billete",
+  "patrimonio": 4161504.35,
+  "cantidadCuotapartes": 4126488.64,
+  "inversionMinima": 1,
+  "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1017.62,
-    "ultimos7Dias": 0.058,
-    "unMes": 0.2604,
+    "valorCuotaparte": 1008.486,
+    "ultimos7Dias": -46.8026,
+    "unMes": -9.0278,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -113,14 +114,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mills Asset Management S.A.",
       "logo": null
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -1,26 +1,27 @@
 {
   "fondoId": "383",
   "claseId": "694",
-  "nombre": "FBA Acciones Latinoamericanas — FBA Acciones Latinoamericana - Clase B",
-  "fecha": "2026-08-07",
+  "nombre": "FBA Acciones Latinoamericana - Clase B",
+  "fecha": "2026-08-12",
   "administradora": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "BBVA Argentina S.A.",
   "tipoRenta": "Renta Variable",
   "tipoDD": "No Aplica",
-  "region": "Latinoamerica",
+  "region": "Latinoamérica",
   "benchmark": "MSCI Latam",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "509",
-  "patrimonio": 7227499109.48,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 7023133834.4,
+  "cantidadCuotapartes": 1633018.3421,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 4384892.651,
-    "ultimos7Dias": -3.4455,
-    "unMes": 1.8053,
+    "valorCuotaparte": 4300707.257,
+    "ultimos7Dias": -171.3233,
+    "unMes": -16.5598,
     "noventaDias": 0.7521,
     "cientoOchentaDias": 6.4612,
     "enElAnio": 25.8472,
@@ -79,14 +80,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00029G-9a6fc701.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00029G-9a6fc701.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "BBVA Argentina S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00079-a62ab0c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00079-a62ab0c8.jpg"
     }
   ]
 }

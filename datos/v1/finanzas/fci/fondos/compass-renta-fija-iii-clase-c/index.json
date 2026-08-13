@@ -2,7 +2,7 @@
   "fondoId": "429",
   "claseId": "801",
   "nombre": "Compass Renta Fija III - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "566",
-  "patrimonio": 1481276451.26,
-  "inversionMinima": 100000001,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 1465735636.07,
+  "cantidadCuotapartes": 4116424.39,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 359845.417,
-    "ultimos7Dias": 0.4104,
-    "unMes": 0.0244,
+    "valorCuotaparte": 356070.098,
+    "ultimos7Dias": -54.7057,
+    "unMes": -9.2787,
     "noventaDias": 6.8261,
     "cientoOchentaDias": 5.5304,
     "enElAnio": 5.4802,
@@ -79,14 +80,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Investis Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00021G-d9e0d02c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00021G-d9e0d02c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

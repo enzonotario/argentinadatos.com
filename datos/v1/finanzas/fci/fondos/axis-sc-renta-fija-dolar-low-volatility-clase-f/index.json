@@ -1,8 +1,8 @@
 {
   "fondoId": "1472",
   "claseId": "4357",
-  "nombre": "Axis S&C Renta Fija Dólar Low Volatility - Clase F",
-  "fecha": "2026-08-05",
+  "nombre": "Axis Estrategia Dólar 2 - Clase F",
+  "fecha": "2026-08-12",
   "administradora": "Axis S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1469",
-  "patrimonio": 96456.12,
-  "inversionMinima": 10000,
+  "patrimonio": 96578.41,
+  "cantidadCuotapartes": 93339.77,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1033.387,
-    "ultimos7Dias": 0.0192,
-    "unMes": 0.3347,
+    "valorCuotaparte": 1034.697,
+    "ultimos7Dias": 6.61,
+    "unMes": 5.0833,
     "noventaDias": 2.2038,
     "cientoOchentaDias": 4.696,
     "enElAnio": 6.2532,
@@ -73,14 +74,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Axis S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00384G-b6af83ec.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00384G-b6af83ec.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

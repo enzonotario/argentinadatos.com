@@ -2,7 +2,7 @@
   "fondoId": "1208",
   "claseId": "3341",
   "nombre": "Pellegrini Proteccion - Clase B",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Pellegrini S.A.S.G.F.C.I.",
   "depositaria": "Banco de La Nacion Argentina",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1037",
-  "patrimonio": 35962943299.31,
-  "inversionMinima": 15000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 35907619219.47,
+  "cantidadCuotapartes": 1635666668.75,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 21986.719,
-    "ultimos7Dias": 0.0422,
-    "unMes": 0.7555,
+    "valorCuotaparte": 21952.895,
+    "ultimos7Dias": -8.4085,
+    "unMes": 10.6067,
     "noventaDias": 7.7266,
     "cientoOchentaDias": 7.4477,
     "enElAnio": 7.3055,
@@ -83,14 +84,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Pellegrini S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00041G-c2e70db2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00041G-c2e70db2.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de La Nacion Argentina",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00089-d9e4893d.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00089-d9e4893d.jpg"
     }
   ]
 }

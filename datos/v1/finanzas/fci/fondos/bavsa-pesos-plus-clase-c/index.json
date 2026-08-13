@@ -2,7 +2,7 @@
   "fondoId": "1427",
   "claseId": "4174",
   "nombre": "BAVSA Pesos Plus - Clase C",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "BAVSA Fondos S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1401",
-  "patrimonio": 3174493263.71,
-  "inversionMinima": 300000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 2798398186.51,
+  "cantidadCuotapartes": 1331877412.34,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 2089.37,
-    "ultimos7Dias": -0.0502,
-    "unMes": 1.2164,
+    "valorCuotaparte": 2101.093,
+    "ultimos7Dias": 29.2562,
+    "unMes": 16.2841,
     "noventaDias": 5.1682,
     "cientoOchentaDias": 17.405,
     "enElAnio": 20.133,
@@ -117,14 +118,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "BAVSA Fondos S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03118G-d03fc40c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03118G-d03fc40c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

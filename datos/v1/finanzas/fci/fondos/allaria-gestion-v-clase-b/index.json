@@ -2,7 +2,7 @@
   "fondoId": "1595",
   "claseId": "5246",
   "nombre": "Allaria Gestión V - Clase B",
-  "fecha": "2026-08-10",
+  "fecha": "2026-08-12",
   "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,20 +11,21 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1607",
-  "patrimonio": 6282796090.78,
-  "inversionMinima": 100,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 6123383843.01,
+  "cantidadCuotapartes": 4382929648.48,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1433.47,
-    "ultimos7Dias": -2.748,
-    "unMes": -0.6272,
-    "noventaDias": 8.3186,
-    "cientoOchentaDias": 8.2824,
-    "enElAnio": 12.3568,
-    "doceMeses": 48.6003
+    "valorCuotaparte": 1397.098,
+    "ultimos7Dias": -137.6836,
+    "unMes": -46.3769,
+    "noventaDias": 6.5033,
+    "cientoOchentaDias": 11.3278,
+    "enElAnio": 9.5059,
+    "doceMeses": 44.8783
   },
   "composicionCartera": [
     {
@@ -109,14 +110,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00356G-ea35a573.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

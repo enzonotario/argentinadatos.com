@@ -2,7 +2,7 @@
   "fondoId": "1648",
   "claseId": "5486",
   "nombre": "Pionero Dólar Dinámico - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Macro Fondos S.G.F.C.I.S.A.",
   "depositaria": "Banco Macro S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1647",
-  "patrimonio": 12705512.29,
-  "inversionMinima": 100,
+  "patrimonio": 12619378.99,
+  "cantidadCuotapartes": 12177134,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1043.391,
-    "ultimos7Dias": -0.0488,
-    "unMes": 0.3753,
+    "valorCuotaparte": 1036.318,
+    "ultimos7Dias": -35.3469,
+    "unMes": -5.7373,
     "noventaDias": 2.2756,
     "cientoOchentaDias": 4.3391,
     "enElAnio": 4.3391,
@@ -93,14 +94,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Macro Fondos S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00054G-82963f72.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00054G-82963f72.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Macro S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00098-871484a2.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00098-871484a2.jpg"
     }
   ]
 }

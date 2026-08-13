@@ -2,7 +2,7 @@
   "fondoId": "334",
   "claseId": "385",
   "nombre": "SBS Tavelli Renta - Clase P",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "SBS Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "446",
-  "patrimonio": 1102255835.75,
-  "inversionMinima": 500,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 1097195905.49,
+  "cantidadCuotapartes": 1241217.11,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 888054.033,
-    "ultimos7Dias": -0.1545,
-    "unMes": 0.8215,
+    "valorCuotaparte": 883967.761,
+    "ultimos7Dias": -16.6509,
+    "unMes": 7.255,
     "noventaDias": 6.9837,
     "cientoOchentaDias": 8.9732,
     "enElAnio": 9.4518,
@@ -80,7 +81,13 @@
       "porcentaje": 1.1
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "BBBf.ar",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 2.02,
     "honorarioDepositaria": 0.1,
@@ -93,14 +100,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "SBS Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00347G-615b02d0.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00347G-615b02d0.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

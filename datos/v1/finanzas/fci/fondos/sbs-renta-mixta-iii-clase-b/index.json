@@ -2,7 +2,7 @@
   "fondoId": "1419",
   "claseId": "4146",
   "nombre": "SBS Renta Mixta III - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "SBS Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1252",
-  "patrimonio": 9459068.63,
-  "inversionMinima": 1000,
+  "patrimonio": 9460653.23,
+  "cantidadCuotapartes": 9082812.27,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1041.425,
-    "ultimos7Dias": 0.2121,
-    "unMes": 0.4406,
+    "valorCuotaparte": 1041.6,
+    "ultimos7Dias": 0.8762,
+    "unMes": 5.8685,
     "noventaDias": 0.8535,
     "cientoOchentaDias": 2.3557,
     "enElAnio": 2.7977,
@@ -101,14 +102,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "SBS Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00347G-615b02d0.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00347G-615b02d0.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "1550",
   "claseId": "4771",
   "nombre": "Novus Ahorro Dólares - Clase A",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Novus Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1551",
-  "patrimonio": 2133001.24,
-  "inversionMinima": 100,
+  "patrimonio": 2087209.93,
+  "cantidadCuotapartes": 2008011.83,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1038.785,
-    "ultimos7Dias": -0.2787,
-    "unMes": 0.0956,
+    "valorCuotaparte": 1039.441,
+    "ultimos7Dias": 10.1328,
+    "unMes": 2.2715,
     "noventaDias": 0.9603,
     "cientoOchentaDias": 1.9857,
     "enElAnio": 2.8809,
@@ -69,14 +70,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Novus Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02887G-ef45d825.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02887G-ef45d825.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

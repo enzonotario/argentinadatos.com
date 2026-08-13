@@ -2,7 +2,7 @@
   "fondoId": "225",
   "claseId": "2138",
   "nombre": "Premier Renta CP en Pesos - Clase C",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Supervielle Asset Management S.A.",
   "depositaria": "Banco Supervielle S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "30%+70%",
   "horizonte": "Corto Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "281",
-  "patrimonio": 414198245503.99,
-  "inversionMinima": 300000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 474829409253.54,
+  "cantidadCuotapartes": 18754901022.81,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 25209.007,
-    "ultimos7Dias": 19.4163,
-    "unMes": 18.792,
+    "valorCuotaparte": 25317.618,
+    "ultimos7Dias": 19.6529,
+    "unMes": 19.2774,
     "noventaDias": 18.9885,
     "cientoOchentaDias": 21.8755,
     "enElAnio": 23.4369,
@@ -84,8 +85,8 @@
     }
   ],
   "honorarios": {
-    "honorarioGerente": 1.617,
-    "honorarioDepositaria": 0.033,
+    "honorarioGerente": 1.715,
+    "honorarioDepositaria": 0.035,
     "comisionIngreso": 0,
     "comisionEgreso": 0,
     "comisionTransferencia": 0,
@@ -95,14 +96,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Supervielle Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00052G-7dab5db1.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00052G-7dab5db1.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Supervielle S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00097-9a7b1e3e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00097-9a7b1e3e.jpg"
     }
   ]
 }

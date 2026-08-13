@@ -2,7 +2,7 @@
   "fondoId": "1731",
   "claseId": "5849",
   "nombre": "Novus Dólar MM - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Novus Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Dolar Estadounidense Billete",
+  "moneda": "USB",
   "codigoCNV": "1776",
-  "patrimonio": 1586183.09,
-  "inversionMinima": 100,
-  "monedaInversion": "Dolar Estadounidense",
+  "patrimonio": 2088971.04,
+  "cantidadCuotapartes": 2086068.62,
+  "inversionMinima": 1,
+  "monedaInversion": "USB",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1001.263,
-    "ultimos7Dias": 0.8073,
-    "unMes": 0.5493,
+    "valorCuotaparte": 1001.391,
+    "ultimos7Dias": 0.6666,
+    "unMes": 0.5567,
     "noventaDias": 0.4456,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -69,14 +70,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Novus Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02887G-ef45d825.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02887G-ef45d825.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

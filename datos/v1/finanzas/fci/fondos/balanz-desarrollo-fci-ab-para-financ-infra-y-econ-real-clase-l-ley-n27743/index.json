@@ -2,20 +2,21 @@
   "fondoId": "1438",
   "claseId": "4778",
   "nombre": "Balanz Desarrollo FCI Ab para Financ Infra y Econ Real - Clase L Ley N°27.743",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Balanz S.G.F.C.I.S.A.U.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "Infraestructura",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1404",
   "patrimonio": 0,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
     "valorCuotaparte": 1118.659,
@@ -29,27 +30,27 @@
   "composicionCartera": [
     {
       "nombre": "Bono Prov Santa Fe 8.1% 111234",
-      "porcentaje": 26
+      "porcentaje": 26.2
     },
     {
       "nombre": "Cta Cte USC Citibank",
-      "porcentaje": 23.1
+      "porcentaje": 21.9
     },
     {
       "nombre": "ON YPF Clase 31",
-      "porcentaje": 17.6
+      "porcentaje": 17.8
     },
     {
       "nombre": "ON Aeropuertos 2000 Regs 2031",
-      "porcentaje": 16.9
+      "porcentaje": 17
     },
     {
       "nombre": "ON Pan Amer. Energy C 12",
-      "porcentaje": 15.3
+      "porcentaje": 15.5
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 1
+      "porcentaje": 1.7
     }
   ],
   "calificaciones": [],
@@ -65,14 +66,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Balanz S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00372G-cc6ce723.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00372G-cc6ce723.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

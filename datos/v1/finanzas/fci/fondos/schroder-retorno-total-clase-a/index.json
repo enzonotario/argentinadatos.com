@@ -2,7 +2,7 @@
   "fondoId": "682",
   "claseId": "1436",
   "nombre": "Schroder Retorno Total - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Schroder S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,14 +13,15 @@
   "duracion": "No Aplicable",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "831",
-  "patrimonio": 51650260.79,
-  "inversionMinima": 1,
+  "patrimonio": 53604827.69,
+  "cantidadCuotapartes": 30630088.79,
+  "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1750.552,
-    "ultimos7Dias": 0.0318,
-    "unMes": 0.7444,
+    "valorCuotaparte": 1750.071,
+    "ultimos7Dias": -1.4327,
+    "unMes": 8.3374,
     "noventaDias": 1.2142,
     "cientoOchentaDias": 3.703,
     "enElAnio": 4.6817,
@@ -121,14 +122,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Schroder S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00051G-0c57ca49.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00051G-0c57ca49.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

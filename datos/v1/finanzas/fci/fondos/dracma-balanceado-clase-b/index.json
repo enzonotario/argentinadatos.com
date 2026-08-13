@@ -2,7 +2,7 @@
   "fondoId": "868",
   "claseId": "2498",
   "nombre": "Dracma Balanceado - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Dracma Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Plazo Flexible",
   "duracion": "No Registrada",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "942",
-  "patrimonio": 5454903977.73,
+  "patrimonio": 5354823505.82,
+  "cantidadCuotapartes": 38480021.45,
   "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 142941.369,
-    "ultimos7Dias": -0.5366,
-    "unMes": 0.0195,
+    "valorCuotaparte": 139158.537,
+    "ultimos7Dias": -137.992,
+    "unMes": -34.7782,
     "noventaDias": 7.6626,
     "cientoOchentaDias": 11.0466,
     "enElAnio": 10.5555,
@@ -113,14 +114,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Dracma Asset Management S.A.",
       "logo": null
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

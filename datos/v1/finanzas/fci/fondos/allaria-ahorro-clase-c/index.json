@@ -2,7 +2,7 @@
   "fondoId": "442",
   "claseId": "1903",
   "nombre": "Allaria Ahorro - Clase C",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "584",
-  "patrimonio": 288148023985.75,
-  "inversionMinima": 200000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 438316550397.1,
+  "cantidadCuotapartes": 13380150006.96,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 32672.005,
-    "ultimos7Dias": 19.0315,
-    "unMes": 18.9116,
+    "valorCuotaparte": 32758.717,
+    "ultimos7Dias": 19.2814,
+    "unMes": 19.0097,
     "noventaDias": 19.1099,
     "cientoOchentaDias": 22.0105,
     "enElAnio": 23.4617,
@@ -111,14 +112,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00356G-ea35a573.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

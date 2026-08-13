@@ -2,7 +2,7 @@
   "fondoId": "1559",
   "claseId": "5000",
   "nombre": "Zofingen Pesos Ya - Clase A",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Zofingen Investment S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1577",
-  "patrimonio": 7694459696.02,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 10655332405.99,
+  "cantidadCuotapartes": 6964270558.81,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1524.185,
-    "ultimos7Dias": 16.5761,
-    "unMes": 15.9311,
+    "valorCuotaparte": 1530,
+    "ultimos7Dias": 17.4357,
+    "unMes": 16.2283,
     "noventaDias": 15.9029,
     "cientoOchentaDias": 17.7735,
     "enElAnio": 18.9093,
@@ -97,14 +98,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Zofingen Investment S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02450G-9d44acde.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02450G-9d44acde.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

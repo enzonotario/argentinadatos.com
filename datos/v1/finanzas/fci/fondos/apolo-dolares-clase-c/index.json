@@ -2,7 +2,7 @@
   "fondoId": "1549",
   "claseId": "4711",
   "nombre": "Apolo Dólares - Clase C",
-  "fecha": "2026-08-11",
+  "fecha": "2026-08-12",
   "administradora": "GMC Asset Management S.A.U.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1537",
-  "patrimonio": 5682236.33,
-  "inversionMinima": 1000,
+  "patrimonio": 5920981.87,
+  "cantidadCuotapartes": 5729325.29,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1033.338,
-    "ultimos7Dias": -0.0195,
-    "unMes": 0.6035,
+    "valorCuotaparte": 1033.452,
+    "ultimos7Dias": -0.444,
+    "unMes": 5.7637,
     "noventaDias": 2.0093,
     "cientoOchentaDias": 3.1443,
     "enElAnio": null,
@@ -97,14 +98,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "GMC Asset Management S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00394G-6fce82d3.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00394G-6fce82d3.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

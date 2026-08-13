@@ -2,7 +2,7 @@
   "fondoId": "1478",
   "claseId": "4372",
   "nombre": "Galileo Multimercado VII - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Delta Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "No Registrada",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1423",
-  "patrimonio": 8883179292.6,
-  "inversionMinima": 200000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 8563663509.23,
+  "cantidadCuotapartes": 4895732104.31,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1741.597,
-    "ultimos7Dias": -0.0887,
-    "unMes": 0.5189,
+    "valorCuotaparte": 1749.21,
+    "ultimos7Dias": 22.7931,
+    "unMes": 7.1616,
     "noventaDias": 5.1059,
     "cientoOchentaDias": 16.2131,
     "enElAnio": 19.199,
@@ -125,14 +126,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Delta Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00321G-78ba876b.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00321G-78ba876b.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

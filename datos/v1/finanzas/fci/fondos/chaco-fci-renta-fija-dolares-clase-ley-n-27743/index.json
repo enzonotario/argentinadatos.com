@@ -2,7 +2,7 @@
   "fondoId": "1630",
   "claseId": "5408",
   "nombre": "Chaco FCI Renta Fija Dólares - Clase Ley N° 27.743",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Nuevo Chaco Fondos S.A.S.G.F.C.I.",
   "depositaria": "Nuevo Banco del Chaco S.A.",
   "tipoRenta": "Renta Fija",
@@ -14,13 +14,14 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1639",
   "patrimonio": 0,
+  "cantidadCuotapartes": 0,
   "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1,
+    "valorCuotaparte": 1000,
     "ultimos7Dias": 0,
-    "unMes": 0,
+    "unMes": 1215450,
     "noventaDias": 0,
     "cientoOchentaDias": 0,
     "enElAnio": 0,
@@ -133,12 +134,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Nuevo Chaco Fondos S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00389G-62d37f9e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00389G-62d37f9e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Nuevo Banco del Chaco S.A.",
       "logo": null
     }

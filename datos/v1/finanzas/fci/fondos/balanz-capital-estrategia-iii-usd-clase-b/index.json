@@ -2,7 +2,7 @@
   "fondoId": "1582",
   "claseId": "5147",
   "nombre": "Balanz Capital Estrategia III USD - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Balanz S.G.F.C.I.S.A.U.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1443",
-  "patrimonio": 517155.55,
-  "inversionMinima": 1000000,
+  "patrimonio": 518694.33,
+  "cantidadCuotapartes": 467438.08,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1106.362,
-    "ultimos7Dias": -0.0348,
-    "unMes": 0.6551,
+    "valorCuotaparte": 1109.654,
+    "ultimos7Dias": 15.5152,
+    "unMes": 12.4512,
     "noventaDias": 0.8032,
     "cientoOchentaDias": 2.3279,
     "enElAnio": 2.8878,
@@ -151,14 +152,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Balanz S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00372G-cc6ce723.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00372G-cc6ce723.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

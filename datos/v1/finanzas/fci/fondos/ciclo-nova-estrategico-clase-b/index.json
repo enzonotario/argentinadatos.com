@@ -2,7 +2,7 @@
   "fondoId": "1517",
   "claseId": "4539",
   "nombre": "Ciclo Nova Estratégico - Clase B",
-  "fecha": "2026-08-06",
+  "fecha": "2026-08-12",
   "administradora": "Ciclo Nova Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1527",
-  "patrimonio": 3902269.9,
-  "inversionMinima": 1000,
+  "patrimonio": 4199917.39,
+  "cantidadCuotapartes": 3469483.84,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1207.55,
-    "ultimos7Dias": -0.2069,
-    "unMes": 0.2684,
+    "valorCuotaparte": 1210.531,
+    "ultimos7Dias": 3.1377,
+    "unMes": 4.5447,
     "noventaDias": 2.5113,
     "cientoOchentaDias": 4.8352,
     "enElAnio": 6.8556,
@@ -121,14 +122,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Ciclo Nova Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02496G-cffb0731.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02496G-cffb0731.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

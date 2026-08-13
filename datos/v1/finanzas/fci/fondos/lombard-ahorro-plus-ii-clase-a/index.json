@@ -2,7 +2,7 @@
   "fondoId": "1716",
   "claseId": "5771",
   "nombre": "Lombard Ahorro Plus II - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Patagonia Inversora S.A.S.G.F.C.I",
   "depositaria": "Banco Patagonia S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1442",
-  "patrimonio": 4265696401.32,
-  "inversionMinima": 1500,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 4285059163.73,
+  "cantidadCuotapartes": 3123801156,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1365.547,
-    "ultimos7Dias": 0.2005,
-    "unMes": 1.3863,
+    "valorCuotaparte": 1371.745,
+    "ultimos7Dias": 23.6668,
+    "unMes": 18.3322,
     "noventaDias": 5.0482,
     "cientoOchentaDias": 14.645,
     "enElAnio": 18.8931,
@@ -65,14 +66,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Patagonia Inversora S.A.S.G.F.C.I",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00017G-57ea7826.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00017G-57ea7826.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Patagonia S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00209-6f3e2645.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00209-6f3e2645.jpg"
     }
   ]
 }

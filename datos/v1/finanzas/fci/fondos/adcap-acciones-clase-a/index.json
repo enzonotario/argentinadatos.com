@@ -2,7 +2,7 @@
   "fondoId": "622",
   "claseId": "1255",
   "nombre": "Adcap Acciones - Clase A",
-  "fecha": "2026-08-11",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Variable",
@@ -11,20 +11,21 @@
   "benchmark": "Rofex 20",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "687",
-  "patrimonio": 13069366796.06,
+  "patrimonio": 12971815113.13,
+  "cantidadCuotapartes": 69925390.65,
   "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 186774.193,
-    "ultimos7Dias": -4.0046,
-    "unMes": -6.0732,
-    "noventaDias": 11.8348,
-    "cientoOchentaDias": 10.2121,
-    "enElAnio": 0.7355,
-    "doceMeses": 29.5917
+    "valorCuotaparte": 185509.369,
+    "ultimos7Dias": -242.7067,
+    "unMes": -94.2375,
+    "noventaDias": 11.0774,
+    "cientoOchentaDias": 9.4657,
+    "enElAnio": 0.0533,
+    "doceMeses": 28.7141
   },
   "composicionCartera": [
     {
@@ -91,14 +92,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

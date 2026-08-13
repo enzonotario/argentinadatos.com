@@ -2,7 +2,7 @@
   "fondoId": "611",
   "claseId": "1465",
   "nombre": "Megainver Renta Global - Clase D",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "MEGA QM S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "760",
-  "patrimonio": 7082414424.26,
-  "inversionMinima": 150000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 7105451008.87,
+  "cantidadCuotapartes": 33478576.51,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 211550.644,
-    "ultimos7Dias": 0.3787,
-    "unMes": 1.6181,
+    "valorCuotaparte": 212238.743,
+    "ultimos7Dias": 34.9007,
+    "unMes": 20.5796,
     "noventaDias": 5.215,
     "cientoOchentaDias": 16.7061,
     "enElAnio": 21.9396,
@@ -75,14 +76,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "MEGA QM S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00378G-e0793717.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

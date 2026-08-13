@@ -1,8 +1,8 @@
 {
   "fondoId": "1827",
   "claseId": "6281",
-  "nombre": "Mills Renta Fija Crecimiento Pesos - Clase XDA",
-  "fecha": "2026-08-07",
+  "nombre": "Mills Renta Fija Crecimiento Pesos - Clase XDA1",
+  "fecha": "2026-08-12",
   "administradora": "Mills Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Plazo Flexible",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1872",
-  "patrimonio": 2838671653.75,
-  "inversionMinima": 10000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 2850686010.74,
+  "cantidadCuotapartes": 2714331048.27,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1046.873,
-    "ultimos7Dias": -0.0295,
-    "unMes": 0.7446,
+    "valorCuotaparte": 1050.235,
+    "ultimos7Dias": 27.3452,
+    "unMes": 11.1508,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -117,14 +118,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mills Asset Management S.A.",
       "logo": null
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "1596",
   "claseId": "5249",
   "nombre": "Superfondo Ahorro en Dólares - Clase I",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Santander Asset Management G.F.C.I.S.A.",
   "depositaria": "Banco Santander Argentina S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1613",
-  "patrimonio": 105540770.16,
-  "inversionMinima": 0,
+  "patrimonio": 103137211.33,
+  "cantidadCuotapartes": 101234767.61,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1018.632,
-    "ultimos7Dias": 0.6655,
-    "unMes": 0.6655,
+    "valorCuotaparte": 1018.792,
+    "ultimos7Dias": 0.7064,
+    "unMes": 0.6644,
     "noventaDias": 0.6029,
     "cientoOchentaDias": 0.6879,
     "enElAnio": 0.8234,
@@ -85,14 +86,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Santander Asset Management G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00049G-c03041ad.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00049G-c03041ad.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Santander Argentina S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00096-4e9f0233.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00096-4e9f0233.jpg"
     }
   ]
 }

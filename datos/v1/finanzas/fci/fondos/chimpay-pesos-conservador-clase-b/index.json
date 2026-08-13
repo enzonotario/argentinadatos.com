@@ -2,7 +2,7 @@
   "fondoId": "1807",
   "claseId": "6200",
   "nombre": "Chimpay Pesos Conservador - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Chimpay S.A.",
   "depositaria": "Banco Industrial S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1854",
-  "patrimonio": 1847099514.57,
+  "patrimonio": 1860370936.95,
+  "cantidadCuotapartes": 1625925044.74,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1136.03,
-    "ultimos7Dias": -0.1406,
-    "unMes": 0.9731,
+    "valorCuotaparte": 1144.192,
+    "ultimos7Dias": 37.4629,
+    "unMes": 18.1281,
     "noventaDias": 5.8307,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -93,14 +94,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Chimpay S.A.",
       "logo": null
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Industrial S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00391-92ebcc0c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00391-92ebcc0c.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "1465",
   "claseId": "4332",
   "nombre": "Chaco FCI Money Market - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Nuevo Chaco Fondos S.A.S.G.F.C.I.",
   "depositaria": "Nuevo Banco del Chaco S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "30%+70%",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1439",
-  "patrimonio": 23612848884.54,
+  "patrimonio": 22229081101.47,
+  "cantidadCuotapartes": 8744816163.95,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 2532.229,
-    "ultimos7Dias": 19.6793,
-    "unMes": 19.1585,
+    "valorCuotaparte": 2541.972,
+    "ultimos7Dias": 20.0625,
+    "unMes": 19.5472,
     "noventaDias": 19.5054,
     "cientoOchentaDias": 22.7442,
     "enElAnio": 24.5236,
@@ -85,12 +86,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Nuevo Chaco Fondos S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00389G-62d37f9e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00389G-62d37f9e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Nuevo Banco del Chaco S.A.",
       "logo": null
     }

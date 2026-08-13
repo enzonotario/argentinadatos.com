@@ -2,7 +2,7 @@
   "fondoId": "74",
   "claseId": "74",
   "nombre": "Alpha Renta Cobertura - Clase B",
-  "fecha": "2026-08-11",
+  "fecha": "2026-08-12",
   "administradora": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "ICBC (Arg) S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "79",
-  "patrimonio": 4076589025.01,
-  "inversionMinima": 100000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 4072472883.99,
+  "cantidadCuotapartes": 566562.28,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 7186320.325,
-    "ultimos7Dias": -0.1201,
-    "unMes": -0.8577,
+    "valorCuotaparte": 7188041.037,
+    "ultimos7Dias": -5.0163,
+    "unMes": -4.3413,
     "noventaDias": 2.9114,
     "cientoOchentaDias": 0.8879,
     "enElAnio": -4.8073,
@@ -119,14 +120,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00008G-f9ac58c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00008G-f9ac58c8.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "ICBC (Arg) S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00062-50a49656.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00062-50a49656.jpg"
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "fondoId": "1202",
   "claseId": "3294",
-  "nombre": "Consultatio Gestion XI Dolar — Consultatio Gestion Xl Dolar - Clase C",
-  "fecha": "2026-08-05",
+  "nombre": "Consultatio Gestion Xl Dolar - Clase C",
+  "fecha": "2026-08-12",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Dolar Estadounidense Billete",
+  "moneda": "USB",
   "codigoCNV": "1070",
-  "patrimonio": 36088315.13,
+  "patrimonio": 35819481.99,
+  "cantidadCuotapartes": 28533471.02,
   "inversionMinima": 1000,
-  "monedaInversion": "Dolar Estadounidense Billete",
+  "monedaInversion": "USB",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1264.771,
-    "ultimos7Dias": 0.2318,
-    "unMes": 0.5113,
+    "valorCuotaparte": 1255.35,
+    "ultimos7Dias": -38.8401,
+    "unMes": -2.8678,
     "noventaDias": 3.3061,
     "cientoOchentaDias": 5.7118,
     "enElAnio": 8.903,
@@ -105,14 +106,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00022G-3c173d8e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -2,29 +2,30 @@
   "fondoId": "550",
   "claseId": "3407",
   "nombre": "Adcap Financiamiento Abierto Pymes - Clase C",
-  "fecha": "2026-08-11",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "PyMes",
+  "tipoRenta": "Retorno Total",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "572",
-  "patrimonio": 7765712436.36,
-  "inversionMinima": 250000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 7768293873.02,
+  "cantidadCuotapartes": 140575191.1,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 55242.411,
-    "ultimos7Dias": 0.3201,
-    "unMes": 1.8505,
-    "noventaDias": 5.1669,
-    "cientoOchentaDias": 11.1478,
-    "enElAnio": 14.4574,
-    "doceMeses": 27.853
+    "valorCuotaparte": 55260.774,
+    "ultimos7Dias": 18.4309,
+    "unMes": 20.3445,
+    "noventaDias": 5.2019,
+    "cientoOchentaDias": 11.1848,
+    "enElAnio": 14.4954,
+    "doceMeses": 27.8955
   },
   "composicionCartera": [
     {
@@ -87,14 +88,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

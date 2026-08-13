@@ -2,7 +2,7 @@
   "fondoId": "1823",
   "claseId": "6264",
   "nombre": "Tango Money Market Dinámico - Clase B",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Tango Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1867",
-  "patrimonio": 7396720870.56,
-  "inversionMinima": 100,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 8543570288.89,
+  "cantidadCuotapartes": 8069346312.15,
+  "inversionMinima": 100000000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1054.307,
-    "ultimos7Dias": 20.8999,
-    "unMes": 19.5343,
+    "valorCuotaparte": 1058.769,
+    "ultimos7Dias": 19.3921,
+    "unMes": 19.8683,
     "noventaDias": 19.0101,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -67,14 +68,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Tango Asset Management S.A.",
       "logo": null
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

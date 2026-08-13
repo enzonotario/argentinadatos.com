@@ -2,7 +2,7 @@
   "fondoId": "1285",
   "claseId": "3580",
   "nombre": "Consultatio Multimercado V - Clase A",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Dolar Estadounidense Billete",
+  "moneda": "USB",
   "codigoCNV": "1199",
-  "patrimonio": 8826875.79,
+  "patrimonio": 8650372.83,
+  "cantidadCuotapartes": 6392108.88,
   "inversionMinima": 100,
-  "monedaInversion": "Dolar Estadounidense Billete",
+  "monedaInversion": "USB",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1360.432,
-    "ultimos7Dias": -0.5733,
-    "unMes": -0.1364,
+    "valorCuotaparte": 1353.289,
+    "ultimos7Dias": -58.1758,
+    "unMes": -8.328,
     "noventaDias": 3.3406,
     "cientoOchentaDias": 6.7522,
     "enElAnio": 10.4731,
@@ -77,14 +78,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00022G-3c173d8e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

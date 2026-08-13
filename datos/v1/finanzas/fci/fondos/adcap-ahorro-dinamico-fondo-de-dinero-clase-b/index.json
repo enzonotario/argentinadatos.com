@@ -2,7 +2,7 @@
   "fondoId": "1391",
   "claseId": "4022",
   "nombre": "Adcap Ahorro Dinámico Fondo de Dinero - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,57 +11,58 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1338",
-  "patrimonio": 28869824104.53,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 22892378090.42,
+  "cantidadCuotapartes": 5996300215.12,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 3806.832,
-    "ultimos7Dias": 21.073,
-    "unMes": 20.4874,
-    "noventaDias": 21.2741,
-    "cientoOchentaDias": 24.3387,
-    "enElAnio": 26.1215,
-    "doceMeses": 34.2494
+    "valorCuotaparte": 3817.75,
+    "ultimos7Dias": 20.9533,
+    "unMes": 20.6781,
+    "noventaDias": 21.1954,
+    "cientoOchentaDias": 23.9973,
+    "enElAnio": 26.0795,
+    "doceMeses": 33.9063
   },
   "composicionCartera": [
     {
       "nombre": "Pzo Fi $ Bco Sol",
-      "porcentaje": 26.7
-    },
-    {
-      "nombre": "Lecap S15S6",
-      "porcentaje": 17
-    },
-    {
-      "nombre": "Pzo Fi $ Banco VOII",
-      "porcentaje": 10.7
+      "porcentaje": 26
     },
     {
       "nombre": "Caucion Colocadora $ Merval",
-      "porcentaje": 10.5
+      "porcentaje": 17
+    },
+    {
+      "nombre": "Lecap S15S6",
+      "porcentaje": 16.6
     },
     {
       "nombre": "Lecap S13N6",
-      "porcentaje": 8.9
+      "porcentaje": 8.7
     },
     {
       "nombre": "Pzo Fi $ Nvo Bco Chaco",
-      "porcentaje": 7.1
+      "porcentaje": 6.9
+    },
+    {
+      "nombre": "Pzo Fi $ Banco VOII",
+      "porcentaje": 6.9
     },
     {
       "nombre": "Lecap S14G6",
-      "porcentaje": 6.2
+      "porcentaje": 6
     },
     {
       "nombre": "Cta Cte $ Bco Comafi",
-      "porcentaje": 5.1
+      "porcentaje": 4.2
     },
     {
       "nombre": "Lecap S30S6",
-      "porcentaje": 4.3
+      "porcentaje": 4.2
     },
     {
       "nombre": "Pzo Fi $ Bco Bibank",
@@ -81,14 +82,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

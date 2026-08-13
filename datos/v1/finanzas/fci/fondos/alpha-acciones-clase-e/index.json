@@ -2,7 +2,7 @@
   "fondoId": "35",
   "claseId": "1825",
   "nombre": "Alpha Acciones - Clase E",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "ICBC (Arg) S.A.",
   "tipoRenta": "Renta Variable",
@@ -11,16 +11,17 @@
   "benchmark": "S&P Merval",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "14",
-  "patrimonio": 3443.53,
-  "inversionMinima": 1000,
-  "monedaInversion": "Dolar Estadounidense",
+  "patrimonio": 3338.16,
+  "cantidadCuotapartes": 188757.14,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 18.243,
-    "ultimos7Dias": -6.757,
-    "unMes": -4.2965,
+    "valorCuotaparte": 17.685,
+    "ultimos7Dias": -289.6052,
+    "unMes": -98.623,
     "noventaDias": 4.353,
     "cientoOchentaDias": -3.1379,
     "enElAnio": -3.6292,
@@ -99,14 +100,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00008G-f9ac58c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00008G-f9ac58c8.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "ICBC (Arg) S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00062-50a49656.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00062-50a49656.jpg"
     }
   ]
 }

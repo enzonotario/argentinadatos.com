@@ -2,7 +2,7 @@
   "fondoId": "1840",
   "claseId": "6346",
   "nombre": "MAF Cash Dolares I - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Mariva Asset Management S.A.U.S.G.F.C.I.",
   "depositaria": "Banco Mariva S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1907",
-  "patrimonio": 13858669.06,
-  "inversionMinima": 0,
+  "patrimonio": 13931631.7,
+  "cantidadCuotapartes": 13893015.58,
+  "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1002.61,
-    "ultimos7Dias": 1.0091,
-    "unMes": 0.8081,
+    "valorCuotaparte": 1002.78,
+    "ultimos7Dias": 0.8841,
+    "unMes": 0.8098,
     "noventaDias": 0.8455,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -49,12 +50,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mariva Asset Management S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00371G-45045e78.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00371G-45045e78.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Mariva S.A.",
       "logo": null
     }

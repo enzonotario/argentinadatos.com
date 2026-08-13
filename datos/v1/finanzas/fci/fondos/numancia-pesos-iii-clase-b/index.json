@@ -2,7 +2,7 @@
   "fondoId": "1726",
   "claseId": "5823",
   "nombre": "Numancia Pesos III - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Zofingen Investment S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1739",
-  "patrimonio": 49067663248.36,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 49027575805.72,
+  "cantidadCuotapartes": 41195411756.86,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1191.095,
-    "ultimos7Dias": 0.1613,
-    "unMes": 1.3111,
+    "valorCuotaparte": 1190.122,
+    "ultimos7Dias": -4.2595,
+    "unMes": 14.0818,
     "noventaDias": 9.9435,
     "cientoOchentaDias": 8.7543,
     "enElAnio": 8.5217,
@@ -61,14 +62,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Zofingen Investment S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02450G-9d44acde.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02450G-9d44acde.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

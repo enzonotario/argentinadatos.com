@@ -2,7 +2,7 @@
   "fondoId": "1374",
   "claseId": "3949",
   "nombre": "Zofingen Faro Fund - Clase C",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Zofingen Investment S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1307",
-  "patrimonio": 155113.86,
-  "inversionMinima": 300000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 154330.75,
+  "cantidadCuotapartes": 25008.35,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 6202.484,
-    "ultimos7Dias": -0.316,
-    "unMes": -3.7419,
+    "valorCuotaparte": 6171.17,
+    "ultimos7Dias": -15.8518,
+    "unMes": -23.0781,
     "noventaDias": -5.7371,
     "cientoOchentaDias": -2.5648,
     "enElAnio": -2.9132,
@@ -53,14 +54,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Zofingen Investment S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02450G-9d44acde.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02450G-9d44acde.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

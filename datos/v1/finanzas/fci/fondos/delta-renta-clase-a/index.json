@@ -2,7 +2,7 @@
   "fondoId": "369",
   "claseId": "659",
   "nombre": "Delta Renta - Clase A",
-  "fecha": "2026-08-06",
+  "fecha": "2026-08-12",
   "administradora": "Delta Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "IAMC",
   "horizonte": "Plazo Flexible",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "503",
-  "patrimonio": 3530119856.71,
+  "patrimonio": 3444845973.02,
+  "cantidadCuotapartes": 2054317.94,
   "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1671696.645,
-    "ultimos7Dias": 0.0207,
-    "unMes": -0.3504,
+    "valorCuotaparte": 1676880.634,
+    "ultimos7Dias": 5.1423,
+    "unMes": -1.5834,
     "noventaDias": 5.3582,
     "cientoOchentaDias": 18.1244,
     "enElAnio": 20.7451,
@@ -75,7 +76,7 @@
   "calificaciones": [
     {
       "calificadora": "Standard and Poors",
-      "calificacion": "raA(NUEVO)",
+      "calificacion": "BB+f",
       "fecha": "2005-07-05"
     }
   ],
@@ -91,14 +92,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Delta Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00321G-78ba876b.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00321G-78ba876b.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

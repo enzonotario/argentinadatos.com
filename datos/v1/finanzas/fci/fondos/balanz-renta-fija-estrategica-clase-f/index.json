@@ -2,7 +2,7 @@
   "fondoId": "666",
   "claseId": "2317",
   "nombre": "Balanz Renta Fija Estrategica - Clase F",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Balanz S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "782",
   "patrimonio": 0,
+  "cantidadCuotapartes": 0,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1,
+    "valorCuotaparte": 1000,
     "ultimos7Dias": 0,
-    "unMes": 0,
+    "unMes": 1215450,
     "noventaDias": 0,
     "cientoOchentaDias": 0,
     "enElAnio": 0,
@@ -29,31 +30,31 @@
   "composicionCartera": [
     {
       "nombre": "Bono Boncer TZXS8",
-      "porcentaje": 21
+      "porcentaje": 20.7
     },
     {
       "nombre": "Bono Boncer TZXD6",
-      "porcentaje": 14.7
+      "porcentaje": 14.5
     },
     {
       "nombre": "Bono Boncer TZXS7",
-      "porcentaje": 10.5
+      "porcentaje": 10.4
     },
     {
       "nombre": "Bonos Rep Argentina 2030",
-      "porcentaje": 8.5
-    },
-    {
-      "nombre": "Bono Dual TXMJ0",
       "porcentaje": 8.4
     },
     {
+      "nombre": "Bono Dual TXMJ0",
+      "porcentaje": 8.2
+    },
+    {
       "nombre": "Bono Boncer TXMJ9",
-      "porcentaje": 7.3
+      "porcentaje": 7.2
     },
     {
       "nombre": "Lecer X30N6",
-      "porcentaje": 6.8
+      "porcentaje": 6.7
     },
     {
       "nombre": "Bono Boncer 2028 TZXM8",
@@ -61,15 +62,19 @@
     },
     {
       "nombre": "Bono del Tesoro Nacional TMG28",
-      "porcentaje": 5
+      "porcentaje": 4.9
     },
     {
       "nombre": "Bonos Rep Argentina GD38",
-      "porcentaje": 4.4
+      "porcentaje": 4.3
     },
     {
       "nombre": "ON Bco Macro Clase 1 Regs",
-      "porcentaje": 3.3
+      "porcentaje": 3.2
+    },
+    {
+      "nombre": "Cta Cte USC Citibank",
+      "porcentaje": 2.8
     },
     {
       "nombre": "Letra Tamar TEM TMF27",
@@ -77,7 +82,7 @@
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 2.5
+      "porcentaje": 1.1
     }
   ],
   "calificaciones": [
@@ -88,25 +93,25 @@
     }
   ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 2.53,
+    "honorarioDepositaria": 0.15,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Balanz S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00372G-cc6ce723.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00372G-cc6ce723.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "1805",
   "claseId": "6187",
   "nombre": "Chimpay Agresivo - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Chimpay S.A.",
   "depositaria": "Banco Industrial S.A.",
   "tipoRenta": "Renta Variable",
@@ -11,16 +11,17 @@
   "benchmark": "S&P Merval",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1853",
-  "patrimonio": 2952396556.86,
+  "patrimonio": 2759806498.34,
+  "cantidadCuotapartes": 2458309938.22,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1200.986,
-    "ultimos7Dias": -2.2855,
-    "unMes": -3.7041,
+    "valorCuotaparte": 1122.644,
+    "ultimos7Dias": -340.1352,
+    "unMes": -118.8528,
     "noventaDias": 15.467,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -89,14 +90,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Chimpay S.A.",
       "logo": null
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Industrial S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00391-92ebcc0c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00391-92ebcc0c.jpg"
     }
   ]
 }

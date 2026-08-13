@@ -2,7 +2,7 @@
   "fondoId": "1826",
   "claseId": "6277",
   "nombre": "Mills M1000 Balanceado Pesos - Clase XDB1",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Mills Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1870",
-  "patrimonio": 11247425090.06,
-  "inversionMinima": 10000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 11308320618.22,
+  "cantidadCuotapartes": 10693007325.74,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1051.849,
-    "ultimos7Dias": -0.2764,
-    "unMes": 0.7912,
+    "valorCuotaparte": 1057.544,
+    "ultimos7Dias": 28.2316,
+    "unMes": 11.4492,
     "noventaDias": 5.0265,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -129,14 +130,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mills Asset Management S.A.",
       "logo": null
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

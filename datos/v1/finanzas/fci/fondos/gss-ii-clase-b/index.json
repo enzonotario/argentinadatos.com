@@ -2,7 +2,7 @@
   "fondoId": "388",
   "claseId": "703",
   "nombre": "GSS II - Clase B",
-  "fecha": "2026-08-06",
+  "fecha": "2026-08-12",
   "administradora": "Grupo SS S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "518",
-  "patrimonio": 23214937877.65,
+  "patrimonio": 23228712102.21,
+  "cantidadCuotapartes": 56113451.55,
   "inversionMinima": 10000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 412911.731,
-    "ultimos7Dias": 0.4112,
-    "unMes": 2.0019,
+    "valorCuotaparte": 413959.781,
+    "ultimos7Dias": 15.8583,
+    "unMes": 19.2703,
     "noventaDias": 5.6698,
     "cientoOchentaDias": 14.8341,
     "enElAnio": 19.1857,
@@ -116,7 +117,13 @@
       "porcentaje": 9.1
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "AA-",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 1.25,
     "honorarioDepositaria": 0.15,
@@ -129,14 +136,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Grupo SS S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00326G-57a9b0bd.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00326G-57a9b0bd.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

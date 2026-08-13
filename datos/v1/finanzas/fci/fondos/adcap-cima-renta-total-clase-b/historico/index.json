@@ -2,7 +2,7 @@
   "fondoId": "640",
   "claseId": "1299",
   "nombre": "Adcap Cima Renta Total - Clase B",
-  "fechaActualizacion": "2026-08-13T13:10:26.000Z",
+  "fechaActualizacion": "2026-08-13T21:23:19.000Z",
   "historico": [
     {
       "slug": "adcap-cima-renta-total-clase-b",
@@ -2306,7 +2306,23 @@
       "retornoDiario": null,
       "retornoAcumulado": 1757.351817,
       "flujoEstimado": null,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "adcap-cima-renta-total-clase-b",
+      "fondoId": "640",
+      "claseId": "1299",
+      "nombre": "Adcap Cima Renta Total - Clase B",
+      "fecha": "2026-08-06",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 66548.377,
+      "patrimonio": 947978167.95,
+      "retornoDiario": -0.074547,
+      "retornoAcumulado": 1755.967213,
+      "flujoEstimado": 248499996.95,
+      "origen": "cnv-excel"
     },
     {
       "slug": "adcap-cima-renta-total-clase-b",
@@ -2319,10 +2335,10 @@
       "horizonte": "Largo Plazo",
       "valorCuotaparte": 66771.162,
       "patrimonio": 951151729.8,
-      "retornoDiario": 0.259975,
+      "retornoDiario": 0.334772,
       "retornoAcumulado": 1762.180462,
-      "flujoEstimado": 249331904.8,
-      "origen": "cafci-detail"
+      "flujoEstimado": -3.62241,
+      "origen": "cnv-excel"
     },
     {
       "slug": "adcap-cima-renta-total-clase-b",
@@ -2338,7 +2354,39 @@
       "retornoDiario": 0.092184,
       "retornoAcumulado": 1763.897085,
       "flujoEstimado": -3.740599,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "adcap-cima-renta-total-clase-b",
+      "fondoId": "640",
+      "claseId": "1299",
+      "nombre": "Adcap Cima Renta Total - Clase B",
+      "fecha": "2026-08-11",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 66931.931,
+      "patrimonio": 953441873.61,
+      "retornoDiario": 0.148456,
+      "retornoAcumulado": 1766.664147,
+      "flujoEstimado": -5.643063,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "adcap-cima-renta-total-clase-b",
+      "fondoId": "640",
+      "claseId": "1299",
+      "nombre": "Adcap Cima Renta Total - Clase B",
+      "fecha": "2026-08-12",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 66994.133,
+      "patrimonio": 954327940.15,
+      "retornoDiario": 0.092933,
+      "retornoAcumulado": 1768.398898,
+      "flujoEstimado": 4.403598,
+      "origen": "cnv-excel"
     }
   ]
 }

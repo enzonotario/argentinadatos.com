@@ -2,7 +2,7 @@
   "fondoId": "639",
   "claseId": "1296",
   "nombre": "Consultatio One Ahorro - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "778",
-  "patrimonio": 41265514180.87,
-  "inversionMinima": 50000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 41402584567.93,
+  "cantidadCuotapartes": 221345214.82,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 186430.568,
-    "ultimos7Dias": 0.1678,
-    "unMes": 1.1348,
+    "valorCuotaparte": 187049.829,
+    "ultimos7Dias": 32.9974,
+    "unMes": 16.7374,
     "noventaDias": 6.5321,
     "cientoOchentaDias": 24.1249,
     "enElAnio": 29.3766,
@@ -85,14 +86,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00022G-3c173d8e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

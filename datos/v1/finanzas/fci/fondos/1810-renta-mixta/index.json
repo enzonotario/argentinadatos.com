@@ -2,7 +2,7 @@
   "fondoId": "1240",
   "claseId": "3444",
   "nombre": "1810 Renta Mixta",
-  "fecha": "2026-08-11",
+  "fecha": "2026-08-12",
   "administradora": "Proahorro Administradora de Activos S.A.",
   "depositaria": "Banco Credicoop Coop. Ltdo.",
   "tipoRenta": "Renta Mixta",
@@ -11,20 +11,21 @@
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1044",
-  "patrimonio": 13780756653.05,
+  "patrimonio": 13757554281.07,
+  "cantidadCuotapartes": 499288108,
   "inversionMinima": 5000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 27599.596,
-    "ultimos7Dias": -0.435,
-    "unMes": 0.6744,
-    "noventaDias": 7.162,
-    "cientoOchentaDias": 18.3964,
-    "enElAnio": 21.309,
-    "doceMeses": 40.1392
+    "valorCuotaparte": 27554.34,
+    "ultimos7Dias": -31.1969,
+    "unMes": 2.4037,
+    "noventaDias": 6.9863,
+    "cientoOchentaDias": 18.2023,
+    "enElAnio": 21.1101,
+    "doceMeses": 39.9094
   },
   "composicionCartera": [
     {
@@ -99,14 +100,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Proahorro Administradora de Activos S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00241G-5159107a.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00241G-5159107a.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Credicoop Coop. Ltdo.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00116-8cd1d90c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00116-8cd1d90c.jpg"
     }
   ]
 }

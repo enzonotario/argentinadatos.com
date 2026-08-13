@@ -2,7 +2,7 @@
   "fondoId": "709",
   "claseId": "1519",
   "nombre": "Delta Renta Dolares - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Delta Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "849",
-  "patrimonio": 3246713.83,
-  "inversionMinima": 0,
+  "patrimonio": 3207879.09,
+  "cantidadCuotapartes": 2237076.66,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1451.32,
-    "ultimos7Dias": 0.9599,
-    "unMes": -0.9314,
+    "valorCuotaparte": 1433.96,
+    "ultimos7Dias": -62.3708,
+    "unMes": -30.0744,
     "noventaDias": 4.9394,
     "cientoOchentaDias": 2.2195,
     "enElAnio": 4.4807,
@@ -71,14 +72,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Delta Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00321G-78ba876b.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00321G-78ba876b.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

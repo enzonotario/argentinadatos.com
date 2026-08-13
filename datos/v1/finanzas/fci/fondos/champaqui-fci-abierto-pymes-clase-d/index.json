@@ -2,25 +2,26 @@
   "fondoId": "1257",
   "claseId": "3491",
   "nombre": "Champaquí FCI Abierto Pymes - Clase D",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Bancor Fondos S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Cordoba S.A.",
-  "tipoRenta": "PyMes",
+  "tipoRenta": "Retorno Total",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1140",
-  "patrimonio": 7187377948.56,
-  "inversionMinima": 500000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 7221509781.05,
+  "cantidadCuotapartes": 1079500109.51,
+  "inversionMinima": 3000000000.01,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 6658.0613,
-    "ultimos7Dias": 0.1606,
-    "unMes": 1.7288,
+    "valorCuotaparte": 6689.68,
+    "ultimos7Dias": 24.7625,
+    "unMes": 18.9145,
     "noventaDias": 7.0278,
     "cientoOchentaDias": 16.4762,
     "enElAnio": 20.5011,
@@ -103,12 +104,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Bancor Fondos S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02734G-9dbd2ace.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02734G-9dbd2ace.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Cordoba S.A.",
       "logo": null
     }

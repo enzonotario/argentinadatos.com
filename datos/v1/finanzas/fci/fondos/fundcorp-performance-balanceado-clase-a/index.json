@@ -2,7 +2,7 @@
   "fondoId": "1463",
   "claseId": "4326",
   "nombre": "Fundcorp Performance Balanceado - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "CMF Asset Management S.A.U.",
   "depositaria": "Banco C.M.F. S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1452",
-  "patrimonio": 129141183.29,
+  "patrimonio": 2172.65,
+  "cantidadCuotapartes": 1000,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 2193.48,
-    "ultimos7Dias": -0.082,
-    "unMes": 1.0886,
+    "valorCuotaparte": 2172.65,
+    "ultimos7Dias": -49.5166,
+    "unMes": -1.9573,
     "noventaDias": 5.0415,
     "cientoOchentaDias": 14.9141,
     "enElAnio": 20.0972,
@@ -125,12 +126,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "CMF Asset Management S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00401G-76eff522.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00401G-76eff522.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco C.M.F. S.A.",
       "logo": null
     }

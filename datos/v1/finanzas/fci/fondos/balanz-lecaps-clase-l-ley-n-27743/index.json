@@ -2,7 +2,7 @@
   "fondoId": "1297",
   "claseId": "4842",
   "nombre": "Balanz Lecaps - Clase L Ley Nº 27.743",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Balanz S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,53 +11,58 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1120",
-  "patrimonio": 19903472.83,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 20001809,
+  "cantidadCuotapartes": 10843844.9,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1835.463,
-    "ultimos7Dias": 0.2327,
-    "unMes": 1.4509,
-    "noventaDias": 5.046,
-    "cientoOchentaDias": 13.7553,
-    "enElAnio": 17.7192,
-    "doceMeses": 35.2002
+    "valorCuotaparte": 1844.531,
+    "ultimos7Dias": 25.7609,
+    "unMes": 19.0054,
+    "noventaDias": 4.8205,
+    "cientoOchentaDias": 13.3912,
+    "enElAnio": 18.3007,
+    "doceMeses": 36.2872
   },
   "composicionCartera": [
     {
       "nombre": "Lecap S30S6",
-      "porcentaje": 26.3
+      "porcentaje": 26.1
     },
     {
       "nombre": "Lecap S15S6",
-      "porcentaje": 18.6
+      "porcentaje": 20.1
     },
     {
       "nombre": "Bono Boncer TZXO6",
-      "porcentaje": 17.7
+      "porcentaje": 19.1
     },
     {
       "nombre": "Lecap S14G6",
-      "porcentaje": 15
-    },
-    {
-      "nombre": "Pzo Fi $ Bco Galicia",
       "porcentaje": 12.8
     },
     {
-      "nombre": "Pzo Fi $ Bco Santander Ri",
-      "porcentaje": 3.7
+      "nombre": "Pzo Fi $ Bco Galicia",
+      "porcentaje": 9.7
     },
     {
-      "nombre": "FCI Schroder Liquidez - Clase B",
-      "porcentaje": 3.1
+      "nombre": "Pzo Fi $ Bco Santander Ri",
+      "porcentaje": 3.9
+    },
+    {
+      "nombre": "Lecap S13N6",
+      "porcentaje": 3.2
     },
     {
       "nombre": "Pzo Fi $ Bco Nacion",
-      "porcentaje": 2.9
+      "porcentaje": 3.1
+    },
+    {
+      "nombre": "FCI Schroder Liquidez - Clase B",
+      "porcentaje": 2
     }
   ],
   "calificaciones": [
@@ -79,14 +84,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Balanz S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00372G-cc6ce723.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00372G-cc6ce723.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -2,46 +2,47 @@
   "fondoId": "594",
   "claseId": "1204",
   "nombre": "Adcap Cima Abierto Pymes - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "PyMes",
+  "tipoRenta": "Retorno Total",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Badlar",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "745",
   "patrimonio": 0,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1690.107,
-    "ultimos7Dias": 0.3155,
-    "unMes": 1.5872,
-    "noventaDias": 5.9446,
-    "cientoOchentaDias": 14.4403,
-    "enElAnio": 17.8406,
-    "doceMeses": 40.6814
+    "valorCuotaparte": 1695.344,
+    "ultimos7Dias": 21.2684,
+    "unMes": 19.2405,
+    "noventaDias": 5.8235,
+    "cientoOchentaDias": 14.0188,
+    "enElAnio": 18.2058,
+    "doceMeses": 40.6697
   },
   "composicionCartera": [
     {
       "nombre": "Letra Tesoro Nac T30A7",
-      "porcentaje": 6.4
+      "porcentaje": 6.3
     },
     {
       "nombre": "Bono Dual TXMD9",
-      "porcentaje": 6.2
-    },
-    {
-      "nombre": "FCI MEGAQM Pesos - Clase B",
-      "porcentaje": 5.8
+      "porcentaje": 6.1
     },
     {
       "nombre": "Cheque E *BIN130800062",
       "porcentaje": 3.1
+    },
+    {
+      "nombre": "FCI MEGAQM Pesos - Clase B",
+      "porcentaje": 2.9
     },
     {
       "nombre": "Cheque E *CRE310700272",
@@ -56,15 +57,17 @@
       "porcentaje": 2.2
     },
     {
-      "nombre": "Cheque E *AFD200700024",
-      "porcentaje": 2.1
-    },
-    {
       "nombre": "Resto de Activos",
-      "porcentaje": 71.8
+      "porcentaje": 76.6
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "A-bf.ar",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 1.5,
     "honorarioDepositaria": 0.1573,
@@ -77,14 +80,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

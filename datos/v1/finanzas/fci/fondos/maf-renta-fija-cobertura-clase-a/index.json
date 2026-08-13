@@ -2,7 +2,7 @@
   "fondoId": "546",
   "claseId": "1105",
   "nombre": "MAF Renta Fija Cobertura - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Mariva Asset Management S.A.U.S.G.F.C.I.",
   "depositaria": "Banco Mariva S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "682",
-  "patrimonio": 501447902.38,
-  "inversionMinima": 10000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 495704099.83,
+  "cantidadCuotapartes": 1782694.13,
+  "inversionMinima": 500,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 279076.242,
-    "ultimos7Dias": 0.0748,
-    "unMes": 1.0332,
+    "valorCuotaparte": 278064.583,
+    "ultimos7Dias": -18.9019,
+    "unMes": 11.616,
     "noventaDias": 11.0082,
     "cientoOchentaDias": 12.6657,
     "enElAnio": 13.3137,
@@ -68,7 +69,13 @@
       "porcentaje": 2
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "Af(arg)",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 2.5,
     "honorarioDepositaria": 0.2,
@@ -81,12 +88,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mariva Asset Management S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00371G-45045e78.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00371G-45045e78.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Mariva S.A.",
       "logo": null
     }

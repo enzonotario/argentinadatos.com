@@ -2,7 +2,7 @@
   "fondoId": "1787",
   "claseId": "6100",
   "nombre": "FBA Renta Fija Dólar Latam I - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "BBVA Argentina S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "No Registrada",
-  "moneda": "Dolar Estadounidense Billete",
+  "moneda": "USB",
   "codigoCNV": "1817",
-  "patrimonio": 100041.08,
+  "patrimonio": 100041.11,
+  "cantidadCuotapartes": 100000,
   "inversionMinima": 1,
-  "monedaInversion": "Dolar Estadounidense",
+  "monedaInversion": "USB",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1000.4108,
-    "ultimos7Dias": -0.0001,
-    "unMes": 0,
+    "valorCuotaparte": 1000.411,
+    "ultimos7Dias": 0,
+    "unMes": 0.0002,
     "noventaDias": -0.0187,
     "cientoOchentaDias": -0.028,
     "enElAnio": 0.0345,
@@ -45,14 +46,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00029G-9a6fc701.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00029G-9a6fc701.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "BBVA Argentina S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00079-a62ab0c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00079-a62ab0c8.jpg"
     }
   ]
 }

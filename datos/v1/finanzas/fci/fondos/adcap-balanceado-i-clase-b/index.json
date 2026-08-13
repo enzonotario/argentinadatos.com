@@ -2,7 +2,7 @@
   "fondoId": "575",
   "claseId": "1168",
   "nombre": "Adcap Balanceado I - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,73 +11,70 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "686",
-  "patrimonio": 44409027339.2,
+  "patrimonio": 44504784430.11,
+  "cantidadCuotapartes": 356154390.95,
   "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 124690.383,
-    "ultimos7Dias": 0.3663,
-    "unMes": 1.4976,
-    "noventaDias": 4.9844,
-    "cientoOchentaDias": 17.4528,
-    "enElAnio": 15.5181,
-    "doceMeses": 29.3735
+    "valorCuotaparte": 124959.247,
+    "ultimos7Dias": 22.3029,
+    "unMes": 18.2154,
+    "noventaDias": 4.8848,
+    "cientoOchentaDias": 20.6675,
+    "enElAnio": 15.7672,
+    "doceMeses": 30.8819
   },
   "composicionCartera": [
     {
       "nombre": "Lecap S30S6",
-      "porcentaje": 21.6
+      "porcentaje": 20.6
     },
     {
-      "nombre": "Bono Boncer TZXO6",
-      "porcentaje": 11.9
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 11.4
     },
     {
       "nombre": "Lecap S15S6",
-      "porcentaje": 8.1
-    },
-    {
-      "nombre": "Lecer X30N6",
-      "porcentaje": 7.6
+      "porcentaje": 9.6
     },
     {
       "nombre": "Lecap S13N6",
-      "porcentaje": 5.1
+      "porcentaje": 7.5
     },
     {
-      "nombre": "FCI Allaria Ahorro - Clase C",
-      "porcentaje": 4.1
+      "nombre": "Lecer X30N6",
+      "porcentaje": 7.2
     },
     {
       "nombre": "Pagare #MAV091060021",
-      "porcentaje": 2.8
+      "porcentaje": 2.7
     },
     {
       "nombre": "Pagare #MAV091060017",
-      "porcentaje": 2.8
+      "porcentaje": 2.7
     },
     {
       "nombre": "Pagare #MAV091060019",
-      "porcentaje": 2.8
+      "porcentaje": 2.7
     },
     {
       "nombre": "Pagare #MAV091060023",
-      "porcentaje": 2.4
+      "porcentaje": 2.3
     },
     {
       "nombre": "Pagare #MAV091060024",
-      "porcentaje": 2.4
+      "porcentaje": 2.3
     },
     {
       "nombre": "Pagare #MAV091060025",
-      "porcentaje": 2.4
+      "porcentaje": 2.3
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 26.3
+      "porcentaje": 28.6
     }
   ],
   "calificaciones": [
@@ -99,14 +96,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

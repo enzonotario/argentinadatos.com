@@ -2,7 +2,7 @@
   "fondoId": "1626",
   "claseId": "5396",
   "nombre": "Adcap ASB Multiactivo - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,57 +11,58 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1422",
-  "patrimonio": 1355984923.64,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 1220040046.87,
+  "cantidadCuotapartes": 937447668.35,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1352.915,
-    "ultimos7Dias": -7.0311,
-    "unMes": -5.6291,
-    "noventaDias": 13.4571,
-    "cientoOchentaDias": 4.1675,
-    "enElAnio": 1.051,
-    "doceMeses": 34.7235
+    "valorCuotaparte": 1301.449,
+    "ultimos7Dias": -357.7728,
+    "unMes": -114.7043,
+    "noventaDias": 7.9614,
+    "cientoOchentaDias": 6.4203,
+    "enElAnio": -2.7931,
+    "doceMeses": 32.5066
   },
   "composicionCartera": [
     {
       "nombre": "Pampa Energia",
-      "porcentaje": 19.3
-    },
-    {
-      "nombre": "Banco Macro Bansud - B",
-      "porcentaje": 19.2
+      "porcentaje": 19.5
     },
     {
       "nombre": "Grupo Fciero Galicia - B",
+      "porcentaje": 18.9
+    },
+    {
+      "nombre": "Banco Macro Bansud - B",
       "porcentaje": 18.6
     },
     {
       "nombre": "Transp Gas del Sur - B",
-      "porcentaje": 15.2
+      "porcentaje": 14.7
     },
     {
       "nombre": "Central Puerto",
-      "porcentaje": 9.6
-    },
-    {
-      "nombre": "BBVA Argentina",
-      "porcentaje": 6.3
+      "porcentaje": 9.8
     },
     {
       "nombre": "Ecogas",
-      "porcentaje": 4.4
+      "porcentaje": 4.6
     },
     {
       "nombre": "Transener - B",
-      "porcentaje": 4.4
+      "porcentaje": 4.6
+    },
+    {
+      "nombre": "BBVA Argentina",
+      "porcentaje": 4.5
     },
     {
       "nombre": "FCI SBS Ahorro Pesos Cl B",
-      "porcentaje": 2.5
+      "porcentaje": 4.4
     },
     {
       "nombre": "Resto de Activos",
@@ -81,14 +82,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

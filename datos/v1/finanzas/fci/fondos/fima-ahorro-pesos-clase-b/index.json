@@ -2,7 +2,7 @@
   "fondoId": "193",
   "claseId": "193",
   "nombre": "Fima Ahorro Pesos - Clase B",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Galicia Asset Management S.A.U.",
   "depositaria": "Banco de Galicia y Buenos Aires S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "221",
-  "patrimonio": 177580285802.28,
-  "inversionMinima": 150000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 177104477507.12,
+  "cantidadCuotapartes": 244494104.35,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 723254.52,
-    "ultimos7Dias": 0.4014,
-    "unMes": 1.6354,
+    "valorCuotaparte": 724371.158,
+    "ultimos7Dias": 20.5095,
+    "unMes": 18.5642,
     "noventaDias": 5.2356,
     "cientoOchentaDias": 13.175,
     "enElAnio": 17.0899,
@@ -99,14 +100,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Galicia Asset Management S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00002G-01a59b57.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00002G-01a59b57.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Galicia y Buenos Aires S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00081-d14fcb5c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00081-d14fcb5c.jpg"
     }
   ]
 }

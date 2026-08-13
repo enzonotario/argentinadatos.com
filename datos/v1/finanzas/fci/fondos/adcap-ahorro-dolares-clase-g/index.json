@@ -2,7 +2,7 @@
   "fondoId": "712",
   "claseId": "6046",
   "nombre": "Adcap Ahorro Dólares - Clase G",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -14,58 +14,59 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "869",
   "patrimonio": 0,
-  "inversionMinima": 1000,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1012.836,
-    "ultimos7Dias": 1.9828,
-    "unMes": 1.8676,
-    "noventaDias": 1.776,
-    "cientoOchentaDias": 1.8606,
-    "enElAnio": 1.9299,
+    "valorCuotaparte": 1013.114,
+    "ultimos7Dias": 1.9874,
+    "unMes": 1.8968,
+    "noventaDias": 1.805,
+    "cientoOchentaDias": 1.8479,
+    "enElAnio": 1.932,
     "doceMeses": null
   },
   "composicionCartera": [
     {
-      "nombre": "Pzo Fi U$S Banco de Serv y Transacciones (BST)",
-      "porcentaje": 21.9
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 19.5
     },
     {
-      "nombre": "Pzo Fi U$S Bco Coinag",
+      "nombre": "Pzo Fi U$S Banco de Serv y Transacciones (BST)",
       "porcentaje": 17.4
     },
     {
-      "nombre": "Cta Cte U$S Bco Coinag",
-      "porcentaje": 13.5
+      "nombre": "Pzo Fi U$S Bco Coinag",
+      "porcentaje": 15.1
     },
     {
-      "nombre": "Cta Cte U$S . Bco Comaf",
-      "porcentaje": 12
+      "nombre": "Cta Cte U$S Bco Coinag",
+      "porcentaje": 11.7
     },
     {
       "nombre": "Pzo Fi U$S Bco Supervielle",
-      "porcentaje": 11
+      "porcentaje": 9.5
+    },
+    {
+      "nombre": "Cta Cte U$S . Bco Comaf",
+      "porcentaje": 8.6
     },
     {
       "nombre": "Pzo Fi U$S Bco Nacion",
-      "porcentaje": 9.8
-    },
-    {
-      "nombre": "Caucion Colocadora $ Merval",
-      "porcentaje": 4
+      "porcentaje": 8.5
     },
     {
       "nombre": "BC Banco BTG Pactual 030826",
-      "porcentaje": 3
+      "porcentaje": 2.6
     },
     {
       "nombre": "BC Banco BTG Pactual 170826",
-      "porcentaje": 3
+      "porcentaje": 2.6
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 4.5
+      "porcentaje": 4.3
     }
   ],
   "calificaciones": [],
@@ -81,14 +82,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

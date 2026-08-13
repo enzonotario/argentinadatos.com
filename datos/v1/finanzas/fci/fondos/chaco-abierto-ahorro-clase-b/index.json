@@ -2,7 +2,7 @@
   "fondoId": "581",
   "claseId": "1179",
   "nombre": "Chaco Abierto Ahorro - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Nuevo Chaco Fondos S.A.S.G.F.C.I.",
   "depositaria": "Nuevo Banco del Chaco S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "697",
-  "patrimonio": 11802091811.67,
+  "patrimonio": 11485920462.43,
+  "cantidadCuotapartes": 137251900.43,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 83272.4816,
-    "ultimos7Dias": 0.1937,
-    "unMes": 1.797,
+    "valorCuotaparte": 83684.965,
+    "ultimos7Dias": 25.8285,
+    "unMes": 22.9637,
     "noventaDias": 5.7097,
     "cientoOchentaDias": 15.3309,
     "enElAnio": 19.0963,
@@ -109,12 +110,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Nuevo Chaco Fondos S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00389G-62d37f9e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00389G-62d37f9e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Nuevo Banco del Chaco S.A.",
       "logo": null
     }

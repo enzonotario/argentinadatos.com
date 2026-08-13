@@ -2,7 +2,7 @@
   "fondoId": "1904",
   "claseId": "6582",
   "nombre": "Bull Market Liquidez Dólar - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Bull Market Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1922",
-  "patrimonio": 11362218.22,
-  "inversionMinima": 100,
+  "patrimonio": 11740042.3,
+  "cantidadCuotapartes": 11736469.58,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1000.163,
-    "ultimos7Dias": 0.7978,
-    "unMes": null,
+    "valorCuotaparte": 1000.304,
+    "ultimos7Dias": 0.7351,
+    "unMes": 0.7351,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -40,14 +41,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Bull Market Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02507G-49489fb4.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02507G-49489fb4.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

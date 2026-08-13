@@ -2,7 +2,7 @@
   "fondoId": "1493",
   "claseId": "4968",
   "nombre": "Novus Capital - Clase D Ley N° 27.743",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Novus Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1495",
-  "patrimonio": 1814988.65,
-  "inversionMinima": 100,
+  "patrimonio": 1804003.31,
+  "cantidadCuotapartes": 1423577.05,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1274.949,
-    "ultimos7Dias": 0.0296,
-    "unMes": 0.686,
+    "valorCuotaparte": 1267.233,
+    "ultimos7Dias": -31.5569,
+    "unMes": -2.8716,
     "noventaDias": 2.7677,
     "cientoOchentaDias": 5.1386,
     "enElAnio": 6.7355,
@@ -69,14 +70,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Novus Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02887G-ef45d825.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02887G-ef45d825.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

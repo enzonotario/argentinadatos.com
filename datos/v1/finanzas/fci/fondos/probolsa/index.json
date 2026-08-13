@@ -2,7 +2,7 @@
   "fondoId": "424",
   "claseId": "787",
   "nombre": "Probolsa",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Mercofond S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "561",
-  "patrimonio": 525638545.78,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 529346277.13,
+  "cantidadCuotapartes": 6889360.61,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 76297.145,
-    "ultimos7Dias": 0.4157,
-    "unMes": 1.9728,
+    "valorCuotaparte": 76835.327,
+    "ultimos7Dias": 22.3138,
+    "unMes": 25.8865,
     "noventaDias": 7.8544,
     "cientoOchentaDias": 18.8957,
     "enElAnio": 21.7186,
@@ -60,7 +61,13 @@
       "porcentaje": 1.3
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "NA",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 2,
     "honorarioDepositaria": 0.99,
@@ -73,14 +80,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mercofond S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00040G-5ca39baf.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00040G-5ca39baf.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

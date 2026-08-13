@@ -2,29 +2,30 @@
   "fondoId": "1396",
   "claseId": "4044",
   "nombre": "Adcap Desarrollo e Infraestructura - Clase A",
-  "fecha": "2026-08-11",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "Infraestructura",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Badlar",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1320",
-  "patrimonio": 82385633.72,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 82433404.21,
+  "cantidadCuotapartes": 13558254.98,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 6076.419,
-    "ultimos7Dias": 0.1431,
-    "unMes": 0.55,
-    "noventaDias": 8.0543,
-    "cientoOchentaDias": 13.5428,
-    "enElAnio": 13.1563,
-    "doceMeses": 30.5636
+    "valorCuotaparte": 6079.942,
+    "ultimos7Dias": 10.4892,
+    "unMes": 9.7515,
+    "noventaDias": 8.1169,
+    "cientoOchentaDias": 13.6086,
+    "enElAnio": 13.2219,
+    "doceMeses": 30.6393
   },
   "composicionCartera": [
     {
@@ -113,14 +114,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "883",
   "claseId": "2573",
   "nombre": "Adcap Ahorro Pesos Fondo de Dinero - Clase C",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,81 +11,82 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1106",
-  "patrimonio": 253515763835.66,
-  "inversionMinima": 100000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 291972173868.31,
+  "cantidadCuotapartes": 14478131022.88,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 20110.409,
+    "valorCuotaparte": 20166.427,
     "ultimos7Dias": 20.3504,
-    "unMes": 19.8766,
-    "noventaDias": 19.8835,
-    "cientoOchentaDias": 22.8233,
-    "enElAnio": 24.7045,
-    "doceMeses": 31.9583
+    "unMes": 20.1085,
+    "noventaDias": 19.9559,
+    "cientoOchentaDias": 22.5521,
+    "enElAnio": 24.6747,
+    "doceMeses": 31.6504
   },
   "composicionCartera": [
     {
-      "nombre": "Pzo Fi $ Bco Santander Ri",
-      "porcentaje": 20.1
+      "nombre": "Pzo Fi $ Bco Nacion",
+      "porcentaje": 21
     },
     {
-      "nombre": "Pzo Fi $ Bco Nacion",
-      "porcentaje": 16.8
+      "nombre": "Pzo Fi $ Bco Santander Ri",
+      "porcentaje": 19.5
     },
     {
       "nombre": "Pzo Fi $ Bco Valores",
-      "porcentaje": 6.2
-    },
-    {
-      "nombre": "Pzo Fi $ Bco Patagonia",
-      "porcentaje": 5.8
-    },
-    {
-      "nombre": "Pzo Fi $ Nvo Bco Chaco",
-      "porcentaje": 5.1
-    },
-    {
-      "nombre": "Pzo Fi $ Banco de Serv y Transacciones (BST)",
-      "porcentaje": 4.4
-    },
-    {
-      "nombre": "Pzo Fi $ Bco Macro Bansud",
-      "porcentaje": 4.3
-    },
-    {
-      "nombre": "Pzo Fi $ Bco Cordoba",
-      "porcentaje": 3.9
+      "porcentaje": 5.9
     },
     {
       "nombre": "Caucion Colocadora $ Merval",
-      "porcentaje": 3.8
+      "porcentaje": 5.7
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Patagonia",
+      "porcentaje": 5.4
+    },
+    {
+      "nombre": "Pzo Fi $ Nvo Bco Chaco",
+      "porcentaje": 4.9
+    },
+    {
+      "nombre": "Pzo Fi $ Banco de Serv y Transacciones (BST)",
+      "porcentaje": 4.2
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Cordoba",
+      "porcentaje": 3.1
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Macro Bansud",
+      "porcentaje": 2.6
     },
     {
       "nombre": "Cta Cte $ Rem Bco Comafi",
-      "porcentaje": 2.8
+      "porcentaje": 2.4
     },
     {
       "nombre": "Pzo Fi $ Bco Coinag",
-      "porcentaje": 2.5
+      "porcentaje": 2.4
     },
     {
-      "nombre": "Cta Cte $ Rem Bco Chaco",
-      "porcentaje": 2.4
+      "nombre": "Pzo Fi $ Bco Hipotecario",
+      "porcentaje": 2.3
     },
     {
       "nombre": "Pzo Fi $ Bco Provincia",
-      "porcentaje": 2.4
+      "porcentaje": 2.3
     },
     {
-      "nombre": "Pzo Fi $ Banco VOII",
-      "porcentaje": 2.1
+      "nombre": "Pzo Fi $ Nvo Bco Indus",
+      "porcentaje": 2
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 17.5
+      "porcentaje": 16.6
     }
   ],
   "calificaciones": [
@@ -107,14 +108,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00381G-eab8ed2f.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

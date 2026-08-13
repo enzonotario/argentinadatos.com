@@ -2,7 +2,7 @@
   "fondoId": "1219",
   "claseId": "3375",
   "nombre": "Champaquí Ahorro Pesos - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Bancor Fondos S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Cordoba S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1126",
-  "patrimonio": 27008333091.2,
-  "inversionMinima": 500000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 26763992396.79,
+  "cantidadCuotapartes": 1562600515.87,
+  "inversionMinima": 25000000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 17053.356,
-    "ultimos7Dias": 0.389,
-    "unMes": 1.7582,
+    "valorCuotaparte": 17127.853,
+    "ultimos7Dias": 22.7784,
+    "unMes": 21.9283,
     "noventaDias": 5.5699,
     "cientoOchentaDias": 13.3863,
     "enElAnio": 17.228,
@@ -135,12 +136,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Bancor Fondos S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02734G-9dbd2ace.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02734G-9dbd2ace.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Cordoba S.A.",
       "logo": null
     }

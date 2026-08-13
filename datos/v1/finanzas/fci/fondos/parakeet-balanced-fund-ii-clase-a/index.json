@@ -2,7 +2,7 @@
   "fondoId": "1730",
   "claseId": "5838",
   "nombre": "Parakeet Balanced Fund II - Clase A",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Parakeet S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1772",
-  "patrimonio": 4726128.16,
-  "inversionMinima": 100000,
+  "patrimonio": 4896593.15,
+  "cantidadCuotapartes": 4556819,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1069.737,
-    "ultimos7Dias": 1.1207,
-    "unMes": 2.0515,
+    "valorCuotaparte": 1074.564,
+    "ultimos7Dias": 47.8436,
+    "unMes": 27.9237,
     "noventaDias": 1.5023,
     "cientoOchentaDias": 5.6932,
     "enElAnio": 6.1658,
@@ -113,14 +114,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Parakeet S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03222G-de7305da.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03222G-de7305da.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

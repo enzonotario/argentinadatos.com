@@ -2,25 +2,26 @@
   "fondoId": "1233",
   "claseId": "3414",
   "nombre": "Balanz Infraestructura - Clase E",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Balanz S.G.F.C.I.S.A.U.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "Infraestructura",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1155",
   "patrimonio": 0,
+  "cantidadCuotapartes": 0,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1,
+    "valorCuotaparte": 1000,
     "ultimos7Dias": 0,
-    "unMes": 0,
+    "unMes": 1215450,
     "noventaDias": 0,
     "cientoOchentaDias": 0,
     "enElAnio": 0,
@@ -29,51 +30,59 @@
   "composicionCartera": [
     {
       "nombre": "Bono Prov Santa Fe 8.1% 111234",
-      "porcentaje": 19.2
+      "porcentaje": 19.7
     },
     {
       "nombre": "ON Vista Gas y Oil Arg C21",
-      "porcentaje": 19.1
+      "porcentaje": 19.3
     },
     {
       "nombre": "ON Telecom C18 TLCJO",
-      "porcentaje": 14.9
+      "porcentaje": 15.3
     },
     {
       "nombre": "ON YPF C 20",
-      "porcentaje": 11.7
-    },
-    {
-      "nombre": "ON Pan Amer. Energy C 13",
-      "porcentaje": 7.7
+      "porcentaje": 10.7
     },
     {
       "nombre": "ON Banco Nacion Argentina Clase 3",
-      "porcentaje": 6.9
+      "porcentaje": 7.1
     },
     {
       "nombre": "ON Pampa Energia C13",
-      "porcentaje": 5.7
+      "porcentaje": 5.9
+    },
+    {
+      "nombre": "ON Pan Amer. Energy C 13",
+      "porcentaje": 4.2
     },
     {
       "nombre": "ON Capex C4",
-      "porcentaje": 3.5
+      "porcentaje": 3.6
+    },
+    {
+      "nombre": "FCI Schroder Liquidez - Clase B",
+      "porcentaje": 3.4
     },
     {
       "nombre": "ON Pan American C31",
-      "porcentaje": 2.6
+      "porcentaje": 2.7
     },
     {
       "nombre": "ON Pan Amer. Energy C 12",
-      "porcentaje": 2.4
+      "porcentaje": 2.5
     },
     {
       "nombre": "ON Luz De Tres Picos C4",
-      "porcentaje": 2.1
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "ON Plaza Logistica C13",
+      "porcentaje": 2
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 4.2
+      "porcentaje": 1.5
     }
   ],
   "calificaciones": [
@@ -95,14 +104,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Balanz S.G.F.C.I.S.A.U.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00372G-cc6ce723.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00372G-cc6ce723.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

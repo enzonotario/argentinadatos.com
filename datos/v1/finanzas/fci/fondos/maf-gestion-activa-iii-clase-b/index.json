@@ -2,7 +2,7 @@
   "fondoId": "1513",
   "claseId": "4524",
   "nombre": "MAF Gestión Activa III - Clase B",
-  "fecha": "2026-08-11",
+  "fecha": "2026-08-12",
   "administradora": "Mariva Asset Management S.A.U.S.G.F.C.I.",
   "depositaria": "Banco Mariva S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1062",
-  "patrimonio": 11098522755.13,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 11113391916.65,
+  "cantidadCuotapartes": 5212522551.69,
+  "inversionMinima": 5000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 2129.204,
-    "ultimos7Dias": -0.1053,
-    "unMes": 0.8237,
+    "valorCuotaparte": 2132.056,
+    "ultimos7Dias": 5.6556,
+    "unMes": 14.8009,
     "noventaDias": 7.4294,
     "cientoOchentaDias": 14.7458,
     "enElAnio": 16.0809,
@@ -65,12 +66,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mariva Asset Management S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00371G-45045e78.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00371G-45045e78.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Mariva S.A.",
       "logo": null
     }

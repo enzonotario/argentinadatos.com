@@ -2,7 +2,7 @@
   "fondoId": "425",
   "claseId": "789",
   "nombre": "Compass Crecimiento II - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Variable",
@@ -11,16 +11,17 @@
   "benchmark": "MSCI Latam",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "563",
-  "patrimonio": 3030827380.63,
-  "inversionMinima": 10000001,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 2874026696.06,
+  "cantidadCuotapartes": 3275138.15,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 873550.127,
-    "ultimos7Dias": 0.3983,
-    "unMes": 1.8621,
+    "valorCuotaparte": 877528.385,
+    "ultimos7Dias": 23.7465,
+    "unMes": 22.1763,
     "noventaDias": 5.0326,
     "cientoOchentaDias": 15.006,
     "enElAnio": 19.7167,
@@ -79,14 +80,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Investis Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00021G-d9e0d02c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00021G-d9e0d02c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -2,25 +2,26 @@
   "fondoId": "349",
   "claseId": "582",
   "nombre": "Galileo Event Driven - Clase A",
-  "fecha": "2026-08-10",
+  "fecha": "2026-08-12",
   "administradora": "Delta Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "Retorno Total",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
-  "region": "Latinoamerica",
+  "region": "Latinoamérica",
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "470",
-  "patrimonio": 126111197.66,
-  "inversionMinima": 10000,
+  "patrimonio": 126152243.92,
+  "cantidadCuotapartes": 38226257.88,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 3298.67,
-    "ultimos7Dias": 0.3177,
-    "unMes": 0.3412,
+    "valorCuotaparte": 3300.146,
+    "ultimos7Dias": 4.2363,
+    "unMes": 4.2686,
     "noventaDias": 0.8371,
     "cientoOchentaDias": 1.722,
     "enElAnio": 2.129,
@@ -95,14 +96,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Delta Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00321G-78ba876b.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00321G-78ba876b.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "fondoId": "1623",
   "claseId": "5376",
   "nombre": "Axis Estrategia Dólar 3 - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Axis S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1628",
-  "patrimonio": 444980.24,
-  "inversionMinima": 10000,
+  "patrimonio": 444997.25,
+  "cantidadCuotapartes": 444574.63,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1000.912,
-    "ultimos7Dias": -0.0203,
-    "unMes": 0.285,
+    "valorCuotaparte": 1000.951,
+    "ultimos7Dias": 0.2032,
+    "unMes": 2.2004,
     "noventaDias": 1.232,
     "cientoOchentaDias": 1.6464,
     "enElAnio": -0.7049,
@@ -109,14 +110,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Axis S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00384G-b6af83ec.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00384G-b6af83ec.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

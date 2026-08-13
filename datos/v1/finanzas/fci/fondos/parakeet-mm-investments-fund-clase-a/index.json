@@ -2,7 +2,7 @@
   "fondoId": "1608",
   "claseId": "5293",
   "nombre": "Parakeet MM Investments Fund - Clase A",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Parakeet S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1634",
-  "patrimonio": 6165445.54,
-  "inversionMinima": 100000,
+  "patrimonio": 6309728.34,
+  "cantidadCuotapartes": 5696225.72,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1103.8,
-    "ultimos7Dias": -0.0933,
-    "unMes": 0.565,
+    "valorCuotaparte": 1107.703,
+    "ultimos7Dias": 18.4375,
+    "unMes": 11.6656,
     "noventaDias": 2.6603,
     "cientoOchentaDias": 4.8703,
     "enElAnio": 5.7361,
@@ -117,14 +118,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Parakeet S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03222G-de7305da.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03222G-de7305da.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

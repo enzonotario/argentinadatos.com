@@ -2,7 +2,7 @@
   "fondoId": "73",
   "claseId": "3636",
   "nombre": "Alpha Ahorro - Clase J",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "ICBC (Arg) S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,65 +11,70 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "111",
-  "patrimonio": 10354616657.46,
+  "patrimonio": 10395324956.99,
+  "cantidadCuotapartes": 6908233785.68,
   "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1498.88,
-    "ultimos7Dias": 0.3007,
-    "unMes": 1.5445,
-    "noventaDias": 3.5461,
-    "cientoOchentaDias": 3.5461,
-    "enElAnio": 3.5461,
-    "doceMeses": 3.5461
+    "valorCuotaparte": 1504.773,
+    "ultimos7Dias": 20.5005,
+    "unMes": 18.805,
+    "noventaDias": 3.9532,
+    "cientoOchentaDias": 3.9532,
+    "enElAnio": 3.9532,
+    "doceMeses": 3.9532
   },
   "composicionCartera": [
     {
       "nombre": "Pzo Fi $ Bco BBVA",
-      "porcentaje": 15.1
+      "porcentaje": 14.8
     },
     {
       "nombre": "Bono Boncer TX26",
-      "porcentaje": 8
+      "porcentaje": 7.8
     },
     {
       "nombre": "Pzo Fi $ Bco Supervielle",
-      "porcentaje": 6.2
+      "porcentaje": 6.1
     },
     {
       "nombre": "Letra Tamar TEM M31G6",
-      "porcentaje": 5.9
+      "porcentaje": 5.8
     },
     {
       "nombre": "Lecap S30S6",
-      "porcentaje": 5.2
+      "porcentaje": 5.1
     },
     {
       "nombre": "Lecap S14G6",
-      "porcentaje": 5.2
+      "porcentaje": 5.1
     },
     {
       "nombre": "Lecer X30S6",
-      "porcentaje": 4.2
+      "porcentaje": 4.1
     },
     {
       "nombre": "Lecap S15S6",
-      "porcentaje": 4.1
+      "porcentaje": 4
     },
     {
       "nombre": "Bono Boncer TZXO6",
       "porcentaje": 3.2
     },
     {
+      "nombre": "FCI BM Smart Money Market - Clase B",
+      "porcentaje": 3.1
+    },
+    {
       "nombre": "Lecap S30N6",
-      "porcentaje": 2.8
+      "porcentaje": 2.7
     },
     {
       "nombre": "Resto de Activos",
-      "porcentaje": 40.5
+      "porcentaje": 38.6
     }
   ],
   "calificaciones": [
@@ -91,14 +96,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "ICBC Investments Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00008G-f9ac58c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00008G-f9ac58c8.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "ICBC (Arg) S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00062-50a49656.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00062-50a49656.jpg"
     }
   ]
 }

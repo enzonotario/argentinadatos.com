@@ -2,7 +2,7 @@
   "fondoId": "34",
   "claseId": "34",
   "nombre": "Arpenta (ex Mercosur)",
-  "fecha": "2026-08-07",
+  "fecha": "2026-08-12",
   "administradora": "Mercofond S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "63",
-  "patrimonio": 1678207112.33,
-  "inversionMinima": 100,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 1636751132.17,
+  "cantidadCuotapartes": 75425.33,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 22249915.53,
-    "ultimos7Dias": -2.005,
-    "unMes": 1.6626,
+    "valorCuotaparte": 21700286.078,
+    "ultimos7Dias": -154.5047,
+    "unMes": -12.3208,
     "noventaDias": 24.4608,
     "cientoOchentaDias": 19.3588,
     "enElAnio": 29.801,
@@ -92,7 +93,13 @@
       "porcentaje": 9.1
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "NA",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 2.99,
     "honorarioDepositaria": 1,
@@ -105,14 +112,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mercofond S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00040G-5ca39baf.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00040G-5ca39baf.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

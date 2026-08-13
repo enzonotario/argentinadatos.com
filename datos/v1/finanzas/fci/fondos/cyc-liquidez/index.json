@@ -2,7 +2,7 @@
   "fondoId": "1316",
   "claseId": "3748",
   "nombre": "CYC Liquidez",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "C y C Administradora de Fondos S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,16 +11,17 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1279",
-  "patrimonio": 18654576275.78,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 20402770100.82,
+  "cantidadCuotapartes": 3404809445.33,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 5972.9172,
-    "ultimos7Dias": 17.3525,
-    "unMes": 17.0383,
+    "valorCuotaparte": 5992.338,
+    "ultimos7Dias": 16.9543,
+    "unMes": 17.1721,
     "noventaDias": 17.8598,
     "cientoOchentaDias": 20.4419,
     "enElAnio": 21.8002,
@@ -76,7 +77,13 @@
       "porcentaje": 3.6
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "AA-",
+      "fecha": "2026-08-12"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 1.25,
     "honorarioDepositaria": 0.1815,
@@ -89,14 +96,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "C y C Administradora de Fondos S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02471G-04849e4d.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02471G-04849e4d.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

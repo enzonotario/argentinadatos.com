@@ -2,7 +2,7 @@
   "fondoId": "1250",
   "claseId": "3468",
   "nombre": "SMR Fondo Comun de Inversion - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "No Registrada",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1184",
-  "patrimonio": 3422026698.12,
-  "inversionMinima": 30000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 2914969327.99,
+  "cantidadCuotapartes": 150456167.05,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 19387.583,
-    "ultimos7Dias": 0.0942,
-    "unMes": 5.1578,
+    "valorCuotaparte": 19374.21,
+    "ultimos7Dias": -3.5967,
+    "unMes": 17.3043,
     "noventaDias": 9.8521,
     "cientoOchentaDias": 5.3308,
     "enElAnio": 2.3402,
@@ -53,14 +54,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00022G-3c173d8e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

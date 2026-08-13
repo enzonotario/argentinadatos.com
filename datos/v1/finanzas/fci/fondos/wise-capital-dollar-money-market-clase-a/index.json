@@ -2,7 +2,7 @@
   "fondoId": "1838",
   "claseId": "6332",
   "nombre": "Wise Capital Dollar Money Market - Clase A",
-  "fecha": "2026-08-04",
+  "fecha": "2026-08-12",
   "administradora": "Wise Capital Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,14 +13,15 @@
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1906",
-  "patrimonio": 120653.67,
-  "inversionMinima": 1000,
+  "patrimonio": 126490.05,
+  "cantidadCuotapartes": 126122.31,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1002.803,
-    "ultimos7Dias": 1.3887,
-    "unMes": 0.9619,
+    "valorCuotaparte": 1002.916,
+    "ultimos7Dias": 0.5096,
+    "unMes": 0.7708,
     "noventaDias": 0.9339,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -49,14 +50,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Wise Capital Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03233G-77b3387a.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03233G-77b3387a.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

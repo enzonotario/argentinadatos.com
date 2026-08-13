@@ -2,7 +2,7 @@
   "fondoId": "744",
   "claseId": "1630",
   "nombre": "First Renta Pesos - Clase B",
-  "fecha": "2026-08-06",
+  "fecha": "2026-08-12",
   "administradora": "First Capital Markets S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,16 +11,17 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "915",
-  "patrimonio": 274089085.87,
-  "inversionMinima": 1000000000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 275311294.48,
+  "cantidadCuotapartes": 4761132.71,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 57568.042,
-    "ultimos7Dias": 0.4631,
-    "unMes": 1.8106,
+    "valorCuotaparte": 57824.747,
+    "ultimos7Dias": 26.9418,
+    "unMes": 22.8123,
     "noventaDias": 5.666,
     "cientoOchentaDias": 14.639,
     "enElAnio": 18.9088,
@@ -79,14 +80,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "First Capital Markets S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00395-2ffc0cff.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00395-2ffc0cff.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

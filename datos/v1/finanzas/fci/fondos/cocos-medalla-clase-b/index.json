@@ -2,25 +2,26 @@
   "fondoId": "1664",
   "claseId": "5560",
   "nombre": "Cocos Medalla - Clase B",
-  "fecha": "2026-08-05",
+  "fecha": "2026-08-12",
   "administradora": "Cocos Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "Retorno Total",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1612",
-  "patrimonio": 111582084.02,
+  "patrimonio": 110519555.58,
+  "cantidadCuotapartes": 89259729,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1250.083,
-    "ultimos7Dias": 3.3413,
-    "unMes": 6.504,
+    "valorCuotaparte": 1238.179,
+    "ultimos7Dias": -49.6534,
+    "unMes": 51.4902,
     "noventaDias": 12.7276,
     "cientoOchentaDias": 10.7649,
     "enElAnio": 8.5549,
@@ -85,14 +86,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Cocos Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02418G-8710fe48.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02418G-8710fe48.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }
