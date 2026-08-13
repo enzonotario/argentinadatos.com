@@ -136,6 +136,7 @@ describe('FciFondosDatabaseService', () => {
           moneda: null,
           codigoCNV: null,
           patrimonio: null,
+          cantidadCuotapartes: null,
           inversionMinima: null,
           monedaInversion: null,
           plazoLiquidacionDias: null,

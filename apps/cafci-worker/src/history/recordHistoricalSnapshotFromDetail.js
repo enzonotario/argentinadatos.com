@@ -30,7 +30,7 @@ export async function recordHistoricalSnapshotFromDetail(repository, detail) {
       horizonte: detail.horizonte ?? null,
       valorCuotaparte: detail.rendimientos?.valorCuotaparte ?? null,
       patrimonio: detail.patrimonio ?? null,
-      origen: 'cafci-detail',
+      origen: detail.origen || 'cnv-excel',
       fuenteOriginal: detail,
     },
     {

@@ -48,20 +48,6 @@ export function getDatabasePath() {
     : defaultDatabasePath
 }
 
-export function getConcurrency() {
-  return readNumberEnv(
-    ['CAFCI_WORKER_CONCURRENCY', 'FCI_FUND_DETAILS_CONCURRENCY'],
-    8,
-  )
-}
-
-export function getMaxAttempts() {
-  return readNumberEnv(
-    ['CAFCI_WORKER_MAX_ATTEMPTS', 'FCI_FUND_DETAILS_MAX_ATTEMPTS'],
-    20,
-  )
-}
-
 export function getPollIntervalMs() {
   return readNumberEnv(
     ['CAFCI_WORKER_POLL_INTERVAL_MS', 'FCI_FUND_DETAILS_POLL_INTERVAL_MS'],
@@ -106,15 +92,4 @@ export function isR2BackupConfigured() {
     config.secretAccessKey &&
     config.bucket,
   )
-}
-
-export function getProxyConfig() {
-  const proxyUrl = readEnv('CAFCI_WORKER_PROXY_URL', 'VITE_PROXY_URL')
-  const proxyToken = readEnv('CAFCI_WORKER_PROXY_TOKEN', 'VITE_PROXY_TOKEN')
-
-  return {
-    proxyUrl,
-    proxyToken,
-    usesProxy: Boolean(proxyUrl && proxyToken),
-  }
 }

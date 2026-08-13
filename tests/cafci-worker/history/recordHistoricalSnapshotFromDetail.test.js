@@ -74,7 +74,7 @@ describe('recordHistoricalSnapshotFromDetail', () => {
       retornoDiario: 1,
       retornoAcumulado: 1,
       flujoEstimado: 15,
-      origen: 'cafci-detail',
+      origen: 'cnv-excel',
     })
 
     repository.close()

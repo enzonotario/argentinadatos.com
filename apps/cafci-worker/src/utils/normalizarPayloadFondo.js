@@ -23,6 +23,8 @@ export function normalizarPayloadFondo(payload = {}) {
     moneda: payload.moneda ?? payload.currency ?? null,
     codigoCNV: payload.codigoCNV ?? payload.cnvCode ?? null,
     patrimonio: payload.patrimonio ?? payload.assetsUnderManagement ?? null,
+    cantidadCuotapartes:
+      payload.cantidadCuotapartes ?? payload.shareCount ?? null,
     inversionMinima:
       payload.inversionMinima ?? payload.minimumInvestment ?? null,
     monedaInversion:

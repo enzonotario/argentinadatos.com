@@ -1,85 +1,179 @@
 import {
-  getConcurrency,
-  getMaxAttempts,
-  getPollIntervalMs,
-  getR2UploadIntervalMs,
-} from '../config.js'
-import { fetchFundDetail, fetchFundsCatalog } from '../cafci/cafciClient.js'
+  downloadCnvDocumentExcel,
+  fetchCnvCuotaparteDocuments,
+  pickLatestAvailableDocument,
+  pickLatestDocumentForDate,
+} from '../cnv/cnvClient.js'
+import { mapCnvRowToPayload } from '../cnv/mapCnvRowToPayload.js'
+import { parseCnvCuotaparteExcel } from '../cnv/parseCnvExcel.js'
+import {
+  loadStaticClassIdToFondoIdMap,
+  mergeClassIdMaps,
+} from '../cnv/staticFundIdMap.js'
+import { getPollIntervalMs, getR2UploadIntervalMs } from '../config.js'
 import { recordHistoricalSnapshotFromDetail } from '../history/recordHistoricalSnapshotFromDetail.js'
 import { uploadDatabaseBackupToR2 } from '../r2/uploadDatabaseBackupToR2.js'
+import { preserveExistingPayloadFields } from '../utils/preserveExistingPayloadFields.js'
 import { sleep } from '../utils/sleep.js'
 
 export class FundDetailsSyncService {
   constructor(repository, options = {}) {
     this.repository = repository
-    this.concurrency = options.concurrency ?? getConcurrency()
-    this.maxAttempts = options.maxAttempts ?? getMaxAttempts()
     this.pollIntervalMs = options.pollIntervalMs ?? getPollIntervalMs()
     this.r2UploadIntervalMs =
       options.r2UploadIntervalMs ?? getR2UploadIntervalMs()
   }
 
-  async runCycle({ forceRetryFailed = false } = {}) {
-    const executionDate = new Date().toISOString().slice(0, 10)
-    const catalog = await fetchFundsCatalog()
+  resolveClassIdMap(classIdToFondoId) {
+    if (classIdToFondoId) {
+      return classIdToFondoId
+    }
 
-    if (catalog.length === 0) {
-      return {
-        executionDate,
-        createdJobs: 0,
-        processedJobs: 0,
-        stats: {},
+    return mergeClassIdMaps(
+      loadStaticClassIdToFondoIdMap(),
+      this.repository.buildClassIdToFondoIdMap(),
+    )
+  }
+
+  async ingestCnvDocument(document, { classIdToFondoId } = {}) {
+    const downloaded = await downloadCnvDocumentExcel(document)
+    const parsed = parseCnvCuotaparteExcel(downloaded.buffer, {
+      documentDate: document.documentDate,
+    })
+
+    const fondoIdMap = this.resolveClassIdMap(classIdToFondoId)
+    let upserted = 0
+
+    for (const row of parsed.funds) {
+      const existing = this.repository.getCurrentFundByClassId(row.claseId)
+      const fondoId =
+        existing?.fondoId || fondoIdMap.get(String(row.claseId)) || null
+
+      const provisional = mapCnvRowToPayload(row, { fondoId })
+      const slugForHistory = existing?.slug || provisional.slug
+
+      const history = this.repository
+        .listHistoricalSnapshotsBySlug(slugForHistory)
+        .filter(item => !row.fecha || item.fecha < row.fecha)
+        .map(item => ({
+          fecha: item.fecha,
+          valorCuotaparte: item.valorCuotaparte,
+        }))
+
+      const payload = preserveExistingPayloadFields(
+        existing?.payload,
+        mapCnvRowToPayload(row, {
+          fondoId,
+          history,
+        }),
+      )
+
+      if (existing?.slug) {
+        payload.slug = existing.slug
       }
-    }
+      if (existing?.fondoId) {
+        payload.fondoId = existing.fondoId
+      }
 
-    this.repository.createJobsForDate(executionDate, catalog)
+      payload.origen = 'cnv-excel'
 
-    if (forceRetryFailed) {
-      this.repository.resetFailedJobs(executionDate)
-    }
-
-    const pendingJobs = this.repository.getPendingJobs(executionDate)
-
-    if (pendingJobs.length > 0) {
-      await this.processJobs(pendingJobs)
+      this.repository.upsertCurrentFundDetail(payload)
+      await recordHistoricalSnapshotFromDetail(this.repository, payload)
+      fondoIdMap.set(String(payload.claseId), String(payload.fondoId))
+      upserted += 1
     }
 
     return {
-      executionDate,
-      createdJobs: catalog.length,
-      processedJobs: pendingJobs.length,
-      stats: this.repository.countJobsByStatus(executionDate),
+      documentDate: document.documentDate,
+      presentationId: document.presentationId,
+      fileName: downloaded.fileName,
+      parsedFunds: parsed.funds.length,
+      upserted,
+    }
+  }
+
+  async runCycle({ documentDate = null } = {}) {
+    const documents = await fetchCnvCuotaparteDocuments()
+    const document = documentDate
+      ? pickLatestDocumentForDate(documents, documentDate)
+      : pickLatestAvailableDocument(documents)
+
+    if (!document) {
+      return {
+        source: 'cnv',
+        documentDate: documentDate || null,
+        upserted: 0,
+        parsedFunds: 0,
+        currentFunds: this.repository.getCurrentFunds().length,
+        error: documentDate
+          ? `No hay planilla CNV para ${documentDate}`
+          : 'No hay planillas CNV disponibles',
+      }
+    }
+
+    const result = await this.ingestCnvDocument(document)
+
+    return {
+      source: 'cnv',
+      ...result,
       currentFunds: this.repository.getCurrentFunds().length,
     }
   }
 
-  async processJobs(jobs) {
-    for (let index = 0; index < jobs.length; index += this.concurrency) {
-      const batch = jobs.slice(index, index + this.concurrency)
-      await Promise.all(batch.map(job => this.processJob(job)))
+  async backfill({ fromDate, toDate }) {
+    if (!fromDate || !toDate) {
+      throw new Error('backfill requiere fromDate y toDate (YYYY-MM-DD)')
     }
-  }
 
-  async processJob(job) {
-    const attempts = Number(job.attempts || 0) + 1
+    const documents = await fetchCnvCuotaparteDocuments()
+    const dates = []
 
-    try {
-      const payload = await fetchFundDetail(job.fund_id, job.class_id)
+    for (
+      let cursor = new Date(`${fromDate}T00:00:00.000Z`);
+      cursor <= new Date(`${toDate}T00:00:00.000Z`);
+      cursor.setUTCDate(cursor.getUTCDate() + 1)
+    ) {
+      dates.push(cursor.toISOString().slice(0, 10))
+    }
 
-      if (!payload) {
-        this.repository.markFailed(
-          job.id,
-          attempts,
-          'Fund detail not available',
-        )
-        return
+    const classIdToFondoId = this.resolveClassIdMap()
+    const results = []
+
+    for (const date of dates) {
+      const document = pickLatestDocumentForDate(documents, date)
+
+      if (!document) {
+        results.push({ documentDate: date, skipped: true, reason: 'missing' })
+        continue
       }
 
-      this.repository.markCompleted(job.id, payload)
-      await recordHistoricalSnapshotFromDetail(this.repository, payload)
-    } catch (error) {
-      const message = error instanceof Error ? error.message : String(error)
-      this.repository.markFailed(job.id, attempts, message, this.maxAttempts)
+      try {
+        const result = await this.ingestCnvDocument(document, {
+          classIdToFondoId,
+        })
+        results.push({ ...result, skipped: false })
+        console.log('[cafci-worker] CNV backfill day', {
+          documentDate: result.documentDate,
+          upserted: result.upserted,
+        })
+      } catch (error) {
+        const message = error instanceof Error ? error.message : String(error)
+        results.push({
+          documentDate: date,
+          skipped: true,
+          reason: message,
+        })
+        console.error('[cafci-worker] CNV backfill failed', date, message)
+      }
+    }
+
+    return {
+      fromDate,
+      toDate,
+      days: results.length,
+      ingested: results.filter(item => !item.skipped).length,
+      results,
+      currentFunds: this.repository.getCurrentFunds().length,
     }
   }
 
@@ -119,10 +213,10 @@ export class FundDetailsSyncService {
     return uploaded
   }
 
-  async startPolling({ forceRetryFailed = false } = {}) {
+  async startPolling() {
     while (true) {
       try {
-        const summary = await this.runCycle({ forceRetryFailed })
+        const summary = await this.runCycle()
         await this.maybeUploadBackup()
         console.log('[cafci-worker] cycle summary', summary)
       } catch (error) {

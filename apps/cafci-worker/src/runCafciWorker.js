@@ -10,14 +10,10 @@ export function parseWorkerArgs(argv = process.argv.slice(2)) {
 
   return {
     watchMode: args.has('--watch'),
-    forceRetryFailed: args.has('--force'),
   }
 }
 
-export async function runCafciWorker({
-  watchMode = false,
-  forceRetryFailed = false,
-} = {}) {
+export async function runCafciWorker({ watchMode = false } = {}) {
   const databasePath = getDatabasePath()
 
   let downloadedBackup = null
@@ -64,11 +60,11 @@ export async function runCafciWorker({
       console.log('[cafci-worker] starting daemon mode', {
         databasePath: repository.databasePath,
       })
-      await service.startPolling({ forceRetryFailed })
+      await service.startPolling()
       return
     }
 
-    const summary = await service.runCycle({ forceRetryFailed })
+    const summary = await service.runCycle()
     await uploadDatabaseBackupToR2(repository)
     console.log('[cafci-worker] run completed', summary)
     return summary

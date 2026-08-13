@@ -12,7 +12,12 @@ export function normalizarNombre(texto) {
     .replace(/^-|-$/g, '')
 }
 
-export async function descargarImagen(url, directorio, nombreArchivo) {
+export async function descargarImagen(
+  url,
+  directorio,
+  nombreArchivo,
+  { headers: extraHeaders } = {},
+) {
   if (!url) return null
 
   const rutaDirectorio = path.join('datos', 'static', directorio)
@@ -35,6 +40,7 @@ export async function descargarImagen(url, directorio, nombreArchivo) {
   const headers = {
     'User-Agent':
       'ArgentinaDatosBot/1.0 (https://argentinadatos.com; hi@argentinadatos.com)',
+    ...extraHeaders,
   }
 
   try {

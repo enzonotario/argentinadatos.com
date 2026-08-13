@@ -1,7 +1,7 @@
 import Database from 'better-sqlite3'
 import { copyFileSync, existsSync, mkdirSync } from 'node:fs'
 import { dirname } from 'node:path'
-import { getDatabasePath, getMaxAttempts } from '../config.js'
+import { getDatabasePath } from '../config.js'
 import { migrations } from './migrations/index.js'
 import { MigrationRunner } from './migrations/migrationRunner.js'
 
@@ -27,222 +27,6 @@ export class FundDetailsJobRepository {
 
   async initialize() {
     await this.migrationRunner.runPendingMigrations()
-  }
-
-  createJobsForDate(executionDate, funds) {
-    const insert = this.db.prepare(`
-      INSERT OR IGNORE INTO fund_detail_jobs (
-        fund_id,
-        class_id,
-        slug,
-        name,
-        execution_date,
-        status
-      ) VALUES (?, ?, ?, ?, ?, 'pending')
-    `)
-
-    const insertMany = this.db.transaction(items => {
-      for (const fund of items) {
-        insert.run(
-          fund.fondoId,
-          fund.claseId,
-          fund.slug,
-          fund.nombre,
-          executionDate,
-        )
-      }
-    })
-
-    insertMany(funds)
-  }
-
-  getJobsByExecutionDate(executionDate) {
-    return this.db
-      .prepare(
-        'SELECT * FROM fund_detail_jobs WHERE execution_date = ? ORDER BY id',
-      )
-      .all(executionDate)
-  }
-
-  getPendingJobs(executionDate) {
-    const now = new Date().toISOString()
-
-    return this.db
-      .prepare(
-        `
-          SELECT *
-          FROM fund_detail_jobs
-          WHERE execution_date = ?
-            AND status = 'pending'
-            AND (next_attempt_at IS NULL OR next_attempt_at <= ?)
-          ORDER BY id
-        `,
-      )
-      .all(executionDate, now)
-  }
-
-  countJobsByStatus(executionDate) {
-    const rows = this.db
-      .prepare(
-        `
-          SELECT status, COUNT(*) AS count
-          FROM fund_detail_jobs
-          WHERE execution_date = ?
-          GROUP BY status
-        `,
-      )
-      .all(executionDate)
-
-    return rows.reduce((stats, row) => {
-      stats[row.status] = row.count
-      return stats
-    }, {})
-  }
-
-  getJobsStats({ executionDate } = {}) {
-    if (executionDate) {
-      const byStatus = this.countJobsByStatus(executionDate)
-      const total = Object.values(byStatus).reduce(
-        (sum, count) => sum + count,
-        0,
-      )
-
-      return {
-        databasePath: this.databasePath,
-        executionDate,
-        total,
-        byStatus,
-      }
-    }
-
-    const total = this.db
-      .prepare('SELECT COUNT(*) AS count FROM fund_detail_jobs')
-      .get().count
-    const statusRows = this.db
-      .prepare(
-        `
-          SELECT status, COUNT(*) AS count
-          FROM fund_detail_jobs
-          GROUP BY status
-          ORDER BY status
-        `,
-      )
-      .all()
-    const dateRows = this.db
-      .prepare(
-        `
-          SELECT execution_date, status, COUNT(*) AS count
-          FROM fund_detail_jobs
-          GROUP BY execution_date, status
-          ORDER BY execution_date DESC, status
-        `,
-      )
-      .all()
-
-    const byStatus = statusRows.reduce((stats, row) => {
-      stats[row.status] = row.count
-      return stats
-    }, {})
-    const byExecutionDate = dateRows.reduce((dates, row) => {
-      if (!dates[row.execution_date]) {
-        dates[row.execution_date] = {
-          total: 0,
-          byStatus: {},
-        }
-      }
-
-      dates[row.execution_date].byStatus[row.status] = row.count
-      dates[row.execution_date].total += row.count
-
-      return dates
-    }, {})
-
-    return {
-      databasePath: this.databasePath,
-      total,
-      byStatus,
-      byExecutionDate,
-    }
-  }
-
-  clearJobs({ executionDate, all = false } = {}) {
-    if (all) {
-      return this.db.prepare('DELETE FROM fund_detail_jobs').run().changes
-    }
-
-    const date = executionDate ?? new Date().toISOString().slice(0, 10)
-
-    return this.db
-      .prepare('DELETE FROM fund_detail_jobs WHERE execution_date = ?')
-      .run(date).changes
-  }
-
-  resetFailedJobs(executionDate) {
-    const result = this.db
-      .prepare(
-        `
-          UPDATE fund_detail_jobs
-          SET status = 'pending',
-              attempts = 0,
-              next_attempt_at = NULL,
-              error = NULL,
-              updated_at = CURRENT_TIMESTAMP
-          WHERE execution_date = ?
-            AND status = 'failed'
-        `,
-      )
-      .run(executionDate)
-
-    return result.changes
-  }
-
-  markCompleted(jobId, payload) {
-    const updateJob = this.db.prepare(`
-      UPDATE fund_detail_jobs
-      SET status = 'completed',
-          payload = ?,
-          fetched_at = ?,
-          error = NULL,
-          updated_at = CURRENT_TIMESTAMP
-      WHERE id = ?
-    `)
-    const upsertCurrent = this.db.prepare(`
-      INSERT INTO current_fund_details (
-        fund_id,
-        class_id,
-        slug,
-        name,
-        payload,
-        source_date,
-        fetched_at,
-        created_at,
-        updated_at
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
-      ON CONFLICT(fund_id, class_id)
-      DO UPDATE SET
-        slug = excluded.slug,
-        name = excluded.name,
-        payload = excluded.payload,
-        source_date = excluded.source_date,
-        fetched_at = excluded.fetched_at,
-        updated_at = CURRENT_TIMESTAMP
-    `)
-
-    const now = new Date().toISOString()
-    const transaction = this.db.transaction(() => {
-      updateJob.run(JSON.stringify(payload), now, jobId)
-      upsertCurrent.run(
-        payload.fondoId,
-        payload.claseId,
-        payload.slug,
-        payload.nombre,
-        JSON.stringify(payload),
-        payload.fecha ?? null,
-        now,
-      )
-    })
-
-    transaction()
   }
 
   upsertCurrentFundDetail(payload, fetchedAt = new Date().toISOString()) {
@@ -281,26 +65,6 @@ export class FundDetailsJobRepository {
       )
   }
 
-  markFailed(jobId, attempts, error, maxAttempts = getMaxAttempts()) {
-    const delayMs = Math.min(Math.pow(2, attempts) * 1000, 60_000)
-    const nextAttemptAt = new Date(Date.now() + delayMs).toISOString()
-    const status = attempts >= maxAttempts ? 'failed' : 'pending'
-
-    this.db
-      .prepare(
-        `
-          UPDATE fund_detail_jobs
-          SET status = ?,
-              attempts = ?,
-              next_attempt_at = ?,
-              error = ?,
-              updated_at = CURRENT_TIMESTAMP
-          WHERE id = ?
-        `,
-      )
-      .run(status, attempts, nextAttemptAt, error, jobId)
-  }
-
   getCurrentFunds() {
     return this.db
       .prepare(
@@ -312,6 +76,66 @@ export class FundDetailsJobRepository {
       )
       .all()
       .map(row => JSON.parse(row.payload))
+  }
+
+  getCurrentFundByClassId(classId) {
+    const row = this.db
+      .prepare(
+        `
+          SELECT fund_id, class_id, slug, name, payload
+          FROM current_fund_details
+          WHERE class_id = ?
+          LIMIT 1
+        `,
+      )
+      .get(String(classId))
+
+    if (!row) {
+      return null
+    }
+
+    return {
+      fondoId: row.fund_id,
+      claseId: row.class_id,
+      slug: row.slug,
+      nombre: row.name,
+      payload: JSON.parse(row.payload),
+    }
+  }
+
+  buildClassIdToFondoIdMap() {
+    const map = new Map()
+
+    const historicalRows = this.db
+      .prepare(
+        `
+          SELECT class_id, fund_id
+          FROM historical_fund_snapshots
+          WHERE class_id IS NOT NULL
+            AND fund_id IS NOT NULL
+          ORDER BY source_date ASC
+        `,
+      )
+      .all()
+
+    for (const row of historicalRows) {
+      map.set(String(row.class_id), String(row.fund_id))
+    }
+
+    const currentRows = this.db
+      .prepare(
+        `
+          SELECT class_id, fund_id
+          FROM current_fund_details
+        `,
+      )
+      .all()
+
+    for (const row of currentRows) {
+      map.set(String(row.class_id), String(row.fund_id))
+    }
+
+    return map
   }
 
   getWorkerState(key) {

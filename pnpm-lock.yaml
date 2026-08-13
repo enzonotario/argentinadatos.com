@@ -96,6 +96,9 @@ importers:
       cheerio:
         specifier: 1.0.0-rc.12
         version: 1.0.0-rc.12
+      xlsx:
+        specifier: ^0.18.5
+        version: 0.18.5
 
   docs:
     dependencies:

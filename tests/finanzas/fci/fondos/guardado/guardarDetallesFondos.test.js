@@ -1,18 +1,46 @@
 import Database from 'better-sqlite3'
-import { existsSync, rmSync } from 'node:fs'
+import { existsSync, readFileSync, rmSync, writeFileSync, mkdirSync } from 'node:fs'
+import { dirname } from 'node:path'
 import { afterEach, describe, expect, it } from 'vitest'
 import { crearBaseDeDatosTemporal } from '../../../../helpers/sqlite.js'
 import fondosComando from '@/finanzas/fci/fondos/fondos.comando.js'
 import { leerRuta } from '@/utils/rutas.js'
 
 const baseRuta = 'datos/v1/finanzas/fci/fondos'
+const seriesPathsToRestore = [
+  'datos/v1/finanzas/fci/mercadoDinero/ultimo/index.json',
+  'datos/v1/finanzas/fci/mercadoDinero/penultimo/index.json',
+  'datos/v1/finanzas/fci/mercadoDinero/2026/05/21/index.json',
+]
 let restoreDbPath
+let seriesBackups = {}
+
+function backupSeriesPaths() {
+  seriesBackups = {}
+  for (const path of seriesPathsToRestore) {
+    seriesBackups[path] = existsSync(path) ? readFileSync(path, 'utf8') : null
+  }
+}
+
+function restoreSeriesPaths() {
+  for (const [path, content] of Object.entries(seriesBackups)) {
+    if (content == null) {
+      rmSync(dirname(path), { recursive: true, force: true })
+      continue
+    }
+
+    mkdirSync(dirname(path), { recursive: true })
+    writeFileSync(path, content)
+  }
+  seriesBackups = {}
+}
 
 function limpiarArchivos() {
   rmSync(baseRuta, {
     recursive: true,
     force: true,
   })
+  restoreSeriesPaths()
 }
 
 afterEach(() => {
@@ -26,6 +54,7 @@ afterEach(() => {
 
 describe('fondosComando', () => {
   it('genera endpoints a partir de la sqlite del worker', async () => {
+    backupSeriesPaths()
     const temporal = crearBaseDeDatosTemporal('fci-fondos-command')
     const dbPath = temporal.url.replace(/^file:/, '')
     const db = new Database(dbPath)
@@ -92,8 +121,12 @@ describe('fondosComando', () => {
         fecha: '2026-05-21',
         administradora: 'Administradora SA',
         depositaria: 'Depositaria SA',
+        tipoRenta: 'Mercado de Dinero',
+        horizonte: 'Corto Plazo',
+        patrimonio: 1025,
+        cantidadCuotapartes: 10.1485,
         rendimientos: {
-          valorCuotaparte: 24088.316,
+          valorCuotaparte: 101,
           ultimos7Dias: 17.88,
         },
         composicionCartera: [
@@ -201,20 +234,21 @@ describe('fondosComando', () => {
           fecha: '2026-05-21',
           administradora: 'Administradora SA',
           depositaria: 'Depositaria SA',
-          tipoRenta: null,
+          tipoRenta: 'Mercado de Dinero',
           tipoDD: null,
           region: null,
           benchmark: null,
-          horizonte: null,
+          horizonte: 'Corto Plazo',
           duracion: null,
           moneda: null,
           codigoCNV: null,
-          patrimonio: null,
+          patrimonio: 1025,
+          cantidadCuotapartes: 10.1485,
           inversionMinima: null,
           monedaInversion: null,
           plazoLiquidacionDias: null,
           rendimientos: {
-            valorCuotaparte: 24088.316,
+            valorCuotaparte: 101,
             ultimos7Dias: 17.88,
             unMes: null,
             noventaDias: null,
@@ -255,6 +289,39 @@ describe('fondosComando', () => {
         },
       ],
     })
+
+    expect(leerRuta('/finanzas/fci/mercadoDinero/ultimo')).toEqual([
+      {
+        fondo: 'Mercado Fondo - Clase A',
+        horizonte: 'corto',
+        fecha: '2026-05-21',
+        vcp: 101,
+        ccp: 10.1485,
+        patrimonio: 1025,
+      },
+    ])
+
+    expect(leerRuta('/finanzas/fci/mercadoDinero/penultimo')).toEqual([
+      {
+        fondo: 'Mercado Fondo - Clase A',
+        horizonte: 'corto',
+        fecha: '2026-05-20',
+        vcp: 100,
+        ccp: 10,
+        patrimonio: 1000,
+      },
+    ])
+
+    expect(leerRuta('/finanzas/fci/mercadoDinero/2026/05/21')).toEqual([
+      {
+        fondo: 'Mercado Fondo - Clase A',
+        horizonte: 'corto',
+        fecha: '2026-05-21',
+        vcp: 101,
+        ccp: 10.1485,
+        patrimonio: 1025,
+      },
+    ])
 
     expect(
       leerRuta('/finanzas/fci/fondos/mercado-fondo-clase-a/historico'),
