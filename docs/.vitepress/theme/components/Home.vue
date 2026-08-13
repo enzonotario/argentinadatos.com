@@ -29,10 +29,10 @@ const dataSources = {
       transparent: false,
     },
     {
-      name: 'CAFCI',
-      logo: '/assets/logos/cafci.png',
-      url: 'https://www.cafci.org.ar/',
-      transparent: false,
+      name: 'CNV',
+      logo: '/assets/logos/cnv.png',
+      url: 'https://www.cnv.gov.ar/SitioWeb/FondosComunesInversion/CuotaPartes',
+      transparent: true,
     },
     {
       name: 'JP Morgan',
@@ -66,6 +66,12 @@ const dataSources = {
       url: 'https://www.lanacion.com.ar/',
       transparent: true,
     },
+    {
+      name: 'Wikipedia',
+      logo: '/assets/logos/wikipedia.svg',
+      url: 'https://es.wikipedia.org/',
+      transparent: true,
+    },
   ],
 }
 </script>
@@ -88,7 +94,7 @@ const dataSources = {
             :key="`inner-${index}`"
             :radius="120"
             :duration="35"
-            :delay="index * -8.75"
+            :delay="index * -(35 / dataSources.inner.length)"
             direction="normal"
             :path="index === 0"
           >
@@ -113,7 +119,7 @@ const dataSources = {
             :key="`outer-${index}`"
             :radius="190"
             :duration="50"
-            :delay="index * -12.5"
+            :delay="index * -(50 / dataSources.outer.length)"
             direction="reverse"
             :path="index === 0"
           >
