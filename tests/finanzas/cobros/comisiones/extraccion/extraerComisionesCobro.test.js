@@ -524,12 +524,13 @@ describe('parsearMaspagos', () => {
     expect(filas.every(f => f.ivaAdicional)).toBe(true)
 
     expect(
-      filas.find(f => f.producto === 'QR transferencia (promo)'),
+      filas.find(f => f.producto === 'QR transferencia (promo 3 meses)'),
     ).toMatchObject({
       canal: 'qr',
       medioPago: 'qr_cuenta',
       arancel: 0,
       acreditacionTipo: 'inmediata',
+      condiciones: expect.stringContaining('primeros 3 meses'),
     })
     expect(filas.find(f => f.producto === 'QR transferencia')).toMatchObject({
       arancel: 0.008,

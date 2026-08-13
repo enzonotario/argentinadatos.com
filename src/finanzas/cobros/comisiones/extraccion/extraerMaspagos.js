@@ -19,10 +19,51 @@ const log = logGrupo({
 
 const CONDICION_IVA = 'Comisiones de referencia; no incluyen IVA.'
 
-const CONDICION_PROMO =
-  'Primeros tres meses bonificados en ventas con transferencia.'
-
 const CONDICION_POS_QR_TAP = 'Aplica a Smart POS, código QR y Tap to Phone.'
+
+const MESES_PROMO_TEXTO = {
+  un: 1,
+  uno: 1,
+  dos: 2,
+  tres: 3,
+  cuatro: 4,
+  cinco: 5,
+  seis: 6,
+  siete: 7,
+  ocho: 8,
+  nueve: 9,
+  diez: 10,
+  once: 11,
+  doce: 12,
+}
+
+/**
+ * @param {string} texto
+ * @returns {number|null}
+ */
+function parseMesesPromo(texto) {
+  const t = String(texto)
+    .normalize('NFD')
+    .replace(/\p{M}/gu, '')
+    .toLowerCase()
+
+  const digito = t.match(/primeros?\s+(\d+)\s+meses?\s+bonificad/i)
+  if (digito) return Number.parseInt(digito[1], 10)
+
+  const palabra = t.match(/primeros?\s+([a-z]+)\s+meses?\s+bonificad/i)
+  if (palabra && MESES_PROMO_TEXTO[palabra[1]] != null) {
+    return MESES_PROMO_TEXTO[palabra[1]]
+  }
+
+  return null
+}
+
+/**
+ * @param {number} meses
+ */
+function condicionPromo(meses) {
+  return `Promoción: 0% durante los primeros ${meses} meses en ventas con transferencia.`
+}
 
 /**
  * @param {string} raw
@@ -222,17 +263,18 @@ export function parsearMaspagos(html) {
   const crudas = []
 
   const promo = transferencia.match(
-    /Primeros tres\s+meses bonificados[\s\S]{0,80}?([\d]+(?:[.,]\d+)?)\s*%/i,
+    /Primeros?\s+(?:\d+|[a-záéíóú]+)\s+meses?\s+bonificados[\s\S]{0,80}?([\d]+(?:[.,]\d+)?)\s*%/i,
   )
   if (promo) {
+    const meses = parseMesesPromo(promo[0]) ?? 3
     crudas.push(
       filaMaspagos({
-        producto: 'QR transferencia (promo)',
+        producto: `QR transferencia (promo ${meses} meses)`,
         canal: 'qr',
         medioPago: 'qr_cuenta',
         arancelTexto: promo[1],
         contexto: 'Acreditación inmediata',
-        condiciones: CONDICION_PROMO,
+        condiciones: condicionPromo(meses),
       }),
     )
   }
