@@ -3,6 +3,11 @@ import { extraerMercadoPago } from './extraerMercadoPago.js'
 import { extraerUala } from './extraerUala.js'
 import { extraerPayway } from './extraerPayway.js'
 import { extraerProvincia } from './extraerProvincia.js'
+import { extraerFiserv } from './extraerFiserv.js'
+import { extraerNave } from './extraerNave.js'
+import { extraerOpenpay } from './extraerOpenpay.js'
+import { extraerViumi } from './extraerViumi.js'
+import { extraerMaspagos } from './extraerMaspagos.js'
 import { extraerNaranjaX } from './extraerNaranjaX.js'
 import { logGrupo, logError, logMensaje } from '@/log.js'
 
@@ -19,6 +24,11 @@ export async function extraerComisionesCobro() {
       extraerUala(),
       extraerPayway(),
       extraerProvincia(),
+      extraerFiserv(),
+      extraerNave(),
+      extraerOpenpay(),
+      extraerViumi(),
+      extraerMaspagos(),
       extraerNaranjaX(),
     ])
 

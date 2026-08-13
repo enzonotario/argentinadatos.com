@@ -14,6 +14,11 @@ import {
 } from '@/finanzas/cobros/comisiones/extraccion/extraerMercadoPago.js'
 import { parsearPayway } from '@/finanzas/cobros/comisiones/extraccion/extraerPayway.js'
 import { parsearProvincia } from '@/finanzas/cobros/comisiones/extraccion/extraerProvincia.js'
+import { parsearFiserv } from '@/finanzas/cobros/comisiones/extraccion/extraerFiserv.js'
+import { parsearNave } from '@/finanzas/cobros/comisiones/extraccion/extraerNave.js'
+import { parsearOpenpay } from '@/finanzas/cobros/comisiones/extraccion/extraerOpenpay.js'
+import { parsearViumi } from '@/finanzas/cobros/comisiones/extraccion/extraerViumi.js'
+import { parsearMaspagos } from '@/finanzas/cobros/comisiones/extraccion/extraerMaspagos.js'
 import {
   parseArancelTexto,
   inferirAcreditacionTipo,
@@ -287,5 +292,304 @@ describe('parsearProvincia', () => {
       acreditacionTipo: 'estandar',
       acreditacionPlazoHabiles: 2,
     })
+  })
+})
+
+describe('parsearFiserv', () => {
+  it('extrae PCT, débito y crédito 1 pago de las cards QR', () => {
+    const html = readFileSync(join(fixturesDir, 'fiserv-pagos-qr.html'), 'utf8')
+    const filas = parsearFiserv(html)
+
+    expect(filas).toHaveLength(3)
+
+    expect(filas.find(f => f.medioPago === 'qr_cuenta')).toMatchObject({
+      entidad: 'fiserv',
+      canal: 'qr',
+      arancel: 0.008,
+      ivaAdicional: true,
+      acreditacionTipo: 'inmediata',
+      acreditacionPlazoHabiles: 0,
+    })
+
+    expect(filas.find(f => f.medioPago === 'debito')).toMatchObject({
+      canal: 'qr',
+      arancel: 0.008,
+      acreditacionTipo: 'anticipada',
+      acreditacionPlazoHabiles: 1,
+    })
+
+    expect(filas.find(f => f.medioPago === 'credito')).toMatchObject({
+      canal: 'qr',
+      arancel: 0.018,
+      acreditacionTipo: 'estandar',
+      acreditacionPlazoHabiles: 8,
+    })
+    expect(filas.find(f => f.medioPago === 'credito').condiciones).toMatch(
+      /Planes Ahora/,
+    )
+  })
+
+  it('parsea el HTML de pagosconqr con el 1,8% partido por tags', () => {
+    const html = `
+      <h4>Pagos con Transferencia (PCT)</h4>
+      <h5>Dinero Disponible en el momento en la Cuenta Bancaria. Tasa de Descuento 0,8% + IVA</h5>
+      <h4>Débito</h4>
+      <h5>Dinero Disponible en 24 horas hábiles en la Cuenta Bancaria. Arancel 0,8% + IVA</h5>
+      <h4>Crédito</h4>
+      <h5>Dinero Disponible en 8 días hábiles en la Cuenta Bancaria (*). 1 Cuota 1<b>,8%</b> + IVA</h5>
+      <p>(*) Planes Ahora 10 DH, Grandes Contribuyentes 18 DH, Cuotas con Financiación otorgante 2 DH, Plan Cuota a Cuota 1° Cuota 18 DH, Tarjeta local no financiera 18 DH</p>
+    `
+    const filas = parsearFiserv(html)
+    expect(filas).toHaveLength(3)
+    expect(filas.find(f => f.medioPago === 'credito').arancel).toBe(0.018)
+  })
+
+  it('ignora la página de captcha Radware', () => {
+    expect(parsearFiserv('<title>Radware Bot Manager Captcha</title>')).toEqual(
+      [],
+    )
+  })
+})
+
+describe('parsearNave', () => {
+  it('extrae inmediata y otros plazos por medio', () => {
+    const html = readFileSync(join(fixturesDir, 'nave-costos.html'), 'utf8')
+    const filas = parsearNave(html)
+
+    expect(filas).toHaveLength(11)
+
+    expect(
+      filas.find(
+        f => f.medioPago === 'qr_cuenta' && f.acreditacionTipo === 'inmediata',
+      ),
+    ).toMatchObject({
+      entidad: 'nave',
+      canal: 'qr',
+      arancel: 0.008,
+      ivaAdicional: true,
+      acreditacionPlazoHabiles: 0,
+    })
+
+    expect(
+      filas.find(
+        f => f.medioPago === 'debito' && f.acreditacionTipo === 'inmediata',
+      ),
+    ).toMatchObject({
+      arancel: 0.016,
+      producto: 'Débito',
+    })
+
+    expect(
+      filas.find(
+        f => f.medioPago === 'debito' && f.acreditacionPlazoHabiles === 1,
+      ),
+    ).toMatchObject({
+      arancel: 0.008,
+      arancelEsTope: true,
+      acreditacionTipo: 'anticipada',
+    })
+
+    expect(
+      filas.find(
+        f =>
+          f.producto === 'Crédito / prepaga' &&
+          f.acreditacionTipo === 'inmediata',
+      ),
+    ).toMatchObject({
+      arancel: 0.058,
+    })
+
+    expect(filas.find(f => f.producto === 'Crédito 1 pago')).toMatchObject({
+      arancel: 0.018,
+      arancelEsTope: true,
+      acreditacionPlazoHabiles: 18,
+    })
+
+    expect(
+      filas.find(f => f.producto === 'Crédito 3 y 6 cuotas'),
+    ).toMatchObject({
+      medioPago: 'credito_cuotas',
+      acreditacionPlazoHabiles: 7,
+    })
+
+    expect(
+      filas.find(f => f.producto === 'Débito internacional'),
+    ).toMatchObject({
+      arancel: 0.045,
+      acreditacionTipo: 'inmediata',
+    })
+  })
+})
+
+describe('parsearOpenpay', () => {
+  it('extrae QR, débito y crédito por plazo', () => {
+    const html = readFileSync(
+      join(fixturesDir, 'openpay-comisiones.html'),
+      'utf8',
+    )
+    const filas = parsearOpenpay(html)
+
+    expect(filas).toHaveLength(6)
+
+    expect(filas.find(f => f.medioPago === 'qr_cuenta')).toMatchObject({
+      entidad: 'openpay',
+      canal: 'qr',
+      arancel: 0.008,
+      ivaAdicional: true,
+      acreditacionTipo: 'inmediata',
+      acreditacionPlazoHabiles: 0,
+    })
+
+    const debitos = filas.filter(f => f.medioPago === 'debito')
+    expect(debitos).toHaveLength(2)
+    expect(debitos.find(f => f.acreditacionTipo === 'inmediata')).toMatchObject(
+      {
+        arancel: 0.0319,
+      },
+    )
+    expect(debitos.find(f => f.acreditacionPlazoHabiles === 2)).toMatchObject({
+      arancel: 0.0299,
+      acreditacionTipo: 'estandar',
+    })
+
+    const creditos = filas.filter(f => f.medioPago === 'credito')
+    expect(creditos).toHaveLength(3)
+    expect(
+      creditos.find(f => f.acreditacionTipo === 'inmediata'),
+    ).toMatchObject({
+      arancel: 0.0619,
+    })
+    expect(creditos.find(f => f.acreditacionPlazoHabiles === 2)).toMatchObject({
+      arancel: 0.0549,
+    })
+    expect(creditos.find(f => f.acreditacionPlazoHabiles === 10)).toMatchObject(
+      {
+        arancel: 0.0299,
+      },
+    )
+  })
+})
+
+describe('parsearViumi', () => {
+  it('extrae débito, crédito y prepagas y omite Alimentar oculta', () => {
+    const html = readFileSync(
+      join(fixturesDir, 'viumi-comisiones.html'),
+      'utf8',
+    )
+    const filas = parsearViumi(html)
+
+    expect(filas).toHaveLength(9)
+    expect(filas.some(f => /alimentar/i.test(f.producto))).toBe(false)
+
+    expect(filas.find(f => f.medioPago === 'debito')).toMatchObject({
+      entidad: 'viumi',
+      arancel: 0.0225,
+      ivaAdicional: true,
+      acreditacionTipo: 'anticipada',
+      acreditacionPlazoHabiles: 1,
+    })
+
+    const creditos = filas.filter(f => f.medioPago === 'credito')
+    expect(creditos).toHaveLength(6)
+    expect(creditos.find(f => f.acreditacionPlazoHabiles === 1)).toMatchObject({
+      arancel: 0.0539,
+    })
+    expect(creditos.find(f => f.acreditacionPlazoHabiles === 40)).toMatchObject(
+      {
+        arancel: 0,
+      },
+    )
+
+    const prepagas = filas.filter(f => f.medioPago === 'prepaga')
+    expect(prepagas).toHaveLength(2)
+    expect(prepagas.find(f => f.arancel === 0.0539)).toMatchObject({
+      acreditacionPlazoHabiles: 1,
+    })
+    expect(prepagas.find(f => f.arancel === 0.0499)).toMatchObject({
+      acreditacionPlazoHabiles: 2,
+    })
+  })
+})
+
+describe('parsearMaspagos', () => {
+  it('extrae transferencia, crédito y débito y deduplica link', () => {
+    const html = readFileSync(
+      join(fixturesDir, 'maspagos-comisiones.html'),
+      'utf8',
+    )
+    const filas = parsearMaspagos(html)
+
+    expect(filas).toHaveLength(9)
+    expect(filas.every(f => f.entidad === 'maspagos')).toBe(true)
+    expect(filas.every(f => f.ivaAdicional)).toBe(true)
+
+    expect(
+      filas.find(f => f.producto === 'QR transferencia (promo)'),
+    ).toMatchObject({
+      canal: 'qr',
+      medioPago: 'qr_cuenta',
+      arancel: 0,
+      acreditacionTipo: 'inmediata',
+    })
+    expect(filas.find(f => f.producto === 'QR transferencia')).toMatchObject({
+      arancel: 0.008,
+      acreditacionTipo: 'inmediata',
+    })
+
+    expect(filas.find(f => f.producto === 'Crédito Fast Pay')).toMatchObject({
+      canal: 'pos',
+      medioPago: 'credito',
+      arancel: 0.0398,
+      acreditacionTipo: 'estandar',
+      acreditacionPlazoHabiles: 2,
+    })
+    expect(
+      filas.find(
+        f => f.medioPago === 'credito' && f.acreditacionPlazoHabiles === 10,
+      ),
+    ).toMatchObject({
+      arancel: 0.03,
+      canal: 'pos',
+    })
+    expect(
+      filas.find(
+        f =>
+          f.canal === 'pos' &&
+          f.medioPago === 'credito' &&
+          f.acreditacionPlazoHabiles === 18,
+      ),
+    ).toMatchObject({
+      arancel: 0.023,
+    })
+    expect(
+      filas.find(f => f.canal === 'link' && f.medioPago === 'credito'),
+    ).toMatchObject({
+      arancel: 0.03,
+      acreditacionPlazoHabiles: 18,
+    })
+
+    expect(filas.find(f => f.producto === 'Débito QR')).toMatchObject({
+      canal: 'qr',
+      arancel: 0.0085,
+      acreditacionTipo: 'anticipada',
+      acreditacionPlazoHabiles: 1,
+    })
+    expect(
+      filas.find(f => f.producto === 'Débito Smart POS / Tap to Phone'),
+    ).toMatchObject({
+      canal: 'pos',
+      arancel: 0.021,
+    })
+    expect(
+      filas.filter(f => f.producto === 'Débito link de pago'),
+    ).toHaveLength(1)
+    expect(filas.find(f => f.producto === 'Débito link de pago')).toMatchObject(
+      {
+        canal: 'link',
+        arancel: 0.0675,
+        acreditacionTipo: 'anticipada',
+        acreditacionPlazoHabiles: 1,
+      },
+    )
   })
 })
