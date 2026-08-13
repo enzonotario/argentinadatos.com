@@ -13,62 +13,84 @@ onMounted(() => {
 })
 
 // Fuentes de datos de la API (ordenadas según importancia)
+// Logos en datos/static/logos, servidos por api.argentinadatos.com
 // transparent: true = solo logo sin fondo, false/undefined = con fondo blanco
+const STATIC_LOGO = name =>
+  `https://api.argentinadatos.com/static/logos/${name}`
+
 const dataSources = {
   inner: [
     {
       name: 'BCRA',
-      logo: '/assets/logos/bcra.png',
+      logo: STATIC_LOGO('bcra.png'),
       url: 'https://www.bcra.gob.ar/',
       transparent: true,
     },
     {
       name: 'INDEC',
-      logo: '/assets/logos/indec.png',
+      logo: STATIC_LOGO('indec.png'),
       url: 'https://www.indec.gob.ar/',
       transparent: false,
     },
     {
       name: 'CNV',
-      logo: '/assets/logos/cnv.png',
+      logo: STATIC_LOGO('cnv.png'),
       url: 'https://www.cnv.gov.ar/SitioWeb/FondosComunesInversion/CuotaPartes',
       transparent: true,
     },
     {
-      name: 'JP Morgan',
-      logo: '/assets/logos/jpmorgan.svg',
-      url: 'https://www.jpmorgan.com/',
-      transparent: false,
+      name: 'BNA',
+      logo: STATIC_LOGO('bna.png'),
+      url: 'https://www.bna.com.ar/',
+      transparent: true,
     },
   ],
   outer: [
     {
       name: 'Diputados',
-      logo: '/assets/logos/diputados.png',
+      logo: STATIC_LOGO('diputados.png'),
       url: 'https://www.hcdn.gob.ar/',
       transparent: false,
     },
     {
       name: 'Senado',
-      logo: '/assets/logos/senado.png',
+      logo: STATIC_LOGO('senado.png'),
       url: 'https://www.senado.gob.ar/',
       transparent: false,
     },
     {
+      name: 'UTDT',
+      logo: STATIC_LOGO('utdt.png'),
+      url: 'https://www.utdt.edu/icg',
+      transparent: true,
+    },
+    {
+      name: 'Ministerio de Economía',
+      logo: STATIC_LOGO('economia.png'),
+      url: 'https://www.argentina.gob.ar/economia',
+      transparent: true,
+    },
+    {
+      name: 'JP Morgan',
+      logo: STATIC_LOGO('jpmorgan.svg'),
+      url: 'https://www.jpmorgan.com/',
+      transparent: false,
+    },
+    {
       name: 'Ámbito',
-      logo: '/assets/logos/ambito.png',
+      logo: STATIC_LOGO('ambito.png'),
       url: 'https://www.ambito.com/',
       transparent: true,
     },
     {
       name: 'La Nación',
-      logo: '/assets/logos/lanacion.png',
+      logo: STATIC_LOGO('lanacion.png'),
       url: 'https://www.lanacion.com.ar/',
       transparent: true,
     },
     {
       name: 'Wikipedia',
-      logo: '/assets/logos/wikipedia.svg',
+      logo: STATIC_LOGO('wikipedia.png'),
       url: 'https://es.wikipedia.org/',
       transparent: true,
     },
