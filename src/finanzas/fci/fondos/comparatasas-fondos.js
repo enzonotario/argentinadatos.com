@@ -41,6 +41,7 @@ export const comparatasasFondos = [
   'sbs-ahorro-pesos-clase-a',
   'sbs-liquidez-usd-clase-a',
   'st-zero-clase-d',
+  'super-ahorro-clase-a',
   'superfondo-ahorro-en-dolares-clase-a',
   'toronto-trust-ahorro-clase-a',
   'toronto-trust-money-market-dolar-clase-a',
