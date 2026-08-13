@@ -38,12 +38,6 @@ const dataSources = {
       url: 'https://www.cnv.gov.ar/SitioWeb/FondosComunesInversion/CuotaPartes',
       transparent: true,
     },
-    {
-      name: 'BNA',
-      logo: STATIC_LOGO('bna.png'),
-      url: 'https://www.bna.com.ar/',
-      transparent: true,
-    },
   ],
   outer: [
     {
@@ -86,12 +80,6 @@ const dataSources = {
       name: 'La Nación',
       logo: STATIC_LOGO('lanacion.png'),
       url: 'https://www.lanacion.com.ar/',
-      transparent: true,
-    },
-    {
-      name: 'Wikipedia',
-      logo: STATIC_LOGO('wikipedia.png'),
-      url: 'https://es.wikipedia.org/',
       transparent: true,
     },
   ],
