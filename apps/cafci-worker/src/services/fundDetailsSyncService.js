@@ -4,13 +4,19 @@ import {
   pickLatestAvailableDocument,
   pickLatestDocumentForDate,
 } from '../cnv/cnvClient.js'
+import { enrichComposicionCarteraFromCnv } from '../cnv/enrichComposicionCarteraFromCnv.js'
 import { mapCnvRowToPayload } from '../cnv/mapCnvRowToPayload.js'
 import { parseCnvCuotaparteExcel } from '../cnv/parseCnvExcel.js'
 import {
   loadStaticClassIdToFondoIdMap,
   mergeClassIdMaps,
 } from '../cnv/staticFundIdMap.js'
-import { getPollIntervalMs, getR2UploadIntervalMs } from '../config.js'
+import {
+  getComposicionEnrichLimit,
+  getPollIntervalMs,
+  getR2UploadIntervalMs,
+  isComposicionEnrichEnabled,
+} from '../config.js'
 import { recordHistoricalSnapshotFromDetail } from '../history/recordHistoricalSnapshotFromDetail.js'
 import { uploadDatabaseBackupToR2 } from '../r2/uploadDatabaseBackupToR2.js'
 import { preserveExistingPayloadFields } from '../utils/preserveExistingPayloadFields.js'
@@ -113,9 +119,26 @@ export class FundDetailsSyncService {
 
     const result = await this.ingestCnvDocument(document)
 
+    let composicion = null
+    if (isComposicionEnrichEnabled()) {
+      try {
+        composicion = await enrichComposicionCarteraFromCnv(this.repository, {
+          limit: getComposicionEnrichLimit(),
+        })
+        console.log('[cafci-worker] composición CNV', composicion)
+      } catch (error) {
+        const message = error instanceof Error ? error.message : String(error)
+        console.error('[cafci-worker] composición CNV falló', message)
+        composicion = { error: message }
+      }
+    } else {
+      composicion = { skipped: true, reason: 'disabled' }
+    }
+
     return {
       source: 'cnv',
       ...result,
+      composicion,
       currentFunds: this.repository.getCurrentFunds().length,
     }
   }

@@ -3,9 +3,20 @@ import axios from 'axios'
 
 const CNV_LIST_URL =
   'https://www.cnv.gov.ar/SitioWeb/FondosComunesInversion/CuotaPartes'
+const CNV_FCI_CATALOG_URL =
+  'https://www.cnv.gov.ar/SitioWeb/FondosComunesInversion/GetFCIPorTipo'
+const CNV_DETALLES_FCI_URL =
+  'https://www.cnv.gov.ar/SitioWeb/FondosComunesInversion/DetallesFCI'
 const AIF2_BASE_URL = 'https://aif2.cnv.gov.ar'
 const BLOB_DOWNLOAD_URL =
   'https://blob.cnv.gov.ar/BlobWebService.svc/DownloadBlob'
+
+const DEFAULT_HEADERS = {
+  'User-Agent':
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
+  Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'Accept-Language': 'es-AR,es;q=0.9',
+}
 
 const MONTHS_ES = {
   ene: 1,
@@ -96,14 +107,52 @@ export function parseDocumentDateFromDescription(description) {
   return match ? parseCnvSpanishDate(match[1]) : null
 }
 
+/**
+ * Catálogo de fondos CNV (Value = id DetallesFCI, Text = denominación).
+ * Sin idTipo / con idTipo vacío la CNV devuelve el listado completo.
+ */
+export async function fetchCnvFciCatalog({ idTipo = '' } = {}) {
+  const body = new URLSearchParams()
+  if (idTipo !== '' && idTipo != null) {
+    body.set('idTipo', String(idTipo))
+  }
+
+  const response = await axios.post(CNV_FCI_CATALOG_URL, body.toString(), {
+    headers: {
+      ...DEFAULT_HEADERS,
+      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+      'X-Requested-With': 'XMLHttpRequest',
+      Accept: 'application/json, text/javascript, */*; q=0.01',
+    },
+  })
+
+  const items = Array.isArray(response.data) ? response.data : []
+
+  return items
+    .map(item => ({
+      id: String(item.Value ?? ''),
+      text: String(item.Text ?? '').trim(),
+      Value: String(item.Value ?? ''),
+      Text: String(item.Text ?? '').trim(),
+    }))
+    .filter(item => item.id && item.text)
+}
+
+export async function fetchCnvDetallesFciHtml(detallesFciId) {
+  const response = await axios.get(
+    `${CNV_DETALLES_FCI_URL}/${encodeURIComponent(String(detallesFciId))}`,
+    {
+      headers: DEFAULT_HEADERS,
+      responseType: 'text',
+    },
+  )
+
+  return response.data
+}
+
 export async function fetchCnvCuotaparteDocuments() {
   const response = await axios.get(CNV_LIST_URL, {
-    headers: {
-      'User-Agent':
-        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
-      Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-      'Accept-Language': 'es-AR,es;q=0.9',
-    },
+    headers: DEFAULT_HEADERS,
     responseType: 'text',
   })
 

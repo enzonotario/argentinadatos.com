@@ -14,6 +14,20 @@ export function preserveExistingPayloadFields(existingPayload, incomingPayload) 
 
   if (existingComposicion.length > 0 && incomingComposicion.length === 0) {
     merged.composicionCartera = existingComposicion
+
+    for (const field of [
+      'fechaComposicionCartera',
+      'composicionActualizadaAt',
+      'detallesFciId',
+    ]) {
+      if (
+        existingPayload[field] != null &&
+        existingPayload[field] !== '' &&
+        (incomingPayload[field] == null || incomingPayload[field] === '')
+      ) {
+        merged[field] = existingPayload[field]
+      }
+    }
   }
 
   for (const field of ['benchmark', 'duracion', 'horizonte', 'region']) {

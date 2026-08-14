@@ -62,6 +62,20 @@ export function getR2UploadIntervalMs() {
   )
 }
 
+/** Máximo de fondos a enriquecer con composición CNV por ciclo (0 = sin límite). */
+export function getComposicionEnrichLimit() {
+  return readNumberEnv(['CAFCI_WORKER_COMPOSICION_LIMIT'], 120)
+}
+
+export function isComposicionEnrichEnabled() {
+  const value = readEnv('CAFCI_WORKER_COMPOSICION_ENABLED')
+  if (value == null) {
+    return true
+  }
+
+  return !['0', 'false', 'no', 'off'].includes(value.toLowerCase())
+}
+
 export function getR2Config() {
   const accountId = readEnv('CAFCI_WORKER_R2_ACCOUNT_ID')
   const accessKeyId = readEnv('CAFCI_WORKER_R2_ACCESS_KEY_ID')
