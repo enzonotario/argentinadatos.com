@@ -35,7 +35,7 @@ const dataSources = {
     {
       name: 'CNV',
       logo: STATIC_LOGO('cnv.png'),
-      url: 'https://www.cnv.gov.ar/SitioWeb/FondosComunesInversion/CuotaPartes',
+      url: 'https://www.cnv.gov.ar/',
       transparent: true,
     },
   ],
