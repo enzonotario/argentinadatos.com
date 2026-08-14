@@ -10,6 +10,7 @@ import { extraerViumi } from './extraerViumi.js'
 import { extraerMaspagos } from './extraerMaspagos.js'
 import { extraerNaranjaX } from './extraerNaranjaX.js'
 import { extraerBezza } from './extraerBezza.js'
+import { extraerSipago } from './extraerSipago.js'
 import { logGrupo, logError, logMensaje } from '@/log.js'
 
 const log = logGrupo({
@@ -32,6 +33,7 @@ export async function extraerComisionesCobro() {
       extraerMaspagos(),
       extraerNaranjaX(),
       extraerBezza(),
+      extraerSipago(),
     ])
 
     const comisiones = resultados.flat()

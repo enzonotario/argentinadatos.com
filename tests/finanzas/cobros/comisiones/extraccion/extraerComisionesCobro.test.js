@@ -32,6 +32,11 @@ import {
   parsearBezzaQr,
 } from '@/finanzas/cobros/comisiones/extraccion/extraerBezza.js'
 import {
+  parsearSipago,
+  parsearSipagoComisiones,
+  parsearSipagoCuotas,
+} from '@/finanzas/cobros/comisiones/extraccion/extraerSipago.js'
+import {
   parseArancelTexto,
   inferirAcreditacionTipo,
 } from '@/finanzas/cobros/comisiones/extraccion/parseArancel.js'
@@ -764,5 +769,78 @@ describe('parsearBezza', () => {
         arancel: 0.008,
       },
     )
+  })
+})
+
+describe('parsearSipago', () => {
+  it('extrae comisiones base y tasas de cuotas', () => {
+    const comisiones = readFileSync(
+      join(fixturesDir, 'sipago-comisiones.html'),
+      'utf8',
+    )
+    const cuotas = readFileSync(join(fixturesDir, 'sipago-cuotas.html'), 'utf8')
+
+    expect(parsearSipagoComisiones(comisiones)).toHaveLength(6)
+    expect(parsearSipagoCuotas(cuotas)).toHaveLength(12)
+
+    const filas = parsearSipago({ comisiones, cuotas })
+    expect(filas).toHaveLength(18)
+    expect(filas.every(f => f.entidad === 'sipago')).toBe(true)
+    expect(filas.every(f => f.ivaAdicional)).toBe(true)
+
+    expect(
+      filas.find(
+        f => f.medioPago === 'credito' && f.acreditacionTipo === 'inmediata',
+      ),
+    ).toMatchObject({
+      arancel: 0.0579,
+      condiciones: expect.stringContaining('Credicoop'),
+    })
+    expect(
+      filas.find(
+        f => f.medioPago === 'credito' && f.acreditacionPlazoHabiles === 2,
+      ),
+    ).toMatchObject({ arancel: 0.049 })
+    expect(
+      filas.find(
+        f => f.medioPago === 'credito' && f.acreditacionPlazoHabiles === 10,
+      ),
+    ).toMatchObject({ arancel: 0.0295 })
+    expect(filas.find(f => f.medioPago === 'debito')).toMatchObject({
+      arancel: 0.029,
+      acreditacionPlazoHabiles: 2,
+    })
+    expect(filas.find(f => f.medioPago === 'prepaga')).toMatchObject({
+      arancel: 0.035,
+      acreditacionPlazoHabiles: 3,
+    })
+    expect(filas.find(f => f.medioPago === 'qr_cuenta')).toMatchObject({
+      arancel: 0.008,
+      acreditacionTipo: 'inmediata',
+      canal: 'qr',
+    })
+
+    expect(
+      filas.find(f => f.producto === 'Cuotas Visa/MC/Cabal 3'),
+    ).toMatchObject({
+      medioPago: 'credito_cuotas',
+      arancel: 0.068,
+      vigenciaDesde: '2026-02-10',
+    })
+    expect(
+      filas.find(f => f.producto === 'Cuotas Visa/MC/Cabal 12'),
+    ).toMatchObject({ arancel: 0.252 })
+    expect(
+      filas.find(f => f.producto === 'Cuotas Amex/Naranja 3'),
+    ).toMatchObject({ arancel: 0.145 })
+    expect(
+      filas.find(f => f.producto === 'Cuotas Amex/Naranja 12'),
+    ).toMatchObject({ arancel: 0.4 })
+    expect(
+      filas.find(f => f.producto === 'Adelanto fondos 3 pagos'),
+    ).toMatchObject({ arancel: 0.12 })
+    expect(
+      filas.find(f => f.producto === 'Adelanto fondos 12 pagos'),
+    ).toMatchObject({ arancel: 0.29 })
   })
 })
