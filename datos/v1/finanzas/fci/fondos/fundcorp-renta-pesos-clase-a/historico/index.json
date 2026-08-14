@@ -2,7 +2,7 @@
   "fondoId": "1916",
   "claseId": "6623",
   "nombre": "Fundcorp Renta Pesos - Clase A",
-  "fechaActualizacion": "2026-08-13T21:23:19.000Z",
+  "fechaActualizacion": "2026-08-14T00:18:17.000Z",
   "historico": [
     {
       "slug": "fundcorp-renta-pesos-clase-a",
@@ -146,6 +146,22 @@
       "retornoDiario": 0.100266,
       "retornoAcumulado": 0.2344,
       "flujoEstimado": 22544945.756618,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "fundcorp-renta-pesos-clase-a",
+      "fondoId": "1916",
+      "claseId": "6623",
+      "nombre": "Fundcorp Renta Pesos - Clase A",
+      "fecha": "2026-08-13",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Plazo Flexible",
+      "valorCuotaparte": 1002.187,
+      "patrimonio": 400599673.69,
+      "retornoDiario": -0.015663,
+      "retornoAcumulado": 0.2187,
+      "flujoEstimado": 12875843.157078,
       "origen": "cnv-excel"
     }
   ]

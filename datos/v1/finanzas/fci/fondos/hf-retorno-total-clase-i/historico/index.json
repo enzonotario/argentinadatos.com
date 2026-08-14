@@ -2,7 +2,7 @@
   "fondoId": "801",
   "claseId": "2010",
   "nombre": "HF Retorno Total - Clase I",
-  "fechaActualizacion": "2026-08-13T21:23:19.000Z",
+  "fechaActualizacion": "2026-08-14T00:18:17.000Z",
   "historico": [
     {
       "slug": "hf-retorno-total-clase-i",
@@ -4082,6 +4082,22 @@
       "retornoDiario": 0.072024,
       "retornoAcumulado": 53.618003,
       "flujoEstimado": 29.261398,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "hf-retorno-total-clase-i",
+      "fondoId": "801",
+      "claseId": "2010",
+      "nombre": "HF Retorno Total - Clase I",
+      "fecha": "2026-08-13",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 41169.944,
+      "patrimonio": 112189914596.59,
+      "retornoDiario": 0.100648,
+      "retornoAcumulado": 53.772617,
+      "flujoEstimado": -641.131073,
       "origen": "cnv-excel"
     }
   ]
