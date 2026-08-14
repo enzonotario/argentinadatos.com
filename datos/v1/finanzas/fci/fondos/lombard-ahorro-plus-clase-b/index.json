@@ -9,7 +9,7 @@
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": null,
-  "horizonte": null,
+  "horizonte": "Mediano Plazo",
   "duracion": null,
   "moneda": "Peso Argentino",
   "codigoCNV": "984",
@@ -27,7 +27,40 @@
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 27.28
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 24.61
+    },
+    {
+      "nombre": "Lecer X30N6",
+      "porcentaje": 16.52
+    },
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 10.5
+    },
+    {
+      "nombre": "Lecap S30N6",
+      "porcentaje": 9.39
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional T15E7",
+      "porcentaje": 6.61
+    },
+    {
+      "nombre": "Letra Tesoro Nac T30A7",
+      "porcentaje": 4.92
+    },
+    {
+      "nombre": "FCI Premier Renta CP $ CC",
+      "porcentaje": 0.14
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 0,

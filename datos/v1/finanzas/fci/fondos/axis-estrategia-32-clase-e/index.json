@@ -30,63 +30,459 @@
   "composicionCartera": [
     {
       "nombre": "Lecap S31G6",
-      "porcentaje": 9.9
-    },
-    {
-      "nombre": "Lecap S14G6",
-      "porcentaje": 9.4
+      "porcentaje": 9.33
     },
     {
       "nombre": "Lecap S15S6",
-      "porcentaje": 7.8
+      "porcentaje": 7.33
     },
     {
       "nombre": "Pagare #MAV170960041",
-      "porcentaje": 7.4
+      "porcentaje": 6.99
     },
     {
       "nombre": "Cheque MAVR250900100",
-      "porcentaje": 7.1
+      "porcentaje": 6.71
+    },
+    {
+      "nombre": "Lecap S14G6",
+      "porcentaje": 5.96
     },
     {
       "nombre": "Cheque E *MAV150901776",
-      "porcentaje": 6.2
+      "porcentaje": 5.84
     },
     {
       "nombre": "Cheque E *MAV050801625",
-      "porcentaje": 6.1
+      "porcentaje": 5.74
     },
     {
       "nombre": "Cheque E *MAV230801090",
-      "porcentaje": 5.1
+      "porcentaje": 4.86
     },
     {
-      "nombre": "Cheque E *MAV290701582",
-      "porcentaje": 4.1
+      "nombre": "Cheque E *MAV260801511",
+      "porcentaje": 2.36
     },
     {
-      "nombre": "FCI MEGAQM Pesos - Clase B",
-      "porcentaje": 2.9
-    },
-    {
-      "nombre": "Cheque E *MAV290701585",
-      "porcentaje": 2.6
-    },
-    {
-      "nombre": "Cheque E *MAV290701584",
-      "porcentaje": 2.6
+      "nombre": "Cheque E *MAV270801344",
+      "porcentaje": 2.35
     },
     {
       "nombre": "Cheque E *MAV100801631",
-      "porcentaje": 2.3
+      "porcentaje": 2.21
     },
     {
       "nombre": "Cheque E *MAV120802064",
-      "porcentaje": 2.3
+      "porcentaje": 2.15
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 24
+      "nombre": "Cheque E *MAV250801725",
+      "porcentaje": 1.69
+    },
+    {
+      "nombre": "Cheque E *MAV280801462",
+      "porcentaje": 1.18
+    },
+    {
+      "nombre": "Cheque E *MAV071001223",
+      "porcentaje": 1.13
+    },
+    {
+      "nombre": "Cheque E *MAV141001424",
+      "porcentaje": 1.12
+    },
+    {
+      "nombre": "Cheque E *MAV151001454",
+      "porcentaje": 1.12
+    },
+    {
+      "nombre": "Cheque E *MAV221001073",
+      "porcentaje": 1.1
+    },
+    {
+      "nombre": "Lecap S30S6",
+      "porcentaje": 0.99
+    },
+    {
+      "nombre": "Cheque E *MAV100801680",
+      "porcentaje": 0.85
+    },
+    {
+      "nombre": "Cheque E *MAV100801682",
+      "porcentaje": 0.85
+    },
+    {
+      "nombre": "Cheque E *MAV050801633",
+      "porcentaje": 0.74
+    },
+    {
+      "nombre": "Cheque E *MAV080801478",
+      "porcentaje": 0.72
+    },
+    {
+      "nombre": "Cheque E *MAV160901532",
+      "porcentaje": 0.69
+    },
+    {
+      "nombre": "Cheque E *MAV110801818",
+      "porcentaje": 0.63
+    },
+    {
+      "nombre": "Cheque E *MAV190801478",
+      "porcentaje": 0.59
+    },
+    {
+      "nombre": "Cheque E *MAV230901354",
+      "porcentaje": 0.58
+    },
+    {
+      "nombre": "Cheque E *MAV240901142",
+      "porcentaje": 0.57
+    },
+    {
+      "nombre": "Cheque E *MAV210900948",
+      "porcentaje": 0.57
+    },
+    {
+      "nombre": "Cheque E *MAV211001249",
+      "porcentaje": 0.56
+    },
+    {
+      "nombre": "Cheque E *MAV221001078",
+      "porcentaje": 0.56
+    },
+    {
+      "nombre": "Cheque E *MAV240801305",
+      "porcentaje": 0.56
+    },
+    {
+      "nombre": "Cheque E *MAV200801633",
+      "porcentaje": 0.55
+    },
+    {
+      "nombre": "Cheque E *MAV280801437",
+      "porcentaje": 0.47
+    },
+    {
+      "nombre": "Cheque MAVR310700139",
+      "porcentaje": 0.45
+    },
+    {
+      "nombre": "Cheque E *MAV300801445",
+      "porcentaje": 0.45
+    },
+    {
+      "nombre": "Cheque E *MAV290801408",
+      "porcentaje": 0.44
+    },
+    {
+      "nombre": "Cheque E *MAV310801752",
+      "porcentaje": 0.44
+    },
+    {
+      "nombre": "Cheque E *MAV300801512",
+      "porcentaje": 0.44
+    },
+    {
+      "nombre": "Cheque E *MAV140901236",
+      "porcentaje": 0.41
+    },
+    {
+      "nombre": "Cheque E *MAV190801438",
+      "porcentaje": 0.4
+    },
+    {
+      "nombre": "Cheque E *MAV130801355",
+      "porcentaje": 0.4
+    },
+    {
+      "nombre": "Cheque E *MAV150801731",
+      "porcentaje": 0.38
+    },
+    {
+      "nombre": "Cheque E *MAV020901450",
+      "porcentaje": 0.38
+    },
+    {
+      "nombre": "Cheque E *MAV070901034",
+      "porcentaje": 0.36
+    },
+    {
+      "nombre": "Cheque E *MAV270801251",
+      "porcentaje": 0.35
+    },
+    {
+      "nombre": "Cheque E *MAV280801438",
+      "porcentaje": 0.35
+    },
+    {
+      "nombre": "Cheque E *MAV110801502",
+      "porcentaje": 0.29
+    },
+    {
+      "nombre": "Cheque E *MAV040801565",
+      "porcentaje": 0.28
+    },
+    {
+      "nombre": "Cheque E *MAV170800966",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Cheque E *MAV160901480",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Cheque E *MAV020901386",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Cheque E *MAV290801354",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Cheque E *MAV310801605",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Cheque E *MAV200801700",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Cheque E *MAV230801098",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Cheque E *MAV260801478",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Cheque E *MAV120802070",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Cheque E *MAV050901392",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "Cheque E *MAV080901369",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "Cheque E *MAV130801401",
+      "porcentaje": 0.22
+    },
+    {
+      "nombre": "Cheque E *MAV050801673",
+      "porcentaje": 0.2
+    },
+    {
+      "nombre": "Cheque E *MAV220801460",
+      "porcentaje": 0.2
+    },
+    {
+      "nombre": "Cheque E *MAV150801865",
+      "porcentaje": 0.2
+    },
+    {
+      "nombre": "Cheque E *MAV260801433",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Cheque E *MAV251001203",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "Cheque E *MAV070801692",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "Cheque E *MAV270901037",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "Cheque E *MAV280801401",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "Cheque E *MAV250901328",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "Cheque E *MAV140801952",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "Cheque E *MAV140801893",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Cheque E *MAV300801448",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Cheque E *MAV300801449",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Cheque E *MAV300801450",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Cheque E *MAV300801451",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Cheque E *MAV060901052",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Cheque E *MAV041101135",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Cheque E *MAV021100805",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Cheque E *MAV031101249",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Cheque E *MAV040801560",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Cheque E *MAV310702135",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Cheque E *MAV191101087",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Cheque E *MAV101101641",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Cheque E *MAV111101301",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Cheque E *MAV121101201",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Cheque E *MAV131101081",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Cheque E *MAV161100943",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Cheque E *MAV171101285",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Cheque E *MAV181101188",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Cheque E *MAV120802071",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Cheque E *MAV040801559",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Cheque E *MAV060901051",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Cheque E *MAV060901053",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Cheque E *MAV140901288",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Cheque E *MAV110901306",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Cheque E *MAV060901046",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Cheque E *MAV070901022",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Cheque E *MAV300801452",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Cheque E *MAV210801674",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Cheque E *MAV270801319",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cheque E *MAV260801540",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cheque E *MAV120802245",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cheque E *MAV280801532",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV070801680",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV300701739",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV041101134",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV051101018",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV091100816",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV101101622",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV111101288",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV120802067",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 4.84
+    },
+    {
+      "nombre": "FCI MEGAQM Pesos - Clase B",
+      "porcentaje": 1.67
     }
   ],
   "calificaciones": [],

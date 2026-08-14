@@ -29,84 +29,232 @@
   },
   "composicionCartera": [
     {
-      "nombre": "Cta Cte U$S ICBC",
-      "porcentaje": 8.8
-    },
-    {
       "nombre": "Bono Corporativo 3.625% 010827",
-      "porcentaje": 5
+      "porcentaje": 5.03
     },
     {
       "nombre": "CL Rep Chile 2027",
-      "porcentaje": 5
+      "porcentaje": 5.02
     },
     {
       "nombre": "CL Rep Chile 28",
-      "porcentaje": 4.5
-    },
-    {
-      "nombre": "BC Inversiones CMPC 2027",
-      "porcentaje": 3.9
-    },
-    {
-      "nombre": "BC Bco Credito e Inv 2027",
-      "porcentaje": 3.9
+      "porcentaje": 4.51
     },
     {
       "nombre": "BC Enersis 2026",
-      "porcentaje": 3.9
+      "porcentaje": 3.93
+    },
+    {
+      "nombre": "BC Bco Credito e Inv 2027",
+      "porcentaje": 3.93
+    },
+    {
+      "nombre": "BC Inversiones CMPC 2027",
+      "porcentaje": 3.93
     },
     {
       "nombre": "BC Enap 2029",
-      "porcentaje": 3.7
+      "porcentaje": 3.77
     },
     {
       "nombre": "BC Cel Arauco 110227",
-      "porcentaje": 3.4
-    },
-    {
-      "nombre": "Caja los Andes 300729",
-      "porcentaje": 3.4
+      "porcentaje": 3.44
     },
     {
       "nombre": "BC Enel Chile 4.875",
-      "porcentaje": 3.3
+      "porcentaje": 3.34
     },
     {
       "nombre": "BC Sociedad Quimica y Min 2029",
-      "porcentaje": 2.9
+      "porcentaje": 2.88
     },
     {
       "nombre": "US Treasury Bill 300628",
-      "porcentaje": 2.6
+      "porcentaje": 2.63
     },
     {
       "nombre": "BC GNL Quintero 310729",
-      "porcentaje": 2.6
+      "porcentaje": 2.61
     },
     {
       "nombre": "BC Colbun 2027",
-      "porcentaje": 2.5
-    },
-    {
-      "nombre": "Banco de Chile 299",
-      "porcentaje": 2.3
+      "porcentaje": 2.57
     },
     {
       "nombre": "BC Celara 4.2% 010930",
-      "porcentaje": 2.3
+      "porcentaje": 2.28
     },
     {
       "nombre": "BC Celulosa Arauco y Constitución 4.25%",
-      "porcentaje": 2.3
+      "porcentaje": 2.28
     },
     {
-      "nombre": "Banco de Chile 7.95%",
-      "porcentaje": 2.2
+      "nombre": "US Treasury Bill 310329",
+      "porcentaje": 1.88
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 32
+      "nombre": "UY Rep Or Uruguay 271027",
+      "porcentaje": 1.88
+    },
+    {
+      "nombre": "BC Codelco 300929",
+      "porcentaje": 1.85
+    },
+    {
+      "nombre": "BC TRAGSA 5.55%",
+      "porcentaje": 1.81
+    },
+    {
+      "nombre": "BC Gerdau 27102024",
+      "porcentaje": 1.27
+    },
+    {
+      "nombre": "BC Engie Energia Chile 2030",
+      "porcentaje": 1.23
+    },
+    {
+      "nombre": "BC Cemex 5.45% 191129",
+      "porcentaje": 1.13
+    },
+    {
+      "nombre": "BC Compania Cervecerias Unidas",
+      "porcentaje": 1.04
+    },
+    {
+      "nombre": "BC COFIDE 300429",
+      "porcentaje": 1.03
+    },
+    {
+      "nombre": "BC Marathon 150328",
+      "porcentaje": 0.87
+    },
+    {
+      "nombre": "US Treasury Notes 150234",
+      "porcentaje": 0.82
+    },
+    {
+      "nombre": "BC Colbun 30",
+      "porcentaje": 0.79
+    },
+    {
+      "nombre": "BC Invers CMPC 3.85 2030",
+      "porcentaje": 0.78
+    },
+    {
+      "nombre": "BC Chile 4.85%",
+      "porcentaje": 0.72
+    },
+    {
+      "nombre": "BC Honeywell 1.1% 010327",
+      "porcentaje": 0.66
+    },
+    {
+      "nombre": "BC IBM 6.22% 010827",
+      "porcentaje": 0.58
+    },
+    {
+      "nombre": "ON AES Argentina Gen 150329",
+      "porcentaje": 0.58
+    },
+    {
+      "nombre": "BC Latam Airlines 7.875%",
+      "porcentaje": 0.58
+    },
+    {
+      "nombre": "BC Cencosud 5.95%",
+      "porcentaje": 0.57
+    },
+    {
+      "nombre": "BC Suzano Papel 2029",
+      "porcentaje": 0.57
+    },
+    {
+      "nombre": "BC BMW 3.3% 060427",
+      "porcentaje": 0.56
+    },
+    {
+      "nombre": "BC Pfizer 4.45% 190528",
+      "porcentaje": 0.56
+    },
+    {
+      "nombre": "BC Phillips 4.95% 150328",
+      "porcentaje": 0.56
+    },
+    {
+      "nombre": "BC Pacific Gas & Electric",
+      "porcentaje": 0.56
+    },
+    {
+      "nombre": "BC T Mobile Company 2027",
+      "porcentaje": 0.56
+    },
+    {
+      "nombre": "BC Societe Generale 120127",
+      "porcentaje": 0.56
+    },
+    {
+      "nombre": "BC Mastercard 260228",
+      "porcentaje": 0.56
+    },
+    {
+      "nombre": "BC Cargill 220427",
+      "porcentaje": 0.56
+    },
+    {
+      "nombre": "BC Santander 4.14% 110427",
+      "porcentaje": 0.56
+    },
+    {
+      "nombre": "BC CNH Industrial 4.12% 081027",
+      "porcentaje": 0.56
+    },
+    {
+      "nombre": "BC Home Depot 140927",
+      "porcentaje": 0.55
+    },
+    {
+      "nombre": "BC 3M Company 2027",
+      "porcentaje": 0.55
+    },
+    {
+      "nombre": "BC Banco Santander Chile 201130",
+      "porcentaje": 0.54
+    },
+    {
+      "nombre": "BC America Movil SAB 2029",
+      "porcentaje": 0.54
+    },
+    {
+      "nombre": "BC Coca Cola 150328",
+      "porcentaje": 0.53
+    },
+    {
+      "nombre": "BC Stellantis Fin 170328",
+      "porcentaje": 0.51
+    },
+    {
+      "nombre": "BC Bayer US Finance 2028",
+      "porcentaje": 0.36
+    },
+    {
+      "nombre": "BC Dow Chemical 301128",
+      "porcentaje": 0.34
+    },
+    {
+      "nombre": "BC Phillips 4.95% 011227",
+      "porcentaje": 0.28
+    },
+    {
+      "nombre": "BC Volkswagen 241127",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "Banco de Chile",
+      "porcentaje": 4.55
+    },
+    {
+      "nombre": "Caja los Andes",
+      "porcentaje": 3.43
     }
   ],
   "calificaciones": [

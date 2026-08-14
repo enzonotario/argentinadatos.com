@@ -9,7 +9,7 @@
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": null,
-  "horizonte": null,
+  "horizonte": "Mediano Plazo",
   "duracion": null,
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1874",
@@ -27,7 +27,16 @@
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Pagare #MAV241160012",
+      "porcentaje": 65.53
+    },
+    {
+      "nombre": "Pagare #MAV171160012",
+      "porcentaje": 34.66
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 1.4,

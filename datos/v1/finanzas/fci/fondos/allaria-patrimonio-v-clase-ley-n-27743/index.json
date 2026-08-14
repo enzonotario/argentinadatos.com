@@ -30,43 +30,375 @@
   "composicionCartera": [
     {
       "nombre": "Bono Dual TTD26",
-      "porcentaje": 26.3
+      "porcentaje": 28.69
     },
     {
       "nombre": "Bono Boncer TZXD6",
-      "porcentaje": 13.2
+      "porcentaje": 14.36
     },
     {
       "nombre": "Bonos Rep Argentina 2030",
-      "porcentaje": 9.2
+      "porcentaje": 9.87
     },
     {
       "nombre": "Lecer X30N6",
-      "porcentaje": 8.7
+      "porcentaje": 9.44
     },
     {
       "nombre": "Bono Dual TTS26",
-      "porcentaje": 6.2
+      "porcentaje": 6.82
     },
     {
       "nombre": "Bono Boncer 2027 TZXM7",
-      "porcentaje": 5
+      "porcentaje": 5.46
     },
     {
       "nombre": "Bono del Tesoro Nacional TMG28",
-      "porcentaje": 3.7
-    },
-    {
-      "nombre": "Bono del Tesoro Nacional TML27",
-      "porcentaje": 2.7
+      "porcentaje": 4
     },
     {
       "nombre": "Bono del Tesoro Nacional TZXO7",
-      "porcentaje": 2.7
+      "porcentaje": 3.03
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 21.4
+      "nombre": "Bono del Tesoro Nacional TML27",
+      "porcentaje": 3
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TMVE8",
+      "porcentaje": 2.31
+    },
+    {
+      "nombre": "Lecap S13N6",
+      "porcentaje": 1.97
+    },
+    {
+      "nombre": "Letra Tesoro Nac T30A7",
+      "porcentaje": 1.78
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional T31Y7",
+      "porcentaje": 1.18
+    },
+    {
+      "nombre": "Lecap S30S6",
+      "porcentaje": 0.98
+    },
+    {
+      "nombre": "ON Rowing S1",
+      "porcentaje": 0.97
+    },
+    {
+      "nombre": "Boncer Mendoza C1",
+      "porcentaje": 0.87
+    },
+    {
+      "nombre": "Cheque #MAV260860043",
+      "porcentaje": 0.58
+    },
+    {
+      "nombre": "Pagare #UMV161260013",
+      "porcentaje": 0.47
+    },
+    {
+      "nombre": "Bono Boncer TZXD7",
+      "porcentaje": 0.47
+    },
+    {
+      "nombre": "Cheque #MAV270860068",
+      "porcentaje": 0.44
+    },
+    {
+      "nombre": "Cheque #MAV310860071",
+      "porcentaje": 0.44
+    },
+    {
+      "nombre": "Cheque #MAV250860075",
+      "porcentaje": 0.43
+    },
+    {
+      "nombre": "Cheque #MAV240860084",
+      "porcentaje": 0.39
+    },
+    {
+      "nombre": "Cheque #MAV050860052",
+      "porcentaje": 0.32
+    },
+    {
+      "nombre": "Cheque #MAV110860090",
+      "porcentaje": 0.32
+    },
+    {
+      "nombre": "Pagare #UMV021260059",
+      "porcentaje": 0.32
+    },
+    {
+      "nombre": "Cheque #MAV120860055",
+      "porcentaje": 0.31
+    },
+    {
+      "nombre": "Cheque #MAV130860075",
+      "porcentaje": 0.31
+    },
+    {
+      "nombre": "Pagare #UMV171260023",
+      "porcentaje": 0.3
+    },
+    {
+      "nombre": "Cheque E *MAV010901563",
+      "porcentaje": 0.29
+    },
+    {
+      "nombre": "Cheque #MAV240860089",
+      "porcentaje": 0.28
+    },
+    {
+      "nombre": "Cheque #MAV210860057",
+      "porcentaje": 0.28
+    },
+    {
+      "nombre": "Cheque #MAV050860053",
+      "porcentaje": 0.28
+    },
+    {
+      "nombre": "Pagare #UMV071260018",
+      "porcentaje": 0.28
+    },
+    {
+      "nombre": "Cheque #MAV060860067",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "Cheque #MAV060860073",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "Cheque #MAV070860051",
+      "porcentaje": 0.26
+    },
+    {
+      "nombre": "Cheque #MAV140860073",
+      "porcentaje": 0.26
+    },
+    {
+      "nombre": "Cheque #MAV040860079",
+      "porcentaje": 0.26
+    },
+    {
+      "nombre": "Cheque #MAV280860056",
+      "porcentaje": 0.26
+    },
+    {
+      "nombre": "Cheque #MAV250860082",
+      "porcentaje": 0.26
+    },
+    {
+      "nombre": "Cheque #MAV040860080",
+      "porcentaje": 0.25
+    },
+    {
+      "nombre": "Pagare #UMV161260012",
+      "porcentaje": 0.25
+    },
+    {
+      "nombre": "Cheque #MAV010860059",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Cheque #MAV040860076",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Cheque #MAV010860058",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Cheque #MAV040860077",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Cheque #MAV060860074",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Cheque #MAV110860089",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "Cheque #MAV120860054",
+      "porcentaje": 0.22
+    },
+    {
+      "nombre": "Cheque #MAV050860054",
+      "porcentaje": 0.22
+    },
+    {
+      "nombre": "Pagare #UMV021160004",
+      "porcentaje": 0.22
+    },
+    {
+      "nombre": "Cheque #MAV210860052",
+      "porcentaje": 0.22
+    },
+    {
+      "nombre": "Cheque #MAV250860080",
+      "porcentaje": 0.21
+    },
+    {
+      "nombre": "Pagare #UMV181160013",
+      "porcentaje": 0.21
+    },
+    {
+      "nombre": "Pagare #UMV161260011",
+      "porcentaje": 0.21
+    },
+    {
+      "nombre": "Bono Bocon 2029 PR17",
+      "porcentaje": 0.21
+    },
+    {
+      "nombre": "Cheque #MAV260860049",
+      "porcentaje": 0.2
+    },
+    {
+      "nombre": "Cheque E *MAV030901116",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "Cheque E *MAV080901435",
+      "porcentaje": 0.18
+    },
+    {
+      "nombre": "Cheque E *MAV140901373",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Cheque #MAV260860048",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Cheque #MAV280860053",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Pagare #UMV271160022",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Cheque #MAV070860050",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Cheque #MAV140860071",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "Cheque #MAV270860069",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "Cheque #MAV250860083",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "Cheque #MAV130860074",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "Cheque #MAV060860075",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "Cheque #MAV050860055",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "Cheque #MAV030860085",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "Cheque #MAV060860068",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "Cheque #MAV210860051",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Cheque #MAV110860092",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UMV161160047",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Cheque #MAV250860081",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Cheque #MAV210860063",
+      "porcentaje": 0.13
+    },
+    {
+      "nombre": "Cheque #MAV190860072",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Cheque #MAV070860052",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Cheque #MAV130860079",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Cheque #MAV120860060",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Cheque #MAV040860097",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Cheque #MAV100860072",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Cheque #MAV140860072",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "ON Pyme Gar Latitud 45 S2 C3",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Cheque #MAV310760102",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cheque #MAV180860094",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cheque #MAV200860084",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cheque #MAV240860090",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cheque E *MAV110901415",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque #UMV151060053",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "FCI Adcap Ahorro Pesos - Clase C",
+      "porcentaje": 0.82
     }
   ],
   "calificaciones": [],
