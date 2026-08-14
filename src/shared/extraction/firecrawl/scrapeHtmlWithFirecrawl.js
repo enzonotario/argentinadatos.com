@@ -3,9 +3,12 @@ import { logError, logMensaje } from '@/log.js'
 
 /**
  * Scrape HTML/markdown con Firecrawl (sin extracción AI).
+ * @param {object} log
+ * @param {string} url
+ * @param {{ actions?: Array<object> }} [options]
  * @returns {Promise<{ markdown: string, html: string }>}
  */
-export async function scrapeHtmlWithFirecrawl(log, url) {
+export async function scrapeHtmlWithFirecrawl(log, url, options = {}) {
   const requestBody = {
     url,
     onlyMainContent: true,
@@ -13,10 +16,15 @@ export async function scrapeHtmlWithFirecrawl(log, url) {
     formats: ['markdown', 'html'],
   }
 
+  if (Array.isArray(options.actions) && options.actions.length) {
+    requestBody.actions = options.actions
+  }
+
   try {
     logMensaje(log, 'Starting Firecrawl HTML scrape', {
       url,
       firecrawlApiUrl: getFirecrawlApiUrl(),
+      conActions: Boolean(requestBody.actions),
     })
 
     const response = await requestFirecrawl(requestBody)

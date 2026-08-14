@@ -26,6 +26,12 @@ import {
   parsearNaranjaXTap,
 } from '@/finanzas/cobros/comisiones/extraccion/extraerNaranjaX.js'
 import {
+  parsearBezza,
+  parsearBezzaSmartpos,
+  parsearBezzaTap,
+  parsearBezzaQr,
+} from '@/finanzas/cobros/comisiones/extraccion/extraerBezza.js'
+import {
   parseArancelTexto,
   inferirAcreditacionTipo,
 } from '@/finanzas/cobros/comisiones/extraccion/parseArancel.js'
@@ -681,5 +687,82 @@ describe('parsearNaranjaX', () => {
     expect(filas.find(f => f.producto === 'TAP crédito')).toMatchObject({
       arancel: 0.045,
     })
+  })
+})
+
+describe('parsearBezza', () => {
+  it('extrae SmartPOS, TAP y QR con promo', () => {
+    const smartpos = readFileSync(
+      join(fixturesDir, 'bezza-smartpos.md'),
+      'utf8',
+    )
+    const tap = readFileSync(join(fixturesDir, 'bezza-tap.md'), 'utf8')
+    const qr = readFileSync(join(fixturesDir, 'bezza-qr.md'), 'utf8')
+
+    expect(parsearBezzaSmartpos(smartpos)).toHaveLength(10)
+    expect(parsearBezzaTap(tap)).toHaveLength(8)
+    expect(parsearBezzaQr(qr)).toHaveLength(2)
+
+    const filas = parsearBezza({ smartpos, tap, qr })
+    expect(filas).toHaveLength(20)
+    expect(filas.every(f => f.entidad === 'bezzapay')).toBe(true)
+    expect(filas.every(f => f.ivaAdicional)).toBe(true)
+
+    expect(
+      filas.find(
+        f =>
+          f.producto === 'SmartPOS crédito' &&
+          f.acreditacionTipo === 'inmediata',
+      ),
+    ).toMatchObject({
+      canal: 'pos',
+      arancel: 0.0619,
+    })
+    expect(
+      filas.find(
+        f =>
+          f.producto === 'SmartPOS crédito' &&
+          f.acreditacionPlazoHabiles === 45,
+      ),
+    ).toMatchObject({
+      arancel: 0,
+    })
+    expect(filas.find(f => f.producto === 'SmartPOS débito')).toMatchObject({
+      arancel: 0.0319,
+      acreditacionTipo: 'inmediata',
+    })
+    expect(
+      filas.find(f => f.producto === 'SmartPOS QR (promo 3 meses)'),
+    ).toMatchObject({
+      canal: 'qr',
+      arancel: 0,
+    })
+    expect(filas.find(f => f.producto === 'SmartPOS QR')).toMatchObject({
+      arancel: 0.008,
+    })
+
+    expect(
+      filas.find(
+        f => f.producto === 'TAP crédito' && f.acreditacionTipo === 'inmediata',
+      ),
+    ).toMatchObject({
+      arancel: 0.0619,
+    })
+    expect(filas.find(f => f.producto === 'TAP débito')).toMatchObject({
+      arancel: 0.0319,
+    })
+    expect(filas.some(f => f.producto.startsWith('TAP QR'))).toBe(false)
+
+    expect(
+      filas.find(f => f.producto === 'QR dinero en cuenta (promo 3 meses)'),
+    ).toMatchObject({
+      arancel: 0,
+      canal: 'qr',
+    })
+    expect(filas.find(f => f.producto === 'QR dinero en cuenta')).toMatchObject(
+      {
+        arancel: 0.008,
+      },
+    )
   })
 })
