@@ -12,6 +12,10 @@ function daysBetween(fromDate, toDate) {
   return Math.round((to - from) / (24 * 60 * 60 * 1000))
 }
 
+/** Máximo ratio VCP permitido en una ventana corta (evita seeds VCP=1 vs ~1000). */
+export const MAX_VCP_LOOKBACK_RATIO = 2
+const LOOKBACK_TOLERANCE_DAYS = 4
+
 /**
  * Anualiza un retorno de período al estilo CAFCI (%): (ret/días)*365*100
  */
@@ -28,6 +32,16 @@ export function annualizeReturnPercent(vcpNew, vcpOld, days) {
 
   const periodReturn = (vcpNew - vcpOld) / vcpOld
   return Number(((periodReturn / days) * 365 * 100).toFixed(4))
+}
+
+export function isPlausibleVcpPair(vcpNew, vcpOld) {
+  if (typeof vcpNew !== 'number' || typeof vcpOld !== 'number') return false
+  if (!(vcpNew > 0) || !(vcpOld > 0)) return false
+
+  const ratio = vcpNew / vcpOld
+  return (
+    ratio >= 1 / MAX_VCP_LOOKBACK_RATIO && ratio <= MAX_VCP_LOOKBACK_RATIO
+  )
 }
 
 export function computeRendimientosFromHistory({
@@ -56,6 +70,10 @@ export function computeRendimientosFromHistory({
         continue
       }
 
+      if (!isPlausibleVcpPair(valorCuotaparte, item.valorCuotaparte)) {
+        continue
+      }
+
       const itemTime = Date.parse(`${item.fecha}T00:00:00.000Z`)
       const distance = Math.abs(itemTime - targetTime)
 
@@ -66,11 +84,19 @@ export function computeRendimientosFromHistory({
     }
 
     // No aceptar puntos demasiado lejos del target (±4 días).
-    if (!best || bestDistance > 4 * 24 * 60 * 60 * 1000) {
+    if (
+      !best ||
+      bestDistance > LOOKBACK_TOLERANCE_DAYS * 24 * 60 * 60 * 1000
+    ) {
       return null
     }
 
     const days = daysBetween(best.fecha, fecha)
+    // Fondo demasiado nuevo para esa ventana (p. ej. 10 días de vida ≠ 30D).
+    if (!days || days < targetDays - LOOKBACK_TOLERANCE_DAYS) {
+      return null
+    }
+
     return {
       days,
       value: annualizeReturnPercent(

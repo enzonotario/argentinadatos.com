@@ -55,6 +55,46 @@ describe('computeRendimientosFromHistory', () => {
     expect(rendimientos.valorCuotaparte).toBe(25166.651)
   })
 
+  it('ignora seeds VCP=1 y no inventa 30D si el fondo es demasiado nuevo', () => {
+    const rendimientos = computeRendimientosFromHistory({
+      fecha: '2026-08-12',
+      valorCuotaparte: 1014.821,
+      history: [
+        { fecha: '2026-07-01', valorCuotaparte: 1 },
+        { fecha: '2026-07-13', valorCuotaparte: 1 },
+        { fecha: '2026-07-15', valorCuotaparte: 1001.981 },
+        { fecha: '2026-08-05', valorCuotaparte: 1009.672 },
+      ],
+    })
+
+    // 7D contra 2026-08-05 (plausible)
+    expect(rendimientos.ultimos7Dias).toBeCloseTo(26.5912, 0)
+
+    // 30D: ignora VCP=1 del 13/07; usa 15/07 (28 días >= 26) → TNA razonable
+    expect(rendimientos.unMes).toBeGreaterThan(0)
+    expect(rendimientos.unMes).toBeLessThan(100)
+    expect(rendimientos.unMes).toBeCloseTo(
+      annualizeReturnPercent(1014.821, 1001.981, 28),
+      3,
+    )
+  })
+
+  it('devuelve null en 30D si no hay historia suficiente tras filtrar placeholders', () => {
+    const rendimientos = computeRendimientosFromHistory({
+      fecha: '2026-08-12',
+      valorCuotaparte: 1014.821,
+      history: [
+        { fecha: '2026-07-13', valorCuotaparte: 1 },
+        { fecha: '2026-08-01', valorCuotaparte: 1008 },
+        { fecha: '2026-08-05', valorCuotaparte: 1009.672 },
+      ],
+    })
+
+    expect(rendimientos.ultimos7Dias).toBeTypeOf('number')
+    // Mejor punto plausible para 30D es 01/08 (11 días) < 26 → no reportar unMes propio
+    expect(rendimientos.unMes).toBe(rendimientos.ultimos7Dias)
+  })
+
   it('annualizeReturnPercent calcula TNA simple', () => {
     expect(annualizeReturnPercent(101, 100, 1)).toBeCloseTo(365, 0)
   })
