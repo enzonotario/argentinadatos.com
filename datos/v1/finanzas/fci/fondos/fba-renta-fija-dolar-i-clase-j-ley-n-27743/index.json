@@ -2,7 +2,7 @@
   "fondoId": "846",
   "claseId": "4831",
   "nombre": "FBA Renta Fija Dólar I - Clase J Ley N° 27.743",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "BBVA Argentina S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,15 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1049",
-  "patrimonio": 15530929.8,
-  "cantidadCuotapartes": 14170606.5282,
+  "patrimonio": 15527757.45,
+  "cantidadCuotapartes": 14165863.3788,
   "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1095.996,
-    "ultimos7Dias": 6.8122,
-    "unMes": -0.477,
+    "valorCuotaparte": 1096.139,
+    "ultimos7Dias": 12.1346,
+    "unMes": 0.0173,
     "noventaDias": 0.8552,
     "cientoOchentaDias": 1.6569,
     "enElAnio": 2.339,
@@ -29,52 +29,44 @@
   },
   "composicionCartera": [
     {
-      "nombre": "Caucion Colocadora U$S Merval",
-      "porcentaje": 13.7
-    },
-    {
-      "nombre": "Pzo Fi U$S Bco Nacion",
-      "porcentaje": 8.2
-    },
-    {
       "nombre": "US Treasury Bill 210127",
-      "porcentaje": 7.4
-    },
-    {
-      "nombre": "Cta Cte U$S BBVA",
-      "porcentaje": 7.1
+      "porcentaje": 7.26
     },
     {
       "nombre": "ON Banco de Galicia 30 BYCWO",
-      "porcentaje": 6.4
+      "porcentaje": 6.28
+    },
+    {
+      "nombre": "ON Banco de Galicia 33 BYZ1O",
+      "porcentaje": 5.4
     },
     {
       "nombre": "ON Pampa Energia C27",
-      "porcentaje": 5
-    },
-    {
-      "nombre": "ON YPF 210727",
-      "porcentaje": 4.7
+      "porcentaje": 4.93
     },
     {
       "nombre": "US Treasury Bill 271126",
-      "porcentaje": 4.7
+      "porcentaje": 4.63
+    },
+    {
+      "nombre": "ON YPF 210727",
+      "porcentaje": 4.43
     },
     {
       "nombre": "US Treasury Bill 030926",
-      "porcentaje": 4.3
+      "porcentaje": 4.21
     },
     {
       "nombre": "ON YPF Clase 38",
-      "porcentaje": 3.3
+      "porcentaje": 3.22
     },
     {
       "nombre": "ON Banco de Galicia 30 BYCXD",
-      "porcentaje": 3.1
+      "porcentaje": 3.05
     },
     {
       "nombre": "ON Bco Macro Clase 1 Regs",
-      "porcentaje": 2.6
+      "porcentaje": 2.57
     },
     {
       "nombre": "ON YPF Clase 43",
@@ -82,11 +74,139 @@
     },
     {
       "nombre": "ON ICBC Clase 6 220527",
-      "porcentaje": 2
+      "porcentaje": 1.96
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 25.7
+      "nombre": "ON Central Puerto Clase D",
+      "porcentaje": 1.86
+    },
+    {
+      "nombre": "ON YPF Clase 35",
+      "porcentaje": 1.85
+    },
+    {
+      "nombre": "ON Tarj Naranja C67 S2",
+      "porcentaje": 1.84
+    },
+    {
+      "nombre": "ON Banco de Galicia 32 BYY2O",
+      "porcentaje": 1.82
+    },
+    {
+      "nombre": "ON YPF Clase 32",
+      "porcentaje": 1.64
+    },
+    {
+      "nombre": "ON Banco Comafi C18",
+      "porcentaje": 1.63
+    },
+    {
+      "nombre": "ON Tarj Naranja C66 S2",
+      "porcentaje": 1.28
+    },
+    {
+      "nombre": "ON Pan American C42",
+      "porcentaje": 1.22
+    },
+    {
+      "nombre": "ON Telecom C29",
+      "porcentaje": 0.96
+    },
+    {
+      "nombre": "ON Banco Hipotecario C14",
+      "porcentaje": 0.74
+    },
+    {
+      "nombre": "ON YPF Clase 42",
+      "porcentaje": 0.69
+    },
+    {
+      "nombre": "ON YPF Clase 37",
+      "porcentaje": 0.67
+    },
+    {
+      "nombre": "ON Banco Comafi C21",
+      "porcentaje": 0.65
+    },
+    {
+      "nombre": "ON Banco Comafi C17",
+      "porcentaje": 0.63
+    },
+    {
+      "nombre": "ON Telecom C25",
+      "porcentaje": 0.57
+    },
+    {
+      "nombre": "ON Bco Provincia Cl 5 PVC5O",
+      "porcentaje": 0.57
+    },
+    {
+      "nombre": "ON Arcor C2 7.6%",
+      "porcentaje": 0.56
+    },
+    {
+      "nombre": "ON Banco Hipotecario C10",
+      "porcentaje": 0.37
+    },
+    {
+      "nombre": "ON Supervielle Clase U",
+      "porcentaje": 0.37
+    },
+    {
+      "nombre": "ON Arcor Clase 26",
+      "porcentaje": 0.37
+    },
+    {
+      "nombre": "ON YPF Luz C17",
+      "porcentaje": 0.37
+    },
+    {
+      "nombre": "ON Bco Patagonia Cl 4",
+      "porcentaje": 0.37
+    },
+    {
+      "nombre": "ON Tecpetrol C13",
+      "porcentaje": 0.37
+    },
+    {
+      "nombre": "ON Central Puerto Clase E",
+      "porcentaje": 0.36
+    },
+    {
+      "nombre": "ON Cresud Clase 52",
+      "porcentaje": 0.36
+    },
+    {
+      "nombre": "ON John Deere Cia. Fin C19",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "ON Banco Comafi C24",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "ON Supervielle Clase V",
+      "porcentaje": 0.18
+    },
+    {
+      "nombre": "ON Pan Amer. Energy C 12",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "ON YPF Clase 41",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Caucion Colocadora U$S Merval",
+      "porcentaje": 13.53
+    },
+    {
+      "nombre": "Pzo Fi U$S Bco Nacion",
+      "porcentaje": 8.12
+    },
+    {
+      "nombre": "Pzo Fi U$S Nvo Bco Indus",
+      "porcentaje": 1.08
     }
   ],
   "calificaciones": [

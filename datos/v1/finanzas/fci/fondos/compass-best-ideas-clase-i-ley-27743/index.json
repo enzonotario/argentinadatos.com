@@ -2,7 +2,7 @@
   "fondoId": "807",
   "claseId": "4748",
   "nombre": "Compass Best Ideas - Clase I Ley 27.743",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,15 +13,15 @@
   "duracion": "No Registrada",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1010",
-  "patrimonio": 728100.19,
+  "patrimonio": 728341.67,
   "cantidadCuotapartes": 638505.36,
   "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1140.32,
-    "ultimos7Dias": 0.2744,
-    "unMes": 1.3704,
+    "valorCuotaparte": 1140.698,
+    "ultimos7Dias": -5.4294,
+    "unMes": 1.5582,
     "noventaDias": 1.1385,
     "cientoOchentaDias": 3.4869,
     "enElAnio": 5.5831,
@@ -30,75 +30,163 @@
   "composicionCartera": [
     {
       "nombre": "ON YPF Luz C18 YFCJO",
-      "porcentaje": 8.6
+      "porcentaje": 8.54
     },
     {
       "nombre": "ON Irsa 2035",
-      "porcentaje": 7.3
+      "porcentaje": 7.25
     },
     {
       "nombre": "ON Telecom 9.5% 2031",
-      "porcentaje": 7.1
+      "porcentaje": 7.01
     },
     {
       "nombre": "ON Genneia Clase 49",
-      "porcentaje": 6.4
-    },
-    {
-      "nombre": "ON Telecom C24",
-      "porcentaje": 5.3
-    },
-    {
-      "nombre": "ON Transp Gas Sur Cl 3",
-      "porcentaje": 5.1
-    },
-    {
-      "nombre": "BC Pampa Energia C23",
-      "porcentaje": 4
-    },
-    {
-      "nombre": "ON TGS C4 Reg S",
-      "porcentaje": 4
-    },
-    {
-      "nombre": "ON YPF Clase 31",
-      "porcentaje": 3.7
-    },
-    {
-      "nombre": "ON Pampa Energia C26 Prov",
-      "porcentaje": 3.2
-    },
-    {
-      "nombre": "ON MSU Energy 160636",
-      "porcentaje": 3.1
-    },
-    {
-      "nombre": "ON YPF Clase 34",
-      "porcentaje": 2.9
+      "porcentaje": 6.27
     },
     {
       "nombre": "ON Pampa Energia C26",
-      "porcentaje": 2.8
+      "porcentaje": 5.89
+    },
+    {
+      "nombre": "ON Telecom C24",
+      "porcentaje": 5.28
+    },
+    {
+      "nombre": "ON Transp Gas Sur Cl 3",
+      "porcentaje": 4.83
+    },
+    {
+      "nombre": "BC Pampa Energia C23",
+      "porcentaje": 3.99
+    },
+    {
+      "nombre": "ON TGS C4 Reg S",
+      "porcentaje": 3.97
+    },
+    {
+      "nombre": "ON YPF Clase 31",
+      "porcentaje": 3.69
+    },
+    {
+      "nombre": "ON MSU Energy 160636",
+      "porcentaje": 3.01
+    },
+    {
+      "nombre": "ON YPF Clase 34",
+      "porcentaje": 2.92
     },
     {
       "nombre": "ON Aeropuertos 2000 Regs 2031",
-      "porcentaje": 2.6
+      "porcentaje": 2.51
     },
     {
       "nombre": "ON Edenor C10 DNCAO",
-      "porcentaje": 2.4
+      "porcentaje": 2.36
     },
     {
       "nombre": "ON Edemsa C8",
-      "porcentaje": 2.4
+      "porcentaje": 2.34
     },
     {
       "nombre": "ON Pampa Energia C21",
-      "porcentaje": 2.2
+      "porcentaje": 2.17
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 26.9
+      "nombre": "ON YPF C 17",
+      "porcentaje": 2.03
+    },
+    {
+      "nombre": "ON Tecpetrol C12",
+      "porcentaje": 1.91
+    },
+    {
+      "nombre": "ON YPF Clase 28",
+      "porcentaje": 1.86
+    },
+    {
+      "nombre": "ON Banco Macro Clase H Reg S",
+      "porcentaje": 1.81
+    },
+    {
+      "nombre": "ON YPF 2047",
+      "porcentaje": 1.76
+    },
+    {
+      "nombre": "ON Banco Macro Clase G",
+      "porcentaje": 1.7
+    },
+    {
+      "nombre": "ON Vista Energy 31",
+      "porcentaje": 1.6
+    },
+    {
+      "nombre": "ON CGC C 38",
+      "porcentaje": 1.58
+    },
+    {
+      "nombre": "ON Pan Amer. Energy C 12",
+      "porcentaje": 0.87
+    },
+    {
+      "nombre": "ON Vista Gas y Oil Arg C29",
+      "porcentaje": 0.82
+    },
+    {
+      "nombre": "ON Pluspetrol 8.5% 2032 (REGS)",
+      "porcentaje": 0.81
+    },
+    {
+      "nombre": "BC AES 9.5%",
+      "porcentaje": 0.69
+    },
+    {
+      "nombre": "ON Edenor C11",
+      "porcentaje": 0.68
+    },
+    {
+      "nombre": "ON Capex C5 9.250%",
+      "porcentaje": 0.57
+    },
+    {
+      "nombre": "ON Aeropuertos 2000 2027",
+      "porcentaje": 0.37
+    },
+    {
+      "nombre": "ON YPF 2029",
+      "porcentaje": 0.32
+    },
+    {
+      "nombre": "ON Bco Galicia Clase 16",
+      "porcentaje": 0.32
+    },
+    {
+      "nombre": "ON CGC C 39",
+      "porcentaje": 0.97
+    },
+    {
+      "nombre": "ON Tecpetrol C11",
+      "porcentaje": 0.82
+    },
+    {
+      "nombre": "ON CGC C 28",
+      "porcentaje": 0.35
+    },
+    {
+      "nombre": "ON Luz De Tres Picos C4",
+      "porcentaje": 0.2
+    },
+    {
+      "nombre": "ON CGC C 36",
+      "porcentaje": 1.88
+    },
+    {
+      "nombre": "ON Futuros y Opciones.com S4 CA",
+      "porcentaje": 0.31
+    },
+    {
+      "nombre": "FCI Fima Premium Clase B",
+      "porcentaje": 0.09
     }
   ],
   "calificaciones": [

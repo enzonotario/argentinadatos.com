@@ -2,7 +2,7 @@
   "fondoId": "432",
   "claseId": "811",
   "nombre": "Compass Renta Fija II - Clase A",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -19,9 +19,9 @@
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1388535.469,
-    "ultimos7Dias": 24.7577,
-    "unMes": 17.8218,
+    "valorCuotaparte": 1384833.11,
+    "ultimos7Dias": -5.7224,
+    "unMes": 9.6156,
     "noventaDias": 7.7345,
     "cientoOchentaDias": 13.3507,
     "enElAnio": 14.5257,
@@ -30,55 +30,443 @@
   "composicionCartera": [
     {
       "nombre": "Bonos Rep Argentina 2030",
-      "porcentaje": 7.3
+      "porcentaje": 7.18
     },
     {
       "nombre": "Bono Prov Cordoba 2029 CO27D",
-      "porcentaje": 5.9
+      "porcentaje": 5.58
     },
     {
       "nombre": "Bono Buenos Aires 2037",
-      "porcentaje": 5.4
+      "porcentaje": 5.29
     },
     {
       "nombre": "Bono Prov Cordoba 030235",
-      "porcentaje": 5.2
+      "porcentaje": 4.91
     },
     {
       "nombre": "Bono Disc ARS Ley AR DICP",
-      "porcentaje": 4.8
+      "porcentaje": 4.78
     },
     {
       "nombre": "Bono Prov Santa Fe 8.1% 111234",
-      "porcentaje": 4.8
+      "porcentaje": 4.69
     },
     {
       "nombre": "ON YPF Clase 34",
-      "porcentaje": 3.3
-    },
-    {
-      "nombre": "Bonos Rep Argentina GD35",
-      "porcentaje": 2.8
-    },
-    {
-      "nombre": "Bono Prov Cordoba 2032",
-      "porcentaje": 2.8
+      "porcentaje": 3.27
     },
     {
       "nombre": "Bono Boncer TZXD6",
-      "porcentaje": 2.8
+      "porcentaje": 2.77
     },
     {
-      "nombre": "Letra Tesoro Nac T30A7",
-      "porcentaje": 2.5
+      "nombre": "Bono Prov Cordoba 2032",
+      "porcentaje": 2.74
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD35",
+      "porcentaje": 2.74
     },
     {
       "nombre": "Bono Boncer TZX28",
-      "porcentaje": 2.1
+      "porcentaje": 2.06
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 50.4
+      "nombre": "Boncer Mendoza C1",
+      "porcentaje": 1.51
+    },
+    {
+      "nombre": "Bono Ciudad Bs As 261133",
+      "porcentaje": 1.5
+    },
+    {
+      "nombre": "Boncer Mendoza C2",
+      "porcentaje": 1.49
+    },
+    {
+      "nombre": "ON YPF Clase 28",
+      "porcentaje": 1.42
+    },
+    {
+      "nombre": "Bono Dual TXMD9",
+      "porcentaje": 1.34
+    },
+    {
+      "nombre": "ON Pampa Energia C13",
+      "porcentaje": 1.33
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TMVE8",
+      "porcentaje": 1.27
+    },
+    {
+      "nombre": "Bono Prov Mendoza TAMAR C2",
+      "porcentaje": 1.26
+    },
+    {
+      "nombre": "Bono Prov Cordoba Clase 4",
+      "porcentaje": 1.24
+    },
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 1.23
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD30",
+      "porcentaje": 1.21
+    },
+    {
+      "nombre": "BC Pampa Energia C23",
+      "porcentaje": 1.16
+    },
+    {
+      "nombre": "Letra Tamar TEM TMF27",
+      "porcentaje": 1.15
+    },
+    {
+      "nombre": "Letra Tesoro Nac T30A7",
+      "porcentaje": 1.11
+    },
+    {
+      "nombre": "ON Vista Gas y Oil Arg C28",
+      "porcentaje": 1.1
+    },
+    {
+      "nombre": "ON Transp Gas Sur Cl 3",
+      "porcentaje": 1.1
+    },
+    {
+      "nombre": "ON YPF Luz C18 YFCJO",
+      "porcentaje": 1.05
+    },
+    {
+      "nombre": "Bono Prov Santa Fe 2027 SF27D",
+      "porcentaje": 1.05
+    },
+    {
+      "nombre": "Letra Prov Bs As PBA28",
+      "porcentaje": 1.02
+    },
+    {
+      "nombre": "Bono Boncer TZXD7",
+      "porcentaje": 1
+    },
+    {
+      "nombre": "Banco Nacion Argentina Clase 3",
+      "porcentaje": 0.95
+    },
+    {
+      "nombre": "ON Vista Gas y Oil Arg C29",
+      "porcentaje": 0.87
+    },
+    {
+      "nombre": "Bono Prov Cordoba Clase 6",
+      "porcentaje": 0.83
+    },
+    {
+      "nombre": "ON Central Puerto Clase C",
+      "porcentaje": 0.8
+    },
+    {
+      "nombre": "Bono Prov de Buenos Aires PBM27",
+      "porcentaje": 0.77
+    },
+    {
+      "nombre": "ON Pampa Energia C26",
+      "porcentaje": 0.76
+    },
+    {
+      "nombre": "ON Pluspetrol Clase 5",
+      "porcentaje": 0.69
+    },
+    {
+      "nombre": "Bono Dual TTD26",
+      "porcentaje": 0.64
+    },
+    {
+      "nombre": "ON P. Aconcagua Energia C21",
+      "porcentaje": 0.62
+    },
+    {
+      "nombre": "ON Tecpetrol C12",
+      "porcentaje": 0.62
+    },
+    {
+      "nombre": "ON YPF 2029",
+      "porcentaje": 0.61
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TZVD8",
+      "porcentaje": 0.56
+    },
+    {
+      "nombre": "Boncer TZXY7",
+      "porcentaje": 0.55
+    },
+    {
+      "nombre": "Bonos Rep Argentina 2029",
+      "porcentaje": 0.53
+    },
+    {
+      "nombre": "ON Vista Gas y Oil Arg C18",
+      "porcentaje": 0.51
+    },
+    {
+      "nombre": "Banco Nacion Argentina Clase 1",
+      "porcentaje": 0.5
+    },
+    {
+      "nombre": "ON Tarj Naranja C67 S1",
+      "porcentaje": 0.49
+    },
+    {
+      "nombre": "ON Banco Prov Clase 6",
+      "porcentaje": 0.49
+    },
+    {
+      "nombre": "Bono Prov de Buenos Aires PBM28",
+      "porcentaje": 0.49
+    },
+    {
+      "nombre": "ON BBVA Frances Cl 38",
+      "porcentaje": 0.49
+    },
+    {
+      "nombre": "ON Bco Provincia Cl 4",
+      "porcentaje": 0.49
+    },
+    {
+      "nombre": "Bono Dual TXMD8",
+      "porcentaje": 0.48
+    },
+    {
+      "nombre": "ON Santander Rio S 31",
+      "porcentaje": 0.47
+    },
+    {
+      "nombre": "ON Pan American C38",
+      "porcentaje": 0.47
+    },
+    {
+      "nombre": "ON TGS C4 Reg S",
+      "porcentaje": 0.46
+    },
+    {
+      "nombre": "ON PCR Clase K",
+      "porcentaje": 0.46
+    },
+    {
+      "nombre": "ON Oldelval Clase 3",
+      "porcentaje": 0.45
+    },
+    {
+      "nombre": "ON Aeropuertos 2000 C9",
+      "porcentaje": 0.44
+    },
+    {
+      "nombre": "Bono Prov Neuquen 2028 NDT11",
+      "porcentaje": 0.42
+    },
+    {
+      "nombre": "Letra Prov Bs As XB2S6",
+      "porcentaje": 0.42
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD41",
+      "porcentaje": 0.41
+    },
+    {
+      "nombre": "ON YPF Luz C12",
+      "porcentaje": 0.41
+    },
+    {
+      "nombre": "ON ICBC Clase 4 281126",
+      "porcentaje": 0.39
+    },
+    {
+      "nombre": "ON Arcor C3",
+      "porcentaje": 0.39
+    },
+    {
+      "nombre": "ON Banco de Galicia 32 BYY1O",
+      "porcentaje": 0.39
+    },
+    {
+      "nombre": "ON Santander Rio S 32",
+      "porcentaje": 0.38
+    },
+    {
+      "nombre": "Bonos de Infra.Vial Prov. de Santa Fe",
+      "porcentaje": 0.35
+    },
+    {
+      "nombre": "Bonos Rep Argentina AE38",
+      "porcentaje": 0.31
+    },
+    {
+      "nombre": "ON BBVA Frances Cl 46",
+      "porcentaje": 0.3
+    },
+    {
+      "nombre": "Bono Prov Cordoba Clase 5",
+      "porcentaje": 0.28
+    },
+    {
+      "nombre": "Bono Prov Mendoza 2029",
+      "porcentaje": 0.28
+    },
+    {
+      "nombre": "ON Arcor C6",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "ON Rombo Cia Fciera S66",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "ON Rombo Cia Fciera S65",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "ON CGC C 28",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "ON Genneia Clase 49",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "ON CGC C 38",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "ON GEMSA y CTR C43",
+      "porcentaje": 0.22
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD38",
+      "porcentaje": 0.21
+    },
+    {
+      "nombre": "Bono Muni Cordoba S1 26032027",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "ON ICBC Clase 5 110327",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "ON PSA Serie 35",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "ON Capex C7",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD29",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "ON Pan Amer. Energy C 12",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "ON YPF Clase 31",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "Bono Prov Cordoba 2027 COY27",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "ON MSU S11",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "ON Cresud Clase 40",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Bono CABA 2028 BDC28",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "ON BACS Clase 19",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Bono Muni Cordoba S2 13022027",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "ON Edenor C10 DNCAO",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "ON Telecom 2026",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "ON Generacion Litoral C1",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "ON P. Aconcagua Energia C19",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "ON Rombo Cia Fciera S61",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "ON Toyota Clase 34",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "ON Pampa Energia 2026 9.5%",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "ON Genneia Clase 37",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "ON Rombo Cia Fciera S58",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Galicia",
+      "porcentaje": 1.01
+    },
+    {
+      "nombre": "Bono CABA 01062027",
+      "porcentaje": 0.31
+    },
+    {
+      "nombre": "YPF S.A.",
+      "porcentaje": 0.54
+    },
+    {
+      "nombre": "Loma Negra S.A.",
+      "porcentaje": 0.34
+    },
+    {
+      "nombre": "FF Mercado Credito 47 CA",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "FCI Fima Premium Clase B",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "FCI Zofingen Pesos Ya - Clase A",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "FCI Allaria Ahorro - Clase C",
+      "porcentaje": 0.01
     }
   ],
   "calificaciones": [

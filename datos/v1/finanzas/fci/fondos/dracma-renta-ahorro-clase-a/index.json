@@ -2,7 +2,7 @@
   "fondoId": "1370",
   "claseId": "3928",
   "nombre": "Dracma Renta Ahorro - Clase A",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "Dracma Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,15 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Peso Argentino",
   "codigoCNV": "1322",
-  "patrimonio": 2119333506.08,
-  "cantidadCuotapartes": 196213372.76,
+  "patrimonio": 2142496870.22,
+  "cantidadCuotapartes": 198234176.43,
   "inversionMinima": 1,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 10801.168,
-    "ultimos7Dias": 35.9632,
-    "unMes": 14.3602,
+    "valorCuotaparte": 10807.909,
+    "ultimos7Dias": 19.1277,
+    "unMes": 12.6946,
     "noventaDias": 5.9773,
     "cientoOchentaDias": 18.1773,
     "enElAnio": 22.0375,
@@ -30,71 +30,307 @@
   "composicionCartera": [
     {
       "nombre": "Bono Boncer TZXS7",
-      "porcentaje": 15.4
-    },
-    {
-      "nombre": "Lecap S30S6",
-      "porcentaje": 14.8
-    },
-    {
-      "nombre": "Lecap S13N6",
-      "porcentaje": 9.1
+      "porcentaje": 14.37
     },
     {
       "nombre": "Bono Dual TXMJ0",
-      "porcentaje": 7.3
+      "porcentaje": 11.29
     },
     {
       "nombre": "Bono del Tesoro Nacional TML27",
-      "porcentaje": 6.5
+      "porcentaje": 10.4
     },
     {
-      "nombre": "Lecap S14G6",
-      "porcentaje": 6.1
+      "nombre": "Lecap S30S6",
+      "porcentaje": 9.51
+    },
+    {
+      "nombre": "Lecap S13N6",
+      "porcentaje": 8.39
+    },
+    {
+      "nombre": "Lecap S16O6",
+      "porcentaje": 5.85
     },
     {
       "nombre": "Letra Tesoro Nac T30A7",
-      "porcentaje": 5.1
-    },
-    {
-      "nombre": "Bono Dual TXMD8",
-      "porcentaje": 4.9
+      "porcentaje": 4.64
     },
     {
       "nombre": "Bono Boncer TZXO6",
-      "porcentaje": 4.8
-    },
-    {
-      "nombre": "Fut Reg ARS",
-      "porcentaje": 4.7
-    },
-    {
-      "nombre": "Letra Tesoro Nac D31L6",
-      "porcentaje": 4.7
+      "porcentaje": 4.5
     },
     {
       "nombre": "Bono Dual TTS26",
-      "porcentaje": 4.6
+      "porcentaje": 4.25
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TMVE8",
+      "porcentaje": 3.98
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TMG27",
+      "porcentaje": 3.75
     },
     {
       "nombre": "Letra Tamar TEM TMF27",
-      "porcentaje": 3.3
-    },
-    {
-      "nombre": "Bono del Tesoro Nacional T31Y7",
-      "porcentaje": 2.3
+      "porcentaje": 3.03
     },
     {
       "nombre": "Bono del Tesoro Nacional D31G6",
-      "porcentaje": 2.3
+      "porcentaje": 2.16
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional T31Y7",
+      "porcentaje": 2.14
+    },
+    {
+      "nombre": "ON Tarj Naranja C67 S1",
+      "porcentaje": 1.54
+    },
+    {
+      "nombre": "Cheque E *MAV140801283",
+      "porcentaje": 0.31
+    },
+    {
+      "nombre": "Cheque E *FIN061000023",
+      "porcentaje": 0.28
+    },
+    {
+      "nombre": "Cheque E *FIN260900041",
+      "porcentaje": 0.28
+    },
+    {
+      "nombre": "Cheque E *MAV010801267",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "Cheque E *ARP180900201",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "Cheque E *NIO200800038",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Cheque E *NIO300800061",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Cheque E *RES211200008",
+      "porcentaje": 0.13
+    },
+    {
+      "nombre": "Cheque E *RES281200020",
+      "porcentaje": 0.13
+    },
+    {
+      "nombre": "ON Los Nogales S1 CA",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Cheque E *MAV160801159",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Cheque E *ACE160900068",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Cheque E *ACI011000190",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Cheque E *ACI081000159",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Cheque E *ACI260800155",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Cheque E *ACI240900185",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Cheque E *ACI190800256",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Cheque E *ACI170900133",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Cheque E *ACI100900237",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Cheque E *ACI060800150",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Cheque E *ACI030900165",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Cheque E *ACE270800067",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cheque E *ACI020900157",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ACI021000164",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ACI090900172",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ACI091000169",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ACI160900175",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ACI161000202",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ACI230900263",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ACI231000233",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ACI300900467",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ACI041100197",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ACI141000212",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ACI111100248",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ACI181100224",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ACI251100357",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ARG201100006",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *ARG231000003",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *ARG301000003",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *ARG281100001",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *AVU010900042",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *AVU070900051",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *AVU130900036",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *AVU210900027",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *ARP010900150",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *ARP030900131",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *ARP040900195",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *ARP070900139",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *ARP090900215",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *ARP110900216",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *ARP140900156",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *ARP160900211",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *ARP180900202",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *ARP210900148",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *ARP011000138",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *ARP141000225",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *ARP151000222",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *ARP220900234",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *ARP240900205",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 1.46
     },
     {
       "nombre": "FCI BM Smart Money Market - Clase B",
-      "porcentaje": 2.3
-    },
-    {
-      "nombre": "Resto de Activos",
-      "porcentaje": 1.7
+      "porcentaje": 0.07
     }
   ],
   "calificaciones": [

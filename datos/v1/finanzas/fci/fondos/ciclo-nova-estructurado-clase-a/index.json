@@ -2,7 +2,7 @@
   "fondoId": "1546",
   "claseId": "4662",
   "nombre": "Ciclo Nova Estructurado - Clase A",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "Ciclo Nova Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -30,71 +30,371 @@
   "composicionCartera": [
     {
       "nombre": "Bono Boncer TZXS8",
-      "porcentaje": 9.3
-    },
-    {
-      "nombre": "FCI BM Smart Money Market - Clase B",
-      "porcentaje": 7.5
-    },
-    {
-      "nombre": "FCI Max Money Market - Clase B",
-      "porcentaje": 6.4
+      "porcentaje": 9.19
     },
     {
       "nombre": "Bono del Tesoro Nacional AN29",
-      "porcentaje": 6.2
-    },
-    {
-      "nombre": "Letra Tesoro Nac D31L6",
-      "porcentaje": 6.1
+      "porcentaje": 6
     },
     {
       "nombre": "ON Bco Ciudad C24",
-      "porcentaje": 4.9
+      "porcentaje": 4.64
     },
     {
       "nombre": "Letra Entre Rios ERE27",
-      "porcentaje": 4
+      "porcentaje": 3.94
     },
     {
       "nombre": "ON P. Aconcagua Energia C19",
-      "porcentaje": 3.1
+      "porcentaje": 3.8
     },
     {
       "nombre": "Bono Boncer TZXD7",
-      "porcentaje": 2.9
+      "porcentaje": 2.87
     },
     {
-      "nombre": "Cedear Mercado Libre",
-      "porcentaje": 2.6
-    },
-    {
-      "nombre": "ON Mercado Pago C6",
-      "porcentaje": 2.2
+      "nombre": "ON P. Aconcagua Energia C21",
+      "porcentaje": 2.18
     },
     {
       "nombre": "ON NBD Chaco Clase 1",
-      "porcentaje": 2.2
+      "porcentaje": 2.15
     },
     {
-      "nombre": "ON Grupo ST C16",
-      "porcentaje": 2.2
-    },
-    {
-      "nombre": "Pagare *MAV270701099",
-      "porcentaje": 2.2
+      "nombre": "ON Mercado Pago C6",
+      "porcentaje": 2.15
     },
     {
       "nombre": "Bono Prov de Buenos Aires PBM27",
-      "porcentaje": 2.1
+      "porcentaje": 2.09
     },
     {
       "nombre": "Bono Prov Cordoba Clase 6",
-      "porcentaje": 2.1
+      "porcentaje": 2.06
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 33.5
+      "nombre": "ON Grupo ST C16",
+      "porcentaje": 2.06
+    },
+    {
+      "nombre": "Pagare *MAV090901113",
+      "porcentaje": 1.81
+    },
+    {
+      "nombre": "Letra Prov Chubut S117 C2",
+      "porcentaje": 1.79
+    },
+    {
+      "nombre": "Pagare *MAV071001141",
+      "porcentaje": 1.78
+    },
+    {
+      "nombre": "ON Bco Serv Transac C29",
+      "porcentaje": 1.67
+    },
+    {
+      "nombre": "ON Central Puerto Clase E",
+      "porcentaje": 1.25
+    },
+    {
+      "nombre": "ON Camuzzi Gas C1 USD",
+      "porcentaje": 1.07
+    },
+    {
+      "nombre": "ON NewSan Clase 23",
+      "porcentaje": 0.94
+    },
+    {
+      "nombre": "Pagare *MAV010801175",
+      "porcentaje": 0.92
+    },
+    {
+      "nombre": "ON Credito Directo C31",
+      "porcentaje": 0.92
+    },
+    {
+      "nombre": "Bono Bonte 2026 TO26",
+      "porcentaje": 0.86
+    },
+    {
+      "nombre": "Pagare *MAV071001136",
+      "porcentaje": 0.68
+    },
+    {
+      "nombre": "ON TGLT Clase 16",
+      "porcentaje": 0.62
+    },
+    {
+      "nombre": "Pagare *MAV070900757",
+      "porcentaje": 0.47
+    },
+    {
+      "nombre": "ON P. Aconcagua Energia C18",
+      "porcentaje": 0.32
+    },
+    {
+      "nombre": "VCP Unicred S3",
+      "porcentaje": 0.29
+    },
+    {
+      "nombre": "Pagare *MAV071001132",
+      "porcentaje": 0.29
+    },
+    {
+      "nombre": "Pagare *SOL161100007",
+      "porcentaje": 0.29
+    },
+    {
+      "nombre": "Pagare *SOL141200004",
+      "porcentaje": 0.28
+    },
+    {
+      "nombre": "Pagare *MAV071001138",
+      "porcentaje": 0.26
+    },
+    {
+      "nombre": "Pagare *MAV071001139",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Pagare *MAV071001142",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Pagare *MAV090901114",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "ON P. Aconcagua Energia C20",
+      "porcentaje": 0.2
+    },
+    {
+      "nombre": "Pagare *MAV070900758",
+      "porcentaje": 0.18
+    },
+    {
+      "nombre": "Pagare *MAV180801420",
+      "porcentaje": 0.13
+    },
+    {
+      "nombre": "Pagare *MAV071001131",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Pagare *MAV071001133",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Pagare *MAV071001134",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Pagare *SOL281000006",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Pagare *SOL300900032",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Pagare *SOL280900004",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Pagare *SOL290900004",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Pagare *SOL221000005",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Pagare *SOL261000008",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Pagare *SOL261100006",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare *SOL251100010",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare *SOL241100007",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare *MAV071001137",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare *MAV070900761",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare *MAV070900759",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Pagare *MAV071001135",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare *MAV070900754",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare *MAV070900755",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare *MAV071001140",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare *MAV070900753",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare *MAV070900756",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare *MAV070900762",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare *MAV070900764",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare *MAV070900760",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UAC301160001",
+      "porcentaje": 1.53
+    },
+    {
+      "nombre": "Pagare #UAC201160001",
+      "porcentaje": 1.18
+    },
+    {
+      "nombre": "Pagare #UAC250860001",
+      "porcentaje": 0.6
+    },
+    {
+      "nombre": "Pagare #UAC151260002",
+      "porcentaje": 0.41
+    },
+    {
+      "nombre": "Pagare #UAC251260002",
+      "porcentaje": 0.41
+    },
+    {
+      "nombre": "Pagare #UAC100270001",
+      "porcentaje": 0.4
+    },
+    {
+      "nombre": "Pagare #UAC100370001",
+      "porcentaje": 0.4
+    },
+    {
+      "nombre": "Pagare #UAC200370001",
+      "porcentaje": 0.4
+    },
+    {
+      "nombre": "Pagare #UAC050370001",
+      "porcentaje": 0.4
+    },
+    {
+      "nombre": "Pagare #UAC200270001",
+      "porcentaje": 0.4
+    },
+    {
+      "nombre": "Pagare #UAC150270001",
+      "porcentaje": 0.4
+    },
+    {
+      "nombre": "Pagare #UAC150170002",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "Cedear Nvidia Corp.",
+      "porcentaje": 0.95
+    },
+    {
+      "nombre": "Cedear The Coca Cola",
+      "porcentaje": 0.95
+    },
+    {
+      "nombre": "Cedear Ishares Bitcoin Trust",
+      "porcentaje": 0.69
+    },
+    {
+      "nombre": "Cedear Google",
+      "porcentaje": 0.53
+    },
+    {
+      "nombre": "Cedear Microsoft",
+      "porcentaje": 0.53
+    },
+    {
+      "nombre": "Cedear Facebook",
+      "porcentaje": 0.52
+    },
+    {
+      "nombre": "Cedear Tesla",
+      "porcentaje": 0.51
+    },
+    {
+      "nombre": "Cedear Berkshire Hath Inc",
+      "porcentaje": 0.5
+    },
+    {
+      "nombre": "Cedear Shares MSCI Brazil ETF",
+      "porcentaje": 0.5
+    },
+    {
+      "nombre": "Cedear SPDR Dow Jones Industrial",
+      "porcentaje": 0.5
+    },
+    {
+      "nombre": "Cedear Mercado Libre",
+      "porcentaje": 0.47
+    },
+    {
+      "nombre": "Cedear Invesco QQQ",
+      "porcentaje": 1.78
+    },
+    {
+      "nombre": "FCI Argenfunds Liquidez - Clase B",
+      "porcentaje": 8.15
+    },
+    {
+      "nombre": "FCI BM Smart Money Market - Clase B",
+      "porcentaje": 6.93
+    },
+    {
+      "nombre": "FCI Zofingen Pesos Ya - Clase A",
+      "porcentaje": 4.48
+    },
+    {
+      "nombre": "FF Sion Conecta Infraestructura Privada S1",
+      "porcentaje": 1.22
+    },
+    {
+      "nombre": "FF Provincia Leasing S 6A",
+      "porcentaje": 0.5
+    },
+    {
+      "nombre": "FF Elebar XIV Clase A",
+      "porcentaje": 0.08
     }
   ],
   "calificaciones": [],

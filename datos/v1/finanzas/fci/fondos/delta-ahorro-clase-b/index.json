@@ -2,7 +2,7 @@
   "fondoId": "371",
   "claseId": "664",
   "nombre": "Delta Ahorro - Clase B",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "Delta Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,15 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Peso Argentino",
   "codigoCNV": "506",
-  "patrimonio": 232446711656.53,
-  "cantidadCuotapartes": 673543462.7,
+  "patrimonio": 234514411746.83,
+  "cantidadCuotapartes": 678996954.88,
   "inversionMinima": 1,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 345110.189,
-    "ultimos7Dias": 18.6818,
-    "unMes": 19.896,
+    "valorCuotaparte": 345383.599,
+    "ultimos7Dias": 20.1552,
+    "unMes": 20.2323,
     "noventaDias": 5.3282,
     "cientoOchentaDias": 12.9875,
     "enElAnio": 16.5359,
@@ -29,56 +29,800 @@
   },
   "composicionCartera": [
     {
-      "nombre": "Caucion Colocadora $ BYMA",
-      "porcentaje": 4.2
-    },
-    {
-      "nombre": "FCI Gainvest Pesos - Clase B",
-      "porcentaje": 3.3
-    },
-    {
-      "nombre": "ON Banco Nacion Argentina Clase 1",
-      "porcentaje": 3.1
+      "nombre": "Banco Nacion Argentina Clase 1",
+      "porcentaje": 2.98
     },
     {
       "nombre": "ON BBVA Frances Cl 47",
-      "porcentaje": 3
-    },
-    {
-      "nombre": "Pzo Fi $ Bco Nacion",
-      "porcentaje": 2.9
-    },
-    {
-      "nombre": "Pzo Fi $ Bco Cordoba",
-      "porcentaje": 2.9
-    },
-    {
-      "nombre": "ON Telecom C26",
-      "porcentaje": 2.5
+      "porcentaje": 2.82
     },
     {
       "nombre": "ON Tarj Naranja C66 S1",
-      "porcentaje": 2.4
-    },
-    {
-      "nombre": "FF Mercado Credito 50 CA",
-      "porcentaje": 2.1
+      "porcentaje": 2.26
     },
     {
       "nombre": "ON Banco de Valores C3",
-      "porcentaje": 2.1
-    },
-    {
-      "nombre": "ON Banco de Galicia 32 BYY1O",
-      "porcentaje": 2
+      "porcentaje": 2.12
     },
     {
       "nombre": "ON Tarj Naranja C67 S1",
-      "porcentaje": 2
+      "porcentaje": 1.94
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 66.4
+      "nombre": "ON Banco de Galicia 32 BYY1O",
+      "porcentaje": 1.93
+    },
+    {
+      "nombre": "ON ICBC Clase 5 110327",
+      "porcentaje": 1.72
+    },
+    {
+      "nombre": "ON Santander Rio S 32",
+      "porcentaje": 1.71
+    },
+    {
+      "nombre": "ON BBVA Frances Cl 38",
+      "porcentaje": 1.68
+    },
+    {
+      "nombre": "ON Banco Prov Clase 6",
+      "porcentaje": 1.64
+    },
+    {
+      "nombre": "ON Santander Rio S 31",
+      "porcentaje": 1.6
+    },
+    {
+      "nombre": "ON Arcor C4",
+      "porcentaje": 1.59
+    },
+    {
+      "nombre": "ON Volkswagen Financial Services C12",
+      "porcentaje": 1.58
+    },
+    {
+      "nombre": "ON ICBC Clase 4 281126",
+      "porcentaje": 1.56
+    },
+    {
+      "nombre": "ON Arcor C3",
+      "porcentaje": 1.44
+    },
+    {
+      "nombre": "ON Edenor Clase 9 DNC9O",
+      "porcentaje": 1.44
+    },
+    {
+      "nombre": "ON BACS Clase 19",
+      "porcentaje": 1.41
+    },
+    {
+      "nombre": "ON BBVA Frances Cl 46",
+      "porcentaje": 1.29
+    },
+    {
+      "nombre": "ON Mercado Pago C3",
+      "porcentaje": 1.26
+    },
+    {
+      "nombre": "ON Bco Provincia Cl 4",
+      "porcentaje": 1.04
+    },
+    {
+      "nombre": "ON ICBC Clase 7 170627",
+      "porcentaje": 1.03
+    },
+    {
+      "nombre": "ON FCA Comp. Finac CL 22 S2",
+      "porcentaje": 1.01
+    },
+    {
+      "nombre": "ON PSA Serie 38",
+      "porcentaje": 0.86
+    },
+    {
+      "nombre": "ON NewSan Clase 23",
+      "porcentaje": 0.86
+    },
+    {
+      "nombre": "ON Banco Comafi C22",
+      "porcentaje": 0.84
+    },
+    {
+      "nombre": "ON Volkswagen Financial Services C16",
+      "porcentaje": 0.83
+    },
+    {
+      "nombre": "ON Rombo Cia Fciera S64",
+      "porcentaje": 0.81
+    },
+    {
+      "nombre": "Pagare #MAV090960023",
+      "porcentaje": 0.65
+    },
+    {
+      "nombre": "ON Credicuotas Consumo S15",
+      "porcentaje": 0.63
+    },
+    {
+      "nombre": "ON PSA Serie 35",
+      "porcentaje": 0.59
+    },
+    {
+      "nombre": "Pagare #MAV160960034",
+      "porcentaje": 0.48
+    },
+    {
+      "nombre": "Cheque E *MAV120801924",
+      "porcentaje": 0.45
+    },
+    {
+      "nombre": "ON Toyota Clase 38",
+      "porcentaje": 0.4
+    },
+    {
+      "nombre": "ON Rombo Cia Fciera S65",
+      "porcentaje": 0.37
+    },
+    {
+      "nombre": "ON Credicuotas Consumo S17",
+      "porcentaje": 0.35
+    },
+    {
+      "nombre": "ON BBVA Frances Cl 41",
+      "porcentaje": 0.35
+    },
+    {
+      "nombre": "Pagare #MAV040860059",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "Pagare #MAV040860064",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "Pagare #MAV050860047",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "Pagare #MAV240860050",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "Pagare #MAV240860051",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "Pagare #MAV190860067",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "Pagare #MAV200860067",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "Pagare #MAV240860076",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "Pagare #MAV240860077",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "Pagare #MAV170960026",
+      "porcentaje": 0.32
+    },
+    {
+      "nombre": "Pagare #MAV240960014",
+      "porcentaje": 0.32
+    },
+    {
+      "nombre": "ON PSA Serie 36",
+      "porcentaje": 0.32
+    },
+    {
+      "nombre": "Pagare #MAV150960029",
+      "porcentaje": 0.32
+    },
+    {
+      "nombre": "ON Toyota Clase 34",
+      "porcentaje": 0.31
+    },
+    {
+      "nombre": "Cheque E *MAV300701638",
+      "porcentaje": 0.29
+    },
+    {
+      "nombre": "ON Banco Hipotecario C11",
+      "porcentaje": 0.28
+    },
+    {
+      "nombre": "Cheque E *MAV300701639",
+      "porcentaje": 0.25
+    },
+    {
+      "nombre": "ON Grupo ST C16",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Cheque E *MAV080901348",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "Cheque E *MAV080901349",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "ON Arcor C6",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "Cheque E *MAV100801367",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "Cheque E *MAV100801368",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "Cheque E *MAV100801369",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "Cheque E *MAV100801370",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "Cheque E *MAV190801479",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "Cheque E *MAV140901063",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Cheque E *MAV140901062",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "ON Volkswagen Financial Services C13",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Cheque E *MAV140801655",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Cheque E *MAV140801657",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Cheque E *MAV030801345",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV120802095",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV120802096",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV120802098",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV250801568",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV250901230",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "ON Rowing S1",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV010801258",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV010801259",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV210801247",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV260801311",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #MAV170960032",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV180801421",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV140801339",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV020901187",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV251001187",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV021000983",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV180901138",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV220901381",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV021000986",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV021000987",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV140901239",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV250901293",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV290901308",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV180801811",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV131001528",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV061001299",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV091001209",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV161001184",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV280901059",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV230901346",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV231001209",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV140901308",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV170901255",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV210801657",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV210801658",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV210901011",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV210901012",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV210901053",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV211001240",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV211001241",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV240901148",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV310801666",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV011001174",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV061001330",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV081001163",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV030801238",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV140901190",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV160901510",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV021000988",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV120801919",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV140801559",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV180801605",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV190801357",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV200801488",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV240801020",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV260801349",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV270801148",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV010901375",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV030900982",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV070900960",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV100901435",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV021000984",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV021000985",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV120801913",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV010901309",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV020901276",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV280801290",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV290801260",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV310801383",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV100801172",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV310701569",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV040801179",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV100901286",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV100901290",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV110801419",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV200801273",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV300701387",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV040801264",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV100801216",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV030801088",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV060801068",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV100801335",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV120801826",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV310701770",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV260801310",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV280801038",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV210801085",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Caucion Colocadora $ BYMA",
+      "porcentaje": 4.98
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Cordoba",
+      "porcentaje": 4.01
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Nacion",
+      "porcentaje": 3.01
+    },
+    {
+      "nombre": "Pzo Fi $ ICBC",
+      "porcentaje": 1.36
+    },
+    {
+      "nombre": "Pzo Fi $ BNP Paribas",
+      "porcentaje": 1.35
+    },
+    {
+      "nombre": "Pzo Fi $ Nvo Bco Indus",
+      "porcentaje": 1.35
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Provincia",
+      "porcentaje": 1.02
+    },
+    {
+      "nombre": "Pzo Fi $ Nvo Bco Santa Fe",
+      "porcentaje": 1.01
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Supervielle",
+      "porcentaje": 0.68
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Santander Ri",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "FCI Gainvest Pesos - Clase B",
+      "porcentaje": 2.99
+    },
+    {
+      "nombre": "FF Mercado Credito 50 CA",
+      "porcentaje": 1.97
+    },
+    {
+      "nombre": "FCI Pionero Pesos Plus - Clase B",
+      "porcentaje": 1.49
+    },
+    {
+      "nombre": "FCI Mercadolibre Cerrado De Créditos",
+      "porcentaje": 1.43
+    },
+    {
+      "nombre": "FF Mercado Credito 45 CA",
+      "porcentaje": 1.33
+    },
+    {
+      "nombre": "FF Mercado Credito 46 CA",
+      "porcentaje": 1.33
+    },
+    {
+      "nombre": "FF Mercado Credito 49 CA",
+      "porcentaje": 1.32
+    },
+    {
+      "nombre": "FF Mercado Credito 51 CA",
+      "porcentaje": 1.29
+    },
+    {
+      "nombre": "FF Mercado Credito 43 CA",
+      "porcentaje": 1.15
+    },
+    {
+      "nombre": "FF Mercado Credito 47 CA",
+      "porcentaje": 1.13
+    },
+    {
+      "nombre": "FF Mercado Credito 44 CA",
+      "porcentaje": 1
+    },
+    {
+      "nombre": "FF Mercado Credito 48 CA",
+      "porcentaje": 0.99
+    },
+    {
+      "nombre": "FF Mercado Credito 52 CA",
+      "porcentaje": 0.94
+    },
+    {
+      "nombre": "FF Mercado Credito 39 CA",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "FF Cuotas Cencosud S58 VDFA",
+      "porcentaje": 0.3
+    },
+    {
+      "nombre": "FF Megabono 345 Clase A",
+      "porcentaje": 0.22
+    },
+    {
+      "nombre": "FF Mercado Credito 42 CA",
+      "porcentaje": 0.22
+    },
+    {
+      "nombre": "FF Megabono 340 Clase A",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "FF Cuotas Cencosud S59 VDFA",
+      "porcentaje": 0.13
+    },
+    {
+      "nombre": "FF Megabono 341 Clase A",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "FF Megabono 338 Clase A",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "FF Megabono 334 Clase A",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "FF Mercado Credito 41 CA",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "FF Megabono 322 Clase A",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "FF Megabono 332 Clase A",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "FF Megabono 343 Clase A",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "FF Provincia Leasing S 6A",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "FF Mercado Credito 40 CA",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "FF Consubond S198 Clase A",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "FF Megabono 327 Clase A",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "FF Megabono 330 Clase A",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "FF Megabono Crédito 328 Clase A",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "FF Megabono 320 Clase A",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "FF AMFAyS S49 Clase A",
+      "porcentaje": 0.01
     }
   ],
   "calificaciones": [

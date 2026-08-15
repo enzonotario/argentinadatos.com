@@ -2,7 +2,7 @@
   "fondoId": "1330",
   "claseId": "3796",
   "nombre": "Consultatio Gestion V - Clase A",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,15 +13,15 @@
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Peso Argentino",
   "codigoCNV": "1181",
-  "patrimonio": 124374960.55,
+  "patrimonio": 124038161.65,
   "cantidadCuotapartes": 78223698.55,
   "inversionMinima": 1000,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1589.991,
-    "ultimos7Dias": -16.9356,
-    "unMes": 21.7987,
+    "valorCuotaparte": 1585.685,
+    "ultimos7Dias": -28.8005,
+    "unMes": 16.3331,
     "noventaDias": 8.6738,
     "cientoOchentaDias": 7.7593,
     "enElAnio": 6.5363,
@@ -29,60 +29,288 @@
   },
   "composicionCartera": [
     {
-      "nombre": "Letra Tesoro Nac D31L6",
-      "porcentaje": 26.8
-    },
-    {
-      "nombre": "Bono del Tesoro Nacional D31G6",
-      "porcentaje": 14.5
-    },
-    {
       "nombre": "Pagare #UMV070860006",
-      "porcentaje": 3.6
-    },
-    {
-      "nombre": "Bono del Tesoro Nacional TZVD8",
-      "porcentaje": 3
+      "porcentaje": 4.42
     },
     {
       "nombre": "Pagare #UMV071260014",
-      "porcentaje": 2.8
-    },
-    {
-      "nombre": "Bono Prov de Buenos Aires TZV28",
-      "porcentaje": 2.6
+      "porcentaje": 3.43
     },
     {
       "nombre": "Pagare #UMV201060036",
-      "porcentaje": 2.4
+      "porcentaje": 3.04
     },
     {
       "nombre": "Pagare #UMV101160038",
-      "porcentaje": 2.4
+      "porcentaje": 3.03
     },
     {
       "nombre": "Pagare #UMV201160034",
-      "porcentaje": 2.4
+      "porcentaje": 3.02
     },
     {
       "nombre": "Pagare #UMV101260061",
-      "porcentaje": 2.4
+      "porcentaje": 3.01
     },
     {
       "nombre": "Pagare #UMV301160052",
-      "porcentaje": 2.3
+      "porcentaje": 2.84
     },
     {
       "nombre": "Pagare #UMV100860056",
-      "porcentaje": 2.1
+      "porcentaje": 2.65
+    },
+    {
+      "nombre": "Pagare #UPO300470003",
+      "porcentaje": 2.03
+    },
+    {
+      "nombre": "Pagare #UAC310570001",
+      "porcentaje": 1.98
+    },
+    {
+      "nombre": "Pagare #UAC200470001",
+      "porcentaje": 1.97
+    },
+    {
+      "nombre": "Pagare #UAG301260001",
+      "porcentaje": 1.93
+    },
+    {
+      "nombre": "Pagare #UFR311060001",
+      "porcentaje": 1.73
+    },
+    {
+      "nombre": "Pagare #UBI270170001",
+      "porcentaje": 1.72
+    },
+    {
+      "nombre": "Pagare #UMV141260016",
+      "porcentaje": 1.71
+    },
+    {
+      "nombre": "Pagare #UMV180270018",
+      "porcentaje": 1.7
+    },
+    {
+      "nombre": "Pagare #UBI300470001",
+      "porcentaje": 1.7
+    },
+    {
+      "nombre": "Pagare #UBI130270001",
+      "porcentaje": 1.7
+    },
+    {
+      "nombre": "Pagare #UMV310770006",
+      "porcentaje": 1.65
+    },
+    {
+      "nombre": "Pagare #UBI010270001",
+      "porcentaje": 1.37
+    },
+    {
+      "nombre": "Pagare #UGA281060001",
+      "porcentaje": 1.17
+    },
+    {
+      "nombre": "Pagare #UGA280470001",
+      "porcentaje": 1.14
+    },
+    {
+      "nombre": "Pagare #UAC251160002",
+      "porcentaje": 0.92
+    },
+    {
+      "nombre": "Pagare #UNO241160003",
+      "porcentaje": 0.87
+    },
+    {
+      "nombre": "Pagare #UAC220170001",
+      "porcentaje": 0.86
+    },
+    {
+      "nombre": "Pagare #UAC200270002",
+      "porcentaje": 0.85
+    },
+    {
+      "nombre": "Pagare #UAC200470002",
+      "porcentaje": 0.84
+    },
+    {
+      "nombre": "Pagare #UFM071260001",
+      "porcentaje": 0.6
+    },
+    {
+      "nombre": "Pagare #UMV301260019",
+      "porcentaje": 0.51
+    },
+    {
+      "nombre": "Pagare #UCM070570002",
+      "porcentaje": 0.46
+    },
+    {
+      "nombre": "Pagare #UAC021060001",
+      "porcentaje": 0.44
+    },
+    {
+      "nombre": "Pagare #UAC250960001",
+      "porcentaje": 0.44
+    },
+    {
+      "nombre": "Pagare #UAC180960001",
+      "porcentaje": 0.4
+    },
+    {
+      "nombre": "Pagare #UAR090770002",
+      "porcentaje": 0.38
+    },
+    {
+      "nombre": "Pagare #UFI140960001",
+      "porcentaje": 0.35
+    },
+    {
+      "nombre": "Pagare #UFI190860001",
+      "porcentaje": 0.35
+    },
+    {
+      "nombre": "Pagare #UPO210170002",
+      "porcentaje": 0.34
+    },
+    {
+      "nombre": "Pagare #UAR110670006",
+      "porcentaje": 0.34
+    },
+    {
+      "nombre": "Pagare #UAR300670004",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "Pagare #UFR310770001",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "Pagare #UAC031260001",
+      "porcentaje": 0.28
+    },
+    {
+      "nombre": "Pagare #UAC101260004",
+      "porcentaje": 0.28
+    },
+    {
+      "nombre": "Pagare #UAC171260003",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "Pagare #UAC221260001",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "Pagare #UFT231060001",
+      "porcentaje": 0.26
+    },
+    {
+      "nombre": "Pagare #UFT301060001",
+      "porcentaje": 0.26
+    },
+    {
+      "nombre": "Pagare #UAR180670010",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "Pagare #UAC180670001",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "Pagare #UAC230670001",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "Pagare #UAC150670001",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "Pagare #UAC030670001",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "Pagare #UAC090670002",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "Pagare #UFT160770001",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "Pagare #UFR311060002",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Pagare #UFR310570001",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Pagare #UDO221260008",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Pagare #UAC011160001",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Pagare #UFR310170001",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare #UFT180670002",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Pagare #UFT250670002",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional D31G6",
+      "porcentaje": 19.75
+    },
+    {
+      "nombre": "Letra Tesoro Nac D15E7",
+      "porcentaje": 3.9
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TZVD8",
+      "porcentaje": 3.87
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TMVE8",
+      "porcentaje": 3.79
+    },
+    {
+      "nombre": "Bono Prov de Buenos Aires TZV28",
+      "porcentaje": 3.23
+    },
+    {
+      "nombre": "Lelink D30S6",
+      "porcentaje": 1.35
+    },
+    {
+      "nombre": "ON GEMSA y CTR C43",
+      "porcentaje": 0.44
+    },
+    {
+      "nombre": "ON P. Aconcagua Energia C19",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "ON P. Aconcagua Energia C21",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "FCI MAF Money Market - Clase B",
+      "porcentaje": 2.33
     },
     {
       "nombre": "FCI Argenfunds Liquidez - Clase B",
-      "porcentaje": 2
-    },
-    {
-      "nombre": "Resto de Activos",
-      "porcentaje": 30.8
+      "porcentaje": 1.68
     }
   ],
   "calificaciones": [],

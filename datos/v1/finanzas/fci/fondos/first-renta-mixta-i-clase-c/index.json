@@ -2,7 +2,7 @@
   "fondoId": "1207",
   "claseId": "3338",
   "nombre": "First Renta Mixta I - Clase C",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "First Capital Markets S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,15 +13,15 @@
   "duracion": "No Aplicable",
   "moneda": "Peso Argentino",
   "codigoCNV": "1020",
-  "patrimonio": 23765281112.67,
+  "patrimonio": 23729133345.63,
   "cantidadCuotapartes": 1429515701.65,
   "inversionMinima": 1000,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 16624.708,
-    "ultimos7Dias": 3.2627,
-    "unMes": 7.8115,
+    "valorCuotaparte": 16599.421,
+    "ultimos7Dias": -14.8677,
+    "unMes": 11.1636,
     "noventaDias": 7.3412,
     "cientoOchentaDias": 12.3197,
     "enElAnio": 14.9405,
@@ -29,56 +29,272 @@
   },
   "composicionCartera": [
     {
-      "nombre": "Letra Tesoro Nac D31L6",
-      "porcentaje": 20.7
-    },
-    {
-      "nombre": "Fut Reg ARS",
-      "porcentaje": 10.4
-    },
-    {
-      "nombre": "Bono Bopreal 2027 Serie 1 Clase C BPOC7",
-      "porcentaje": 9.3
-    },
-    {
-      "nombre": "Letra Tamar TEM M31G6",
-      "porcentaje": 8.2
-    },
-    {
       "nombre": "Bono del Tesoro Nacional D31G6",
-      "porcentaje": 6.4
+      "porcentaje": 11
     },
     {
-      "nombre": "Bono Prov de Buenos Aires TZV28",
-      "porcentaje": 5.6
-    },
-    {
-      "nombre": "Bono Dual TXMJ8",
-      "porcentaje": 4.9
+      "nombre": "Bono del Tesoro Nacional TMVE8",
+      "porcentaje": 10.48
     },
     {
       "nombre": "Bono del Tesoro Nacional TZVD8",
-      "porcentaje": 4.8
+      "porcentaje": 9.63
     },
     {
-      "nombre": "Lelink D30S6",
-      "porcentaje": 4.5
+      "nombre": "Bono Prov de Buenos Aires TZV28",
+      "porcentaje": 9.48
+    },
+    {
+      "nombre": "Bono Bopreal 2027 Serie 1 Clase C BPOC7",
+      "porcentaje": 9.07
+    },
+    {
+      "nombre": "Letra Tamar TEM M31G6",
+      "porcentaje": 8.05
     },
     {
       "nombre": "Bono Dual TTS26",
-      "porcentaje": 3.6
+      "porcentaje": 5.02
+    },
+    {
+      "nombre": "Bono Dual TXMJ8",
+      "porcentaje": 4.75
+    },
+    {
+      "nombre": "Lelink D30S6",
+      "porcentaje": 4.42
+    },
+    {
+      "nombre": "ON YPF Clase 42",
+      "porcentaje": 1.38
+    },
+    {
+      "nombre": "Lecap S15S6",
+      "porcentaje": 1.34
+    },
+    {
+      "nombre": "Bono Bopreal 2027 Serie 1 Clase B BPOB7",
+      "porcentaje": 1.27
+    },
+    {
+      "nombre": "ON Pluspetrol Clase 6",
+      "porcentaje": 1.04
+    },
+    {
+      "nombre": "ON Oldelval Clase 5",
+      "porcentaje": 0.7
+    },
+    {
+      "nombre": "ON Pan American C37",
+      "porcentaje": 0.68
+    },
+    {
+      "nombre": "ON Del Fabro Hnos S1 DFS1L",
+      "porcentaje": 0.68
+    },
+    {
+      "nombre": "ON Diransa C2",
+      "porcentaje": 0.67
+    },
+    {
+      "nombre": "ON Pyme Gar Bajo Imp Apache S1 C1",
+      "porcentaje": 0.67
+    },
+    {
+      "nombre": "ON John Deere Cia. Fin C19",
+      "porcentaje": 0.67
+    },
+    {
+      "nombre": "ON Diesel Lange S1",
+      "porcentaje": 0.66
+    },
+    {
+      "nombre": "ON John Deere Cia. Fin C20",
+      "porcentaje": 0.66
+    },
+    {
+      "nombre": "ON Pyme Gar Venturino S2",
+      "porcentaje": 0.66
+    },
+    {
+      "nombre": "ON Sidersa Clase 2",
+      "porcentaje": 0.65
+    },
+    {
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 0.43
+    },
+    {
+      "nombre": "ON PCR Clase K",
+      "porcentaje": 0.42
+    },
+    {
+      "nombre": "ON Oldelval Clase 6",
+      "porcentaje": 0.35
+    },
+    {
+      "nombre": "ON Futuros y Opciones.com S4 CB",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "ON Special G y Petroagro C3",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "ON Oiltanking S3",
+      "porcentaje": 0.22
+    },
+    {
+      "nombre": "ON Oldelval Clase 3",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "ON Agronorte Serie 1",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "ON Pan American C33",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "ON YPF Luz C12",
+      "porcentaje": 0.04
     },
     {
       "nombre": "Pase Colocador ARS MAV",
-      "porcentaje": 3
+      "porcentaje": 2.32
     },
     {
       "nombre": "Caucion Colocadora $ Merval",
-      "porcentaje": 2.2
+      "porcentaje": 0.65
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 16.4
+      "nombre": "FF Agrocap S4",
+      "porcentaje": 0.66
+    },
+    {
+      "nombre": "FF Moni Mobile 18 A",
+      "porcentaje": 0.61
+    },
+    {
+      "nombre": "FF Venturino S1 A",
+      "porcentaje": 0.58
+    },
+    {
+      "nombre": "FF Confibono S86 Clase A",
+      "porcentaje": 0.55
+    },
+    {
+      "nombre": "FF Megabono 347 Clase A",
+      "porcentaje": 0.46
+    },
+    {
+      "nombre": "FF Tarj Fertil S26 CA",
+      "porcentaje": 0.46
+    },
+    {
+      "nombre": "FF Megabono 348 Clase A",
+      "porcentaje": 0.44
+    },
+    {
+      "nombre": "FF Creditech S6 CA",
+      "porcentaje": 0.44
+    },
+    {
+      "nombre": "FF Creditech S7 CA",
+      "porcentaje": 0.42
+    },
+    {
+      "nombre": "FF Waynimovil S14 CA",
+      "porcentaje": 0.42
+    },
+    {
+      "nombre": "FF Mercado Credito 49 CA",
+      "porcentaje": 0.42
+    },
+    {
+      "nombre": "FF Mercado Credito 50 CA",
+      "porcentaje": 0.42
+    },
+    {
+      "nombre": "FF Mercado Credito 51 CA",
+      "porcentaje": 0.42
+    },
+    {
+      "nombre": "FF Megabono 351 Clase A",
+      "porcentaje": 0.4
+    },
+    {
+      "nombre": "FF Megabono 353 Clase A",
+      "porcentaje": 0.39
+    },
+    {
+      "nombre": "FF Megabono 346 Clase A",
+      "porcentaje": 0.38
+    },
+    {
+      "nombre": "FF San Cristobal S2 CA",
+      "porcentaje": 0.38
+    },
+    {
+      "nombre": "FF Moni Mobile 17 A",
+      "porcentaje": 0.37
+    },
+    {
+      "nombre": "FF Elebar XVI Clase A",
+      "porcentaje": 0.37
+    },
+    {
+      "nombre": "FF Inverlease FSA S2 CA",
+      "porcentaje": 0.34
+    },
+    {
+      "nombre": "FF Fiducar 32 Clase A",
+      "porcentaje": 0.31
+    },
+    {
+      "nombre": "FF AMFAyS S51 Clase A",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "FF Confibono S85 Clase A",
+      "porcentaje": 0.22
+    },
+    {
+      "nombre": "FF Elebar XV Clase A",
+      "porcentaje": 0.2
+    },
+    {
+      "nombre": "FF Creditech S5 CA",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "FF Grupo GEP Colservice S1 CA",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "FF Pareto 15 Clase A",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "FF Provincia Leasing S 6A",
+      "porcentaje": 0.13
+    },
+    {
+      "nombre": "FF Confibono S84 Clase A",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "FF Waynimovil S12 CA",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "FF Ames S27 Clase A",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "FF Megabono 330 Clase A",
+      "porcentaje": 0.02
     }
   ],
   "calificaciones": [],

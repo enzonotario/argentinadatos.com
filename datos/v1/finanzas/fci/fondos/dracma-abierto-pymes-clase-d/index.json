@@ -2,7 +2,7 @@
   "fondoId": "1406",
   "claseId": "4099",
   "nombre": "Dracma Abierto Pymes - Clase D",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "Dracma Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Retorno Total",
@@ -29,76 +29,276 @@
   },
   "composicionCartera": [
     {
-      "nombre": "Lecap S30S6",
-      "porcentaje": 8
-    },
-    {
-      "nombre": "Caucion Colocadora $ Merval",
-      "porcentaje": 5.2
-    },
-    {
-      "nombre": "Cheque E *ACE270700044",
-      "porcentaje": 5.1
-    },
-    {
       "nombre": "Cheque E *ACE090800061",
-      "porcentaje": 5.1
+      "porcentaje": 5.28
     },
     {
       "nombre": "Cheque E *NOV190800048",
-      "porcentaje": 5.1
+      "porcentaje": 5.24
     },
     {
       "nombre": "Cheque E *FDE300800027",
-      "porcentaje": 5
+      "porcentaje": 5.19
     },
     {
       "nombre": "Cheque E *NEU100900018",
-      "porcentaje": 5
+      "porcentaje": 5.16
     },
     {
       "nombre": "Cheque E *NEU141000027",
-      "porcentaje": 4.9
+      "porcentaje": 5.02
     },
     {
-      "nombre": "FCI BM Smart Money Market - Clase B",
-      "porcentaje": 4.5
+      "nombre": "Cheque E *ACI031200170",
+      "porcentaje": 3.92
     },
     {
-      "nombre": "Cheque NOVA170700006",
-      "porcentaje": 3.1
+      "nombre": "Cheque E *RES270800018",
+      "porcentaje": 3.45
     },
     {
       "nombre": "Cheque E *ARP250900289",
-      "porcentaje": 3
+      "porcentaje": 3.07
     },
     {
-      "nombre": "Cheque E *AVU180700043",
-      "porcentaje": 2.6
+      "nombre": "Cheque E *ARP231000271",
+      "porcentaje": 3.02
     },
     {
       "nombre": "Cheque E *MOV310700076",
-      "porcentaje": 2.6
+      "porcentaje": 2.65
     },
     {
       "nombre": "Cheque E *AVU310700039",
-      "porcentaje": 2.6
+      "porcentaje": 2.65
     },
     {
       "nombre": "Cheque E *MOV161000064",
-      "porcentaje": 2.4
+      "porcentaje": 2.52
     },
     {
-      "nombre": "Cheque E *ARP220700207",
-      "porcentaje": 2.2
+      "nombre": "Cheque E *ARP191100238",
+      "porcentaje": 2.47
     },
     {
-      "nombre": "Cheque E *AVU240700053",
-      "porcentaje": 2
+      "nombre": "Cheque E *ACI150900454",
+      "porcentaje": 2.23
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 32
+      "nombre": "Cheque E *POT041000048",
+      "porcentaje": 2.04
+    },
+    {
+      "nombre": "Cheque E *ACI190800247",
+      "porcentaje": 1.83
+    },
+    {
+      "nombre": "Cheque E *ACI220800220",
+      "porcentaje": 1.57
+    },
+    {
+      "nombre": "Cheque E *ARP310800328",
+      "porcentaje": 1.45
+    },
+    {
+      "nombre": "Cheque E *NEU300700016",
+      "porcentaje": 1.33
+    },
+    {
+      "nombre": "Cheque E *RES141100020",
+      "porcentaje": 1.3
+    },
+    {
+      "nombre": "Cheque E *RES141200014",
+      "porcentaje": 1.27
+    },
+    {
+      "nombre": "Cheque E *ACE041100056",
+      "porcentaje": 1.22
+    },
+    {
+      "nombre": "Cheque E *ACE191100074",
+      "porcentaje": 1.21
+    },
+    {
+      "nombre": "Cheque E *ACE161100036",
+      "porcentaje": 1.21
+    },
+    {
+      "nombre": "Cheque E *ACE251100081",
+      "porcentaje": 1.2
+    },
+    {
+      "nombre": "Cheque E *RES210800018",
+      "porcentaje": 1.02
+    },
+    {
+      "nombre": "Cheque E *ARP101200299",
+      "porcentaje": 0.98
+    },
+    {
+      "nombre": "Cheque E *ARP171200251",
+      "porcentaje": 0.97
+    },
+    {
+      "nombre": "Cheque E *ARP300700207",
+      "porcentaje": 0.93
+    },
+    {
+      "nombre": "Cheque E *ACI100800253",
+      "porcentaje": 0.89
+    },
+    {
+      "nombre": "Cheque E *ARP031000162",
+      "porcentaje": 0.64
+    },
+    {
+      "nombre": "Cheque E *ARP041000183",
+      "porcentaje": 0.64
+    },
+    {
+      "nombre": "Cheque E *ARP011000159",
+      "porcentaje": 0.64
+    },
+    {
+      "nombre": "Cheque E *ARP021000159",
+      "porcentaje": 0.64
+    },
+    {
+      "nombre": "Cheque E *ARP051000140",
+      "porcentaje": 0.59
+    },
+    {
+      "nombre": "Cheque E *NIO070800030",
+      "porcentaje": 0.56
+    },
+    {
+      "nombre": "Cheque E *NIO240800018",
+      "porcentaje": 0.55
+    },
+    {
+      "nombre": "Cheque E *NIO080900017",
+      "porcentaje": 0.54
+    },
+    {
+      "nombre": "Cheque E *ARP200800314",
+      "porcentaje": 0.53
+    },
+    {
+      "nombre": "Cheque E *ARP210900200",
+      "porcentaje": 0.52
+    },
+    {
+      "nombre": "Cheque E *ACI200900231",
+      "porcentaje": 0.52
+    },
+    {
+      "nombre": "Cheque E *ARP201000292",
+      "porcentaje": 0.51
+    },
+    {
+      "nombre": "Cheque E *ARP111100224",
+      "porcentaje": 0.5
+    },
+    {
+      "nombre": "Cheque E *RES311200016",
+      "porcentaje": 0.48
+    },
+    {
+      "nombre": "Cheque E *RES311200017",
+      "porcentaje": 0.48
+    },
+    {
+      "nombre": "Cheque E *RES310100036",
+      "porcentaje": 0.47
+    },
+    {
+      "nombre": "Cheque E *RES280800013",
+      "porcentaje": 0.47
+    },
+    {
+      "nombre": "Cheque E *RES260800023",
+      "porcentaje": 0.47
+    },
+    {
+      "nombre": "Cheque E *RES240800016",
+      "porcentaje": 0.47
+    },
+    {
+      "nombre": "Cheque E *RES190800020",
+      "porcentaje": 0.47
+    },
+    {
+      "nombre": "Cheque E *RES220800014",
+      "porcentaje": 0.44
+    },
+    {
+      "nombre": "Cheque E *RES160800014",
+      "porcentaje": 0.44
+    },
+    {
+      "nombre": "Cheque E *RES280800014",
+      "porcentaje": 0.44
+    },
+    {
+      "nombre": "Cheque E *ARP061100221",
+      "porcentaje": 0.44
+    },
+    {
+      "nombre": "Cheque E *ARP131100219",
+      "porcentaje": 0.43
+    },
+    {
+      "nombre": "Cheque E *RES190800021",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "Cheque E *RES220800020",
+      "porcentaje": 0.26
+    },
+    {
+      "nombre": "Cheque E *RES120800031",
+      "porcentaje": 0.25
+    },
+    {
+      "nombre": "Cheque E *RES140800017",
+      "porcentaje": 0.22
+    },
+    {
+      "nombre": "Cheque E *ACI140800243",
+      "porcentaje": 0.21
+    },
+    {
+      "nombre": "Cheque E *ACI190800273",
+      "porcentaje": 0.18
+    },
+    {
+      "nombre": "Cheque E *ACI250800231",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Cheque E *ACI180900174",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "Cheque E *ACI210900126",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Cheque E *ACI010800220",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Cheque E *ACI080800273",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Cheque E *ACI210800308",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "FCI BM Smart Money Market - Clase B",
+      "porcentaje": 3.33
     }
   ],
   "calificaciones": [

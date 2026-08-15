@@ -2,7 +2,7 @@
   "fondoId": "827",
   "claseId": "2329",
   "nombre": "Ciclo Nova Ahorro Plus - Clase A",
-  "fecha": "2026-08-12",
+  "fecha": "2026-08-14",
   "administradora": "Ciclo Nova Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,15 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Peso Argentino",
   "codigoCNV": "1041",
-  "patrimonio": 36661256570.56,
-  "cantidadCuotapartes": 1006168764.42,
+  "patrimonio": 36982148125.94,
+  "cantidadCuotapartes": 1014062432.25,
   "inversionMinima": 1000,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 36436.488,
-    "ultimos7Dias": 21.6441,
-    "unMes": 19.6211,
+    "valorCuotaparte": 36469.301,
+    "ultimos7Dias": 20.2388,
+    "unMes": 19.4742,
     "noventaDias": 5.1095,
     "cientoOchentaDias": 12.629,
     "enElAnio": 16.442,
@@ -30,63 +30,463 @@
   "composicionCartera": [
     {
       "nombre": "Letra Tamar TEM M31G6",
-      "porcentaje": 14.5
+      "porcentaje": 22.75
     },
     {
       "nombre": "Bono Dual TTS26",
-      "porcentaje": 13.6
-    },
-    {
-      "nombre": "Caucion Colocadora $ Merval",
-      "porcentaje": 8.3
+      "porcentaje": 14.56
     },
     {
       "nombre": "Lecap S13N6",
-      "porcentaje": 6
+      "porcentaje": 6.45
     },
     {
       "nombre": "ON Mercado Pago C5",
-      "porcentaje": 6
-    },
-    {
-      "nombre": "Pzo Fi $ Bco Santander Ri",
-      "porcentaje": 6
+      "porcentaje": 6.44
     },
     {
       "nombre": "ON Banco de Valores C3",
-      "porcentaje": 5.9
+      "porcentaje": 6.33
     },
     {
-      "nombre": "FCI Toronto T Ahorro B",
-      "porcentaje": 3.6
-    },
-    {
-      "nombre": "Pagare #MAV230760044",
-      "porcentaje": 3.5
-    },
-    {
-      "nombre": "FCI IAM Ahorro Pesos C B",
-      "porcentaje": 3.4
-    },
-    {
-      "nombre": "Pzo Fi $ Bco Mariva",
-      "porcentaje": 2.4
-    },
-    {
-      "nombre": "Letras Prov Buenos Aires LBL26",
-      "porcentaje": 2.4
-    },
-    {
-      "nombre": "FCI Zofingen Pesos Ya - Clase A",
-      "porcentaje": 2.4
+      "nombre": "Lecap S16O6",
+      "porcentaje": 3.79
     },
     {
       "nombre": "Pagare *MAV120801754",
-      "porcentaje": 2.3
+      "porcentaje": 2.5
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 18.7
+      "nombre": "Letra Prov Bs As LBG26",
+      "porcentaje": 2.49
+    },
+    {
+      "nombre": "ON Toyota Clase 40",
+      "porcentaje": 1.95
+    },
+    {
+      "nombre": "ON Rowing S1",
+      "porcentaje": 1.92
+    },
+    {
+      "nombre": "Letra Prov Chubut S116 C1",
+      "porcentaje": 1.17
+    },
+    {
+      "nombre": "ON ICBC Clase 5 110327",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "ON Mercado Pago C3",
+      "porcentaje": 0.25
+    },
+    {
+      "nombre": "Pagare *MAV030801215",
+      "porcentaje": 0.21
+    },
+    {
+      "nombre": "Pagare *MAV140901343",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare *MAV140901344",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare *MAV140901345",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare *MAV140901347",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare *MAV140901348",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare *MAV140901349",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare *MAV140901350",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare *MAV140901351",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare *MAV140901352",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare *MAV140901353",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare *MAV100801485",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Factura E %INC220800013",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Factura E %INC300800029",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Factura E %INC310800023",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare *MAV310701582",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare *MAV300701309",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #MAV180960042",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare *MAV020901306",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare *MAV010901344",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare *MAV270801180",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare *MAV280801337",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare *MAV310801439",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare *MAV260801366",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Factura E %INC240900024",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Factura E %INC120800022",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Factura E %INC080800019",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare *MAV110901388",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare *MAV110901389",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare *MAV110901390",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare *MAV110901391",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare *MAV110901386",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare *MAV110901387",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Factura E %INC310700025",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Factura E %INC310700023",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Factura E %INC150800023",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "ON GEMSA y CTR C43",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Factura E %INC230800024",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Factura E %INC120900033",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Factura E %INC250900019",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV210901083",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV210901084",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV210901085",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV051001098",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV051001089",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV051001090",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV051001091",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV051001092",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV051001093",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV051001094",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV051001095",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV051001096",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV051001097",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV210901082",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Factura E %INC310700024",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV180801231",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV260801144",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Factura E %INC130800017",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Factura E %INC150800010",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV141001302",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV160901217",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV161001044",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV170800696",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV200901282",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV210801048",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV240900949",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV250801319",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV280900801",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV290801158",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV020901118",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV021000909",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV050801067",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV061001199",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV090800967",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV101001374",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV130800913",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV210901086",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV210901087",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV210901088",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV210901089",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV210901090",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare *MAV210901091",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Nacion",
+      "porcentaje": 7.62
+    },
+    {
+      "nombre": "Pzo Fi $ Banco de Serv y Transacciones (BST)",
+      "porcentaje": 5.09
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Cordoba",
+      "porcentaje": 5.07
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Santander Ri",
+      "porcentaje": 5.06
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Patagonia",
+      "porcentaje": 3.81
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Supervielle",
+      "porcentaje": 3.81
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Mariva",
+      "porcentaje": 2.54
+    },
+    {
+      "nombre": "Pzo Fi $ Bco BACS",
+      "porcentaje": 2.53
+    },
+    {
+      "nombre": "FCI Argenfunds Liquidez - Clase B",
+      "porcentaje": 0.88
+    },
+    {
+      "nombre": "FCI Balanz Capital Money Market Clase C",
+      "porcentaje": 0.76
+    },
+    {
+      "nombre": "FF Mercado Credito 46 CA",
+      "porcentaje": 0.63
+    },
+    {
+      "nombre": "FF Mercado Credito 51 CA",
+      "porcentaje": 0.61
+    },
+    {
+      "nombre": "FCI Zofingen Pesos Ya - Clase A",
+      "porcentaje": 0.57
+    },
+    {
+      "nombre": "FF Fiducar 32 Clase A",
+      "porcentaje": 0.37
+    },
+    {
+      "nombre": "FF Cuotas Cencosud S55 VDFA",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "FF Centrocard Creditos S7",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "FF Fiducar 30 Clase A",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "FF Ames S27 Clase A",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "FF Consubond S198 Clase A",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "FF Consubond S197 Clase A",
+      "porcentaje": 0.01
     }
   ],
   "calificaciones": [],

@@ -2,14 +2,14 @@
   "fondoId": "743",
   "claseId": "1628",
   "nombre": "First Renta Dolares - Clase D",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "First Capital Markets S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
-  "horizonte": "Corto Plazo",
+  "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "916",
@@ -30,27 +30,263 @@
   "composicionCartera": [
     {
       "nombre": "Bono Bopreal 2027 Serie 1 Clase C BPOC7",
-      "porcentaje": 18.5
-    },
-    {
-      "nombre": "Caucion Colocadora U$S Merval",
-      "porcentaje": 10.3
+      "porcentaje": 18.21
     },
     {
       "nombre": "Bono Bopreal 2027 Serie 1 Clase B BPOB7",
-      "porcentaje": 8.8
+      "porcentaje": 9.38
     },
     {
       "nombre": "ON Genneia Clase 47",
-      "porcentaje": 2.1
+      "porcentaje": 2.07
     },
     {
       "nombre": "ON Profertil C2",
-      "porcentaje": 2.1
+      "porcentaje": 2.05
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 58.7
+      "nombre": "ON Central Puerto Clase C",
+      "porcentaje": 1.88
+    },
+    {
+      "nombre": "ON Mega C1",
+      "porcentaje": 1.76
+    },
+    {
+      "nombre": "ON John Deere Cia. Fin C17",
+      "porcentaje": 1.76
+    },
+    {
+      "nombre": "ON Pluspetrol Clase 1",
+      "porcentaje": 1.75
+    },
+    {
+      "nombre": "ON CNH Arg. C9",
+      "porcentaje": 1.75
+    },
+    {
+      "nombre": "ON Cresud S32 C48",
+      "porcentaje": 1.75
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional AO27",
+      "porcentaje": 1.73
+    },
+    {
+      "nombre": "ON Sidersa Clase 1",
+      "porcentaje": 1.71
+    },
+    {
+      "nombre": "ON Sidersa Clase 2",
+      "porcentaje": 1.69
+    },
+    {
+      "nombre": "ON Edenor C11",
+      "porcentaje": 1.69
+    },
+    {
+      "nombre": "ON Aluar Serie 7",
+      "porcentaje": 1.64
+    },
+    {
+      "nombre": "ON Minera Exar Clase 1",
+      "porcentaje": 1.32
+    },
+    {
+      "nombre": "Pagare #UDO201160001",
+      "porcentaje": 1.32
+    },
+    {
+      "nombre": "ON Oiltanking S2",
+      "porcentaje": 1.3
+    },
+    {
+      "nombre": "ON CNH Arg. C7",
+      "porcentaje": 1.29
+    },
+    {
+      "nombre": "ON Supervielle Clase T",
+      "porcentaje": 1.09
+    },
+    {
+      "nombre": "ON John Deere Cia. Fin C19",
+      "porcentaje": 1.05
+    },
+    {
+      "nombre": "ON PCR Clase R",
+      "porcentaje": 1
+    },
+    {
+      "nombre": "ON Irsa Clase 22",
+      "porcentaje": 0.95
+    },
+    {
+      "nombre": "ON Scania Credit C1",
+      "porcentaje": 0.95
+    },
+    {
+      "nombre": "ON Pan American C31",
+      "porcentaje": 0.94
+    },
+    {
+      "nombre": "ON Bco Galicia Clase 16",
+      "porcentaje": 0.93
+    },
+    {
+      "nombre": "ON Pampa Energia C25",
+      "porcentaje": 0.91
+    },
+    {
+      "nombre": "ON Oldelval Clase 7",
+      "porcentaje": 0.91
+    },
+    {
+      "nombre": "ON Luz De Tres Picos C5",
+      "porcentaje": 0.9
+    },
+    {
+      "nombre": "ON Oldelval Clase 6",
+      "porcentaje": 0.9
+    },
+    {
+      "nombre": "ON Oldelval Clase 5",
+      "porcentaje": 0.9
+    },
+    {
+      "nombre": "ON YPF Clase 42",
+      "porcentaje": 0.89
+    },
+    {
+      "nombre": "ON Camuzzi Gas C1 USD",
+      "porcentaje": 0.89
+    },
+    {
+      "nombre": "ON Pluspetrol Clase 3",
+      "porcentaje": 0.88
+    },
+    {
+      "nombre": "ON Agronorte S3 CB",
+      "porcentaje": 0.88
+    },
+    {
+      "nombre": "ON Tecpetrol C11",
+      "porcentaje": 0.88
+    },
+    {
+      "nombre": "ON YPF Clase 38",
+      "porcentaje": 0.88
+    },
+    {
+      "nombre": "ON Loma Negra C5",
+      "porcentaje": 0.88
+    },
+    {
+      "nombre": "ON Bco Patagonia Cl 4",
+      "porcentaje": 0.87
+    },
+    {
+      "nombre": "ON Loma Negra C6",
+      "porcentaje": 0.87
+    },
+    {
+      "nombre": "ON Supervielle Clase U",
+      "porcentaje": 0.86
+    },
+    {
+      "nombre": "ON BBVA Frances Cl 39",
+      "porcentaje": 0.86
+    },
+    {
+      "nombre": "ON Banco de Galicia 30 BYCWO",
+      "porcentaje": 0.86
+    },
+    {
+      "nombre": "ON Tarj Naranja C67 S2",
+      "porcentaje": 0.86
+    },
+    {
+      "nombre": "ON BBVA Frances Cl 44",
+      "porcentaje": 0.86
+    },
+    {
+      "nombre": "ON ICBC Clase 6 220527",
+      "porcentaje": 0.85
+    },
+    {
+      "nombre": "ON Banco Comafi C24",
+      "porcentaje": 0.85
+    },
+    {
+      "nombre": "ON Del Fabro Hnos S1 DFS1L",
+      "porcentaje": 0.85
+    },
+    {
+      "nombre": "ON Diesel Lange S1",
+      "porcentaje": 0.85
+    },
+    {
+      "nombre": "ON Pyme Gar Bajo Imp Apache S1 C1",
+      "porcentaje": 0.85
+    },
+    {
+      "nombre": "ON BBVA Frances Cl 50",
+      "porcentaje": 0.85
+    },
+    {
+      "nombre": "ON Banco de Galicia 33 BYZ1O",
+      "porcentaje": 0.84
+    },
+    {
+      "nombre": "ON Diransa C2",
+      "porcentaje": 0.84
+    },
+    {
+      "nombre": "ON Pyme Gar Venturino S2",
+      "porcentaje": 0.83
+    },
+    {
+      "nombre": "ON Otamerica S6",
+      "porcentaje": 0.45
+    },
+    {
+      "nombre": "ON Futuros y Opciones.com S4 CA",
+      "porcentaje": 0.43
+    },
+    {
+      "nombre": "ON Agronorte Serie 1",
+      "porcentaje": 0.4
+    },
+    {
+      "nombre": "ON John Deere Cia. Fin C20",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Caucion Colocadora U$S Merval",
+      "porcentaje": 6.76
+    },
+    {
+      "nombre": "FF Agrocap S4",
+      "porcentaje": 0.85
+    },
+    {
+      "nombre": "FF Desarrollo Minero Martin Bronce",
+      "porcentaje": 0.75
+    },
+    {
+      "nombre": "FF Venturino S1 A",
+      "porcentaje": 0.75
+    },
+    {
+      "nombre": "FF ALZ Agrocap S3",
+      "porcentaje": 0.68
+    },
+    {
+      "nombre": "FF ALZ Agrocap S2",
+      "porcentaje": 0.53
+    },
+    {
+      "nombre": "FF Vicentin Export S8 A",
+      "porcentaje": 0.12
     }
   ],
   "calificaciones": [],

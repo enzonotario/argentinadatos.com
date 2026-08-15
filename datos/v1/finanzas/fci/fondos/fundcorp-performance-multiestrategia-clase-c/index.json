@@ -2,7 +2,7 @@
   "fondoId": "1464",
   "claseId": "4331",
   "nombre": "Fundcorp Performance Multiestrategia - Clase C",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "CMF Asset Management S.A.U.",
   "depositaria": "Banco C.M.F. S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,15 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Peso Argentino",
   "codigoCNV": "1451",
-  "patrimonio": 42806187509.26,
+  "patrimonio": 42824140459.59,
   "cantidadCuotapartes": 16491167435.37,
   "inversionMinima": 1000,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 2595.704,
-    "ultimos7Dias": 28.2251,
-    "unMes": 12.4555,
+    "valorCuotaparte": 2596.793,
+    "ultimos7Dias": 15.2973,
+    "unMes": 11.3954,
     "noventaDias": 7.1299,
     "cientoOchentaDias": 18.7415,
     "enElAnio": 22.1872,
@@ -29,76 +29,352 @@
   },
   "composicionCartera": [
     {
-      "nombre": "Letra Tesoro Nac D31L6",
-      "porcentaje": 8.3
-    },
-    {
-      "nombre": "Bono del Tesoro Nacional TZXO7",
-      "porcentaje": 8.1
-    },
-    {
-      "nombre": "Bono Boncer 2027 TZXM7",
-      "porcentaje": 6.3
+      "nombre": "Bono del Tesoro Nacional D31G6",
+      "porcentaje": 13.97
     },
     {
       "nombre": "Bono Boncer TZXD7",
-      "porcentaje": 6.2
+      "porcentaje": 7.84
     },
     {
-      "nombre": "Bono Boncer TZXD6",
-      "porcentaje": 5.8
+      "nombre": "Bono del Tesoro Nacional TZXO7",
+      "porcentaje": 7.16
     },
     {
       "nombre": "Bono Dual TXMD9",
-      "porcentaje": 5.2
+      "porcentaje": 6.88
+    },
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 5.61
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 5.1
     },
     {
       "nombre": "Letra Tamar TEM TMF27",
-      "porcentaje": 4.9
+      "porcentaje": 4.36
     },
     {
       "nombre": "Bono Boncer TXMJ9",
-      "porcentaje": 4.5
-    },
-    {
-      "nombre": "Fut Reg ARS",
-      "porcentaje": 4
+      "porcentaje": 3.92
     },
     {
       "nombre": "Bono Boncer TZXS8",
-      "porcentaje": 3.7
-    },
-    {
-      "nombre": "Bono Boncer TZXS7",
       "porcentaje": 3.3
     },
     {
+      "nombre": "Bono Boncer TZXS7",
+      "porcentaje": 2.88
+    },
+    {
       "nombre": "Bono Dual TTD26",
-      "porcentaje": 3.1
+      "porcentaje": 2.74
     },
     {
       "nombre": "Bono del Tesoro Nacional T31Y7",
-      "porcentaje": 3
+      "porcentaje": 2.61
     },
     {
       "nombre": "Lecer X30N6",
-      "porcentaje": 2.9
+      "porcentaje": 2.56
     },
     {
       "nombre": "Letra Tesoro Nac S30O6",
-      "porcentaje": 2.8
+      "porcentaje": 2.45
     },
     {
       "nombre": "Letra Tamar TEM M31G6",
-      "porcentaje": 2.4
+      "porcentaje": 2.09
     },
     {
       "nombre": "Bono Boncer TZX28",
-      "porcentaje": 2.3
+      "porcentaje": 2.03
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 22.7
+      "nombre": "ON Vista Gas y Oil Arg C28",
+      "porcentaje": 1.41
+    },
+    {
+      "nombre": "Bono Dual TXMJ0",
+      "porcentaje": 1.34
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TMG28",
+      "porcentaje": 1.28
+    },
+    {
+      "nombre": "ON Edesa Clase 3",
+      "porcentaje": 1.21
+    },
+    {
+      "nombre": "ON YPF Clase 39",
+      "porcentaje": 1.2
+    },
+    {
+      "nombre": "Bono del Tesoro 2.5% 2031",
+      "porcentaje": 1.2
+    },
+    {
+      "nombre": "ON Capex C11",
+      "porcentaje": 1.12
+    },
+    {
+      "nombre": "ON YPF Luz C23",
+      "porcentaje": 1.11
+    },
+    {
+      "nombre": "Bono Disc ARS Ley AR DICP",
+      "porcentaje": 1.08
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TMVE8",
+      "porcentaje": 0.93
+    },
+    {
+      "nombre": "Bono Dual TXMJ8",
+      "porcentaje": 0.91
+    },
+    {
+      "nombre": "Bono CER TZX27",
+      "porcentaje": 0.91
+    },
+    {
+      "nombre": "ON Pluspetrol 8.5% 2032 (REGS)",
+      "porcentaje": 0.79
+    },
+    {
+      "nombre": "ON Oldelval Clase 6",
+      "porcentaje": 0.77
+    },
+    {
+      "nombre": "Bonos Rep Argentina AL35",
+      "porcentaje": 0.76
+    },
+    {
+      "nombre": "ON Tecpetrol 10",
+      "porcentaje": 0.76
+    },
+    {
+      "nombre": "Bono Boncer 2029 TZXM9",
+      "porcentaje": 0.69
+    },
+    {
+      "nombre": "ON Bco Galicia Clase 16",
+      "porcentaje": 0.39
+    },
+    {
+      "nombre": "ON Tecpetrol C11",
+      "porcentaje": 0.37
+    },
+    {
+      "nombre": "ON Plaza Logistica C13",
+      "porcentaje": 0.35
+    },
+    {
+      "nombre": "ON Pan Amer. Energy C 18",
+      "porcentaje": 0.35
+    },
+    {
+      "nombre": "Bono Par ARS Ley AR PARP",
+      "porcentaje": 0.32
+    },
+    {
+      "nombre": "ON Bco Ciudad C23",
+      "porcentaje": 0.29
+    },
+    {
+      "nombre": "ON Tarj Naranja C67 S2",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "ON Toyota Clase 34",
+      "porcentaje": 0.25
+    },
+    {
+      "nombre": "ON Rombo Cia Fciera S61",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "ON YPF Clase 34",
+      "porcentaje": 0.22
+    },
+    {
+      "nombre": "ON Capex C12",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "ON Banco de Valores C3",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "ON Rombo Cia Fciera S66",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "Boncer Mendoza C1",
+      "porcentaje": 0.13
+    },
+    {
+      "nombre": "ON Banco de Cordoba C1",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "ON Telecom C27",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "ON Banco Macro Clase H Reg S",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "ON Club Atletico River Plate S1",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "YPF S.A.",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "Grupo Financiero Galicia S.A.",
+      "porcentaje": 0.21
+    },
+    {
+      "nombre": "Pampa Energia S.A.",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Transportadora Gas del Sur S.A.",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Banco Macro S.A.",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Central Puerto S.A.",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "BBVA Argentina S.A.",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Bolsas y Mercados Argentinos S.A.",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Grupo Supervielle S.A.",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Inversiones y Representaciones S.A. (IRSA)",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Loma Negra S.A.",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Edenor S.A.",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Telecom Argentina S.A.",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Ternium Argentina S.A.",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Transener S.A.",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Aluar Aluminio Argentino S.A.I.C.",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Transportadora de Gas del Norte S.A.",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Sociedad Comercial del Plata S.A.",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cresud S.A.",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "FCI Lombard Renta en $",
+      "porcentaje": 0.63
+    },
+    {
+      "nombre": "FF Mercado Credito 44 CA",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "FF Mercado Credito 46 CA",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "FF Inverlease FSA S2 CA",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "FF AMFAyS S51 Clase A",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "FF Creditech S6 CA",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "FF AMES S28 Clase A",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "FF Megabono 340 Clase A",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "FF Provincia Leasing S 6A",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "FF Mercado Credito 43 CA",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "FF Megabono 341 Clase A",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "FF Confibono S83 Clase A",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "FF Creditech S5 CA",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "FF Cuotas Cencosud S55 VDFA",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "FF Megabono 338 Clase A",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "FF Elebar XIV Clase A",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "FF Confibono S81 Clase A",
+      "porcentaje": 0.01
     }
   ],
   "calificaciones": [],

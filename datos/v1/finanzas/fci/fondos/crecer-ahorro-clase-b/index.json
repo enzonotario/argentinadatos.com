@@ -2,7 +2,7 @@
   "fondoId": "1640",
   "claseId": "5439",
   "nombre": "Crecer Ahorro - Clase B",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "Ciudad Administradora de Activos S.A.U.",
   "depositaria": "Banco Ciudad de Buenos Aires",
   "tipoRenta": "Renta Fija",
@@ -13,15 +13,15 @@
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Peso Argentino",
   "codigoCNV": "1660",
-  "patrimonio": 199565272579.23,
-  "cantidadCuotapartes": 135343606017,
+  "patrimonio": 199983573210.13,
+  "cantidadCuotapartes": 135560846925.48,
   "inversionMinima": 1,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1474.508,
-    "ultimos7Dias": 22.3742,
-    "unMes": 19.5002,
+    "valorCuotaparte": 1475.231,
+    "ultimos7Dias": 21.5969,
+    "unMes": 19.2173,
     "noventaDias": 5.2795,
     "cientoOchentaDias": 13.1718,
     "enElAnio": 17.2536,
@@ -30,87 +30,235 @@
   "composicionCartera": [
     {
       "nombre": "Lecap S15S6",
-      "porcentaje": 11.7
+      "porcentaje": 11.9
     },
     {
       "nombre": "Lecap S30S6",
-      "porcentaje": 6.1
+      "porcentaje": 8.75
     },
     {
-      "nombre": "Lecap S13N6",
-      "porcentaje": 5.1
-    },
-    {
-      "nombre": "Caucion Colocadora $ Merval",
-      "porcentaje": 4.5
-    },
-    {
-      "nombre": "Lecap S30N6",
-      "porcentaje": 4.3
+      "nombre": "Lecap S16O6",
+      "porcentaje": 5.03
     },
     {
       "nombre": "Lecap S14G6",
-      "porcentaje": 4.1
-    },
-    {
-      "nombre": "Pzo Fi $ Nvo Bco Santa Fe",
-      "porcentaje": 3.5
+      "porcentaje": 4.9
     },
     {
       "nombre": "Bono Dual TTS26",
-      "porcentaje": 3
+      "porcentaje": 4.52
     },
     {
-      "nombre": "Pzo Fi $ Bco Santander Ri",
-      "porcentaje": 2.8
+      "nombre": "Lecap S13N6",
+      "porcentaje": 3.83
     },
     {
-      "nombre": "Pzo Fi $ Bco Supervielle",
-      "porcentaje": 2.8
+      "nombre": "Banco Nacion Argentina Clase 1",
+      "porcentaje": 2.44
     },
     {
-      "nombre": "Letra Tamar TEM M31G6",
-      "porcentaje": 2.6
+      "nombre": "ON Banco de Valores C3",
+      "porcentaje": 2.43
     },
     {
       "nombre": "ON BBVA Frances Cl 46",
       "porcentaje": 2.4
     },
     {
-      "nombre": "Pzo Fi $ Bco Valores",
-      "porcentaje": 2.4
-    },
-    {
-      "nombre": "ON Banco de Valores C3",
-      "porcentaje": 2.4
-    },
-    {
-      "nombre": "ON Banco Nacion Argentina Clase 1",
-      "porcentaje": 2.4
-    },
-    {
       "nombre": "ON Arcor C6",
-      "porcentaje": 2.3
+      "porcentaje": 2.39
     },
     {
       "nombre": "ON Banco de Galicia 32 BYY1O",
-      "porcentaje": 2.3
+      "porcentaje": 2.37
     },
     {
       "nombre": "ON Volkswagen Financial Services C15",
-      "porcentaje": 2.3
+      "porcentaje": 2.35
+    },
+    {
+      "nombre": "Letra Tesoro Nac S30O6",
+      "porcentaje": 2.04
+    },
+    {
+      "nombre": "ON ICBC Clase 5 110327",
+      "porcentaje": 1.42
+    },
+    {
+      "nombre": "ON BBVA Frances Cl 47",
+      "porcentaje": 1.42
+    },
+    {
+      "nombre": "ON ICBC Clase 7 170627",
+      "porcentaje": 1.41
+    },
+    {
+      "nombre": "ON Santander Rio S 32",
+      "porcentaje": 1.41
+    },
+    {
+      "nombre": "ON Mercado Pago C6",
+      "porcentaje": 1.2
+    },
+    {
+      "nombre": "ON Mercado Pago C5",
+      "porcentaje": 1.2
+    },
+    {
+      "nombre": "ON Banco Comafi C22",
+      "porcentaje": 1.15
+    },
+    {
+      "nombre": "ON Toyota Clase 40",
+      "porcentaje": 0.92
+    },
+    {
+      "nombre": "Lecap S31G6",
+      "porcentaje": 0.8
+    },
+    {
+      "nombre": "ON PSA Serie 38",
+      "porcentaje": 0.54
+    },
+    {
+      "nombre": "ON FCA Comp. Finac CL 22 S2",
+      "porcentaje": 0.53
+    },
+    {
+      "nombre": "ON Toyota Clase 37",
+      "porcentaje": 0.49
+    },
+    {
+      "nombre": "ON Banco Hipotecario C13",
+      "porcentaje": 0.48
+    },
+    {
+      "nombre": "ON Mercado Pago C3",
+      "porcentaje": 0.48
+    },
+    {
+      "nombre": "ON Arcor C4",
+      "porcentaje": 0.48
+    },
+    {
+      "nombre": "ON PSA Serie 37",
+      "porcentaje": 0.48
+    },
+    {
+      "nombre": "ON BBVA Frances Cl 41",
+      "porcentaje": 0.48
+    },
+    {
+      "nombre": "ON Toyota Clase 38",
+      "porcentaje": 0.28
+    },
+    {
+      "nombre": "Letra Municipalidad Rio Cuarto S40",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "ON Volkswagen Financial Services C12",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "ON Arcor C3",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "ON Volkswagen Financial Services C13",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 4.34
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Santander Ri",
+      "porcentaje": 2.8
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Valores",
+      "porcentaje": 2.61
+    },
+    {
+      "nombre": "Pzo Fi $ Nvo Bco Santa Fe",
+      "porcentaje": 2.57
+    },
+    {
+      "nombre": "Pzo Fi $ Bco BBVA",
+      "porcentaje": 1.43
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Supervielle",
+      "porcentaje": 1.38
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Macro Bansud",
+      "porcentaje": 1.15
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Mariva",
+      "porcentaje": 0.97
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Nacion",
+      "porcentaje": 0.96
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Provincia",
+      "porcentaje": 0.96
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Hipotecario",
+      "porcentaje": 0.75
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Cordoba",
+      "porcentaje": 0.72
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Comafi",
+      "porcentaje": 0.67
+    },
+    {
+      "nombre": "Pzo Fi $ Nvo Bco Indus",
+      "porcentaje": 0.24
     },
     {
       "nombre": "FF Mercado Credito 50 CA",
-      "porcentaje": 2.2
+      "porcentaje": 2.26
     },
     {
-      "nombre": "Lecap S31L6",
-      "porcentaje": 2.1
+      "nombre": "FF Mercado Credito 51 CA",
+      "porcentaje": 1.11
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 28.9
+      "nombre": "FF Mercado Credito 44 CA",
+      "porcentaje": 0.92
+    },
+    {
+      "nombre": "FF Mercado Credito 48 CA",
+      "porcentaje": 0.82
+    },
+    {
+      "nombre": "FF Mercado Credito 46 CA",
+      "porcentaje": 0.73
+    },
+    {
+      "nombre": "FF Mercado Credito 47 CA",
+      "porcentaje": 0.58
+    },
+    {
+      "nombre": "FF Mercado Credito 45 CA",
+      "porcentaje": 0.46
+    },
+    {
+      "nombre": "FF Megabono 347 Clase A",
+      "porcentaje": 0.46
+    },
+    {
+      "nombre": "FF Megabono 342 Clase A",
+      "porcentaje": 0.13
     }
   ],
   "calificaciones": [],

@@ -2,7 +2,7 @@
   "fondoId": "1499",
   "claseId": "4485",
   "nombre": "Dracma Estrategia Dólar I - Clase D",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "Dracma Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -30,79 +30,231 @@
   "composicionCartera": [
     {
       "nombre": "Bonos Rep Argentina AE38",
-      "porcentaje": 8.3
+      "porcentaje": 8.28
+    },
+    {
+      "nombre": "Bonos Rep Argentina AL35",
+      "porcentaje": 7.79
     },
     {
       "nombre": "BC Chile 270333",
-      "porcentaje": 5.7
+      "porcentaje": 5.61
     },
     {
       "nombre": "Bono Chile 4.95 010536",
       "porcentaje": 5.6
     },
     {
-      "nombre": "Bonos Rep Argentina AL35",
-      "porcentaje": 5.4
-    },
-    {
-      "nombre": "FCI Adcap Ahorro Dólares - Clase E",
-      "porcentaje": 4.6
-    },
-    {
       "nombre": "BC Chile 4.85%",
-      "porcentaje": 3.9
-    },
-    {
-      "nombre": "ON Banco Nacion Argentina Clase 5",
-      "porcentaje": 3.9
+      "porcentaje": 3.86
     },
     {
       "nombre": "ON Pluspetrol Clase 6",
-      "porcentaje": 3.8
-    },
-    {
-      "nombre": "ON Transp Gas Sur Cl 3",
-      "porcentaje": 3.6
-    },
-    {
-      "nombre": "US Treasury Bill 241226",
-      "porcentaje": 2.8
-    },
-    {
-      "nombre": "FCI Megaqm Liquidez Dólar - Clase B",
-      "porcentaje": 2.8
-    },
-    {
-      "nombre": "ON Capex C11",
-      "porcentaje": 2.5
-    },
-    {
-      "nombre": "Bono del Tesoro Nacional AN29",
-      "porcentaje": 2.5
-    },
-    {
-      "nombre": "Pzo Fi U$S Bco Coinag",
-      "porcentaje": 2.4
+      "porcentaje": 3.83
     },
     {
       "nombre": "ON YPF Clase 39",
-      "porcentaje": 2.4
+      "porcentaje": 3.66
     },
     {
-      "nombre": "ON Pan American C35",
-      "porcentaje": 2.1
+      "nombre": "ON Transp Gas Sur Cl 3",
+      "porcentaje": 3.47
+    },
+    {
+      "nombre": "ON Vista Gas y Oil Arg C29",
+      "porcentaje": 2.74
+    },
+    {
+      "nombre": "ON Central Puerto Clase E",
+      "porcentaje": 2.58
+    },
+    {
+      "nombre": "ON Capex C11",
+      "porcentaje": 2.48
     },
     {
       "nombre": "ON Pluspetrol 8.5% 2032 (REGS)",
-      "porcentaje": 2.1
+      "porcentaje": 2.14
+    },
+    {
+      "nombre": "ON Pan American C35",
+      "porcentaje": 2.08
+    },
+    {
+      "nombre": "ON Cresud Clase 53",
+      "porcentaje": 1.96
+    },
+    {
+      "nombre": "ON Pecom C3",
+      "porcentaje": 1.77
+    },
+    {
+      "nombre": "ON YPF Clase 31",
+      "porcentaje": 1.64
+    },
+    {
+      "nombre": "ON YPF Luz C18 YFCJO",
+      "porcentaje": 1.59
+    },
+    {
+      "nombre": "ON Farmacity C1",
+      "porcentaje": 1.47
+    },
+    {
+      "nombre": "ON Telecom C30",
+      "porcentaje": 1.47
+    },
+    {
+      "nombre": "Pagare #UMV070570008",
+      "porcentaje": 1.38
+    },
+    {
+      "nombre": "ON YPF Clase 43",
+      "porcentaje": 1.23
+    },
+    {
+      "nombre": "ON Arcor C2 7.6%",
+      "porcentaje": 1.05
+    },
+    {
+      "nombre": "ON Inversora Juramento C6 JNC6O",
+      "porcentaje": 1.02
+    },
+    {
+      "nombre": "ON Telecom C28",
+      "porcentaje": 1.02
+    },
+    {
+      "nombre": "ON Pan American C37",
+      "porcentaje": 1
+    },
+    {
+      "nombre": "ON Tecpetrol C9",
+      "porcentaje": 0.92
+    },
+    {
+      "nombre": "Pagare #UMV220470003",
+      "porcentaje": 0.91
+    },
+    {
+      "nombre": "ON John Deere Cia. Fin C17",
+      "porcentaje": 0.9
+    },
+    {
+      "nombre": "Pagare #UMV290470002",
+      "porcentaje": 0.86
+    },
+    {
+      "nombre": "ON Banco Mariva S1 290926",
+      "porcentaje": 0.82
+    },
+    {
+      "nombre": "ON BBVA Frances Cl 39",
+      "porcentaje": 0.78
+    },
+    {
+      "nombre": "ON Bco CMF Serie 19",
+      "porcentaje": 0.75
+    },
+    {
+      "nombre": "ON Mirgor Clase 3",
+      "porcentaje": 0.74
+    },
+    {
+      "nombre": "Banco Nacion Argentina Clase 5",
+      "porcentaje": 0.73
+    },
+    {
+      "nombre": "Pagare #UMV301260006",
+      "porcentaje": 0.7
+    },
+    {
+      "nombre": "Pagare #UMV190370005",
+      "porcentaje": 0.69
+    },
+    {
+      "nombre": "Pagare #UCN220370002",
+      "porcentaje": 0.49
+    },
+    {
+      "nombre": "Pagare #UCN020370001",
+      "porcentaje": 0.49
+    },
+    {
+      "nombre": "ON Vista Gas y Oil Arg C24",
+      "porcentaje": 0.49
+    },
+    {
+      "nombre": "ON Pyme Gar Hector Bertone S1 C3",
+      "porcentaje": 0.48
+    },
+    {
+      "nombre": "ON Genneia Clase 47",
+      "porcentaje": 0.4
+    },
+    {
+      "nombre": "ON Oldelval Clase 7",
+      "porcentaje": 0.34
+    },
+    {
+      "nombre": "Pagare #UCN230960003",
+      "porcentaje": 0.34
+    },
+    {
+      "nombre": "ON Edenor C10 DNCAO",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Pagare #UMV090170013",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "ON Promedon S1",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "ON Pyme Edisur S1",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pzo Fi U$S Bco Coinag",
+      "porcentaje": 4.88
     },
     {
       "nombre": "Bono Paraguay 4.95",
-      "porcentaje": 2
+      "porcentaje": 2.01
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 33.9
+      "nombre": "US Treasury Note 300930",
+      "porcentaje": 1.4
+    },
+    {
+      "nombre": "US Treasury Note 300928",
+      "porcentaje": 1.35
+    },
+    {
+      "nombre": "US Treasury Note 300929",
+      "porcentaje": 1.35
+    },
+    {
+      "nombre": "US Treasury Note 310728",
+      "porcentaje": 1.35
+    },
+    {
+      "nombre": "FCI Bull Market Liquidez Dólar - Clase B",
+      "porcentaje": 3.23
+    },
+    {
+      "nombre": "FF Cites II",
+      "porcentaje": 1.01
+    },
+    {
+      "nombre": "FF ALZ Agrocap S2",
+      "porcentaje": 0.31
+    },
+    {
+      "nombre": "FCI Megaqm Liquidez Dólar - Clase B",
+      "porcentaje": 0.12
     }
   ],
   "calificaciones": [],

@@ -2,7 +2,7 @@
   "fondoId": "1463",
   "claseId": "4326",
   "nombre": "Fundcorp Performance Balanceado - Clase A",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "CMF Asset Management S.A.U.",
   "depositaria": "Banco C.M.F. S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,15 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Peso Argentino",
   "codigoCNV": "1452",
-  "patrimonio": 2167.83,
+  "patrimonio": 2163.57,
   "cantidadCuotapartes": 1000,
   "inversionMinima": 1000,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 2167.83,
-    "ultimos7Dias": -55.6924,
-    "unMes": -4.587,
+    "valorCuotaparte": 2163.57,
+    "ultimos7Dias": -66.9947,
+    "unMes": -7.8855,
     "noventaDias": 5.0415,
     "cientoOchentaDias": 14.9141,
     "enElAnio": 20.0972,
@@ -29,88 +29,580 @@
   },
   "composicionCartera": [
     {
-      "nombre": "Lecap S15S6",
-      "porcentaje": 9.8
-    },
-    {
-      "nombre": "Bono Boncer TZXA7",
-      "porcentaje": 9
-    },
-    {
       "nombre": "Letra Tesoro Nac S30O6",
-      "porcentaje": 7.9
+      "porcentaje": 8.12
     },
     {
       "nombre": "Pagare #MAV110860074",
-      "porcentaje": 6.6
-    },
-    {
-      "nombre": "Bono Boncer TZXS7",
-      "porcentaje": 5.8
-    },
-    {
-      "nombre": "Lecap S30S6",
-      "porcentaje": 4.1
-    },
-    {
-      "nombre": "Bono Boncer 2028 TZXM8",
-      "porcentaje": 3.6
-    },
-    {
-      "nombre": "Bono Dual TXMJ8",
-      "porcentaje": 3.6
-    },
-    {
-      "nombre": "Letra Prov Chubut S118 C2",
-      "porcentaje": 3.5
-    },
-    {
-      "nombre": "Bono Boncer TZXS8",
-      "porcentaje": 3.5
-    },
-    {
-      "nombre": "Bono Muni Cordoba S2 13022027",
-      "porcentaje": 3.2
-    },
-    {
-      "nombre": "Bono del Tesoro Nacional TZXO7",
-      "porcentaje": 2.7
-    },
-    {
-      "nombre": "Bono Boncer TZXD7",
-      "porcentaje": 2.6
-    },
-    {
-      "nombre": "Cta Cte $ Rem Bco CMF",
-      "porcentaje": 2.4
-    },
-    {
-      "nombre": "Bono Prov Cordoba Clase 5",
-      "porcentaje": 2.3
-    },
-    {
-      "nombre": "Bono Boncer 2027 TZXM7",
-      "porcentaje": 2.1
-    },
-    {
-      "nombre": "Letra Tamar TEM TMF27",
-      "porcentaje": 2
+      "porcentaje": 6.81
     },
     {
       "nombre": "Bono del Tesoro Nacional D31G6",
-      "porcentaje": 2
+      "porcentaje": 6.59
+    },
+    {
+      "nombre": "Bono Boncer TZXS7",
+      "porcentaje": 5.94
+    },
+    {
+      "nombre": "Bono Boncer TZXD7",
+      "porcentaje": 5.51
+    },
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 4.38
+    },
+    {
+      "nombre": "Lecap S30S6",
+      "porcentaje": 4.21
+    },
+    {
+      "nombre": "Bono Boncer 2028 TZXM8",
+      "porcentaje": 3.71
+    },
+    {
+      "nombre": "Bono Dual TXMJ8",
+      "porcentaje": 3.66
+    },
+    {
+      "nombre": "Bono Boncer TZXA7",
+      "porcentaje": 3.64
+    },
+    {
+      "nombre": "Letra Prov Chubut S118 C2",
+      "porcentaje": 3.6
+    },
+    {
+      "nombre": "Bono Boncer TZXS8",
+      "porcentaje": 3.59
+    },
+    {
+      "nombre": "Lelink D30S6",
+      "porcentaje": 3.55
+    },
+    {
+      "nombre": "Bono Muni Cordoba S2 13022027",
+      "porcentaje": 3.38
+    },
+    {
+      "nombre": "Letra Tamar TEM TMF27",
+      "porcentaje": 2.83
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TZXO7",
+      "porcentaje": 2.75
+    },
+    {
+      "nombre": "Bono Prov Cordoba Clase 5",
+      "porcentaje": 2.43
+    },
+    {
+      "nombre": "Bono Boncer TZXD8",
+      "porcentaje": 2.33
     },
     {
       "nombre": "Bono Boncer TZX28",
-      "porcentaje": 2
+      "porcentaje": 2.09
     },
     {
-      "nombre": "Fut Reg ARS",
-      "porcentaje": 2
+      "nombre": "Bono Boncer TXMJ9",
+      "porcentaje": 1.86
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 19
+      "nombre": "Boncer TZXY7",
+      "porcentaje": 1.4
+    },
+    {
+      "nombre": "Bono Boncer TX28",
+      "porcentaje": 1.23
+    },
+    {
+      "nombre": "Bono Prov Cordoba Clase 4",
+      "porcentaje": 1.14
+    },
+    {
+      "nombre": "Lecap S14G6",
+      "porcentaje": 1.1
+    },
+    {
+      "nombre": "Cheque E *FED211000039",
+      "porcentaje": 0.96
+    },
+    {
+      "nombre": "Cheque E *MAV080801320",
+      "porcentaje": 0.96
+    },
+    {
+      "nombre": "Lecap S15S6",
+      "porcentaje": 0.91
+    },
+    {
+      "nombre": "ON PyME Gar. Prodeman S3 C1",
+      "porcentaje": 0.73
+    },
+    {
+      "nombre": "Cheque E *MAV160901260",
+      "porcentaje": 0.66
+    },
+    {
+      "nombre": "Cheque E *MAV300901896",
+      "porcentaje": 0.65
+    },
+    {
+      "nombre": "Cheque E *MAV230901171",
+      "porcentaje": 0.65
+    },
+    {
+      "nombre": "Cheque E *PRO091200010",
+      "porcentaje": 0.63
+    },
+    {
+      "nombre": "Cheque E *PRO161200014",
+      "porcentaje": 0.62
+    },
+    {
+      "nombre": "Cheque E *FED111000022",
+      "porcentaje": 0.52
+    },
+    {
+      "nombre": "Cheque E *MAV230801005",
+      "porcentaje": 0.5
+    },
+    {
+      "nombre": "Cheque E *MAV250801735",
+      "porcentaje": 0.34
+    },
+    {
+      "nombre": "Cheque E *MAV110801746",
+      "porcentaje": 0.34
+    },
+    {
+      "nombre": "Cheque E *MAV180801794",
+      "porcentaje": 0.34
+    },
+    {
+      "nombre": "Cheque E *MAV070801704",
+      "porcentaje": 0.34
+    },
+    {
+      "nombre": "Cheque E *MAV050801669",
+      "porcentaje": 0.32
+    },
+    {
+      "nombre": "Cheque E *MAV310702214",
+      "porcentaje": 0.22
+    },
+    {
+      "nombre": "Cheque E *MAV061100962",
+      "porcentaje": 0.22
+    },
+    {
+      "nombre": "Cheque E *MAV110901321",
+      "porcentaje": 0.21
+    },
+    {
+      "nombre": "Cheque E *MAV170901005",
+      "porcentaje": 0.2
+    },
+    {
+      "nombre": "Boncer Mendoza C1",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Cheque E *MAV050901352",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Cheque E *MAV220801342",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Cheque E *MAV290801318",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Cheque E *MAV190901273",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "Cheque E *MAV101001447",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "Cheque E *MAV031001191",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "Cheque E *MAV120901565",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "Cheque E *MAV260901313",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "Pagare #ARP070670001",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "Pagare #ARP200670001",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "Cheque E *FDE250900029",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "Cheque E *MAV110900989",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Cheque E *MAV100801530",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Cheque E *MAV100801529",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Cheque E *MAV100801531",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Cheque E *MAV120801905",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare *MAV030800996",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Cheque E *MAV290801409",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Cheque E *MAV290801411",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Cheque E *MAV290801410",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Cheque E *MAV301001259",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Cheque E *ARP300900381",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Cheque E *ARP300700206",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Cheque E *ARP300800180",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Cheque E *MAV201101368",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Cheque E *MAV201101367",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Cheque E *MAV241001257",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Cheque E *MAV261000907",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Bono Muni Cordoba S1",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Cheque E *MAV230901242",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Cheque E *MAV260901259",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Cheque E *MAV160801135",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare *MAV020800922",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Cheque E *MAV120801756",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cheque E *MAV150801500",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cheque E *MAV130801101",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cheque E *MAV110801463",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cheque E *MAV080801284",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cheque E *MAV060801021",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cheque E *MAV140801386",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cheque E *MAV100801261",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cheque E *MAV281001241",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cheque E *MAV150801842",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cheque E *MAV310801655",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cheque E *MAV150901867",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV211001229",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV241101191",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV191101080",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV201101379",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV271101226",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV181101185",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV171101280",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV171101279",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV231100858",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV191101081",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV231100857",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV181101184",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV241101192",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV251101580",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV261101077",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV271101225",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV201101380",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV261101078",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV161100927",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV251101581",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV280900898",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV211001178",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV091001144",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV161001090",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV231001143",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV121000919",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV151001407",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV201001499",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV221001005",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV141001378",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV191000821",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV131001361",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *FED270800026",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *FED200800059",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *FED230800035",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *FED180800041",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *FED310800029",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *ARP050900266",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ARP150800248",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ARP080800200",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ARP220800217",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ARP290800180",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ARP190900192",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ARP120900200",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *ARP250900237",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV060801147",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV280900897",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV270901055",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV070801470",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV281001242",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV240901176",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV290801204",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 7.8
+    },
+    {
+      "nombre": "FCI Lombard Renta en $",
+      "porcentaje": 2.11
     }
   ],
   "calificaciones": [],

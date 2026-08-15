@@ -2,7 +2,7 @@
   "fondoId": "330",
   "claseId": "370",
   "nombre": "CMA Proteccion - Clase A",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "Capital Markets Argentina Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,15 +13,15 @@
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Peso Argentino",
   "codigoCNV": "437",
-  "patrimonio": 3960957419,
-  "cantidadCuotapartes": 8749277.77,
+  "patrimonio": 3946216282.06,
+  "cantidadCuotapartes": 8704260.87,
   "inversionMinima": 1,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 452718.216,
-    "ultimos7Dias": 23.1988,
-    "unMes": 18.5619,
+    "valorCuotaparte": 453366.04,
+    "ultimos7Dias": 21.9228,
+    "unMes": 19.3015,
     "noventaDias": 5.4192,
     "cientoOchentaDias": 13.9297,
     "enElAnio": 17.7637,
@@ -30,50 +30,310 @@
   "composicionCartera": [
     {
       "nombre": "Lecap S30S6",
-      "porcentaje": 13.5
+      "porcentaje": 14.58
     },
     {
       "nombre": "Lecap S13N6",
-      "porcentaje": 11.4
+      "porcentaje": 12.35
     },
     {
       "nombre": "Lecap S15S6",
-      "porcentaje": 10.8
+      "porcentaje": 11.67
     },
     {
       "nombre": "Bono del Tesoro Nacional T15E7",
-      "porcentaje": 9.8
-    },
-    {
-      "nombre": "FCI Allaria Ahorro - Clase C",
-      "porcentaje": 6.2
+      "porcentaje": 10.58
     },
     {
       "nombre": "Letra Tamar TEM M31G6",
-      "porcentaje": 5.1
+      "porcentaje": 5.48
     },
     {
       "nombre": "Bono Dual TTS26",
-      "porcentaje": 4.6
+      "porcentaje": 4.95
     },
     {
       "nombre": "Letra Tamar TEM TMF27",
-      "porcentaje": 3.7
+      "porcentaje": 4.06
+    },
+    {
+      "nombre": "Pagare #MAV130860037",
+      "porcentaje": 1.7
+    },
+    {
+      "nombre": "Pagare #MAV250860027",
+      "porcentaje": 1.68
+    },
+    {
+      "nombre": "Pagare #MAV290960034",
+      "porcentaje": 1.62
+    },
+    {
+      "nombre": "ON BBVA Frances Cl 47",
+      "porcentaje": 1.44
+    },
+    {
+      "nombre": "ON Banco de Galicia 32 BYY1O",
+      "porcentaje": 1.35
+    },
+    {
+      "nombre": "ON Credicuotas Consumo S17",
+      "porcentaje": 1.03
+    },
+    {
+      "nombre": "ON Credicuotas Consumo S15",
+      "porcentaje": 0.99
+    },
+    {
+      "nombre": "ON CFN Serie 8",
+      "porcentaje": 0.92
+    },
+    {
+      "nombre": "ON Mercado Pago C3",
+      "porcentaje": 0.91
+    },
+    {
+      "nombre": "ON BBVA Frances Cl 38",
+      "porcentaje": 0.91
+    },
+    {
+      "nombre": "ON Mercado Pago C6",
+      "porcentaje": 0.91
+    },
+    {
+      "nombre": "ON Tarj Naranja C66 S1",
+      "porcentaje": 0.9
+    },
+    {
+      "nombre": "ON Banco Hipotecario C13",
+      "porcentaje": 0.9
+    },
+    {
+      "nombre": "ON Banco de Cordoba C1",
+      "porcentaje": 0.9
+    },
+    {
+      "nombre": "ON Toyota Clase 39",
+      "porcentaje": 0.89
+    },
+    {
+      "nombre": "Pagare *AFD111200046",
+      "porcentaje": 0.45
+    },
+    {
+      "nombre": "Pagare *AFD141200013",
+      "porcentaje": 0.45
+    },
+    {
+      "nombre": "ON Red Surcos S13",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "ON Red Surcos S12 Clase C",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "ON P. Aconcagua Energia C18",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "ON P. Aconcagua Energia C20",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare *FTR021000007",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare *FTR061000011",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare *FTR091000021",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare *FTR100900023",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare *FTR131000040",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare *FTR150900016",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare *FTR180900016",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare *FTR220900013",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare *FTR250900019",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare *FTR290900025",
+      "porcentaje": 0.04
     },
     {
       "nombre": "Pzo Fi $ Banco VOII",
-      "porcentaje": 3.4
+      "porcentaje": 3.39
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 30.9
+      "nombre": "FCI Allaria Ahorro - Clase C",
+      "porcentaje": 2.13
+    },
+    {
+      "nombre": "FF Mercado Credito 45 CA",
+      "porcentaje": 0.87
+    },
+    {
+      "nombre": "FF Mercado Credito 46 CA",
+      "porcentaje": 0.86
+    },
+    {
+      "nombre": "FF Mercado Credito 48 CA",
+      "porcentaje": 0.86
+    },
+    {
+      "nombre": "FF Mercado Credito 50 CA",
+      "porcentaje": 0.85
+    },
+    {
+      "nombre": "FF Mercado Credito 51 CA",
+      "porcentaje": 0.84
+    },
+    {
+      "nombre": "FF Fiducar 34 Clase A",
+      "porcentaje": 0.83
+    },
+    {
+      "nombre": "FF Mercado Credito 52 CA",
+      "porcentaje": 0.82
+    },
+    {
+      "nombre": "FF Mercado Credito 47 CA",
+      "porcentaje": 0.69
+    },
+    {
+      "nombre": "FF Mercado Credito 44 CA",
+      "porcentaje": 0.69
+    },
+    {
+      "nombre": "FF Megabono 346 Clase A",
+      "porcentaje": 0.62
+    },
+    {
+      "nombre": "FF Centrocard Creditos S8",
+      "porcentaje": 0.62
+    },
+    {
+      "nombre": "FF Megabono 345 Clase A",
+      "porcentaje": 0.54
+    },
+    {
+      "nombre": "FF Fiducar 32 Clase A",
+      "porcentaje": 0.5
+    },
+    {
+      "nombre": "FF Tarj Fertil S26 CA",
+      "porcentaje": 0.5
+    },
+    {
+      "nombre": "FF Confibono S85 Clase A",
+      "porcentaje": 0.45
+    },
+    {
+      "nombre": "FF Fiducar 31 Clase A",
+      "porcentaje": 0.45
+    },
+    {
+      "nombre": "FF Megabono 341 Clase A",
+      "porcentaje": 0.34
+    },
+    {
+      "nombre": "FF Mercado Credito 43 CA",
+      "porcentaje": 0.34
+    },
+    {
+      "nombre": "FF Megabono 340 Clase A",
+      "porcentaje": 0.31
+    },
+    {
+      "nombre": "FF Megabono 339 Clase A",
+      "porcentaje": 0.25
+    },
+    {
+      "nombre": "FF Fiducar 30 Clase A",
+      "porcentaje": 0.2
+    },
+    {
+      "nombre": "FF Megabono 335 Clase A",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "FF Megabono 333 Clase A",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "FF Mercado Credito 42 CA",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "FF Tarj Fertil S25 CA",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "FF Payway Cobro Acelerado S7 CA",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "FF Megabono 334 Clase A",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "FF Megabono 322 Clase A",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "FF Megabono 332 Clase A",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "FF Megabono Credito 326 Clase A",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "FF Megabono 327 Clase A",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "FF Mercado Credito 40 CA",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "FF Megabono 330 Clase A",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "FF Cuotas Cencosud S56 VDFA",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "FF Fiducar 28 Clase A",
+      "porcentaje": 0.03
     }
   ],
   "calificaciones": [
     {
       "calificadora": null,
       "calificacion": "Aa-bf.ar",
-      "fecha": "2026-08-13"
+      "fecha": "2026-08-14"
     }
   ],
   "honorarios": {

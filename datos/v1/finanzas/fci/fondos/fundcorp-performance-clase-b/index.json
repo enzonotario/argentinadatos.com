@@ -2,7 +2,7 @@
   "fondoId": "761",
   "claseId": "1685",
   "nombre": "Fundcorp Performance - Clase B",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "CMF Asset Management S.A.U.",
   "depositaria": "Banco C.M.F. S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,15 +13,15 @@
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Peso Argentino",
   "codigoCNV": "982",
-  "patrimonio": 30696130633.03,
-  "cantidadCuotapartes": 795489064.57,
+  "patrimonio": 30946412446.56,
+  "cantidadCuotapartes": 800663580.82,
   "inversionMinima": 1000,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 38587.747,
-    "ultimos7Dias": 24.7587,
-    "unMes": 18.2213,
+    "valorCuotaparte": 38650.956,
+    "ultimos7Dias": 23.2327,
+    "unMes": 18.9907,
     "noventaDias": 5.7012,
     "cientoOchentaDias": 15.0591,
     "enElAnio": 18.9063,
@@ -30,71 +30,167 @@
   "composicionCartera": [
     {
       "nombre": "Lecap S30S6",
-      "porcentaje": 13
+      "porcentaje": 11.9
     },
     {
-      "nombre": "Fut Reg ARS",
-      "porcentaje": 10
+      "nombre": "Lecap S16O6",
+      "porcentaje": 9.16
     },
     {
-      "nombre": "Letra Tesoro Nac D31L6",
-      "porcentaje": 9.9
-    },
-    {
-      "nombre": "Pzo Fi $ Bco Sol",
-      "porcentaje": 8.5
-    },
-    {
-      "nombre": "Lecap S15S6",
-      "porcentaje": 7
+      "nombre": "Bono del Tesoro Nacional D31G6",
+      "porcentaje": 9.03
     },
     {
       "nombre": "Lecap S13N6",
-      "porcentaje": 6.9
+      "porcentaje": 7.18
+    },
+    {
+      "nombre": "Lecap S15S6",
+      "porcentaje": 6.36
     },
     {
       "nombre": "Letra Tamar TEM M31G6",
-      "porcentaje": 6.6
-    },
-    {
-      "nombre": "Pzo Fi $ Bco Bibank",
-      "porcentaje": 5.1
-    },
-    {
-      "nombre": "Bono del Tesoro Nacional TMG28",
-      "porcentaje": 4.8
-    },
-    {
-      "nombre": "Letra Tamar TEM TMF27",
-      "porcentaje": 4.3
-    },
-    {
-      "nombre": "Bono Boncer TZXO6",
-      "porcentaje": 4.2
-    },
-    {
-      "nombre": "Bono Dual TTS26",
-      "porcentaje": 4.1
-    },
-    {
-      "nombre": "Lecap S30N6",
-      "porcentaje": 4
+      "porcentaje": 6.02
     },
     {
       "nombre": "Lecap S14G6",
-      "porcentaje": 2.9
+      "porcentaje": 4.58
     },
     {
-      "nombre": "Bono del Tesoro Nacional T15E7",
-      "porcentaje": 2.6
+      "nombre": "Bono del Tesoro Nacional TMG28",
+      "porcentaje": 4.36
+    },
+    {
+      "nombre": "Letra Tamar TEM TMF27",
+      "porcentaje": 3.99
+    },
+    {
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 3.83
+    },
+    {
+      "nombre": "Bono Dual TTS26",
+      "porcentaje": 3.76
+    },
+    {
+      "nombre": "Lecap S30N6",
+      "porcentaje": 3.66
     },
     {
       "nombre": "Letra Tesoro Nac S30O6",
-      "porcentaje": 2.5
+      "porcentaje": 2.23
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 3.7
+      "nombre": "Bono del Tesoro Nacional TMG27",
+      "porcentaje": 1.7
+    },
+    {
+      "nombre": "ON Edesa Clase 3",
+      "porcentaje": 1.57
+    },
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 1.33
+    },
+    {
+      "nombre": "Letra Prov Bs As PBA27",
+      "porcentaje": 0.99
+    },
+    {
+      "nombre": "Lecer X30S6",
+      "porcentaje": 0.69
+    },
+    {
+      "nombre": "ON Volkswagen Financial Services C15",
+      "porcentaje": 0.63
+    },
+    {
+      "nombre": "ON MSU S11",
+      "porcentaje": 0.41
+    },
+    {
+      "nombre": "ON BACS Clase 19",
+      "porcentaje": 0.32
+    },
+    {
+      "nombre": "ON Rombo Cia Fciera S61",
+      "porcentaje": 0.31
+    },
+    {
+      "nombre": "Pagare #MAV130860019",
+      "porcentaje": 0.21
+    },
+    {
+      "nombre": "Pagare #MAV150960018",
+      "porcentaje": 0.2
+    },
+    {
+      "nombre": "Pagare #MAV141060018",
+      "porcentaje": 0.2
+    },
+    {
+      "nombre": "Pagare #MAV180170008",
+      "porcentaje": 0.2
+    },
+    {
+      "nombre": "Pagare #MAV131160018",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "Boncer Mendoza C1",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "ON Arcor C4",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Pagare #MAV171160011",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #MAV160960023",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #MAV151060020",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #MAV161260020",
+      "porcentaje": 0.13
+    },
+    {
+      "nombre": "ON Red Surcos S10 Clase A",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Sol",
+      "porcentaje": 7.71
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Bibank",
+      "porcentaje": 4.59
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Julio",
+      "porcentaje": 0.77
+    },
+    {
+      "nombre": "FF Mercado Credito 51 CA",
+      "porcentaje": 0.74
+    },
+    {
+      "nombre": "FCI Lombard Renta en $",
+      "porcentaje": 0.36
+    },
+    {
+      "nombre": "FF Megabono 322 Clase A",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "FF Elebar XIV Clase A",
+      "porcentaje": 0.02
     }
   ],
   "calificaciones": [],

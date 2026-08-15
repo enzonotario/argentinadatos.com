@@ -2,7 +2,7 @@
   "fondoId": "1259",
   "claseId": "3495",
   "nombre": "First Renta Mixta IV - Clase C",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "First Capital Markets S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -29,68 +29,356 @@
   },
   "composicionCartera": [
     {
-      "nombre": "Caucion Colocadora $ Merval",
-      "porcentaje": 11.1
-    },
-    {
       "nombre": "Bono Boncer TZXD7",
-      "porcentaje": 10.6
+      "porcentaje": 9.91
     },
     {
       "nombre": "Lecap S30S6",
-      "porcentaje": 7.8
+      "porcentaje": 7.29
+    },
+    {
+      "nombre": "Pagare #MAV030960044",
+      "porcentaje": 5.38
     },
     {
       "nombre": "Bono Boncer TZXO6",
-      "porcentaje": 4.8
-    },
-    {
-      "nombre": "Pagare #MAV230760034",
-      "porcentaje": 4.7
-    },
-    {
-      "nombre": "Pagare #MAV270760071",
-      "porcentaje": 4.6
+      "porcentaje": 4.5
     },
     {
       "nombre": "Pagare #MAV060860050",
-      "porcentaje": 4.6
+      "porcentaje": 4.29
     },
     {
-      "nombre": "Pagare #MAV290760030",
-      "porcentaje": 4.6
+      "nombre": "Cheque #MAV070960052",
+      "porcentaje": 4.28
     },
     {
-      "nombre": "FF San Cristobal S2 CA",
-      "porcentaje": 3.9
+      "nombre": "Pagare #MAV270860037",
+      "porcentaje": 3.21
     },
     {
-      "nombre": "FCI Fima Premium Clase B",
-      "porcentaje": 2.9
+      "nombre": "Pagare #MAV130860057",
+      "porcentaje": 3.03
     },
     {
       "nombre": "VCP Unicred S4",
-      "porcentaje": 2.9
+      "porcentaje": 2.8
+    },
+    {
+      "nombre": "Bono Dual TTD26",
+      "porcentaje": 0.87
+    },
+    {
+      "nombre": "Bono Dual TTS26",
+      "porcentaje": 0.87
+    },
+    {
+      "nombre": "Cheque E *MAV300902283",
+      "porcentaje": 0.38
+    },
+    {
+      "nombre": "Cheque E *MAV300902284",
+      "porcentaje": 0.38
+    },
+    {
+      "nombre": "Cheque E *MAV101201370",
+      "porcentaje": 0.3
+    },
+    {
+      "nombre": "Cheque E *MAV171201000",
+      "porcentaje": 0.3
+    },
+    {
+      "nombre": "Cheque E *MAV151201788",
+      "porcentaje": 0.3
+    },
+    {
+      "nombre": "Cheque E *MAV031200925",
+      "porcentaje": 0.3
+    },
+    {
+      "nombre": "Cheque E *MAV050101229",
+      "porcentaje": 0.29
+    },
+    {
+      "nombre": "Cheque E *MAV120101475",
+      "porcentaje": 0.29
+    },
+    {
+      "nombre": "Cheque E *MAV291201222",
+      "porcentaje": 0.29
+    },
+    {
+      "nombre": "Cheque E *MAV190101230",
+      "porcentaje": 0.29
+    },
+    {
+      "nombre": "Cheque E *MAV220101176",
+      "porcentaje": 0.29
+    },
+    {
+      "nombre": "Cheque E *MAV221201230",
+      "porcentaje": 0.29
+    },
+    {
+      "nombre": "Cheque E *MAV270901066",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "Cheque E *MAV270901067",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "Cheque E *MAV270901068",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "Cheque E *MAV270901069",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "Cheque E *MAV301201476",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "Cheque E *MAV300801497",
+      "porcentaje": 0.13
+    },
+    {
+      "nombre": "Cheque E *MAV300701650",
+      "porcentaje": 0.13
+    },
+    {
+      "nombre": "Cheque E *MAV300902282",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Cheque E *MAV200801809",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Cheque E *MAV070801573",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Cheque E *MAV311201053",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Cheque E *MAV250801855",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Cheque E *MAV261101091",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Cheque E *MAV070801572",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Cheque E *MAV311201052",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cheque MAVR240800050",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV300701386",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Cheque E *MAV020901240",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV030801021",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV010901269",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV010801303",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV080801339",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV140801444",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV050901313",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV050801465",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV100901484",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV290801350",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV220801392",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV150801806",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Cheque E *MAV010801248",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV310701782",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV300701401",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV300701409",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV210801053",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV250801330",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV040900866",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV020901123",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV150901448",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV040800997",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV240800777",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *MAV201001627",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 14.76
     },
     {
       "nombre": "Pagare #UMV310870002",
-      "porcentaje": 2.5
+      "porcentaje": 2.37
     },
     {
       "nombre": "Pagare #UMV310860052",
-      "porcentaje": 2.5
-    },
-    {
-      "nombre": "FF San Cristobal S1 CA",
-      "porcentaje": 2.5
+      "porcentaje": 2.36
     },
     {
       "nombre": "Pagare #UMV310880001",
-      "porcentaje": 2.4
+      "porcentaje": 2.21
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 25.8
+      "nombre": "Pagare #UMV310180001",
+      "porcentaje": 1.51
+    },
+    {
+      "nombre": "Pagare #UMV310170003",
+      "porcentaje": 1.5
+    },
+    {
+      "nombre": "Pagare #UMV301260005",
+      "porcentaje": 1.16
+    },
+    {
+      "nombre": "Pagare #UMV300670006",
+      "porcentaje": 1.1
+    },
+    {
+      "nombre": "Cheque #UMV200370002",
+      "porcentaje": 0.66
+    },
+    {
+      "nombre": "Cheque #UMV200470002",
+      "porcentaje": 0.65
+    },
+    {
+      "nombre": "Pagare #UMV300760005",
+      "porcentaje": 0.64
+    },
+    {
+      "nombre": "Pagare #UMV201060007",
+      "porcentaje": 0.56
+    },
+    {
+      "nombre": "Pagare #UMV201160004",
+      "porcentaje": 0.55
+    },
+    {
+      "nombre": "Pagare #UMV310760021",
+      "porcentaje": 0.54
+    },
+    {
+      "nombre": "Pagare #UMV310570003",
+      "porcentaje": 0.49
+    },
+    {
+      "nombre": "Pagare #UMV210770002",
+      "porcentaje": 0.48
+    },
+    {
+      "nombre": "Pagare #UMV310760022",
+      "porcentaje": 0.26
+    },
+    {
+      "nombre": "Pagare #UMV310570004",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Pagare #UMV210770003",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "Pagare #UMV200170069",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Pagare #UMV200270011",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "FCI Fima Premium Clase B",
+      "porcentaje": 4.39
+    },
+    {
+      "nombre": "FF San Cristobal S2 CA",
+      "porcentaje": 3.61
+    },
+    {
+      "nombre": "FF San Cristobal S1 CA",
+      "porcentaje": 2.36
     }
   ],
   "calificaciones": [],

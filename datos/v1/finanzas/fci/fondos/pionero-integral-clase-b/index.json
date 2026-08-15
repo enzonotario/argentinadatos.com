@@ -2,7 +2,7 @@
   "fondoId": "1415",
   "claseId": "6636",
   "nombre": "Pionero Integral - Clase B",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "Macro Fondos S.G.F.C.I.S.A.",
   "depositaria": "Banco Macro S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,21 +13,42 @@
   "duracion": null,
   "moneda": "Peso Argentino",
   "codigoCNV": "1415",
-  "patrimonio": 33811627341.49,
+  "patrimonio": 33880961930.23,
   "cantidadCuotapartes": 33847049937.34,
   "inversionMinima": 100,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 998.953,
-    "ultimos7Dias": -6.3693,
-    "unMes": -6.3693,
+    "valorCuotaparte": 1001.002,
+    "ultimos7Dias": 5.2247,
+    "unMes": 5.2247,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "CL Rep Chile 2027",
+      "porcentaje": 28.12
+    },
+    {
+      "nombre": "US Treasury Bill 180826",
+      "porcentaje": 25.05
+    },
+    {
+      "nombre": "Bono Corporativo 3.625% 010827",
+      "porcentaje": 23.17
+    },
+    {
+      "nombre": "BR Bono Global 2027 10.12%",
+      "porcentaje": 21.72
+    },
+    {
+      "nombre": "FCI Argenfunds Liquidez - Clase B",
+      "porcentaje": 0.01
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 0,

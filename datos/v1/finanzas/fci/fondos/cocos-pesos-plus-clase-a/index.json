@@ -2,7 +2,7 @@
   "fondoId": "1651",
   "claseId": "5496",
   "nombre": "Cocos Pesos Plus - Clase A",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "Cocos Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,15 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Peso Argentino",
   "codigoCNV": "1611",
-  "patrimonio": 518751056327,
-  "cantidadCuotapartes": 362666233474.6,
+  "patrimonio": 521470209407.48,
+  "cantidadCuotapartes": 364073841562.26,
   "inversionMinima": 1000,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1430.381,
-    "ultimos7Dias": 22.2475,
-    "unMes": 18.2486,
+    "valorCuotaparte": 1432.32,
+    "ultimos7Dias": 21.05,
+    "unMes": 19.214,
     "noventaDias": 5.3481,
     "cientoOchentaDias": 12.8149,
     "enElAnio": 16.8559,
@@ -29,68 +29,144 @@
   },
   "composicionCartera": [
     {
+      "nombre": "Bono del Tesoro Nacional D31G6",
+      "porcentaje": 22.29
+    },
+    {
       "nombre": "Lecap S13N6",
-      "porcentaje": 19
-    },
-    {
-      "nombre": "Caucion Colocadora $ Merval",
-      "porcentaje": 18.6
-    },
-    {
-      "nombre": "FCI Allaria Ahorro - Clase C",
-      "porcentaje": 9.5
-    },
-    {
-      "nombre": "FCI Balanz Capital Money Market Clase C",
-      "porcentaje": 6.8
+      "porcentaje": 21.2
     },
     {
       "nombre": "ON Banco de Galicia 32 BYY1O",
-      "porcentaje": 5.8
+      "porcentaje": 4.9
     },
     {
-      "nombre": "Fut Reg ARS",
-      "porcentaje": 5.5
-    },
-    {
-      "nombre": "Letra Tesoro Nac D31L6",
-      "porcentaje": 5.5
-    },
-    {
-      "nombre": "Bono del Tesoro Nacional TMG28",
-      "porcentaje": 3.9
-    },
-    {
-      "nombre": "Pzo Fi $ Bco BBVA",
-      "porcentaje": 3.8
-    },
-    {
-      "nombre": "Pzo Fi $ Bco Galicia",
-      "porcentaje": 3.7
-    },
-    {
-      "nombre": "Letra Tamar TEM M31G6",
-      "porcentaje": 3.4
+      "nombre": "Bono Dual TTD26",
+      "porcentaje": 3.1
     },
     {
       "nombre": "ON BBVA Frances Cl 47",
-      "porcentaje": 2.9
+      "porcentaje": 2.93
+    },
+    {
+      "nombre": "Letra Prov Bs As LBG26",
+      "porcentaje": 1.89
+    },
+    {
+      "nombre": "Letra Tamar TEM TMF27",
+      "porcentaje": 1.78
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TMG28",
+      "porcentaje": 1.76
+    },
+    {
+      "nombre": "Lecap S16O6",
+      "porcentaje": 1
+    },
+    {
+      "nombre": "Letra Prov Bs As PBA27",
+      "porcentaje": 0.98
+    },
+    {
+      "nombre": "ON Credito Directo C31",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "VCP Unicred S3",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Pagare #MAV180960022",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Pagare #MAV041260014",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare *MAV070900954",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "ON Club Atletico River Plate S1",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque E *CRE150900160",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare #UGA290170001",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare #UGA290370001",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare #UGA310570001",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Galicia",
+      "porcentaje": 8.55
+    },
+    {
+      "nombre": "Pzo Fi $ Bco BBVA",
+      "porcentaje": 6.68
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Santander Ri",
+      "porcentaje": 3.79
     },
     {
       "nombre": "Pzo Fi $ Banco VOII",
-      "porcentaje": 2.8
+      "porcentaje": 2.85
+    },
+    {
+      "nombre": "FCI Allaria Ahorro - Clase C",
+      "porcentaje": 2.37
     },
     {
       "nombre": "FCI Pellegrini Renta P CB",
-      "porcentaje": 2.1
+      "porcentaje": 2.09
     },
     {
-      "nombre": "Bono Dual TTS26",
-      "porcentaje": 2
+      "nombre": "FCI BM Smart Money Market - Clase B",
+      "porcentaje": 1.36
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 4.7
+      "nombre": "FCI 1822 Raices Ahorro Pesos",
+      "porcentaje": 1.06
+    },
+    {
+      "nombre": "FCI Schroder Liquidez - Clase B",
+      "porcentaje": 1.02
+    },
+    {
+      "nombre": "FCI SBS Ahorro Pesos Cl B",
+      "porcentaje": 0.39
+    },
+    {
+      "nombre": "FCI Balanz Capital Money Market Clase C",
+      "porcentaje": 0.25
+    },
+    {
+      "nombre": "FCI MEGAQM Pesos - Clase B",
+      "porcentaje": 0.21
+    },
+    {
+      "nombre": "FCI Adcap Ahorro Pesos - Clase I",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "FCI Tango Money Market Dinámico - Clase B",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "FCI IAM Ahorro Pesos C B",
+      "porcentaje": 0.07
     }
   ],
   "calificaciones": [],

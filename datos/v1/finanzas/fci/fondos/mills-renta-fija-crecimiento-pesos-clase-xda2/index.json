@@ -2,14 +2,14 @@
   "fondoId": "1872",
   "claseId": "6642",
   "nombre": "Mills Renta Fija Crecimiento Pesos - Clase XDA2",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "Mills Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": null,
-  "horizonte": null,
+  "horizonte": "Mediano Plazo",
   "duracion": null,
   "moneda": "Peso Argentino",
   "codigoCNV": "1872",
@@ -27,7 +27,36 @@
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Lecap S13N6",
+      "porcentaje": 25.09
+    },
+    {
+      "nombre": "Letra Tesoro Nac T30A7",
+      "porcentaje": 21.32
+    },
+    {
+      "nombre": "Lecap S30S6",
+      "porcentaje": 18.43
+    },
+    {
+      "nombre": "Lecap S16O6",
+      "porcentaje": 16.33
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional T15E7",
+      "porcentaje": 14.13
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional T31Y7",
+      "porcentaje": 4.03
+    },
+    {
+      "nombre": "FCI MAF Money Market - Clase B",
+      "porcentaje": 0.93
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 2.5,

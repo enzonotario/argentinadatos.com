@@ -2,7 +2,7 @@
   "fondoId": "426",
   "claseId": "5720",
   "nombre": "Compass Renta Mixta Dólares - Clase H Ley N° 27.743",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Variable",
@@ -13,15 +13,15 @@
   "duracion": "No Aplicable",
   "moneda": "USB",
   "codigoCNV": "564",
-  "patrimonio": 32941.21,
+  "patrimonio": 33004.02,
   "cantidadCuotapartes": 30749.77,
   "inversionMinima": 1,
   "monedaInversion": "USB",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1071.27,
-    "ultimos7Dias": 21.0534,
-    "unMes": 12.611,
+    "valorCuotaparte": 1073.31,
+    "ultimos7Dias": 18.458,
+    "unMes": 12.7962,
     "noventaDias": 0.306,
     "cientoOchentaDias": 1.9317,
     "enElAnio": 3.7068,
@@ -29,55 +29,311 @@
   },
   "composicionCartera": [
     {
-      "nombre": "Cta Cte U$S Bco Valores",
-      "porcentaje": 6.3
-    },
-    {
-      "nombre": "Overnight USD Citibank NY",
-      "porcentaje": 5.7
-    },
-    {
       "nombre": "BC Samarco 9% 2031",
-      "porcentaje": 2.7
+      "porcentaje": 2.77
+    },
+    {
+      "nombre": "Latam Airlines 2031",
+      "porcentaje": 2.23
     },
     {
       "nombre": "BC AES Clase 8.15% 2055",
-      "porcentaje": 2.4
-    },
-    {
-      "nombre": "ON Genneia Clase 49",
-      "porcentaje": 2.4
+      "porcentaje": 2.16
     },
     {
       "nombre": "BC ACUPET 7.5%",
-      "porcentaje": 2.4
+      "porcentaje": 2.11
+    },
+    {
+      "nombre": "BC Compañia Minera Volcan S2",
+      "porcentaje": 2.02
+    },
+    {
+      "nombre": "BC CAP 3.9%",
+      "porcentaje": 1.98
     },
     {
       "nombre": "BC Bco de Crédito 7.5%",
-      "porcentaje": 2.2
-    },
-    {
-      "nombre": "BC Nova Securitisation 5.75% 030231",
-      "porcentaje": 2.1
+      "porcentaje": 1.92
     },
     {
       "nombre": "MV24 Capital 6.748%",
-      "porcentaje": 2
+      "porcentaje": 1.84
+    },
+    {
+      "nombre": "BC Nova Securitisation 5.75% 030231",
+      "porcentaje": 1.82
     },
     {
       "nombre": "BC Cosan 2015",
-      "porcentaje": 2
+      "porcentaje": 1.71
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 69.9
+      "nombre": "Prumo Participacoes 7.5 311231",
+      "porcentaje": 1.66
+    },
+    {
+      "nombre": "BC Yinson Production",
+      "porcentaje": 1.62
+    },
+    {
+      "nombre": "BC La Construccion 4.75% 070232",
+      "porcentaje": 1.61
+    },
+    {
+      "nombre": "LD Celulose S.A. 7.95%",
+      "porcentaje": 1.6
+    },
+    {
+      "nombre": "BC Banorte 8.375%",
+      "porcentaje": 1.58
+    },
+    {
+      "nombre": "BC Rumo Lux 4.2% 180132",
+      "porcentaje": 1.57
+    },
+    {
+      "nombre": "BC Mundox 7.95% 200431",
+      "porcentaje": 1.54
+    },
+    {
+      "nombre": "BC Aegea Saneamento e Participacoes 9%",
+      "porcentaje": 1.5
+    },
+    {
+      "nombre": "BC CMPC 120957",
+      "porcentaje": 1.5
+    },
+    {
+      "nombre": "BC OHI Group 13%",
+      "porcentaje": 1.48
+    },
+    {
+      "nombre": "BC Davivienda 6.65% Perp",
+      "porcentaje": 1.45
+    },
+    {
+      "nombre": "BC Petrobras Global Finance 2033",
+      "porcentaje": 1.31
+    },
+    {
+      "nombre": "BC Eletrobras 110135",
+      "porcentaje": 1.27
+    },
+    {
+      "nombre": "BC Investment Energy Resources 6.25%",
+      "porcentaje": 1.27
+    },
+    {
+      "nombre": "BC Al Candelaria 5.75% 130633",
+      "porcentaje": 1.07
+    },
+    {
+      "nombre": "BC Usiminas International",
+      "porcentaje": 1.05
+    },
+    {
+      "nombre": "BC Aeromexico 8.625% 151131",
+      "porcentaje": 1.05
+    },
+    {
+      "nombre": "BC Adecoagro 7.5% 2032",
+      "porcentaje": 1
+    },
+    {
+      "nombre": "BC UEP Penonome II 6.5%",
+      "porcentaje": 0.85
+    },
+    {
+      "nombre": "BC Nutresa 120535",
+      "porcentaje": 0.58
+    },
+    {
+      "nombre": "ON Hunt Oil 030238",
+      "porcentaje": 0.56
+    },
+    {
+      "nombre": "BC Minerva Luxembourg 130933",
+      "porcentaje": 0.55
+    },
+    {
+      "nombre": "ON Transp Gas Sur Cl 3",
+      "porcentaje": 0.54
+    },
+    {
+      "nombre": "BC Pemex 6.7%",
+      "porcentaje": 0.52
+    },
+    {
+      "nombre": "BC Avianca 9% 2031",
+      "porcentaje": 0.48
+    },
+    {
+      "nombre": "BC Fisoma 4.375% 220731",
+      "porcentaje": 0.46
+    },
+    {
+      "nombre": "BC CSN Resources 2028",
+      "porcentaje": 0.43
+    },
+    {
+      "nombre": "BC Petroleos Peru 5.625% 190647",
+      "porcentaje": 0.37
+    },
+    {
+      "nombre": "BC Braskm 7.125 220741",
+      "porcentaje": 0.3
+    },
+    {
+      "nombre": "BC Pretorio 6.75% 101530",
+      "porcentaje": 2.57
+    },
+    {
+      "nombre": "ON Genneia Clase 49",
+      "porcentaje": 2.11
+    },
+    {
+      "nombre": "BC Rede 6.45% 090935",
+      "porcentaje": 1.89
+    },
+    {
+      "nombre": "BC Constellation Oil Services",
+      "porcentaje": 1.65
+    },
+    {
+      "nombre": "ON Pluspetrol 8.5% 2032 (REGS)",
+      "porcentaje": 1.64
+    },
+    {
+      "nombre": "ON Irsa 2035",
+      "porcentaje": 1.63
+    },
+    {
+      "nombre": "BC Glopar 5.5%",
+      "porcentaje": 1.51
+    },
+    {
+      "nombre": "Ecopetrol 8.875% 2033",
+      "porcentaje": 1.38
+    },
+    {
+      "nombre": "ON YPF Clase 34",
+      "porcentaje": 1.35
+    },
+    {
+      "nombre": "Bono Ciudad Bs As 261133",
+      "porcentaje": 1.35
+    },
+    {
+      "nombre": "ON Aeropuertos 2000 Regs 2031",
+      "porcentaje": 1.31
+    },
+    {
+      "nombre": "BC Simpar Europe 2031",
+      "porcentaje": 1.3
+    },
+    {
+      "nombre": "BC Tupy 160231",
+      "porcentaje": 1.3
+    },
+    {
+      "nombre": "BC Promigas 240656",
+      "porcentaje": 1.3
+    },
+    {
+      "nombre": "BC Aesdom 7.75% 030833",
+      "porcentaje": 1.28
+    },
+    {
+      "nombre": "BC COS 7.7% 030833",
+      "porcentaje": 1.28
+    },
+    {
+      "nombre": "ON YPF Clase 31",
+      "porcentaje": 1.26
+    },
+    {
+      "nombre": "ON Telecom C24",
+      "porcentaje": 1.11
+    },
+    {
+      "nombre": "BC Pampa Energia C23",
+      "porcentaje": 1.08
+    },
+    {
+      "nombre": "BC BBVA Bancomer 080139",
+      "porcentaje": 1.08
+    },
+    {
+      "nombre": "Yinson MQ 8.498% 2045",
+      "porcentaje": 1.07
+    },
+    {
+      "nombre": "ON Pan American C43",
+      "porcentaje": 1.05
+    },
+    {
+      "nombre": "BC Orbia 130535",
+      "porcentaje": 1.05
+    },
+    {
+      "nombre": "BC CoxMex 080536",
+      "porcentaje": 1.04
+    },
+    {
+      "nombre": "BC Vale Overseas 2056",
+      "porcentaje": 1.04
+    },
+    {
+      "nombre": "BC Banco Nac Mexico 070836",
+      "porcentaje": 1.01
+    },
+    {
+      "nombre": "BC Natura 4.125% 2028",
+      "porcentaje": 0.97
+    },
+    {
+      "nombre": "BC Arco 32",
+      "porcentaje": 0.79
+    },
+    {
+      "nombre": "BC Parex 110531",
+      "porcentaje": 0.53
+    },
+    {
+      "nombre": "BC Klab 040349",
+      "porcentaje": 0.52
+    },
+    {
+      "nombre": "BC Nutresa 170538",
+      "porcentaje": 0.51
+    },
+    {
+      "nombre": "BC Banorte Perp.",
+      "porcentaje": 0.51
+    },
+    {
+      "nombre": "ON TGS C4 Reg S",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "ON Pampa Energia C26",
+      "porcentaje": 0.26
+    },
+    {
+      "nombre": "Banco de Chile",
+      "porcentaje": 1.64
+    },
+    {
+      "nombre": "Telefonica Moviles Chile",
+      "porcentaje": 1.23
     }
   ],
   "calificaciones": [
     {
       "calificadora": null,
       "calificacion": "raAAc",
-      "fecha": "2026-08-13"
+      "fecha": "2026-08-14"
     }
   ],
   "honorarios": {

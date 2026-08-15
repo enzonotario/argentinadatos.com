@@ -2,7 +2,7 @@
   "fondoId": "804",
   "claseId": "2093",
   "nombre": "Consultatio Gestion I - Clase B",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
@@ -13,15 +13,15 @@
   "duracion": "No Aplicable",
   "moneda": "Peso Argentino",
   "codigoCNV": "1026",
-  "patrimonio": 27405429038.94,
+  "patrimonio": 27379372878.84,
   "cantidadCuotapartes": 9126305109.26,
   "inversionMinima": 1000,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 3002.905,
-    "ultimos7Dias": 16.1202,
-    "unMes": 8.4792,
+    "valorCuotaparte": 3000.05,
+    "ultimos7Dias": -6.657,
+    "unMes": 2.9319,
     "noventaDias": 6.6745,
     "cientoOchentaDias": 14.8485,
     "enElAnio": 17.5288,
@@ -30,75 +30,195 @@
   "composicionCartera": [
     {
       "nombre": "Bono del Tesoro Nacional TZXO7",
-      "porcentaje": 10.3
+      "porcentaje": 10.37
     },
     {
       "nombre": "Lecap S13N6",
-      "porcentaje": 9.3
+      "porcentaje": 9.29
     },
     {
       "nombre": "Bono Boncer TZXD7",
-      "porcentaje": 7.8
+      "porcentaje": 7.83
     },
     {
       "nombre": "Lecer X30N6",
-      "porcentaje": 7.1
-    },
-    {
-      "nombre": "US Treasury Bill 300629",
-      "porcentaje": 7.1
+      "porcentaje": 7.16
     },
     {
       "nombre": "Bono Disc ARS Ley AR DICP",
-      "porcentaje": 5.8
+      "porcentaje": 5.81
     },
     {
       "nombre": "Bono del Tesoro Nacional AO27",
-      "porcentaje": 5.7
+      "porcentaje": 5.63
     },
     {
       "nombre": "Bono Boncer TZXD6",
-      "porcentaje": 4.8
+      "porcentaje": 4.79
     },
     {
       "nombre": "Bono Boncer TX26",
-      "porcentaje": 3.5
+      "porcentaje": 3.52
     },
     {
       "nombre": "Bono Boncer TZXS7",
-      "porcentaje": 3.5
+      "porcentaje": 3.48
     },
     {
       "nombre": "Bono Dual TTS26",
-      "porcentaje": 3.3
+      "porcentaje": 3.32
     },
     {
       "nombre": "Bonos Rep Argentina AE38",
-      "porcentaje": 2.8
-    },
-    {
-      "nombre": "Bono Par ARS Ley AR PARP",
-      "porcentaje": 2.5
+      "porcentaje": 2.73
     },
     {
       "nombre": "Bono Boncer TZXO6",
       "porcentaje": 2.5
     },
     {
+      "nombre": "Bono Par ARS Ley AR PARP",
+      "porcentaje": 2.46
+    },
+    {
       "nombre": "ON San Miguel Serie 13 CA",
-      "porcentaje": 2.4
+      "porcentaje": 2.42
     },
     {
       "nombre": "US Treasury Bill 150546",
-      "porcentaje": 2.3
+      "porcentaje": 2.24
     },
     {
-      "nombre": "YPF - D",
-      "porcentaje": 2.1
+      "nombre": "ON Telecom C19 TLCKO",
+      "porcentaje": 1.61
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 17.1
+      "nombre": "Bono Dual TTD26",
+      "porcentaje": 1.56
+    },
+    {
+      "nombre": "Bonos Rep Argentina AL35",
+      "porcentaje": 1.41
+    },
+    {
+      "nombre": "Bonos Rep Argentina AL41",
+      "porcentaje": 1.16
+    },
+    {
+      "nombre": "Bono Boncer TZX28",
+      "porcentaje": 0.81
+    },
+    {
+      "nombre": "Letra Tesoro Nac D15E7",
+      "porcentaje": 0.75
+    },
+    {
+      "nombre": "ON YPF Clase 31",
+      "porcentaje": 0.6
+    },
+    {
+      "nombre": "Bono Cuasipar ARS CUAP",
+      "porcentaje": 0.54
+    },
+    {
+      "nombre": "Bono Prov Santa Fe 8.1% 111234",
+      "porcentaje": 0.44
+    },
+    {
+      "nombre": "Bonos de Infra.Vial Prov. de Santa Fe",
+      "porcentaje": 0.42
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TMVE8",
+      "porcentaje": 0.37
+    },
+    {
+      "nombre": "ON YPF Clase 34",
+      "porcentaje": 0.35
+    },
+    {
+      "nombre": "ON Tecpetrol C12",
+      "porcentaje": 0.3
+    },
+    {
+      "nombre": "Cupon PBI USD Ley NY TVPY",
+      "porcentaje": 0.2
+    },
+    {
+      "nombre": "Bono Bocon 2029 PR17",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Bono Boncer TX28",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Cupon PBI USD Ley AR TVPA",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "US Treasury Bill 300629",
+      "porcentaje": 7.12
+    },
+    {
+      "nombre": "YPF S.A.",
+      "porcentaje": 2.19
+    },
+    {
+      "nombre": "Pampa Energia S.A.",
+      "porcentaje": 1.44
+    },
+    {
+      "nombre": "Transportadora Gas del Sur S.A.",
+      "porcentaje": 0.61
+    },
+    {
+      "nombre": "Telecom Argentina S.A.",
+      "porcentaje": 0.6
+    },
+    {
+      "nombre": "Grupo Financiero Galicia S.A.",
+      "porcentaje": 0.55
+    },
+    {
+      "nombre": "Banco Macro S.A.",
+      "porcentaje": 0.41
+    },
+    {
+      "nombre": "Cresud S.A.",
+      "porcentaje": 0.35
+    },
+    {
+      "nombre": "Central Puerto S.A.",
+      "porcentaje": 0.3
+    },
+    {
+      "nombre": "Cedear Petrobras",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Distribuidora de Gas del Centro S.A.",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Transportadora de Gas del Norte S.A.",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Cedear Mercado Libre",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Cedear Pepsico",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Loma Negra S.A.",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Inversiones y Representaciones S.A. (IRSA)",
+      "porcentaje": 0.01
     }
   ],
   "calificaciones": [],

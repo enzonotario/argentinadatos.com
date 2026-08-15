@@ -2,7 +2,7 @@
   "fondoId": "1717",
   "claseId": "5773",
   "nombre": "Ciclo Nova Estratégico II - Clase B",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "Ciclo Nova Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,15 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1736",
-  "patrimonio": 16210290.41,
-  "cantidadCuotapartes": 13937570.03,
+  "patrimonio": 16280926.24,
+  "cantidadCuotapartes": 13946136.08,
   "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1163.1,
-    "ultimos7Dias": 42.0288,
-    "unMes": 4.4094,
+    "valorCuotaparte": 1167.4,
+    "ultimos7Dias": 54.1556,
+    "unMes": 8.6358,
     "noventaDias": 0.8976,
     "cientoOchentaDias": 3.3935,
     "enElAnio": 5.629,
@@ -30,83 +30,323 @@
   "composicionCartera": [
     {
       "nombre": "Bonos Rep Argentina 2030",
-      "porcentaje": 8.3
+      "porcentaje": 8.44
     },
     {
       "nombre": "Bono del Tesoro Nacional TZVD8",
-      "porcentaje": 6.4
+      "porcentaje": 6.46
     },
     {
       "nombre": "Bono del Tesoro Nacional AO27",
-      "porcentaje": 4.8
+      "porcentaje": 4.88
     },
     {
       "nombre": "Pagare #UMV200170011",
-      "porcentaje": 4.1
-    },
-    {
-      "nombre": "Fut Rofex DLR072026",
-      "porcentaje": 4.1
-    },
-    {
-      "nombre": "Matba Rofex",
-      "porcentaje": 4.1
-    },
-    {
-      "nombre": "Eaton Corporation PLC",
-      "porcentaje": 4
+      "porcentaje": 4.14
     },
     {
       "nombre": "Bono Dual TXMJ0",
-      "porcentaje": 3.9
-    },
-    {
-      "nombre": "FCI Consultatio Liquidez Dólar - Clase C",
-      "porcentaje": 3.8
-    },
-    {
-      "nombre": "Transp Gas del Sur - B",
-      "porcentaje": 3.3
-    },
-    {
-      "nombre": "FCI Allaria Dólar Ahorro - Clase B",
-      "porcentaje": 2.9
-    },
-    {
-      "nombre": "FCI Toronto Trust Money Market Dólar - Clase B",
-      "porcentaje": 2.9
+      "porcentaje": 3.96
     },
     {
       "nombre": "ON Inversora Juramento C6 JNC6O",
-      "porcentaje": 2.9
-    },
-    {
-      "nombre": "Dycasa",
-      "porcentaje": 2.3
+      "porcentaje": 2.98
     },
     {
       "nombre": "ON Mirgor Clase 4",
-      "porcentaje": 2.3
+      "porcentaje": 2.35
+    },
+    {
+      "nombre": "ON Havanna S1",
+      "porcentaje": 1.84
+    },
+    {
+      "nombre": "Bono Dual TXMD8",
+      "porcentaje": 1.32
+    },
+    {
+      "nombre": "Bono Bonar 2029 AO29",
+      "porcentaje": 1.22
+    },
+    {
+      "nombre": "Pagare #UMV200170017",
+      "porcentaje": 0.87
+    },
+    {
+      "nombre": "Bono Dual TXMD9",
+      "porcentaje": 0.76
+    },
+    {
+      "nombre": "Lecap S13N6",
+      "porcentaje": 0.54
+    },
+    {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 0.52
+    },
+    {
+      "nombre": "Bono Boncer TZXD7",
+      "porcentaje": 0.39
+    },
+    {
+      "nombre": "Bono Boncer TZX28",
+      "porcentaje": 0.39
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TMG28",
+      "porcentaje": 0.35
+    },
+    {
+      "nombre": "ON Transp Gas Sur Cl 3",
+      "porcentaje": 0.34
+    },
+    {
+      "nombre": "ON YPF Clase 33",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 0.26
+    },
+    {
+      "nombre": "ON John Deere Cia. Fin C19",
+      "porcentaje": 0.22
+    },
+    {
+      "nombre": "ON 360 Energy Solar C4",
+      "porcentaje": 0.18
+    },
+    {
+      "nombre": "ON Supervielle Clase S",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "ON YPF Clase 39",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "ON Telecom C25",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Caucion Colocadora U$S Merval",
+      "porcentaje": 8.54
+    },
+    {
+      "nombre": "Pagare #MAV040270008",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #MAV050570010",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #MAV060470002",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #MAV090370003",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #MAV050170008",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #MAV101260006",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Eaton Corporation PLC",
+      "porcentaje": 3.47
     },
     {
       "nombre": "Vertiv Holdings Co",
-      "porcentaje": 2.3
+      "porcentaje": 2.92
     },
     {
       "nombre": "Rockwell Automation Inc",
-      "porcentaje": 2.2
+      "porcentaje": 2.41
     },
     {
-      "nombre": "SDS - ProShares UltraShort S&P500 (6676)",
-      "porcentaje": 2.1
+      "nombre": "Proshares Short S&P 500 ETF",
+      "porcentaje": 2.11
+    },
+    {
+      "nombre": "Valero Energy Corporation",
+      "porcentaje": 0.88
+    },
+    {
+      "nombre": "Arista Networks Inc",
+      "porcentaje": 0.77
+    },
+    {
+      "nombre": "Applied Digital Corp",
+      "porcentaje": 0.73
+    },
+    {
+      "nombre": "Aehr Test Systems",
+      "porcentaje": 0.63
+    },
+    {
+      "nombre": "Nextera Energy Inc.",
+      "porcentaje": 0.62
+    },
+    {
+      "nombre": "Marathon Oil Corp",
+      "porcentaje": 0.61
+    },
+    {
+      "nombre": "Phillips 66",
+      "porcentaje": 0.6
+    },
+    {
+      "nombre": "Space Exploration Technologies Corp",
+      "porcentaje": 0.54
+    },
+    {
+      "nombre": "ADR TGS US GA",
+      "porcentaje": 0.53
+    },
+    {
+      "nombre": "Netflix",
+      "porcentaje": 0.52
+    },
+    {
+      "nombre": "Emerson Electric Co",
+      "porcentaje": 0.44
+    },
+    {
+      "nombre": "Prologis Inc",
+      "porcentaje": 0.42
+    },
+    {
+      "nombre": "Vistra Corporation",
+      "porcentaje": 0.39
+    },
+    {
+      "nombre": "Nutrien Ltd",
+      "porcentaje": 0.36
+    },
+    {
+      "nombre": "Brookfield Corp",
+      "porcentaje": 0.35
+    },
+    {
+      "nombre": "Modine Manufacturing Company",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Ribbon Communications Inc",
+      "porcentaje": 0.2
+    },
+    {
+      "nombre": "ADR Loma Negra",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "Coherent Corp.",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "Lumentum Holdings Inc",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "ADR Vista Oil y Gas",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Matba Rofex S.A.",
+      "porcentaje": 3.98
+    },
+    {
+      "nombre": "Transportadora Gas del Sur S.A.",
+      "porcentaje": 3.62
+    },
+    {
+      "nombre": "Dycasa S.A.",
+      "porcentaje": 2.32
     },
     {
       "nombre": "Cedear FCI SPDR Gold Trust",
-      "porcentaje": 2
+      "porcentaje": 2.04
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 30.9
+      "nombre": "Distribuidora de Gas del Centro S.A.",
+      "porcentaje": 1.17
+    },
+    {
+      "nombre": "Central Puerto S.A.",
+      "porcentaje": 1.03
+    },
+    {
+      "nombre": "Pampa Energia S.A.",
+      "porcentaje": 0.84
+    },
+    {
+      "nombre": "Cedear ETF Global X Copper Miners",
+      "porcentaje": 0.79
+    },
+    {
+      "nombre": "Cedear Phillips 66",
+      "porcentaje": 0.54
+    },
+    {
+      "nombre": "Cedear Celestica Inc.",
+      "porcentaje": 0.42
+    },
+    {
+      "nombre": "Cedear Vista Oil Gas",
+      "porcentaje": 0.32
+    },
+    {
+      "nombre": "YPF S.A.",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Ceragon Networks Ltd",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "ETF ProShare UltraShort 2",
+      "porcentaje": 1.74
+    },
+    {
+      "nombre": "ETF ProShares Ultra Yen",
+      "porcentaje": 1.08
+    },
+    {
+      "nombre": "ETF Teucrium Wheat",
+      "porcentaje": 0.74
+    },
+    {
+      "nombre": "ETF Teucrium Corn",
+      "porcentaje": 0.73
+    },
+    {
+      "nombre": "Global X Uranium ETF",
+      "porcentaje": 0.54
+    },
+    {
+      "nombre": "ETF iShares Global REIT",
+      "porcentaje": 0.43
+    },
+    {
+      "nombre": "ETF Global Silver",
+      "porcentaje": 0.18
+    },
+    {
+      "nombre": "FCI Adcap Ahorro Dólares - Clase E",
+      "porcentaje": 1.94
+    },
+    {
+      "nombre": "FCI Consultatio Liquidez Dólar - Clase C",
+      "porcentaje": 1.94
+    },
+    {
+      "nombre": "FCI Toronto T Ahorro B",
+      "porcentaje": 0.31
     }
   ],
   "calificaciones": [],

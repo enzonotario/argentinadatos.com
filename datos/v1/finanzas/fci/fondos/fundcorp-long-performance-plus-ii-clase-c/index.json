@@ -2,7 +2,7 @@
   "fondoId": "1848",
   "claseId": "6377",
   "nombre": "Fundcorp Long Performance Plus II - Clase C",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "CMF Asset Management S.A.U.",
   "depositaria": "Banco C.M.F. S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,15 +13,15 @@
   "duracion": "Mayor a 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1912",
-  "patrimonio": 4854815.97,
-  "cantidadCuotapartes": 8461748.18,
+  "patrimonio": 4851766.25,
+  "cantidadCuotapartes": 8459373.44,
   "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 573.737,
-    "ultimos7Dias": -2.4436,
-    "unMes": -0.9154,
+    "valorCuotaparte": 573.537,
+    "ultimos7Dias": 0.3455,
+    "unMes": -1.6312,
     "noventaDias": 1.7098,
     "cientoOchentaDias": null,
     "enElAnio": null,
@@ -29,52 +29,372 @@
   },
   "composicionCartera": [
     {
-      "nombre": "Bonos Rep Argentina AL41",
-      "porcentaje": 9.4
+      "nombre": "ON Akron S1",
+      "porcentaje": 8.47
     },
     {
-      "nombre": "ON Akron S1",
-      "porcentaje": 9.4
+      "nombre": "Bonos Rep Argentina AL41",
+      "porcentaje": 8.24
     },
     {
       "nombre": "Bono del Tesoro Nacional AO27",
-      "porcentaje": 4.6
+      "porcentaje": 4.12
     },
     {
       "nombre": "Bono del Tesoro Nacional AO28",
-      "porcentaje": 4.4
+      "porcentaje": 3.95
     },
     {
       "nombre": "Pagare #UMV170670004",
-      "porcentaje": 3.1
+      "porcentaje": 2.8
     },
     {
       "nombre": "ON PyME Hattrick Energy S2",
-      "porcentaje": 2.3
+      "porcentaje": 2.07
     },
     {
       "nombre": "Pagare #UMV090960017",
-      "porcentaje": 2.2
-    },
-    {
-      "nombre": "Pagare #UNO191160001",
-      "porcentaje": 2.2
-    },
-    {
-      "nombre": "Pagare #UMV160470004",
-      "porcentaje": 2.1
-    },
-    {
-      "nombre": "Pagare #UMV170570055",
-      "porcentaje": 2.1
-    },
-    {
-      "nombre": "FF Venturino S1 A",
       "porcentaje": 2
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 55.3
+      "nombre": "Pagare #UNO191160001",
+      "porcentaje": 1.97
+    },
+    {
+      "nombre": "Pagare #UMV241160050",
+      "porcentaje": 1.96
+    },
+    {
+      "nombre": "Pagare #UMV160470004",
+      "porcentaje": 1.9
+    },
+    {
+      "nombre": "Pagare #UMV170570055",
+      "porcentaje": 1.88
+    },
+    {
+      "nombre": "ON Pecom C3",
+      "porcentaje": 1.57
+    },
+    {
+      "nombre": "Pagare #UMV280960016",
+      "porcentaje": 1.09
+    },
+    {
+      "nombre": "Pagare #UMV250370005",
+      "porcentaje": 1.05
+    },
+    {
+      "nombre": "Pagare #UMV310860082",
+      "porcentaje": 1.04
+    },
+    {
+      "nombre": "Pagare #UFM210170002",
+      "porcentaje": 0.98
+    },
+    {
+      "nombre": "Pagare #UFM210170001",
+      "porcentaje": 0.98
+    },
+    {
+      "nombre": "Pagare #UMV171260022",
+      "porcentaje": 0.98
+    },
+    {
+      "nombre": "Pagare #UFM310170001",
+      "porcentaje": 0.97
+    },
+    {
+      "nombre": "Pagare #UMV140270001",
+      "porcentaje": 0.96
+    },
+    {
+      "nombre": "Pagare #UMV180270016",
+      "porcentaje": 0.96
+    },
+    {
+      "nombre": "Pagare #UMV190370008",
+      "porcentaje": 0.95
+    },
+    {
+      "nombre": "Pagare #UMV090470005",
+      "porcentaje": 0.95
+    },
+    {
+      "nombre": "Pagare #UMV300370007",
+      "porcentaje": 0.95
+    },
+    {
+      "nombre": "Pagare #UMV050570006",
+      "porcentaje": 0.94
+    },
+    {
+      "nombre": "Pagare #UMV150570011",
+      "porcentaje": 0.94
+    },
+    {
+      "nombre": "Pagare #UMV200570009",
+      "porcentaje": 0.94
+    },
+    {
+      "nombre": "Pagare #UMV270570004",
+      "porcentaje": 0.94
+    },
+    {
+      "nombre": "Pagare #UMV230470008",
+      "porcentaje": 0.94
+    },
+    {
+      "nombre": "Pagare #UMV260570016",
+      "porcentaje": 0.93
+    },
+    {
+      "nombre": "Pagare #UMV220770004",
+      "porcentaje": 0.93
+    },
+    {
+      "nombre": "Pagare #UMV200770008",
+      "porcentaje": 0.93
+    },
+    {
+      "nombre": "Pagare #UMV130770002",
+      "porcentaje": 0.93
+    },
+    {
+      "nombre": "Pagare #UMV150770047",
+      "porcentaje": 0.93
+    },
+    {
+      "nombre": "Pagare #UMV270770003",
+      "porcentaje": 0.93
+    },
+    {
+      "nombre": "Pagare #UMV240670061",
+      "porcentaje": 0.93
+    },
+    {
+      "nombre": "Pagare #UMV290670002",
+      "porcentaje": 0.93
+    },
+    {
+      "nombre": "Pagare #UMV290770004",
+      "porcentaje": 0.93
+    },
+    {
+      "nombre": "Pagare #UMV220670003",
+      "porcentaje": 0.93
+    },
+    {
+      "nombre": "Pagare #UMV120870002",
+      "porcentaje": 0.92
+    },
+    {
+      "nombre": "Pagare #UMV170870002",
+      "porcentaje": 0.92
+    },
+    {
+      "nombre": "Pagare #UMV240870005",
+      "porcentaje": 0.92
+    },
+    {
+      "nombre": "Pagare #UMV190870003",
+      "porcentaje": 0.92
+    },
+    {
+      "nombre": "Pagare #UMV260870001",
+      "porcentaje": 0.92
+    },
+    {
+      "nombre": "Pagare #UMV090670012",
+      "porcentaje": 0.84
+    },
+    {
+      "nombre": "Pagare #UMV201060032",
+      "porcentaje": 0.74
+    },
+    {
+      "nombre": "Pagare #UMV171160009",
+      "porcentaje": 0.74
+    },
+    {
+      "nombre": "Pagare #UAU150170002",
+      "porcentaje": 0.73
+    },
+    {
+      "nombre": "ON Banco de Valores C1",
+      "porcentaje": 0.64
+    },
+    {
+      "nombre": "Pagare #UAU250170001",
+      "porcentaje": 0.59
+    },
+    {
+      "nombre": "Pagare #UMV180960016",
+      "porcentaje": 0.55
+    },
+    {
+      "nombre": "Pagare #UMV180860034",
+      "porcentaje": 0.55
+    },
+    {
+      "nombre": "Pagare #UMV181160017",
+      "porcentaje": 0.54
+    },
+    {
+      "nombre": "Pagare #UMV191060014",
+      "porcentaje": 0.54
+    },
+    {
+      "nombre": "ON Cresud Clase 51",
+      "porcentaje": 0.5
+    },
+    {
+      "nombre": "Pagare #UMV041260014",
+      "porcentaje": 0.49
+    },
+    {
+      "nombre": "Pagare #UMV151260084",
+      "porcentaje": 0.49
+    },
+    {
+      "nombre": "Pagare #UMV101260037",
+      "porcentaje": 0.49
+    },
+    {
+      "nombre": "Pagare #UMV111260026",
+      "porcentaje": 0.49
+    },
+    {
+      "nombre": "Pagare #UMV141260008",
+      "porcentaje": 0.49
+    },
+    {
+      "nombre": "Pagare #UFT141260001",
+      "porcentaje": 0.49
+    },
+    {
+      "nombre": "Pagare #UFT071260001",
+      "porcentaje": 0.49
+    },
+    {
+      "nombre": "Pagare #UCN090470002",
+      "porcentaje": 0.48
+    },
+    {
+      "nombre": "Pagare #UCN190370004",
+      "porcentaje": 0.48
+    },
+    {
+      "nombre": "Pagare #UFT180670001",
+      "porcentaje": 0.48
+    },
+    {
+      "nombre": "Pagare #UCN210570003",
+      "porcentaje": 0.48
+    },
+    {
+      "nombre": "Pagare #UCN160470002",
+      "porcentaje": 0.48
+    },
+    {
+      "nombre": "Pagare #UCN040670002",
+      "porcentaje": 0.47
+    },
+    {
+      "nombre": "Pagare #UFM131160001",
+      "porcentaje": 0.46
+    },
+    {
+      "nombre": "Pagare #UFM280270001",
+      "porcentaje": 0.39
+    },
+    {
+      "nombre": "Pagare #UFT140570001",
+      "porcentaje": 0.38
+    },
+    {
+      "nombre": "Pagare #UFT300470003",
+      "porcentaje": 0.38
+    },
+    {
+      "nombre": "Pagare #UPO110670004",
+      "porcentaje": 0.38
+    },
+    {
+      "nombre": "Pagare #UPO040670002",
+      "porcentaje": 0.38
+    },
+    {
+      "nombre": "Pagare #UNO240770001",
+      "porcentaje": 0.38
+    },
+    {
+      "nombre": "Pagare #UCN020960002",
+      "porcentaje": 0.3
+    },
+    {
+      "nombre": "Pagare #UFM010470001",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "Pagare #UFM100470001",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "Pagare #UMV150960092",
+      "porcentaje": 0.93
+    },
+    {
+      "nombre": "Pagare #UMV220960047",
+      "porcentaje": 0.93
+    },
+    {
+      "nombre": "Pagare #UMV150960112",
+      "porcentaje": 0.8
+    },
+    {
+      "nombre": "Pagare #UMV161160066",
+      "porcentaje": 0.79
+    },
+    {
+      "nombre": "Pagare #UVA200570001",
+      "porcentaje": 0.56
+    },
+    {
+      "nombre": "Pagare #UCM280170001",
+      "porcentaje": 0.47
+    },
+    {
+      "nombre": "Pagare #UNT220170001",
+      "porcentaje": 0.45
+    },
+    {
+      "nombre": "Pagare #UNT150170001",
+      "porcentaje": 0.45
+    },
+    {
+      "nombre": "Pagare #UNT080170001",
+      "porcentaje": 0.45
+    },
+    {
+      "nombre": "Pagare #UFI010470001",
+      "porcentaje": 0.41
+    },
+    {
+      "nombre": "Pagare #UMV231060024",
+      "porcentaje": 0.4
+    },
+    {
+      "nombre": "Pagare #UFI100370001",
+      "porcentaje": 0.32
+    },
+    {
+      "nombre": "Pagare #UCM100170001",
+      "porcentaje": 0.13
+    },
+    {
+      "nombre": "FF Venturino S1 A",
+      "porcentaje": 1.81
     }
   ],
   "calificaciones": [],

@@ -2,7 +2,7 @@
   "fondoId": "744",
   "claseId": "1631",
   "nombre": "First Renta Pesos - Clase C",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "First Capital Markets S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -30,35 +30,399 @@
   "composicionCartera": [
     {
       "nombre": "Bono Dual TTS26",
-      "porcentaje": 21.6
+      "porcentaje": 21.64
     },
     {
       "nombre": "Letra Tamar TEM M31G6",
-      "porcentaje": 11.6
+      "porcentaje": 11.69
     },
     {
-      "nombre": "Lecer X31L6",
-      "porcentaje": 10.1
-    },
-    {
-      "nombre": "Pase Colocador ARS MAV",
-      "porcentaje": 6.7
+      "nombre": "Lecap S16O6",
+      "porcentaje": 9.2
     },
     {
       "nombre": "Lecap S15S6",
-      "porcentaje": 6.3
+      "porcentaje": 6.38
     },
     {
-      "nombre": "Fut Reg ARS",
-      "porcentaje": 5.9
+      "nombre": "Bono del Tesoro Nacional D31G6",
+      "porcentaje": 3.17
     },
     {
-      "nombre": "Letra Tesoro Nac D31L6",
-      "porcentaje": 5.9
+      "nombre": "Lecap S14G6",
+      "porcentaje": 3.12
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 32.3
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 1.03
+    },
+    {
+      "nombre": "ON Santander Rio S 31",
+      "porcentaje": 0.46
+    },
+    {
+      "nombre": "ON Arcor C3",
+      "porcentaje": 0.32
+    },
+    {
+      "nombre": "ON Toyota Clase 34",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Pase Colocador ARS MAV",
+      "porcentaje": 6.51
+    },
+    {
+      "nombre": "FF Megabono 355 Clase A",
+      "porcentaje": 0.92
+    },
+    {
+      "nombre": "FF Mercado Credito 47 CA",
+      "porcentaje": 0.91
+    },
+    {
+      "nombre": "FF Mercado Credito 48 CA",
+      "porcentaje": 0.91
+    },
+    {
+      "nombre": "FF Mercado Credito 49 CA",
+      "porcentaje": 0.91
+    },
+    {
+      "nombre": "FF Mercado Credito 50 CA",
+      "porcentaje": 0.91
+    },
+    {
+      "nombre": "FF Waynimovil S14 CA",
+      "porcentaje": 0.91
+    },
+    {
+      "nombre": "FCI Axis Pesos - Clase B",
+      "porcentaje": 0.91
+    },
+    {
+      "nombre": "FF Creditech S7 CA",
+      "porcentaje": 0.9
+    },
+    {
+      "nombre": "FF Fiducar 34 Clase A",
+      "porcentaje": 0.88
+    },
+    {
+      "nombre": "FF Megabono 351 Clase A",
+      "porcentaje": 0.87
+    },
+    {
+      "nombre": "FF Mercado Credito 52 CA",
+      "porcentaje": 0.87
+    },
+    {
+      "nombre": "FF Moni Mobile 18 A",
+      "porcentaje": 0.87
+    },
+    {
+      "nombre": "FF AySA S2",
+      "porcentaje": 0.85
+    },
+    {
+      "nombre": "FF Fiducar 33 Clase A",
+      "porcentaje": 0.83
+    },
+    {
+      "nombre": "FF Megabono 353 Clase A",
+      "porcentaje": 0.83
+    },
+    {
+      "nombre": "FF Megabono 346 Clase A",
+      "porcentaje": 0.82
+    },
+    {
+      "nombre": "FF San Cristobal S2 CA",
+      "porcentaje": 0.82
+    },
+    {
+      "nombre": "FF Confibono S86 Clase A",
+      "porcentaje": 0.79
+    },
+    {
+      "nombre": "FF Mercado Credito 45 CA",
+      "porcentaje": 0.77
+    },
+    {
+      "nombre": "FF Mercado Credito 46 CA",
+      "porcentaje": 0.77
+    },
+    {
+      "nombre": "FF Megabono 349 Clase A",
+      "porcentaje": 0.76
+    },
+    {
+      "nombre": "FF Consubond S200 Clase A",
+      "porcentaje": 0.74
+    },
+    {
+      "nombre": "FF Inverlease FSA S2 CA",
+      "porcentaje": 0.73
+    },
+    {
+      "nombre": "FF Megabono 344 Clase A",
+      "porcentaje": 0.68
+    },
+    {
+      "nombre": "FF Tarj Fertil S26 CA",
+      "porcentaje": 0.67
+    },
+    {
+      "nombre": "FF Megabono 347 Clase A",
+      "porcentaje": 0.66
+    },
+    {
+      "nombre": "FF Fiducar 32 Clase A",
+      "porcentaje": 0.66
+    },
+    {
+      "nombre": "FF Creditech S6 CA",
+      "porcentaje": 0.63
+    },
+    {
+      "nombre": "FF Chaye Hnos S2 CA",
+      "porcentaje": 0.62
+    },
+    {
+      "nombre": "FF Megabono 348 Clase A",
+      "porcentaje": 0.62
+    },
+    {
+      "nombre": "FF Mercado Credito 44 CA",
+      "porcentaje": 0.62
+    },
+    {
+      "nombre": "FF Waynimovil S13 CA",
+      "porcentaje": 0.61
+    },
+    {
+      "nombre": "FF Grancoop Creditos S4 CA",
+      "porcentaje": 0.61
+    },
+    {
+      "nombre": "FF Mercado Credito 51 CA",
+      "porcentaje": 0.6
+    },
+    {
+      "nombre": "FF Fullcredit Creditos S2 CA",
+      "porcentaje": 0.58
+    },
+    {
+      "nombre": "FF Megabono 342 Clase A",
+      "porcentaje": 0.54
+    },
+    {
+      "nombre": "FF Moni Mobile 17 A",
+      "porcentaje": 0.53
+    },
+    {
+      "nombre": "FF Elebar XVI Clase A",
+      "porcentaje": 0.53
+    },
+    {
+      "nombre": "FF Megabono 345 Clase A",
+      "porcentaje": 0.48
+    },
+    {
+      "nombre": "FF Provincia Leasing S 6A",
+      "porcentaje": 0.47
+    },
+    {
+      "nombre": "FF GDM S1",
+      "porcentaje": 0.45
+    },
+    {
+      "nombre": "FF AMFAyS S51 Clase A",
+      "porcentaje": 0.41
+    },
+    {
+      "nombre": "FF Grupo GEP Colservice S1 CA",
+      "porcentaje": 0.4
+    },
+    {
+      "nombre": "FF Fiducar 31 Clase A",
+      "porcentaje": 0.4
+    },
+    {
+      "nombre": "FF Megabono 340 Clase A",
+      "porcentaje": 0.35
+    },
+    {
+      "nombre": "FF Creditech S5 CA",
+      "porcentaje": 0.34
+    },
+    {
+      "nombre": "FF Elebar XV Clase A",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "FF Confibono S85 Clase A",
+      "porcentaje": 0.31
+    },
+    {
+      "nombre": "FF Cuotas Cencosud S56 VDFA",
+      "porcentaje": 0.3
+    },
+    {
+      "nombre": "FF Consubond S199 Clase A",
+      "porcentaje": 0.28
+    },
+    {
+      "nombre": "FF AySA S1",
+      "porcentaje": 0.26
+    },
+    {
+      "nombre": "FF Pareto 15 Clase A",
+      "porcentaje": 0.25
+    },
+    {
+      "nombre": "FF Megabono 341 Clase A",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "FF Mercado Credito 43 CA",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "FF Confibono S84 Clase A",
+      "porcentaje": 0.21
+    },
+    {
+      "nombre": "FF Megabono 336 Clase A",
+      "porcentaje": 0.2
+    },
+    {
+      "nombre": "FF Waynimovil S12 CA",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "FF AMFAyS S50 Clase A",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "FF AMES S28 Clase A",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "FF Megabono 334 Clase A",
+      "porcentaje": 0.13
+    },
+    {
+      "nombre": "FF Fiducar 30 Clase A",
+      "porcentaje": 0.13
+    },
+    {
+      "nombre": "FF Ames S27 Clase A",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "FF Megabono 339 Clase A",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "FF Megabono 337 Clase A",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "FF Consubond S198 Clase A",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "FF Megabono 333 Clase A",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "FF Megabono 332 Clase A",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "FF Mercado Credito 42 CA",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "FF Tarj Fertil S25 CA",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "FF Megabono 330 Clase A",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "FF Megabono 324 Clase A",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "FF AMFAyS S49 Clase A",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "FF Megabono 322 Clase A",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "FF Elebar XIV Clase A",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "FF Confibono S82 Clase A",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "FF Consubond S197 Clase A",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "FF Megabono Credito 326 Clase A",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "FF Mercado Credito 39 CA",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "FF Moni Mobile 16 A",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "FF Megabono 335 Clase A",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "FF Megabono 327 Clase A",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "FF Grancoop Creditos S3 CA",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "FF Elebar XIII Clase A",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "FF Fiducar 28 Clase A",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "FF AMFAyS S48 Clase A",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "FCI Fima Premium Clase B",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "FCI MEGAQM Pesos - Clase B",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "FF Mercado Credito 40 CA",
+      "porcentaje": 0.01
     }
   ],
   "calificaciones": [

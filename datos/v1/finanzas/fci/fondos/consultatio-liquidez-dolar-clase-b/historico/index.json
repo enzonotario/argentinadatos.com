@@ -2,7 +2,7 @@
   "fondoId": "710",
   "claseId": "1521",
   "nombre": "Consultatio Liquidez Dólar - Clase B",
-  "fechaActualizacion": "2026-08-14T21:43:44.000Z",
+  "fechaActualizacion": "2026-08-15T10:34:06.000Z",
   "historico": [
     {
       "slug": "consultatio-liquidez-dolar-clase-b",
@@ -642,6 +642,22 @@
       "retornoDiario": 0.00136,
       "retornoAcumulado": 0.088593,
       "flujoEstimado": 3.687313,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-liquidez-dolar-clase-b",
+      "fondoId": "710",
+      "claseId": "1521",
+      "nombre": "Consultatio Liquidez Dólar - Clase B",
+      "fecha": "2026-08-14",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 735.48,
+      "patrimonio": 4512090.16,
+      "retornoDiario": 0.001496,
+      "retornoAcumulado": 0.09009,
+      "flujoEstimado": -4.679929,
       "origen": "cnv-excel"
     }
   ]

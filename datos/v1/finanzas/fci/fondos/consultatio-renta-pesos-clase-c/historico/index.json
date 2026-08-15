@@ -2,7 +2,7 @@
   "fondoId": "647",
   "claseId": "1333",
   "nombre": "Consultatio Renta Pesos - Clase C",
-  "fechaActualizacion": "2026-08-14T21:43:44.000Z",
+  "fechaActualizacion": "2026-08-15T10:34:06.000Z",
   "historico": [
     {
       "slug": "consultatio-renta-pesos-clase-c",
@@ -1041,6 +1041,22 @@
       "patrimonio": null,
       "retornoDiario": -0.036473,
       "retornoAcumulado": 10.91898,
+      "flujoEstimado": null,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-renta-pesos-clase-c",
+      "fondoId": "647",
+      "claseId": "1333",
+      "nombre": "Consultatio Renta Pesos - Clase C",
+      "fecha": "2026-08-14",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1842.093,
+      "patrimonio": null,
+      "retornoDiario": 0.015745,
+      "retornoAcumulado": 10.936444,
       "flujoEstimado": null,
       "origen": "cnv-excel"
     }

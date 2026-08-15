@@ -2,7 +2,7 @@
   "fondoId": "1750",
   "claseId": "5922",
   "nombre": "Bull Market Estrategia - Clase B",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "Bull Market Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,15 +13,15 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Peso Argentino",
   "codigoCNV": "1786",
-  "patrimonio": 189406530084.56,
+  "patrimonio": 189548370877.06,
   "cantidadCuotapartes": 162076731063.76,
   "inversionMinima": 1,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1168.623,
-    "ultimos7Dias": 19.1851,
-    "unMes": 11.2927,
+    "valorCuotaparte": 1169.498,
+    "ultimos7Dias": 15.2392,
+    "unMes": 11.21,
     "noventaDias": 5.0337,
     "cientoOchentaDias": 13.6822,
     "enElAnio": 16.7002,
@@ -30,87 +30,263 @@
   "composicionCartera": [
     {
       "nombre": "Lecap S13N6",
-      "porcentaje": 8.5
+      "porcentaje": 8.2
     },
     {
       "nombre": "Letra Tesoro Nac T30A7",
-      "porcentaje": 6.6
+      "porcentaje": 6.33
     },
     {
       "nombre": "Letra Tamar TEM M31G6",
-      "porcentaje": 6.5
+      "porcentaje": 6.29
     },
     {
       "nombre": "Bono del Tesoro Nacional T15E7",
-      "porcentaje": 4.6
-    },
-    {
-      "nombre": "Pagare #MAV300860005",
-      "porcentaje": 3.9
+      "porcentaje": 4.41
     },
     {
       "nombre": "Lecap S30S6",
-      "porcentaje": 3.2
+      "porcentaje": 3.12
     },
     {
       "nombre": "Pagare #MAV191060011",
-      "porcentaje": 3.2
+      "porcentaje": 3.09
     },
     {
       "nombre": "Lecap S14G6",
-      "porcentaje": 3.1
+      "porcentaje": 2.96
     },
     {
       "nombre": "Bono Dual TXMJ0",
-      "porcentaje": 3
+      "porcentaje": 2.9
     },
     {
       "nombre": "Pagare #MAV300860004",
-      "porcentaje": 2.8
+      "porcentaje": 2.73
     },
     {
       "nombre": "Bono Boncer TXMJ9",
-      "porcentaje": 2.8
+      "porcentaje": 2.67
     },
     {
       "nombre": "Bono Dual TXMD8",
-      "porcentaje": 2.7
+      "porcentaje": 2.61
     },
     {
       "nombre": "Bono Dual TTD26",
-      "porcentaje": 2.4
+      "porcentaje": 2.36
     },
     {
       "nombre": "Pagare #MAV011160006",
-      "porcentaje": 2.4
+      "porcentaje": 2.31
     },
     {
       "nombre": "Pagare #MAV041060011",
-      "porcentaje": 2.4
+      "porcentaje": 2.3
     },
     {
       "nombre": "Pagare #MAV041060019",
-      "porcentaje": 2.2
+      "porcentaje": 2.15
     },
     {
       "nombre": "Bono del Tesoro Nacional TMG28",
-      "porcentaje": 2.2
+      "porcentaje": 2.13
     },
     {
       "nombre": "Pagare #MAV041160014",
-      "porcentaje": 2.2
-    },
-    {
-      "nombre": "Bono del Tesoro Nacional T31Y7",
-      "porcentaje": 2.1
+      "porcentaje": 2.12
     },
     {
       "nombre": "Pagare #MAV051060011",
-      "porcentaje": 2.1
+      "porcentaje": 2.03
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 30.8
+      "nombre": "Bono del Tesoro Nacional T31Y7",
+      "porcentaje": 2.01
+    },
+    {
+      "nombre": "Pagare #MAV011160005",
+      "porcentaje": 1.73
+    },
+    {
+      "nombre": "Pagare #MAV041060014",
+      "porcentaje": 1.71
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TML27",
+      "porcentaje": 1.66
+    },
+    {
+      "nombre": "Pagare #MAV041060023",
+      "porcentaje": 1.6
+    },
+    {
+      "nombre": "Pagare #MAV191060012",
+      "porcentaje": 1.59
+    },
+    {
+      "nombre": "Pagare #MAV121060005",
+      "porcentaje": 1.43
+    },
+    {
+      "nombre": "Pagare #MAV121060004",
+      "porcentaje": 1.35
+    },
+    {
+      "nombre": "Pagare #MAV280960006",
+      "porcentaje": 1.27
+    },
+    {
+      "nombre": "Pagare #MAV041060020",
+      "porcentaje": 1.16
+    },
+    {
+      "nombre": "Bono Boncer TZXS7",
+      "porcentaje": 1.1
+    },
+    {
+      "nombre": "Pagare #MAV041060027",
+      "porcentaje": 1.07
+    },
+    {
+      "nombre": "Pagare #MAV210860017",
+      "porcentaje": 1.05
+    },
+    {
+      "nombre": "Pagare #MAV041060015",
+      "porcentaje": 0.84
+    },
+    {
+      "nombre": "Pagare #MAV041060022",
+      "porcentaje": 0.77
+    },
+    {
+      "nombre": "Pagare #MAV041060009",
+      "porcentaje": 0.76
+    },
+    {
+      "nombre": "Pagare #MAV170860014",
+      "porcentaje": 0.75
+    },
+    {
+      "nombre": "Pagare #MAV041060010",
+      "porcentaje": 0.69
+    },
+    {
+      "nombre": "Pagare #MAV111060002",
+      "porcentaje": 0.66
+    },
+    {
+      "nombre": "Pagare #MAV270960009",
+      "porcentaje": 0.52
+    },
+    {
+      "nombre": "Pagare #MAV180960012",
+      "porcentaje": 0.51
+    },
+    {
+      "nombre": "Pagare #MAV121060006",
+      "porcentaje": 0.5
+    },
+    {
+      "nombre": "Pagare #MAV181060002",
+      "porcentaje": 0.49
+    },
+    {
+      "nombre": "Pagare #MAV210960016",
+      "porcentaje": 0.49
+    },
+    {
+      "nombre": "Pagare #MAV181060001",
+      "porcentaje": 0.43
+    },
+    {
+      "nombre": "Pagare #MAV300860003",
+      "porcentaje": 0.43
+    },
+    {
+      "nombre": "Pagare #MAV041060026",
+      "porcentaje": 0.42
+    },
+    {
+      "nombre": "Pagare #MAV041060025",
+      "porcentaje": 0.38
+    },
+    {
+      "nombre": "Pagare #MAV041060006",
+      "porcentaje": 0.36
+    },
+    {
+      "nombre": "Pagare #MAV011160004",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "Pagare #MAV041060012",
+      "porcentaje": 0.31
+    },
+    {
+      "nombre": "Pagare #MAV041060017",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "Pagare #MAV041060021",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Pagare #MAV020960026",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "Pagare #MAV041060016",
+      "porcentaje": 0.22
+    },
+    {
+      "nombre": "Pagare #MAV020960032",
+      "porcentaje": 0.21
+    },
+    {
+      "nombre": "Bono Boncer TZXS8",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "Pagare #MAV020960022",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "Pagare #MAV020960025",
+      "porcentaje": 0.18
+    },
+    {
+      "nombre": "Pagare #MAV051060012",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Pagare #MAV100270005",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #MAV020960029",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #MAV041060024",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Pagare #MAV251060007",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Pagare #MAV020960024",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "FF Centrocard Creditos S9",
+      "porcentaje": 8.49
+    },
+    {
+      "nombre": "FCI Allaria Ahorro - Clase C",
+      "porcentaje": 0.16
     }
   ],
   "calificaciones": [],

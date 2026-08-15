@@ -2,7 +2,7 @@
   "fondoId": "858",
   "claseId": "2463",
   "nombre": "Delta Patrimonio I - Clase F",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "Delta Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,15 +13,15 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Peso Argentino",
   "codigoCNV": "996",
-  "patrimonio": 78.21,
+  "patrimonio": 78.41,
   "cantidadCuotapartes": 3727.01,
   "inversionMinima": 1,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 20.986,
-    "ultimos7Dias": -34.5546,
-    "unMes": -7.8339,
+    "valorCuotaparte": 21.039,
+    "ultimos7Dias": 0.4957,
+    "unMes": 0.8681,
     "noventaDias": -1.4278,
     "cientoOchentaDias": -0.4805,
     "enElAnio": -1.2435,
@@ -29,32 +29,36 @@
   },
   "composicionCartera": [
     {
-      "nombre": "Fut Reg ARS",
-      "porcentaje": 92
+      "nombre": "Letra Tamar TEM TMF27",
+      "porcentaje": 27.4
     },
     {
       "nombre": "Bono Dual TTS26",
-      "porcentaje": 31.7
+      "porcentaje": 18.72
     },
     {
       "nombre": "Letra Tamar TEM M31G6",
-      "porcentaje": 30.6
+      "porcentaje": 18.04
+    },
+    {
+      "nombre": "Bono Dual TTD26",
+      "porcentaje": 16.79
     },
     {
       "nombre": "Bono Boncer TZXD6",
-      "porcentaje": 28.3
-    },
-    {
-      "nombre": "Letra Tamar TEM TMF27",
-      "porcentaje": 4
+      "porcentaje": 16.7
     },
     {
       "nombre": "Lecap S30S6",
-      "porcentaje": 2.2
+      "porcentaje": 1.28
     },
     {
       "nombre": "Lecap S15S6",
-      "porcentaje": 2
+      "porcentaje": 1.18
+    },
+    {
+      "nombre": "FCI Gainvest Pesos - Clase B",
+      "porcentaje": 0.68
     }
   ],
   "calificaciones": [

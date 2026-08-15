@@ -2,7 +2,7 @@
   "fondoId": "848",
   "claseId": "2410",
   "nombre": "Bull Market Renta Fija - Clase A",
-  "fecha": "2026-08-13",
+  "fecha": "2026-08-14",
   "administradora": "Bull Market Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -29,48 +29,596 @@
   },
   "composicionCartera": [
     {
-      "nombre": "Bono Buenos Aires 2037",
-      "porcentaje": 17.6
+      "nombre": "Bono Entre Rios 9.55% 040333",
+      "porcentaje": 26.78
     },
     {
-      "nombre": "Bono Entre Rios 9.55% 040333",
-      "porcentaje": 10.7
+      "nombre": "Bono Buenos Aires 2037",
+      "porcentaje": 12.63
     },
     {
       "nombre": "Bono Dual TXMJ0",
-      "porcentaje": 9.8
+      "porcentaje": 11.69
     },
     {
-      "nombre": "Letra Entre Rios ERE27",
-      "porcentaje": 8.1
-    },
-    {
-      "nombre": "Bono Dual TXMJ8",
-      "porcentaje": 4.8
-    },
-    {
-      "nombre": "Cta Cte $ Bco de Valores",
-      "porcentaje": 4.8
-    },
-    {
-      "nombre": "FF Invesion Forestal 1 CP",
-      "porcentaje": 3.9
-    },
-    {
-      "nombre": "Bono Boncer TZX28",
-      "porcentaje": 2.7
+      "nombre": "Bono Dual TXMD9",
+      "porcentaje": 10.93
     },
     {
       "nombre": "Bono Boncer TZXS7",
-      "porcentaje": 2.5
+      "porcentaje": 8.81
+    },
+    {
+      "nombre": "Bono Dual TXMJ8",
+      "porcentaje": 4.71
+    },
+    {
+      "nombre": "Letra Entre Rios ERE27",
+      "porcentaje": 3.83
+    },
+    {
+      "nombre": "Bono Boncer TZX28",
+      "porcentaje": 2.61
     },
     {
       "nombre": "Bono Boncer TXMJ9",
-      "porcentaje": 2.4
+      "porcentaje": 2.27
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 33.4
+      "nombre": "Letra Tesoro Nac T30A7",
+      "porcentaje": 1.81
+    },
+    {
+      "nombre": "Pagare #MAV150860007",
+      "porcentaje": 1.3
+    },
+    {
+      "nombre": "ON Pan American C33",
+      "porcentaje": 1.11
+    },
+    {
+      "nombre": "Pagare #MAV100960030",
+      "porcentaje": 0.99
+    },
+    {
+      "nombre": "Pagare #MAV110860024",
+      "porcentaje": 0.98
+    },
+    {
+      "nombre": "Pagare #MAV160960033",
+      "porcentaje": 0.93
+    },
+    {
+      "nombre": "Pagare #MAV210960037",
+      "porcentaje": 0.93
+    },
+    {
+      "nombre": "Pagare #MAV110860022",
+      "porcentaje": 0.91
+    },
+    {
+      "nombre": "Letra Prov Chubut S116 C1",
+      "porcentaje": 0.9
+    },
+    {
+      "nombre": "Pagare #MAV140960019",
+      "porcentaje": 0.73
+    },
+    {
+      "nombre": "Pagare #MAV140960018",
+      "porcentaje": 0.73
+    },
+    {
+      "nombre": "Pagare #MAV140960017",
+      "porcentaje": 0.73
+    },
+    {
+      "nombre": "ON Capex C10",
+      "porcentaje": 0.65
+    },
+    {
+      "nombre": "Pagare #MAV090960019",
+      "porcentaje": 0.62
+    },
+    {
+      "nombre": "Pagare #MAV070960016",
+      "porcentaje": 0.62
+    },
+    {
+      "nombre": "Pagare #MAV090960018",
+      "porcentaje": 0.62
+    },
+    {
+      "nombre": "Pagare #MAV110860027",
+      "porcentaje": 0.61
+    },
+    {
+      "nombre": "Pagare *MAV060800889",
+      "porcentaje": 0.5
+    },
+    {
+      "nombre": "Pagare #MAV130860028",
+      "porcentaje": 0.5
+    },
+    {
+      "nombre": "Pagare #MAV060860025",
+      "porcentaje": 0.44
+    },
+    {
+      "nombre": "Pagare #MAV060860029",
+      "porcentaje": 0.39
+    },
+    {
+      "nombre": "Pagare #MAV110860023",
+      "porcentaje": 0.32
+    },
+    {
+      "nombre": "Pagare #MAV060860023",
+      "porcentaje": 0.31
+    },
+    {
+      "nombre": "ON Capex C6",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "Pagare #MAV110960024",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "Pagare #MAV110960025",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "Pagare #MAV110960023",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "Pagare #MAV060860028",
+      "porcentaje": 0.26
+    },
+    {
+      "nombre": "ON Vista Gas y Oil Arg C17",
+      "porcentaje": 0.26
+    },
+    {
+      "nombre": "Pagare #MAV130860023",
+      "porcentaje": 0.25
+    },
+    {
+      "nombre": "Pagare #MAV081060010",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "Pagare #MAV091060014",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "Pagare #MAV061060009",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "Pagare #MAV071060015",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "Pagare #MAV110960018",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "Pagare #MAV140960009",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "Pagare #MAV150960017",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "Pagare #MAV310860016",
+      "porcentaje": 0.18
+    },
+    {
+      "nombre": "Pagare #MAV280860016",
+      "porcentaje": 0.18
+    },
+    {
+      "nombre": "Pagare #MAV020960008",
+      "porcentaje": 0.18
+    },
+    {
+      "nombre": "Pagare #MAV270860006",
+      "porcentaje": 0.18
+    },
+    {
+      "nombre": "Pagare #MAV260860008",
+      "porcentaje": 0.18
+    },
+    {
+      "nombre": "Pagare #MAV060860012",
+      "porcentaje": 0.18
+    },
+    {
+      "nombre": "Pagare #MAV250860011",
+      "porcentaje": 0.18
+    },
+    {
+      "nombre": "Pagare #MAV050860012",
+      "porcentaje": 0.18
+    },
+    {
+      "nombre": "Pagare #MAV040860016",
+      "porcentaje": 0.18
+    },
+    {
+      "nombre": "Pagare #MAV030860015",
+      "porcentaje": 0.18
+    },
+    {
+      "nombre": "Pagare #MAV130860024",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #MAV150860006",
+      "porcentaje": 0.13
+    },
+    {
+      "nombre": "Pagare #MAV130860026",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Pagare #MAV150860008",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Pagare #MAV060860015",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare #MAV050860014",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare #MAV310760033",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare *MAV110801257",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Pagare *MAV100800931",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Pagare #MAV130860022",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #MAV021060011",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #MAV011060005",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Bono CABA 2028 BDC28",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #MAV071060014",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #MAV030860012",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #MAV040860014",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #MAV050860009",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #MAV060860010",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #MAV070860016",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #MAV100860010",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #MAV110860013",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #MAV140960007",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #MAV150960011",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #MAV170960006",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #MAV160960008",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #MAV210860019",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #MAV240860007",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #MAV250860008",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #MAV260860007",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare *MAV120801428",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #MAV030860016",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #MAV210960027",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #MAV060860020",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV060860027",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV060860022",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV110860026",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV110860025",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV130860027",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV180960025",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV090960020",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV090960021",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV090960022",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV010960006",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV280860015",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV310860015",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV020960007",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV270860005",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV070960007",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV040960016",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV030960006",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV090960010",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV080960007",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV100960010",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV110960015",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV240960007",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV250960013",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV280960007",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV290960005",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV300960020",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV120860010",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV130860009",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV091060013",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV081060009",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV131060014",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #MAV161060012",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #MAV191060014",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #MAV201060022",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #MAV211060009",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #MAV051060013",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #MAV061060008",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #MAV221060011",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #MAV231060008",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #MAV200860019",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #MAV180860010",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #MAV140860017",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #MAV190860010",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #MAV290960010",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #MAV060860024",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #MAV060860026",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #MAV060860021",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #MAV110860028",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UMV310760002",
+      "porcentaje": 0.32
+    },
+    {
+      "nombre": "YPF S.A.",
+      "porcentaje": 1.24
+    },
+    {
+      "nombre": "Central Puerto S.A.",
+      "porcentaje": 0.48
+    },
+    {
+      "nombre": "Banco Macro S.A.",
+      "porcentaje": 0.43
+    },
+    {
+      "nombre": "Pampa Energia S.A.",
+      "porcentaje": 0.29
+    },
+    {
+      "nombre": "Metrogas S.A.",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "Distribuidora de Gas del Centro S.A.",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "FF Invesion Forestal 1 CP",
+      "porcentaje": 3.81
+    },
+    {
+      "nombre": "FCI Wise Capital Money Markets - Clase D",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "FF Vicentin Export S8 A",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "FCI Allaria Ahorro - Clase C",
+      "porcentaje": 0.01
     }
   ],
   "calificaciones": [],
