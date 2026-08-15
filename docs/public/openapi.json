@@ -5164,10 +5164,16 @@
       "RendimientosHistoricoFondo": {
         "title": "RendimientosHistoricoFondo",
         "type": "object",
+        "description": "Retornos de período en % (planilla CNV Cuotapartes), no TNA anualizada. `unMes`/`enElAnio`/`doceMeses` salen de las columnas de variación del Excel; `ultimos7Dias` se estima desde VCP histórico cuando hay datos.",
         "properties": {
           "valorCuotaparte": {
             "type": "number",
             "nullable": true
+          },
+          "variacionDiariaPct": {
+            "type": "number",
+            "nullable": true,
+            "description": "Variación diaria de la cuotaparte en % (columna Variac. % del Excel CNV)"
           },
           "ultimos7Dias": {
             "type": "number",

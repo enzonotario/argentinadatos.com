@@ -17,7 +17,24 @@ export const MAX_VCP_LOOKBACK_RATIO = 2
 const LOOKBACK_TOLERANCE_DAYS = 4
 
 /**
- * Anualiza un retorno de período al estilo CAFCI (%): (ret/días)*365*100
+ * Retorno de período en % (estilo planilla CNV / fonditos), sin anualizar.
+ */
+export function periodReturnPercent(vcpNew, vcpOld) {
+  if (
+    typeof vcpNew !== 'number' ||
+    typeof vcpOld !== 'number' ||
+    !vcpOld ||
+    !(vcpOld > 0)
+  ) {
+    return null
+  }
+
+  return Number((((vcpNew - vcpOld) / vcpOld) * 100).toFixed(4))
+}
+
+/**
+ * Anualiza un retorno de período al estilo TNA simple: (ret/días)*365*100
+ * Útil para rankings de money market; no usar para campos publicados de CNV.
  */
 export function annualizeReturnPercent(vcpNew, vcpOld, days) {
   if (
@@ -48,6 +65,9 @@ export function computeRendimientosFromHistory({
   fecha,
   valorCuotaparte,
   variacionDiariaPct = null,
+  variacionUnMesPct = null,
+  variacionEnElAnioPct = null,
+  variacionDoceMesesPct = null,
   history = [],
 }) {
   const sorted = [...history]
@@ -99,30 +119,29 @@ export function computeRendimientosFromHistory({
 
     return {
       days,
-      value: annualizeReturnPercent(
-        valorCuotaparte,
-        best.valorCuotaparte,
-        days,
-      ),
+      value: periodReturnPercent(valorCuotaparte, best.valorCuotaparte),
     }
   }
 
   const seven = findNear(7)
   const thirty = findNear(30)
 
-  const fromDaily =
-    typeof variacionDiariaPct === 'number'
-      ? Number((variacionDiariaPct * 365).toFixed(4))
-      : null
-
   return {
     valorCuotaparte: valorCuotaparte ?? null,
-    ultimos7Dias: seven?.value ?? fromDaily,
-    unMes: thirty?.value ?? seven?.value ?? fromDaily,
+    variacionDiariaPct:
+      typeof variacionDiariaPct === 'number' ? variacionDiariaPct : null,
+    // Preferir columnas CNV (retornos de período). Fallback: VCP histórico.
+    ultimos7Dias: seven?.value ?? null,
+    unMes:
+      typeof variacionUnMesPct === 'number'
+        ? variacionUnMesPct
+        : (thirty?.value ?? null),
     noventaDias: null,
     cientoOchentaDias: null,
-    enElAnio: null,
-    doceMeses: null,
+    enElAnio:
+      typeof variacionEnElAnioPct === 'number' ? variacionEnElAnioPct : null,
+    doceMeses:
+      typeof variacionDoceMesesPct === 'number' ? variacionDoceMesesPct : null,
   }
 }
 
@@ -134,6 +153,9 @@ export function mapCnvRowToPayload(row, { fondoId, history = [] } = {}) {
     fecha: row.fecha,
     valorCuotaparte: row.valorCuotaparte,
     variacionDiariaPct: row.variacionDiariaPct,
+    variacionUnMesPct: row.variacionUnMesPct,
+    variacionEnElAnioPct: row.variacionEnElAnioPct,
+    variacionDoceMesesPct: row.variacionDoceMesesPct,
     history,
   })
 

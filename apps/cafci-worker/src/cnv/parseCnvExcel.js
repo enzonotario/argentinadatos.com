@@ -186,6 +186,11 @@ export function parseCnvCuotaparteExcel(buffer, { documentDate } = {}) {
       valorCuotaparte,
       valorCuotaparteAnterior,
       variacionDiariaPct,
+      // "Variacion cuotaparte %" del Excel: retornos de período (no TNA).
+      // Índices fijos: 9 ≈ desde fin de mes previo, 10 YTD, 11 ~12 meses.
+      variacionUnMesPct: toNumber(row[9]),
+      variacionEnElAnioPct: toNumber(row[10]),
+      variacionDoceMesesPct: toNumber(row[11]),
       cantidadCuotapartes: toNumber(row[12]),
       patrimonio: toNumber(row[14]),
       marketShare: toNumber(row[16]),

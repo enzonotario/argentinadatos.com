@@ -34,6 +34,10 @@ export function normalizarPayloadFondo(payload = {}) {
     rendimientos: {
       valorCuotaparte:
         rendimientos.valorCuotaparte ?? rendimientos.shareValue ?? null,
+      variacionDiariaPct:
+        rendimientos.variacionDiariaPct ??
+        rendimientos.dailyVariationPct ??
+        null,
       ultimos7Dias: rendimientos.ultimos7Dias ?? rendimientos.last7Days ?? null,
       unMes: rendimientos.unMes ?? rendimientos.oneMonth ?? null,
       noventaDias: rendimientos.noventaDias ?? rendimientos.ninetyDays ?? null,
