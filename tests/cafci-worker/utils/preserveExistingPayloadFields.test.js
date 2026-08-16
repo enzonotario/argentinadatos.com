@@ -70,7 +70,7 @@ describe('preserveExistingPayloadFields', () => {
     })
   })
 
-  it('conserva rendimientos largos que CNV no calcula', () => {
+  it('no conserva 90D/180D anualizados cuando el ingest trae null', () => {
     const merged = preserveExistingPayloadFields(
       {
         rendimientos: {
@@ -102,8 +102,8 @@ describe('preserveExistingPayloadFields', () => {
       valorCuotaparte: 101,
       ultimos7Dias: 11,
       unMes: 13,
-      noventaDias: 15,
-      cientoOchentaDias: 18,
+      noventaDias: null,
+      cientoOchentaDias: null,
       enElAnio: 20,
       doceMeses: 22,
     })

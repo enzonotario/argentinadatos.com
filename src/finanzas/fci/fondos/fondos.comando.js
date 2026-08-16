@@ -7,7 +7,44 @@ import { guardarComparatasas } from '@/finanzas/fci/fondos/guardado/guardarCompa
 import { guardarSeriesDesdeFondos } from '@/finanzas/fci/series/guardarSeriesDesdeFondos.js'
 import { recuperarYLocalizarCamposFondo } from '@/finanzas/fci/fondos/preservarComposicionCartera.js'
 import { FciFondosDatabaseService } from '@/finanzas/fci/fondos/database/service.js'
+import { computeRendimientosFromHistory } from '../../../../apps/cafci-worker/src/cnv/mapCnvRowToPayload.js'
 import { logError, logGrupo, logMensaje } from '@/log.js'
+
+/**
+ * Recomputa retornos de período rolling desde el histórico (unMes = ~30D).
+ * Evita servir la columna CNV “vs fin de mes previo” como si fuera 30D.
+ */
+function applyRollingRendimientos(fondo, historico) {
+  if (!fondo?.rendimientos) {
+    return fondo
+  }
+
+  const history = (historico || [])
+    .filter(item => item?.fecha && item.valorCuotaparte != null)
+    .filter(item => !fondo.fecha || item.fecha < fondo.fecha)
+    .map(item => ({
+      fecha: item.fecha,
+      valorCuotaparte: item.valorCuotaparte,
+    }))
+
+  const recomputed = computeRendimientosFromHistory({
+    fecha: fondo.fecha,
+    valorCuotaparte: fondo.rendimientos.valorCuotaparte,
+    variacionDiariaPct: fondo.rendimientos.variacionDiariaPct,
+    // Fallbacks CNV / valores previos si falta ventana en el histórico.
+    variacionUnMesPct: fondo.rendimientos.unMes,
+    variacionEnElAnioPct: fondo.rendimientos.enElAnio,
+    variacionDoceMesesPct: fondo.rendimientos.doceMeses,
+    history,
+  })
+
+  fondo.rendimientos = {
+    ...fondo.rendimientos,
+    ...recomputed,
+  }
+
+  return fondo
+}
 
 export default async function fondosComando() {
   const log = logGrupo({
@@ -44,6 +81,7 @@ export default async function fondosComando() {
     for (const fondo of fondos) {
       const historico = db.obtenerHistorialPorSlug(fondo.slug)
       historicosPorSlug[fondo.slug] = historico
+      applyRollingRendimientos(fondo, historico)
 
       guardarDetalleFondo(fondo)
       guardarHistoricoFondo(fondo, historico, snapshot.fechaActualizacion)

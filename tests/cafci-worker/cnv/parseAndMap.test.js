@@ -57,7 +57,7 @@ describe('parseCnvCuotaparteExcel', () => {
 })
 
 describe('computeRendimientosFromHistory', () => {
-  it('prioriza columnas CNV de período y no anualiza', () => {
+  it('prioriza rolling 30D sobre CNV unMes (vs fin de mes previo)', () => {
     const rendimientos = computeRendimientosFromHistory({
       fecha: '2026-08-14',
       valorCuotaparte: 250943.119,
@@ -72,13 +72,32 @@ describe('computeRendimientosFromHistory', () => {
     })
 
     expect(rendimientos.variacionDiariaPct).toBeCloseTo(-1.514, 3)
-    expect(rendimientos.unMes).toBeCloseTo(-9.849, 3)
+    expect(rendimientos.unMes).toBeCloseTo(
+      periodReturnPercent(250943.119, 278000),
+      3,
+    )
+    expect(rendimientos.unMes).not.toBeCloseTo(-9.849, 3)
     expect(rendimientos.enElAnio).toBeCloseTo(-6.474, 3)
     expect(rendimientos.doceMeses).toBeCloseTo(26.535, 3)
     expect(rendimientos.ultimos7Dias).toBeCloseTo(
       periodReturnPercent(250943.119, 255000),
       3,
     )
+  })
+
+  it('usa CNV unMes solo si no hay histórico suficiente para 30D', () => {
+    const rendimientos = computeRendimientosFromHistory({
+      fecha: '2026-08-14',
+      valorCuotaparte: 250943.119,
+      variacionUnMesPct: -9.849,
+      history: [{ fecha: '2026-08-07', valorCuotaparte: 255000 }],
+    })
+
+    expect(rendimientos.ultimos7Dias).toBeCloseTo(
+      periodReturnPercent(250943.119, 255000),
+      3,
+    )
+    expect(rendimientos.unMes).toBeCloseTo(-9.849, 3)
   })
 
   it('usa VCP histórico como período (no TNA) cuando faltan columnas CNV', () => {
@@ -140,6 +159,7 @@ describe('mapCnvRowToPayload', () => {
     expect(payload.fecha).toBe('2026-08-12')
     expect(payload.rendimientos.valorCuotaparte).toBeCloseTo(254830.396, 3)
     expect(payload.rendimientos.variacionDiariaPct).toBeCloseTo(-0.747, 3)
+    // Sin histórico ~30D, cae al unMes CNV (vs fin de mes previo).
     expect(payload.rendimientos.unMes).toBeCloseTo(-8.453, 3)
     expect(payload.rendimientos.enElAnio).toBeCloseTo(-5.025, 3)
     expect(payload.rendimientos.doceMeses).toBeCloseTo(21.673, 3)

@@ -64,9 +64,10 @@ function mergeRendimientos(existingRendimientos, incomingRendimientos) {
 
   return {
     ...incoming,
-    noventaDias: incoming.noventaDias ?? existing.noventaDias ?? null,
-    cientoOchentaDias:
-      incoming.cientoOchentaDias ?? existing.cientoOchentaDias ?? null,
+    // 90D/180D: no conservar valores CAFCI anualizados cuando el ingest
+    // trae null (faltó histórico). Preferir null a un TNA disfrazado de período.
+    noventaDias: incoming.noventaDias ?? null,
+    cientoOchentaDias: incoming.cientoOchentaDias ?? null,
     enElAnio: incoming.enElAnio ?? existing.enElAnio ?? null,
     doceMeses: incoming.doceMeses ?? existing.doceMeses ?? null,
   }
