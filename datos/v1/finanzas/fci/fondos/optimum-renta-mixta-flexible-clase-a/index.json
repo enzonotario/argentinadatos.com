@@ -3,30 +3,30 @@
   "claseId": "1791",
   "nombre": "Optimum Renta Mixta Flexible - Clase A",
   "fecha": "2025-07-14",
-  "administradora": "Santander Asset Management G.F.C.I.S.A.",
-  "depositaria": "Banco Santander Argentina S.A.",
+  "administradora": "SAM Argentina S.G.F.C.I.S.A.U.",
+  "depositaria": "BNP Paribas",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Badlar",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "488",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 1000,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0,
+    "unMes": 0,
+    "noventaDias": 0,
+    "cientoOchentaDias": 0,
+    "enElAnio": 0,
+    "doceMeses": 0
   },
   "composicionCartera": [
     {
@@ -102,26 +102,32 @@
       "porcentaje": 7.5
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "A-bf.ar",
+      "fecha": "2025-07-14"
+    }
+  ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 0,
+    "honorarioDepositaria": 0,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "Santander Asset Management G.F.C.I.S.A.",
+      "tipo": "Administradora",
+      "nombre": "SAM Argentina S.G.F.C.I.S.A.U.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00049G-c03041ad.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
-      "nombre": "Banco Santander Argentina S.A.",
+      "tipo": "Depositaria",
+      "nombre": "BNP Paribas",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00096-4e9f0233.jpg"
     }
   ]

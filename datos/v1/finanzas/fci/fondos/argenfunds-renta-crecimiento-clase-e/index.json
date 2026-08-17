@@ -5,8 +5,8 @@
   "fecha": "2021-06-07",
   "administradora": "Argenfunds S.A.",
   "depositaria": "Banco Macro S.A.",
-  "tipoRenta": "Renta Fija",
-  "tipoDD": "No Aplica",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
@@ -14,19 +14,19 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "904",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
-  "plazoLiquidacionDias": 1,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 173255.398,
+    "variacionDiariaPct": 0.521,
+    "ultimos7Dias": 1.2948,
+    "unMes": 5.948,
+    "noventaDias": 11.2115,
+    "cientoOchentaDias": 16.3478,
+    "enElAnio": 18.4955,
+    "doceMeses": 43.8147
   },
   "composicionCartera": [
     {
@@ -46,23 +46,23 @@
     }
   ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 0.25,
+    "honorarioDepositaria": 0.3509,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Argenfunds S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00377G-dc836163.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Macro S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00098-871484a2.jpg"
     }

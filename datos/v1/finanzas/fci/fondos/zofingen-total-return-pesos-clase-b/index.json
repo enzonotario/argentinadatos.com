@@ -1,0 +1,60 @@
+{
+  "fondoId": "1278",
+  "claseId": "3559",
+  "nombre": "Numancia Pesos - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "Zofingen Investment S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Badlar",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Menor o Igual a 0.5 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1092",
+  "patrimonio": 67842664390.27,
+  "cantidadCuotapartes": 77633332316.82,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 873.886,
+    "variacionDiariaPct": -0.207,
+    "ultimos7Dias": -0.6266,
+    "unMes": 0.9906,
+    "noventaDias": 6.9999,
+    "cientoOchentaDias": 7.313,
+    "enElAnio": 2.7682,
+    "doceMeses": 19.718
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Pagare #UMV011260003",
+      "porcentaje": 100
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0.63,
+    "honorarioDepositaria": 0.12,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Zofingen Investment S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02450G-9d44acde.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

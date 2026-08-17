@@ -6,21 +6,21 @@
   "administradora": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "BBVA Argentina S.A.",
   "tipoRenta": "Renta Mixta",
-  "tipoDD": "No Aplica",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "Otro",
-  "horizonte": "Largo Plazo",
+  "horizonte": "Mediano Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "829",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
+  "cantidadCuotapartes": 0,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
+    "valorCuotaparte": 20756.3,
+    "variacionDiariaPct": -0.198,
     "ultimos7Dias": null,
     "unMes": null,
     "noventaDias": null,
@@ -117,7 +117,7 @@
   "calificaciones": [
     {
       "calificadora": "Moodys Local Calif. Riesgo",
-      "calificacion": "EF-2.ar",
+      "calificacion": "EF-3.ar",
       "fecha": "2026-05-20"
     }
   ],
@@ -133,12 +133,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00029G-9a6fc701.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "BBVA Argentina S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00079-a62ab0c8.jpg"
     }

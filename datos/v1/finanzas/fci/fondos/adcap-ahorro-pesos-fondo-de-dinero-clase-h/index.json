@@ -6,27 +6,27 @@
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
-  "tipoDD": "Clásico",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1106",
-  "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 0.01,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
+    "valorCuotaparte": 14285.714,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 99.886,
+    "unMes": 109.221,
     "noventaDias": null,
     "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "enElAnio": 303.902,
+    "doceMeses": 333.048
   },
   "composicionCartera": [
     {
@@ -122,23 +122,23 @@
     }
   ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 2.8,
+    "honorarioDepositaria": 0.1331,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.02,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }

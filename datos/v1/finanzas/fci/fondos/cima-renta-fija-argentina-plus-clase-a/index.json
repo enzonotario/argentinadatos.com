@@ -1,0 +1,70 @@
+{
+  "fondoId": "556",
+  "claseId": "1121",
+  "nombre": "Adcap Cima Renta Fija Argentina Plus - Clase A",
+  "fecha": "2026-06-05",
+  "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "693",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 3,
+  "rendimientos": {
+    "valorCuotaparte": 1779.455,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": -1.0118,
+    "unMes": -1.0048,
+    "noventaDias": -1.7557,
+    "cientoOchentaDias": null,
+    "enElAnio": -49.959,
+    "doceMeses": -48.6649
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Bco de Valores",
+      "porcentaje": 99.7
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.3
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "A-bf.ar",
+      "fecha": "2026-06-05"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 1.6,
+    "honorarioDepositaria": 0.1573,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

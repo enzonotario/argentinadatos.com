@@ -1,0 +1,126 @@
+{
+  "fondoId": "438",
+  "claseId": "831",
+  "nombre": "SBS Renta Pesos - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "SBS Asset Management S.A.S.G.F.C.I.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "578",
+  "patrimonio": 34051161217.49,
+  "cantidadCuotapartes": 20756132.56,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1640534.966,
+    "variacionDiariaPct": 0.104,
+    "ultimos7Dias": 0.5985,
+    "unMes": 1.3066,
+    "noventaDias": 5.8366,
+    "cientoOchentaDias": 20.6559,
+    "enElAnio": 26.043,
+    "doceMeses": 60.6512
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZXS8",
+      "porcentaje": 14.4
+    },
+    {
+      "nombre": "Bono Boncer TZXD7",
+      "porcentaje": 13.4
+    },
+    {
+      "nombre": "Bono Boncer TZX28",
+      "porcentaje": 11.8
+    },
+    {
+      "nombre": "Bono Boncer TZXS7",
+      "porcentaje": 10.7
+    },
+    {
+      "nombre": "Bono Prov Cordoba Clase 4",
+      "porcentaje": 6.1
+    },
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 5.6
+    },
+    {
+      "nombre": "Bono Dual TXMD9",
+      "porcentaje": 4.2
+    },
+    {
+      "nombre": "Bono Dual TXMJ0",
+      "porcentaje": 4.1
+    },
+    {
+      "nombre": "FCI Schroder Liquidez - Clase B",
+      "porcentaje": 3.9
+    },
+    {
+      "nombre": "Cheque E *MAV070801271",
+      "porcentaje": 3.4
+    },
+    {
+      "nombre": "Cheque E *MAV251001179",
+      "porcentaje": 2.8
+    },
+    {
+      "nombre": "Boncer Mendoza C1",
+      "porcentaje": 2.8
+    },
+    {
+      "nombre": "Cheque E *MAV250901127",
+      "porcentaje": 2.8
+    },
+    {
+      "nombre": "Bono Prov Cordoba Clase 6",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "Bono Disc ARS Ley AR DICP",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 9.8
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Standard and Poors",
+      "calificacion": "AAf",
+      "fecha": "2009-07-23"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.5,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "SBS Asset Management S.A.S.G.F.C.I.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00347G-615b02d0.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

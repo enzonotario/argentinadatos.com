@@ -3,30 +3,30 @@
   "claseId": "724",
   "nombre": "Optimum CDB Pesos Ultra - Clase B",
   "fecha": "2025-02-07",
-  "administradora": "SAM Argentina S.G.F.C.I.S.A.U.",
+  "administradora": "BNP Paribas Asset Management  Arg. S.A.S.G.F.C.I",
   "depositaria": "BNP Paribas",
   "tipoRenta": "Mercado de Dinero",
-  "tipoDD": "Clásico",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "30%+70%",
   "horizonte": "Corto Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "489",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 58355.727,
+    "variacionDiariaPct": 0.001,
+    "ultimos7Dias": 0.3816,
+    "unMes": 1.8828,
+    "noventaDias": 6.3469,
+    "cientoOchentaDias": 14.8584,
+    "enElAnio": 2.4914,
+    "doceMeses": 46.7551
   },
   "composicionCartera": [
     {
@@ -57,12 +57,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "SAM Argentina S.G.F.C.I.S.A.U.",
+      "tipo": "Administradora",
+      "nombre": "BNP Paribas Asset Management  Arg. S.A.S.G.F.C.I",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00016G-52d8d4aa.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "BNP Paribas",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00070-12f7bb54.jpg"
     }

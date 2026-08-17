@@ -1,0 +1,92 @@
+{
+  "fondoId": "1249",
+  "claseId": "3466",
+  "nombre": "MEGAQM Estrategia 2 - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "MEGA QM S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Corto Plazo",
+  "duracion": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1117",
+  "patrimonio": 46751854465.52,
+  "cantidadCuotapartes": 1586368536.22,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 29470.992,
+    "variacionDiariaPct": -0.056,
+    "ultimos7Dias": 0.1929,
+    "unMes": 0.826,
+    "noventaDias": 5.9817,
+    "cientoOchentaDias": 17.2685,
+    "enElAnio": 22.2956,
+    "doceMeses": 49.6013
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Dual TXMD9",
+      "porcentaje": 25.1
+    },
+    {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 19.7
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 19.4
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional AO27",
+      "porcentaje": 11.6
+    },
+    {
+      "nombre": "Lecer X30N6",
+      "porcentaje": 10.4
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional AO28",
+      "porcentaje": 6.1
+    },
+    {
+      "nombre": "ON Pluspetrol Clase 2",
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "ON Genneia Clase 49",
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 3.2
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0.8,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "MEGA QM S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

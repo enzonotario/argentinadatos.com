@@ -1,0 +1,76 @@
+{
+  "fondoId": "1415",
+  "claseId": "4134",
+  "nombre": "Consultatio Gestion III - Clase I",
+  "fecha": "2026-08-14",
+  "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "1179",
+  "patrimonio": 5652310.82,
+  "cantidadCuotapartes": 5570336.48,
+  "inversionMinima": 250000,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1014.716,
+    "variacionDiariaPct": 0.015,
+    "ultimos7Dias": 0.1125,
+    "unMes": 0.2888,
+    "noventaDias": 1.7799,
+    "cientoOchentaDias": 1.0285,
+    "enElAnio": 1.246,
+    "doceMeses": 2.0559
+  },
+  "composicionCartera": [
+    {
+      "nombre": "CL Rep Chile 2027",
+      "porcentaje": 28.12
+    },
+    {
+      "nombre": "US Treasury Bill 180826",
+      "porcentaje": 25.05
+    },
+    {
+      "nombre": "Bono Corporativo 3.625% 010827",
+      "porcentaje": 23.17
+    },
+    {
+      "nombre": "BR Bono Global 2027 10.12%",
+      "porcentaje": 21.72
+    },
+    {
+      "nombre": "FCI Argenfunds Liquidez - Clase B",
+      "porcentaje": 0.01
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 1.1,
+    "honorarioDepositaria": 0.115,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

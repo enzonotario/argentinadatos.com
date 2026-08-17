@@ -1,0 +1,110 @@
+{
+  "fondoId": "510",
+  "claseId": "1031",
+  "nombre": "Gainvest Renta Variable - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "StoneX Asset Management S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Variable",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "S&P Merval",
+  "horizonte": "Plazo Flexible",
+  "duracion": "No Aplicable",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "651",
+  "patrimonio": 1612510522.12,
+  "cantidadCuotapartes": 2723449.5,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 592083.87,
+    "variacionDiariaPct": -0.541,
+    "ultimos7Dias": -3.3964,
+    "unMes": -6.6091,
+    "noventaDias": 4.8717,
+    "cientoOchentaDias": 4.3488,
+    "enElAnio": -1.5917,
+    "doceMeses": 30.3812
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cedear Vista Oil Gas",
+      "porcentaje": 13.9
+    },
+    {
+      "nombre": "YPF - D",
+      "porcentaje": 13
+    },
+    {
+      "nombre": "Grupo Fciero Galicia - B",
+      "porcentaje": 11.9
+    },
+    {
+      "nombre": "Transener - B",
+      "porcentaje": 11.3
+    },
+    {
+      "nombre": "Pampa Energia",
+      "porcentaje": 10
+    },
+    {
+      "nombre": "Cedear Mercado Libre",
+      "porcentaje": 8.6
+    },
+    {
+      "nombre": "Central Puerto",
+      "porcentaje": 8.2
+    },
+    {
+      "nombre": "Loma Negra",
+      "porcentaje": 7.6
+    },
+    {
+      "nombre": "Transp Gas del Sur - B",
+      "porcentaje": 5.4
+    },
+    {
+      "nombre": "Irsa",
+      "porcentaje": 5
+    },
+    {
+      "nombre": "Transp Gas del Norte C",
+      "porcentaje": 4.7
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.3
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Standard and Poors",
+      "calificacion": "EF-3",
+      "fecha": "2013-09-17"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 3,
+    "honorarioDepositaria": 0.1452,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "StoneX Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00311G-be0f6f28.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

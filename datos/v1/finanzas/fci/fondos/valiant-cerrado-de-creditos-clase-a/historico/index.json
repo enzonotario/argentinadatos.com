@@ -2,7 +2,7 @@
   "fondoId": "1820",
   "claseId": "6255",
   "nombre": "Valiant Cerrado de Créditos - Clase A",
-  "fechaActualizacion": "2026-08-17T07:24:53.000Z",
+  "fechaActualizacion": "2026-08-17T21:53:07.000Z",
   "historico": [
     {
       "slug": "valiant-cerrado-de-creditos-clase-a",
@@ -13,28 +13,12 @@
       "categoria": "Renta Fija",
       "categoriaKey": "rentaFija",
       "horizonte": "Mediano Plazo",
-      "valorCuotaparte": null,
+      "valorCuotaparte": 1000,
       "patrimonio": 6342558833,
       "retornoDiario": null,
-      "retornoAcumulado": null,
+      "retornoAcumulado": 0,
       "flujoEstimado": null,
-      "origen": "cafci-detail"
-    },
-    {
-      "slug": "valiant-cerrado-de-creditos-clase-a",
-      "fondoId": "1820",
-      "claseId": "6255",
-      "nombre": "Valiant Cerrado de Créditos - Clase A",
-      "fecha": "2026-05-27",
-      "categoria": "Renta Fija",
-      "categoriaKey": "rentaFija",
-      "horizonte": "Mediano Plazo",
-      "valorCuotaparte": null,
-      "patrimonio": null,
-      "retornoDiario": null,
-      "retornoAcumulado": null,
-      "flujoEstimado": null,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     }
   ]
 }

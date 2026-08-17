@@ -11,22 +11,22 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "703",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 5000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 222875.654,
+    "variacionDiariaPct": 0.441,
+    "ultimos7Dias": 1.5235,
+    "unMes": 2.9159,
+    "noventaDias": 10.4225,
+    "cientoOchentaDias": 31.9558,
+    "enElAnio": 4.6159,
+    "doceMeses": 42.2283
   },
   "composicionCartera": [
     {
@@ -66,7 +66,13 @@
       "porcentaje": 0.4
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "A",
+      "fecha": "2026-02-06"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 3,
     "honorarioDepositaria": 0.115,
@@ -79,12 +85,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }

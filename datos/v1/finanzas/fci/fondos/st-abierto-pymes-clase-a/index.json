@@ -5,28 +5,28 @@
   "fecha": "2026-02-06",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "PyMes",
+  "tipoRenta": "Retorno Total",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "850",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 30000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 5353.215,
+    "variacionDiariaPct": 0.056,
+    "ultimos7Dias": 0.4334,
+    "unMes": 1.7576,
+    "noventaDias": 6.5456,
+    "cientoOchentaDias": 21.7468,
+    "enElAnio": 2.4684,
+    "doceMeses": 31.9352
   },
   "composicionCartera": [
     {
@@ -105,12 +105,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }

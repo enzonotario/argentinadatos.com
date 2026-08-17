@@ -2,7 +2,7 @@
   "fondoId": "1890",
   "claseId": "6531",
   "nombre": "Puente Liquidez Pesos - Clase B",
-  "fechaActualizacion": "2026-08-17T07:24:53.000Z",
+  "fechaActualizacion": "2026-08-17T21:53:07.000Z",
   "historico": [
     {
       "slug": "puente-liquidez-pesos-clase-b",
@@ -13,12 +13,12 @@
       "categoria": "Mercado de Dinero",
       "categoriaKey": "mercadoDinero",
       "horizonte": "Corto Plazo",
-      "valorCuotaparte": 1,
+      "valorCuotaparte": 1000,
       "patrimonio": 10000000,
       "retornoDiario": null,
       "retornoAcumulado": 0,
       "flujoEstimado": null,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "puente-liquidez-pesos-clase-b",
@@ -31,10 +31,10 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 1000.406,
       "patrimonio": 309003650.99,
-      "retornoDiario": 99940.6,
-      "retornoAcumulado": 99940.6,
-      "flujoEstimado": -9695056349.01,
-      "origen": "cafci-detail"
+      "retornoDiario": 0.0406,
+      "retornoAcumulado": 0.0406,
+      "flujoEstimado": 298999590.99,
+      "origen": "cnv-excel"
     },
     {
       "slug": "puente-liquidez-pesos-clase-b",
@@ -48,9 +48,9 @@
       "valorCuotaparte": 1000.863,
       "patrimonio": 2309144904.54,
       "retornoDiario": 0.045681,
-      "retornoAcumulado": 99986.3,
+      "retornoAcumulado": 0.0863,
       "flujoEstimado": 2000000097.592191,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "puente-liquidez-pesos-clase-b",
@@ -64,9 +64,9 @@
       "valorCuotaparte": 1002.065,
       "patrimonio": 5148736596.03,
       "retornoDiario": 0.120096,
-      "retornoAcumulado": 100106.5,
+      "retornoAcumulado": 0.2065,
       "flujoEstimado": 2836818500.825443,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "puente-liquidez-pesos-clase-b",
@@ -80,9 +80,9 @@
       "valorCuotaparte": 1002.478,
       "patrimonio": 26648024687.57,
       "retornoDiario": 0.041215,
-      "retornoAcumulado": 100147.8,
+      "retornoAcumulado": 0.2478,
       "flujoEstimado": 21497166039.751945,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "puente-liquidez-pesos-clase-b",
@@ -96,9 +96,9 @@
       "valorCuotaparte": 1002.894,
       "patrimonio": 31130782901.93,
       "retornoDiario": 0.041497,
-      "retornoAcumulado": 100189.4,
+      "retornoAcumulado": 0.2894,
       "flujoEstimado": 4471700083.555401,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "puente-liquidez-pesos-clase-b",
@@ -112,9 +112,9 @@
       "valorCuotaparte": 1004.992,
       "patrimonio": 30242813566.62,
       "retornoDiario": 0.209195,
-      "retornoAcumulado": 100399.2,
+      "retornoAcumulado": 0.4992,
       "flujoEstimado": -953093376.601696,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "puente-liquidez-pesos-clase-b",
@@ -128,9 +128,9 @@
       "valorCuotaparte": 1005.441,
       "patrimonio": 31490302849.5,
       "retornoDiario": 0.044677,
-      "retornoAcumulado": 100444.1,
+      "retornoAcumulado": 0.5441,
       "flujoEstimado": 1233977701.062843,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "puente-liquidez-pesos-clase-b",
@@ -144,9 +144,9 @@
       "valorCuotaparte": 1005.882,
       "patrimonio": 36917415365.77,
       "retornoDiario": 0.043861,
-      "retornoAcumulado": 100488.2,
+      "retornoAcumulado": 0.5882,
       "flujoEstimado": 5413300554.537178,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "puente-liquidez-pesos-clase-b",
@@ -160,9 +160,9 @@
       "valorCuotaparte": 1006.313,
       "patrimonio": 43451063195.81,
       "retornoDiario": 0.042848,
-      "retornoAcumulado": 100531.3,
+      "retornoAcumulado": 0.6313,
       "flujoEstimado": 6517829455.904076,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "puente-liquidez-pesos-clase-b",
@@ -176,7 +176,7 @@
       "valorCuotaparte": 1006.751,
       "patrimonio": 51439316124.05,
       "retornoDiario": 0.043525,
-      "retornoAcumulado": 100575.1,
+      "retornoAcumulado": 0.6751,
       "flujoEstimado": 7969340852.984032,
       "origen": "cnv-excel"
     },
@@ -192,7 +192,7 @@
       "valorCuotaparte": 1008.053,
       "patrimonio": 53536752309.68,
       "retornoDiario": 0.129327,
-      "retornoAcumulado": 100705.3,
+      "retornoAcumulado": 0.8053,
       "flujoEstimado": 2030911261.266251,
       "origen": "cnv-excel"
     },
@@ -208,7 +208,7 @@
       "valorCuotaparte": 1008.495,
       "patrimonio": 54375804377.57,
       "retornoDiario": 0.043847,
-      "retornoAcumulado": 100749.5,
+      "retornoAcumulado": 0.8495,
       "flujoEstimado": 815577808.104774,
       "origen": "cnv-excel"
     },
@@ -224,7 +224,7 @@
       "valorCuotaparte": 1008.946,
       "patrimonio": 57634985091.25,
       "retornoDiario": 0.04472,
-      "retornoAcumulado": 100794.6,
+      "retornoAcumulado": 0.8946,
       "flujoEstimado": 3234863853.962349,
       "origen": "cnv-excel"
     },
@@ -240,7 +240,7 @@
       "valorCuotaparte": 1009.401,
       "patrimonio": 57696005051.67,
       "retornoDiario": 0.045097,
-      "retornoAcumulado": 100840.1,
+      "retornoAcumulado": 0.9401,
       "flujoEstimado": 35028311.193398,
       "origen": "cnv-excel"
     },
@@ -256,7 +256,7 @@
       "valorCuotaparte": 1009.86,
       "patrimonio": 67393537682.1,
       "retornoDiario": 0.045473,
-      "retornoAcumulado": 100886,
+      "retornoAcumulado": 0.986,
       "flujoEstimado": 9671296526.052856,
       "origen": "cnv-excel"
     },
@@ -272,7 +272,7 @@
       "valorCuotaparte": 1011.213,
       "patrimonio": 70631374788.07,
       "retornoDiario": 0.133979,
-      "retornoAcumulado": 101021.3,
+      "retornoAcumulado": 1.1213,
       "flujoEstimado": 3147543918.118904,
       "origen": "cnv-excel"
     },
@@ -288,7 +288,7 @@
       "valorCuotaparte": 1011.66,
       "patrimonio": 70662616316.99,
       "retornoDiario": 0.044204,
-      "retornoAcumulado": 101066,
+      "retornoAcumulado": 1.166,
       "flujoEstimado": 19636.008682,
       "origen": "cnv-excel"
     },
@@ -304,7 +304,7 @@
       "valorCuotaparte": 1012.078,
       "patrimonio": 69803905036.21,
       "retornoDiario": 0.041318,
-      "retornoAcumulado": 101107.8,
+      "retornoAcumulado": 1.2078,
       "flujoEstimado": -887907660.589859,
       "origen": "cnv-excel"
     },
@@ -320,7 +320,7 @@
       "valorCuotaparte": 1012.53,
       "patrimonio": 60797408763,
       "retornoDiario": 0.044661,
-      "retornoAcumulado": 101153,
+      "retornoAcumulado": 1.253,
       "flujoEstimado": -9037671395.238235,
       "origen": "cnv-excel"
     },
@@ -336,7 +336,7 @@
       "valorCuotaparte": 1013.066,
       "patrimonio": 56425197138.81,
       "retornoDiario": 0.052937,
-      "retornoAcumulado": 101206.6,
+      "retornoAcumulado": 1.3066,
       "flujoEstimado": -4404395948.466873,
       "origen": "cnv-excel"
     },
@@ -352,7 +352,7 @@
       "valorCuotaparte": 1014.614,
       "patrimonio": 59667381630.42,
       "retornoDiario": 0.152803,
-      "retornoAcumulado": 101361.4,
+      "retornoAcumulado": 1.4614,
       "flujoEstimado": 3155965097.625984,
       "origen": "cnv-excel"
     },
@@ -368,7 +368,7 @@
       "valorCuotaparte": 1015.14,
       "patrimonio": 55945160393.14,
       "retornoDiario": 0.051842,
-      "retornoAcumulado": 101414,
+      "retornoAcumulado": 1.514,
       "flujoEstimado": -3753154001.264839,
       "origen": "cnv-excel"
     },
@@ -384,7 +384,7 @@
       "valorCuotaparte": 1015.66,
       "patrimonio": 57124518610.35,
       "retornoDiario": 0.051224,
-      "retornoAcumulado": 101466,
+      "retornoAcumulado": 1.566,
       "flujoEstimado": 1150700868.250221,
       "origen": "cnv-excel"
     },
@@ -400,7 +400,7 @@
       "valorCuotaparte": 1016.195,
       "patrimonio": 55894620842.82,
       "retornoDiario": 0.052675,
-      "retornoAcumulado": 101519.5,
+      "retornoAcumulado": 1.6195,
       "flujoEstimado": -1259988107.707993,
       "origen": "cnv-excel"
     },
@@ -416,7 +416,7 @@
       "valorCuotaparte": 1016.716,
       "patrimonio": 53871461611.63,
       "retornoDiario": 0.05127,
-      "retornoAcumulado": 101571.6,
+      "retornoAcumulado": 1.6716,
       "flujoEstimado": -2051816403.29612,
       "origen": "cnv-excel"
     },
@@ -432,7 +432,7 @@
       "valorCuotaparte": 1018.311,
       "patrimonio": 50277828752.62,
       "retornoDiario": 0.156878,
-      "retornoAcumulado": 101731.1,
+      "retornoAcumulado": 1.8311,
       "flujoEstimado": -3678145330.557083,
       "origen": "cnv-excel"
     },
@@ -448,7 +448,7 @@
       "valorCuotaparte": 1018.848,
       "patrimonio": 52709691707.88,
       "retornoDiario": 0.052734,
-      "retornoAcumulado": 101784.8,
+      "retornoAcumulado": 1.8848,
       "flujoEstimado": 2405349445.045586,
       "origen": "cnv-excel"
     },
@@ -464,7 +464,7 @@
       "valorCuotaparte": 1019.382,
       "patrimonio": 51407351043.52,
       "retornoDiario": 0.052412,
-      "retornoAcumulado": 101838.2,
+      "retornoAcumulado": 1.9382,
       "flujoEstimado": -1329966867.977928,
       "origen": "cnv-excel"
     },
@@ -480,7 +480,7 @@
       "valorCuotaparte": 1019.922,
       "patrimonio": 53755505943.81,
       "retornoDiario": 0.052973,
-      "retornoAcumulado": 101892.2,
+      "retornoAcumulado": 1.9922,
       "flujoEstimado": 2320922884.221718,
       "origen": "cnv-excel"
     },
@@ -496,7 +496,7 @@
       "valorCuotaparte": 1020.471,
       "patrimonio": 48774354696.62,
       "retornoDiario": 0.053828,
-      "retornoAcumulado": 101947.1,
+      "retornoAcumulado": 2.0471,
       "flujoEstimado": -5010086760.929428,
       "origen": "cnv-excel"
     }

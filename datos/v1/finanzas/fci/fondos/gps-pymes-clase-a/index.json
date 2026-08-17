@@ -1,0 +1,82 @@
+{
+  "fondoId": "476",
+  "claseId": "941",
+  "nombre": "Quiron PYMEs - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "Quiron Asset Management S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Retorno Total",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Menor o Igual a 0.5 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "615",
+  "patrimonio": 734449688.2,
+  "cantidadCuotapartes": 17511870.83,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 41940.104,
+    "variacionDiariaPct": 0.022,
+    "ultimos7Dias": 0.4998,
+    "unMes": 2.089,
+    "noventaDias": 7.1697,
+    "cientoOchentaDias": 17.6495,
+    "enElAnio": 22.6473,
+    "doceMeses": 43.6172
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cheque E *MAV020800908",
+      "porcentaje": 23.5
+    },
+    {
+      "nombre": "Cheque E *MAV280801292",
+      "porcentaje": 23
+    },
+    {
+      "nombre": "Cheque E *MAV280801281",
+      "porcentaje": 22.7
+    },
+    {
+      "nombre": "Cheque E *MAV130901105",
+      "porcentaje": 22.5
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 8.5
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moodys Local Calif. Riesgo",
+      "calificacion": "BBBFf.ar",
+      "fecha": "2021-08-12"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 1.97,
+    "honorarioDepositaria": 0.28,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Quiron Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00361G-20feb34f.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

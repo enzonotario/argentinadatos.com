@@ -14,18 +14,18 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1595",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 100,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
+    "valorCuotaparte": 1010.501,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0.0345,
+    "unMes": 0.1015,
+    "noventaDias": 0.2731,
+    "cientoOchentaDias": 0.5717,
+    "enElAnio": 0.0345,
     "doceMeses": null
   },
   "composicionCartera": [
@@ -86,23 +86,23 @@
     }
   ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 0.425,
+    "honorarioDepositaria": 0.075,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Galicia Asset Management S.A.U.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00002G-01a59b57.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Galicia y Buenos Aires S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00081-d14fcb5c.jpg"
     }

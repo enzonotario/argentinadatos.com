@@ -1,9 +1,9 @@
 {
   "fondoId": "1334",
   "claseId": "3809",
-  "nombre": "IEB Multiestrategia V - Clase A",
-  "fecha": "2026-06-25",
-  "administradora": "IEB S.A.",
+  "nombre": "Ciclo Nova Multiestrategia V - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "Ciclo Nova Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
   "tipoDD": "No Aplica",
@@ -11,20 +11,22 @@
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1318",
-  "patrimonio": 5643779501.34,
+  "patrimonio": 6440176134.9,
+  "cantidadCuotapartes": 2646458364.2,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 2376.75,
-    "ultimos7Dias": 0.1872,
-    "unMes": 1.7141,
-    "noventaDias": 6.2579,
-    "cientoOchentaDias": 17.1754,
-    "enElAnio": 17.0697,
-    "doceMeses": 40.1887
+    "valorCuotaparte": 2433.507,
+    "variacionDiariaPct": -0.139,
+    "ultimos7Dias": 0.296,
+    "unMes": 0.3989,
+    "noventaDias": 4.6275,
+    "cientoOchentaDias": 14.4049,
+    "enElAnio": 19.8654,
+    "doceMeses": 42.5488
   },
   "composicionCartera": [
     {
@@ -85,14 +87,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "IEB S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02496G-cffb0731.jpg"
+      "tipo": "Administradora",
+      "nombre": "Ciclo Nova Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02496G-cffb0731.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

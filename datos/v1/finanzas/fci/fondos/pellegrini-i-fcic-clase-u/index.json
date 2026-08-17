@@ -2,31 +2,31 @@
   "fondoId": "1256",
   "claseId": "3487",
   "nombre": "Pellegrini I FCIC - Clase U",
-  "fecha": "2026-03-31",
+  "fecha": "2025-09-30",
   "administradora": "Pellegrini S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "Fondos Cerrados",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1190",
-  "patrimonio": 23871002382.99,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 21198177618.42,
+  "cantidadCuotapartes": 2033000000,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": null,
+    "valorCuotaparte": 10427.043,
     "variacionDiariaPct": null,
     "ultimos7Dias": null,
     "unMes": null,
     "noventaDias": null,
     "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "enElAnio": 20.03,
+    "doceMeses": 26.482
   },
   "composicionCartera": [
     {
@@ -71,12 +71,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Pellegrini S.A.S.G.F.C.I.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00041G-c2e70db2.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }

@@ -1,9 +1,9 @@
 {
   "fondoId": "1220",
   "claseId": "4863",
-  "nombre": "IEB Ahorro - Clase Ley N° 27.743",
-  "fecha": "2026-06-25",
-  "administradora": "IEB S.A.",
+  "nombre": "Ciclo Nova Ahorro - Clase Ley N° 27.743",
+  "fecha": "2026-08-14",
+  "administradora": "Ciclo Nova Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
   "tipoDD": "Clásico",
@@ -11,20 +11,22 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "No Registrada",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1142",
-  "patrimonio": 4928.62,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 5050.57,
+  "cantidadCuotapartes": 3034.57,
+  "inversionMinima": 9999999999999998,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 1624.156,
-    "ultimos7Dias": 17.0776,
-    "unMes": 17.2514,
-    "noventaDias": 18.7478,
-    "cientoOchentaDias": 22.3689,
-    "enElAnio": 22.3193,
-    "doceMeses": 29.7754
+    "valorCuotaparte": 1664.343,
+    "variacionDiariaPct": 0.053,
+    "ultimos7Dias": 0.3515,
+    "unMes": 1.497,
+    "noventaDias": 4.4614,
+    "cientoOchentaDias": 10.1166,
+    "enElAnio": 13.5655,
+    "doceMeses": 28.0119
   },
   "composicionCartera": [
     {
@@ -113,14 +115,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "IEB S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02496G-cffb0731.jpg"
+      "tipo": "Administradora",
+      "nombre": "Ciclo Nova Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02496G-cffb0731.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

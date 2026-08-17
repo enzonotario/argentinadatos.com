@@ -1,0 +1,78 @@
+{
+  "fondoId": "655",
+  "claseId": "1354",
+  "nombre": "MAF Ahorro Plus - Clase C",
+  "fecha": "2025-10-15",
+  "administradora": "Mariva Asset Management S.A.U.S.G.F.C.I.",
+  "depositaria": "Banco Mariva S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Corto Plazo",
+  "duracion": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "794",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 5000,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 44903.23,
+    "variacionDiariaPct": null,
+    "ultimos7Dias": null,
+    "unMes": 0,
+    "noventaDias": 46.6009,
+    "cientoOchentaDias": 90.5208,
+    "enElAnio": 108.716,
+    "doceMeses": 129.047
+  },
+  "composicionCartera": [
+    {
+      "nombre": "FCI IAM Ahorro Pesos C B",
+      "porcentaje": 67.6
+    },
+    {
+      "nombre": "FCI Toronto T Ahorro B",
+      "porcentaje": 25.7
+    },
+    {
+      "nombre": "FCI MEGAQM Pesos - Clase B",
+      "porcentaje": 5.2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.5
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "AA+f(arg)",
+      "fecha": "2025-10-15"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 1.86,
+    "honorarioDepositaria": 0.12,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.11,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Mariva Asset Management S.A.U.S.G.F.C.I.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00371G-45045e78.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Mariva S.A.",
+      "logo": null
+    }
+  ]
+}

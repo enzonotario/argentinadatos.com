@@ -1,0 +1,96 @@
+{
+  "fondoId": "1424",
+  "claseId": "4161",
+  "nombre": "SBS Acciones Brasil - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "SBS Asset Management S.A.S.G.F.C.I.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Variable",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Plazo Flexible",
+  "duracion": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1251",
+  "patrimonio": 5016893383.5,
+  "cantidadCuotapartes": 3462668949.95,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1448.852,
+    "variacionDiariaPct": -0.077,
+    "ultimos7Dias": -3.4168,
+    "unMes": -4.4576,
+    "noventaDias": -4.2733,
+    "cientoOchentaDias": -2.6706,
+    "enElAnio": 10.9824,
+    "doceMeses": 43.5735
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cedear Itau Unibanco Holdings",
+      "porcentaje": 17.9
+    },
+    {
+      "nombre": "Cedear Vale R Doce ON N1",
+      "porcentaje": 13.9
+    },
+    {
+      "nombre": "Cedear Petroleo Brasilero",
+      "porcentaje": 13.9
+    },
+    {
+      "nombre": "Cedear Banco Bradesco ON N1",
+      "porcentaje": 13.6
+    },
+    {
+      "nombre": "Cedear NU Holdings Ltd",
+      "porcentaje": 12.9
+    },
+    {
+      "nombre": "Cedear Petro Rio",
+      "porcentaje": 11.4
+    },
+    {
+      "nombre": "Cedear Mercado Libre",
+      "porcentaje": 4.2
+    },
+    {
+      "nombre": "Cedear Braskem ADR",
+      "porcentaje": 3.8
+    },
+    {
+      "nombre": "Cedear PagSeguro Digital",
+      "porcentaje": 3.2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 5
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 3.5,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "SBS Asset Management S.A.S.G.F.C.I.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00347G-615b02d0.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

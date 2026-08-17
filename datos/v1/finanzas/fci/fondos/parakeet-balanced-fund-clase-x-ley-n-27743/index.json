@@ -1,8 +1,8 @@
 {
   "fondoId": "1608",
   "claseId": "5295",
-  "nombre": "Parakeet Balanced Fund - Clase X Ley N° 27.743",
-  "fecha": "2026-06-23",
+  "nombre": "Parakeet MM Investments Fund - Clase X Ley N° 27.743",
+  "fecha": "2026-08-14",
   "administradora": "Parakeet S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,18 +13,20 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1634",
-  "patrimonio": 282801.07,
+  "patrimonio": 288577.56,
+  "cantidadCuotapartes": 259496.83,
   "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1089.805,
-    "ultimos7Dias": 0.0102,
-    "unMes": 0.5684,
-    "noventaDias": 2.0555,
-    "cientoOchentaDias": 4.1947,
-    "enElAnio": 4.0235,
-    "doceMeses": 8.9805
+    "valorCuotaparte": 1112.066,
+    "variacionDiariaPct": 0.014,
+    "ultimos7Dias": 0.2614,
+    "unMes": 1.0434,
+    "noventaDias": 2.7975,
+    "cientoOchentaDias": 5.0589,
+    "enElAnio": 6.1483,
+    "doceMeses": 11.2066
   },
   "composicionCartera": [
     {
@@ -125,14 +127,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Parakeet S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03222G-de7305da.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03222G-de7305da.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

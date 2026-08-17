@@ -1,0 +1,114 @@
+{
+  "fondoId": "792",
+  "claseId": "3450",
+  "nombre": "Delta Retorno Real - Clase E",
+  "fecha": "2026-08-14",
+  "administradora": "Delta Asset Management S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Badlar",
+  "horizonte": "Plazo Flexible",
+  "duracion": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "963",
+  "patrimonio": 4471661861.56,
+  "cantidadCuotapartes": 250000000,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 17886.647,
+    "variacionDiariaPct": 0.092,
+    "ultimos7Dias": 0.4123,
+    "unMes": 1.0489,
+    "noventaDias": 5.4909,
+    "cientoOchentaDias": 21.7482,
+    "enElAnio": 28.0705,
+    "doceMeses": 50.6129
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer 2028 TZXM8",
+      "porcentaje": 26.68
+    },
+    {
+      "nombre": "Bono Dual TXMD8",
+      "porcentaje": 14.38
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 12.41
+    },
+    {
+      "nombre": "Letra Tamar TEM TMF27",
+      "porcentaje": 11.69
+    },
+    {
+      "nombre": "ON FCA Comp. Finac CL 22 S1",
+      "porcentaje": 5.73
+    },
+    {
+      "nombre": "ON PSA Serie 34",
+      "porcentaje": 5.22
+    },
+    {
+      "nombre": "Boncer Mendoza C1",
+      "porcentaje": 4.56
+    },
+    {
+      "nombre": "ON Rombo Cia Fciera S66",
+      "porcentaje": 0.53
+    },
+    {
+      "nombre": "Bono Boncer TXMJ9",
+      "porcentaje": 0.45
+    },
+    {
+      "nombre": "ON GEMSA Clase 27",
+      "porcentaje": 0.19
+    },
+    {
+      "nombre": "ON PyME Sion Serie 12 UVA",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Caucion Colocadora $ BYMA",
+      "porcentaje": 14.04
+    },
+    {
+      "nombre": "FCI Gainvest Pesos - Clase B",
+      "porcentaje": 4.45
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "AA-f (arg)",
+      "fecha": "2020-09-11"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 0.85,
+    "honorarioDepositaria": 0.0908,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Delta Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00321G-78ba876b.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

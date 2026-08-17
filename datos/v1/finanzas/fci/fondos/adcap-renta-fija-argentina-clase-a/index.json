@@ -1,0 +1,174 @@
+{
+  "fondoId": "531",
+  "claseId": "1070",
+  "nombre": "Adcap Renta Fija - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "IAMC",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "571",
+  "patrimonio": 5520152253.45,
+  "cantidadCuotapartes": 28983042.5,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 190461.448,
+    "variacionDiariaPct": 0.191,
+    "ultimos7Dias": 0.2735,
+    "unMes": 0.9261,
+    "noventaDias": 4.676,
+    "cientoOchentaDias": 11.9987,
+    "enElAnio": 16.2914,
+    "doceMeses": 35.434
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Lecap S13N6",
+      "porcentaje": 10.49
+    },
+    {
+      "nombre": "Lecap S30N6",
+      "porcentaje": 7.29
+    },
+    {
+      "nombre": "ON Mercado Pago C3",
+      "porcentaje": 6.95
+    },
+    {
+      "nombre": "ON Banco Hipotecario C13",
+      "porcentaje": 6.93
+    },
+    {
+      "nombre": "ON BBVA Frances Cl 47",
+      "porcentaje": 6.86
+    },
+    {
+      "nombre": "ON Toyota Clase 39",
+      "porcentaje": 6.71
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional T15E7",
+      "porcentaje": 6.68
+    },
+    {
+      "nombre": "Banco Nacion Argentina Clase 1",
+      "porcentaje": 5.65
+    },
+    {
+      "nombre": "ON Arcor C4",
+      "porcentaje": 4.53
+    },
+    {
+      "nombre": "ON Angel Estrada C18",
+      "porcentaje": 4.19
+    },
+    {
+      "nombre": "Letra Prov Rio Negro S1 191225",
+      "porcentaje": 4.13
+    },
+    {
+      "nombre": "ON Bco Serv Transac C27",
+      "porcentaje": 4.02
+    },
+    {
+      "nombre": "ON GEMSA y CTR C43",
+      "porcentaje": 3.79
+    },
+    {
+      "nombre": "ON Banco Prov Clase 6",
+      "porcentaje": 3.44
+    },
+    {
+      "nombre": "ON Arcor C3",
+      "porcentaje": 2.73
+    },
+    {
+      "nombre": "ON Lab. Richmond S7 Clase A",
+      "porcentaje": 2.11
+    },
+    {
+      "nombre": "ON Rombo Cia Fciera S64",
+      "porcentaje": 2.05
+    },
+    {
+      "nombre": "ON Club Atletico River Plate S1",
+      "porcentaje": 1.87
+    },
+    {
+      "nombre": "ON Volkswagen Financial Services C12",
+      "porcentaje": 1.37
+    },
+    {
+      "nombre": "ON Impsa Clase 7 2036",
+      "porcentaje": 0.29
+    },
+    {
+      "nombre": "ON GEMSA 15 GMCGO",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "FF Creditech S6 CA",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "FCI GMC Money Market - Clase C",
+      "porcentaje": 2.18
+    },
+    {
+      "nombre": "FCI MAF Money Market - Clase B",
+      "porcentaje": 1.99
+    },
+    {
+      "nombre": "FF Elebar XVI Clase A",
+      "porcentaje": 1.89
+    },
+    {
+      "nombre": "FCI SBS Ahorro Pesos Cl B",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "FCI MEGAQM Pesos - Clase B",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "FCI Gainvest Pesos - Clase B",
+      "porcentaje": 0.01
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moodys Local Calif. Riesgo",
+      "calificacion": "Ba",
+      "fecha": "2019-11-12"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.77,
+    "honorarioDepositaria": 0.121,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.02,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

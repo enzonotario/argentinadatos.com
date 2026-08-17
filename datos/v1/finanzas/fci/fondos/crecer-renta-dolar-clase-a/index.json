@@ -1,0 +1,92 @@
+{
+  "fondoId": "1637",
+  "claseId": "5432",
+  "nombre": "Crecer Renta Dólares - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "Ciudad Administradora de Activos S.A.U.",
+  "depositaria": "Banco Ciudad de Buenos Aires",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Menor o Igual a 0.5 Año",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "1663",
+  "patrimonio": 9730068.76,
+  "cantidadCuotapartes": 8321943.5,
+  "inversionMinima": 1,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1169.206,
+    "variacionDiariaPct": -0.344,
+    "ultimos7Dias": -0.6782,
+    "unMes": -1.8817,
+    "noventaDias": 2.3972,
+    "cientoOchentaDias": 3.7331,
+    "enElAnio": 7.0111,
+    "doceMeses": 16.3811
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bonos Rep Argentina GD35",
+      "porcentaje": 16.4
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD41",
+      "porcentaje": 14.5
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional AO28",
+      "porcentaje": 14.1
+    },
+    {
+      "nombre": "Bonos Rep Argentina AL35",
+      "porcentaje": 12.5
+    },
+    {
+      "nombre": "Cta Cte U$S Bco Cdad BA",
+      "porcentaje": 11.7
+    },
+    {
+      "nombre": "Bonos Rep Argentina 2030",
+      "porcentaje": 10.5
+    },
+    {
+      "nombre": "Bono Bopreal Serie 1 D",
+      "porcentaje": 9.5
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional AO27",
+      "porcentaje": 6.9
+    },
+    {
+      "nombre": "Bono Bonar 2029 AO29",
+      "porcentaje": 3.9
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 1.43,
+    "honorarioDepositaria": 0.15,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.05,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Ciudad Administradora de Activos S.A.U.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03255G-43d1241b.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Ciudad de Buenos Aires",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00067-2efdbc54.jpg"
+    }
+  ]
+}

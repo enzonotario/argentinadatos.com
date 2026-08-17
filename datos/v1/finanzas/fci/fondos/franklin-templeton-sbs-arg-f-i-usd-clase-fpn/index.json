@@ -1,0 +1,106 @@
+{
+  "fondoId": "522",
+  "claseId": "1055",
+  "nombre": "SBS Retorno Total - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "SBS Asset Management S.A.S.G.F.C.I.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "No Aplicable",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "644",
+  "patrimonio": 4427461024.1,
+  "cantidadCuotapartes": 7938336.36,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 557731.598,
+    "variacionDiariaPct": -0.306,
+    "ultimos7Dias": -0.9029,
+    "unMes": -1.0289,
+    "noventaDias": 8.5269,
+    "cientoOchentaDias": 8.3738,
+    "enElAnio": 7.2181,
+    "doceMeses": 31.5067
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Letra Tesoro Nac D31L6",
+      "porcentaje": 26.9
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD35",
+      "porcentaje": 20.6
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD41",
+      "porcentaje": 12.6
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD38",
+      "porcentaje": 9.4
+    },
+    {
+      "nombre": "ON YPF Clase 34",
+      "porcentaje": 9
+    },
+    {
+      "nombre": "ON Pampa Energia C21",
+      "porcentaje": 6
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional D31G6",
+      "porcentaje": 4.5
+    },
+    {
+      "nombre": "Bonos Rep Argentina 2030",
+      "porcentaje": 3.1
+    },
+    {
+      "nombre": "ON Transp Gas Sur Cl 3",
+      "porcentaje": 2.6
+    },
+    {
+      "nombre": "Cta Cte U$D Bank Of New York",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 3.2
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moodys Local Calif. Riesgo",
+      "calificacion": "Af",
+      "fecha": "2014-10-17"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 3.5,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "SBS Asset Management S.A.S.G.F.C.I.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00347G-615b02d0.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

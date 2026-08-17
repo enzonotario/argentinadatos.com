@@ -2,7 +2,7 @@
   "fondoId": "1533",
   "claseId": "4608",
   "nombre": "Axis Estrategia 26 - Clase A",
-  "fecha": "2026-07-16",
+  "fecha": "2026-05-27",
   "administradora": "Axis S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,22 +11,22 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1458",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 10000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
+    "valorCuotaparte": 1334.459,
     "variacionDiariaPct": null,
     "ultimos7Dias": null,
     "unMes": null,
     "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "cientoOchentaDias": 2.6762,
+    "enElAnio": 0.3461,
+    "doceMeses": 22.9603
   },
   "composicionCartera": [
     {
@@ -47,12 +47,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Axis S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00384G-b6af83ec.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }

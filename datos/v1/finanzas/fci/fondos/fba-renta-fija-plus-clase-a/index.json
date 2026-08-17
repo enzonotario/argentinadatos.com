@@ -1,8 +1,8 @@
 {
   "fondoId": "434",
   "claseId": "816",
-  "nombre": "FBA Renta Fija Plus - Clase A",
-  "fecha": "2026-06-04",
+  "nombre": "FBA Renta Fija Pesos Plus I - Clase A",
+  "fecha": "2026-08-14",
   "administradora": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "BBVA Argentina S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,20 +11,22 @@
   "benchmark": "No Registrado",
   "horizonte": "Plazo Flexible",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "560",
-  "patrimonio": 19955344948.14,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 23815762568.77,
+  "cantidadCuotapartes": 1329135311.9445,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 17260.24,
-    "ultimos7Dias": 0.4966,
-    "unMes": 2.5965,
-    "noventaDias": 9.9927,
-    "cientoOchentaDias": 19.0577,
-    "enElAnio": 17.9155,
-    "doceMeses": 41.5877
+    "valorCuotaparte": 17918.238,
+    "variacionDiariaPct": 0.176,
+    "ultimos7Dias": 0.5446,
+    "unMes": 1.7195,
+    "noventaDias": 5.0655,
+    "cientoOchentaDias": 16.7858,
+    "enElAnio": 22.4107,
+    "doceMeses": 47.8024
   },
   "composicionCartera": [
     {
@@ -83,14 +85,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00029G-9a6fc701.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00029G-9a6fc701.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "BBVA Argentina S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00079-a62ab0c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00079-a62ab0c8.jpg"
     }
   ]
 }

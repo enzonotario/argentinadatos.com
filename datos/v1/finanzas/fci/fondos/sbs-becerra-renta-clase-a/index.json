@@ -1,0 +1,82 @@
+{
+  "fondoId": "701",
+  "claseId": "1498",
+  "nombre": "SBS Patrimonio IV - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "SBS Asset Management S.A.S.G.F.C.I.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Mixta",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "No Aplicable",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "847",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 3017.925,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0,
+    "unMes": 0,
+    "noventaDias": 0,
+    "cientoOchentaDias": 0,
+    "enElAnio": 0,
+    "doceMeses": 0
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 26.9
+    },
+    {
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 24.8
+    },
+    {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 23.9
+    },
+    {
+      "nombre": "US Treasury Bill 110826",
+      "porcentaje": 23.5
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.9
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "Af",
+      "fecha": "2017-05-23"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.5,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "SBS Asset Management S.A.S.G.F.C.I.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00347G-615b02d0.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

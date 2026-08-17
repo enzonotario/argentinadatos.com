@@ -6,7 +6,7 @@
   "administradora": "Mercofond S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Mixta",
-  "tipoDD": "No Aplica",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
@@ -14,19 +14,19 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1075",
   "patrimonio": 84275.69,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 0,
+  "cantidadCuotapartes": 78451.02,
+  "inversionMinima": 1000,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 3,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 1074.246,
+    "variacionDiariaPct": -0.005,
+    "ultimos7Dias": -0.0322,
+    "unMes": -0.1398,
+    "noventaDias": -0.4133,
+    "cientoOchentaDias": -0.8868,
+    "enElAnio": -0.809,
+    "doceMeses": -2.5044
   },
   "composicionCartera": [
     {
@@ -83,12 +83,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mercofond S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00040G-5ca39baf.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }

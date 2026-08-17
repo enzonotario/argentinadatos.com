@@ -3,30 +3,30 @@
   "claseId": "1854",
   "nombre": "Cima Renta Variable - Clase B",
   "fecha": "2020-01-09",
-  "administradora": "Puente Asset Management S.A.",
+  "administradora": "Cima S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Variable",
-  "tipoDD": "No Aplica",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "S&P Mar",
   "horizonte": "Mediano Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "819",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": null,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
+    "valorCuotaparte": 1009.409,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": -1.3569,
+    "unMes": -1.914,
     "noventaDias": null,
     "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "enElAnio": -1.914,
+    "doceMeses": 0.941
   },
   "composicionCartera": [
     {
@@ -103,12 +103,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "Puente Asset Management S.A.",
+      "tipo": "Administradora",
+      "nombre": "Cima S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00047G-03cccc79.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }

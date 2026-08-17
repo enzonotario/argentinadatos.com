@@ -1,9 +1,9 @@
 {
   "fondoId": "1517",
   "claseId": "4539",
-  "nombre": "IEB Estratégico - Clase B",
-  "fecha": "2026-06-25",
-  "administradora": "IEB S.A.",
+  "nombre": "Ciclo Nova Estratégico - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "Ciclo Nova Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
@@ -13,18 +13,20 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1527",
-  "patrimonio": 2340576.85,
-  "inversionMinima": 1000,
+  "patrimonio": 6179425.2,
+  "cantidadCuotapartes": 5123637.64,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1193.931,
-    "ultimos7Dias": -0.0181,
-    "unMes": 1.9863,
-    "noventaDias": 4.1387,
-    "cientoOchentaDias": 5.8773,
-    "enElAnio": 5.6505,
-    "doceMeses": 11.5563
+    "valorCuotaparte": 1206.062,
+    "variacionDiariaPct": -0.079,
+    "ultimos7Dias": -0.0119,
+    "unMes": 0.0137,
+    "noventaDias": 2.945,
+    "cientoOchentaDias": 4.5394,
+    "enElAnio": 6.724,
+    "doceMeses": 10.5008
   },
   "composicionCartera": [
     {
@@ -105,14 +107,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "IEB S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02496G-cffb0731.jpg"
+      "tipo": "Administradora",
+      "nombre": "Ciclo Nova Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02496G-cffb0731.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

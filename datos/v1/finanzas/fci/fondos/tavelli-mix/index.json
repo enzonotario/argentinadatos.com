@@ -1,0 +1,98 @@
+{
+  "fondoId": "199",
+  "claseId": "199",
+  "nombre": "SBS Tavelli Mix - Clase P",
+  "fecha": "2026-08-14",
+  "administradora": "SBS Asset Management S.A.S.G.F.C.I.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Corto Plazo",
+  "duracion": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "251",
+  "patrimonio": 662166768.47,
+  "cantidadCuotapartes": 603093.79,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1097949.906,
+    "variacionDiariaPct": 0.175,
+    "ultimos7Dias": 0.4068,
+    "unMes": 1.4976,
+    "noventaDias": 4.7951,
+    "cientoOchentaDias": 12.8417,
+    "enElAnio": 17.3752,
+    "doceMeses": 35.7318
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Lecap S14G6",
+      "porcentaje": 26.8
+    },
+    {
+      "nombre": "Lecap S30S6",
+      "porcentaje": 26.5
+    },
+    {
+      "nombre": "Lecap S15S6",
+      "porcentaje": 10.4
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Nacion",
+      "porcentaje": 10.3
+    },
+    {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 10
+    },
+    {
+      "nombre": "Lecap S31L6",
+      "porcentaje": 6.8
+    },
+    {
+      "nombre": "FCI Adcap Ahorro Pesos - Clase I",
+      "porcentaje": 4.5
+    },
+    {
+      "nombre": "Lecap S31G6",
+      "porcentaje": 3.9
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.8
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "Af.ar",
+      "fecha": "2026-08-14"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 1.82,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "SBS Asset Management S.A.S.G.F.C.I.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00347G-615b02d0.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "fondoId": "1195",
+  "claseId": "3265",
+  "nombre": "Schroder Renta Performance - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "Schroder S.A.S.G.F.C.I.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1107",
+  "patrimonio": 39369279577.56,
+  "cantidadCuotapartes": 10894192.82,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 3613785.824,
+    "variacionDiariaPct": 0.073,
+    "ultimos7Dias": 0.558,
+    "unMes": 1.4031,
+    "noventaDias": 5.9455,
+    "cientoOchentaDias": 20.0431,
+    "enElAnio": 26.4826,
+    "doceMeses": 62.9273
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 29.3
+    },
+    {
+      "nombre": "Bono Boncer 2028 TZXM8",
+      "porcentaje": 25.4
+    },
+    {
+      "nombre": "Lecer X30N6",
+      "porcentaje": 22.5
+    },
+    {
+      "nombre": "Bono Dual TXMD9",
+      "porcentaje": 13.6
+    },
+    {
+      "nombre": "Bono Boncer TZXS8",
+      "porcentaje": 8.4
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.8
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 1.85,
+    "honorarioDepositaria": 0.0968,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Schroder S.A.S.G.F.C.I.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00051G-0c57ca49.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

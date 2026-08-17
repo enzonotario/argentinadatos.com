@@ -3,7 +3,7 @@
   "claseId": "1983",
   "nombre": "Mercado Fondo - Clase B",
   "fecha": "2025-05-30",
-  "administradora": "Mercado Pago Asset Managemet S.A.",
+  "administradora": "Industrial Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Industrial S.A.",
   "tipoRenta": "Mercado de Dinero",
   "tipoDD": "Clásico",
@@ -11,22 +11,22 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "No Registrada",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "956",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 2,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 1128.223,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0,
+    "unMes": 0,
+    "noventaDias": 0,
+    "cientoOchentaDias": 0,
+    "enElAnio": 0,
+    "doceMeses": 0
   },
   "composicionCartera": [
     {
@@ -98,23 +98,23 @@
     }
   ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 1.44,
+    "honorarioDepositaria": 0.15,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "Mercado Pago Asset Managemet S.A.",
+      "tipo": "Administradora",
+      "nombre": "Industrial Asset Management S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/03265G-e5cf3c10.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Industrial S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00391-92ebcc0c.jpg"
     }

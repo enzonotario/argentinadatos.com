@@ -1,0 +1,94 @@
+{
+  "fondoId": "527",
+  "claseId": "1064",
+  "nombre": "MEGAQM Performance II - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "MEGA QM S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Corto Plazo",
+  "duracion": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "669",
+  "patrimonio": 163754351.61,
+  "cantidadCuotapartes": 535440.25,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 305831.235,
+    "variacionDiariaPct": 0.06,
+    "ultimos7Dias": -0.0028,
+    "unMes": 1.4573,
+    "noventaDias": 7.1117,
+    "cientoOchentaDias": 12.231,
+    "enElAnio": 10.0531,
+    "doceMeses": 28.4629
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono del Tesoro Nacional D31G6",
+      "porcentaje": 30
+    },
+    {
+      "nombre": "Lecer X30N6",
+      "porcentaje": 16.5
+    },
+    {
+      "nombre": "ON Pan American C40",
+      "porcentaje": 13.8
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TZVD8",
+      "porcentaje": 11
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 10.5
+    },
+    {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 9.9
+    },
+    {
+      "nombre": "Lecap S13N6",
+      "porcentaje": 6.2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 2
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "AA-f",
+      "fecha": "2025-08-13"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.5,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "MEGA QM S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

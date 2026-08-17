@@ -1,9 +1,9 @@
 {
   "fondoId": "828",
   "claseId": "4877",
-  "nombre": "IEB Retorno Total - Clase Ley N° 27.743",
-  "fecha": "2026-06-25",
-  "administradora": "IEB S.A.",
+  "nombre": "Ciclo Nova Retorno Total - Clase Ley N° 27.743",
+  "fecha": "2026-08-14",
+  "administradora": "Ciclo Nova Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
   "tipoDD": "No Aplica",
@@ -11,20 +11,22 @@
   "benchmark": "Otro",
   "horizonte": "Plazo Flexible",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1042",
-  "patrimonio": 4692692.71,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 4898337.81,
+  "cantidadCuotapartes": 2326937.07,
+  "inversionMinima": 9999999999999998,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 2016.682,
-    "ultimos7Dias": 0.587,
-    "unMes": 3.0022,
-    "noventaDias": 8.3518,
-    "cientoOchentaDias": 17.792,
-    "enElAnio": 17.3669,
-    "doceMeses": 41.0142
+    "valorCuotaparte": 2105.058,
+    "variacionDiariaPct": 0.087,
+    "ultimos7Dias": 0.6105,
+    "unMes": 2.6234,
+    "noventaDias": 8.192,
+    "cientoOchentaDias": 17.535,
+    "enElAnio": 22.5102,
+    "doceMeses": 40.4919
   },
   "composicionCartera": [
     {
@@ -85,14 +87,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "IEB S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02496G-cffb0731.jpg"
+      "tipo": "Administradora",
+      "nombre": "Ciclo Nova Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02496G-cffb0731.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

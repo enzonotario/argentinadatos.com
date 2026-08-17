@@ -1,0 +1,114 @@
+{
+  "fondoId": "738",
+  "claseId": "1610",
+  "nombre": "Pionero Renta Dólares - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "Macro Fondos S.G.F.C.I.S.A.",
+  "depositaria": "Banco Macro S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Menor o Igual a 1 Año",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "938",
+  "patrimonio": 9149375.49,
+  "cantidadCuotapartes": 7374341.18,
+  "inversionMinima": 1,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 1240.704,
+    "variacionDiariaPct": 0.009,
+    "ultimos7Dias": 0.0673,
+    "unMes": 0.2097,
+    "noventaDias": 0.675,
+    "cientoOchentaDias": 1.066,
+    "enElAnio": 1.5079,
+    "doceMeses": 2.705
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte U$S Bco Macro Ban",
+      "porcentaje": 21
+    },
+    {
+      "nombre": "BR Rep Brasil 28",
+      "porcentaje": 17.5
+    },
+    {
+      "nombre": "CL Rep Chile 2027",
+      "porcentaje": 13.4
+    },
+    {
+      "nombre": "CL Rep Chile 28",
+      "porcentaje": 10.8
+    },
+    {
+      "nombre": "US Treasury Bill 080926",
+      "porcentaje": 7
+    },
+    {
+      "nombre": "US Treasury Bill 170926",
+      "porcentaje": 6.8
+    },
+    {
+      "nombre": "US Treasury Bill 210726",
+      "porcentaje": 5.2
+    },
+    {
+      "nombre": "BR Bono Global 2027 10.12%",
+      "porcentaje": 5
+    },
+    {
+      "nombre": "BC Brasil 3 1/4 300926",
+      "porcentaje": 4.7
+    },
+    {
+      "nombre": "Bono Corporativo 3.625% 010827",
+      "porcentaje": 4.1
+    },
+    {
+      "nombre": "US Treasury Bill 040826",
+      "porcentaje": 2
+    },
+    {
+      "nombre": "US Treasury Bill 200826",
+      "porcentaje": 2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.5
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "AAAf(arg)",
+      "fecha": "2026-02-19"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 0.54,
+    "honorarioDepositaria": 0.06,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Macro Fondos S.G.F.C.I.S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00054G-82963f72.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Macro S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00098-871484a2.jpg"
+    }
+  ]
+}

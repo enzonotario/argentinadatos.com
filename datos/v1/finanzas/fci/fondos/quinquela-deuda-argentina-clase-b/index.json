@@ -1,0 +1,110 @@
+{
+  "fondoId": "768",
+  "claseId": "1706",
+  "nombre": "MEGAQM Provincial - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "MEGA QM S.A.",
+  "depositaria": "Banco de Servicios y Transacciones S.A. (BST)",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "951",
+  "patrimonio": 144845463.94,
+  "cantidadCuotapartes": 1957462.79,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 73996.535,
+    "variacionDiariaPct": 0.265,
+    "ultimos7Dias": 0.4506,
+    "unMes": 1.1633,
+    "noventaDias": 6.5991,
+    "cientoOchentaDias": 19.0243,
+    "enElAnio": 26.1879,
+    "doceMeses": 46.4181
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Muni Cordoba S2 13022027",
+      "porcentaje": 14.1
+    },
+    {
+      "nombre": "Bono Prov Cordoba Clase 4",
+      "porcentaje": 12.4
+    },
+    {
+      "nombre": "Bono Muni Cordoba S1 26032027",
+      "porcentaje": 11.7
+    },
+    {
+      "nombre": "Boncer Mendoza C1",
+      "porcentaje": 9.5
+    },
+    {
+      "nombre": "Bono Prov Cordoba Clase 5",
+      "porcentaje": 9.4
+    },
+    {
+      "nombre": "Bono Muni Cordoba S1",
+      "porcentaje": 9.3
+    },
+    {
+      "nombre": "Bono Dual TXMD9",
+      "porcentaje": 9.1
+    },
+    {
+      "nombre": "Bono Boncer MDZ C II",
+      "porcentaje": 8.9
+    },
+    {
+      "nombre": "Lecap S13N6",
+      "porcentaje": 7.6
+    },
+    {
+      "nombre": "Bono Prov Cordoba 2027 COY27",
+      "porcentaje": 4.4
+    },
+    {
+      "nombre": "Bono Prov Cordoba Clase 6",
+      "porcentaje": 3.1
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.4
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "BBB-f",
+      "fecha": "2026-08-14"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 1.879,
+    "honorarioDepositaria": 0.121,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "MEGA QM S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Servicios y Transacciones S.A. (BST)",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00387-5d5880dd.jpg"
+    }
+  ]
+}

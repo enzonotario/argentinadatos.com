@@ -5,28 +5,28 @@
   "fecha": "2026-01-07",
   "administradora": "Galicia Asset Management S.A.U.",
   "depositaria": "Banco de Galicia y Buenos Aires S.A.",
-  "tipoRenta": "Renta Variable",
+  "tipoRenta": "Renta Mixta",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Otro",
-  "horizonte": "Largo Plazo",
+  "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1427",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 100,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 1276.089,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": -0.2001,
+    "unMes": 2.4983,
+    "noventaDias": 9.453,
+    "cientoOchentaDias": 7.5265,
+    "enElAnio": -0.2001,
+    "doceMeses": 7.4591
   },
   "composicionCartera": [
     {
@@ -56,23 +56,23 @@
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 0.85,
+    "honorarioDepositaria": 0.15,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Galicia Asset Management S.A.U.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00002G-01a59b57.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Galicia y Buenos Aires S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00081-d14fcb5c.jpg"
     }

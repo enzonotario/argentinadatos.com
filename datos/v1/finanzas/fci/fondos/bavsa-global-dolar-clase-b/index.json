@@ -1,8 +1,8 @@
 {
   "fondoId": "1785",
   "claseId": "6096",
-  "nombre": "BAVSA Global Dólar - Clase B",
-  "fecha": "2026-08-04",
+  "nombre": "Argentaria BAVSA Renta Fija Dólares - Clase B",
+  "fecha": "2026-08-14",
   "administradora": "BAVSA Fondos S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,16 +13,18 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1751",
-  "patrimonio": 897108.89,
-  "inversionMinima": 0,
+  "patrimonio": 967975.47,
+  "cantidadCuotapartes": 935982.56,
+  "inversionMinima": 10,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1035.503,
-    "ultimos7Dias": 0.043,
-    "unMes": 0.0893,
-    "noventaDias": 1.192,
-    "cientoOchentaDias": 3.5678,
+    "valorCuotaparte": 1034.181,
+    "variacionDiariaPct": -0.06,
+    "ultimos7Dias": 0.0683,
+    "unMes": 0.0367,
+    "noventaDias": 1.1616,
+    "cientoOchentaDias": 3.3052,
     "enElAnio": null,
     "doceMeses": null
   },
@@ -93,14 +95,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "BAVSA Fondos S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03118G-d03fc40c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03118G-d03fc40c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

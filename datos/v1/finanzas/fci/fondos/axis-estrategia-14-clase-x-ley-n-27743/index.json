@@ -1,8 +1,8 @@
 {
   "fondoId": "1524",
   "claseId": "4914",
-  "nombre": "Axis Estrategia 14 - Clase X Ley N° 27.743",
-  "fecha": "2026-06-04",
+  "nombre": "Axis Multiplo Bursatil Retorno Absoluto - Clase X Ley N° 27.743",
+  "fecha": "2026-08-14",
   "administradora": "Axis S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,20 +11,22 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1471",
-  "patrimonio": 1585304764.61,
-  "inversionMinima": 10000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 1618736420.64,
+  "cantidadCuotapartes": 973506045.07,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1628.449,
-    "ultimos7Dias": 1.8669,
-    "unMes": 1.9681,
-    "noventaDias": 4.5476,
-    "cientoOchentaDias": 5.4478,
-    "enElAnio": 4.5758,
-    "doceMeses": 38.1422
+    "valorCuotaparte": 1662.79,
+    "variacionDiariaPct": -0.459,
+    "ultimos7Dias": -0.7657,
+    "unMes": -1.6603,
+    "noventaDias": 3.6631,
+    "cientoOchentaDias": 6.829,
+    "enElAnio": 6.7811,
+    "doceMeses": 39.7489
   },
   "composicionCartera": [
     {
@@ -133,14 +135,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Axis S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00384G-b6af83ec.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00384G-b6af83ec.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

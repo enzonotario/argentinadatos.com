@@ -3,30 +3,30 @@
   "claseId": "2261",
   "nombre": "Galileo Ahorro - Clase C",
   "fecha": "2021-06-09",
-  "administradora": "Delta Asset Management S.A.",
+  "administradora": "Galileo Argentina S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "Renta Fija",
-  "tipoDD": "No Aplica",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "627",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 0,
-  "monedaInversion": "Dolar Estadounidense",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 52.114,
+    "variacionDiariaPct": 0.144,
+    "ultimos7Dias": 0.6645,
+    "unMes": -4.6718,
+    "noventaDias": -9.9573,
+    "cientoOchentaDias": -15.0311,
+    "enElAnio": -15.1928,
+    "doceMeses": -32.2588
   },
   "composicionCartera": [
     {
@@ -53,28 +53,28 @@
   "calificaciones": [
     {
       "calificadora": "Moodys Local Calif. Riesgo",
-      "calificacion": "AAf.ar",
+      "calificacion": "Af.ar",
       "fecha": "2023-08-28"
     }
   ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 1.75,
+    "honorarioDepositaria": 0.1694,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "Delta Asset Management S.A.",
+      "tipo": "Administradora",
+      "nombre": "Galileo Argentina S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00321G-78ba876b.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }

@@ -11,22 +11,22 @@
   "benchmark": "Rofex 20",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "653",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 900000000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 25000000000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 38161.242,
+    "variacionDiariaPct": 1.54,
+    "ultimos7Dias": -6.3545,
+    "unMes": 0.003,
+    "noventaDias": 5.8505,
+    "cientoOchentaDias": 31.6792,
+    "enElAnio": -1.2095,
+    "doceMeses": 23.1946
   },
   "composicionCartera": [
     {
@@ -85,7 +85,7 @@
   "calificaciones": [
     {
       "calificadora": "Standard and Poors",
-      "calificacion": "raA+c (nuevo)",
+      "calificacion": "EF-3",
       "fecha": "2013-09-17"
     }
   ],
@@ -101,12 +101,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }

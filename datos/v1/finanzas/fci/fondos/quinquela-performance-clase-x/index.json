@@ -1,0 +1,70 @@
+{
+  "fondoId": "635",
+  "claseId": "3219",
+  "nombre": "Quinquela Performance - Clase X",
+  "fecha": "2024-12-10",
+  "administradora": "MEGA QM S.A.",
+  "depositaria": "Banco de Servicios y Transacciones S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": null,
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Corto Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "770",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 108.914,
+    "variacionDiariaPct": -0.049,
+    "ultimos7Dias": -0.4424,
+    "unMes": -1.82,
+    "noventaDias": -5.7552,
+    "cientoOchentaDias": -11.2637,
+    "enElAnio": -20.4671,
+    "doceMeses": -21.3032
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Bco Serv Trans",
+      "porcentaje": 82
+    },
+    {
+      "nombre": "Cta Cte USD Euroclear Bel",
+      "porcentaje": 18
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "Af",
+      "fecha": "2024-12-10"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 1.2,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "MEGA QM S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Servicios y Transacciones S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00387-5d5880dd.jpg"
+    }
+  ]
+}

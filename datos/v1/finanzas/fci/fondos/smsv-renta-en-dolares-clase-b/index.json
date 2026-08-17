@@ -14,19 +14,19 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "986",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 15000,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 1466.584,
+    "variacionDiariaPct": 0.368,
+    "ultimos7Dias": 0.555,
+    "unMes": 2.1334,
+    "noventaDias": 4.8561,
+    "cientoOchentaDias": 6.5844,
+    "enElAnio": 1.9461,
+    "doceMeses": 10.049
   },
   "composicionCartera": [
     {
@@ -99,12 +99,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }

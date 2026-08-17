@@ -1,8 +1,8 @@
 {
   "fondoId": "1399",
   "claseId": "4054",
-  "nombre": "Axis Estrategia 5 - Clase A",
-  "fecha": "2026-06-04",
+  "nombre": "Axis Brio Valores I - Clase A",
+  "fecha": "2026-08-14",
   "administradora": "Axis S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,20 +11,22 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1369",
-  "patrimonio": 12736164720.57,
-  "inversionMinima": 10000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 11894361316.12,
+  "cantidadCuotapartes": 1356296045.85,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 9409.245,
-    "ultimos7Dias": 2.4599,
-    "unMes": 11.0928,
-    "noventaDias": 17.6896,
-    "cientoOchentaDias": 5.7651,
-    "enElAnio": 6.5203,
-    "doceMeses": 48.6
+    "valorCuotaparte": 8769.738,
+    "variacionDiariaPct": -1.271,
+    "ultimos7Dias": -4.1359,
+    "unMes": -9.0421,
+    "noventaDias": 6.9194,
+    "cientoOchentaDias": 5.8802,
+    "enElAnio": -0.7195,
+    "doceMeses": 35.0112
   },
   "composicionCartera": [
     {
@@ -89,14 +91,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Axis S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00384G-b6af83ec.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00384G-b6af83ec.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

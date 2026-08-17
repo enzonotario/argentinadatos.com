@@ -1,30 +1,32 @@
 {
   "fondoId": "624",
   "claseId": "4993",
-  "nombre": "SBS Latam - Clase Ley N° 27.743",
-  "fecha": "2026-06-18",
+  "nombre": "SBS Renta Dólar Argentina - Clase Ley N° 27.743",
+  "fecha": "2026-08-14",
   "administradora": "SBS Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
-  "region": "Latinoamerica",
+  "region": "Latinoamérica",
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "750",
-  "patrimonio": 1276248.62,
-  "inversionMinima": 1000,
+  "patrimonio": 954292.52,
+  "cantidadCuotapartes": 843501.33,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1125.784,
-    "ultimos7Dias": 0.1681,
-    "unMes": 0.7118,
-    "noventaDias": 1.9378,
-    "cientoOchentaDias": 4.9309,
-    "enElAnio": 4.6691,
-    "doceMeses": 6.9212
+    "valorCuotaparte": 1131.347,
+    "variacionDiariaPct": 0.033,
+    "ultimos7Dias": 0.0431,
+    "unMes": 0.3678,
+    "noventaDias": 1.2166,
+    "cientoOchentaDias": 3.6659,
+    "enElAnio": 5.1863,
+    "doceMeses": 6.1911
   },
   "composicionCartera": [
     {
@@ -127,14 +129,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "SBS Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00347G-615b02d0.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00347G-615b02d0.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

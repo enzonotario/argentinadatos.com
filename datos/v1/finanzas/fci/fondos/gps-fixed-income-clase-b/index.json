@@ -1,0 +1,110 @@
+{
+  "fondoId": "496",
+  "claseId": "1001",
+  "nombre": "Quiron Fixed Income - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "Quiron Asset Management S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "A3500",
+  "horizonte": "Plazo Flexible",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "631",
+  "patrimonio": 936808148.85,
+  "cantidadCuotapartes": 4596359.46,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 203815.249,
+    "variacionDiariaPct": -0.198,
+    "ultimos7Dias": -0.6617,
+    "unMes": -0.2721,
+    "noventaDias": 5.6285,
+    "cientoOchentaDias": 5.1333,
+    "enElAnio": 2.7737,
+    "doceMeses": 14.3779
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono del Tesoro Nacional TZVD8",
+      "porcentaje": 13.6
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TZV27",
+      "porcentaje": 8.3
+    },
+    {
+      "nombre": "Pagare #UMV251160007",
+      "porcentaje": 7.1
+    },
+    {
+      "nombre": "Bono Prov de Buenos Aires TZV28",
+      "porcentaje": 6.7
+    },
+    {
+      "nombre": "ON CGC C 39",
+      "porcentaje": 6
+    },
+    {
+      "nombre": "Bono Prov Buenos Aires BB37D",
+      "porcentaje": 3.9
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional D31G6",
+      "porcentaje": 3.7
+    },
+    {
+      "nombre": "ON Pan Amer. Energy C 13",
+      "porcentaje": 3.2
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD38",
+      "porcentaje": 2.7
+    },
+    {
+      "nombre": "ON Pan American C40",
+      "porcentaje": 2
+    },
+    {
+      "nombre": "Pagare #UMV090960021",
+      "porcentaje": 2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 40.9
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "BBB-f (arg)",
+      "fecha": "2021-05-31"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 3,
+    "honorarioDepositaria": 0.28,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Quiron Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00361G-20feb34f.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

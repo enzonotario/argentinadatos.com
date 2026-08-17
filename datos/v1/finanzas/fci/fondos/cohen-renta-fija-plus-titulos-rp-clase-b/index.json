@@ -5,27 +5,27 @@
   "fecha": "2020-05-28",
   "administradora": "Cohen S.A.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "Renta Fija",
-  "tipoDD": "No Aplica",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "Otro",
-  "horizonte": "Corto Plazo",
+  "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "616",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": null,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
+    "valorCuotaparte": 13595.872,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": -0.7576,
+    "unMes": 1.723,
+    "noventaDias": 18.9581,
     "cientoOchentaDias": null,
-    "enElAnio": null,
+    "enElAnio": 26.558,
     "doceMeses": null
   },
   "composicionCartera": [
@@ -67,12 +67,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Cohen S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00359G-614204e4.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }

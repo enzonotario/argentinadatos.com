@@ -1,0 +1,94 @@
+{
+  "fondoId": "383",
+  "claseId": "693",
+  "nombre": "FBA Acciones Latinoamericana - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
+  "depositaria": "BBVA Argentina S.A.",
+  "tipoRenta": "Renta Variable",
+  "tipoDD": "No Aplica",
+  "region": "Latinoamérica",
+  "benchmark": "MSCI Latam",
+  "horizonte": "Largo Plazo",
+  "duracion": "No Aplicable",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "509",
+  "patrimonio": 14000703703.6,
+  "cantidadCuotapartes": 4600478.5593,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 3043314.63,
+    "variacionDiariaPct": -1.182,
+    "ultimos7Dias": -5.0575,
+    "unMes": -5.5121,
+    "noventaDias": -1.1095,
+    "cientoOchentaDias": 0.6858,
+    "enElAnio": 18.3843,
+    "doceMeses": 43.8005
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cedear Itau Unibanco Holdings",
+      "porcentaje": 19.7
+    },
+    {
+      "nombre": "Cedear Petroleo Brasilero",
+      "porcentaje": 19.3
+    },
+    {
+      "nombre": "Cedear Vale R Doce ON N1",
+      "porcentaje": 17.6
+    },
+    {
+      "nombre": "Cedear Banco Bradesco ON N1",
+      "porcentaje": 17.6
+    },
+    {
+      "nombre": "ETF iShares MSCI Mexico",
+      "porcentaje": 13.2
+    },
+    {
+      "nombre": "Cedear Ishares MSCI Latam 40",
+      "porcentaje": 5.5
+    },
+    {
+      "nombre": "ETF iShares MSCI Chile",
+      "porcentaje": 3.4
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 3.6
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moodys Local Calif. Riesgo",
+      "calificacion": "EF-2.ar",
+      "fecha": "2026-05-20"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 3.43,
+    "honorarioDepositaria": 0.121,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00029G-9a6fc701.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "BBVA Argentina S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00079-a62ab0c8.jpg"
+    }
+  ]
+}

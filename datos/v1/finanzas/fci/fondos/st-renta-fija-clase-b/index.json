@@ -11,22 +11,22 @@
   "benchmark": "IAMC",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "702",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 50000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 195564.856,
+    "variacionDiariaPct": -0.39,
+    "ultimos7Dias": -0.5079,
+    "unMes": -0.5078,
+    "noventaDias": 4.2077,
+    "cientoOchentaDias": 18.9628,
+    "enElAnio": -0.1554,
+    "doceMeses": 42.3261
   },
   "composicionCartera": [
     {
@@ -101,12 +101,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }

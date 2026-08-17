@@ -1,0 +1,78 @@
+{
+  "fondoId": "800",
+  "claseId": "2467",
+  "nombre": "Alamerica Renta Fija Argentina - Clase I",
+  "fecha": "2026-08-14",
+  "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Mixta",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1005",
+  "patrimonio": 3093891868.76,
+  "cantidadCuotapartes": 2134187.59,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1449681.313,
+    "variacionDiariaPct": 0.126,
+    "ultimos7Dias": 0.1956,
+    "unMes": 2.7333,
+    "noventaDias": 2.7333,
+    "cientoOchentaDias": 2.7333,
+    "enElAnio": 3.4029,
+    "doceMeses": 19.0384
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Lelink D30S6",
+      "porcentaje": 38.37
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TMVE8",
+      "porcentaje": 23.95
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 22.97
+    },
+    {
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 14.71
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "AA-",
+      "fecha": "2026-08-14"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 1.5,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

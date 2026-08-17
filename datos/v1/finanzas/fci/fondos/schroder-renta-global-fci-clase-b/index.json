@@ -1,0 +1,126 @@
+{
+  "fondoId": "488",
+  "claseId": "966",
+  "nombre": "Schroder Renta Global - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "Schroder S.A.S.G.F.C.I.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Mixta",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Mediano Plazo",
+  "duracion": "No Aplicable",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "612",
+  "patrimonio": 120284826912.05,
+  "cantidadCuotapartes": 2147728790.69,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 56005.594,
+    "variacionDiariaPct": -0.231,
+    "ultimos7Dias": -0.247,
+    "unMes": 1.0749,
+    "noventaDias": 8.2417,
+    "cientoOchentaDias": 13.9534,
+    "enElAnio": 14.1489,
+    "doceMeses": 39.3274
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Prov Santa Fe 2027 SF27D",
+      "porcentaje": 6.3
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD30",
+      "porcentaje": 5.3
+    },
+    {
+      "nombre": "Bono Prov Cordoba 030235",
+      "porcentaje": 5.3
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 4.6
+    },
+    {
+      "nombre": "Bono Prov Santa Fe 8.1% 111234",
+      "porcentaje": 4.3
+    },
+    {
+      "nombre": "Bonos Rep Argentina 2030",
+      "porcentaje": 4
+    },
+    {
+      "nombre": "Lecer X30N6",
+      "porcentaje": 3
+    },
+    {
+      "nombre": "Bono Buenos Aires 2037",
+      "porcentaje": 3
+    },
+    {
+      "nombre": "ON YPF Clase 34",
+      "porcentaje": 2.9
+    },
+    {
+      "nombre": "Bono Ciudad Bs As 261133",
+      "porcentaje": 2.8
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD35",
+      "porcentaje": 2.7
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD38",
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "ON YPF Clase 28",
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "ON YPF Clase 31",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "Bono Prov Cordoba 2032",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 46.8
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moodys Local Calif. Riesgo",
+      "calificacion": "Aa-bf.ar",
+      "fecha": "2017-12-06"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 0.55,
+    "honorarioDepositaria": 0.0968,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Schroder S.A.S.G.F.C.I.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00051G-0c57ca49.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

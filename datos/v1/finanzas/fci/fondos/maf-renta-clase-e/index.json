@@ -6,20 +6,20 @@
   "administradora": "Mariva Asset Management S.A.U.S.G.F.C.I.",
   "depositaria": "Banco Mariva S.A.",
   "tipoRenta": "Renta Fija",
-  "tipoDD": "No Aplica",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "633",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
+  "cantidadCuotapartes": 0,
   "inversionMinima": 0,
-  "monedaInversion": "Dolar Estadounidense",
-  "plazoLiquidacionDias": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": null,
+    "valorCuotaparte": 1000,
     "variacionDiariaPct": null,
     "ultimos7Dias": null,
     "unMes": null,
@@ -114,23 +114,23 @@
     }
   ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 2.25,
+    "honorarioDepositaria": 0.12,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.11,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mariva Asset Management S.A.U.S.G.F.C.I.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00371G-45045e78.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Mariva S.A.",
       "logo": null
     }

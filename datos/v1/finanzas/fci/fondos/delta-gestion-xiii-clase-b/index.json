@@ -1,8 +1,8 @@
 {
   "fondoId": "1819",
   "claseId": "6253",
-  "nombre": "Delta Gestion XIII - Clase B",
-  "fecha": "2026-05-28",
+  "nombre": "Delta Ahorro Dolares - Clase B",
+  "fecha": "2026-08-14",
   "administradora": "Delta Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,17 +11,19 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Dolar Estadounidense Billete",
+  "moneda": "USB",
   "codigoCNV": "1328",
-  "patrimonio": 720399.89,
-  "inversionMinima": 0,
-  "monedaInversion": "Dolar Estadounidense",
+  "patrimonio": 1506962.38,
+  "cantidadCuotapartes": 1483293.32,
+  "inversionMinima": 1,
+  "monedaInversion": "USB",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1010.943,
-    "ultimos7Dias": 0.0952,
-    "unMes": 0.4459,
-    "noventaDias": null,
+    "valorCuotaparte": 1015.957,
+    "variacionDiariaPct": 0.015,
+    "ultimos7Dias": 0.0231,
+    "unMes": 0.1208,
+    "noventaDias": 0.6772,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
@@ -93,14 +95,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Delta Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00321G-78ba876b.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00321G-78ba876b.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

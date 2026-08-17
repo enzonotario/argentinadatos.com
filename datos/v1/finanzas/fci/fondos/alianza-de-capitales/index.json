@@ -1,30 +1,32 @@
 {
   "fondoId": "1",
   "claseId": "1",
-  "nombre": "Alianza de Capitales",
-  "fecha": "2026-07-16",
+  "nombre": "Blacktoro Ahorro - Clase B",
+  "fecha": "2026-08-14",
   "administradora": "Blacktoro Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "Renta Mixta",
+  "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "52",
-  "patrimonio": 2706877004.85,
-  "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 7249867948.6,
+  "cantidadCuotapartes": 31432556.06,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 226803.85,
-    "ultimos7Dias": 0.2254,
-    "unMes": 1.5228,
-    "noventaDias": 5.7838,
-    "cientoOchentaDias": 13.3367,
-    "enElAnio": 13.4187,
-    "doceMeses": 34.9079
+    "valorCuotaparte": 230648.374,
+    "variacionDiariaPct": 0.191,
+    "ultimos7Dias": 0.5193,
+    "unMes": 1.7167,
+    "noventaDias": 5.4013,
+    "cientoOchentaDias": 12.1375,
+    "enElAnio": 15.3412,
+    "doceMeses": 35.3087
   },
   "composicionCartera": [
     {
@@ -63,13 +65,13 @@
   "calificaciones": [
     {
       "calificadora": "Evaluadora Latinoamericana S.A",
-      "calificacion": "AA-",
+      "calificacion": "BBB",
       "fecha": "2008-12-23"
     }
   ],
   "honorarios": {
-    "honorarioGerente": 1.25,
-    "honorarioDepositaria": 0.4,
+    "honorarioGerente": 1.5,
+    "honorarioDepositaria": 0.1815,
     "comisionIngreso": 0,
     "comisionEgreso": 0,
     "comisionTransferencia": 0,
@@ -79,14 +81,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Blacktoro Asset Management S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00011G-5feac20e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00011G-5feac20e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

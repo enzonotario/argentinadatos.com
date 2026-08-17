@@ -3,8 +3,8 @@
   "claseId": "1261",
   "nombre": "Optimum Renta Fija Dolares - Clase B",
   "fecha": "2025-09-30",
-  "administradora": "Santander Asset Management G.F.C.I.S.A.",
-  "depositaria": "Banco Santander Argentina S.A.",
+  "administradora": "SAM Argentina S.G.F.C.I.S.A.U.",
+  "depositaria": "BNP Paribas",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
   "region": "Argentina",
@@ -14,19 +14,19 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "767",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 2390.914,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0,
+    "unMes": -1.3454,
+    "noventaDias": -4.645,
+    "cientoOchentaDias": 1.3697,
+    "enElAnio": -2.0585,
+    "doceMeses": 18.0319
   },
   "composicionCartera": [
     {
@@ -69,13 +69,13 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "Santander Asset Management G.F.C.I.S.A.",
+      "tipo": "Administradora",
+      "nombre": "SAM Argentina S.G.F.C.I.S.A.U.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00049G-c03041ad.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
-      "nombre": "Banco Santander Argentina S.A.",
+      "tipo": "Depositaria",
+      "nombre": "BNP Paribas",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00096-4e9f0233.jpg"
     }
   ]

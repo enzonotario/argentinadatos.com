@@ -1,0 +1,66 @@
+{
+  "fondoId": "266",
+  "claseId": "266",
+  "nombre": "Optimum Dynamic Balanced Fund - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "SAM Argentina S.G.F.C.I.S.A.U.",
+  "depositaria": "BNP Paribas",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Plazo Flexible",
+  "duracion": "Menor o Igual a 0.5 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "305",
+  "patrimonio": 28741631.52,
+  "cantidadCuotapartes": 22919.72,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1254013.133,
+    "variacionDiariaPct": -0.007,
+    "ultimos7Dias": -0.0471,
+    "unMes": -0.2459,
+    "noventaDias": -0.7829,
+    "cientoOchentaDias": -1.5785,
+    "enElAnio": -1.9695,
+    "doceMeses": -6.5839
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Bco Santander R",
+      "porcentaje": 100
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moodys Local Calif. Riesgo",
+      "calificacion": "Aaa-bf.ar",
+      "fecha": "2018-03-09"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 3.09,
+    "honorarioDepositaria": 0.135,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.09,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "SAM Argentina S.G.F.C.I.S.A.U.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00016G-52d8d4aa.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "BNP Paribas",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00070-12f7bb54.jpg"
+    }
+  ]
+}

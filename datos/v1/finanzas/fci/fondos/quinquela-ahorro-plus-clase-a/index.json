@@ -1,0 +1,84 @@
+{
+  "fondoId": "607",
+  "claseId": "1227",
+  "nombre": "MEGAQM Estrategia 4 - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "MEGA QM S.A.",
+  "depositaria": "Banco de Servicios y Transacciones S.A. (BST)",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Corto Plazo",
+  "duracion": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "754",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1000,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0,
+    "unMes": 0,
+    "noventaDias": 0,
+    "cientoOchentaDias": 0,
+    "enElAnio": 0,
+    "doceMeses": 0
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 25.6
+    },
+    {
+      "nombre": "Lecap S13N6",
+      "porcentaje": 22.9
+    },
+    {
+      "nombre": "Lecap S30S6",
+      "porcentaje": 21.4
+    },
+    {
+      "nombre": "Bono Dual TXMD9",
+      "porcentaje": 14
+    },
+    {
+      "nombre": "Lecer X30N6",
+      "porcentaje": 11.5
+    },
+    {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 2.5
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0,
+    "honorarioDepositaria": 0.121,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "MEGA QM S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Servicios y Transacciones S.A. (BST)",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00387-5d5880dd.jpg"
+    }
+  ]
+}

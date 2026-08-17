@@ -1,0 +1,110 @@
+{
+  "fondoId": "512",
+  "claseId": "1033",
+  "nombre": "Gainvest Infraestructura FCI Abierto - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "StoneX Asset Management S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Plazo Flexible",
+  "duracion": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "649",
+  "patrimonio": 14073765.16,
+  "cantidadCuotapartes": 85644.64,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 164327.456,
+    "variacionDiariaPct": -0.127,
+    "ultimos7Dias": -0.1317,
+    "unMes": -3.5692,
+    "noventaDias": 1.89,
+    "cientoOchentaDias": 4.5549,
+    "enElAnio": 2.8166,
+    "doceMeses": 16.2064
+  },
+  "composicionCartera": [
+    {
+      "nombre": "ON Vista Gas y Oil Arg C17",
+      "porcentaje": 15.6
+    },
+    {
+      "nombre": "ON Capex C7",
+      "porcentaje": 13.8
+    },
+    {
+      "nombre": "ON Oldelval Clase 5",
+      "porcentaje": 13.1
+    },
+    {
+      "nombre": "ON Pan American C33",
+      "porcentaje": 11.5
+    },
+    {
+      "nombre": "Lecer X31L6",
+      "porcentaje": 10
+    },
+    {
+      "nombre": "ON Pan American C40",
+      "porcentaje": 8
+    },
+    {
+      "nombre": "ON Telecom C12 TLCDO",
+      "porcentaje": 7.8
+    },
+    {
+      "nombre": "ON CGC C 28",
+      "porcentaje": 4
+    },
+    {
+      "nombre": "Cta Cte U$D Bank Of New York",
+      "porcentaje": 3.2
+    },
+    {
+      "nombre": "ON Telecom C18 TLCJO",
+      "porcentaje": 2.9
+    },
+    {
+      "nombre": "ON PyME Sion Serie 12 UVA",
+      "porcentaje": 2.4
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 7.8
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "BBBf(Arg)+",
+      "fecha": "2018-09-03"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.5,
+    "honorarioDepositaria": 0.1452,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "StoneX Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00311G-be0f6f28.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

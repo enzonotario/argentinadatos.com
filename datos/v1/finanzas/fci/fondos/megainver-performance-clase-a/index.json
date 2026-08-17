@@ -1,0 +1,86 @@
+{
+  "fondoId": "656",
+  "claseId": "1355",
+  "nombre": "MEGAQM Acciones Latam - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "MEGA QM S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Mixta",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "No Aplicable",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "805",
+  "patrimonio": 98455687.35,
+  "cantidadCuotapartes": 1848531,
+  "inversionMinima": 10,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 53261.583,
+    "variacionDiariaPct": 0.086,
+    "ultimos7Dias": 0.5537,
+    "unMes": 1.2774,
+    "noventaDias": 4.7002,
+    "cientoOchentaDias": 15.967,
+    "enElAnio": 22.1978,
+    "doceMeses": 47.879
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Dual TXMD9",
+      "porcentaje": 32.3
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 22.4
+    },
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 19.3
+    },
+    {
+      "nombre": "Lecer X30N6",
+      "porcentaje": 14.3
+    },
+    {
+      "nombre": "Bono Boncer TZXS7",
+      "porcentaje": 10.9
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.9
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "AAf",
+      "fecha": "2025-12-03"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.5,
+    "honorarioDepositaria": 0.11,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "MEGA QM S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

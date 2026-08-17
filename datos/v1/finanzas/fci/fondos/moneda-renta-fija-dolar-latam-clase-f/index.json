@@ -1,0 +1,84 @@
+{
+  "fondoId": "893",
+  "claseId": "2612",
+  "nombre": "Alamerica Renta Fija Dolar Latam - Clase F",
+  "fecha": "2026-08-14",
+  "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Mixta",
+  "tipoDD": "No Aplica",
+  "region": "Latinoamérica",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "1059",
+  "patrimonio": 6240169.07,
+  "cantidadCuotapartes": 5000000,
+  "inversionMinima": 1,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1248.034,
+    "variacionDiariaPct": -0.006,
+    "ultimos7Dias": 0.171,
+    "unMes": 0.02,
+    "noventaDias": 0.5058,
+    "cientoOchentaDias": 0.475,
+    "enElAnio": 1.3947,
+    "doceMeses": 3.6261
+  },
+  "composicionCartera": [
+    {
+      "nombre": "BC Falabella 150132",
+      "porcentaje": 18.48
+    },
+    {
+      "nombre": "BC Banco Do Brasil 2029",
+      "porcentaje": 17.27
+    },
+    {
+      "nombre": "BC Codelco 2030",
+      "porcentaje": 16.92
+    },
+    {
+      "nombre": "BC Cencosud 5.95%",
+      "porcentaje": 16.83
+    },
+    {
+      "nombre": "BC Bradesco 2027",
+      "porcentaje": 12.71
+    },
+    {
+      "nombre": "BC Vale Overseas Limited 3.75%",
+      "porcentaje": 8.9
+    },
+    {
+      "nombre": "FCI Adcap Ahorro Dólares - Clase E",
+      "porcentaje": 0.25
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0.4,
+    "honorarioDepositaria": 0.08,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

@@ -14,18 +14,18 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1571",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
+    "valorCuotaparte": 1008.54,
+    "variacionDiariaPct": 0.017,
+    "ultimos7Dias": 0.0326,
+    "unMes": 0.1042,
+    "noventaDias": 0.2785,
+    "cientoOchentaDias": 0.6093,
+    "enElAnio": 0.0166,
     "doceMeses": null
   },
   "composicionCartera": [
@@ -64,23 +64,23 @@
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 0.25,
+    "honorarioDepositaria": 0.07,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "BAVSA Fondos S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/03118G-d03fc40c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }

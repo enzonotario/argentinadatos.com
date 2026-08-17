@@ -1,0 +1,64 @@
+{
+  "fondoId": "870",
+  "claseId": "2506",
+  "nombre": "CMA Abierto Pymes",
+  "fecha": "2025-11-13",
+  "administradora": "Capital Markets Argentina Asset Management S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Retorno Total",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "No Aplicable",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "879",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 10000,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 3,
+  "rendimientos": {
+    "valorCuotaparte": 34459.743,
+    "variacionDiariaPct": -0.01,
+    "ultimos7Dias": -0.0906,
+    "unMes": -0.29,
+    "noventaDias": 57.3585,
+    "cientoOchentaDias": 66.4352,
+    "enElAnio": 84.7052,
+    "doceMeses": 93.4446
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Bco de Valores",
+      "porcentaje": 99.9
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.1
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 3.5,
+    "honorarioDepositaria": 0.15,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 1,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Capital Markets Argentina Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00121G-95ac707c.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

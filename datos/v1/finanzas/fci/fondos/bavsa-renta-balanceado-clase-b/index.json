@@ -1,8 +1,8 @@
 {
   "fondoId": "1692",
   "claseId": "5645",
-  "nombre": "BAVSA Renta Balanceado - Clase B",
-  "fecha": "2026-07-13",
+  "nombre": "BAVSA Estrategia Dolar - Clase B",
+  "fecha": "2026-08-14",
   "administradora": "BAVSA Fondos S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,20 +11,22 @@
   "benchmark": "No Registrado",
   "horizonte": "Plazo Flexible",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Dolar Estadounidense",
   "codigoCNV": "1697",
-  "patrimonio": 6378774.99,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 7323941.39,
+  "cantidadCuotapartes": 5834427.38,
+  "inversionMinima": 1,
+  "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1241.879,
-    "ultimos7Dias": 0.6082,
-    "unMes": 5.469,
-    "noventaDias": 10.9998,
-    "cientoOchentaDias": 6.4306,
-    "enElAnio": 6.6457,
-    "doceMeses": null
+    "valorCuotaparte": 1255.297,
+    "variacionDiariaPct": 0.101,
+    "ultimos7Dias": 0.1529,
+    "unMes": 1.2469,
+    "noventaDias": 9.1843,
+    "cientoOchentaDias": 11.4734,
+    "enElAnio": 7.798,
+    "doceMeses": 25.1886
   },
   "composicionCartera": [
     {
@@ -117,14 +119,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "BAVSA Fondos S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03118G-d03fc40c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03118G-d03fc40c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

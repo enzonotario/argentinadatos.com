@@ -1,0 +1,80 @@
+{
+  "fondoId": "1254",
+  "claseId": "3482",
+  "nombre": "Adcap Balanceado XI - Clase B",
+  "fecha": "2025-06-12",
+  "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Global",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "No Registrada",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1208",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 20810.26,
+    "variacionDiariaPct": 0.077,
+    "ultimos7Dias": 0.3018,
+    "unMes": 2.3253,
+    "noventaDias": 6.7057,
+    "cientoOchentaDias": 15.0439,
+    "enElAnio": 13.9642,
+    "doceMeses": 44.4729
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Lecap S14G6",
+      "porcentaje": 26.18
+    },
+    {
+      "nombre": "Lecap S15S6",
+      "porcentaje": 26.16
+    },
+    {
+      "nombre": "Lecap S30S6",
+      "porcentaje": 18.93
+    },
+    {
+      "nombre": "Lecap S16O6",
+      "porcentaje": 9.98
+    },
+    {
+      "nombre": "Pzo Fi $ Nvo Bco Chaco",
+      "porcentaje": 18.11
+    },
+    {
+      "nombre": "FCI Balanz Capital Money Market Clase B",
+      "porcentaje": 0.59
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 2.9,
+    "honorarioDepositaria": 0.121,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.02,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "fondoId": "1731",
+  "claseId": "5850",
+  "nombre": "Novus Dólr CMM - Clase C",
+  "fecha": "2026-08-14",
+  "administradora": "Novus Asset Management S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": "Clásico",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Corto Plazo",
+  "duracion": "Menor o Igual a 0.5 Año",
+  "moneda": "USB",
+  "codigoCNV": "1776",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "USB",
+  "plazoLiquidacionDias": 0,
+  "rendimientos": {
+    "valorCuotaparte": 1000,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0,
+    "unMes": 0,
+    "noventaDias": 0,
+    "cientoOchentaDias": null,
+    "enElAnio": null,
+    "doceMeses": null
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte U$S BBVA",
+      "porcentaje": 30.5
+    },
+    {
+      "nombre": "Cta Cte U$S Bco Mariva",
+      "porcentaje": 18.5
+    },
+    {
+      "nombre": "Caucion Colocadora U$S Merval",
+      "porcentaje": 18.5
+    },
+    {
+      "nombre": "Pzo Fi U$S Bco Macro Ban",
+      "porcentaje": 13
+    },
+    {
+      "nombre": "Cta Cte U$S Bco Galicia",
+      "porcentaje": 12.7
+    },
+    {
+      "nombre": "Pzo Fi U$S Bco Patagonia",
+      "porcentaje": 5.7
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.2
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0.2,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Novus Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02887G-ef45d825.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

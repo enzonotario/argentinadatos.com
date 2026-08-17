@@ -2,31 +2,31 @@
   "fondoId": "726",
   "claseId": "1577",
   "nombre": "Quinquela Predial FCIC Ley 27260 - Clase C",
-  "fecha": "2026-03-31",
-  "administradora": "MEGA QM S.A.",
-  "depositaria": "Banco de Servicios y Transacciones S.A. (BST)",
-  "tipoRenta": "Fondos Cerrados",
-  "tipoDD": "No Aplica",
+  "fecha": "2022-03-31",
+  "administradora": "QM Asset Management S.G.F.C.I.S.A",
+  "depositaria": "Banco de Servicios y Transacciones S.A.",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "924",
-  "patrimonio": 906125.66,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 250000,
+  "patrimonio": 3200775.6,
+  "cantidadCuotapartes": 4000000,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 999,
   "rendimientos": {
-    "valorCuotaparte": null,
+    "valorCuotaparte": 800.194,
     "variacionDiariaPct": null,
     "ultimos7Dias": null,
     "unMes": null,
     "noventaDias": null,
     "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "enElAnio": 7.262,
+    "doceMeses": 27.397
   },
   "composicionCartera": [
     {
@@ -46,7 +46,7 @@
     }
   ],
   "honorarios": {
-    "honorarioGerente": 0.6,
+    "honorarioGerente": 0.726,
     "honorarioDepositaria": 0.363,
     "comisionIngreso": 0,
     "comisionEgreso": 0,
@@ -57,13 +57,13 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "MEGA QM S.A.",
+      "tipo": "Administradora",
+      "nombre": "QM Asset Management S.G.F.C.I.S.A",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
-      "nombre": "Banco de Servicios y Transacciones S.A. (BST)",
+      "tipo": "Depositaria",
+      "nombre": "Banco de Servicios y Transacciones S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00387-5d5880dd.jpg"
     }
   ]

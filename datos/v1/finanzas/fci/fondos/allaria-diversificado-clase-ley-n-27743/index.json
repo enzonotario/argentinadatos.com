@@ -5,28 +5,28 @@
   "fecha": "2026-01-08",
   "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "Retorno Total",
+  "tipoRenta": "Renta Mixta",
   "tipoDD": "No Aplica",
-  "region": "Global",
+  "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "930",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 1546.028,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0,
+    "unMes": 1.2047,
+    "noventaDias": 19.1126,
+    "cientoOchentaDias": 19.9861,
+    "enElAnio": 0.6874,
+    "doceMeses": 27.6187
   },
   "composicionCartera": [
     {
@@ -122,23 +122,23 @@
     }
   ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 3.75,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }

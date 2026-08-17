@@ -1,0 +1,94 @@
+{
+  "fondoId": "1242",
+  "claseId": "3448",
+  "nombre": "Pionero Capital - Clase C Ley N° 27.743",
+  "fecha": "2026-08-14",
+  "administradora": "Macro Fondos S.G.F.C.I.S.A.",
+  "depositaria": "Banco Macro S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Largo Plazo",
+  "duracion": "Mayor a 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1183",
+  "patrimonio": 647271473.94,
+  "cantidadCuotapartes": 306070132.77,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 2114.782,
+    "variacionDiariaPct": 0.076,
+    "ultimos7Dias": 0.2224,
+    "unMes": 0.8182,
+    "noventaDias": 4.8218,
+    "cientoOchentaDias": 16.0502,
+    "enElAnio": 22.3143,
+    "doceMeses": 47.2734
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Dual TTD26",
+      "porcentaje": 18.5
+    },
+    {
+      "nombre": "Letra Tesoro Nac T30A7",
+      "porcentaje": 18.5
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional T31Y7",
+      "porcentaje": 16.5
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TML27",
+      "porcentaje": 15
+    },
+    {
+      "nombre": "Letra Tamar TEM TMF27",
+      "porcentaje": 14.3
+    },
+    {
+      "nombre": "Bono Dual TTS26",
+      "porcentaje": 10.7
+    },
+    {
+      "nombre": "Letra Tamar TEM M31G6",
+      "porcentaje": 4.5
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.9
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "AAAf(arg)",
+      "fecha": "2026-05-14"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.4075,
+    "honorarioDepositaria": 0.2675,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Macro Fondos S.G.F.C.I.S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00054G-82963f72.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Macro S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00098-871484a2.jpg"
+    }
+  ]
+}

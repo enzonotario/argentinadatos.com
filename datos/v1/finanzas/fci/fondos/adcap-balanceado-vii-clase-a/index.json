@@ -1,8 +1,8 @@
 {
-  "fondoId": "1512",
-  "claseId": "4520",
-  "nombre": "Adcap Balanceado VII - Clase A",
-  "fecha": "2025-06-19",
+  "fondoId": "1364",
+  "claseId": "3910",
+  "nombre": "Adcap Patrimonio IV - Clase A",
+  "fecha": "2026-08-14",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,22 +11,22 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
-  "codigoCNV": "1517",
-  "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
-  "plazoLiquidacionDias": 1,
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1336",
+  "patrimonio": 46903990.43,
+  "cantidadCuotapartes": 2266907.35,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 20690.74,
+    "variacionDiariaPct": 0.061,
+    "ultimos7Dias": 0.3881,
+    "unMes": 1.8247,
+    "noventaDias": 5.6189,
+    "cientoOchentaDias": 13.2513,
+    "enElAnio": 19.1664,
+    "doceMeses": -2.1953
   },
   "composicionCartera": [
     {
@@ -1464,23 +1464,23 @@
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 1.02,
+    "honorarioDepositaria": 0.121,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.02,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }

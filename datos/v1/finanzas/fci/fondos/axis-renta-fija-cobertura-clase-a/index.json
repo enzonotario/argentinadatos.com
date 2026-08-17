@@ -1,0 +1,102 @@
+{
+  "fondoId": "546",
+  "claseId": "1105",
+  "nombre": "MAF Renta Fija Cobertura - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "Mariva Asset Management S.A.U.S.G.F.C.I.",
+  "depositaria": "Banco Mariva S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "682",
+  "patrimonio": 494630936.06,
+  "cantidadCuotapartes": 1781378.86,
+  "inversionMinima": 500,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 277667.456,
+    "variacionDiariaPct": -0.117,
+    "ultimos7Dias": -0.3153,
+    "unMes": 1.3549,
+    "noventaDias": 7.9422,
+    "cientoOchentaDias": 14.1714,
+    "enElAnio": 12.7417,
+    "doceMeses": 33.6084
+  },
+  "composicionCartera": [
+    {
+      "nombre": "ON CGC C 39",
+      "porcentaje": 32.5
+    },
+    {
+      "nombre": "ON Vista Gas y Oil Arg C18",
+      "porcentaje": 21
+    },
+    {
+      "nombre": "ON Pan Amer. Energy C 18",
+      "porcentaje": 14.3
+    },
+    {
+      "nombre": "Lecer X31L6",
+      "porcentaje": 7.9
+    },
+    {
+      "nombre": "ON Petroqui C Rivadavia PQCOO",
+      "porcentaje": 7.3
+    },
+    {
+      "nombre": "Lecap S15S6",
+      "porcentaje": 6
+    },
+    {
+      "nombre": "Letra Tesoro Nac D31L6",
+      "porcentaje": 4.3
+    },
+    {
+      "nombre": "ON YPF Luz C12",
+      "porcentaje": 2.4
+    },
+    {
+      "nombre": "Bono Bopreal 2027 Serie 1 Clase D BPOD7",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 2
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "Af(arg)",
+      "fecha": "2026-08-14"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.5,
+    "honorarioDepositaria": 0.2,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.03,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Mariva Asset Management S.A.U.S.G.F.C.I.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00371G-45045e78.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Mariva S.A.",
+      "logo": null
+    }
+  ]
+}

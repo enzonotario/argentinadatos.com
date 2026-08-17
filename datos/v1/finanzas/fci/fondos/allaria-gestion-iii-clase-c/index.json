@@ -1,0 +1,76 @@
+{
+  "fondoId": "1450",
+  "claseId": "4281",
+  "nombre": "Allaria Agro - Clase C",
+  "fecha": "2026-08-14",
+  "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1430",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1063.756,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0,
+    "unMes": 0,
+    "noventaDias": 0,
+    "cientoOchentaDias": 0,
+    "enElAnio": 0,
+    "doceMeses": 0
+  },
+  "composicionCartera": [
+    {
+      "nombre": "FCI Cocos Ahorro - Clase C",
+      "porcentaje": 0.49
+    },
+    {
+      "nombre": "FCI Gainvest Pesos - Clase B",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "FCI Adcap Ahorro Pesos - Clase C",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "FCI Schroder Liquidez - Clase B",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "FCI ST Zero - Clase B",
+      "porcentaje": 0.01
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 2.02,
+    "honorarioDepositaria": 0.12,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

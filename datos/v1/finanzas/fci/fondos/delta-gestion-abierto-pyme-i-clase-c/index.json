@@ -1,0 +1,90 @@
+{
+  "fondoId": "1318",
+  "claseId": "3757",
+  "nombre": "MAX Gestion Abierto Pyme I - Clase E",
+  "fecha": "2026-08-14",
+  "administradora": "Max Capital Asset Management S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Retorno Total",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Plazo Flexible",
+  "duracion": "No Registrada",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1263",
+  "patrimonio": 19943058195.26,
+  "cantidadCuotapartes": 2649938272.33,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 7525.858,
+    "variacionDiariaPct": 0.021,
+    "ultimos7Dias": -0.1952,
+    "unMes": -0.7315,
+    "noventaDias": 0.4017,
+    "cientoOchentaDias": 1.4165,
+    "enElAnio": 3.2878,
+    "doceMeses": 18.1357
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Letra Tamar TEM M31G6",
+      "porcentaje": 22.3
+    },
+    {
+      "nombre": "FCI Balanz Capital Money Market Clase C",
+      "porcentaje": 2.9
+    },
+    {
+      "nombre": "Pagare #MAV060460027",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "Pagare #UAR110670002",
+      "porcentaje": 2
+    },
+    {
+      "nombre": "Pagare #MAV060460026",
+      "porcentaje": 2
+    },
+    {
+      "nombre": "Pagare #MAV070460032",
+      "porcentaje": 2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 57.8
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "BBBf(arg)",
+      "fecha": "2026-07-01"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 1.25,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Max Capital Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03014G-5673e990.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

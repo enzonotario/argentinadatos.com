@@ -2,7 +2,7 @@
   "fondoId": "1907",
   "claseId": "6591",
   "nombre": "Pellegrini Renta Dolares III - Clase B",
-  "fechaActualizacion": "2026-08-17T07:24:53.000Z",
+  "fechaActualizacion": "2026-08-17T21:53:07.000Z",
   "historico": [
     {
       "slug": "pellegrini-renta-dolares-iii-clase-b",
@@ -13,12 +13,12 @@
       "categoria": "Renta Fija",
       "categoriaKey": "rentaFija",
       "horizonte": "Mediano Plazo",
-      "valorCuotaparte": 1,
+      "valorCuotaparte": 1000,
       "patrimonio": 147600,
       "retornoDiario": null,
       "retornoAcumulado": 0,
       "flujoEstimado": null,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "pellegrini-renta-dolares-iii-clase-b",
@@ -31,10 +31,10 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1009.913,
       "patrimonio": 149063.13,
-      "retornoDiario": 100891.3,
-      "retornoAcumulado": 100891.3,
-      "flujoEstimado": -148914095.67,
-      "origen": "cafci-detail"
+      "retornoDiario": 0.9913,
+      "retornoAcumulado": 0.9913,
+      "flujoEstimado": -0.0288,
+      "origen": "cnv-excel"
     },
     {
       "slug": "pellegrini-renta-dolares-iii-clase-b",
@@ -48,9 +48,9 @@
       "valorCuotaparte": 1009.145,
       "patrimonio": 148949.75,
       "retornoDiario": -0.076046,
-      "retornoAcumulado": 100814.5,
+      "retornoAcumulado": 0.9145,
       "flujoEstimado": -0.023452,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "pellegrini-renta-dolares-iii-clase-b",
@@ -64,9 +64,9 @@
       "valorCuotaparte": 1009.564,
       "patrimonio": 149011.66,
       "retornoDiario": 0.04152,
-      "retornoAcumulado": 100856.4,
+      "retornoAcumulado": 0.9564,
       "flujoEstimado": 0.066064,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "pellegrini-renta-dolares-iii-clase-b",
@@ -80,9 +80,9 @@
       "valorCuotaparte": 1006.031,
       "patrimonio": 148490.19,
       "retornoDiario": -0.349953,
-      "retornoAcumulado": 100503.1,
+      "retornoAcumulado": 0.6031,
       "flujoEstimado": 0.000775,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "pellegrini-renta-dolares-iii-clase-b",
@@ -96,9 +96,9 @@
       "valorCuotaparte": 1006.323,
       "patrimonio": 148533.24,
       "retornoDiario": 0.029025,
-      "retornoAcumulado": 100532.3,
+      "retornoAcumulado": 0.6323,
       "flujoEstimado": -0.049278,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "pellegrini-renta-dolares-iii-clase-b",
@@ -112,9 +112,9 @@
       "valorCuotaparte": 1008.563,
       "patrimonio": 148863.86,
       "retornoDiario": 0.222593,
-      "retornoAcumulado": 100756.3,
+      "retornoAcumulado": 0.8563,
       "flujoEstimado": -0.004595,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     },
     {
       "slug": "pellegrini-renta-dolares-iii-clase-b",
@@ -128,7 +128,7 @@
       "valorCuotaparte": 1005.671,
       "patrimonio": 148437.05,
       "retornoDiario": -0.286745,
-      "retornoAcumulado": 100467.1,
+      "retornoAcumulado": 0.5671,
       "flujoEstimado": 0.049675,
       "origen": "cnv-excel"
     },
@@ -144,7 +144,7 @@
       "valorCuotaparte": 1007.094,
       "patrimonio": 148647.03,
       "retornoDiario": 0.141498,
-      "retornoAcumulado": 100609.4,
+      "retornoAcumulado": 0.7094,
       "flujoEstimado": -0.055457,
       "origen": "cnv-excel"
     },
@@ -160,7 +160,7 @@
       "valorCuotaparte": 1005.889,
       "patrimonio": 148469.29,
       "retornoDiario": -0.119651,
-      "retornoAcumulado": 100488.9,
+      "retornoAcumulado": 0.5889,
       "flujoEstimado": 0.117658,
       "origen": "cnv-excel"
     },
@@ -176,7 +176,7 @@
       "valorCuotaparte": 1006.575,
       "patrimonio": 148570.46,
       "retornoDiario": 0.068198,
-      "retornoAcumulado": 100557.5,
+      "retornoAcumulado": 0.6575,
       "flujoEstimado": -0.083086,
       "origen": "cnv-excel"
     },
@@ -192,7 +192,7 @@
       "valorCuotaparte": 1007.778,
       "patrimonio": 148747.97,
       "retornoDiario": 0.119514,
-      "retornoAcumulado": 100677.8,
+      "retornoAcumulado": 0.7778,
       "flujoEstimado": -0.0525,
       "origen": "cnv-excel"
     },
@@ -208,7 +208,7 @@
       "valorCuotaparte": 1008.682,
       "patrimonio": 148881.53,
       "retornoDiario": 0.089702,
-      "retornoAcumulado": 100768.2,
+      "retornoAcumulado": 0.8682,
       "flujoEstimado": 0.130096,
       "origen": "cnv-excel"
     },
@@ -224,7 +224,7 @@
       "valorCuotaparte": 1007.695,
       "patrimonio": 148735.73,
       "retornoDiario": -0.09785,
-      "retornoAcumulado": 100669.5,
+      "retornoAcumulado": 0.7695,
       "flujoEstimado": -0.119423,
       "origen": "cnv-excel"
     },
@@ -240,7 +240,7 @@
       "valorCuotaparte": 1008.128,
       "patrimonio": 148799.73,
       "retornoDiario": 0.042969,
-      "retornoAcumulado": 100712.8,
+      "retornoAcumulado": 0.8128,
       "flujoEstimado": 0.089744,
       "origen": "cnv-excel"
     },
@@ -256,7 +256,7 @@
       "valorCuotaparte": 1008.748,
       "patrimonio": 148891.19,
       "retornoDiario": 0.0615,
-      "retornoAcumulado": 100774.8,
+      "retornoAcumulado": 0.8748,
       "flujoEstimado": -0.051834,
       "origen": "cnv-excel"
     },
@@ -272,7 +272,7 @@
       "valorCuotaparte": 1009.49,
       "patrimonio": 149000.78,
       "retornoDiario": 0.073557,
-      "retornoAcumulado": 100849,
+      "retornoAcumulado": 0.949,
       "flujoEstimado": 0.070107,
       "origen": "cnv-excel"
     },
@@ -288,7 +288,7 @@
       "valorCuotaparte": 1007.885,
       "patrimonio": 148763.81,
       "retornoDiario": -0.158991,
-      "retornoAcumulado": 100688.5,
+      "retornoAcumulado": 0.7885,
       "flujoEstimado": -0.07217,
       "origen": "cnv-excel"
     },
@@ -304,7 +304,7 @@
       "valorCuotaparte": 1006.487,
       "patrimonio": 148557.53,
       "retornoDiario": -0.138706,
-      "retornoAcumulado": 100548.7,
+      "retornoAcumulado": 0.6487,
       "flujoEstimado": 0.06433,
       "origen": "cnv-excel"
     },
@@ -320,7 +320,7 @@
       "valorCuotaparte": 1008.232,
       "patrimonio": 148815.05,
       "retornoDiario": 0.173375,
-      "retornoAcumulado": 100723.2,
+      "retornoAcumulado": 0.8232,
       "flujoEstimado": -0.041618,
       "origen": "cnv-excel"
     },
@@ -336,7 +336,7 @@
       "valorCuotaparte": 1008.658,
       "patrimonio": 148877.9,
       "retornoDiario": 0.042252,
-      "retornoAcumulado": 100765.8,
+      "retornoAcumulado": 0.8658,
       "flujoEstimado": -0.027335,
       "origen": "cnv-excel"
     },
@@ -352,7 +352,7 @@
       "valorCuotaparte": 1008.051,
       "patrimonio": 148788.26,
       "retornoDiario": -0.060179,
-      "retornoAcumulado": 100705.1,
+      "retornoAcumulado": 0.8051,
       "flujoEstimado": -0.046769,
       "origen": "cnv-excel"
     },
@@ -368,7 +368,7 @@
       "valorCuotaparte": 1006.662,
       "patrimonio": 148583.25,
       "retornoDiario": -0.137791,
-      "retornoAcumulado": 100566.2,
+      "retornoAcumulado": 0.6662,
       "flujoEstimado": 0.006831,
       "origen": "cnv-excel"
     },
@@ -384,7 +384,7 @@
       "valorCuotaparte": 1007.819,
       "patrimonio": 148754.02,
       "retornoDiario": 0.114934,
-      "retornoAcumulado": 100681.9,
+      "retornoAcumulado": 0.7819,
       "flujoEstimado": -0.002673,
       "origen": "cnv-excel"
     },
@@ -400,7 +400,7 @@
       "valorCuotaparte": 1008.569,
       "patrimonio": 148864.79,
       "retornoDiario": 0.074418,
-      "retornoAcumulado": 100756.9,
+      "retornoAcumulado": 0.8569,
       "flujoEstimado": 0.070233,
       "origen": "cnv-excel"
     },
@@ -416,7 +416,7 @@
       "valorCuotaparte": 1010.464,
       "patrimonio": 149144.42,
       "retornoDiario": 0.18789,
-      "retornoAcumulado": 100946.4,
+      "retornoAcumulado": 1.0464,
       "flujoEstimado": -0.072054,
       "origen": "cnv-excel"
     },
@@ -432,7 +432,7 @@
       "valorCuotaparte": 1009.042,
       "patrimonio": 148934.53,
       "retornoDiario": -0.140727,
-      "retornoAcumulado": 100804.2,
+      "retornoAcumulado": 0.9042,
       "flujoEstimado": -0.003532,
       "origen": "cnv-excel"
     },
@@ -448,7 +448,7 @@
       "valorCuotaparte": 1008.194,
       "patrimonio": 148809.48,
       "retornoDiario": -0.08404,
-      "retornoAcumulado": 100719.4,
+      "retornoAcumulado": 0.8194,
       "flujoEstimado": 0.114579,
       "origen": "cnv-excel"
     }

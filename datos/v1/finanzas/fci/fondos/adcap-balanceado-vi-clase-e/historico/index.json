@@ -2,8 +2,24 @@
   "fondoId": "667",
   "claseId": "1963",
   "nombre": "Adcap Balanceado VI - Clase E",
-  "fechaActualizacion": "2026-08-17T07:24:53.000Z",
+  "fechaActualizacion": "2026-08-17T21:53:07.000Z",
   "historico": [
+    {
+      "slug": "adcap-balanceado-vi-clase-e",
+      "fondoId": "667",
+      "claseId": "1963",
+      "nombre": "Adcap Balanceado VI - Clase E",
+      "fecha": "2022-04-21",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1000,
+      "patrimonio": null,
+      "retornoDiario": null,
+      "retornoAcumulado": 0,
+      "flujoEstimado": null,
+      "origen": "cnv-excel"
+    },
     {
       "slug": "adcap-balanceado-vi-clase-e",
       "fondoId": "667",
@@ -13,28 +29,12 @@
       "categoria": "Renta Fija",
       "categoriaKey": "rentaFija",
       "horizonte": "Corto Plazo",
-      "valorCuotaparte": null,
+      "valorCuotaparte": 1000.217,
       "patrimonio": null,
-      "retornoDiario": null,
-      "retornoAcumulado": null,
+      "retornoDiario": 0.0217,
+      "retornoAcumulado": 0.0217,
       "flujoEstimado": null,
-      "origen": "cafci-detail"
-    },
-    {
-      "slug": "adcap-balanceado-vi-clase-e",
-      "fondoId": "667",
-      "claseId": "1963",
-      "nombre": "Adcap Balanceado VI - Clase E",
-      "fecha": "2026-05-27",
-      "categoria": "Renta Fija",
-      "categoriaKey": "rentaFija",
-      "horizonte": "Corto Plazo",
-      "valorCuotaparte": null,
-      "patrimonio": null,
-      "retornoDiario": null,
-      "retornoAcumulado": null,
-      "flujoEstimado": null,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     }
   ]
 }

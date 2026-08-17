@@ -1,0 +1,64 @@
+{
+  "fondoId": "816",
+  "claseId": "2238",
+  "nombre": "Zofingen Soberano Plus - Clase H",
+  "fecha": "2023-07-06",
+  "administradora": "Zofingen Investment S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": null,
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "1018",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 260324.997,
+    "variacionDiariaPct": 0.202,
+    "ultimos7Dias": 1.5935,
+    "unMes": 7.0525,
+    "noventaDias": 23.2395,
+    "cientoOchentaDias": 44.303,
+    "enElAnio": 46.9697,
+    "doceMeses": 105.989
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Bco Comafi",
+      "porcentaje": 97.8
+    },
+    {
+      "nombre": "Cta Cte U$S Bco Comafi",
+      "porcentaje": 2.2
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0,
+    "honorarioDepositaria": 0,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Zofingen Investment S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02450G-9d44acde.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

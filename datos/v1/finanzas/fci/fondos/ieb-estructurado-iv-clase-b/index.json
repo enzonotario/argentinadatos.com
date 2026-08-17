@@ -1,9 +1,9 @@
 {
   "fondoId": "1583",
   "claseId": "5156",
-  "nombre": "IEB Estructurado IV - Clase B",
-  "fecha": "2026-06-25",
-  "administradora": "IEB S.A.",
+  "nombre": "Ciclo Nova Estructurado IV - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "Ciclo Nova Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
   "tipoDD": "No Aplica",
@@ -11,20 +11,22 @@
   "benchmark": "No Registrado",
   "horizonte": "Plazo Flexible",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1476",
-  "patrimonio": 1541.19,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 1566.71,
+  "cantidadCuotapartes": 908.87,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1695.717,
-    "ultimos7Dias": 4.2746,
-    "unMes": 13.2087,
-    "noventaDias": 33.4476,
-    "cientoOchentaDias": 34.5323,
-    "enElAnio": 34.9437,
-    "doceMeses": 65.9333
+    "valorCuotaparte": 1723.796,
+    "variacionDiariaPct": -0.693,
+    "ultimos7Dias": -1.6775,
+    "unMes": 2.0585,
+    "noventaDias": 16.8559,
+    "cientoOchentaDias": 37.027,
+    "enElAnio": 37.1782,
+    "doceMeses": 54.9207
   },
   "composicionCartera": [
     {
@@ -49,14 +51,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "IEB S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02496G-cffb0731.jpg"
+      "tipo": "Administradora",
+      "nombre": "Ciclo Nova Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02496G-cffb0731.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

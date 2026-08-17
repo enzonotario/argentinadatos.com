@@ -1,0 +1,68 @@
+{
+  "fondoId": "1719",
+  "claseId": "5777",
+  "nombre": "Mabra BAVSA Pesos Plus - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "BAVSA Fondos S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Mixta",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Plazo Flexible",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1752",
+  "patrimonio": 5195080116.93,
+  "cantidadCuotapartes": 3891429649.8,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1335.006,
+    "variacionDiariaPct": 0.066,
+    "ultimos7Dias": 0.4435,
+    "unMes": 1.9238,
+    "noventaDias": 6.2109,
+    "cientoOchentaDias": 14.3655,
+    "enElAnio": 19.3477,
+    "doceMeses": null
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Pagare #MAV210760039",
+      "porcentaje": 7.5
+    },
+    {
+      "nombre": "Pagare #MAV040860065",
+      "porcentaje": 3.7
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 85.1
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 2.5,
+    "honorarioDepositaria": 0.12,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "BAVSA Fondos S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03118G-d03fc40c.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

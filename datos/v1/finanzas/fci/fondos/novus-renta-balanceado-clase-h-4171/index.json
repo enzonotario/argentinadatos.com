@@ -1,0 +1,92 @@
+{
+  "fondoId": "1325",
+  "claseId": "4171",
+  "nombre": "Novus Renta Balanceado - Clase H",
+  "fecha": "2026-08-14",
+  "administradora": "Novus Asset Management S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Mixta",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Badlar",
+  "horizonte": "Plazo Flexible",
+  "duracion": "Menor o Igual a 0.5 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1260",
+  "patrimonio": 1339049600.01,
+  "cantidadCuotapartes": 200581713.41,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 6675.831,
+    "variacionDiariaPct": 0.191,
+    "ultimos7Dias": 0.6397,
+    "unMes": 2.0578,
+    "noventaDias": 5.8777,
+    "cientoOchentaDias": 16.8698,
+    "enElAnio": 22.0575,
+    "doceMeses": 46.4064
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Lecer X30N6",
+      "porcentaje": 27.1
+    },
+    {
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 12.5
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 12.4
+    },
+    {
+      "nombre": "Bonos Rep Argentina 2030",
+      "porcentaje": 12.2
+    },
+    {
+      "nombre": "Letra Tamar TEM TMF27",
+      "porcentaje": 9.1
+    },
+    {
+      "nombre": "Lecap S31L6",
+      "porcentaje": 8.9
+    },
+    {
+      "nombre": "Letra Prov Bs As PBA27",
+      "porcentaje": 8.6
+    },
+    {
+      "nombre": "Lecer X30S6",
+      "porcentaje": 4.8
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 4.4
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0.65,
+    "honorarioDepositaria": 0.15,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Novus Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02887G-ef45d825.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

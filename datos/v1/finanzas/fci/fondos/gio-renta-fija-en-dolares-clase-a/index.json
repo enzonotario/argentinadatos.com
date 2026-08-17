@@ -1,0 +1,98 @@
+{
+  "fondoId": "820",
+  "claseId": "2284",
+  "nombre": "Zofingen Renta Fija Dólar - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "Zofingen Investment S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "1024",
+  "patrimonio": 5093350.08,
+  "cantidadCuotapartes": 4520232.93,
+  "inversionMinima": 1,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 1126.789,
+    "variacionDiariaPct": 0.001,
+    "ultimos7Dias": 0.1509,
+    "unMes": 0.4925,
+    "noventaDias": 1.5972,
+    "cientoOchentaDias": 3.6298,
+    "enElAnio": 4.189,
+    "doceMeses": 6.6809
+  },
+  "composicionCartera": [
+    {
+      "nombre": "FCI IEB Corto Plazo Dólar - Clase B",
+      "porcentaje": 11.4
+    },
+    {
+      "nombre": "Caucion Colocadora U$S Merval",
+      "porcentaje": 8.5
+    },
+    {
+      "nombre": "ON Vitalcan C3",
+      "porcentaje": 3.3
+    },
+    {
+      "nombre": "ON Meranol Clase 38",
+      "porcentaje": 2.8
+    },
+    {
+      "nombre": "Pagare #UMV060270003",
+      "porcentaje": 2.6
+    },
+    {
+      "nombre": "Pagare #UMV030860031",
+      "porcentaje": 2.4
+    },
+    {
+      "nombre": "Pagare #UMV120860044",
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "Pagare #UMV080170014",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 64.8
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "A (Arg)",
+      "fecha": "2026-08-14"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 0.65,
+    "honorarioDepositaria": 0.29,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.3,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Zofingen Investment S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02450G-9d44acde.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

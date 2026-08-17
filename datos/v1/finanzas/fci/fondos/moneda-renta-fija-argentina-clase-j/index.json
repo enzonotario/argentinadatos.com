@@ -1,0 +1,78 @@
+{
+  "fondoId": "800",
+  "claseId": "2468",
+  "nombre": "Alamerica Renta Fija Argentina - Clase J",
+  "fecha": "2025-01-06",
+  "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": null,
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Corto Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1005",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1000000,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0,
+    "unMes": 0,
+    "noventaDias": 0,
+    "cientoOchentaDias": 0,
+    "enElAnio": 0,
+    "doceMeses": 0
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Lelink D30S6",
+      "porcentaje": 38.37
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TMVE8",
+      "porcentaje": 23.95
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 22.97
+    },
+    {
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 14.71
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "AA-",
+      "fecha": "2025-01-06"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2,
+    "honorarioDepositaria": 0.08,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

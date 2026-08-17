@@ -14,19 +14,19 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "851",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 50000,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1500000,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 1180.62,
+    "variacionDiariaPct": 0.023,
+    "ultimos7Dias": 0.0843,
+    "unMes": 0.2621,
+    "noventaDias": 0.9488,
+    "cientoOchentaDias": 2.4468,
+    "enElAnio": 0.3801,
+    "doceMeses": 5.3641
   },
   "composicionCartera": [
     {
@@ -109,12 +109,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }

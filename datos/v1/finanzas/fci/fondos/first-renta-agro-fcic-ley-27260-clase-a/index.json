@@ -5,7 +5,7 @@
   "fecha": "2025-07-21",
   "administradora": "First Capital Markets S.A.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "Fondos Cerrados",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
@@ -14,19 +14,19 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "899",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 999,
   "rendimientos": {
-    "valorCuotaparte": null,
+    "valorCuotaparte": 445.315,
     "variacionDiariaPct": null,
     "ultimos7Dias": null,
     "unMes": null,
     "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "cientoOchentaDias": -1.2437,
+    "enElAnio": -1.3231,
+    "doceMeses": -9.9743
   },
   "composicionCartera": [
     {
@@ -34,7 +34,13 @@
       "porcentaje": 100
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "A",
+      "fecha": "2025-07-21"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 0,
     "honorarioDepositaria": 0.22,
@@ -47,12 +53,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "First Capital Markets S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00395-2ffc0cff.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }

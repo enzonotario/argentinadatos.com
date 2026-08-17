@@ -1,0 +1,76 @@
+{
+  "fondoId": "1515",
+  "claseId": "4528",
+  "nombre": "Balanz Soja - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "Balanz S.G.F.C.I.S.A.U.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Variable",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Largo Plazo",
+  "duracion": "Mayor a 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1254",
+  "patrimonio": 3160476802.85,
+  "cantidadCuotapartes": 1797466287.47,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1758.295,
+    "variacionDiariaPct": -0.317,
+    "ultimos7Dias": -0.487,
+    "unMes": 1.8087,
+    "noventaDias": 5.1213,
+    "cientoOchentaDias": 9.2088,
+    "enElAnio": 3.7252,
+    "doceMeses": 27.0389
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono del Tesoro Nacional D31G6",
+      "porcentaje": 29.76
+    },
+    {
+      "nombre": "Lelink D30S6",
+      "porcentaje": 19.69
+    },
+    {
+      "nombre": "ON Pan American C40",
+      "porcentaje": 16.46
+    },
+    {
+      "nombre": "Bono Prov de Buenos Aires TZV28",
+      "porcentaje": 14.68
+    },
+    {
+      "nombre": "FCI Schroder Liquidez - Clase B",
+      "porcentaje": 1.12
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 2.15,
+    "honorarioDepositaria": 0.095,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Balanz S.G.F.C.I.S.A.U.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00372G-cc6ce723.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

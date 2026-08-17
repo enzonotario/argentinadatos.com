@@ -1,30 +1,32 @@
 {
   "fondoId": "1225",
   "claseId": "3397",
-  "nombre": "IEB Pyme - Clase B",
-  "fecha": "2026-06-25",
-  "administradora": "IEB S.A.",
+  "nombre": "Ciclo Nova Pyme - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "Ciclo Nova Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "PyMes",
+  "tipoRenta": "Retorno Total",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "No Registrada",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1168",
-  "patrimonio": 21536864577.86,
+  "patrimonio": 23060771624.38,
+  "cantidadCuotapartes": 1753715640.5,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 12849.58,
-    "ultimos7Dias": 0.4522,
-    "unMes": 2.0051,
-    "noventaDias": 5.6527,
-    "cientoOchentaDias": 12.6207,
-    "enElAnio": 12.4399,
-    "doceMeses": 31.3957
+    "valorCuotaparte": 13149.664,
+    "variacionDiariaPct": 0.086,
+    "ultimos7Dias": 0.2534,
+    "unMes": 1.3272,
+    "noventaDias": 4.7968,
+    "cientoOchentaDias": 11.4435,
+    "enElAnio": 15.0658,
+    "doceMeses": 31.4962
   },
   "composicionCartera": [
     {
@@ -64,7 +66,13 @@
       "porcentaje": 64.2
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "BBB+f(arg)",
+      "fecha": "2026-08-14"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 2,
     "honorarioDepositaria": 0.14,
@@ -77,14 +85,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "IEB S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02496G-cffb0731.jpg"
+      "tipo": "Administradora",
+      "nombre": "Ciclo Nova Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02496G-cffb0731.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

@@ -1,0 +1,116 @@
+{
+  "fondoId": "1500",
+  "claseId": "4487",
+  "nombre": "MAF Liquidez - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "Mariva Asset Management S.A.U.S.G.F.C.I.",
+  "depositaria": "Banco Mariva S.A.",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": "Dinámico",
+  "region": "Argentina",
+  "benchmark": "30%+70%",
+  "horizonte": "Corto Plazo",
+  "duracion": "Menor o Igual a 0.5 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1347",
+  "patrimonio": 42545187325.84,
+  "cantidadCuotapartes": 21835427240.49,
+  "inversionMinima": 4999.99,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 0,
+  "rendimientos": {
+    "valorCuotaparte": 1948.448,
+    "variacionDiariaPct": 0.058,
+    "ultimos7Dias": 0.4174,
+    "unMes": 1.7062,
+    "noventaDias": 5.0601,
+    "cientoOchentaDias": 11.1662,
+    "enElAnio": 15.1354,
+    "doceMeses": 30.8989
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Rem Bco Mariva",
+      "porcentaje": 15.4
+    },
+    {
+      "nombre": "Caucion Colocadora $ BYMA",
+      "porcentaje": 11.8
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Credicoop",
+      "porcentaje": 11.3
+    },
+    {
+      "nombre": "Cheque E *MAV120801923",
+      "porcentaje": 7.5
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Nacion",
+      "porcentaje": 5.7
+    },
+    {
+      "nombre": "Pagare #MAV220760058",
+      "porcentaje": 5.6
+    },
+    {
+      "nombre": "Pagare #MAV290760047",
+      "porcentaje": 5.6
+    },
+    {
+      "nombre": "Pagare #MAV240860052",
+      "porcentaje": 5.5
+    },
+    {
+      "nombre": "Pagare #MAV050860045",
+      "porcentaje": 5.5
+    },
+    {
+      "nombre": "Pagare #MAV040860063",
+      "porcentaje": 5.5
+    },
+    {
+      "nombre": "Pagare #MAV040860067",
+      "porcentaje": 5.5
+    },
+    {
+      "nombre": "Cheque E *MAV300701709",
+      "porcentaje": 5.3
+    },
+    {
+      "nombre": "Pagare #MAV170760028",
+      "porcentaje": 2.8
+    },
+    {
+      "nombre": "Pagare #MAV110860072",
+      "porcentaje": 2.8
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 4.2
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 1.45,
+    "honorarioDepositaria": 0.12,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.03,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Mariva Asset Management S.A.U.S.G.F.C.I.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00371G-45045e78.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Mariva S.A.",
+      "logo": null
+    }
+  ]
+}

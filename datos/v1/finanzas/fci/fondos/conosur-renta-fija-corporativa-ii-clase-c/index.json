@@ -1,8 +1,8 @@
 {
   "fondoId": "1831",
   "claseId": "6295",
-  "nombre": "ConoSur Renta Fija Corporativa II - Clase C",
-  "fecha": "2026-06-30",
+  "nombre": "ConoSur Ahorro Dólar - Clase C",
+  "fecha": "2026-08-14",
   "administradora": "Cono Sur S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,15 +13,17 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "70",
-  "patrimonio": 269799.29,
-  "inversionMinima": 1000,
+  "patrimonio": 265465.49,
+  "cantidadCuotapartes": 116704.83,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 5,
   "rendimientos": {
-    "valorCuotaparte": 2261.794,
-    "ultimos7Dias": 0.1069,
-    "unMes": 0.4661,
-    "noventaDias": 1.0809,
+    "valorCuotaparte": 2274.674,
+    "variacionDiariaPct": 0.03,
+    "ultimos7Dias": 0.1362,
+    "unMes": 0.3758,
+    "noventaDias": 1.2118,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
@@ -101,14 +103,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Cono Sur S.G.F.C.I.S.A.",
       "logo": null
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -1,0 +1,92 @@
+{
+  "fondoId": "1193",
+  "claseId": "3233",
+  "nombre": "Adcap Cima Ahorro - Clase A",
+  "fecha": "2026-07-02",
+  "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1094",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 43756.703,
+    "variacionDiariaPct": 7.248,
+    "ultimos7Dias": 13.1259,
+    "unMes": 15.3812,
+    "noventaDias": 22.6876,
+    "cientoOchentaDias": 32.6004,
+    "enElAnio": 32.9502,
+    "doceMeses": 76.0748
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZXD7",
+      "porcentaje": 30.4
+    },
+    {
+      "nombre": "Bono Buenos Aires 2037",
+      "porcentaje": 26.5
+    },
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 14
+    },
+    {
+      "nombre": "Letra Tesoro Nac S30O6",
+      "porcentaje": 7.3
+    },
+    {
+      "nombre": "Bono Boncer TZX28",
+      "porcentaje": 4.9
+    },
+    {
+      "nombre": "Fut Rofex DLR072026",
+      "porcentaje": 4.7
+    },
+    {
+      "nombre": "ON CGC C 28",
+      "porcentaje": 4.4
+    },
+    {
+      "nombre": "ON Aluar Serie 6",
+      "porcentaje": 4.4
+    },
+    {
+      "nombre": "Letra Tesoro Nac T30A7",
+      "porcentaje": 4.3
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 2.77,
+    "honorarioDepositaria": 0.1573,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.02,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

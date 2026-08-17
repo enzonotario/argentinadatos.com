@@ -1,0 +1,64 @@
+{
+  "fondoId": "789",
+  "claseId": "1800",
+  "nombre": "GMC Retorno Total - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "GMC Asset Management S.A.U.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": "No Aplica",
+  "region": "Global",
+  "benchmark": "No Registrado",
+  "horizonte": "Largo Plazo",
+  "duracion": "No Registrada",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "989",
+  "patrimonio": 2405640240.05,
+  "cantidadCuotapartes": 238103843.04,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 10103.3,
+    "variacionDiariaPct": null,
+    "ultimos7Dias": 0.0564,
+    "unMes": 0.2133,
+    "noventaDias": 4.4819,
+    "cientoOchentaDias": 0.4095,
+    "enElAnio": 0.3078,
+    "doceMeses": 7.9782
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Bco de Valores",
+      "porcentaje": 73.6
+    },
+    {
+      "nombre": "Cta Cte U$S Bco Valores",
+      "porcentaje": 26.4
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 5,
+    "honorarioDepositaria": 0.24,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.02,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "GMC Asset Management S.A.U.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00394G-6fce82d3.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

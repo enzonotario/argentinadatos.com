@@ -1,9 +1,9 @@
 {
   "fondoId": "1892",
   "claseId": "6535",
-  "nombre": "IEB Balanceado - Clase B",
-  "fecha": "2026-06-25",
-  "administradora": "IEB S.A.",
+  "nombre": "Ciclo Nova Balanceado - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "Ciclo Nova Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
   "tipoDD": "No Aplica",
@@ -11,43 +11,94 @@
   "benchmark": "No Registrado",
   "horizonte": "Plazo Flexible",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1640",
-  "patrimonio": 4480486251.83,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 4608539014.39,
+  "cantidadCuotapartes": 4479074578.15,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1001.298,
-    "ultimos7Dias": 0.1298,
-    "unMes": null,
+    "valorCuotaparte": 1028.904,
+    "variacionDiariaPct": 0.047,
+    "ultimos7Dias": 0.2985,
+    "unMes": 0.6853,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 23.65
+    },
+    {
+      "nombre": "Bono Dual TXMD9",
+      "porcentaje": 20.21
+    },
+    {
+      "nombre": "Bono Dual TXMJ0",
+      "porcentaje": 17.75
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TMVE8",
+      "porcentaje": 15.1
+    },
+    {
+      "nombre": "Lelink D30S6",
+      "porcentaje": 11.56
+    },
+    {
+      "nombre": "Bono Dual TXMD8",
+      "porcentaje": 5.97
+    },
+    {
+      "nombre": "Cedear Microsoft",
+      "porcentaje": 1.22
+    },
+    {
+      "nombre": "Cedear Mercado Libre",
+      "porcentaje": 0.87
+    },
+    {
+      "nombre": "YPF S.A.",
+      "porcentaje": 0.79
+    },
+    {
+      "nombre": "Cedear Wal Mart",
+      "porcentaje": 0.46
+    },
+    {
+      "nombre": "Pampa Energia S.A.",
+      "porcentaje": 0.26
+    },
+    {
+      "nombre": "FCI Tango Money Market Dinámico - Clase B",
+      "porcentaje": 2.17
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 0.85,
+    "honorarioDepositaria": 0.13,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "IEB S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02496G-cffb0731.jpg"
+      "tipo": "Administradora",
+      "nombre": "Ciclo Nova Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02496G-cffb0731.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

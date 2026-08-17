@@ -1,30 +1,32 @@
 {
   "fondoId": "1212",
   "claseId": "3352",
-  "nombre": "Compass Liquidez - Clase A",
-  "fecha": "2026-06-04",
+  "nombre": "Vinci Compass Liquidez - Clase A",
+  "fecha": "2026-08-14",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Mercado de Dinero",
-  "tipoDD": "Dinámico",
+  "tipoDD": "Clásico",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1156",
-  "patrimonio": 1493180574.61,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 1472395749.83,
+  "cantidadCuotapartes": 120732848.58,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 11786.493,
-    "ultimos7Dias": 15.8081,
-    "unMes": 16.3718,
-    "noventaDias": 17.8176,
-    "cientoOchentaDias": 20.8413,
-    "enElAnio": 20.9027,
-    "doceMeses": 29.8917
+    "valorCuotaparte": 12195.486,
+    "variacionDiariaPct": 0.052,
+    "ultimos7Dias": 0.3587,
+    "unMes": 1.5172,
+    "noventaDias": 4.3883,
+    "cientoOchentaDias": 9.484,
+    "enElAnio": 12.7138,
+    "doceMeses": 27.0589
   },
   "composicionCartera": [
     {
@@ -99,14 +101,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Investis Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00021G-d9e0d02c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00021G-d9e0d02c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

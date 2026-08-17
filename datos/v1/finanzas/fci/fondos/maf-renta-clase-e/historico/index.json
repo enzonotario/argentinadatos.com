@@ -2,7 +2,7 @@
   "fondoId": "497",
   "claseId": "2003",
   "nombre": "MAF Renta - Clase E",
-  "fechaActualizacion": "2026-08-17T07:24:53.000Z",
+  "fechaActualizacion": "2026-08-17T21:53:07.000Z",
   "historico": [
     {
       "slug": "maf-renta-clase-e",
@@ -13,28 +13,12 @@
       "categoria": "Renta Fija",
       "categoriaKey": "rentaFija",
       "horizonte": "Largo Plazo",
-      "valorCuotaparte": null,
+      "valorCuotaparte": 1000,
       "patrimonio": null,
       "retornoDiario": null,
-      "retornoAcumulado": null,
+      "retornoAcumulado": 0,
       "flujoEstimado": null,
-      "origen": "cafci-detail"
-    },
-    {
-      "slug": "maf-renta-clase-e",
-      "fondoId": "497",
-      "claseId": "2003",
-      "nombre": "MAF Renta - Clase E",
-      "fecha": "2026-05-27",
-      "categoria": "Renta Fija",
-      "categoriaKey": "rentaFija",
-      "horizonte": "Largo Plazo",
-      "valorCuotaparte": null,
-      "patrimonio": null,
-      "retornoDiario": null,
-      "retornoAcumulado": null,
-      "flujoEstimado": null,
-      "origen": "cafci-detail"
+      "origen": "cnv-excel"
     }
   ]
 }

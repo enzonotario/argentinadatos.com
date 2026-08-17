@@ -1,0 +1,80 @@
+{
+  "fondoId": "1438",
+  "claseId": "4220",
+  "nombre": "Balanz Desarrollo FCI Ab para Financ Infra y Econ Real - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "Balanz S.G.F.C.I.S.A.U.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Mayor a 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1404",
+  "patrimonio": 85485894.49,
+  "cantidadCuotapartes": 35894595.39,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 2381.581,
+    "variacionDiariaPct": -0.715,
+    "ultimos7Dias": -0.6166,
+    "unMes": -1.078,
+    "noventaDias": 6.3882,
+    "cientoOchentaDias": 8.9354,
+    "enElAnio": 6.0989,
+    "doceMeses": 23.7221
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Prov Santa Fe 8.1% 111234",
+      "porcentaje": 26
+    },
+    {
+      "nombre": "Cta Cte USC Citibank",
+      "porcentaje": 23.1
+    },
+    {
+      "nombre": "ON YPF Clase 31",
+      "porcentaje": 17.6
+    },
+    {
+      "nombre": "ON Aeropuertos 2000 Regs 2031",
+      "porcentaje": 16.9
+    },
+    {
+      "nombre": "ON Pan Amer. Energy C 12",
+      "porcentaje": 15.3
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 2.6,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Balanz S.G.F.C.I.S.A.U.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00372G-cc6ce723.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

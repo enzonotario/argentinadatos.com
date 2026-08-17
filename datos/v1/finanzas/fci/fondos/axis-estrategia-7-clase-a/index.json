@@ -1,0 +1,60 @@
+{
+  "fondoId": "1428",
+  "claseId": "4180",
+  "nombre": "Bamba Agronegocios - Clase A",
+  "fecha": "2025-11-05",
+  "administradora": "Axis S.G.F.C.I.S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Mixta",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1405",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 2196.425,
+    "variacionDiariaPct": null,
+    "ultimos7Dias": null,
+    "unMes": 0,
+    "noventaDias": 4.5618,
+    "cientoOchentaDias": -22.8234,
+    "enElAnio": -16.5996,
+    "doceMeses": -17.1055
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Bco Comafi",
+      "porcentaje": 100
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 2.7,
+    "honorarioDepositaria": 0.15,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.4,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Axis S.G.F.C.I.S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00384G-b6af83ec.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

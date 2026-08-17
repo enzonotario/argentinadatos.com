@@ -3,29 +3,29 @@
   "claseId": "3060",
   "nombre": "Optimum Renta Fija Dolares RP D.596 - Clase B",
   "fecha": "2020-05-22",
-  "administradora": "SAM Argentina S.G.F.C.I.S.A.U.",
+  "administradora": "BNP Paribas Asset Management  Arg. S.A.S.G.F.C.I",
   "depositaria": "BNP Paribas",
-  "tipoRenta": "Renta Fija",
-  "tipoDD": "No Aplica",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "767",
-  "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 0,
+  "patrimonio": 272924.89,
+  "cantidadCuotapartes": 1163336.41,
+  "inversionMinima": null,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 3,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
+    "valorCuotaparte": 234.605,
+    "variacionDiariaPct": 0.012,
     "ultimos7Dias": null,
-    "unMes": null,
+    "unMes": -77.639,
     "noventaDias": null,
     "cientoOchentaDias": null,
-    "enElAnio": null,
+    "enElAnio": -77.694,
     "doceMeses": null
   },
   "composicionCartera": [
@@ -67,12 +67,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "SAM Argentina S.G.F.C.I.S.A.U.",
+      "tipo": "Administradora",
+      "nombre": "BNP Paribas Asset Management  Arg. S.A.S.G.F.C.I",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00016G-52d8d4aa.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "BNP Paribas",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00070-12f7bb54.jpg"
     }

@@ -1,0 +1,68 @@
+{
+  "fondoId": "718",
+  "claseId": "1549",
+  "nombre": "Alycbur Renta Dólar - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "MEGA QM S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Corto Plazo",
+  "duracion": "Menor o Igual a 1 Año",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "866",
+  "patrimonio": 991.09,
+  "cantidadCuotapartes": 5451.64,
+  "inversionMinima": 1,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 181.797,
+    "variacionDiariaPct": 0.019,
+    "ultimos7Dias": 0.0468,
+    "unMes": -0.0555,
+    "noventaDias": -0.3699,
+    "cientoOchentaDias": -0.5416,
+    "enElAnio": -0.4256,
+    "doceMeses": -0.9998
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte U$D Bank Of New York",
+      "porcentaje": 54.3
+    },
+    {
+      "nombre": "Cta Cte U$S Bco Comafi",
+      "porcentaje": 39.4
+    },
+    {
+      "nombre": "Cta Cte $ Bco Comafi",
+      "porcentaje": 6.2
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0,
+    "honorarioDepositaria": 0,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "MEGA QM S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "fondoId": "287",
   "claseId": "6218",
-  "nombre": "FBA Ahorro Pesos - Clase B3",
-  "fecha": "2026-06-04",
+  "nombre": "FBA Renta Fija Pesos II - Clase B3",
+  "fecha": "2026-08-14",
   "administradora": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "BBVA Argentina S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,18 +11,20 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "376",
-  "patrimonio": 88704560540.34,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 116161170174.66,
+  "cantidadCuotapartes": 462695784.954,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 240457.935,
-    "ultimos7Dias": 0.4281,
-    "unMes": 2.4207,
-    "noventaDias": 8.2567,
-    "cientoOchentaDias": null,
+    "valorCuotaparte": 251053.012,
+    "variacionDiariaPct": 0.187,
+    "ultimos7Dias": 0.5194,
+    "unMes": 1.9183,
+    "noventaDias": 5.5326,
+    "cientoOchentaDias": 14.7257,
     "enElAnio": null,
     "doceMeses": null
   },
@@ -83,14 +85,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00029G-9a6fc701.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00029G-9a6fc701.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "BBVA Argentina S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00079-a62ab0c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00079-a62ab0c8.jpg"
     }
   ]
 }

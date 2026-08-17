@@ -11,19 +11,21 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "376",
   "patrimonio": 0,
+  "cantidadCuotapartes": 0,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "ultimos7Dias": null,
-    "unMes": null,
+    "valorCuotaparte": 218738.306,
+    "variacionDiariaPct": 0.093,
+    "ultimos7Dias": 0.7036,
+    "unMes": 3.1285,
     "noventaDias": null,
     "cientoOchentaDias": null,
-    "enElAnio": null,
+    "enElAnio": 5.6633,
     "doceMeses": null
   },
   "composicionCartera": [
@@ -83,14 +85,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00029G-9a6fc701.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00029G-9a6fc701.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "BBVA Argentina S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00079-a62ab0c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00079-a62ab0c8.jpg"
     }
   ]
 }

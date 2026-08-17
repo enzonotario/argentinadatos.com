@@ -1,8 +1,8 @@
 {
   "fondoId": "1672",
   "claseId": "5599",
-  "nombre": "ConoSur Financiamiento - Clase A",
-  "fecha": "2026-06-30",
+  "nombre": "ConoSur Crédito Privado - Clase A",
+  "fecha": "2026-08-14",
   "administradora": "Cono Sur S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,19 +11,21 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1673",
-  "patrimonio": 1145179524.97,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 1853878980.11,
+  "cantidadCuotapartes": 1479417797.26,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1218.004,
-    "ultimos7Dias": 0.4719,
-    "unMes": 2.2812,
-    "noventaDias": 6.8983,
-    "cientoOchentaDias": 17.3029,
-    "enElAnio": 17.3029,
+    "valorCuotaparte": 1253.114,
+    "variacionDiariaPct": 0.087,
+    "ultimos7Dias": 0.4427,
+    "unMes": 1.8951,
+    "noventaDias": 6.297,
+    "cientoOchentaDias": 15.5736,
+    "enElAnio": 20.6842,
     "doceMeses": null
   },
   "composicionCartera": [
@@ -85,14 +87,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Cono Sur S.G.F.C.I.S.A.",
       "logo": null
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

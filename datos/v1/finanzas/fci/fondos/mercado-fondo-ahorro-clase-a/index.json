@@ -1,8 +1,8 @@
 {
   "fondoId": "1625",
   "claseId": "5393",
-  "nombre": "Mercado Fondo Ahorro - Clase A",
-  "fecha": "2026-05-21",
+  "nombre": "MP Ahorro - Clase A",
+  "fecha": "2026-08-14",
   "administradora": "Mercado Pago Asset Managemet S.A.",
   "depositaria": "Banco Industrial S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,20 +11,22 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1650",
-  "patrimonio": 881100.57,
-  "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 216670401273.34,
+  "cantidadCuotapartes": 184658706542.0392,
+  "inversionMinima": 0,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1104.37,
-    "ultimos7Dias": 0.2983,
-    "unMes": 0.4752,
-    "noventaDias": 0.4752,
-    "cientoOchentaDias": 0.4752,
-    "enElAnio": 0.4752,
-    "doceMeses": 5.4365
+    "valorCuotaparte": 1173.356,
+    "variacionDiariaPct": 0.173,
+    "ultimos7Dias": 0.4804,
+    "unMes": 1.8316,
+    "noventaDias": 6.5244,
+    "cientoOchentaDias": 6.7515,
+    "enElAnio": 6.7515,
+    "doceMeses": 6.7515
   },
   "composicionCartera": [
     {
@@ -42,7 +44,7 @@
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": 0.07,
+    "honorarioGerente": 2.45,
     "honorarioDepositaria": 0.06,
     "comisionIngreso": 0,
     "comisionEgreso": 0,
@@ -53,14 +55,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mercado Pago Asset Managemet S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03265G-e5cf3c10.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03265G-e5cf3c10.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Industrial S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00391-92ebcc0c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00391-92ebcc0c.jpg"
     }
   ]
 }

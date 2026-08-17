@@ -1,0 +1,88 @@
+{
+  "fondoId": "1472",
+  "claseId": "4357",
+  "nombre": "Axis Estrategia Dólar 2 - Clase F",
+  "fecha": "2026-08-14",
+  "administradora": "Axis S.G.F.C.I.S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Mixta",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Corto Plazo",
+  "duracion": "Menor o Igual a 0.5 Año",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "1469",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1032.148,
+    "variacionDiariaPct": -0.133,
+    "ultimos7Dias": 0.0093,
+    "unMes": 0.4172,
+    "noventaDias": 2.1026,
+    "cientoOchentaDias": 4.1327,
+    "enElAnio": 6.1258,
+    "doceMeses": 10.2749
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Bopreal 2028 Serie 4 Clase B BPOB8",
+      "porcentaje": 10.9
+    },
+    {
+      "nombre": "Bonos Rep Argentina 2030",
+      "porcentaje": 7.5
+    },
+    {
+      "nombre": "FCI Megaqm Liquidez Dólar - Clase B",
+      "porcentaje": 4.9
+    },
+    {
+      "nombre": "ON YPF Clase 31",
+      "porcentaje": 4.8
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional AO28",
+      "porcentaje": 3.7
+    },
+    {
+      "nombre": "Bonos Rep Argentina 2029",
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "BC Adecoagro 7.5% 2032",
+      "porcentaje": 2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 64.1
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0.75,
+    "honorarioDepositaria": 0.11,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.3,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Axis S.G.F.C.I.S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00384G-b6af83ec.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

@@ -1,30 +1,32 @@
 {
   "fondoId": "1434",
   "claseId": "4876",
-  "nombre": "IEB Renta Fija Dólar 2 - Clase Ley N° 27.743",
-  "fecha": "2026-06-25",
-  "administradora": "IEB S.A.",
+  "nombre": "Ciclo Nova Renta Fija Dólar 2 - Clase Ley N° 27.743",
+  "fecha": "2026-08-14",
+  "administradora": "Ciclo Nova Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
-  "region": "Latinoamerica",
+  "region": "Latinoamérica",
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1346",
-  "patrimonio": 83.69,
-  "inversionMinima": 1000,
+  "patrimonio": 83.76,
+  "cantidadCuotapartes": 81,
+  "inversionMinima": 9999999999999998,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1033.219,
-    "ultimos7Dias": 0.0477,
-    "unMes": 0.2876,
-    "noventaDias": 0.5164,
-    "cientoOchentaDias": 3.3861,
-    "enElAnio": 1.5882,
-    "doceMeses": -1.9713
+    "valorCuotaparte": 1034.084,
+    "variacionDiariaPct": -0.107,
+    "ultimos7Dias": 0.1555,
+    "unMes": -0.2738,
+    "noventaDias": 0.4437,
+    "cientoOchentaDias": 0.8914,
+    "enElAnio": 1.6732,
+    "doceMeses": -0.9265
   },
   "composicionCartera": [
     {
@@ -77,14 +79,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "IEB S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02496G-cffb0731.jpg"
+      "tipo": "Administradora",
+      "nombre": "Ciclo Nova Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02496G-cffb0731.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

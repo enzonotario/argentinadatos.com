@@ -1,0 +1,90 @@
+{
+  "fondoId": "533",
+  "claseId": "1079",
+  "nombre": "MEGAQM Empresas Argentinas FCIA Pymes - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "MEGA QM S.A.",
+  "depositaria": "Banco de Servicios y Transacciones S.A. (BST)",
+  "tipoRenta": "Retorno Total",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "No Aplicable",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "667",
+  "patrimonio": 156309047379.74,
+  "cantidadCuotapartes": 1479558761.24,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 105645.718,
+    "variacionDiariaPct": 0.084,
+    "ultimos7Dias": 0.2979,
+    "unMes": 1.526,
+    "noventaDias": 5.1183,
+    "cientoOchentaDias": 12.4498,
+    "enElAnio": 16.083,
+    "doceMeses": 35.3654
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 4.7
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional D31G6",
+      "porcentaje": 3.3
+    },
+    {
+      "nombre": "Bono Boncer TZX28",
+      "porcentaje": 3.3
+    },
+    {
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 3.2
+    },
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 2.4
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TML27",
+      "porcentaje": 2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 46.6
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "Af",
+      "fecha": "2025-05-26"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.129,
+    "honorarioDepositaria": 0.121,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "MEGA QM S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Servicios y Transacciones S.A. (BST)",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00387-5d5880dd.jpg"
+    }
+  ]
+}

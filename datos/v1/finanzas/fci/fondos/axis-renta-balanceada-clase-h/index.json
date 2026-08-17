@@ -1,0 +1,102 @@
+{
+  "fondoId": "548",
+  "claseId": "2007",
+  "nombre": "Axis Renta Balanceada - Clase H",
+  "fecha": "2020-11-20",
+  "administradora": "Axis S.G.F.C.I.S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": null,
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Mediano Plazo",
+  "duracion": "No Registrada",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "680",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 6.669,
+    "variacionDiariaPct": 0.03,
+    "ultimos7Dias": -1.9409,
+    "unMes": 16.8565,
+    "noventaDias": -10.2302,
+    "cientoOchentaDias": -23.5732,
+    "enElAnio": -50.446,
+    "doceMeses": -49.58
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Lecap S30S6",
+      "porcentaje": 28.8
+    },
+    {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 19.3
+    },
+    {
+      "nombre": "Lecap S13N6",
+      "porcentaje": 13.6
+    },
+    {
+      "nombre": "Bono Prov Cordoba 2027 COY27",
+      "porcentaje": 12.3
+    },
+    {
+      "nombre": "Bono Boncer TXMJ9",
+      "porcentaje": 7.1
+    },
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 7
+    },
+    {
+      "nombre": "Bono Dual TXMD8",
+      "porcentaje": 4.7
+    },
+    {
+      "nombre": "Lecap S15S6",
+      "porcentaje": 3.5
+    },
+    {
+      "nombre": "Caucion Colocadora $ BYMA",
+      "porcentaje": 2.6
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.1
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "A-c(arg)",
+      "fecha": "2020-11-20"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.26,
+    "honorarioDepositaria": 0.16,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Axis S.G.F.C.I.S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00371G-45045e78.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": null
+    }
+  ]
+}

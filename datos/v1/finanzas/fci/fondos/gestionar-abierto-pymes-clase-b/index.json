@@ -2,31 +2,31 @@
   "fondoId": "579",
   "claseId": "1175",
   "nombre": "Gestionar Abierto Pymes - Clase B",
-  "fecha": "2022-12-30",
+  "fecha": "2022-11-09",
   "administradora": "Nativa S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "PyMes",
-  "tipoDD": "No Aplica",
+  "tipoRenta": "Retorno Total",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "708",
-  "patrimonio": 1130322.79,
-  "cantidadCuotapartes": null,
+  "patrimonio": 1061696.26,
+  "cantidadCuotapartes": 233663.53,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
+    "valorCuotaparte": 4543.697,
+    "variacionDiariaPct": 0.126,
     "ultimos7Dias": null,
-    "unMes": null,
+    "unMes": 0.922,
     "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "cientoOchentaDias": 15.2713,
+    "enElAnio": 25.8569,
+    "doceMeses": 27.5785
   },
   "composicionCartera": [
     {
@@ -57,12 +57,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Nativa S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00388G-eb00eeb0.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }

@@ -1,0 +1,94 @@
+{
+  "fondoId": "273",
+  "claseId": "1864",
+  "nombre": "Desarrollo Argentino I FCI Abierto para el Fin. de la Infra. y la Econ. Real - Clase C",
+  "fecha": "2026-08-14",
+  "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Plazo Flexible",
+  "duracion": "No Aplicable",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "352",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 1820.652,
+    "variacionDiariaPct": 0.256,
+    "ultimos7Dias": 0.769,
+    "unMes": 1.2578,
+    "noventaDias": 3.2024,
+    "cientoOchentaDias": 5.9399,
+    "enElAnio": 7.8859,
+    "doceMeses": 10.9625
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Prov Cordoba 2029 CO27D",
+      "porcentaje": 29.5
+    },
+    {
+      "nombre": "Bono Prov Santa Fe 2027 SF27D",
+      "porcentaje": 21.3
+    },
+    {
+      "nombre": "Bono Prov Santa Fe 8.1% 111234",
+      "porcentaje": 15.3
+    },
+    {
+      "nombre": "ON YPF 2047",
+      "porcentaje": 11.1
+    },
+    {
+      "nombre": "ON YPF Luz Clase 14",
+      "porcentaje": 4.9
+    },
+    {
+      "nombre": "ON Pan Amer. Energy C 17",
+      "porcentaje": 4.1
+    },
+    {
+      "nombre": "Overnight USD DDA",
+      "porcentaje": 2.4
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 11.5
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moodys Local Calif. Riesgo",
+      "calificacion": "(A)=A-bf.ar",
+      "fecha": "2016-09-07"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 1.75,
+    "honorarioDepositaria": 0.125,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Investis Asset Management S.A.S.G.F.C.I.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00021G-d9e0d02c.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

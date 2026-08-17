@@ -1,8 +1,8 @@
 {
   "fondoId": "1410",
   "claseId": "4110",
-  "nombre": "Schroder Patrimonio - Clase B",
-  "fecha": "2026-06-30",
+  "nombre": "ACA Valores Retorno Total - Clase B",
+  "fecha": "2026-08-14",
   "administradora": "Schroder S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,20 +11,22 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1341",
-  "patrimonio": 9028960073.64,
-  "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 10366807424.69,
+  "cantidadCuotapartes": 478817842.75,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 21067.931,
-    "ultimos7Dias": 0.4825,
-    "unMes": 1.4922,
-    "noventaDias": 7.9974,
-    "cientoOchentaDias": 4.5087,
-    "enElAnio": 4.5087,
-    "doceMeses": -57.7304
+    "valorCuotaparte": 21650.838,
+    "variacionDiariaPct": 0.127,
+    "ultimos7Dias": 0.3318,
+    "unMes": 1.4985,
+    "noventaDias": 5.9308,
+    "cientoOchentaDias": 4.9144,
+    "enElAnio": 7.4002,
+    "doceMeses": -57.789
   },
   "composicionCartera": [
     {
@@ -89,14 +91,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Schroder S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00051G-0c57ca49.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00051G-0c57ca49.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -1,0 +1,98 @@
+{
+  "fondoId": "547",
+  "claseId": "1107",
+  "nombre": "MAF Ahorro Pesos - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "Mariva Asset Management S.A.U.S.G.F.C.I.",
+  "depositaria": "Banco Mariva S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Corto Plazo",
+  "duracion": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "681",
+  "patrimonio": 2431533037.66,
+  "cantidadCuotapartes": 16769725.01,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 144995.403,
+    "variacionDiariaPct": 0.283,
+    "ultimos7Dias": 0.8496,
+    "unMes": 1.9862,
+    "noventaDias": 5.0809,
+    "cientoOchentaDias": 19.5776,
+    "enElAnio": 26.3792,
+    "doceMeses": 58.8928
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 25
+    },
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 23.2
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 20.7
+    },
+    {
+      "nombre": "Bono Boncer TZXD7",
+      "porcentaje": 12.9
+    },
+    {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 4.6
+    },
+    {
+      "nombre": "Bono Prov Cordoba 2027 COY27",
+      "porcentaje": 4.4
+    },
+    {
+      "nombre": "Caucion Colocadora $ BYMA",
+      "porcentaje": 3.1
+    },
+    {
+      "nombre": "Bono Disc ARS Ley AR DICP",
+      "porcentaje": 2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 4
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "A+f(arg)",
+      "fecha": "2026-08-14"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.1,
+    "honorarioDepositaria": 0.12,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.11,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Mariva Asset Management S.A.U.S.G.F.C.I.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00371G-45045e78.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Mariva S.A.",
+      "logo": null
+    }
+  ]
+}

@@ -1,30 +1,32 @@
 {
   "fondoId": "1212",
   "claseId": "3353",
-  "nombre": "Compass Liquidez - Clase B",
-  "fecha": "2026-06-04",
+  "nombre": "Vinci Compass Liquidez - Clase B",
+  "fecha": "2026-08-14",
   "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Mercado de Dinero",
-  "tipoDD": "Dinámico",
+  "tipoDD": "Clásico",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1156",
-  "patrimonio": 23434804855.44,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 14283530918.97,
+  "cantidadCuotapartes": 1121413975.93,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 12289.55,
-    "ultimos7Dias": 16.6609,
-    "unMes": 17.2352,
-    "noventaDias": 18.7075,
-    "cientoOchentaDias": 21.7828,
-    "enElAnio": 21.8319,
-    "doceMeses": 31.0026
+    "valorCuotaparte": 12737.072,
+    "variacionDiariaPct": 0.054,
+    "ultimos7Dias": 0.3751,
+    "unMes": 1.5882,
+    "noventaDias": 4.6101,
+    "cientoOchentaDias": 9.9498,
+    "enElAnio": 13.3122,
+    "doceMeses": 28.1454
   },
   "composicionCartera": [
     {
@@ -99,14 +101,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Investis Asset Management S.A.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00021G-d9e0d02c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00021G-d9e0d02c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

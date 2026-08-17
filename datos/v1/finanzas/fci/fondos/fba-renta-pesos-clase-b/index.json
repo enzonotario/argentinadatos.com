@@ -1,8 +1,8 @@
 {
   "fondoId": "111",
   "claseId": "944",
-  "nombre": "FBA Renta Pesos - Clase B",
-  "fecha": "2026-06-04",
+  "nombre": "FBA Money Market Pesos - Clase B",
+  "fecha": "2026-08-14",
   "administradora": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "BBVA Argentina S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -11,20 +11,22 @@
   "benchmark": "30%+70%",
   "horizonte": "Corto Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "165",
-  "patrimonio": 2927408066056.32,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 2850520515685.09,
+  "cantidadCuotapartes": 14803169284.1597,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 186101.471,
-    "ultimos7Dias": 17.5474,
-    "unMes": 17.8329,
-    "noventaDias": 20.0006,
-    "cientoOchentaDias": 23.2423,
-    "enElAnio": 23.482,
-    "doceMeses": 31.1919
+    "valorCuotaparte": 192561.502,
+    "variacionDiariaPct": 0.05,
+    "ultimos7Dias": 0.3507,
+    "unMes": 1.4716,
+    "noventaDias": 4.4706,
+    "cientoOchentaDias": 10.2346,
+    "enElAnio": 13.8557,
+    "doceMeses": 28.4754
   },
   "composicionCartera": [
     {
@@ -107,14 +109,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00029G-9a6fc701.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00029G-9a6fc701.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "BBVA Argentina S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00079-a62ab0c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00079-a62ab0c8.jpg"
     }
   ]
 }

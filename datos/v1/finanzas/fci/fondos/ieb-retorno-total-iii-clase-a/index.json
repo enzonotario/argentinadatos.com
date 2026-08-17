@@ -1,29 +1,31 @@
 {
   "fondoId": "1756",
   "claseId": "5938",
-  "nombre": "IEB Retorno Total III - Clase A",
-  "fecha": "2026-06-25",
-  "administradora": "IEB S.A.",
+  "nombre": "Ciclo Nova Retorno Total III - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "Ciclo Nova Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "Retorno Total",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Plazo Flexible",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1813",
-  "patrimonio": 9257629453.54,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 10371031390.97,
+  "cantidadCuotapartes": 8217889072.17,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1212.126,
-    "ultimos7Dias": 0.5554,
-    "unMes": 2.8323,
-    "noventaDias": 8.0899,
-    "cientoOchentaDias": 17.8152,
-    "enElAnio": 17.3297,
+    "valorCuotaparte": 1262.007,
+    "variacionDiariaPct": 0.082,
+    "ultimos7Dias": 0.5659,
+    "unMes": 2.4637,
+    "noventaDias": 7.8028,
+    "cientoOchentaDias": 16.841,
+    "enElAnio": 22.158,
     "doceMeses": null
   },
   "composicionCartera": [
@@ -53,14 +55,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "IEB S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02496G-cffb0731.jpg"
+      "tipo": "Administradora",
+      "nombre": "Ciclo Nova Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02496G-cffb0731.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

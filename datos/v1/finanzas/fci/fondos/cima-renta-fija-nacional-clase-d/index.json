@@ -1,0 +1,82 @@
+{
+  "fondoId": "589",
+  "claseId": "4048",
+  "nombre": "Adcap Cima Renta Fija Nacional - Clase D",
+  "fecha": "2026-08-14",
+  "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "734",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 3,
+  "rendimientos": {
+    "valorCuotaparte": 5331.661,
+    "variacionDiariaPct": 0.138,
+    "ultimos7Dias": 0.0959,
+    "unMes": -1.7549,
+    "noventaDias": 0.4594,
+    "cientoOchentaDias": 5.0478,
+    "enElAnio": 7.0746,
+    "doceMeses": 27.1377
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZXS8",
+      "porcentaje": 24.56
+    },
+    {
+      "nombre": "Bono Dual TXMD8",
+      "porcentaje": 23.9
+    },
+    {
+      "nombre": "Bono Boncer TXMJ9",
+      "porcentaje": 23.58
+    },
+    {
+      "nombre": "Bono Dual TXMJ8",
+      "porcentaje": 16.9
+    },
+    {
+      "nombre": "ON Celulosa Argentina",
+      "porcentaje": 8.72
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "A-bf ar",
+      "fecha": "2026-08-14"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2,
+    "honorarioDepositaria": 0.15,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

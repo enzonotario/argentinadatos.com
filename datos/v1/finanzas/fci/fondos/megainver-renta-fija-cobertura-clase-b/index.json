@@ -1,0 +1,106 @@
+{
+  "fondoId": "537",
+  "claseId": "1085",
+  "nombre": "MEGAQM Cobertura - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "MEGA QM S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "676",
+  "patrimonio": 38497588854.72,
+  "cantidadCuotapartes": 85700649.25,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 449210.002,
+    "variacionDiariaPct": -0.046,
+    "ultimos7Dias": -0.3554,
+    "unMes": 0.98,
+    "noventaDias": 9.434,
+    "cientoOchentaDias": 12.2813,
+    "enElAnio": 10.7018,
+    "doceMeses": 31.0554
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono del Tesoro Nacional D31G6",
+      "porcentaje": 30.2
+    },
+    {
+      "nombre": "Fut Rofex DLR072026",
+      "porcentaje": 25.5
+    },
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 15.4
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TZVD8",
+      "porcentaje": 12.8
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 7.7
+    },
+    {
+      "nombre": "Bono Boncer TXMJ9",
+      "porcentaje": 6
+    },
+    {
+      "nombre": "ON GEMSA y CTR C49",
+      "porcentaje": 4.7
+    },
+    {
+      "nombre": "ON Tecpetrol C13",
+      "porcentaje": 4.2
+    },
+    {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 3.8
+    },
+    {
+      "nombre": "Pagare UMV281060029",
+      "porcentaje": 3.4
+    },
+    {
+      "nombre": "Bono Dual TXMD9",
+      "porcentaje": 3.4
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "A+f",
+      "fecha": "2025-05-21"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.44,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "MEGA QM S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

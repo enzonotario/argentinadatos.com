@@ -1,0 +1,78 @@
+{
+  "fondoId": "1318",
+  "claseId": "3756",
+  "nombre": "MAX Gestion Abierto Pyme I - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "Max Capital Asset Management S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Retorno Total",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Plazo Flexible",
+  "duracion": "No Registrada",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1263",
+  "patrimonio": 805571365.25,
+  "cantidadCuotapartes": 187955423.77,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 4285.97,
+    "variacionDiariaPct": 0.024,
+    "ultimos7Dias": -0.1713,
+    "unMes": -0.6294,
+    "noventaDias": 0.6187,
+    "cientoOchentaDias": 1.4724,
+    "enElAnio": 3.2491,
+    "doceMeses": 17.7566
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Letra Tamar TEM M31G6",
+      "porcentaje": 22.4
+    },
+    {
+      "nombre": "FCI Balanz Capital Money Market Clase C",
+      "porcentaje": 3.1
+    },
+    {
+      "nombre": "Pagare #UAR110670002",
+      "porcentaje": 2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 64
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "BBBf(arg)",
+      "fecha": "2026-07-01"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 0,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Max Capital Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03014G-5673e990.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

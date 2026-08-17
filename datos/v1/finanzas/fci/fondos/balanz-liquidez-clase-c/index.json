@@ -1,0 +1,114 @@
+{
+  "fondoId": "832",
+  "claseId": "2358",
+  "nombre": "Balanz Opportunity - Clase C",
+  "fecha": "2026-08-14",
+  "administradora": "Balanz S.G.F.C.I.S.A.U.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Menor o Igual a 0.5 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "946",
+  "patrimonio": 27169938.12,
+  "cantidadCuotapartes": 618501.1,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 43928.682,
+    "variacionDiariaPct": 0.077,
+    "ultimos7Dias": 0.2729,
+    "unMes": 1.0341,
+    "noventaDias": 5.8604,
+    "cientoOchentaDias": 15.9756,
+    "enElAnio": 18.5861,
+    "doceMeses": 45.6725
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 18
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 15.6
+    },
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 13.3
+    },
+    {
+      "nombre": "Lelink D30S6",
+      "porcentaje": 12.6
+    },
+    {
+      "nombre": "Bono Dual TXMD9",
+      "porcentaje": 10
+    },
+    {
+      "nombre": "Bonos Rep Argentina 2030",
+      "porcentaje": 4.1
+    },
+    {
+      "nombre": "Letra Tesoro Nac D31M7",
+      "porcentaje": 3.6
+    },
+    {
+      "nombre": "Bonos Rep Argentina AE38",
+      "porcentaje": 3.2
+    },
+    {
+      "nombre": "Bono Boncer TXMJ9",
+      "porcentaje": 2.8
+    },
+    {
+      "nombre": "Lecer X30N6",
+      "porcentaje": 2.4
+    },
+    {
+      "nombre": "Bono Dual TXMD8",
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "FCI Max Money Market - Clase B",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 10.1
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "AA-f(arg)",
+      "fecha": "2021-12-15"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.1,
+    "honorarioDepositaria": 0.095,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Balanz S.G.F.C.I.S.A.U.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00372G-cc6ce723.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

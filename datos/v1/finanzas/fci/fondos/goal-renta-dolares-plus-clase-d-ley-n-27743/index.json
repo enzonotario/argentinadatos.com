@@ -1,0 +1,94 @@
+{
+  "fondoId": "1214",
+  "claseId": "4811",
+  "nombre": "Pionero Renta Dólares Plus - Clase D Ley Nº 27.743",
+  "fecha": "2026-08-14",
+  "administradora": "Macro Fondos S.G.F.C.I.S.A.",
+  "depositaria": "Banco Macro S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Menor o Igual a 1 Año",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "1151",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 1356.383,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0,
+    "unMes": 0,
+    "noventaDias": 0,
+    "cientoOchentaDias": 0,
+    "enElAnio": 2.0029,
+    "doceMeses": 2.0029
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bonos Rep Argentina AL41",
+      "porcentaje": 26.5
+    },
+    {
+      "nombre": "Bonos Rep Argentina AE38",
+      "porcentaje": 26
+    },
+    {
+      "nombre": "Bonos Rep Argentina AL35",
+      "porcentaje": 24.6
+    },
+    {
+      "nombre": "Bono Bonar 2029 AO29",
+      "porcentaje": 10.5
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional AN29",
+      "porcentaje": 5.4
+    },
+    {
+      "nombre": "Cta Cte U$S Bco Macro Ban",
+      "porcentaje": 4.5
+    },
+    {
+      "nombre": "Bonos Rep Argentina 2030",
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.3
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "AAAf(arg)",
+      "fecha": "2026-05-14"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 0.63,
+    "honorarioDepositaria": 0.07,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Macro Fondos S.G.F.C.I.S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00054G-82963f72.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Macro S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00098-871484a2.jpg"
+    }
+  ]
+}

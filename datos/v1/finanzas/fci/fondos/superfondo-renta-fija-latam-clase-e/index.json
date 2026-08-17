@@ -3,30 +3,30 @@
   "claseId": "1382",
   "nombre": "Superfondo Renta Fija Latam - Clase E",
   "fecha": "2026-03-17",
-  "administradora": "Santander Asset Management G.F.C.I.S.A.",
+  "administradora": "Santander Rio Asset Management G.F.C.I.S.A.",
   "depositaria": "Banco Santander Argentina S.A.",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
-  "region": "Latinoamerica",
+  "region": "Latinoamérica",
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "198",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 30000000,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 5,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 783.412,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": -0.2303,
+    "unMes": -0.2159,
+    "noventaDias": -0.6671,
+    "cientoOchentaDias": 1.1338,
+    "enElAnio": -0.1926,
+    "doceMeses": 2.1704
   },
   "composicionCartera": [
     {
@@ -57,12 +57,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "Santander Asset Management G.F.C.I.S.A.",
+      "tipo": "Administradora",
+      "nombre": "Santander Rio Asset Management G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00049G-c03041ad.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Santander Argentina S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00096-4e9f0233.jpg"
     }

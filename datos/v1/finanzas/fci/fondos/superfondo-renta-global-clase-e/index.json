@@ -3,7 +3,7 @@
   "claseId": "1950",
   "nombre": "Superfondo Renta Global - Clase E",
   "fecha": "2025-12-23",
-  "administradora": "Santander Asset Management G.F.C.I.S.A.",
+  "administradora": "Santander Rio Asset Management G.F.C.I.S.A.",
   "depositaria": "Banco Santander Argentina S.A.",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
@@ -11,22 +11,22 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Dolar Estadounidense Billete",
+  "moneda": "USB",
   "codigoCNV": "1004",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 5000000,
-  "monedaInversion": "Dolar Estadounidense Billete",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 500,
+  "monedaInversion": "USB",
   "plazoLiquidacionDias": 5,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 2000,
+    "variacionDiariaPct": 100,
+    "ultimos7Dias": 100,
+    "unMes": 100,
+    "noventaDias": 100,
+    "cientoOchentaDias": 100,
+    "enElAnio": 100,
+    "doceMeses": 100
   },
   "composicionCartera": [
     {
@@ -47,12 +47,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "Santander Asset Management G.F.C.I.S.A.",
+      "tipo": "Administradora",
+      "nombre": "Santander Rio Asset Management G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00049G-c03041ad.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Santander Argentina S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00096-4e9f0233.jpg"
     }

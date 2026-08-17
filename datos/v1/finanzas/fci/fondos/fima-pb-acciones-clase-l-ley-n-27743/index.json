@@ -11,22 +11,22 @@
   "benchmark": "S&P Merval",
   "horizonte": "Largo Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "105",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 100,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 1727.542,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 2.8033,
+    "unMes": 4.6417,
+    "noventaDias": 59.1527,
+    "cientoOchentaDias": 57.6662,
+    "enElAnio": 2.8033,
+    "doceMeses": 8.3889
   },
   "composicionCartera": [
     {
@@ -150,23 +150,23 @@
     }
   ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 3.145,
+    "honorarioDepositaria": 0.555,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Galicia Asset Management S.A.U.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00002G-01a59b57.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Galicia y Buenos Aires S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00081-d14fcb5c.jpg"
     }

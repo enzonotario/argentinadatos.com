@@ -3,30 +3,30 @@
   "claseId": "2280",
   "nombre": "Intervalores Ahorro - Clase E",
   "fecha": "2021-04-26",
-  "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
+  "administradora": "Allaria Ledesma Fondos Administrados S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "Renta Fija",
-  "tipoDD": "No Aplica",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "Badlar",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1022",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 100,
-  "monedaInversion": "Dolar Estadounidense",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 10.722,
+    "variacionDiariaPct": -0.158,
+    "ultimos7Dias": -0.3161,
+    "unMes": -1.5337,
+    "noventaDias": -6.7003,
+    "cientoOchentaDias": -16.0376,
+    "enElAnio": -9.7779,
+    "doceMeses": 21.8409
   },
   "composicionCartera": [
     {
@@ -57,28 +57,28 @@
   "calificaciones": [
     {
       "calificadora": "FIX SCR S.A.",
-      "calificacion": "A+",
+      "calificacion": "AA-f (Arg)",
       "fecha": "2025-08-04"
     }
   ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 1.75,
+    "honorarioDepositaria": 0.22,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
+      "tipo": "Administradora",
+      "nombre": "Allaria Ledesma Fondos Administrados S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }

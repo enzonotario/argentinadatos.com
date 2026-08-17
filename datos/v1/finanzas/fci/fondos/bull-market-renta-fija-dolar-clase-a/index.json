@@ -14,12 +14,12 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1787",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
+  "cantidadCuotapartes": 0,
   "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
+    "valorCuotaparte": 1000,
     "variacionDiariaPct": null,
     "ultimos7Dias": null,
     "unMes": null,
@@ -271,12 +271,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Bull Market Asset Management S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/02507G-49489fb4.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }

@@ -1,0 +1,118 @@
+{
+  "fondoId": "765",
+  "claseId": "2200",
+  "nombre": "Pionero Retorno Total - Clase C",
+  "fecha": "2026-08-14",
+  "administradora": "Macro Fondos S.G.F.C.I.S.A.",
+  "depositaria": "Banco Macro S.A.",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Largo Plazo",
+  "duracion": "No Aplicable",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "828",
+  "patrimonio": 17240.62,
+  "cantidadCuotapartes": 10654.12,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 1618.212,
+    "variacionDiariaPct": 0.083,
+    "ultimos7Dias": 0.3819,
+    "unMes": -2.1731,
+    "noventaDias": -1.7607,
+    "cientoOchentaDias": 7.5899,
+    "enElAnio": 15.3912,
+    "doceMeses": 27.9749
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Dual TXMJ0",
+      "porcentaje": 21
+    },
+    {
+      "nombre": "Bono Capitalizable T30J7",
+      "porcentaje": 9.8
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TY30P",
+      "porcentaje": 9
+    },
+    {
+      "nombre": "Bonos Rep Argentina AE38",
+      "porcentaje": 9
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD41",
+      "porcentaje": 7.4
+    },
+    {
+      "nombre": "Bono Boncer TXMJ9",
+      "porcentaje": 7.1
+    },
+    {
+      "nombre": "Bono Bonar 2029 AO29",
+      "porcentaje": 6.9
+    },
+    {
+      "nombre": "Bono Boncer TZXS8",
+      "porcentaje": 6.9
+    },
+    {
+      "nombre": "Bono Dual TXMD9",
+      "porcentaje": 4.7
+    },
+    {
+      "nombre": "Bono Boncer TZX28",
+      "porcentaje": 4.7
+    },
+    {
+      "nombre": "FCI Fima Premium Clase B",
+      "porcentaje": 4.2
+    },
+    {
+      "nombre": "Bono Dual TXMJ8",
+      "porcentaje": 3
+    },
+    {
+      "nombre": "Bono Boncer TZXD8",
+      "porcentaje": 2.8
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 3.6
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "FIX SCR S.A.",
+      "calificacion": "AA- (arg) f",
+      "fecha": "2026-06-10"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.25,
+    "honorarioDepositaria": 0.25,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Macro Fondos S.G.F.C.I.S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00054G-82963f72.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Macro S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00098-871484a2.jpg"
+    }
+  ]
+}

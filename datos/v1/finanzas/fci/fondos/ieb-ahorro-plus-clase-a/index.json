@@ -1,9 +1,9 @@
 {
   "fondoId": "827",
   "claseId": "2329",
-  "nombre": "IEB Ahorro Plus - Clase A",
-  "fecha": "2026-06-25",
-  "administradora": "IEB S.A.",
+  "nombre": "Ciclo Nova Ahorro Plus - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "Ciclo Nova Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
@@ -11,20 +11,22 @@
   "benchmark": "Badlar",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1041",
-  "patrimonio": 35628404413.28,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 36982148125.94,
+  "cantidadCuotapartes": 1014062432.25,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 35458.746,
-    "ultimos7Dias": 0.304,
-    "unMes": 1.7751,
-    "noventaDias": 5.4005,
-    "cientoOchentaDias": 13.9714,
-    "enElAnio": 13.7878,
-    "doceMeses": 28.0377
+    "valorCuotaparte": 36469.301,
+    "variacionDiariaPct": 0.038,
+    "ultimos7Dias": 0.3881,
+    "unMes": 1.6006,
+    "noventaDias": 5.0678,
+    "cientoOchentaDias": 12.5228,
+    "enElAnio": 17.0307,
+    "doceMeses": 32.5956
   },
   "composicionCartera": [
     {
@@ -81,14 +83,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "IEB S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02496G-cffb0731.jpg"
+      "tipo": "Administradora",
+      "nombre": "Ciclo Nova Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02496G-cffb0731.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

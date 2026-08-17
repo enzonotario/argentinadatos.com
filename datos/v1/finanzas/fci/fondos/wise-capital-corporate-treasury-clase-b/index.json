@@ -1,0 +1,86 @@
+{
+  "fondoId": "1584",
+  "claseId": "5159",
+  "nombre": "Wise Capital Hedge - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "Wise Capital Asset Management S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Corto Plazo",
+  "duracion": "Menor o Igual a 0.5 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1579",
+  "patrimonio": 18133046164.65,
+  "cantidadCuotapartes": 18366822607.52,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 987.272,
+    "variacionDiariaPct": 0.05,
+    "ultimos7Dias": 0.0368,
+    "unMes": 1.3464,
+    "noventaDias": 3.3031,
+    "cientoOchentaDias": 2.8832,
+    "enElAnio": 2.1061,
+    "doceMeses": -0.2913
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Letra Tesoro Nac D31L6",
+      "porcentaje": 30.7
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TZV27",
+      "porcentaje": 19.5
+    },
+    {
+      "nombre": "FCI SBS Ahorro Pesos Cl B",
+      "porcentaje": 18.5
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional D31G6",
+      "porcentaje": 16.8
+    },
+    {
+      "nombre": "Lelink D30S6",
+      "porcentaje": 14.5
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.1
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moodys Local Calif. Riesgo",
+      "calificacion": "A-f.ar",
+      "fecha": "2025-02-14"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 5,
+    "honorarioDepositaria": 0.13,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Wise Capital Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03233G-77b3387a.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}

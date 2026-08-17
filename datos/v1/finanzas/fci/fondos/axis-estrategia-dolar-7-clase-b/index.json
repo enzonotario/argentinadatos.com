@@ -1,8 +1,8 @@
 {
   "fondoId": "1759",
   "claseId": "5955",
-  "nombre": "Axis Estrategia Dólar 7\t- Clase B",
-  "fecha": "2026-07-07",
+  "nombre": "Axis Rosental USD Strategic Income - Clase B",
+  "fecha": "2026-08-14",
   "administradora": "Axis S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -11,18 +11,20 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Dolar Estadounidense Billete",
+  "moneda": "USB",
   "codigoCNV": "1766",
-  "patrimonio": 7896887.54,
-  "inversionMinima": 100,
-  "monedaInversion": "Dolar Estadounidense Billete",
+  "patrimonio": 11066956.44,
+  "cantidadCuotapartes": 10750063.91,
+  "inversionMinima": 1,
+  "monedaInversion": "USB",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 1018.372,
-    "ultimos7Dias": 0.0357,
-    "unMes": -0.2355,
-    "noventaDias": 1.073,
-    "cientoOchentaDias": null,
+    "valorCuotaparte": 1029.478,
+    "variacionDiariaPct": -0.042,
+    "ultimos7Dias": 0.1322,
+    "unMes": 0.6243,
+    "noventaDias": 1.4775,
+    "cientoOchentaDias": 2.9478,
     "enElAnio": null,
     "doceMeses": null
   },
@@ -109,14 +111,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Axis S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00384G-b6af83ec.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00384G-b6af83ec.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

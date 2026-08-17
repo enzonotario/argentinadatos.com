@@ -1,32 +1,32 @@
 {
-  "fondoId": "1542",
-  "claseId": "4644",
-  "nombre": "Adcap Balanceado IX - Clase A",
-  "fecha": "2026-06-03",
+  "fondoId": "1391",
+  "claseId": "4021",
+  "nombre": "Adcap Ahorro Dinámico Fondo de Dinero - Clase A",
+  "fecha": "2026-08-14",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "Renta Fija",
-  "tipoDD": "No Aplica",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": "Dinámico",
   "region": "Argentina",
   "benchmark": "No Registrado",
-  "horizonte": "Mediano Plazo",
+  "horizonte": "Corto Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
-  "codigoCNV": "1518",
-  "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
-  "plazoLiquidacionDias": 1,
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1338",
+  "patrimonio": 2823488234.25,
+  "cantidadCuotapartes": 754041118.3,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 3744.475,
+    "variacionDiariaPct": 0.056,
+    "ultimos7Dias": 0.3854,
+    "unMes": 1.6311,
+    "noventaDias": 5.0491,
+    "cientoOchentaDias": 11.4437,
+    "enElAnio": 15.4606,
+    "doceMeses": 32.1223
   },
   "composicionCartera": [
     {
@@ -80,7 +80,7 @@
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": 1.22,
+    "honorarioGerente": 2.87,
     "honorarioDepositaria": 0.121,
     "comisionIngreso": 0,
     "comisionEgreso": 0,
@@ -91,12 +91,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }

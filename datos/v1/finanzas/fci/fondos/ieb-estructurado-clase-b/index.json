@@ -1,9 +1,9 @@
 {
   "fondoId": "1546",
   "claseId": "4663",
-  "nombre": "IEB Estructurado - Clase B",
-  "fecha": "2026-06-25",
-  "administradora": "IEB S.A.",
+  "nombre": "Ciclo Nova Estructurado - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "Ciclo Nova Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
   "tipoDD": "No Aplica",
@@ -11,20 +11,22 @@
   "benchmark": "No Registrado",
   "horizonte": "Plazo Flexible",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1473",
-  "patrimonio": 11801412989.36,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 12207850792.78,
+  "cantidadCuotapartes": 6186922096.35,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1907.477,
-    "ultimos7Dias": 0.5718,
-    "unMes": 2.983,
-    "noventaDias": 9.1438,
-    "cientoOchentaDias": 17.3192,
-    "enElAnio": 16.9433,
-    "doceMeses": 47.2664
+    "valorCuotaparte": 1973.17,
+    "variacionDiariaPct": -0.149,
+    "ultimos7Dias": -0.0812,
+    "unMes": 1.5674,
+    "noventaDias": 7.0904,
+    "cientoOchentaDias": 17.6968,
+    "enElAnio": 20.9708,
+    "doceMeses": 43.2752
   },
   "composicionCartera": [
     {
@@ -105,14 +107,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "IEB S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02496G-cffb0731.jpg"
+      "tipo": "Administradora",
+      "nombre": "Ciclo Nova Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02496G-cffb0731.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

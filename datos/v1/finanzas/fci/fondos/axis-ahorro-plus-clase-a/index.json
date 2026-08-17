@@ -1,0 +1,78 @@
+{
+  "fondoId": "655",
+  "claseId": "1352",
+  "nombre": "Axis Ahorro Plus - Clase A",
+  "fecha": "2020-06-25",
+  "administradora": "Axis S.G.F.C.I.S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": null,
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Corto Plazo",
+  "duracion": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "794",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": null,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 2165.088,
+    "variacionDiariaPct": -0.054,
+    "ultimos7Dias": 6.347,
+    "unMes": 6.8879,
+    "noventaDias": 8.9828,
+    "cientoOchentaDias": 16.2194,
+    "enElAnio": 16.553,
+    "doceMeses": 35.87
+  },
+  "composicionCartera": [
+    {
+      "nombre": "FCI IAM Ahorro Pesos C B",
+      "porcentaje": 67.6
+    },
+    {
+      "nombre": "FCI Toronto T Ahorro B",
+      "porcentaje": 25.7
+    },
+    {
+      "nombre": "FCI MEGAQM Pesos - Clase B",
+      "porcentaje": 5.2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 1.5
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "AA+f(arg)",
+      "fecha": "2020-06-25"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 6,
+    "honorarioDepositaria": 0.16,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 3,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Axis S.G.F.C.I.S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00371G-45045e78.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": null
+    }
+  ]
+}

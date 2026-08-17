@@ -1,30 +1,32 @@
 {
   "fondoId": "710",
   "claseId": "1523",
-  "nombre": "Consultatio Liquidez Ley 27260 - Clase D",
-  "fecha": "2026-06-04",
+  "nombre": "Consultatio Liquidez Dólar - Clase D",
+  "fecha": "2026-08-14",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "Renta Fija",
-  "tipoDD": "No Aplica",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": "Clásico",
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "883",
-  "patrimonio": 4109758.12,
-  "inversionMinima": 100,
+  "patrimonio": 478793.15,
+  "cantidadCuotapartes": 631483,
+  "inversionMinima": 20,
   "monedaInversion": "Dolar Estadounidense",
-  "plazoLiquidacionDias": 1,
+  "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 758.391,
-    "ultimos7Dias": 0.0046,
-    "unMes": -0.0152,
-    "noventaDias": -0.0816,
-    "cientoOchentaDias": -0.0256,
-    "enElAnio": -0.0643,
-    "doceMeses": 0.7642
+    "valorCuotaparte": 758.204,
+    "variacionDiariaPct": -0.001,
+    "ultimos7Dias": -0.0015,
+    "unMes": -0.0073,
+    "noventaDias": -0.0295,
+    "cientoOchentaDias": -0.1247,
+    "enElAnio": -0.0889,
+    "doceMeses": 0.2479
   },
   "composicionCartera": [
     {
@@ -67,14 +69,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "One618 Asset Management S.G.F.C.I.S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00022G-3c173d8e.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00022G-3c173d8e.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00065-6aaeaf00.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
   ]
 }

@@ -5,28 +5,28 @@
   "fecha": "2026-01-08",
   "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "Retorno Total",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
-  "region": "Global",
+  "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "No Aplicable",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1524",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 1145.644,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0.2597,
+    "unMes": 1.5711,
+    "noventaDias": 8.3635,
+    "cientoOchentaDias": 9.3167,
+    "enElAnio": 0.1055,
+    "doceMeses": 11.7767
   },
   "composicionCartera": [
     {
@@ -142,23 +142,23 @@
     }
   ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 1.5,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }

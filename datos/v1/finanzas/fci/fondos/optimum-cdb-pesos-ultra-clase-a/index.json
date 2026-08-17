@@ -3,30 +3,30 @@
   "claseId": "905",
   "nombre": "Optimum CDB Pesos Ultra - Clase A",
   "fecha": "2025-02-07",
-  "administradora": "SAM Argentina S.G.F.C.I.S.A.U.",
+  "administradora": "BNP Paribas Asset Management  Arg. S.A.S.G.F.C.I",
   "depositaria": "BNP Paribas",
   "tipoRenta": "Mercado de Dinero",
-  "tipoDD": "Clásico",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "30%+70%",
   "horizonte": "Corto Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "489",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
+  "cantidadCuotapartes": 0,
   "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 49918.205,
+    "variacionDiariaPct": 0.001,
+    "ultimos7Dias": 0.354,
+    "unMes": 1.7478,
+    "noventaDias": 5.9095,
+    "cientoOchentaDias": 13.9241,
+    "enElAnio": 2.3134,
+    "doceMeses": 44.3138
   },
   "composicionCartera": [
     {
@@ -46,23 +46,23 @@
     }
   ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 0,
+    "honorarioDepositaria": 0,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "SAM Argentina S.G.F.C.I.S.A.U.",
+      "tipo": "Administradora",
+      "nombre": "BNP Paribas Asset Management  Arg. S.A.S.G.F.C.I",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00016G-52d8d4aa.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "BNP Paribas",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00070-12f7bb54.jpg"
     }

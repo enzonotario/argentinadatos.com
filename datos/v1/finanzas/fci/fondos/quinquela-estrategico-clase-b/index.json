@@ -1,0 +1,106 @@
+{
+  "fondoId": "602",
+  "claseId": "1222",
+  "nombre": "MEGAQM Estrategia 5 - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "MEGA QM S.A.",
+  "depositaria": "Banco de Servicios y Transacciones S.A. (BST)",
+  "tipoRenta": "Renta Mixta",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Corto Plazo",
+  "duracion": "Menor o Igual a 0.5 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "756",
+  "patrimonio": 20489969577.42,
+  "cantidadCuotapartes": 697148591.37,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 29391.108,
+    "variacionDiariaPct": 0.14,
+    "ultimos7Dias": 0.5402,
+    "unMes": 1.0775,
+    "noventaDias": 4.8103,
+    "cientoOchentaDias": 16.0119,
+    "enElAnio": 21.3503,
+    "doceMeses": 37.6008
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZXS7",
+      "porcentaje": 21.2
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional T31Y7",
+      "porcentaje": 18.3
+    },
+    {
+      "nombre": "Bono Boncer TZXD7",
+      "porcentaje": 15.8
+    },
+    {
+      "nombre": "Letra Tamar TEM TMF27",
+      "porcentaje": 10.7
+    },
+    {
+      "nombre": "Bono Boncer TZX28",
+      "porcentaje": 8.5
+    },
+    {
+      "nombre": "Bono Muni Cordoba S2 13022027",
+      "porcentaje": 7
+    },
+    {
+      "nombre": "Caucion Colocadora $ BYMA",
+      "porcentaje": 6.9
+    },
+    {
+      "nombre": "Lecap S30S6",
+      "porcentaje": 5.5
+    },
+    {
+      "nombre": "FCI IEB Ahorro - Clase E",
+      "porcentaje": 3.5
+    },
+    {
+      "nombre": "Letra Prov Chubut S118 C2",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 0.5
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "Af",
+      "fecha": "2026-08-14"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 1.85,
+    "honorarioDepositaria": 0.121,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "MEGA QM S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Servicios y Transacciones S.A. (BST)",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00387-5d5880dd.jpg"
+    }
+  ]
+}

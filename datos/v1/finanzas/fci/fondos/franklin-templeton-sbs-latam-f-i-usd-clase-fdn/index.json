@@ -1,0 +1,142 @@
+{
+  "fondoId": "624",
+  "claseId": "1259",
+  "nombre": "SBS Renta Dólar Argentina - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "SBS Asset Management S.A.S.G.F.C.I.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Latinoamérica",
+  "benchmark": "No Registrado",
+  "horizonte": "Largo Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "750",
+  "patrimonio": 42016259.37,
+  "cantidadCuotapartes": 30243106.16,
+  "inversionMinima": 1,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 1389.284,
+    "variacionDiariaPct": 0.033,
+    "ultimos7Dias": 0.0431,
+    "unMes": 0.3678,
+    "noventaDias": 1.2164,
+    "cientoOchentaDias": 3.6659,
+    "enElAnio": 5.1864,
+    "doceMeses": 6.1911
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono del Tesoro Nacional AO27",
+      "porcentaje": 10.4
+    },
+    {
+      "nombre": "Cta Cte USD JP Morgan",
+      "porcentaje": 4.5
+    },
+    {
+      "nombre": "ON Irsa Clase 25",
+      "porcentaje": 4.1
+    },
+    {
+      "nombre": "ON Pan American C38",
+      "porcentaje": 3.5
+    },
+    {
+      "nombre": "ON Central Puerto Clase C",
+      "porcentaje": 2.8
+    },
+    {
+      "nombre": "FCI Adcap Ahorro Dólares - Clase E",
+      "porcentaje": 2.6
+    },
+    {
+      "nombre": "ON CNH Arg. C10",
+      "porcentaje": 2.6
+    },
+    {
+      "nombre": "ON Profertil C2",
+      "porcentaje": 2.5
+    },
+    {
+      "nombre": "ON YPF Clase 42",
+      "porcentaje": 2.4
+    },
+    {
+      "nombre": "ON Otamerica S6",
+      "porcentaje": 2.4
+    },
+    {
+      "nombre": "ON Capex C12",
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "ON Ledesma Clase 15",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "ON PCR Clase R",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "ON Tecpetrol C12",
+      "porcentaje": 2.2
+    },
+    {
+      "nombre": "ON Oldelval Clase 7",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "ON Aluar Serie 7",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "ON Pluspetrol Clase 5",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "ON YPF Luz C18 YFCJO",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "ON TGS C4 Reg S",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 42.8
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moodys Local Calif. Riesgo",
+      "calificacion": "AAA",
+      "fecha": "2017-06-15"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "SBS Asset Management S.A.S.G.F.C.I.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00347G-615b02d0.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

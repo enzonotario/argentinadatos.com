@@ -1,9 +1,9 @@
 {
   "fondoId": "1331",
   "claseId": "3800",
-  "nombre": "IEB Multiestrategia II - Clase B",
-  "fecha": "2026-06-25",
-  "administradora": "IEB S.A.",
+  "nombre": "Ciclo Nova Multiestrategia II - Clase B",
+  "fecha": "2026-08-14",
+  "administradora": "Ciclo Nova Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
   "tipoDD": "No Aplica",
@@ -11,20 +11,22 @@
   "benchmark": "Otro",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1315",
-  "patrimonio": 10379.17,
+  "patrimonio": 75736650728.43,
+  "cantidadCuotapartes": 3093853445.26,
   "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 23810.9,
-    "ultimos7Dias": 1.4901,
-    "unMes": 4.3605,
-    "noventaDias": 0.2497,
-    "cientoOchentaDias": 2.3328,
-    "enElAnio": 2.2146,
-    "doceMeses": 17.8308
+    "valorCuotaparte": 24479.7,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0.3254,
+    "unMes": 1.353,
+    "noventaDias": 7.8315,
+    "cientoOchentaDias": 4.1171,
+    "enElAnio": 5.0856,
+    "doceMeses": 20.0992
   },
   "composicionCartera": [
     {
@@ -38,8 +40,8 @@
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": 0,
-    "honorarioDepositaria": 0,
+    "honorarioGerente": 1.2,
+    "honorarioDepositaria": 0.13,
     "comisionIngreso": 0,
     "comisionEgreso": 0,
     "comisionTransferencia": 0,
@@ -49,14 +51,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "IEB S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02496G-cffb0731.jpg"
+      "tipo": "Administradora",
+      "nombre": "Ciclo Nova Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02496G-cffb0731.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

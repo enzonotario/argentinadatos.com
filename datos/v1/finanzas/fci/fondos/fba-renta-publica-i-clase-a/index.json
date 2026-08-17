@@ -1,30 +1,32 @@
 {
   "fondoId": "845",
   "claseId": "3550",
-  "nombre": "FBA Renta Publica I - Clase A",
-  "fecha": "2026-06-04",
+  "nombre": "FBA Cobertura Pesos - Clase A",
+  "fecha": "2026-08-14",
   "administradora": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
   "depositaria": "BBVA Argentina S.A.",
-  "tipoRenta": "RG900",
+  "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
-  "horizonte": "Corto Plazo",
+  "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 0.5 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1048",
-  "patrimonio": 19458731728.8,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 21265842763.14,
+  "cantidadCuotapartes": 1109628668.2538,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 18602.363,
-    "ultimos7Dias": 0.6354,
-    "unMes": 2.8983,
-    "noventaDias": 10.4685,
-    "cientoOchentaDias": 21.7052,
-    "enElAnio": 19.582,
-    "doceMeses": 42.6744
+    "valorCuotaparte": 19164.828,
+    "variacionDiariaPct": 0.182,
+    "ultimos7Dias": 0.9056,
+    "unMes": 1.0108,
+    "noventaDias": 4.5005,
+    "cientoOchentaDias": 16.7119,
+    "enElAnio": 23.1978,
+    "doceMeses": 50.5272
   },
   "composicionCartera": [
     {
@@ -89,14 +91,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "BBVA Asset Management Argentina S.A.U.S.G.F.C.I.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00029G-9a6fc701.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00029G-9a6fc701.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "BBVA Argentina S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00079-a62ab0c8.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00079-a62ab0c8.jpg"
     }
   ]
 }

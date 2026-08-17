@@ -1,8 +1,8 @@
 {
   "fondoId": "1625",
   "claseId": "5394",
-  "nombre": "Mercado Fondo Ahorro - Clase B",
-  "fecha": "2026-05-21",
+  "nombre": "MP Ahorro - Clase B",
+  "fecha": "2026-08-14",
   "administradora": "Mercado Pago Asset Managemet S.A.",
   "depositaria": "Banco Industrial S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,20 +11,22 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1650",
   "patrimonio": 0,
-  "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 0,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
     "valorCuotaparte": 1165.174,
+    "variacionDiariaPct": 0,
     "ultimos7Dias": 0,
     "unMes": 0,
-    "noventaDias": 0.9903,
-    "cientoOchentaDias": 5.7217,
+    "noventaDias": 0,
+    "cientoOchentaDias": 1.4704,
     "enElAnio": 4.2117,
-    "doceMeses": null
+    "doceMeses": 14.4862
   },
   "composicionCartera": [
     {
@@ -42,7 +44,7 @@
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": 0.07,
+    "honorarioGerente": 0.1,
     "honorarioDepositaria": 0.06,
     "comisionIngreso": 0,
     "comisionEgreso": 0,
@@ -53,14 +55,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mercado Pago Asset Managemet S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03265G-e5cf3c10.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03265G-e5cf3c10.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Industrial S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00391-92ebcc0c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00391-92ebcc0c.jpg"
     }
   ]
 }

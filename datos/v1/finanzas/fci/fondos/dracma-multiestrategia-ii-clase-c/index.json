@@ -1,9 +1,9 @@
 {
   "fondoId": "1707",
   "claseId": "5718",
-  "nombre": "Dracma Multiestrategia II - Clase C",
-  "fecha": "2026-05-20",
-  "administradora": "Dracma S.A.",
+  "nombre": "DXA PMKT Total Return - Clase C",
+  "fecha": "2026-08-14",
+  "administradora": "Dracma Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Variable",
   "tipoDD": "No Aplica",
@@ -11,14 +11,16 @@
   "benchmark": "No Registrado",
   "horizonte": "Largo Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1508",
   "patrimonio": 0,
+  "cantidadCuotapartes": 0,
   "inversionMinima": 1,
-  "monedaInversion": "Peso Argentina",
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1,
+    "valorCuotaparte": 1000,
+    "variacionDiariaPct": 0,
     "ultimos7Dias": 0,
     "unMes": 0,
     "noventaDias": 0,
@@ -83,7 +85,7 @@
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 2,
-    "honorarioDepositaria": 0.1815,
+    "honorarioDepositaria": 0.1694,
     "comisionIngreso": 0,
     "comisionEgreso": 0,
     "comisionTransferencia": 0,
@@ -93,14 +95,14 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "Dracma S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/02976G-13668483.jpg"
+      "tipo": "Administradora",
+      "nombre": "Dracma Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/02976G-13668483.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }

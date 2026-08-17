@@ -1,0 +1,66 @@
+{
+  "fondoId": "460",
+  "claseId": "886",
+  "nombre": "Gainvest Ahorro - Clase A",
+  "fecha": "2026-08-14",
+  "administradora": "StoneX Asset Management S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Corto Plazo",
+  "duracion": "Menor o Igual a 0.5 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "601",
+  "patrimonio": 1214726.28,
+  "cantidadCuotapartes": 76555.63,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 15867.237,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0.0001,
+    "unMes": -0.0058,
+    "noventaDias": 0.9395,
+    "cientoOchentaDias": 3.443,
+    "enElAnio": -0.7305,
+    "doceMeses": -71.272
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Rem Bco Comafi",
+      "porcentaje": 100
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moodys Local Calif. Riesgo",
+      "calificacion": "Af.ar",
+      "fecha": "2021-03-12"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 0,
+    "honorarioDepositaria": 0,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "StoneX Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00311G-be0f6f28.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

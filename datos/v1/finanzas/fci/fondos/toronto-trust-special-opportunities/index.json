@@ -3,7 +3,7 @@
   "claseId": "841",
   "nombre": "Toronto Trust Special Opportunities",
   "fecha": "2026-01-02",
-  "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
+  "administradora": "BACS Administradora de Activos S.A.S.G.F.C.I",
   "depositaria": "Banco Credito y Securitizacion S.A. (BACS)",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
@@ -11,22 +11,22 @@
   "benchmark": "No Registrado",
   "horizonte": "Plazo Flexible",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "585",
   "patrimonio": 496929533.82,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 30000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 196536.37,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 2528435.468,
+    "variacionDiariaPct": -0.195,
+    "ultimos7Dias": -1.0947,
+    "unMes": -16.5083,
+    "noventaDias": -9.7471,
+    "cientoOchentaDias": -1.7869,
+    "enElAnio": -0.1954,
+    "doceMeses": 17.2199
   },
   "composicionCartera": [
     {
@@ -50,25 +50,31 @@
       "porcentaje": 10.3
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "A",
+      "fecha": "2026-01-02"
+    }
+  ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 0.8,
+    "honorarioDepositaria": 0.2057,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
-      "nombre": "Investis Asset Management S.A.S.G.F.C.I.",
+      "tipo": "Administradora",
+      "nombre": "BACS Administradora de Activos S.A.S.G.F.C.I",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00021G-d9e0d02c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Credito y Securitizacion S.A. (BACS)",
       "logo": null
     }

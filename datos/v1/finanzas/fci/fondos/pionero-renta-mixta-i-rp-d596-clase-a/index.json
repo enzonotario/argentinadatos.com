@@ -2,30 +2,30 @@
   "fondoId": "1015",
   "claseId": "2896",
   "nombre": "Pionero Renta Mixta I RP D.596 - Clase A",
-  "fecha": "2020-02-28",
+  "fecha": "2020-02-27",
   "administradora": "Macro Fondos S.G.F.C.I.S.A.",
   "depositaria": "Banco Macro S.A.",
-  "tipoRenta": "Renta Mixta",
-  "tipoDD": "No Aplica",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "No Aplicable",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "798",
-  "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 38143.89,
+  "cantidadCuotapartes": 20226.93,
+  "inversionMinima": null,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
+    "valorCuotaparte": 1885.797,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0.3667,
+    "unMes": 1.2424,
     "noventaDias": null,
     "cientoOchentaDias": null,
-    "enElAnio": null,
+    "enElAnio": 3.239,
     "doceMeses": null
   },
   "composicionCartera": [
@@ -51,12 +51,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Macro Fondos S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00054G-82963f72.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Macro S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00098-871484a2.jpg"
     }

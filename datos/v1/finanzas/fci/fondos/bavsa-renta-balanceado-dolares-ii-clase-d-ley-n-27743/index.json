@@ -1,8 +1,8 @@
 {
   "fondoId": "1770",
   "claseId": "6041",
-  "nombre": "Bavsa Renta Balanceado Dólares II - Clase D - Ley N° 27.743",
-  "fecha": "2026-01-07",
+  "nombre": "BAVSA Deuda Privada Argentina USD - Clase D Ley N° 27.743",
+  "fecha": "2026-08-14",
   "administradora": "BAVSA Fondos S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,17 +13,19 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1781",
-  "patrimonio": 0,
-  "inversionMinima": 0,
+  "patrimonio": 1014938.68,
+  "cantidadCuotapartes": 1000000,
+  "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "ultimos7Dias": null,
-    "unMes": null,
+    "valorCuotaparte": 1014.939,
+    "variacionDiariaPct": 0.017,
+    "ultimos7Dias": 0.1944,
+    "unMes": 0.8156,
     "noventaDias": null,
     "cientoOchentaDias": null,
-    "enElAnio": null,
+    "enElAnio": 1.4939,
     "doceMeses": null
   },
   "composicionCartera": [
@@ -82,25 +84,25 @@
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 1,
+    "honorarioDepositaria": 0.12,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "BAVSA Fondos S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/03118G-d03fc40c.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03118G-d03fc40c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
-      "logo": "https://estadisticas.cafci.org.ar/assets/legacy/logos/00115-2f3a5b01.jpg"
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
 }
