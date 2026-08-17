@@ -5,6 +5,7 @@ import {
 } from '@/finanzas/fci/fondos/guardado/guardarDetallesFondos.js'
 import { guardarComparatasas } from '@/finanzas/fci/fondos/guardado/guardarComparatasas.js'
 import { guardarSeriesDesdeFondos } from '@/finanzas/fci/series/guardarSeriesDesdeFondos.js'
+import { guardarMercadoHistorico } from '@/finanzas/fci/series/guardarMercadoHistorico.js'
 import { recuperarYLocalizarCamposFondo } from '@/finanzas/fci/fondos/preservarComposicionCartera.js'
 import { FciFondosDatabaseService } from '@/finanzas/fci/fondos/database/service.js'
 import { computeRendimientosFromHistory } from '../../../../apps/cafci-worker/src/cnv/mapCnvRowToPayload.js'
@@ -98,6 +99,7 @@ export default async function fondosComando() {
     })
 
     await guardarSeriesDesdeFondos(fondos, historicosPorSlug)
+    await guardarMercadoHistorico(historicosPorSlug, snapshot.fechaActualizacion)
 
     logMensaje(log, 'Fondos detallados generados desde SQLite', {
       cantidad: fondos.length,
