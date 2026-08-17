@@ -44,7 +44,8 @@
     "cafci-worker:db:backfill-cnv": "pnpm --filter @argentinadatos/cafci-worker db:backfill-cnv",
     "cafci-worker:fresh": "pnpm --filter @argentinadatos/cafci-worker db:fresh-cnv",
     "migrate": "node scripts/migrate.js",
-    "seed:fci-otros": "node scripts/seed-fci-otros.js"
+    "seed:fci-otros": "node scripts/seed-fci-otros.js",
+    "procesar-dolares": "node scripts/procesar-dolares.js todos"
   },
   "devDependencies": {
     "@es-js/vite-plugin-esjs": "^0.1.0",

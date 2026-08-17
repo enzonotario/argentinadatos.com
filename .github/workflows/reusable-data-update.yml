@@ -107,5 +107,9 @@ jobs:
       - name: Run command
         run: ${{ inputs.run_command }}
 
+      - name: Procesar dólares
+        if: contains(inputs.run_command, 'diario') || contains(inputs.run_command, '/v1/cotizaciones')
+        run: pnpm run procesar-dolares
+
       - name: Commit and push if changes
         run: bash .github/scripts/commit-and-push-data.sh
