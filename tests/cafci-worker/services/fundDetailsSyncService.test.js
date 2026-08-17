@@ -195,4 +195,76 @@ describe('FundDetailsSyncService CNV', () => {
     expect(temp.repository.getWorkerState('cnv_ingested:2020-01-02')).toBe('1')
     expect(temp.repository.getWorkerState('cnv_ingested:2020-01-03')).toBe('1')
   })
+
+  it('desambigua slugs cuando un nombre choca con un fondo ya persistido', async () => {
+    const temp = await createTempRepository()
+    cleanups.push(temp.cleanup)
+
+    const service = new FundDetailsSyncService(temp.repository)
+    const currentByClassId = new Map()
+    const currentBySlug = new Map()
+
+    const ingest = (documentDate, funds) =>
+      service.ingestCnvDocument(
+        { documentDate, presentationId: documentDate },
+        {
+          parsed: { funds },
+          downloaded: {
+            fileName: `${documentDate}.xlsx`,
+            buffer: Buffer.from(''),
+          },
+          skipRollingHistory: true,
+          persistFuenteOriginal: false,
+          currentByClassId,
+          currentBySlug,
+          previousBySlug: new Map(),
+          firstBySlug: new Map(),
+        },
+      )
+
+    await ingest('2020-01-02', [
+      {
+        claseId: '1',
+        fecha: '2020-01-02',
+        nombre: 'Alpha',
+        valorCuotaparte: 100,
+        patrimonio: 1000,
+      },
+    ])
+    await ingest('2026-01-09', [
+      {
+        claseId: '1',
+        fecha: '2026-01-09',
+        nombre: 'Alpha Clase A',
+        valorCuotaparte: 101,
+        patrimonio: 1010,
+      },
+      {
+        claseId: '2',
+        fecha: '2026-01-09',
+        nombre: 'Alpha',
+        valorCuotaparte: 50,
+        patrimonio: 500,
+      },
+    ])
+
+    const funds = temp.repository
+      .getCurrentFunds()
+      .sort((left, right) =>
+        String(left.claseId).localeCompare(String(right.claseId)),
+      )
+
+    expect(funds).toHaveLength(2)
+    expect(funds[0]).toMatchObject({
+      claseId: '1',
+      slug: 'alpha',
+      nombre: 'Alpha Clase A',
+    })
+    expect(funds[1]).toMatchObject({
+      claseId: '2',
+      slug: 'alpha-2',
+      nombre: 'Alpha',
+    })
+    expect(temp.repository.getWorkerState('cnv_ingested:2026-01-09')).toBe('1')
+  })
 })

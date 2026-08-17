@@ -22,6 +22,7 @@ import {
 } from '../config.js'
 import { recordHistoricalSnapshotFromDetailSync } from '../history/recordHistoricalSnapshotFromDetail.js'
 import { uploadDatabaseBackupToR2 } from '../r2/uploadDatabaseBackupToR2.js'
+import { allocateUniqueFundSlug } from '../utils/buildFundSlug.js'
 import { createOrderedPrefetch } from '../utils/orderedPrefetch.js'
 import { preserveExistingPayloadFields } from '../utils/preserveExistingPayloadFields.js'
 import { sleep } from '../utils/sleep.js'
@@ -77,22 +78,49 @@ export class FundDetailsSyncService {
     )
   }
 
+  buildCurrentBySlugMap(currentByClassId) {
+    const map = new Map()
+    const funds = currentByClassId
+      ? [...currentByClassId.values()]
+      : this.repository.getCurrentFunds().map(fund => ({
+          fondoId: fund.fondoId,
+          claseId: fund.claseId,
+          slug: fund.slug,
+          nombre: fund.nombre,
+          payload: fund,
+        }))
+
+    for (const fund of funds) {
+      if (fund.slug) {
+        map.set(fund.slug, fund)
+      }
+    }
+
+    return map
+  }
+
   seedBackfillContext(classIdToFondoId) {
     const currentByClassId = new Map()
+    const currentBySlug = new Map()
 
     for (const fund of this.repository.getCurrentFunds()) {
-      currentByClassId.set(String(fund.claseId), {
+      const record = {
         fondoId: fund.fondoId,
         claseId: fund.claseId,
         slug: fund.slug,
         nombre: fund.nombre,
         payload: fund,
-      })
+      }
+      currentByClassId.set(String(fund.claseId), record)
+      if (fund.slug) {
+        currentBySlug.set(fund.slug, record)
+      }
     }
 
     return {
       classIdToFondoId,
       currentByClassId,
+      currentBySlug,
       previousBySlug: this.repository.mapLatestSnapshotsBySlug(),
       firstBySlug: this.repository.mapFirstSnapshotsBySlug(),
     }
@@ -122,87 +150,124 @@ export class FundDetailsSyncService {
   persistParsedCnvDaySync(document, parsed, options = {}) {
     const fondoIdMap = this.resolveClassIdMap(options.classIdToFondoId)
     const currentByClassId = options.currentByClassId ?? null
+    const currentBySlug =
+      options.currentBySlug ?? this.buildCurrentBySlugMap(currentByClassId)
     const previousBySlug = options.previousBySlug ?? null
     const firstBySlug = options.firstBySlug ?? null
     const skipRollingHistory = options.skipRollingHistory === true
     const persistFuenteOriginal = options.persistFuenteOriginal !== false
     let upserted = 0
+    let failed = 0
 
     for (const row of parsed.funds) {
-      const classKey = String(row.claseId)
-      const existing = currentByClassId
-        ? (currentByClassId.get(classKey) ?? null)
-        : this.repository.getCurrentFundByClassId(row.claseId)
-      const fondoId = existing?.fondoId || fondoIdMap.get(classKey) || null
+      try {
+        const classKey = String(row.claseId)
+        const existing = currentByClassId
+          ? (currentByClassId.get(classKey) ?? null)
+          : this.repository.getCurrentFundByClassId(row.claseId)
+        const fondoId = existing?.fondoId || fondoIdMap.get(classKey) || null
 
-      const provisional = mapCnvRowToPayload(row, { fondoId })
-      const slugForHistory = existing?.slug || provisional.slug
+        const provisional = mapCnvRowToPayload(row, { fondoId })
+        const slugForHistory = existing?.slug || provisional.slug
 
-      let history = []
-      if (!skipRollingHistory) {
-        history = this.repository
-          .listHistoricalSnapshotsBySlug(slugForHistory)
-          .filter(item => !row.fecha || item.fecha < row.fecha)
-          .map(item => ({
-            fecha: item.fecha,
-            valorCuotaparte: item.valorCuotaparte,
-          }))
-      }
+        let history = []
+        if (!skipRollingHistory) {
+          history = this.repository
+            .listHistoricalSnapshotsBySlug(slugForHistory)
+            .filter(item => !row.fecha || item.fecha < row.fecha)
+            .map(item => ({
+              fecha: item.fecha,
+              valorCuotaparte: item.valorCuotaparte,
+            }))
+        }
 
-      const payload = preserveExistingPayloadFields(
-        existing?.payload,
-        mapCnvRowToPayload(row, {
-          fondoId,
-          history,
-        }),
-      )
+        const payload = preserveExistingPayloadFields(
+          existing?.payload,
+          mapCnvRowToPayload(row, {
+            fondoId,
+            history,
+          }),
+        )
 
-      if (existing?.slug) {
-        payload.slug = existing.slug
-      }
-      if (existing?.fondoId) {
-        payload.fondoId = existing.fondoId
-      }
+        if (existing?.slug) {
+          payload.slug = existing.slug
+        }
+        if (existing?.fondoId) {
+          payload.fondoId = existing.fondoId
+        }
 
-      payload.origen = 'cnv-excel'
+        const desiredSlug = payload.slug
+        payload.slug = allocateUniqueFundSlug(desiredSlug, {
+          claseId: payload.claseId,
+          isTaken: slug => {
+            const owner = currentBySlug.get(slug)
+            return Boolean(
+              owner && String(owner.claseId) !== String(payload.claseId),
+            )
+          },
+        })
 
-      this.repository.upsertCurrentFundDetail(payload)
+        if (payload.slug !== desiredSlug) {
+          console.warn('[cafci-worker] slug duplicado, usando sufijo', {
+            documentDate: document.documentDate,
+            claseId: payload.claseId,
+            nombre: payload.nombre,
+            slug: payload.slug,
+          })
+        }
 
-      const snapshot = recordHistoricalSnapshotFromDetailSync(
-        this.repository,
-        payload,
-        {
-          firstSnapshot: firstBySlug
-            ? (firstBySlug.get(payload.slug) ?? null)
-            : undefined,
-          previousSnapshot: previousBySlug
-            ? (previousBySlug.get(payload.slug) ?? null)
-            : undefined,
-          persistFuenteOriginal,
-        },
-      )
+        payload.origen = 'cnv-excel'
 
-      if (snapshot && firstBySlug && !firstBySlug.has(payload.slug)) {
-        firstBySlug.set(payload.slug, snapshot)
-      }
-      if (snapshot && previousBySlug) {
-        previousBySlug.set(payload.slug, snapshot)
-      }
-      if (currentByClassId) {
-        currentByClassId.set(classKey, {
+        this.repository.upsertCurrentFundDetail(payload)
+
+        const snapshot = recordHistoricalSnapshotFromDetailSync(
+          this.repository,
+          payload,
+          {
+            firstSnapshot: firstBySlug
+              ? (firstBySlug.get(payload.slug) ?? null)
+              : undefined,
+            previousSnapshot: previousBySlug
+              ? (previousBySlug.get(payload.slug) ?? null)
+              : undefined,
+            persistFuenteOriginal,
+          },
+        )
+
+        const record = {
           fondoId: payload.fondoId,
           claseId: payload.claseId,
           slug: payload.slug,
           nombre: payload.nombre,
           payload,
+        }
+
+        if (snapshot && firstBySlug && !firstBySlug.has(payload.slug)) {
+          firstBySlug.set(payload.slug, snapshot)
+        }
+        if (snapshot && previousBySlug) {
+          previousBySlug.set(payload.slug, snapshot)
+        }
+        if (currentByClassId) {
+          currentByClassId.set(classKey, record)
+        }
+        currentBySlug.set(payload.slug, record)
+
+        fondoIdMap.set(String(payload.claseId), String(payload.fondoId))
+        upserted += 1
+      } catch (error) {
+        failed += 1
+        const message = error instanceof Error ? error.message : String(error)
+        console.error('[cafci-worker] CNV fund persist failed', {
+          documentDate: document.documentDate,
+          claseId: row.claseId,
+          nombre: row.nombre,
+          message,
         })
       }
-
-      fondoIdMap.set(String(payload.claseId), String(payload.fondoId))
-      upserted += 1
     }
 
-    if (document.documentDate) {
+    if (failed === 0 && document.documentDate) {
       this.repository.markCnvDateIngested(document.documentDate)
     }
 
@@ -332,6 +397,7 @@ export class FundDetailsSyncService {
           downloaded,
           classIdToFondoId: context.classIdToFondoId,
           currentByClassId: context.currentByClassId,
+          currentBySlug: context.currentBySlug,
           previousBySlug: context.previousBySlug,
           firstBySlug: context.firstBySlug,
           skipRollingHistory,

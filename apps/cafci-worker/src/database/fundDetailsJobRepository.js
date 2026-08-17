@@ -193,14 +193,12 @@ export class FundDetailsJobRepository {
   }
 
   listIngestedCnvDates() {
-    const fromState = this.getStatement(
+    return this.getStatement(
       'listIngestedCnvDates',
       `SELECT key FROM worker_state WHERE key LIKE '${CNV_INGESTED_DATE_PREFIX}%'`,
     )
       .all()
       .map(row => row.key.slice(CNV_INGESTED_DATE_PREFIX.length))
-
-    return [...new Set([...fromState, ...this.listHistoricalSourceDates()])]
   }
 
   mapCompactSnapshotsBySlug(aggregate) {
