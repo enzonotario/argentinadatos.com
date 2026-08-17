@@ -19,6 +19,7 @@ import prestamosPersonalesComando from '@/finanzas/creditos/prestamos-personales
 import prestamosPersonalesBcraComando from '@/finanzas/creditos/prestamos-personales-bcra/prestamos-personales-bcra.comando.js'
 import remComando from '@/finanzas/rem/rem.comando.js'
 import fondosFciComando from '@/finanzas/fci/fondos/fondos.comando.js'
+import { runCafciFresh, parseFreshArgs } from '../apps/cafci-worker/src/runCafciFresh.js'
 import presidentesComando from '@/presidentes/presidentes.comando.js'
 import deployComparatasas from '@/deploy/comparatasas.comando.js'
 import { actualizarOpenApiAño } from '@/utils/actualizarOpenApiAño.js'
@@ -98,6 +99,10 @@ export async function iniciar(comando) {
 
     case '/v1/finanzas/fci/fondos':
       await fondosFciComando()
+      break
+
+    case 'cafci-fresh':
+      await runCafciFresh(parseFreshArgs(process.argv.slice(3)))
       break
 
     case '/v1/finanzas/fciIA':

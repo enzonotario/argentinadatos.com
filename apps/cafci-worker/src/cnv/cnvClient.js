@@ -213,15 +213,22 @@ export function pickLatestDocumentForDate(documents, documentDate) {
   })[0]
 }
 
-export function pickLatestAvailableDocument(documents) {
-  if (!documents.length) {
-    return null
-  }
-
+export function listChronologicalCnvDocuments(
+  documents,
+  { fromDate = null, toDate = null } = {},
+) {
   const byDate = new Map()
 
   for (const document of documents) {
-    if (!document.documentDate) {
+    if (!document?.documentDate) {
+      continue
+    }
+
+    if (fromDate && document.documentDate < fromDate) {
+      continue
+    }
+
+    if (toDate && document.documentDate > toDate) {
       continue
     }
 
@@ -231,9 +238,7 @@ export function pickLatestAvailableDocument(documents) {
       continue
     }
 
-    const currentTime = current.receptionAt
-      ? Date.parse(current.receptionAt)
-      : 0
+    const currentTime = current.receptionAt ? Date.parse(current.receptionAt) : 0
     const nextTime = document.receptionAt ? Date.parse(document.receptionAt) : 0
 
     if (nextTime >= currentTime) {
@@ -241,8 +246,14 @@ export function pickLatestAvailableDocument(documents) {
     }
   }
 
-  const dates = [...byDate.keys()].sort((a, b) => b.localeCompare(a))
-  return byDate.get(dates[0]) ?? null
+  return [...byDate.entries()]
+    .sort(([left], [right]) => left.localeCompare(right))
+    .map(([, document]) => document)
+}
+
+export function pickLatestAvailableDocument(documents) {
+  const chronological = listChronologicalCnvDocuments(documents)
+  return chronological.at(-1) ?? null
 }
 
 export async function fetchPresentationExcelMeta(presentationUrl) {

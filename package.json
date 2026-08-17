@@ -42,6 +42,7 @@
     "cafci-worker:r2:download": "pnpm --filter @argentinadatos/cafci-worker r2:download",
     "cafci-worker:db:rebuild-from-static": "pnpm --filter @argentinadatos/cafci-worker db:rebuild-from-static",
     "cafci-worker:db:backfill-cnv": "pnpm --filter @argentinadatos/cafci-worker db:backfill-cnv",
+    "cafci-worker:fresh": "pnpm --filter @argentinadatos/cafci-worker db:fresh-cnv",
     "migrate": "node scripts/migrate.js",
     "seed:fci-otros": "node scripts/seed-fci-otros.js"
   },

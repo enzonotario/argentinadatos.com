@@ -48,4 +48,39 @@ describe('FundDetailsSyncService CNV', () => {
     expect(summary.ingested).toBe(1)
     expect(summary.currentFunds).toBeGreaterThan(1000)
   }, 180_000)
+
+  it('fresh recorre las fechas CNV disponibles de más vieja a más nueva', async () => {
+    const temp = await createTempRepository()
+    cleanups.push(temp.cleanup)
+
+    const service = new FundDetailsSyncService(temp.repository)
+    const ingested = []
+    service.ingestCnvDocument = async document => {
+      ingested.push(document.documentDate)
+      return { documentDate: document.documentDate, upserted: 1 }
+    }
+
+    const summary = await service.fresh({
+      documents: [
+        {
+          documentDate: '2026-08-14',
+          receptionAt: '2026-08-14T12:00:00.000Z',
+        },
+        {
+          documentDate: '2020-01-02',
+          receptionAt: '2020-01-02T12:00:00.000Z',
+        },
+        {
+          documentDate: '2026-08-14',
+          receptionAt: '2026-08-14T18:00:00.000Z',
+        },
+        { documentDate: null },
+      ],
+    })
+
+    expect(summary.fromDate).toBe('2020-01-02')
+    expect(summary.toDate).toBe('2026-08-14')
+    expect(summary.ingested).toBe(2)
+    expect(ingested).toEqual(['2020-01-02', '2026-08-14'])
+  })
 })

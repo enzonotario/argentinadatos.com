@@ -1,6 +1,7 @@
 import {
   downloadCnvDocumentExcel,
   fetchCnvCuotaparteDocuments,
+  listChronologicalCnvDocuments,
   pickLatestAvailableDocument,
   pickLatestDocumentForDate,
 } from '../cnv/cnvClient.js'
@@ -143,50 +144,49 @@ export class FundDetailsSyncService {
     }
   }
 
-  async backfill({ fromDate, toDate }) {
+  async backfill({
+    fromDate,
+    toDate,
+    documents = null,
+    delayMs = 0,
+  } = {}) {
     if (!fromDate || !toDate) {
       throw new Error('backfill requiere fromDate y toDate (YYYY-MM-DD)')
     }
 
-    const documents = await fetchCnvCuotaparteDocuments()
-    const dates = []
-
-    for (
-      let cursor = new Date(`${fromDate}T00:00:00.000Z`);
-      cursor <= new Date(`${toDate}T00:00:00.000Z`);
-      cursor.setUTCDate(cursor.getUTCDate() + 1)
-    ) {
-      dates.push(cursor.toISOString().slice(0, 10))
-    }
-
+    const catalog = documents ?? (await fetchCnvCuotaparteDocuments())
+    const queue = listChronologicalCnvDocuments(catalog, { fromDate, toDate })
     const classIdToFondoId = this.resolveClassIdMap()
     const results = []
 
-    for (const date of dates) {
-      const document = pickLatestDocumentForDate(documents, date)
-
-      if (!document) {
-        results.push({ documentDate: date, skipped: true, reason: 'missing' })
-        continue
-      }
-
+    for (const [index, document] of queue.entries()) {
       try {
         const result = await this.ingestCnvDocument(document, {
           classIdToFondoId,
         })
         results.push({ ...result, skipped: false })
         console.log('[cafci-worker] CNV backfill day', {
+          index: index + 1,
+          total: queue.length,
           documentDate: result.documentDate,
           upserted: result.upserted,
         })
       } catch (error) {
         const message = error instanceof Error ? error.message : String(error)
         results.push({
-          documentDate: date,
+          documentDate: document.documentDate,
           skipped: true,
           reason: message,
         })
-        console.error('[cafci-worker] CNV backfill failed', date, message)
+        console.error(
+          '[cafci-worker] CNV backfill failed',
+          document.documentDate,
+          message,
+        )
+      }
+
+      if (delayMs > 0 && index < queue.length - 1) {
+        await sleep(delayMs)
       }
     }
 
@@ -198,6 +198,36 @@ export class FundDetailsSyncService {
       results,
       currentFunds: this.repository.getCurrentFunds().length,
     }
+  }
+
+  async fresh({
+    fromDate = null,
+    toDate = null,
+    documents = null,
+    delayMs = 0,
+  } = {}) {
+    const catalog = documents ?? (await fetchCnvCuotaparteDocuments())
+    const chronological = listChronologicalCnvDocuments(catalog)
+    const dates = chronological.map(document => document.documentDate)
+
+    if (dates.length === 0) {
+      return {
+        fromDate: fromDate || null,
+        toDate: toDate || null,
+        days: 0,
+        ingested: 0,
+        results: [],
+        currentFunds: this.repository.getCurrentFunds().length,
+        error: 'No hay planillas CNV disponibles',
+      }
+    }
+
+    return this.backfill({
+      fromDate: fromDate || dates[0],
+      toDate: toDate || dates[dates.length - 1],
+      documents: catalog,
+      delayMs,
+    })
   }
 
   shouldUploadBackup(now = Date.now()) {
