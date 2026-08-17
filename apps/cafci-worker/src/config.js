@@ -48,6 +48,20 @@ export function getDatabasePath() {
     : defaultDatabasePath
 }
 
+export function getCnvExcelCacheDir(databasePath = getDatabasePath()) {
+  const configuredPath = readEnv('CAFCI_WORKER_EXCEL_CACHE_DIR')
+
+  if (configuredPath) {
+    return resolveFromRepositoryRoot(configuredPath)
+  }
+
+  return resolve(dirname(databasePath), 'cnv-excel')
+}
+
+export function getFreshDownloadConcurrency() {
+  return readNumberEnv(['CAFCI_WORKER_FRESH_CONCURRENCY'], 8)
+}
+
 export function getPollIntervalMs() {
   return readNumberEnv(
     ['CAFCI_WORKER_POLL_INTERVAL_MS', 'FCI_FUND_DETAILS_POLL_INTERVAL_MS'],

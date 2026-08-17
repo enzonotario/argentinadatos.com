@@ -1,10 +1,10 @@
 import {
-  downloadCnvDocumentExcel,
   fetchCnvCuotaparteDocuments,
   listChronologicalCnvDocuments,
   pickLatestAvailableDocument,
   pickLatestDocumentForDate,
 } from '../cnv/cnvClient.js'
+import { fetchCnvDocumentExcelCached } from '../cnv/fetchCnvDocumentExcelCached.js'
 import { enrichComposicionCarteraFromCnv } from '../cnv/enrichComposicionCarteraFromCnv.js'
 import { mapCnvRowToPayload } from '../cnv/mapCnvRowToPayload.js'
 import { parseCnvCuotaparteExcel } from '../cnv/parseCnvExcel.js'
@@ -14,14 +14,38 @@ import {
 } from '../cnv/staticFundIdMap.js'
 import {
   getComposicionEnrichLimit,
+  getCnvExcelCacheDir,
+  getFreshDownloadConcurrency,
   getPollIntervalMs,
   getR2UploadIntervalMs,
   isComposicionEnrichEnabled,
 } from '../config.js'
-import { recordHistoricalSnapshotFromDetail } from '../history/recordHistoricalSnapshotFromDetail.js'
+import { recordHistoricalSnapshotFromDetailSync } from '../history/recordHistoricalSnapshotFromDetail.js'
 import { uploadDatabaseBackupToR2 } from '../r2/uploadDatabaseBackupToR2.js'
+import { createOrderedPrefetch } from '../utils/orderedPrefetch.js'
 import { preserveExistingPayloadFields } from '../utils/preserveExistingPayloadFields.js'
 import { sleep } from '../utils/sleep.js'
+
+function formatDuration(ms) {
+  if (!Number.isFinite(ms) || ms < 0) {
+    return null
+  }
+
+  const seconds = Math.round(ms / 1000)
+  const hours = Math.floor(seconds / 3600)
+  const minutes = Math.floor((seconds % 3600) / 60)
+  const rest = seconds % 60
+
+  if (hours > 0) {
+    return `${hours}h ${minutes}m`
+  }
+
+  if (minutes > 0) {
+    return `${minutes}m ${rest}s`
+  }
+
+  return `${rest}s`
+}
 
 export class FundDetailsSyncService {
   constructor(repository, options = {}) {
@@ -29,6 +53,17 @@ export class FundDetailsSyncService {
     this.pollIntervalMs = options.pollIntervalMs ?? getPollIntervalMs()
     this.r2UploadIntervalMs =
       options.r2UploadIntervalMs ?? getR2UploadIntervalMs()
+    this.excelCacheDir =
+      options.excelCacheDir ?? getCnvExcelCacheDir(repository.databasePath)
+    this.downloadConcurrency = Math.min(
+      32,
+      Math.max(
+        1,
+        Math.floor(
+          options.downloadConcurrency ?? getFreshDownloadConcurrency(),
+        ),
+      ),
+    )
   }
 
   resolveClassIdMap(classIdToFondoId) {
@@ -42,30 +77,77 @@ export class FundDetailsSyncService {
     )
   }
 
-  async ingestCnvDocument(document, { classIdToFondoId } = {}) {
-    const downloaded = await downloadCnvDocumentExcel(document)
-    const parsed = parseCnvCuotaparteExcel(downloaded.buffer, {
-      documentDate: document.documentDate,
-    })
+  seedBackfillContext(classIdToFondoId) {
+    const currentByClassId = new Map()
 
-    const fondoIdMap = this.resolveClassIdMap(classIdToFondoId)
+    for (const fund of this.repository.getCurrentFunds()) {
+      currentByClassId.set(String(fund.claseId), {
+        fondoId: fund.fondoId,
+        claseId: fund.claseId,
+        slug: fund.slug,
+        nombre: fund.nombre,
+        payload: fund,
+      })
+    }
+
+    return {
+      classIdToFondoId,
+      currentByClassId,
+      previousBySlug: this.repository.mapLatestSnapshotsBySlug(),
+      firstBySlug: this.repository.mapFirstSnapshotsBySlug(),
+    }
+  }
+
+  async fetchDocumentExcel(document) {
+    return fetchCnvDocumentExcelCached(document, {
+      cacheDir: this.excelCacheDir,
+    })
+  }
+
+  persistParsedCnvDay(document, parsed, options = {}) {
+    const upserted = this.repository.runInTransaction(() =>
+      this.persistParsedCnvDaySync(document, parsed, options),
+    )
+
+    return {
+      documentDate: document.documentDate,
+      presentationId: document.presentationId,
+      fileName: options.fileName ?? null,
+      fromCache: options.fromCache === true,
+      parsedFunds: parsed.funds.length,
+      upserted,
+    }
+  }
+
+  persistParsedCnvDaySync(document, parsed, options = {}) {
+    const fondoIdMap = this.resolveClassIdMap(options.classIdToFondoId)
+    const currentByClassId = options.currentByClassId ?? null
+    const previousBySlug = options.previousBySlug ?? null
+    const firstBySlug = options.firstBySlug ?? null
+    const skipRollingHistory = options.skipRollingHistory === true
+    const persistFuenteOriginal = options.persistFuenteOriginal !== false
     let upserted = 0
 
     for (const row of parsed.funds) {
-      const existing = this.repository.getCurrentFundByClassId(row.claseId)
-      const fondoId =
-        existing?.fondoId || fondoIdMap.get(String(row.claseId)) || null
+      const classKey = String(row.claseId)
+      const existing = currentByClassId
+        ? (currentByClassId.get(classKey) ?? null)
+        : this.repository.getCurrentFundByClassId(row.claseId)
+      const fondoId = existing?.fondoId || fondoIdMap.get(classKey) || null
 
       const provisional = mapCnvRowToPayload(row, { fondoId })
       const slugForHistory = existing?.slug || provisional.slug
 
-      const history = this.repository
-        .listHistoricalSnapshotsBySlug(slugForHistory)
-        .filter(item => !row.fecha || item.fecha < row.fecha)
-        .map(item => ({
-          fecha: item.fecha,
-          valorCuotaparte: item.valorCuotaparte,
-        }))
+      let history = []
+      if (!skipRollingHistory) {
+        history = this.repository
+          .listHistoricalSnapshotsBySlug(slugForHistory)
+          .filter(item => !row.fecha || item.fecha < row.fecha)
+          .map(item => ({
+            fecha: item.fecha,
+            valorCuotaparte: item.valorCuotaparte,
+          }))
+      }
 
       const payload = preserveExistingPayloadFields(
         existing?.payload,
@@ -85,18 +167,62 @@ export class FundDetailsSyncService {
       payload.origen = 'cnv-excel'
 
       this.repository.upsertCurrentFundDetail(payload)
-      await recordHistoricalSnapshotFromDetail(this.repository, payload)
+
+      const snapshot = recordHistoricalSnapshotFromDetailSync(
+        this.repository,
+        payload,
+        {
+          firstSnapshot: firstBySlug
+            ? (firstBySlug.get(payload.slug) ?? null)
+            : undefined,
+          previousSnapshot: previousBySlug
+            ? (previousBySlug.get(payload.slug) ?? null)
+            : undefined,
+          persistFuenteOriginal,
+        },
+      )
+
+      if (snapshot && firstBySlug && !firstBySlug.has(payload.slug)) {
+        firstBySlug.set(payload.slug, snapshot)
+      }
+      if (snapshot && previousBySlug) {
+        previousBySlug.set(payload.slug, snapshot)
+      }
+      if (currentByClassId) {
+        currentByClassId.set(classKey, {
+          fondoId: payload.fondoId,
+          claseId: payload.claseId,
+          slug: payload.slug,
+          nombre: payload.nombre,
+          payload,
+        })
+      }
+
       fondoIdMap.set(String(payload.claseId), String(payload.fondoId))
       upserted += 1
     }
 
-    return {
-      documentDate: document.documentDate,
-      presentationId: document.presentationId,
-      fileName: downloaded.fileName,
-      parsedFunds: parsed.funds.length,
-      upserted,
+    if (document.documentDate) {
+      this.repository.markCnvDateIngested(document.documentDate)
     }
+
+    return upserted
+  }
+
+  async ingestCnvDocument(document, options = {}) {
+    const downloaded =
+      options.downloaded ?? (await this.fetchDocumentExcel(document))
+    const parsed =
+      options.parsed ??
+      parseCnvCuotaparteExcel(downloaded.buffer, {
+        documentDate: document.documentDate,
+      })
+
+    return this.persistParsedCnvDay(document, parsed, {
+      ...options,
+      fileName: downloaded.fileName,
+      fromCache: downloaded.fromCache === true,
+    })
   }
 
   async runCycle({ documentDate = null } = {}) {
@@ -149,27 +275,86 @@ export class FundDetailsSyncService {
     toDate,
     documents = null,
     delayMs = 0,
+    concurrency = this.downloadConcurrency,
+    skipExisting = true,
+    skipRollingHistory = true,
+    persistFuenteOriginal = false,
   } = {}) {
     if (!fromDate || !toDate) {
       throw new Error('backfill requiere fromDate y toDate (YYYY-MM-DD)')
     }
 
     const catalog = documents ?? (await fetchCnvCuotaparteDocuments())
-    const queue = listChronologicalCnvDocuments(catalog, { fromDate, toDate })
+    const chronological = listChronologicalCnvDocuments(catalog, {
+      fromDate,
+      toDate,
+    })
+    const ingestedDates = skipExisting
+      ? new Set(this.repository.listIngestedCnvDates())
+      : new Set()
+    const alreadyIngested = chronological.filter(document =>
+      ingestedDates.has(document.documentDate),
+    )
+    const queue = chronological.filter(
+      document => !ingestedDates.has(document.documentDate),
+    )
     const classIdToFondoId = this.resolveClassIdMap()
-    const results = []
+    const context = this.seedBackfillContext(classIdToFondoId)
+    const downloadConcurrency = Math.min(
+      32,
+      Math.max(1, Math.floor(concurrency)),
+    )
+    const pipeline = createOrderedPrefetch(
+      queue.length,
+      downloadConcurrency,
+      index => this.fetchDocumentExcel(queue[index]),
+    )
+    const startedAt = Date.now()
+    const results = alreadyIngested.map(document => ({
+      documentDate: document.documentDate,
+      skipped: true,
+      reason: 'already-ingested',
+    }))
+
+    console.log('[cafci-worker] CNV backfill starting', {
+      fromDate,
+      toDate,
+      total: chronological.length,
+      queued: queue.length,
+      skippedExisting: alreadyIngested.length,
+      concurrency: downloadConcurrency,
+    })
 
     for (const [index, document] of queue.entries()) {
       try {
+        const downloaded = await pipeline.take(index)
         const result = await this.ingestCnvDocument(document, {
-          classIdToFondoId,
+          downloaded,
+          classIdToFondoId: context.classIdToFondoId,
+          currentByClassId: context.currentByClassId,
+          previousBySlug: context.previousBySlug,
+          firstBySlug: context.firstBySlug,
+          skipRollingHistory,
+          persistFuenteOriginal,
         })
         results.push({ ...result, skipped: false })
+
+        const processed = index + 1
+        const elapsedMs = Date.now() - startedAt
+        const etaMs =
+          processed > 0
+            ? (elapsedMs / processed) * (queue.length - processed)
+            : null
+
         console.log('[cafci-worker] CNV backfill day', {
-          index: index + 1,
-          total: queue.length,
+          index: processed,
+          queued: queue.length,
+          skippedExisting: alreadyIngested.length,
           documentDate: result.documentDate,
           upserted: result.upserted,
+          fromCache: result.fromCache,
+          elapsed: formatDuration(elapsedMs),
+          eta: formatDuration(etaMs),
         })
       } catch (error) {
         const message = error instanceof Error ? error.message : String(error)
@@ -195,6 +380,7 @@ export class FundDetailsSyncService {
       toDate,
       days: results.length,
       ingested: results.filter(item => !item.skipped).length,
+      skippedExisting: alreadyIngested.length,
       results,
       currentFunds: this.repository.getCurrentFunds().length,
     }
@@ -205,6 +391,8 @@ export class FundDetailsSyncService {
     toDate = null,
     documents = null,
     delayMs = 0,
+    concurrency = this.downloadConcurrency,
+    skipExisting = true,
   } = {}) {
     const catalog = documents ?? (await fetchCnvCuotaparteDocuments())
     const chronological = listChronologicalCnvDocuments(catalog)
@@ -216,6 +404,7 @@ export class FundDetailsSyncService {
         toDate: toDate || null,
         days: 0,
         ingested: 0,
+        skippedExisting: 0,
         results: [],
         currentFunds: this.repository.getCurrentFunds().length,
         error: 'No hay planillas CNV disponibles',
@@ -227,6 +416,8 @@ export class FundDetailsSyncService {
       toDate: toDate || dates[dates.length - 1],
       documents: catalog,
       delayMs,
+      concurrency,
+      skipExisting,
     })
   }
 

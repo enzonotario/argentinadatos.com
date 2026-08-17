@@ -4,7 +4,11 @@ import {
   inferHistoryCategoryLabel,
 } from './historyCategories.js'
 
-export async function recordHistoricalSnapshotFromDetail(repository, detail) {
+export function recordHistoricalSnapshotFromDetailSync(
+  repository,
+  detail,
+  { firstSnapshot, previousSnapshot, persistFuenteOriginal = true } = {},
+) {
   const fecha = detail.fecha
 
   if (!fecha) {
@@ -12,11 +16,14 @@ export async function recordHistoricalSnapshotFromDetail(repository, detail) {
   }
 
   const categoriaKey = inferHistoryCategoryKey(detail.tipoRenta)
-  const firstSnapshot = repository.getFirstHistoricalSnapshot(detail.slug)
-  const previousSnapshot = repository.getLatestHistoricalSnapshotBefore(
-    detail.slug,
-    fecha,
-  )
+  const resolvedFirst =
+    firstSnapshot === undefined
+      ? repository.getFirstHistoricalSnapshot(detail.slug)
+      : firstSnapshot
+  const resolvedPrevious =
+    previousSnapshot === undefined
+      ? repository.getLatestHistoricalSnapshotBefore(detail.slug, fecha)
+      : previousSnapshot
 
   const snapshot = buildHistoricalSnapshot(
     {
@@ -31,15 +38,23 @@ export async function recordHistoricalSnapshotFromDetail(repository, detail) {
       valorCuotaparte: detail.rendimientos?.valorCuotaparte ?? null,
       patrimonio: detail.patrimonio ?? null,
       origen: detail.origen || 'cnv-excel',
-      fuenteOriginal: detail,
+      fuenteOriginal: persistFuenteOriginal ? detail : null,
     },
     {
-      firstSnapshot,
-      previousSnapshot,
+      firstSnapshot: resolvedFirst,
+      previousSnapshot: resolvedPrevious,
     },
   )
 
   repository.upsertHistoricalSnapshot(snapshot)
 
   return snapshot
+}
+
+export async function recordHistoricalSnapshotFromDetail(
+  repository,
+  detail,
+  options,
+) {
+  return recordHistoricalSnapshotFromDetailSync(repository, detail, options)
 }

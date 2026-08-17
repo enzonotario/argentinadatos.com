@@ -8,7 +8,7 @@ import {
 } from '../../../apps/cafci-worker/src/runCafciFresh.js'
 
 describe('runCafciFresh helpers', () => {
-  it('parsea flags de fresh', () => {
+  it('parsea flags de fresh y reanuda por defecto', () => {
     expect(
       parseFreshArgs([
         '--from',
@@ -25,8 +25,30 @@ describe('runCafciFresh helpers', () => {
       toDate: '2026-08-14',
       delayMs: 250,
       upload: true,
+      reset: false,
       keepDb: true,
+      concurrency: 8,
+      skipExisting: true,
     })
+  })
+
+  it('parsea --reset y --concurrency', () => {
+    expect(
+      parseFreshArgs(['--reset', '--concurrency', '6', '--no-skip-existing']),
+    ).toEqual({
+      fromDate: null,
+      toDate: null,
+      delayMs: 0,
+      upload: false,
+      reset: true,
+      keepDb: false,
+      concurrency: 6,
+      skipExisting: false,
+    })
+  })
+
+  it('rechaza --concurrency inválido', () => {
+    expect(() => parseFreshArgs(['--concurrency', '0'])).toThrow(/concurrency/)
   })
 
   it('borra sqlite y sus archivos WAL', () => {

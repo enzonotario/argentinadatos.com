@@ -5,6 +5,8 @@ import { getDatabasePath } from '../config.js'
 import { migrations } from './migrations/index.js'
 import { MigrationRunner } from './migrations/migrationRunner.js'
 
+export const CNV_INGESTED_DATE_PREFIX = 'cnv_ingested:'
+
 export class FundDetailsJobRepository {
   constructor(databasePath = getDatabasePath()) {
     const directory = dirname(databasePath)
@@ -16,8 +18,11 @@ export class FundDetailsJobRepository {
     }
 
     this.databasePath = databasePath
+    this.statements = Object.create(null)
     this.db = new Database(databasePath)
     this.db.pragma('journal_mode = WAL')
+    this.db.pragma('synchronous = NORMAL')
+    this.db.pragma('cache_size = -64000')
     this.migrationRunner = new MigrationRunner(
       this.db,
       'cafci-worker',
@@ -25,14 +30,23 @@ export class FundDetailsJobRepository {
     )
   }
 
+  getStatement(name, sql) {
+    this.statements[name] ??= this.db.prepare(sql)
+    return this.statements[name]
+  }
+
+  runInTransaction(fn) {
+    return this.db.transaction(fn)()
+  }
+
   async initialize() {
     await this.migrationRunner.runPendingMigrations()
   }
 
   upsertCurrentFundDetail(payload, fetchedAt = new Date().toISOString()) {
-    this.db
-      .prepare(
-        `
+    this.getStatement(
+      'upsertCurrentFundDetail',
+      `
           INSERT INTO current_fund_details (
             fund_id,
             class_id,
@@ -53,16 +67,15 @@ export class FundDetailsJobRepository {
             fetched_at = excluded.fetched_at,
             updated_at = CURRENT_TIMESTAMP
         `,
-      )
-      .run(
-        payload.fondoId,
-        payload.claseId,
-        payload.slug,
-        payload.nombre,
-        JSON.stringify(payload),
-        payload.fecha ?? null,
-        fetchedAt,
-      )
+    ).run(
+      payload.fondoId,
+      payload.claseId,
+      payload.slug,
+      payload.nombre,
+      JSON.stringify(payload),
+      payload.fecha ?? null,
+      fetchedAt,
+    )
   }
 
   getCurrentFunds() {
@@ -79,16 +92,15 @@ export class FundDetailsJobRepository {
   }
 
   getCurrentFundByClassId(classId) {
-    const row = this.db
-      .prepare(
-        `
+    const row = this.getStatement(
+      'getCurrentFundByClassId',
+      `
           SELECT fund_id, class_id, slug, name, payload
           FROM current_fund_details
           WHERE class_id = ?
           LIMIT 1
         `,
-      )
-      .get(String(classId))
+    ).get(String(classId))
 
     if (!row) {
       return null
@@ -154,9 +166,9 @@ export class FundDetailsJobRepository {
   }
 
   setWorkerState(key, value) {
-    this.db
-      .prepare(
-        `
+    this.getStatement(
+      'setWorkerState',
+      `
           INSERT INTO worker_state (key, value, created_at, updated_at)
           VALUES (?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
           ON CONFLICT(key)
@@ -164,8 +176,80 @@ export class FundDetailsJobRepository {
             value = excluded.value,
             updated_at = CURRENT_TIMESTAMP
         `,
-      )
-      .run(key, value)
+    ).run(key, value)
+  }
+
+  markCnvDateIngested(documentDate) {
+    this.setWorkerState(`${CNV_INGESTED_DATE_PREFIX}${documentDate}`, '1')
+  }
+
+  listHistoricalSourceDates() {
+    return this.getStatement(
+      'listHistoricalSourceDates',
+      'SELECT DISTINCT source_date AS source_date FROM historical_fund_snapshots',
+    )
+      .all()
+      .map(row => row.source_date)
+  }
+
+  listIngestedCnvDates() {
+    const fromState = this.getStatement(
+      'listIngestedCnvDates',
+      `SELECT key FROM worker_state WHERE key LIKE '${CNV_INGESTED_DATE_PREFIX}%'`,
+    )
+      .all()
+      .map(row => row.key.slice(CNV_INGESTED_DATE_PREFIX.length))
+
+    return [...new Set([...fromState, ...this.listHistoricalSourceDates()])]
+  }
+
+  mapCompactSnapshotsBySlug(aggregate) {
+    const sql =
+      aggregate === 'min'
+        ? `
+            SELECT h.slug, h.source_date, h.share_value, h.assets_under_management
+            FROM historical_fund_snapshots h
+            INNER JOIN (
+              SELECT slug, MIN(source_date) AS source_date
+              FROM historical_fund_snapshots
+              GROUP BY slug
+            ) bound
+              ON bound.slug = h.slug AND bound.source_date = h.source_date
+          `
+        : `
+            SELECT h.slug, h.source_date, h.share_value, h.assets_under_management
+            FROM historical_fund_snapshots h
+            INNER JOIN (
+              SELECT slug, MAX(source_date) AS source_date
+              FROM historical_fund_snapshots
+              GROUP BY slug
+            ) bound
+              ON bound.slug = h.slug AND bound.source_date = h.source_date
+          `
+
+    const map = new Map()
+
+    for (const row of this.getStatement(
+      `mapCompactSnapshotsBySlug:${aggregate}`,
+      sql,
+    ).all()) {
+      map.set(row.slug, {
+        slug: row.slug,
+        fecha: row.source_date,
+        valorCuotaparte: row.share_value,
+        patrimonio: row.assets_under_management,
+      })
+    }
+
+    return map
+  }
+
+  mapFirstSnapshotsBySlug() {
+    return this.mapCompactSnapshotsBySlug('min')
+  }
+
+  mapLatestSnapshotsBySlug() {
+    return this.mapCompactSnapshotsBySlug('max')
   }
 
   deleteWorkerState(key) {
@@ -179,9 +263,9 @@ export class FundDetailsJobRepository {
   }
 
   upsertHistoricalSnapshot(snapshot) {
-    this.db
-      .prepare(
-        `
+    this.getStatement(
+      'upsertHistoricalSnapshot',
+      `
           INSERT INTO historical_fund_snapshots (
             slug,
             fund_id,
@@ -218,26 +302,23 @@ export class FundDetailsJobRepository {
             raw_source = excluded.raw_source,
             updated_at = CURRENT_TIMESTAMP
         `,
-      )
-      .run(
-        snapshot.slug,
-        snapshot.fondoId,
-        snapshot.claseId,
-        snapshot.nombre,
-        snapshot.fecha,
-        snapshot.categoriaKey,
-        snapshot.categoria,
-        snapshot.horizonte,
-        snapshot.valorCuotaparte,
-        snapshot.patrimonio,
-        snapshot.retornoDiario,
-        snapshot.retornoAcumulado,
-        snapshot.flujoEstimado,
-        snapshot.origen,
-        snapshot.fuenteOriginal
-          ? JSON.stringify(snapshot.fuenteOriginal)
-          : null,
-      )
+    ).run(
+      snapshot.slug,
+      snapshot.fondoId,
+      snapshot.claseId,
+      snapshot.nombre,
+      snapshot.fecha,
+      snapshot.categoriaKey,
+      snapshot.categoria,
+      snapshot.horizonte,
+      snapshot.valorCuotaparte,
+      snapshot.patrimonio,
+      snapshot.retornoDiario,
+      snapshot.retornoAcumulado,
+      snapshot.flujoEstimado,
+      snapshot.origen,
+      snapshot.fuenteOriginal ? JSON.stringify(snapshot.fuenteOriginal) : null,
+    )
   }
 
   listHistoricalSnapshotsBySlug(slug) {
@@ -255,25 +336,24 @@ export class FundDetailsJobRepository {
   }
 
   getFirstHistoricalSnapshot(slug) {
-    const row = this.db
-      .prepare(
-        `
+    const row = this.getStatement(
+      'getFirstHistoricalSnapshot',
+      `
           SELECT *
           FROM historical_fund_snapshots
           WHERE slug = ?
           ORDER BY source_date ASC
           LIMIT 1
         `,
-      )
-      .get(slug)
+    ).get(slug)
 
     return row ? this.mapHistoricalSnapshot(row) : null
   }
 
   getLatestHistoricalSnapshotBefore(slug, sourceDate) {
-    const row = this.db
-      .prepare(
-        `
+    const row = this.getStatement(
+      'getLatestHistoricalSnapshotBefore',
+      `
           SELECT *
           FROM historical_fund_snapshots
           WHERE slug = ?
@@ -281,8 +361,7 @@ export class FundDetailsJobRepository {
           ORDER BY source_date DESC
           LIMIT 1
         `,
-      )
-      .get(slug, sourceDate)
+    ).get(slug, sourceDate)
 
     return row ? this.mapHistoricalSnapshot(row) : null
   }

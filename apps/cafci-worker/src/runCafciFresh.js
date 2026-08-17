@@ -1,5 +1,9 @@
 import { rmSync } from 'node:fs'
-import { getDatabasePath } from './config.js'
+import {
+  getCnvExcelCacheDir,
+  getDatabasePath,
+  getFreshDownloadConcurrency,
+} from './config.js'
 import { FundDetailsJobRepository } from './database/fundDetailsJobRepository.js'
 import { FundDetailsSyncService } from './services/fundDetailsSyncService.js'
 import { uploadDatabaseBackupToR2 } from './r2/uploadDatabaseBackupToR2.js'
@@ -10,7 +14,10 @@ export function parseFreshArgs(argv = process.argv.slice(2)) {
     toDate: null,
     delayMs: 0,
     upload: false,
-    keepDb: false,
+    reset: false,
+    keepDb: true,
+    concurrency: getFreshDownloadConcurrency(),
+    skipExisting: true,
   }
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -34,18 +41,44 @@ export function parseFreshArgs(argv = process.argv.slice(2)) {
       continue
     }
 
+    if (value === '--concurrency') {
+      args.concurrency = Number(argv[index + 1] || 0)
+      index += 1
+      continue
+    }
+
     if (value === '--upload') {
       args.upload = true
       continue
     }
 
+    if (value === '--reset') {
+      args.reset = true
+      continue
+    }
+
     if (value === '--keep-db') {
-      args.keepDb = true
+      args.reset = false
+      continue
+    }
+
+    if (value === '--no-skip-existing') {
+      args.skipExisting = false
     }
   }
 
+  args.keepDb = !args.reset
+
   if (Number.isNaN(args.delayMs) || args.delayMs < 0) {
     throw new Error('--delay-ms debe ser un número >= 0')
+  }
+
+  if (
+    !Number.isInteger(args.concurrency) ||
+    args.concurrency < 1 ||
+    args.concurrency > 32
+  ) {
+    throw new Error('--concurrency debe ser un entero entre 1 y 32')
   }
 
   return args
@@ -66,10 +99,15 @@ export async function runCafciFresh({
   toDate = null,
   delayMs = 0,
   upload = false,
-  keepDb = false,
+  reset = false,
+  keepDb = true,
+  concurrency = getFreshDownloadConcurrency(),
+  skipExisting = true,
   databasePath = getDatabasePath(),
 } = {}) {
-  if (!keepDb) {
+  const shouldReset = Boolean(reset) || keepDb === false
+
+  if (shouldReset) {
     resetSqliteFiles(databasePath)
   }
 
@@ -77,17 +115,28 @@ export async function runCafciFresh({
   await repository.initialize()
 
   try {
-    const service = new FundDetailsSyncService(repository)
-    const summary = await service.fresh({ fromDate, toDate, delayMs })
+    const service = new FundDetailsSyncService(repository, {
+      downloadConcurrency: concurrency,
+      excelCacheDir: getCnvExcelCacheDir(databasePath),
+    })
+    const summary = await service.fresh({
+      fromDate,
+      toDate,
+      delayMs,
+      concurrency,
+      skipExisting: shouldReset ? false : skipExisting,
+    })
 
     console.log('[cafci-worker] CNV fresh completed', {
       from: summary.fromDate,
       to: summary.toDate,
       days: summary.days,
       ingested: summary.ingested,
+      skippedExisting: summary.skippedExisting,
       currentFunds: summary.currentFunds,
       databasePath,
-      reset: !keepDb,
+      reset: shouldReset,
+      concurrency,
     })
 
     if (upload) {
