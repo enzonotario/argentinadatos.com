@@ -9,7 +9,7 @@
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
-  "horizonte": "Plazo Flexible",
+  "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1781",
@@ -30,56 +30,1496 @@
   },
   "composicionCartera": [
     {
-      "nombre": "FCI Allaria Dólar Ahorro - Clase B",
-      "porcentaje": 21.6
+      "nombre": "ON Credicuotas Consumo S21",
+      "porcentaje": 7.78
+    },
+    {
+      "nombre": "ON Banco Mariva S3 060727",
+      "porcentaje": 4.41
     },
     {
       "nombre": "ON Grupo ST C14",
-      "porcentaje": 5.3
+      "porcentaje": 3.03
     },
     {
-      "nombre": "Pagare #UMV140960010",
-      "porcentaje": 4.8
+      "nombre": "ON Bco Serv Transac C29",
+      "porcentaje": 2.94
     },
     {
-      "nombre": "ON YPF Clase 34",
-      "porcentaje": 4.5
+      "nombre": "ON Bco Serv Transac C28",
+      "porcentaje": 2.94
     },
     {
-      "nombre": "ON YPF Clase 34 Reapertura",
-      "porcentaje": 4
+      "nombre": "Pagare #UMV230670015",
+      "porcentaje": 1.88
     },
     {
-      "nombre": "ON Pampa Energia C23",
-      "porcentaje": 3.5
-    },
-    {
-      "nombre": "ON Oldelval Clase 7",
-      "porcentaje": 3.4
-    },
-    {
-      "nombre": "ON John Deere Cia. Fin C19",
-      "porcentaje": 3.2
-    },
-    {
-      "nombre": "ON Edenor C7 DNC7O",
-      "porcentaje": 2.3
+      "nombre": "ON YPF Clase 37",
+      "porcentaje": 1.54
     },
     {
       "nombre": "ON Telecom C27",
-      "porcentaje": 2.3
+      "porcentaje": 1.28
     },
     {
       "nombre": "ON Banco Macro Clase H Reg S",
-      "porcentaje": 2.2
+      "porcentaje": 1.27
     },
     {
       "nombre": "ON YPF Clase 31",
-      "porcentaje": 2
+      "porcentaje": 1.18
     },
     {
-      "nombre": "Resto de Activos",
-      "porcentaje": 38.4
+      "nombre": "Pagare #UMV040860066",
+      "porcentaje": 1.17
+    },
+    {
+      "nombre": "ON Pluspetrol Clase 5",
+      "porcentaje": 0.97
+    },
+    {
+      "nombre": "Pagare #UMV270770007",
+      "porcentaje": 0.95
+    },
+    {
+      "nombre": "Pagare #UMV050670009",
+      "porcentaje": 0.95
+    },
+    {
+      "nombre": "Pagare #UMV200770012",
+      "porcentaje": 0.94
+    },
+    {
+      "nombre": "ON Aeropuertos 2000 C11",
+      "porcentaje": 0.89
+    },
+    {
+      "nombre": "Pagare #UMV220760040",
+      "porcentaje": 0.88
+    },
+    {
+      "nombre": "Pagare #UTD161060001",
+      "porcentaje": 0.79
+    },
+    {
+      "nombre": "ON Oiltanking S2",
+      "porcentaje": 0.75
+    },
+    {
+      "nombre": "Pagare #UMV150960093",
+      "porcentaje": 0.72
+    },
+    {
+      "nombre": "Pagare #UMV081160014",
+      "porcentaje": 0.71
+    },
+    {
+      "nombre": "Pagare #UMV091260014",
+      "porcentaje": 0.71
+    },
+    {
+      "nombre": "Pagare #UMV070470010",
+      "porcentaje": 0.69
+    },
+    {
+      "nombre": "Pagare #UMV150370067",
+      "porcentaje": 0.69
+    },
+    {
+      "nombre": "Pagare #UMV060670003",
+      "porcentaje": 0.68
+    },
+    {
+      "nombre": "Pagare #UPO260580008",
+      "porcentaje": 0.64
+    },
+    {
+      "nombre": "Pagare #UPO260580007",
+      "porcentaje": 0.64
+    },
+    {
+      "nombre": "ON YPF Clase 38",
+      "porcentaje": 0.61
+    },
+    {
+      "nombre": "ON Loma Negra C5",
+      "porcentaje": 0.61
+    },
+    {
+      "nombre": "Pagare #UPO151260016",
+      "porcentaje": 0.57
+    },
+    {
+      "nombre": "Pagare #UPO151260017",
+      "porcentaje": 0.57
+    },
+    {
+      "nombre": "Pagare #UMV280670004",
+      "porcentaje": 0.54
+    },
+    {
+      "nombre": "Pagare #UMV170570053",
+      "porcentaje": 0.54
+    },
+    {
+      "nombre": "Pagare #UNO081060001",
+      "porcentaje": 0.48
+    },
+    {
+      "nombre": "Pagare #UFD180860001",
+      "porcentaje": 0.44
+    },
+    {
+      "nombre": "Pagare #UFD150960005",
+      "porcentaje": 0.43
+    },
+    {
+      "nombre": "Pagare #UMV280470022",
+      "porcentaje": 0.41
+    },
+    {
+      "nombre": "Pagare #UNE110170001",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "Pagare #UPO281260001",
+      "porcentaje": 0.28
+    },
+    {
+      "nombre": "Pagare #UNO300670001",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "Pagare #UNE310370001",
+      "porcentaje": 0.24
+    },
+    {
+      "nombre": "Pagare #UZO030960003",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "ON John Deere Cia. Fin C17",
+      "porcentaje": 0.22
+    },
+    {
+      "nombre": "Pagare #UFM140170001",
+      "porcentaje": 0.21
+    },
+    {
+      "nombre": "Pagare #UNO271160003",
+      "porcentaje": 0.2
+    },
+    {
+      "nombre": "Pagare #UZO030960002",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Pagare #UNO071260001",
+      "porcentaje": 0.17
+    },
+    {
+      "nombre": "Pagare #UNE250170001",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "Pagare #UNE140670001",
+      "porcentaje": 0.16
+    },
+    {
+      "nombre": "Pagare #UNO281260001",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UNO271160002",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UNO301060004",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UNO201160004",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UNO201060007",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UMV191060008",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UPO090270003",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UPO090270002",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UPO090270001",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UFD040170001",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UFD180170001",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UFD290170001",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UMV200170035",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UMV140470007",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UPO260270002",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UNO260470001",
+      "porcentaje": 0.13
+    },
+    {
+      "nombre": "Pagare #UTD100960002",
+      "porcentaje": 0.13
+    },
+    {
+      "nombre": "Pagare #UFD021260001",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Pagare #UNE050370001",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Pagare #UNE050270001",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Pagare #UNE281060003",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Pagare #UNO301060001",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Pagare #UNO201060006",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare #UFM221060001",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare #UAC140860001",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare #UNE021160003",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare #UNE121260001",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare #UNO020670001",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Pagare #UNO080670001",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Pagare #UFT101160003",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Pagare #UAC010170001",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Pagare #UFM190170001",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Pagare #UFM260170001",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Pagare #UNE281060001",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Pagare #UNE271060002",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Pagare #UNE271060001",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Pagare #UCU130860001",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Pagare #UCU230960001",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UNO240470001",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UFM240470001",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UPD030370001",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UZO180860001",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "ON Oiltanking S4 C2",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UNE260860002",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UNE220860001",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UNO140860002",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UPO100960001",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UPO170960001",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UPO081060001",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UPO151060001",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UNO280570002",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UFM120170001",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #UFM050170001",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #UCM020270001",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #UNO040270001",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #UNO110270001",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #UNO170270001",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #UFM211260002",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #UFM221060003",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #UNO090960001",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #UNO161060001",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #UNO021160002",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #UNO221060001",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #UAC121060002",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #UPR070570001",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #UFM091060001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UFM121160002",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UFM231160001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UFM300170001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UFD020960001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UFD150960001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UNO011060002",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UNO081060003",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UDO311060006",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UNO231060001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UCU031060001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UBS291260001",
+      "porcentaje": 1.41
+    },
+    {
+      "nombre": "Pagare #UMV210670007",
+      "porcentaje": 1.34
+    },
+    {
+      "nombre": "Pagare #UMV060770011",
+      "porcentaje": 1.02
+    },
+    {
+      "nombre": "Pagare #UPO181160004",
+      "porcentaje": 1
+    },
+    {
+      "nombre": "Pagare %UVI300800004",
+      "porcentaje": 0.97
+    },
+    {
+      "nombre": "Pagare #UMV070570005",
+      "porcentaje": 0.94
+    },
+    {
+      "nombre": "Pagare #UMV160670013",
+      "porcentaje": 0.6
+    },
+    {
+      "nombre": "Pagare #UAR110670003",
+      "porcentaje": 0.5
+    },
+    {
+      "nombre": "Pagare %UVI300800005",
+      "porcentaje": 0.44
+    },
+    {
+      "nombre": "Pagare #UUN281260001",
+      "porcentaje": 0.42
+    },
+    {
+      "nombre": "Pagare %UYN211000001",
+      "porcentaje": 0.35
+    },
+    {
+      "nombre": "Pagare #UPO150670005",
+      "porcentaje": 0.33
+    },
+    {
+      "nombre": "Pagare #UBI171160001",
+      "porcentaje": 0.29
+    },
+    {
+      "nombre": "Pagare #UBI271060001",
+      "porcentaje": 0.29
+    },
+    {
+      "nombre": "Pagare #UBI241160001",
+      "porcentaje": 0.29
+    },
+    {
+      "nombre": "Pagare #UBI151260004",
+      "porcentaje": 0.28
+    },
+    {
+      "nombre": "Pagare #UAR120170001",
+      "porcentaje": 0.28
+    },
+    {
+      "nombre": "Pagare #UPO010670001",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "Pagare #UPO210670001",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "Pagare #UPO060770001",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "Pagare #UPO130770001",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "Pagare #UAC300670003",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "Pagare #UMV150570015",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "Pagare #UMO160170001",
+      "porcentaje": 0.25
+    },
+    {
+      "nombre": "Pagare %UAY250800001",
+      "porcentaje": 0.23
+    },
+    {
+      "nombre": "Pagare #UPO190670002",
+      "porcentaje": 0.21
+    },
+    {
+      "nombre": "Pagare %UYN100800001",
+      "porcentaje": 0.21
+    },
+    {
+      "nombre": "Pagare %UYN210800001",
+      "porcentaje": 0.21
+    },
+    {
+      "nombre": "Pagare #UAU200470002",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UAU200470001",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare %UPA290800004",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UAR180670009",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UAR180670008",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UAR180670007",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UAR180670006",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UAR180670005",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UAR180670004",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UPO110670002",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UPO150670004",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UBI280470001",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UMO230770001",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UAB260770001",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare %UAY120800001",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Pagare #UCU100170001",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Pagare #UPO300470002",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Pagare #UPO310370005",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Pagare #UPO310570007",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Pagare %UIG010900001",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Pagare #UNT260270001",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Pagare #UAR050670001",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Pagare #UAR290570001",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Pagare #UGA211260001",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare %UVI080800001",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare %UYN311000001",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare %UYN210900001",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare #UGA190670001",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Pagare #UPO300670006",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Pagare #USO110170001",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Pagare %UYN190800001",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Pagare %UPA270800002",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UVA301260001",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UAU280570001",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UUN030670001",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UNE041160003",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UIG260670001",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UFD150470001",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UFD150870001",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UFD150770002",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UFD150670001",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UPR040960001",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UCU160570001",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UVA150170002",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #UAB020270001",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #UAC100570001",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #UAC101160003",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #UAC150270002",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Cheque %UYN110900001",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare %UPA270800003",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare %UPA290800003",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #UVA120270001",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #UIG050270001",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #UAC200770001",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #UAC100870001",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #UAU300170003",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #UAU100270001",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #UAC120770001",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #UIG160770001",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #UIG180670001",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #UIG250670001",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #UIG300670002",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #URG260870001",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #URG180570001",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #URG100870001",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #URG280570001",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #UAU180270002",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #UAU180170001",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare %UYN120800001",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #USO300570001",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #UVA041060002",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #UVA040970001",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #UVA040380001",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #UVA040370001",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #UVA200270001",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #USO260470001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UPR030860014",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UPR080470001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UPR150470001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UPR220470001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UPR271060001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UVA010370001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #USO020570001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #USO090570001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare %UQQ190900003",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare %UPA270800001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare %UPA290800002",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare %UPA290800005",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UIG140570001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UIG310570001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UAU290170001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UFD270570008",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UVA200270002",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare %UAY180800001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UAR221070001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UAR311070001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UAR191170002",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UAR301170001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UAR211270001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UAR311270001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UAR210180001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UAR310180001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UAR180280001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UAR290280001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UAR170380001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UAR310380001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UAR160770001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UAR300770001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UAR300670003",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UAR180670002",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UAR160970003",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UAR180870001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UAR300970003",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UAR310870001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UPR050570001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UPR070470001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UPR190570001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UPR210470001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UPR080770001",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare #UPR150770001",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare #UPR221260001",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare #UPR260570001",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare #UPR280470001",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare #UAR210480001",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare #UAR300480001",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque %UYN120900001",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Cheque %UYN010900001",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Pagare #UMV140960010",
+      "porcentaje": 2.85
+    },
+    {
+      "nombre": "Pagare #UAB250960001",
+      "porcentaje": 0.43
+    },
+    {
+      "nombre": "Pagare #UVA240270002",
+      "porcentaje": 0.36
+    },
+    {
+      "nombre": "Pagare #UAB131060001",
+      "porcentaje": 0.27
+    },
+    {
+      "nombre": "Pagare #UNO301160006",
+      "porcentaje": 0.25
+    },
+    {
+      "nombre": "Pagare #UNO301260001",
+      "porcentaje": 0.25
+    },
+    {
+      "nombre": "Pagare #UFR011260001",
+      "porcentaje": 0.25
+    },
+    {
+      "nombre": "Pagare #UFR031160001",
+      "porcentaje": 0.25
+    },
+    {
+      "nombre": "Pagare #UFR171160002",
+      "porcentaje": 0.25
+    },
+    {
+      "nombre": "Pagare #UIG200370001",
+      "porcentaje": 0.15
+    },
+    {
+      "nombre": "Pagare #UNO150170001",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UNO080270001",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UNO131160002",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #USO310860043",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UNO110370001",
+      "porcentaje": 0.14
+    },
+    {
+      "nombre": "Pagare #UAB200470001",
+      "porcentaje": 0.13
+    },
+    {
+      "nombre": "Pagare #UVA200960003",
+      "porcentaje": 0.13
+    },
+    {
+      "nombre": "Pagare #UVA201060002",
+      "porcentaje": 0.13
+    },
+    {
+      "nombre": "Pagare #UVA210860001",
+      "porcentaje": 0.13
+    },
+    {
+      "nombre": "Pagare #UNO280170001",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Pagare #UFR100470001",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Pagare #UFR100370001",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Pagare #UNO180270001",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "Pagare #UGC070860001",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Pagare #UVA010860001",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "Pagare #UCM251260001",
+      "porcentaje": 0.1
+    },
+    {
+      "nombre": "Pagare #USO310860038",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare #UVA200860001",
+      "porcentaje": 0.09
+    },
+    {
+      "nombre": "Pagare #USO300860012",
+      "porcentaje": 0.08
+    },
+    {
+      "nombre": "Pagare #UPR020470004",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UPR020470003",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UPR020470002",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UPR020470001",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UNE131160002",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UNE271160002",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UNE240960002",
+      "porcentaje": 0.07
+    },
+    {
+      "nombre": "Pagare #UCU250370002",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #UCU140470001",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #USO310860045",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #UVA151060003",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #UVA011060002",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #UVA100960001",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "Pagare #UVA300860001",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #UVA300760002",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #UVA300860002",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #USO310860046",
+      "porcentaje": 0.05
+    },
+    {
+      "nombre": "Pagare #UVA150860006",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #UCU100370002",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #UCU150370002",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #UCU230470001",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #UCU260470001",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #UVA200960002",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "Pagare #UCU050370002",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UCU250370003",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UCU200370002",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UCU200470001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO140470001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO140470002",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO140470003",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO140470004",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO140470005",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO140470006",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO140470007",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO140470008",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO140470009",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO140470010",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO020960001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO130860001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO190860001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO240860001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO280860001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO160860001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO210860001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO260860001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO310860001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO110860001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UVA161060001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO201060001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO180860001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO131060001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO090960001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO250860001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UMO150960001",
+      "porcentaje": 0.03
+    },
+    {
+      "nombre": "Pagare #UVA041260003",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #USO310860040",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UVA040170001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UVA040960001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UVA040860002",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "Pagare #UVA040860001",
+      "porcentaje": 0.02
+    },
+    {
+      "nombre": "FCI Cocos Dólar Money Market - Clase C",
+      "porcentaje": 4.37
+    },
+    {
+      "nombre": "FCI Allaria Dólar Ahorro - Clase B",
+      "porcentaje": 3.76
+    },
+    {
+      "nombre": "FCI Zofingen Pesos Ya - Clase A",
+      "porcentaje": 3.38
+    },
+    {
+      "nombre": "FCI IEB Corto Plazo Dólar - Clase B",
+      "porcentaje": 1.61
     }
   ],
   "calificaciones": [],

@@ -9,7 +9,7 @@
   "tipoDD": null,
   "region": "Global",
   "benchmark": null,
-  "horizonte": null,
+  "horizonte": "Mediano Plazo",
   "duracion": null,
   "moneda": "Peso Argentino",
   "codigoCNV": "638",
@@ -28,7 +28,96 @@
     "enElAnio": 15.261,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Bono del Tesoro Nacional D31G6",
+      "porcentaje": 29.85
+    },
+    {
+      "nombre": "Bono Prov de Buenos Aires TZV28",
+      "porcentaje": 23.72
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TZVD8",
+      "porcentaje": 14.13
+    },
+    {
+      "nombre": "Lecap S14G6",
+      "porcentaje": 7.42
+    },
+    {
+      "nombre": "ON PCR Clase K",
+      "porcentaje": 5.03
+    },
+    {
+      "nombre": "Lecap S15S6",
+      "porcentaje": 3.96
+    },
+    {
+      "nombre": "ON Telecom C19 TLCKO",
+      "porcentaje": 3.32
+    },
+    {
+      "nombre": "ON Capex C6",
+      "porcentaje": 2.59
+    },
+    {
+      "nombre": "ON Capex C7",
+      "porcentaje": 2.08
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional T31Y7",
+      "porcentaje": 1.88
+    },
+    {
+      "nombre": "Lelink D30S6",
+      "porcentaje": 1.68
+    },
+    {
+      "nombre": "ON Capex C10",
+      "porcentaje": 1.32
+    },
+    {
+      "nombre": "ON Genneia Clase 37",
+      "porcentaje": 0.75
+    },
+    {
+      "nombre": "ON GEMSA y CTR C43",
+      "porcentaje": 0.51
+    },
+    {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 0.41
+    },
+    {
+      "nombre": "ON Petroqui C Rivadavia Clase Q",
+      "porcentaje": 0.4
+    },
+    {
+      "nombre": "ON Genneia Clase 42",
+      "porcentaje": 0.36
+    },
+    {
+      "nombre": "ON Red Surcos S9 Clase A",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "ON Agrofina Clase 12",
+      "porcentaje": 0.11
+    },
+    {
+      "nombre": "ON Red Surcos S14 Clase A",
+      "porcentaje": 0.06
+    },
+    {
+      "nombre": "ON Agrofina Clase 11",
+      "porcentaje": 0.04
+    },
+    {
+      "nombre": "FCI Max Money Market - Clase B",
+      "porcentaje": 0.7
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 2.03,

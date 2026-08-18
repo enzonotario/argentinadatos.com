@@ -9,7 +9,7 @@
   "tipoDD": null,
   "region": "Global",
   "benchmark": null,
-  "horizonte": null,
+  "horizonte": "Mediano Plazo",
   "duracion": null,
   "moneda": "Peso Argentino",
   "codigoCNV": "639",
@@ -28,7 +28,36 @@
     "enElAnio": 5.018,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 22.78
+    },
+    {
+      "nombre": "Bonos Rep Argentina GD35",
+      "porcentaje": 21.07
+    },
+    {
+      "nombre": "Bono Boncer TZXS8",
+      "porcentaje": 17.09
+    },
+    {
+      "nombre": "Letra Tesoro Nac S30O6",
+      "porcentaje": 8.72
+    },
+    {
+      "nombre": "Grupo Financiero Galicia S.A.",
+      "porcentaje": 14.74
+    },
+    {
+      "nombre": "Pampa Energia S.A.",
+      "porcentaje": 12.91
+    },
+    {
+      "nombre": "FCI IEB Ahorro - Clase E",
+      "porcentaje": 1.47
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 0,
