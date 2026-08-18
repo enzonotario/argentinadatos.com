@@ -14,6 +14,7 @@ La documentación de la API se encuentra en [ArgentinaDatos.com](https://argenti
 - [arbolito🌳](https://apps.apple.com/ar/app/arbolito-d%C3%B3lar-hoy/id6470806411): Dolar y cripto widgets para iOS.
 - [MERC's Harvey Bot](https://t.me/mercsharvey_bot): Bot de Telegram para consultar datos del mercado de valores en Argentina.
 - [Dólar Ahora](https://play.google.com/store/apps/details?id=com.fraancogaalfras.dolarahora): App móvil para consultar el precio de los dólares financieros en Argentina.
+- [Ruki Portfolio](https://rukiportfolio.com): App argentina (iOS, Android y web) para el seguimiento de carteras de inversión.
 - [Toolrail](https://toolrail.dev/): API de utilidades para agentes de IA con datos LATAM.
 
 > [!NOTE]  
