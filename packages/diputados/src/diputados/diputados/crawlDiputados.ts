@@ -1,6 +1,5 @@
 import { getStaticPublicUrl } from '@argentinadatos/core/src/utils/getStaticPublicUrl.ts'
 import { readEndpoint } from '@argentinadatos/core/src/utils/readEndpoint.ts'
-import { readStaticBuffer } from '@argentinadatos/core/src/utils/readStaticBuffer.ts'
 import { titleCaseSpanish } from '@argentinadatos/core/src/utils/titleCaseSpanish.ts'
 import { writeEndpoint } from '@argentinadatos/core/src/utils/writeEndpoint.ts'
 import { writeStaticBuffer } from '@argentinadatos/core/src/utils/writeStaticBuffer.ts'
@@ -18,6 +17,7 @@ import {
 import { crawlMisiones } from '../misiones/crawlMisiones.ts'
 import { crawlViajes } from '../viajes/crawlViajes.ts'
 import { crawlPeriodos } from '../periodos/crawlPeriodos.ts'
+import { fillMissingFotosFromNomina, localDiputadoFotoUrl } from './scrapeNominaFotos.ts'
 
 export interface Diputado {
   id: string
@@ -71,6 +71,13 @@ export async function crawlDiputados(): Promise<Diputado[]> {
     diputados.push(
       await enhanceWithPhoto(value),
     )
+  }
+
+  try {
+    await fillMissingFotosFromNomina(diputados)
+  }
+  catch (e: any) {
+    console.error('Nómina HCDN: no se pudieron completar fotos', e?.message || e)
   }
 
   if (shouldWriteJsonFiles()) {
@@ -591,18 +598,24 @@ function getFoto(id: string): string | undefined | null {
 }
 
 async function enhanceWithPhoto(diputado: Diputado): Promise<Diputado> {
+  const local = localDiputadoFotoUrl(diputado.id)
+  if (local) {
+    return {
+      ...diputado,
+      foto: local,
+    }
+  }
+
   const fotoFromCurrentValues = diputado.foto
 
   if (fotoFromCurrentValues?.startsWith('https://votaciones.hcdn.gob.ar/assets/diputados/')) {
     const path = `/diputados/diputados/${diputado.id}.jpg`
 
-    if (!readStaticBuffer(path)) {
-      try {
-        await saveFoto(path, fotoFromCurrentValues)
-      }
-      catch {
-        return diputado
-      }
+    try {
+      await saveFoto(path, fotoFromCurrentValues)
+    }
+    catch {
+      return diputado
     }
 
     const foto = getStaticPublicUrl(path)
