@@ -17,7 +17,7 @@
     "tope": 2000000,
     "fecha": "2026-08-18",
     "condiciones": "**CUENTA REMUNERADA EN PESOS**\nBENEFICIO CONSISTENTE EN LA REMUNERACIÓN DIARIA Y AUTOMÁTICA DEL SALDO DISPONIBLE EN LA CUENTA SUELDO DEL TITULAR. SE REMUNERA HASTA LA SUMA MÁXIMA DE $2.000.000,00.- (PESOS DOS MILLONES) A UNA TASA NOMINAL ANUAL DE 14,00% (TNA), TASA EFECTIVA ANUAL 15,0243%(TEA). EN CASO DE QUE EL SALDO DEPOSITADO SUPERE ESE MONTO, LOS INTERESES SERÁN CALCULADOS ÚNICAMENTE POR LOS PRIMEROS $2.000.000,00.- VÁLIDO EN LA REPÚBLICA ARGENTINA EXCLUSIVO PARA CLIENTES DE CARTERA CONSUMO TITULARES O COTITULARES DE UNA CUENTA SUELDO. NO SE REMUNERAN CUENTAS EN ESTADO BLOQUEADO Y/O CON EMBARGOS VIGENTES. LA TASA NOMINAL ANUAL (TNA) Y EL SALDO MÁXIMO A REMUNERAR PODRÁN SER MODIFICADOS, RESERVÁNDOSE EL BANCO EL DERECHO DE MODIFICAR, SUSPENDER O CANCELAR EL BENEFICIO EN CUALQUIER MOMENTO. DICHAS MODIFICACIONES SERÁN COMUNICADAS POR LOS MEDIOS HABILITADOS POR EL BANCO A TAL EFECTO. VIGENCIA DEL BENEFICIO DESDE EL 10/04/2026 AL 31/12/2026. BANCO DE LA NACIÓN ARGENTINA - BARTOLOMÉ MITRE 326, CABA - CUIT 30-50001091-2.",
-    "condicionesCorto": "Clientes de cuenta sueldo con saldo hasta $2.000.000.",
+    "condicionesCorto": "Clientes de Cuenta Sueldo en Argentina.",
     "plazoMinDias": null,
     "plazoMaxDias": null
   },
@@ -60,8 +60,8 @@
     "tea": 0.2213,
     "tope": 750000,
     "fecha": "2026-08-18",
-    "condiciones": "La bonificación puede ser modificada o descontinuada en cualquier momento, sin fecha de vigencia garantizada.",
-    "condicionesCorto": "Bonificación sujeta a cambios, sin fecha garantizada.",
+    "condiciones": "La bonificación puede ser modificada o descontinuada en cualquier momento; no tiene fecha de vigencia garantizada.",
+    "condicionesCorto": "Bonificación puede cambiar o terminar en cualquier momento.",
     "plazoMinDias": null,
     "plazoMaxDias": null
   },
@@ -94,7 +94,7 @@
     "tope": 30000000,
     "fecha": "2026-08-18",
     "condiciones": "Frascos te permite guardar hasta $ 30.000.000 y generar rendimientos. Podés mantener tu dinero creciendo durante 7, 14 o 28 días, con distintos porcentajes de TNA.",
-    "condicionesCorto": "plazo elegible entre 7 y 28 días.",
+    "condicionesCorto": "Plazo elegible entre 7 y 28 días.",
     "plazoMinDias": 14,
     "plazoMaxDias": 27
   },
@@ -105,7 +105,7 @@
     "tope": 30000000,
     "fecha": "2026-08-18",
     "condiciones": "Frascos te permite guardar hasta $ 30.000.000 y generar rendimientos. Podés mantener tu dinero creciendo durante 7, 14 o 28 días, con distintos porcentajes de TNA.",
-    "condicionesCorto": "plazo elegible entre 7 y 28 días.",
+    "condicionesCorto": "Plazo elegible entre 7 y 28 días.",
     "plazoMinDias": 28,
     "plazoMaxDias": 28
   },
@@ -116,7 +116,7 @@
     "tope": 30000000,
     "fecha": "2026-08-18",
     "condiciones": "Frascos te permite guardar hasta $ 30.000.000 y generar rendimientos. Podés mantener tu dinero creciendo durante 7, 14 o 28 días, con distintos porcentajes de TNA.",
-    "condicionesCorto": "plazo elegible entre 7 y 28 días.",
+    "condicionesCorto": "Plazo elegible entre 7 y 28 días.",
     "plazoMinDias": 7,
     "plazoMaxDias": 13
   },
@@ -147,8 +147,8 @@
     "tna": 0.18,
     "tea": 0.1972,
     "tope": 1000000,
-    "fecha": "2026-08-12",
-    "condiciones": "Si mantenés entre $10.000 y $1.000.000 en tu cuenta, rinde 18% TNA.",
+    "fecha": "2026-08-17",
+    "condiciones": "N/A",
     "condicionesCorto": "null",
     "plazoMinDias": null,
     "plazoMaxDias": null
@@ -160,7 +160,7 @@
     "tope": 1000000,
     "fecha": "2026-08-18",
     "condiciones": "Si sumás $250.000 en ciertas operaciones este mes, tu tasa sube hasta 21% TNA.",
-    "condicionesCorto": "Acumulá $250.000 en ciertas operaciones para acceder a la tasa Plus 1 el próximo mes.",
+    "condicionesCorto": "Acumulá $250.000 entre inversiones y consumos para acceder a la tasa Plus 1 el próximo mes.",
     "plazoMinDias": null,
     "plazoMaxDias": null
   },
@@ -170,8 +170,8 @@
     "tea": 0.2711,
     "tope": 1000000,
     "fecha": "2026-08-18",
-    "condiciones": "Si sumás $500.000 en ciertas operaciones este mes, tu tasa sube hasta 24% TNA.",
-    "condicionesCorto": "Acumulá $500.000 en ciertas operaciones para acceder a la tasa Plus 2 el próximo mes.",
+    "condiciones": "Si sumás $500.000 sube hasta 24% TNA.",
+    "condicionesCorto": "Acumulá $500.000 entre inversiones y consumos para acceder a la tasa Plus 2 el próximo mes.",
     "plazoMinDias": null,
     "plazoMaxDias": null
   },
@@ -181,8 +181,8 @@
     "tea": 0.1853,
     "tope": null,
     "fecha": "2026-08-18",
-    "condiciones": "(1) TNA Estimada 17%. Tasa de Interés Nominal Anual (TNA) fija repactable de referencia, vigente desde el 03/06/2026. Sujeta a modificaciones.",
-    "condicionesCorto": "Caja de ahorro remunerada sin costos.",
+    "condiciones": "TNA Estimada 17%. Tasa de Interés Nominal Anual (TNA) fija repactable de referencia, vigente desde el 03/06/2026. Sujeta a modificaciones.",
+    "condicionesCorto": "caja de ahorro remunerada sin costo, intereses acreditados mensualmente.",
     "plazoMinDias": null,
     "plazoMaxDias": null
   }
