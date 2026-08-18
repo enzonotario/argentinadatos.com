@@ -8,6 +8,7 @@ import { guardarSeriesDesdeFondos } from '@/finanzas/fci/series/guardarSeriesDes
 import { guardarMercadoHistorico } from '@/finanzas/fci/series/guardarMercadoHistorico.js'
 import { recuperarYLocalizarCamposFondo } from '@/finanzas/fci/fondos/preservarComposicionCartera.js'
 import { FciFondosDatabaseService } from '@/finanzas/fci/fondos/database/service.js'
+import { clavesSlugFondo } from '@/finanzas/fci/fondos/utils/normalizarNombreFondo.js'
 import { computeRendimientosFromHistory } from '../../../../apps/cafci-worker/src/cnv/mapCnvRowToPayload.js'
 import { logError, logGrupo, logMensaje } from '@/log.js'
 
@@ -68,10 +69,7 @@ export default async function fondosComando() {
       (a.nombre || '').localeCompare(b.nombre || '', 'es'),
     )
 
-    const recuperacion = await recuperarYLocalizarCamposFondo(
-      fondos,
-      db.dbPath,
-    )
+    const recuperacion = await recuperarYLocalizarCamposFondo(fondos, db.dbPath)
 
     if (recuperacion.recuperados > 0 || recuperacion.logosLocalizados > 0) {
       logMensaje(log, 'Campos CAFCI recuperados/localizados', recuperacion)
@@ -80,8 +78,11 @@ export default async function fondosComando() {
     const historicosPorSlug = {}
 
     for (const fondo of fondos) {
-      const historico = db.obtenerHistorialPorSlug(fondo.slug)
-      historicosPorSlug[fondo.slug] = historico
+      const claves = clavesSlugFondo(fondo)
+      const historico = db.obtenerHistorialPorSlugs(claves)
+      for (const clave of claves) {
+        historicosPorSlug[clave] = historico
+      }
       applyRollingRendimientos(fondo, historico)
 
       guardarDetalleFondo(fondo)
@@ -99,7 +100,10 @@ export default async function fondosComando() {
     })
 
     await guardarSeriesDesdeFondos(fondos, historicosPorSlug)
-    await guardarMercadoHistorico(historicosPorSlug, snapshot.fechaActualizacion)
+    await guardarMercadoHistorico(
+      historicosPorSlug,
+      snapshot.fechaActualizacion,
+    )
 
     logMensaje(log, 'Fondos detallados generados desde SQLite', {
       cantidad: fondos.length,

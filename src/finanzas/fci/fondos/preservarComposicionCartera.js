@@ -6,12 +6,21 @@ import {
   normalizarNombreFondo,
 } from '@/finanzas/fci/fondos/utils/normalizarNombreFondo.js'
 import { descargarImagen } from '@/utils/imagenes.js'
-import { leerRuta } from '@/utils/rutas.js'
+import { leerRuta, existeRuta } from '@/utils/rutas.js'
 import { preserveExistingPayloadFields } from '../../../../apps/cafci-worker/src/utils/preserveExistingPayloadFields.js'
 
 const LOGOS_DIRECTORY = 'logos/fondos'
 const STATIC_PUBLIC_BASE = 'https://api.argentinadatos.com/static/'
 const HEAD_INDEX_PATH = 'datos/v1/finanzas/fci/fondos/index.json'
+
+function leerFondoExportado(slug) {
+  if (!slug) {
+    return null
+  }
+
+  const ruta = `/finanzas/fci/fondos/${slug}`
+  return existeRuta(ruta) ? leerRuta(ruta) : null
+}
 
 /**
  * Recupera campos CAFCI-only desde export en disco y/o index de git HEAD,
@@ -23,7 +32,9 @@ export async function recuperarYLocalizarCamposFondo(fondos, dbPath) {
 
   for (const fondo of fondos) {
     const slug = normalizarNombreFondo(fondo)
-    const fromDisk = leerRuta(`/finanzas/fci/fondos/${slug}`)
+    const fromDisk =
+      leerFondoExportado(slug) ||
+      (fondo.slug && fondo.slug !== slug ? leerFondoExportado(fondo.slug) : null)
     const fromHead =
       headByKey.byClaseId.get(String(fondo.claseId)) ||
       headByKey.bySlug.get(slug) ||
@@ -123,6 +134,10 @@ function loadHeadFondosIndex() {
   const byClaseId = new Map()
   const bySlug = new Map()
   const byNombre = new Map()
+
+  if (process.env.VITEST) {
+    return { byClaseId, bySlug, byNombre, size: 0 }
+  }
 
   try {
     const raw = execFileSync('git', ['show', `HEAD:${HEAD_INDEX_PATH}`], {

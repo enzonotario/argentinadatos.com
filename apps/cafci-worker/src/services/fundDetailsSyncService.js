@@ -189,15 +189,23 @@ export class FundDetailsSyncService {
           }),
         )
 
-        if (existing?.slug) {
-          payload.slug = existing.slug
-        }
         if (existing?.fondoId) {
           payload.fondoId = existing.fondoId
         }
 
-        const desiredSlug = payload.slug
-        payload.slug = allocateUniqueFundSlug(desiredSlug, {
+        const nameSlug = payload.slug
+        const existingSlug = existing?.slug || null
+        const nameSlugOwner = nameSlug ? currentBySlug.get(nameSlug) : null
+        const nameSlugTakenByOther = Boolean(
+          nameSlugOwner &&
+          String(nameSlugOwner.claseId) !== String(payload.claseId),
+        )
+
+        if (existingSlug && nameSlugTakenByOther) {
+          payload.slug = existingSlug
+        }
+
+        payload.slug = allocateUniqueFundSlug(payload.slug, {
           claseId: payload.claseId,
           isTaken: slug => {
             const owner = currentBySlug.get(slug)
@@ -207,7 +215,25 @@ export class FundDetailsSyncService {
           },
         })
 
-        if (payload.slug !== desiredSlug) {
+        if (existingSlug && payload.slug !== existingSlug) {
+          this.repository.renameFundSlug(existingSlug, payload.slug)
+          currentBySlug.delete(existingSlug)
+          if (firstBySlug?.has(existingSlug)) {
+            firstBySlug.set(payload.slug, firstBySlug.get(existingSlug))
+            firstBySlug.delete(existingSlug)
+          }
+          if (previousBySlug?.has(existingSlug)) {
+            previousBySlug.set(payload.slug, previousBySlug.get(existingSlug))
+            previousBySlug.delete(existingSlug)
+          }
+          console.warn('[cafci-worker] slug actualizado por rename del fondo', {
+            documentDate: document.documentDate,
+            claseId: payload.claseId,
+            nombre: payload.nombre,
+            from: existingSlug,
+            to: payload.slug,
+          })
+        } else if (payload.slug !== nameSlug && payload.slug !== existingSlug) {
           console.warn('[cafci-worker] slug duplicado, usando sufijo', {
             documentDate: document.documentDate,
             claseId: payload.claseId,

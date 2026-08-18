@@ -1,46 +1,64 @@
 import Database from 'better-sqlite3'
 import { existsSync, readFileSync, rmSync, writeFileSync, mkdirSync } from 'node:fs'
 import { dirname } from 'node:path'
-import { afterEach, describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import { crearBaseDeDatosTemporal } from '../../../../helpers/sqlite.js'
+
+vi.mock('@/finanzas/fci/fondos/preservarComposicionCartera.js', () => ({
+  recuperarYLocalizarCamposFondo: async () => ({
+    recuperados: 0,
+    logosLocalizados: 0,
+    headSources: 0,
+  }),
+}))
+
 import fondosComando from '@/finanzas/fci/fondos/fondos.comando.js'
+import { guardarDetalleFondo } from '@/finanzas/fci/fondos/guardado/guardarDetallesFondos.js'
 import { leerRuta } from '@/utils/rutas.js'
 
 const baseRuta = 'datos/v1/finanzas/fci/fondos'
-const seriesPathsToRestore = [
+const generatedSlugs = [
+  'mercado-fondo-clase-a',
+  'slug-publico-actual-clase-a',
+  'alias-interno-congelado-clase-a',
+]
+const pathsToRestore = [
+  'datos/v1/finanzas/fci/fondos/index.json',
+  'datos/v1/finanzas/fci/comparatasas/index.json',
   'datos/v1/finanzas/fci/mercadoDinero/ultimo/index.json',
   'datos/v1/finanzas/fci/mercadoDinero/penultimo/index.json',
   'datos/v1/finanzas/fci/mercadoDinero/2026/05/21/index.json',
+  'datos/v1/finanzas/fci/mercado/historico/index.json',
+  ...generatedSlugs.flatMap(slug => [
+    `${baseRuta}/${slug}/index.json`,
+    `${baseRuta}/${slug}/historico/index.json`,
+  ]),
 ]
 let restoreDbPath
-let seriesBackups = {}
+let pathBackups = {}
 
-function backupSeriesPaths() {
-  seriesBackups = {}
-  for (const path of seriesPathsToRestore) {
-    seriesBackups[path] = existsSync(path) ? readFileSync(path, 'utf8') : null
+function backupGeneratedPaths() {
+  pathBackups = {}
+  for (const path of pathsToRestore) {
+    pathBackups[path] = existsSync(path) ? readFileSync(path, 'utf8') : null
   }
 }
 
-function restoreSeriesPaths() {
-  for (const [path, content] of Object.entries(seriesBackups)) {
+function restoreGeneratedPaths() {
+  for (const [path, content] of Object.entries(pathBackups)) {
     if (content == null) {
-      rmSync(dirname(path), { recursive: true, force: true })
+      rmSync(path, { force: true })
       continue
     }
 
     mkdirSync(dirname(path), { recursive: true })
     writeFileSync(path, content)
   }
-  seriesBackups = {}
+  pathBackups = {}
 }
 
 function limpiarArchivos() {
-  rmSync(baseRuta, {
-    recursive: true,
-    force: true,
-  })
-  restoreSeriesPaths()
+  restoreGeneratedPaths()
 }
 
 afterEach(() => {
@@ -52,9 +70,40 @@ afterEach(() => {
   }
 })
 
+describe('guardarDetalleFondo', () => {
+  it('escribe el slug público y el alias interno congelado', () => {
+    backupGeneratedPaths()
+
+    const fondo = {
+      slug: 'alias-interno-congelado-clase-a',
+      nombre: 'Slug Publico Actual - Clase A',
+      fondoId: '1148',
+      claseId: '3377',
+    }
+
+    expect(guardarDetalleFondo(fondo)).toBe('slug-publico-actual-clase-a')
+    expect(existsSync(`${baseRuta}/slug-publico-actual-clase-a/index.json`)).toBe(
+      true,
+    )
+    expect(
+      existsSync(`${baseRuta}/alias-interno-congelado-clase-a/index.json`),
+    ).toBe(true)
+    expect(leerRuta('/finanzas/fci/fondos/slug-publico-actual-clase-a')).toEqual(
+      leerRuta('/finanzas/fci/fondos/alias-interno-congelado-clase-a'),
+    )
+    expect(
+      leerRuta('/finanzas/fci/fondos/slug-publico-actual-clase-a'),
+    ).toMatchObject({
+      fondoId: '1148',
+      claseId: '3377',
+      nombre: 'Slug Publico Actual - Clase A',
+    })
+  })
+})
+
 describe('fondosComando', () => {
   it('genera endpoints a partir de la sqlite del worker', async () => {
-    backupSeriesPaths()
+    backupGeneratedPaths()
     const temporal = crearBaseDeDatosTemporal('fci-fondos-command')
     const dbPath = temporal.url.replace(/^file:/, '')
     const db = new Database(dbPath)
@@ -249,7 +298,8 @@ describe('fondosComando', () => {
           plazoLiquidacionDias: null,
           rendimientos: {
             valorCuotaparte: 101,
-            ultimos7Dias: 17.88,
+            variacionDiariaPct: null,
+            ultimos7Dias: null,
             unMes: null,
             noventaDias: null,
             cientoOchentaDias: null,

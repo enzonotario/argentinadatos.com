@@ -1,28 +1,36 @@
 import { escribirRuta } from '@/utils/rutas.js'
 import { logError, logGrupo, logMensaje } from '@/log.js'
 import {
-  normalizarNombreFondo,
+  clavesSlugFondo,
   omitirMetadataInterna,
 } from '@/finanzas/fci/fondos/utils/normalizarNombreFondo.js'
 
 export function guardarDetalleFondo(fondo) {
-  const slug = normalizarNombreFondo(fondo)
-  escribirRuta(`/finanzas/fci/fondos/${slug}`, omitirMetadataInterna(fondo))
-  return slug
+  const slugs = clavesSlugFondo(fondo)
+  const publico = omitirMetadataInterna(fondo)
+
+  for (const slug of slugs) {
+    escribirRuta(`/finanzas/fci/fondos/${slug}`, publico)
+  }
+
+  return slugs[0]
 }
 
 export function guardarHistoricoFondo(fondo, historico, fechaActualizacion) {
-  const slug = normalizarNombreFondo(fondo)
-
-  escribirRuta(`/finanzas/fci/fondos/${slug}/historico`, {
+  const slugs = clavesSlugFondo(fondo)
+  const payload = {
     fondoId: fondo.fondoId,
     claseId: fondo.claseId,
     nombre: fondo.nombre,
     fechaActualizacion,
     historico,
-  })
+  }
 
-  return slug
+  for (const slug of slugs) {
+    escribirRuta(`/finanzas/fci/fondos/${slug}/historico`, payload)
+  }
+
+  return slugs[0]
 }
 
 export async function guardarListaFondos(datos) {

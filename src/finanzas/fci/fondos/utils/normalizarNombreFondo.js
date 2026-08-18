@@ -1,13 +1,9 @@
-export function normalizarNombreFondo(fondo) {
-  if (fondo.slug) {
-    return fondo.slug
+export function slugificarNombreFondo(nombre) {
+  if (!nombre) {
+    return null
   }
 
-  if (!fondo.nombre) {
-    return `${fondo.fondoId}-${fondo.claseId}`
-  }
-
-  const nombreNormalizado = fondo.nombre
+  const nombreNormalizado = String(nombre)
     .normalize('NFD')
     .replace(/\p{Diacritic}/gu, '')
     .toLowerCase()
@@ -16,7 +12,36 @@ export function normalizarNombreFondo(fondo) {
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '')
 
-  return nombreNormalizado || `${fondo.fondoId}-${fondo.claseId}`
+  return nombreNormalizado || null
+}
+
+/**
+ * Slug público del endpoint `/fondos/{slug}`.
+ * Prioriza el nombre actual (estable para mappings) sobre el slug interno
+ * congelado en SQLite, que puede quedar de un nombre viejo del Excel CNV.
+ */
+export function slugPublicoFondo(fondo) {
+  return (
+    slugificarNombreFondo(fondo?.nombre) ||
+    fondo?.slug ||
+    `${fondo?.fondoId}-${fondo?.claseId}`
+  )
+}
+
+export function normalizarNombreFondo(fondo) {
+  return slugPublicoFondo(fondo)
+}
+
+export function clavesSlugFondo(fondo) {
+  return [
+    ...new Set(
+      [
+        slugPublicoFondo(fondo),
+        fondo?.slug,
+        slugificarNombreFondo(fondo?.nombre),
+      ].filter(Boolean),
+    ),
+  ]
 }
 
 export function omitirMetadataInterna(fondo) {

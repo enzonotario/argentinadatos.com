@@ -319,6 +319,61 @@ export class FundDetailsJobRepository {
     )
   }
 
+  renameFundSlug(fromSlug, toSlug) {
+    if (!fromSlug || !toSlug || fromSlug === toSlug) {
+      return
+    }
+
+    this.runInTransaction(() => {
+      const occupied = new Set(
+        this.db
+          .prepare(
+            `
+              SELECT source_date
+              FROM historical_fund_snapshots
+              WHERE slug = ?
+            `,
+          )
+          .all(toSlug)
+          .map(row => row.source_date),
+      )
+
+      const rows = this.db
+        .prepare(
+          `
+            SELECT id, source_date
+            FROM historical_fund_snapshots
+            WHERE slug = ?
+          `,
+        )
+        .all(fromSlug)
+
+      const update = this.db.prepare(
+        `
+          UPDATE historical_fund_snapshots
+          SET slug = ?,
+              updated_at = CURRENT_TIMESTAMP
+          WHERE id = ?
+        `,
+      )
+
+      for (const row of rows) {
+        if (!occupied.has(row.source_date)) {
+          update.run(toSlug, row.id)
+        }
+      }
+
+      this.db
+        .prepare(
+          `
+            DELETE FROM historical_fund_snapshots
+            WHERE slug = ?
+          `,
+        )
+        .run(fromSlug)
+    })
+  }
+
   listHistoricalSnapshotsBySlug(slug) {
     return this.db
       .prepare(

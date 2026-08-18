@@ -142,6 +142,7 @@ describe('FciFondosDatabaseService', () => {
           plazoLiquidacionDias: null,
           rendimientos: {
             valorCuotaparte: null,
+            variacionDiariaPct: null,
             ultimos7Dias: null,
             unMes: null,
             noventaDias: null,

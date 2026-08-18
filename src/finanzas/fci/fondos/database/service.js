@@ -80,7 +80,13 @@ export class FciFondosDatabaseService {
   }
 
   obtenerHistorialPorSlug(slug) {
-    if (!existsSync(this.dbPath)) {
+    return this.obtenerHistorialPorSlugs([slug])
+  }
+
+  obtenerHistorialPorSlugs(slugs) {
+    const uniqueSlugs = [...new Set((slugs || []).filter(Boolean))]
+
+    if (!existsSync(this.dbPath) || uniqueSlugs.length === 0) {
       return []
     }
 
@@ -94,32 +100,42 @@ export class FciFondosDatabaseService {
         return []
       }
 
-      return db
+      const placeholders = uniqueSlugs.map(() => '?').join(', ')
+      const rows = db
         .prepare(
           `
             SELECT *
             FROM historical_fund_snapshots
-            WHERE slug = ?
+            WHERE slug IN (${placeholders})
             ORDER BY source_date
           `,
         )
-        .all(slug)
-        .map(row => ({
-          slug: row.slug,
-          fondoId: row.fund_id,
-          claseId: row.class_id,
-          nombre: row.name,
-          fecha: row.source_date,
-          categoria: row.category_label,
-          categoriaKey: row.category_key,
-          horizonte: row.horizon,
-          valorCuotaparte: row.share_value,
-          patrimonio: row.assets_under_management,
-          retornoDiario: row.daily_return,
-          retornoAcumulado: row.cumulative_return,
-          flujoEstimado: row.estimated_net_flow,
-          origen: row.source_kind,
-        }))
+        .all(...uniqueSlugs)
+
+      const porFecha = new Map()
+
+      for (const row of rows) {
+        if (!porFecha.has(row.source_date)) {
+          porFecha.set(row.source_date, {
+            slug: row.slug,
+            fondoId: row.fund_id,
+            claseId: row.class_id,
+            nombre: row.name,
+            fecha: row.source_date,
+            categoria: row.category_label,
+            categoriaKey: row.category_key,
+            horizonte: row.horizon,
+            valorCuotaparte: row.share_value,
+            patrimonio: row.assets_under_management,
+            retornoDiario: row.daily_return,
+            retornoAcumulado: row.cumulative_return,
+            flujoEstimado: row.estimated_net_flow,
+            origen: row.source_kind,
+          })
+        }
+      }
+
+      return [...porFecha.values()].sort((a, b) => a.fecha.localeCompare(b.fecha))
     } finally {
       db.close()
     }

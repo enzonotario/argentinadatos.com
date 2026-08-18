@@ -19,13 +19,17 @@ export function loadStaticClassIdToFondoIdMap(
     return map
   }
 
-  const payload = JSON.parse(readFileSync(indexPath, 'utf8'))
-  const fondos = Array.isArray(payload) ? payload : payload.fondos || []
+  try {
+    const payload = JSON.parse(readFileSync(indexPath, 'utf8'))
+    const fondos = Array.isArray(payload) ? payload : payload.fondos || []
 
-  for (const fondo of fondos) {
-    if (fondo?.claseId && fondo?.fondoId) {
-      map.set(String(fondo.claseId), String(fondo.fondoId))
+    for (const fondo of fondos) {
+      if (fondo?.claseId && fondo?.fondoId) {
+        map.set(String(fondo.claseId), String(fondo.fondoId))
+      }
     }
+  } catch {
+    return map
   }
 
   return map

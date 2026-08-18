@@ -219,6 +219,7 @@ describe('FundDetailsSyncService CNV', () => {
           currentBySlug,
           previousBySlug: new Map(),
           firstBySlug: new Map(),
+          classIdToFondoId: new Map(),
         },
       )
 
@@ -257,14 +258,102 @@ describe('FundDetailsSyncService CNV', () => {
     expect(funds).toHaveLength(2)
     expect(funds[0]).toMatchObject({
       claseId: '1',
-      slug: 'alpha',
+      slug: 'alpha-clase-a',
       nombre: 'Alpha Clase A',
     })
     expect(funds[1]).toMatchObject({
       claseId: '2',
-      slug: 'alpha-2',
+      slug: 'alpha',
       nombre: 'Alpha',
     })
+    expect(
+      temp.repository
+        .listHistoricalSnapshotsBySlug('alpha-clase-a')
+        .map(snapshot => snapshot.fecha),
+    ).toEqual(['2020-01-02', '2026-01-09'])
+    expect(
+      temp.repository
+        .listHistoricalSnapshotsBySlug('alpha')
+        .map(snapshot => snapshot.fecha),
+    ).toEqual(['2026-01-09'])
     expect(temp.repository.getWorkerState('cnv_ingested:2026-01-09')).toBe('1')
+  })
+
+  it('conserva el slug interno si el del nombre actual ya pertenece a otra clase', async () => {
+    const temp = await createTempRepository()
+    cleanups.push(temp.cleanup)
+
+    const service = new FundDetailsSyncService(temp.repository)
+    const currentByClassId = new Map()
+    const currentBySlug = new Map()
+
+    const ingest = (documentDate, funds) =>
+      service.ingestCnvDocument(
+        { documentDate, presentationId: documentDate },
+        {
+          parsed: { funds },
+          downloaded: {
+            fileName: `${documentDate}.xlsx`,
+            buffer: Buffer.from(''),
+          },
+          skipRollingHistory: true,
+          persistFuenteOriginal: false,
+          currentByClassId,
+          currentBySlug,
+          previousBySlug: new Map(),
+          firstBySlug: new Map(),
+          classIdToFondoId: new Map(),
+        },
+      )
+
+    await ingest('2020-01-02', [
+      {
+        claseId: '3377',
+        fecha: '2020-01-02',
+        nombre: 'IEB Ahorro - Clase A',
+        valorCuotaparte: 100,
+        patrimonio: 1000,
+      },
+      {
+        claseId: '9999',
+        fecha: '2020-01-02',
+        nombre: 'Ciclo Nova Ahorro - Clase A',
+        valorCuotaparte: 50,
+        patrimonio: 500,
+      },
+    ])
+    await ingest('2026-01-09', [
+      {
+        claseId: '3377',
+        fecha: '2026-01-09',
+        nombre: 'Ciclo Nova Ahorro - Clase A',
+        valorCuotaparte: 101,
+        patrimonio: 1010,
+      },
+      {
+        claseId: '9999',
+        fecha: '2026-01-09',
+        nombre: 'Ciclo Nova Ahorro - Clase A Extra',
+        valorCuotaparte: 51,
+        patrimonio: 510,
+      },
+    ])
+
+    const funds = temp.repository
+      .getCurrentFunds()
+      .sort((left, right) =>
+        String(left.claseId).localeCompare(String(right.claseId)),
+      )
+
+    expect(funds[0]).toMatchObject({
+      claseId: '3377',
+      slug: 'ieb-ahorro-clase-a',
+      nombre: 'Ciclo Nova Ahorro - Clase A',
+    })
+    expect(funds[1]).toMatchObject({
+      claseId: '9999',
+      slug: 'ciclo-nova-ahorro-clase-a-extra',
+      nombre: 'Ciclo Nova Ahorro - Clase A Extra',
+    })
   })
 })
