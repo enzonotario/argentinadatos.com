@@ -4,29 +4,29 @@
   "nombre": "MEGAQM Provincial - Clase C",
   "fecha": "2024-12-10",
   "administradora": "MEGA QM S.A.",
-  "depositaria": "Banco de Servicios y Transacciones S.A. (BST)",
+  "depositaria": "Banco de Servicios y Transacciones S.A.",
   "tipoRenta": "Renta Fija",
-  "tipoDD": "No Aplica",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "951",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 200000000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 3579.625,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0,
+    "unMes": 0,
+    "noventaDias": 0,
+    "cientoOchentaDias": 0,
+    "enElAnio": 0,
+    "doceMeses": 0
   },
   "composicionCartera": [
     {
@@ -82,26 +82,32 @@
       "porcentaje": 0.8
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "BBB-f",
+      "fecha": "2024-12-10"
+    }
+  ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 1.579,
+    "honorarioDepositaria": 0.121,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "MEGA QM S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
-      "nombre": "Banco de Servicios y Transacciones S.A. (BST)",
+      "tipo": "Depositaria",
+      "nombre": "Banco de Servicios y Transacciones S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00387-5d5880dd.jpg"
     }
   ]

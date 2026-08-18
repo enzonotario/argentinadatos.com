@@ -11,22 +11,22 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1384",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 4321.065,
+    "variacionDiariaPct": -0.021,
+    "ultimos7Dias": 0.9933,
+    "unMes": 8.3428,
+    "noventaDias": 9.8476,
+    "cientoOchentaDias": 11.541,
+    "enElAnio": 7.9362,
+    "doceMeses": 30.7114
   },
   "composicionCartera": [
     {
@@ -1584,23 +1584,23 @@
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 0.477,
+    "honorarioDepositaria": 0.121,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.203,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }

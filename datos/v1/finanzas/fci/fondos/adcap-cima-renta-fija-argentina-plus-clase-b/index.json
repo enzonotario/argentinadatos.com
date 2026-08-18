@@ -11,22 +11,22 @@
   "benchmark": "Otro",
   "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "693",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 1000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 3,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
+    "valorCuotaparte": 2000.824,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": -1.0118,
+    "unMes": -1.0048,
+    "noventaDias": -1.7557,
     "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "enElAnio": -49.959,
+    "doceMeses": -48.6649
   },
   "composicionCartera": [
     {
@@ -38,7 +38,13 @@
       "porcentaje": 0.3
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "A-bf.ar",
+      "fecha": "2026-06-05"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 2.3,
     "honorarioDepositaria": 0.1573,
@@ -51,12 +57,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }

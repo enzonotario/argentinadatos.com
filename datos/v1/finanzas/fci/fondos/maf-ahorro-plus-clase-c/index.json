@@ -11,22 +11,22 @@
   "benchmark": "No Registrado",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "794",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 10000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 5000,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
+    "valorCuotaparte": 44903.23,
     "variacionDiariaPct": null,
     "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "unMes": 0,
+    "noventaDias": 46.6009,
+    "cientoOchentaDias": 90.5208,
+    "enElAnio": 108.716,
+    "doceMeses": 129.047
   },
   "composicionCartera": [
     {
@@ -46,7 +46,13 @@
       "porcentaje": 1.5
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "AA+f(arg)",
+      "fecha": "2025-10-15"
+    }
+  ],
   "honorarios": {
     "honorarioGerente": 1.86,
     "honorarioDepositaria": 0.12,
@@ -59,12 +65,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mariva Asset Management S.A.U.S.G.F.C.I.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00371G-45045e78.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Mariva S.A.",
       "logo": null
     }

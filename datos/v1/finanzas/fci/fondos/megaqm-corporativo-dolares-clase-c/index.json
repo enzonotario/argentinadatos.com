@@ -4,9 +4,9 @@
   "nombre": "MEGAQM Corporativo Dólares - Clase C",
   "fecha": "2024-12-10",
   "administradora": "MEGA QM S.A.",
-  "depositaria": "Banco Comafi S.A.",
+  "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
-  "tipoDD": "No Aplica",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
@@ -14,19 +14,19 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "889",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": null,
-  "monedaInversion": null,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 863.051,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0,
+    "unMes": 0,
+    "noventaDias": 0,
+    "cientoOchentaDias": 0,
+    "enElAnio": 0,
+    "doceMeses": 0
   },
   "composicionCartera": [
     {
@@ -121,29 +121,29 @@
   "calificaciones": [
     {
       "calificadora": "FIX SCR S.A.",
-      "calificacion": "AAf",
+      "calificacion": "AA-f",
       "fecha": "2025-11-10"
     }
   ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 0.86,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "MEGA QM S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
-      "nombre": "Banco Comafi S.A.",
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]

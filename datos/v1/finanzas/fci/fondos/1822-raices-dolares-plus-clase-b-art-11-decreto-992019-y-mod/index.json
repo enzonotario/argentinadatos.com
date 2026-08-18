@@ -1,12 +1,12 @@
 {
   "fondoId": "773",
   "claseId": "1739",
-  "nombre": "1822 Raices Dólares Plus - Clase B Art. 11 Decreto 99/2019 y mod",
+  "nombre": "1822 Raices Dolares Plus - Clase B Art. 11 Decreto 99/2019 y mod",
   "fecha": "2025-01-09",
   "administradora": "Provinfondos S.A.S.G.F.C.I.",
   "depositaria": "Banco Provincia de Buenos Aires",
   "tipoRenta": "Renta Fija",
-  "tipoDD": "No Aplica",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
@@ -14,19 +14,19 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "973",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
+  "cantidadCuotapartes": 0,
   "inversionMinima": 100,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 833.272,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0,
+    "unMes": 0,
+    "noventaDias": 0,
+    "cientoOchentaDias": 0,
+    "enElAnio": 0,
+    "doceMeses": 0
   },
   "composicionCartera": [
     {
@@ -173,28 +173,28 @@
   "calificaciones": [
     {
       "calificadora": "FIX SCR S.A.",
-      "calificacion": "A-f(arg)",
+      "calificacion": "BBB+ (Ffija)",
       "fecha": "2025-08-11"
     }
   ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 0.4,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Provinfondos S.A.S.G.F.C.I.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00043G-f97d764c.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Provincia de Buenos Aires",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00091-1272ada3.jpg"
     }

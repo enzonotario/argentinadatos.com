@@ -6,7 +6,7 @@
   "administradora": "MEGA QM S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
-  "tipoDD": "No Aplica",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
@@ -14,19 +14,19 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1084",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 3,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 995,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0,
+    "unMes": 0,
+    "noventaDias": -0.0716,
+    "cientoOchentaDias": 1.44,
+    "enElAnio": 3.2208,
+    "doceMeses": 3.9253
   },
   "composicionCartera": [
     {
@@ -109,28 +109,28 @@
   "calificaciones": [
     {
       "calificadora": "FIX SCR S.A.",
-      "calificacion": "AAAf",
+      "calificacion": "AAA",
       "fecha": "2025-06-17"
     }
   ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 1.2,
+    "honorarioDepositaria": 0.11,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "MEGA QM S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }

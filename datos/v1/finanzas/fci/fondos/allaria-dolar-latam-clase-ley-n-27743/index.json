@@ -5,7 +5,7 @@
   "fecha": "2026-01-08",
   "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "Renta Mixta",
+  "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
   "region": "Global",
   "benchmark": "No Registrado",
@@ -14,19 +14,19 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "931",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 1082.414,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0,
+    "unMes": 0.2574,
+    "noventaDias": 2.2625,
+    "cientoOchentaDias": 4.6553,
+    "enElAnio": -0.3591,
+    "doceMeses": 9.5969
   },
   "composicionCartera": [
     {
@@ -102,23 +102,23 @@
     }
   ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 1,
+    "honorarioDepositaria": 0.07,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }

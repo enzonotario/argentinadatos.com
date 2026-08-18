@@ -11,22 +11,22 @@
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1094",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 0,
-  "monedaInversion": "Dolar Estadounidense",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 2301.937,
+    "variacionDiariaPct": 7.249,
+    "ultimos7Dias": 13.1808,
+    "unMes": 15.6504,
+    "noventaDias": 23.5471,
+    "cientoOchentaDias": 34.5076,
+    "enElAnio": 34.9058,
+    "doceMeses": 81.292
   },
   "composicionCartera": [
     {
@@ -79,12 +79,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Adcap Asset Management S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00381G-eab8ed2f.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }

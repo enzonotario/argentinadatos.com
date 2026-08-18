@@ -5,28 +5,28 @@
   "fecha": "2025-01-06",
   "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "Renta Mixta",
-  "tipoDD": "No Aplica",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "No Registrado",
-  "horizonte": "Mediano Plazo",
+  "horizonte": "Corto Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1005",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 90000000,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 10641398.611,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0,
+    "unMes": 0,
+    "noventaDias": 0,
+    "cientoOchentaDias": 0,
+    "enElAnio": 0,
+    "doceMeses": 0
   },
   "composicionCartera": [
     {
@@ -46,25 +46,31 @@
       "porcentaje": 14.71
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "AA-",
+      "fecha": "2025-01-06"
+    }
+  ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 0,
+    "honorarioDepositaria": 0,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }

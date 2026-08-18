@@ -4,9 +4,9 @@
   "nombre": "MEGAQM Ahorro Dólares - Clase CP",
   "fecha": "2024-12-10",
   "administradora": "MEGA QM S.A.",
-  "depositaria": "Banco Comafi S.A.",
+  "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
-  "tipoDD": "No Aplica",
+  "tipoDD": null,
   "region": "Argentina",
   "benchmark": "No Registrado",
   "horizonte": "Mediano Plazo",
@@ -14,19 +14,19 @@
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1083",
   "patrimonio": 0,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 0,
-  "monedaInversion": "Peso Argentina",
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": null,
-    "variacionDiariaPct": null,
-    "ultimos7Dias": null,
-    "unMes": null,
-    "noventaDias": null,
-    "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "valorCuotaparte": 933001.67,
+    "variacionDiariaPct": 0.049,
+    "ultimos7Dias": 0.4447,
+    "unMes": 1.8537,
+    "noventaDias": 6.1065,
+    "cientoOchentaDias": 12.694,
+    "enElAnio": 25.7344,
+    "doceMeses": 27.0704
   },
   "composicionCartera": [
     {
@@ -68,24 +68,24 @@
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 0.4,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "MEGA QM S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00378G-e0793717.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
-      "nombre": "Banco Comafi S.A.",
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
   ]
