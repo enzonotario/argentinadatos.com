@@ -54,6 +54,43 @@ describe('parseCnvCuotaparteExcel', () => {
     expect(fima.variacionEnElAnioPct).toBeCloseTo(-5.025, 3)
     expect(fima.variacionDoceMesesPct).toBeCloseTo(21.673, 3)
   })
+
+  it('prioriza Código de Moneda sobre Moneda Fondo inconsistente', () => {
+    const parsed = parseCnvCuotaparteExcel(readFileSync(fixturePath), {
+      documentDate: '2026-08-12',
+    })
+
+    // code=1 texto=USD → ARS (denominación de la clase, no la cartera)
+    for (const clase of ['D', 'E', 'F']) {
+      const fund = parsed.funds.find(
+        row => row.nombre === `Compass Renta Fija - Clase ${clase}`,
+      )
+      expect(fund).toMatchObject({
+        codigoMoneda: '1',
+        moneda: 'Peso Argentino',
+      })
+    }
+
+    // code=2 texto=USD → USD
+    for (const clase of ['A', 'B']) {
+      const fund = parsed.funds.find(
+        row => row.nombre === `Compass Renta Fija - Clase ${clase}`,
+      )
+      expect(fund).toMatchObject({
+        codigoMoneda: '2',
+        moneda: 'Dolar Estadounidense',
+      })
+    }
+
+    // code=2 texto=ARS → USD (clases dólar de fondo en pesos)
+    const crecimientoD = parsed.funds.find(
+      row => row.nombre === 'Compass Crecimiento - Clase D',
+    )
+    expect(crecimientoD).toMatchObject({
+      codigoMoneda: '2',
+      moneda: 'Dolar Estadounidense',
+    })
+  })
 })
 
 describe('computeRendimientosFromHistory', () => {

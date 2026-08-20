@@ -116,21 +116,35 @@ function mapRegion(codigo) {
   }
 }
 
+/**
+ * Denominación de la cuotaparte (clase).
+ *
+ * Preferimos "Código de Moneda" (col 25): 1=ARS, 2=USD.
+ * "Moneda Fondo" (col 36) suele reflejar la moneda de la cartera/foco y
+ * a veces contradice el código (p. ej. Compass Renta Fija D/E/F: code=1,
+ * texto=USD) o trae typos (USB). Solo se usa como fallback.
+ */
 function mapMoneda(codigo, monedaTexto) {
+  const code = Number(codigo)
+  if (code === 1) return 'Peso Argentino'
+  if (code === 2) return 'Dolar Estadounidense'
+
   if (monedaTexto) {
     const upper = String(monedaTexto).toUpperCase()
     if (upper === 'ARS' || upper.includes('PESO')) {
       return 'Peso Argentino'
     }
-    if (upper === 'USD' || upper.includes('DOLAR') || upper.includes('DÓLAR')) {
+    if (
+      upper === 'USD' ||
+      upper === 'USB' ||
+      upper.includes('DOLAR') ||
+      upper.includes('DÓLAR')
+    ) {
       return 'Dolar Estadounidense'
     }
     return monedaTexto
   }
 
-  const code = Number(codigo)
-  if (code === 1) return 'Peso Argentino'
-  if (code === 2) return 'Dolar Estadounidense'
   return null
 }
 
