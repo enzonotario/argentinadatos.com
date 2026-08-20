@@ -2,7 +2,7 @@
   "fondoId": "1770",
   "claseId": "6040",
   "nombre": "BAVSA Deuda Privada Argentina USD - Clase C",
-  "fechaActualizacion": "2026-08-19T18:16:50.000Z",
+  "fechaActualizacion": "2026-08-20T13:00:22.000Z",
   "historico": [
     {
       "slug": "bavsa-deuda-privada-argentina-usd-clase-c",
@@ -2434,6 +2434,22 @@
       "retornoDiario": 0.20621,
       "retornoAcumulado": 5.256663,
       "flujoEstimado": -0.892779,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "bavsa-deuda-privada-argentina-usd-clase-c",
+      "fondoId": "1770",
+      "claseId": "6040",
+      "nombre": "BAVSA Deuda Privada Argentina USD - Clase C",
+      "fecha": "2026-08-19",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1051.803,
+      "patrimonio": 5695915.93,
+      "retornoDiario": -0.07135,
+      "retornoAcumulado": 5.181562,
+      "flujoEstimado": 2.825759,
       "origen": "cnv-excel"
     }
   ]
