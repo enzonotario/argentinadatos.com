@@ -1,0 +1,14 @@
+{
+  "name": "@argentinadatos/worker",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.js --watch",
+    "sync": "node src/main.js",
+    "migrate": "node src/pocketbase/migrate.js"
+  },
+  "dependencies": {
+    "axios": "^1.13.2"
+  }
+}

@@ -6,6 +6,9 @@ services:
     environment:
       STATIC_DIR: /app/datos
       HTTP_PORT: '3000'
+      DYNAMIC_CACHE_TTL_MS: '900000'
+      POCKETBASE_URL: ${POCKETBASE_URL:-https://db.argentinadatos.com}
+      POCKETBASE_TOKEN: ${POCKETBASE_TOKEN:-}
     volumes:
       # Coolify Compose: mounts the repo checkout's datos/ (refreshed on each deploy).
       - ./datos:/app/datos:ro

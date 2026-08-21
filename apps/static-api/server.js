@@ -1,6 +1,11 @@
 import { createServer } from 'node:http'
 import { existsSync, mkdirSync, readFileSync, statSync } from 'node:fs'
 import { join, resolve } from 'node:path'
+import { clearCache, getCached, setCached } from './dynamic/cache.js'
+import {
+  findDynamicEndpoint,
+  getDefaultDynamicEndpoints,
+} from './dynamic/registry.js'
 
 const MIME_TYPES = {
   '.json': 'application/json; charset=utf-8',
@@ -12,10 +17,11 @@ const MIME_TYPES = {
   '.svg': 'image/svg+xml',
 }
 
-function sendJson(res, status, body) {
+function sendJson(res, status, body, extraHeaders = {}) {
   res.writeHead(status, {
     'Content-Type': 'application/json; charset=utf-8',
     'Access-Control-Allow-Origin': '*',
+    ...extraHeaders,
   })
   res.end(JSON.stringify(body))
 }
@@ -40,7 +46,38 @@ function resolveFilePath(staticDir, urlPath) {
   return null
 }
 
-function handleRequest(staticDir, req, res) {
+async function handleDynamicEndpoint(endpoint, res) {
+  const fresh = getCached(endpoint.cacheKey)
+  if (fresh) {
+    sendJson(res, 200, fresh, {
+      'Cache-Control': `public, max-age=${Math.floor(endpoint.ttlMs / 1000)}`,
+      'X-Cache': 'HIT',
+    })
+    return
+  }
+
+  try {
+    const data = await endpoint.load()
+    setCached(endpoint.cacheKey, data, endpoint.ttlMs)
+    sendJson(res, 200, data, {
+      'Cache-Control': `public, max-age=${Math.floor(endpoint.ttlMs / 1000)}`,
+      'X-Cache': 'MISS',
+    })
+  } catch (err) {
+    console.error('[Server] Dynamic endpoint error:', endpoint.cacheKey, err)
+    const stale = getCached(endpoint.cacheKey, { allowStale: true })
+    if (stale) {
+      sendJson(res, 200, stale, {
+        'Cache-Control': 'public, max-age=60',
+        'X-Cache': 'STALE',
+      })
+      return
+    }
+    sendJson(res, 502, { error: 'Dynamic endpoint unavailable' })
+  }
+}
+
+async function handleRequest(staticDir, dynamicEndpoints, req, res) {
   if (req.method === 'OPTIONS') {
     res.writeHead(204, {
       'Access-Control-Allow-Origin': '*',
@@ -63,6 +100,12 @@ function handleRequest(staticDir, req, res) {
     return
   }
 
+  const dynamic = findDynamicEndpoint(url, dynamicEndpoints)
+  if (dynamic) {
+    await handleDynamicEndpoint(dynamic, res)
+    return
+  }
+
   const filePath = resolveFilePath(staticDir, url)
   if (!filePath) {
     sendJson(res, 404, { error: 'Not found' })
@@ -81,19 +124,24 @@ function handleRequest(staticDir, req, res) {
   res.end(body)
 }
 
-export function startStaticServer(staticDir, port) {
+/**
+ * @param {string} staticDir
+ * @param {number} port
+ * @param {{ dynamicEndpoints?: Array }} [options]
+ */
+export function startStaticServer(staticDir, port, options = {}) {
   if (!existsSync(staticDir)) {
     mkdirSync(staticDir, { recursive: true })
   }
 
+  const dynamicEndpoints =
+    options.dynamicEndpoints ?? getDefaultDynamicEndpoints()
+
   const server = createServer((req, res) => {
-    try {
-      handleRequest(staticDir, req, res)
-    }
-    catch (err) {
+    handleRequest(staticDir, dynamicEndpoints, req, res).catch(err => {
       console.error('[Server] Request error:', err)
       sendJson(res, 500, { error: 'Internal server error' })
-    }
+    })
   })
 
   server.listen(port, () => {
@@ -102,3 +150,5 @@ export function startStaticServer(staticDir, port) {
 
   return server
 }
+
+export { clearCache }
