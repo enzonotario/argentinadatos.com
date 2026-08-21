@@ -107,5 +107,11 @@ describe('static api server', () => {
     expect(second.status).toBe(200)
     expect(second.headers['x-cache']).toBe('HIT')
     expect(loadCount).toBe(1)
+
+    // Cloudflare rewrite: /v1/... → /v1/.../index.json
+    const rewritten = await fetchText(port, '/v1/finanzas/cauciones/index.json')
+    expect(rewritten.status).toBe(200)
+    expect(rewritten.headers['x-cache']).toBe('HIT')
+    expect(loadCount).toBe(1)
   })
 })
