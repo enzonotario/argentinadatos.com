@@ -2,7 +2,7 @@
   "fondoId": "815",
   "claseId": "2220",
   "nombre": "CYC Renta Mixta - Clase A",
-  "fechaActualizacion": "2026-08-20T19:30:06.000Z",
+  "fechaActualizacion": "2026-08-20T23:53:01.000Z",
   "historico": [
     {
       "slug": "cyc-renta-mixta-clase-a",
@@ -24258,6 +24258,22 @@
       "retornoDiario": -0.132895,
       "retornoAcumulado": 1091.9906,
       "flujoEstimado": -0.034761,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "cyc-renta-mixta-clase-a",
+      "fondoId": "815",
+      "claseId": "2220",
+      "nombre": "CYC Renta Mixta - Clase A",
+      "fecha": "2026-08-20",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 12030.171,
+      "patrimonio": 4751917.68,
+      "retornoDiario": 0.925049,
+      "retornoAcumulado": 1103.0171,
+      "flujoEstimado": 0.28765,
       "origen": "cnv-excel"
     }
   ]

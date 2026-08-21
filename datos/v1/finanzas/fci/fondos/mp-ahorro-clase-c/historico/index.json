@@ -2,7 +2,7 @@
   "fondoId": "1625",
   "claseId": "6155",
   "nombre": "MP Ahorro - Clase C",
-  "fechaActualizacion": "2026-08-20T19:30:06.000Z",
+  "fechaActualizacion": "2026-08-20T23:53:01.000Z",
   "historico": [
     {
       "slug": "mp-ahorro-clase-c",
@@ -1698,6 +1698,22 @@
       "retornoDiario": -0.028698,
       "retornoAcumulado": 9.0345,
       "flujoEstimado": 9999999971.610086,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "mp-ahorro-clase-c",
+      "fondoId": "1625",
+      "claseId": "6155",
+      "nombre": "MP Ahorro - Clase C",
+      "fecha": "2026-08-20",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1092.02,
+      "patrimonio": 30465594782.34,
+      "retornoDiario": 0.153621,
+      "retornoAcumulado": 9.202,
+      "flujoEstimado": 10000000020.759388,
       "origen": "cnv-excel"
     }
   ]

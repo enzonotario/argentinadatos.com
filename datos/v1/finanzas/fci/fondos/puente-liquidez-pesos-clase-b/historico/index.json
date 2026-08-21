@@ -2,7 +2,7 @@
   "fondoId": "1890",
   "claseId": "6531",
   "nombre": "Puente Liquidez Pesos - Clase B",
-  "fechaActualizacion": "2026-08-20T19:30:06.000Z",
+  "fechaActualizacion": "2026-08-20T23:53:01.000Z",
   "historico": [
     {
       "slug": "puente-liquidez-pesos-clase-b",
@@ -530,6 +530,22 @@
       "retornoDiario": 0.057593,
       "retornoAcumulado": 2.3286,
       "flujoEstimado": 5511174790.92524,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "puente-liquidez-pesos-clase-b",
+      "fondoId": "1890",
+      "claseId": "6531",
+      "nombre": "Puente Liquidez Pesos - Clase B",
+      "fecha": "2026-08-20",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1023.885,
+      "patrimonio": 44591471730.56,
+      "retornoDiario": 0.058537,
+      "retornoAcumulado": 2.3885,
+      "flujoEstimado": -6945704219.129509,
       "origen": "cnv-excel"
     }
   ]
