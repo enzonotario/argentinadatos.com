@@ -137,6 +137,20 @@ describe('static api server', () => {
     )
     expect(rewritten.status).toBe(200)
     expect(rewritten.headers['x-cache']).toBe('HIT')
+
+    // Cloudflare a veces deja slash final tras /index.json
+    const rewrittenSlash = await fetchText(
+      port,
+      '/v1/finanzas/cauciones/ars/index.json/',
+    )
+    expect(rewrittenSlash.status).toBe(200)
+    expect(rewrittenSlash.headers['x-cache']).toBe('HIT')
+
+    const stacked = await fetchText(
+      port,
+      '/v1/finanzas/cauciones/ars/index.json/index.json/',
+    )
+    expect(stacked.status).toBe(200)
   })
 
   it('serves dynamic cauciones/usd as array', async () => {

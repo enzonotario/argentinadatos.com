@@ -11,15 +11,20 @@ function resolveTtlMs() {
  * Normaliza paths de API:
  * - quita query
  * - `/foo/index.json` → `/foo` (rewrite de Cloudflare; puede apilarse)
- * - quita trailing slash
+ * - quita trailing slash (también después de `/index.json`, p. ej. `/foo/index.json/`)
  */
 export function normalizeApiPath(urlPath) {
   let path = decodeURIComponent((urlPath ?? '/').split('?')[0] ?? '/')
-  while (path.endsWith('/index.json')) {
-    path = path.slice(0, -'/index.json'.length) || '/'
-  }
-  if (path.length > 1 && path.endsWith('/')) {
-    path = path.slice(0, -1)
+  for (;;) {
+    if (path.length > 1 && path.endsWith('/')) {
+      path = path.slice(0, -1)
+      continue
+    }
+    if (path.endsWith('/index.json')) {
+      path = path.slice(0, -'/index.json'.length) || '/'
+      continue
+    }
+    break
   }
   return path
 }

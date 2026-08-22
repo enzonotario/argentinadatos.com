@@ -5,6 +5,7 @@ import { clearCache, getCached, setCached } from './dynamic/cache.js'
 import {
   findDynamicEndpoint,
   getDefaultDynamicEndpoints,
+  normalizeApiPath,
 } from './dynamic/registry.js'
 
 const MIME_TYPES = {
@@ -28,8 +29,8 @@ function sendJson(res, status, body, extraHeaders = {}) {
 
 function resolveFilePath(staticDir, urlPath) {
   const root = resolve(staticDir)
-  const decoded = decodeURIComponent(urlPath.split('?')[0] ?? '/')
-  const relative = decoded.replace(/^\/+/, '')
+  const normalized = normalizeApiPath(urlPath)
+  const relative = normalized.replace(/^\/+/, '')
 
   const candidates = relative
     ? [relative, join(relative, 'index.json')]
