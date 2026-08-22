@@ -22,7 +22,7 @@ describe('worker cauciones schema', () => {
       'fechaOperacion',
       'fechaVencimiento',
       'moneda',
-      'syncedAt',
+      'fechaActualizacion',
     ])
   })
 })
@@ -30,7 +30,7 @@ describe('worker cauciones schema', () => {
 describe('pocketbase migrations registry', () => {
   it('has a single cauciones migration', () => {
     const ids = migrations.map(m => m.id)
-    expect(ids).toEqual(['001_cauciones'])
+    expect(ids).toEqual(['002_cauciones'])
   })
 })
 
@@ -46,7 +46,7 @@ describe('classifyCaucionMoneda', () => {
 })
 
 describe('mergeTasaMinMaxDia', () => {
-  it('reinicia el rango si cambió el día operativo', () => {
+  it('reinicia el rango si cambió el día de operación', () => {
     expect(
       mergeTasaMinMaxDia({
         existing: {
@@ -111,9 +111,9 @@ describe('buildExistingMinMaxBySerie', () => {
 
 describe('fechaOperacionHoy', () => {
   it('devuelve YYYY-MM-DD', () => {
-    expect(fechaOperacionHoy(new Date('2026-08-22T15:00:00.000Z'))).toMatch(
-      /^\d{4}-\d{2}-\d{2}$/,
-    )
+    expect(
+      fechaOperacionHoy(new Date('2026-08-22T15:00:00.000Z')),
+    ).toMatch(/^\d{4}-\d{2}-\d{2}$/)
   })
 })
 

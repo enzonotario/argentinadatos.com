@@ -52,13 +52,13 @@ export const CAUCIONES_COLLECTION = {
       max: 3,
     },
     {
-      name: 'syncedAt',
+      name: 'fechaActualizacion',
       type: 'date',
       required: true,
     },
   ],
   indexes: [
-    'CREATE INDEX idx_cauciones_synced_at ON cauciones (syncedAt)',
+    'CREATE INDEX idx_cauciones_fecha_actualizacion ON cauciones (fechaActualizacion)',
     'CREATE INDEX idx_cauciones_moneda ON cauciones (moneda)',
     'CREATE INDEX idx_cauciones_moneda_plazo ON cauciones (moneda, plazo)',
   ],
@@ -76,7 +76,7 @@ export function classifyCaucionMoneda(tasaActual) {
   return tasa < 10 ? 'usd' : 'ars'
 }
 
-/** Día operativo en Argentina (YYYY-MM-DD). */
+/** Día de operación en Argentina (YYYY-MM-DD), para reiniciar min/max diarios. */
 export function fechaOperacionHoy(now = new Date()) {
   return new Intl.DateTimeFormat('en-CA', {
     timeZone: 'America/Argentina/Buenos_Aires',
@@ -92,7 +92,7 @@ export function caucionSerieKey(moneda, plazo) {
 
 /**
  * Combina min/max del día previo con las tasas del snapshot actual.
- * Si cambió el día operativo, reinicia el rango con el snapshot.
+ * Si cambió la fecha de operación (día ART), reinicia el rango.
  */
 export function mergeTasaMinMaxDia({
   existing,

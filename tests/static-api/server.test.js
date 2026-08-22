@@ -55,6 +55,7 @@ describe('static api server', () => {
                 tasaMinDia: 18,
                 tasaMaxDia: 25,
                 fechaOperacion: '2026-08-22',
+                fechaActualizacion: '2026-08-22T15:00:00.000Z',
                 fechaVencimiento: '2026-08-22T00:00:00',
               },
             ]
@@ -73,6 +74,7 @@ describe('static api server', () => {
                 tasaMinDia: 1.2,
                 tasaMaxDia: 2.0,
                 fechaOperacion: '2026-08-22',
+                fechaActualizacion: '2026-08-22T15:00:00.000Z',
                 fechaVencimiento: '2026-08-22T00:00:00',
               },
             ]

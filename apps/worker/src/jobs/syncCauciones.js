@@ -11,6 +11,7 @@ export async function syncCauciones() {
     titulos: payload.titulos.length,
     created: result.created,
     byMoneda: result.byMoneda,
-    syncedAt: result.syncedAt,
+    fechaOperacion: result.fechaOperacion,
+    fechaActualizacion: result.fechaActualizacion,
   }
 }

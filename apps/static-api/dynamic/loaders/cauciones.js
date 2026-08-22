@@ -7,9 +7,20 @@ function fechaVencimientoPublica(value) {
   return value
 }
 
+function fechaOperacionPublica(row) {
+  return row.fechaOperacion ?? null
+}
+
+function fechaActualizacionPublica(row) {
+  const value = row.fechaActualizacion
+  if (!value) return null
+  const str = String(value).trim()
+  if (str.includes(' ')) return str.replace(' ', 'T')
+  return str
+}
+
 function tasaActualDe(row) {
-  const value = row.tasaActual ?? row.tasaPromedio
-  return Number(value)
+  return Number(row.tasaActual)
 }
 
 function mapRow(row) {
@@ -20,7 +31,8 @@ function mapRow(row) {
     tasaActual,
     tasaMinDia: row.tasaMinDia ?? tasaActual,
     tasaMaxDia: row.tasaMaxDia ?? tasaActual,
-    fechaOperacion: row.fechaOperacion ?? null,
+    fechaOperacion: fechaOperacionPublica(row),
+    fechaActualizacion: fechaActualizacionPublica(row),
     fechaVencimiento: fechaVencimientoPublica(row.fechaVencimiento),
   }
 }

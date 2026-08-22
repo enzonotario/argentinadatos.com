@@ -29,6 +29,10 @@ function toPocketBaseDate(value) {
   return date.toISOString().replace('T', ' ')
 }
 
+function rowFechaOperacion(row) {
+  return row.fechaOperacion ?? null
+}
+
 async function listAllCauciones(pb) {
   const items = []
   let page = 1
@@ -51,17 +55,18 @@ export function buildExistingMinMaxBySerie(existingRows) {
   for (const row of existingRows) {
     if (!row?.moneda || row.plazo == null) continue
     const key = caucionSerieKey(row.moneda, row.plazo)
+    const fechaOperacion = rowFechaOperacion(row)
     const prev = map.get(key)
     if (!prev) {
       map.set(key, {
         tasaMinDia: Number(row.tasaMinDia),
         tasaMaxDia: Number(row.tasaMaxDia),
-        fechaOperacion: row.fechaOperacion,
+        fechaOperacion,
       })
       continue
     }
     // Misma fecha → ensanchar; distinta → quedarse con la más reciente si se puede
-    if (row.fechaOperacion === prev.fechaOperacion) {
+    if (fechaOperacion === prev.fechaOperacion) {
       if (Number.isFinite(Number(row.tasaMinDia))) {
         prev.tasaMinDia = Math.min(prev.tasaMinDia, Number(row.tasaMinDia))
       }
@@ -69,12 +74,12 @@ export function buildExistingMinMaxBySerie(existingRows) {
         prev.tasaMaxDia = Math.max(prev.tasaMaxDia, Number(row.tasaMaxDia))
       }
     } else if (
-      String(row.fechaOperacion || '') > String(prev.fechaOperacion || '')
+      String(fechaOperacion || '') > String(prev.fechaOperacion || '')
     ) {
       map.set(key, {
         tasaMinDia: Number(row.tasaMinDia),
         tasaMaxDia: Number(row.tasaMaxDia),
-        fechaOperacion: row.fechaOperacion,
+        fechaOperacion,
       })
     }
   }
@@ -88,7 +93,7 @@ export function buildExistingMinMaxBySerie(existingRows) {
  */
 export async function replaceCauciones(payload, pb = createPocketBaseClient()) {
   const titulos = Array.isArray(payload?.titulos) ? payload.titulos : []
-  const syncedAt = toPocketBaseDate(new Date())
+  const fechaActualizacion = toPocketBaseDate(new Date())
   const fechaOperacion = fechaOperacionHoy()
   const byMoneda = { ars: 0, usd: 0 }
 
@@ -142,12 +147,12 @@ export async function replaceCauciones(payload, pb = createPocketBaseClient()) {
       fechaOperacion: range.fechaOperacion,
       fechaVencimiento: toPocketBaseDate(titulo.fechaVencimiento),
       moneda: titulo.moneda,
-      syncedAt,
+      fechaActualizacion,
     })
     created += 1
   }
 
-  return { created, syncedAt, byMoneda, fechaOperacion }
+  return { created, fechaActualizacion, byMoneda, fechaOperacion }
 }
 
 /**
@@ -172,10 +177,11 @@ export async function listCaucionesByMoneda(
       items.push({
         plazo: row.plazo,
         montoContado: row.montoContado,
-        tasaActual: row.tasaActual ?? row.tasaPromedio,
+        tasaActual: row.tasaActual,
         tasaMinDia: row.tasaMinDia,
         tasaMaxDia: row.tasaMaxDia,
-        fechaOperacion: row.fechaOperacion,
+        fechaOperacion: rowFechaOperacion(row),
+        fechaActualizacion: row.fechaActualizacion ?? null,
         fechaVencimiento: normalizeFechaVencimiento(row.fechaVencimiento),
       })
     }
