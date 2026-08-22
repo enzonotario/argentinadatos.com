@@ -52,6 +52,9 @@ describe('static api server', () => {
                 plazo: 1,
                 montoContado: 100,
                 tasaPromedio: 20,
+                tasaMinDia: 18,
+                tasaMaxDia: 25,
+                fechaOperacion: '2026-08-22',
                 fechaVencimiento: '2026-08-22T00:00:00',
               },
             ]
@@ -67,6 +70,9 @@ describe('static api server', () => {
                 plazo: 1,
                 montoContado: 50,
                 tasaPromedio: 1.5,
+                tasaMinDia: 1.2,
+                tasaMaxDia: 2.0,
+                fechaOperacion: '2026-08-22',
                 fechaVencimiento: '2026-08-22T00:00:00',
               },
             ]

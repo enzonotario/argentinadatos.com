@@ -1,5 +1,10 @@
 import { createPocketBaseClient } from './client.js'
-import { classifyCaucionMoneda } from './migrations/001_cauciones.js'
+import {
+  caucionSerieKey,
+  classifyCaucionMoneda,
+  fechaOperacionHoy,
+  mergeTasaMinMaxDia,
+} from './migrations/001_cauciones.js'
 
 function toPocketBaseDate(value) {
   if (!value) return null
@@ -24,38 +29,127 @@ function toPocketBaseDate(value) {
   return date.toISOString().replace('T', ' ')
 }
 
+async function listAllCauciones(pb) {
+  const items = []
+  let page = 1
+  const perPage = 200
+  for (;;) {
+    const result = await pb.listRecords('cauciones', { page, perPage })
+    items.push(...(result.items ?? []))
+    if (page >= (result.totalPages ?? 1)) break
+    page += 1
+  }
+  return items
+}
+
 /**
- * Reemplaza todas las filas de cauciones con el snapshot actual de IOL.
+ * Índice de min/max ya guardados por (moneda, plazo).
+ * Si hay varias filas de la misma serie, se unifica el rango.
+ */
+export function buildExistingMinMaxBySerie(existingRows) {
+  const map = new Map()
+  for (const row of existingRows) {
+    if (!row?.moneda || row.plazo == null) continue
+    const key = caucionSerieKey(row.moneda, row.plazo)
+    const prev = map.get(key)
+    if (!prev) {
+      map.set(key, {
+        tasaMinDia: Number(row.tasaMinDia),
+        tasaMaxDia: Number(row.tasaMaxDia),
+        fechaOperacion: row.fechaOperacion,
+      })
+      continue
+    }
+    // Misma fecha → ensanchar; distinta → quedarse con la más reciente si se puede
+    if (row.fechaOperacion === prev.fechaOperacion) {
+      if (Number.isFinite(Number(row.tasaMinDia))) {
+        prev.tasaMinDia = Math.min(prev.tasaMinDia, Number(row.tasaMinDia))
+      }
+      if (Number.isFinite(Number(row.tasaMaxDia))) {
+        prev.tasaMaxDia = Math.max(prev.tasaMaxDia, Number(row.tasaMaxDia))
+      }
+    } else if (
+      String(row.fechaOperacion || '') > String(prev.fechaOperacion || '')
+    ) {
+      map.set(key, {
+        tasaMinDia: Number(row.tasaMinDia),
+        tasaMaxDia: Number(row.tasaMaxDia),
+        fechaOperacion: row.fechaOperacion,
+      })
+    }
+  }
+  return map
+}
+
+/**
+ * Reemplaza el snapshot de cauciones preservando min/max del día por (moneda, plazo).
  * @param {{ titulos: Array<{ plazo: number, montoContado: number, tasaPromedio: number, fechaVencimiento: string }> }} payload
  */
 export async function replaceCauciones(payload, pb = createPocketBaseClient()) {
   const titulos = Array.isArray(payload?.titulos) ? payload.titulos : []
   const syncedAt = toPocketBaseDate(new Date())
+  const fechaOperacion = fechaOperacionHoy()
   const byMoneda = { ars: 0, usd: 0 }
+
+  const existingRows = await listAllCauciones(pb)
+  const existingBySerie = buildExistingMinMaxBySerie(existingRows)
+
+  const enriched = titulos.map(titulo => {
+    const moneda = classifyCaucionMoneda(titulo.tasaPromedio)
+    return {
+      ...titulo,
+      moneda,
+      tasaPromedio: Number(titulo.tasaPromedio),
+      plazo: Number(titulo.plazo),
+      montoContado: Number(titulo.montoContado),
+    }
+  })
+
+  const tasasBySerie = new Map()
+  for (const titulo of enriched) {
+    const key = caucionSerieKey(titulo.moneda, titulo.plazo)
+    if (!tasasBySerie.has(key)) tasasBySerie.set(key, [])
+    tasasBySerie.get(key).push(titulo.tasaPromedio)
+  }
+
+  const minMaxBySerie = new Map()
+  for (const [key, snapshotTasas] of tasasBySerie) {
+    minMaxBySerie.set(
+      key,
+      mergeTasaMinMaxDia({
+        existing: existingBySerie.get(key),
+        snapshotTasas,
+        fechaOperacion,
+      }),
+    )
+  }
 
   await pb.truncateCollection('cauciones')
 
   let created = 0
-  for (const titulo of titulos) {
-    const moneda = classifyCaucionMoneda(titulo.tasaPromedio)
-    byMoneda[moneda] = (byMoneda[moneda] ?? 0) + 1
+  for (const titulo of enriched) {
+    const key = caucionSerieKey(titulo.moneda, titulo.plazo)
+    const range = minMaxBySerie.get(key)
+    byMoneda[titulo.moneda] = (byMoneda[titulo.moneda] ?? 0) + 1
     await pb.createRecord('cauciones', {
-      plazo: Number(titulo.plazo),
-      montoContado: Number(titulo.montoContado),
-      tasaPromedio: Number(titulo.tasaPromedio),
+      plazo: titulo.plazo,
+      montoContado: titulo.montoContado,
+      tasaPromedio: titulo.tasaPromedio,
+      tasaMinDia: range.tasaMinDia,
+      tasaMaxDia: range.tasaMaxDia,
+      fechaOperacion: range.fechaOperacion,
       fechaVencimiento: toPocketBaseDate(titulo.fechaVencimiento),
-      moneda,
+      moneda: titulo.moneda,
       syncedAt,
     })
     created += 1
   }
 
-  return { created, syncedAt, byMoneda }
+  return { created, syncedAt, byMoneda, fechaOperacion }
 }
 
 /**
  * @param {'ars' | 'usd'} moneda
- * @returns {Promise<Array<{ plazo: number, montoContado: number, tasaPromedio: number, fechaVencimiento: string }>>}
  */
 export async function listCaucionesByMoneda(
   moneda,
@@ -77,6 +171,9 @@ export async function listCaucionesByMoneda(
         plazo: row.plazo,
         montoContado: row.montoContado,
         tasaPromedio: row.tasaPromedio,
+        tasaMinDia: row.tasaMinDia,
+        tasaMaxDia: row.tasaMaxDia,
+        fechaOperacion: row.fechaOperacion,
         fechaVencimiento: normalizeFechaVencimiento(row.fechaVencimiento),
       })
     }

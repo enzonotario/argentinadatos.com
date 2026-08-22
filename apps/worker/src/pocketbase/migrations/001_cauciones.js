@@ -25,6 +25,22 @@ export const CAUCIONES_COLLECTION = {
       required: true,
     },
     {
+      name: 'tasaMinDia',
+      type: 'number',
+      required: true,
+    },
+    {
+      name: 'tasaMaxDia',
+      type: 'number',
+      required: true,
+    },
+    {
+      name: 'fechaOperacion',
+      type: 'text',
+      required: true,
+      max: 10,
+    },
+    {
       name: 'fechaVencimiento',
       type: 'date',
       required: true,
@@ -43,7 +59,8 @@ export const CAUCIONES_COLLECTION = {
   ],
   indexes: [
     'CREATE INDEX idx_cauciones_synced_at ON cauciones (syncedAt)',
-    "CREATE INDEX idx_cauciones_moneda ON cauciones (moneda)",
+    'CREATE INDEX idx_cauciones_moneda ON cauciones (moneda)',
+    'CREATE INDEX idx_cauciones_moneda_plazo ON cauciones (moneda, plazo)',
   ],
 }
 
@@ -57,4 +74,57 @@ export function classifyCaucionMoneda(tasaPromedio) {
     throw new Error(`Invalid tasaPromedio: ${tasaPromedio}`)
   }
   return tasa < 10 ? 'usd' : 'ars'
+}
+
+/** Día hábil/operativo en Argentina (YYYY-MM-DD). */
+export function fechaOperacionHoy(now = new Date()) {
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'America/Argentina/Buenos_Aires',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(now)
+}
+
+export function caucionSerieKey(moneda, plazo) {
+  return `${moneda}:${Number(plazo)}`
+}
+
+/**
+ * Combina min/max del día previo con las tasas del snapshot actual.
+ * Si cambió el día operativo, reinicia el rango con el snapshot.
+ */
+export function mergeTasaMinMaxDia({
+  existing,
+  snapshotTasas,
+  fechaOperacion,
+}) {
+  const tasas = snapshotTasas
+    .map(Number)
+    .filter(n => Number.isFinite(n))
+  if (tasas.length === 0) {
+    throw new Error('snapshotTasas vacío')
+  }
+
+  const snapshotMin = Math.min(...tasas)
+  const snapshotMax = Math.max(...tasas)
+
+  if (
+    existing &&
+    existing.fechaOperacion === fechaOperacion &&
+    Number.isFinite(Number(existing.tasaMinDia)) &&
+    Number.isFinite(Number(existing.tasaMaxDia))
+  ) {
+    return {
+      tasaMinDia: Math.min(Number(existing.tasaMinDia), snapshotMin),
+      tasaMaxDia: Math.max(Number(existing.tasaMaxDia), snapshotMax),
+      fechaOperacion,
+    }
+  }
+
+  return {
+    tasaMinDia: snapshotMin,
+    tasaMaxDia: snapshotMax,
+    fechaOperacion,
+  }
 }

@@ -12,6 +12,9 @@ function mapRow(row) {
     plazo: row.plazo,
     montoContado: row.montoContado,
     tasaPromedio: row.tasaPromedio,
+    tasaMinDia: row.tasaMinDia ?? row.tasaPromedio,
+    tasaMaxDia: row.tasaMaxDia ?? row.tasaPromedio,
+    fechaOperacion: row.fechaOperacion ?? null,
     fechaVencimiento: fechaVencimientoPublica(row.fechaVencimiento),
   }
 }
@@ -28,7 +31,6 @@ function rowMoneda(row) {
 
 /**
  * @param {'ars' | 'usd'} moneda
- * @returns {Promise<Array<{ plazo: number, montoContado: number, tasaPromedio: number, fechaVencimiento: string }>>}
  */
 export async function loadCaucionesByMoneda(moneda) {
   try {
