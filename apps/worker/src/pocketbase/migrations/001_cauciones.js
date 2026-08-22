@@ -1,130 +1,94 @@
-/** Schema idempotente de la colección `cauciones` (filas normalizadas). */
-export const CAUCIONES_COLLECTION = {
-  name: 'cauciones',
-  type: 'base',
-  listRule: null,
-  viewRule: null,
-  createRule: null,
-  updateRule: null,
-  deleteRule: null,
-  fields: [
-    {
-      name: 'plazo',
-      type: 'number',
-      required: true,
-      onlyInt: true,
-    },
-    {
-      name: 'montoContado',
-      type: 'number',
-      required: true,
-    },
-    {
-      name: 'tasaActual',
-      type: 'number',
-      required: true,
-    },
-    {
-      name: 'tasaMinDia',
-      type: 'number',
-      required: true,
-    },
-    {
-      name: 'tasaMaxDia',
-      type: 'number',
-      required: true,
-    },
-    {
-      name: 'fechaOperacion',
-      type: 'text',
-      required: true,
-      max: 10,
-    },
-    {
-      name: 'fechaVencimiento',
-      type: 'date',
-      required: true,
-    },
-    {
-      name: 'moneda',
-      type: 'text',
-      required: true,
-      max: 3,
-    },
-    {
-      name: 'syncedAt',
-      type: 'date',
-      required: true,
-    },
-  ],
-  indexes: [
-    'CREATE INDEX idx_cauciones_synced_at ON cauciones (syncedAt)',
-    'CREATE INDEX idx_cauciones_moneda ON cauciones (moneda)',
-    'CREATE INDEX idx_cauciones_moneda_plazo ON cauciones (moneda, plazo)',
-  ],
-}
+import {
+  CAUCIONES_COLLECTION,
+  fieldNames,
+} from '../schema/cauciones.js'
+
+export const id = '001_cauciones'
 
 /**
- * IOL no envía moneda; el panel mezcla ARS (TNA ~15%+) y USD (TNA ~0–5%).
- * Gap observado típico ~3% vs ~18% → umbral 10.
+ * Migración única de cauciones: crea o reconcilia el schema objetivo.
+ * - Crea la colección si no existe
+ * - Renombra tasaPromedio → tasaActual si aplica
+ * - Agrega campos faltantes y quita residuales (tasaPromedio)
  */
-export function classifyCaucionMoneda(tasaActual) {
-  const tasa = Number(tasaActual)
-  if (!Number.isFinite(tasa)) {
-    throw new Error(`Invalid tasaActual: ${tasaActual}`)
-  }
-  return tasa < 10 ? 'usd' : 'ars'
-}
-
-/** Día hábil/operativo en Argentina (YYYY-MM-DD). */
-export function fechaOperacionHoy(now = new Date()) {
-  return new Intl.DateTimeFormat('en-CA', {
-    timeZone: 'America/Argentina/Buenos_Aires',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-  }).format(now)
-}
-
-export function caucionSerieKey(moneda, plazo) {
-  return `${moneda}:${Number(plazo)}`
-}
-
-/**
- * Combina min/max del día previo con las tasas del snapshot actual.
- * Si cambió el día operativo, reinicia el rango con el snapshot.
- */
-export function mergeTasaMinMaxDia({
-  existing,
-  snapshotTasas,
-  fechaOperacion,
-}) {
-  const tasas = snapshotTasas
-    .map(Number)
-    .filter(n => Number.isFinite(n))
-  if (tasas.length === 0) {
-    throw new Error('snapshotTasas vacío')
+export async function up(pb) {
+  let collection
+  try {
+    collection = await pb.getCollection('cauciones')
+  } catch (err) {
+    if (err?.response?.status !== 404) throw err
+    await pb.createCollection(CAUCIONES_COLLECTION)
+    console.log('[migrate] 001_cauciones created collection')
+    return
   }
 
-  const snapshotMin = Math.min(...tasas)
-  const snapshotMax = Math.max(...tasas)
+  const names = fieldNames(collection)
+  const desiredNames = new Set(CAUCIONES_COLLECTION.fields.map(f => f.name))
+  const hasPromedio = names.has('tasaPromedio')
+  const hasActual = names.has('tasaActual')
+  const missing = CAUCIONES_COLLECTION.fields.filter(f => !names.has(f.name))
+  // tasaActual "faltante" si solo está como tasaPromedio (se resuelve por rename)
+  const missingAfterRename = missing.filter(
+    f => !(f.name === 'tasaActual' && hasPromedio && !hasActual),
+  )
+  const extras = [...names].filter(
+    name =>
+      name !== 'id' &&
+      !desiredNames.has(name) &&
+      // tasaPromedio se elimina explícitamente abajo
+      name !== 'tasaPromedio',
+  )
 
-  if (
-    existing &&
-    existing.fechaOperacion === fechaOperacion &&
-    Number.isFinite(Number(existing.tasaMinDia)) &&
-    Number.isFinite(Number(existing.tasaMaxDia))
-  ) {
-    return {
-      tasaMinDia: Math.min(Number(existing.tasaMinDia), snapshotMin),
-      tasaMaxDia: Math.max(Number(existing.tasaMaxDia), snapshotMax),
-      fechaOperacion,
+  const needsRename = hasPromedio
+  const needsAdd = missingAfterRename.length > 0
+  const needsDropExtras = extras.length > 0 || (hasPromedio && hasActual)
+
+  if (!needsRename && !needsAdd && !needsDropExtras && hasActual) {
+    console.log('[migrate] 001_cauciones schema already up to date')
+    return
+  }
+
+  await pb.truncateCollection('cauciones')
+
+  let fields = [...(collection.fields ?? [])]
+
+  if (hasPromedio && !hasActual) {
+    fields = fields.map(field =>
+      field.name === 'tasaPromedio' ? { ...field, name: 'tasaActual' } : field,
+    )
+    console.log('[migrate] 001_cauciones renamed tasaPromedio → tasaActual')
+  }
+
+  fields = fields.filter(field => field.name !== 'tasaPromedio')
+  if (hasPromedio && hasActual) {
+    console.log('[migrate] 001_cauciones removed residual tasaPromedio')
+  }
+
+  const present = new Set(fields.map(f => f.name))
+  for (const field of CAUCIONES_COLLECTION.fields) {
+    if (!present.has(field.name)) {
+      fields.push(field)
+      present.add(field.name)
     }
   }
 
-  return {
-    tasaMinDia: snapshotMin,
-    tasaMaxDia: snapshotMax,
-    fechaOperacion,
-  }
+  // Quitar campos no deseados (excepto system id)
+  fields = fields.filter(
+    field => field.system || desiredNames.has(field.name),
+  )
+
+  await pb.updateCollection('cauciones', {
+    fields,
+    indexes: CAUCIONES_COLLECTION.indexes,
+    listRule: CAUCIONES_COLLECTION.listRule,
+    viewRule: CAUCIONES_COLLECTION.viewRule,
+    createRule: CAUCIONES_COLLECTION.createRule,
+    updateRule: CAUCIONES_COLLECTION.updateRule,
+    deleteRule: CAUCIONES_COLLECTION.deleteRule,
+  })
+
+  console.log('[migrate] 001_cauciones schema reconciled', {
+    added: missingAfterRename.map(f => f.name),
+    removedExtras: extras,
+  })
 }

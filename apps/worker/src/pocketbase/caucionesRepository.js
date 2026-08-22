@@ -4,7 +4,7 @@ import {
   classifyCaucionMoneda,
   fechaOperacionHoy,
   mergeTasaMinMaxDia,
-} from './migrations/001_cauciones.js'
+} from './schema/cauciones.js'
 
 function toPocketBaseDate(value) {
   if (!value) return null

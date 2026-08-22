@@ -25,12 +25,18 @@ export function createPocketBaseClient(config = getPocketBaseConfig()) {
       const { data } = await http.patch(`/collections/${name}`, body)
       return data
     },
+    async deleteCollection(name) {
+      await http.delete(`/collections/${name}`)
+    },
     async truncateCollection(name) {
       await http.delete(`/collections/${name}/truncate`)
     },
     async createRecord(collection, body) {
       const { data } = await http.post(`/collections/${collection}/records`, body)
       return data
+    },
+    async deleteRecord(collection, id) {
+      await http.delete(`/collections/${collection}/records/${id}`)
     },
     async listRecords(
       collection,

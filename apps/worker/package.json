@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/main.js --watch",
     "sync": "node src/main.js",
-    "migrate": "node src/pocketbase/migrate.js"
+    "migrate": "node src/pocketbase/migrate.js",
+    "migrate:fresh": "node src/pocketbase/migrate.js --fresh"
   },
   "dependencies": {
     "axios": "^1.13.2"
