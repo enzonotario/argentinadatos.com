@@ -21,6 +21,10 @@ export function createPocketBaseClient(config = getPocketBaseConfig()) {
       const { data } = await http.post('/collections', body)
       return data
     },
+    async updateCollection(name, body) {
+      const { data } = await http.patch(`/collections/${name}`, body)
+      return data
+    },
     async truncateCollection(name) {
       await http.delete(`/collections/${name}/truncate`)
     },
@@ -28,9 +32,15 @@ export function createPocketBaseClient(config = getPocketBaseConfig()) {
       const { data } = await http.post(`/collections/${collection}/records`, body)
       return data
     },
-    async listRecords(collection, { page = 1, perPage = 500, sort = '' } = {}) {
+    async listRecords(
+      collection,
+      { page = 1, perPage = 500, sort = '', filter = '' } = {},
+    ) {
+      const params = { page, perPage }
+      if (sort) params.sort = sort
+      if (filter) params.filter = filter
       const { data } = await http.get(`/collections/${collection}/records`, {
-        params: { page, perPage, sort },
+        params,
       })
       return data
     },

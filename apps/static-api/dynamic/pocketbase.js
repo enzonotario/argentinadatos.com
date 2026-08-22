@@ -14,7 +14,10 @@ export function getPocketBaseConfigFromEnv() {
   return { url, token }
 }
 
-export async function listAllRecords(collection, { sort = '' } = {}) {
+export async function listAllRecords(
+  collection,
+  { sort = '', filter = '' } = {},
+) {
   const { url, token } = getPocketBaseConfigFromEnv()
   const items = []
   let page = 1
@@ -26,6 +29,7 @@ export async function listAllRecords(collection, { sort = '' } = {}) {
       perPage: String(perPage),
     })
     if (sort) params.set('sort', sort)
+    if (filter) params.set('filter', filter)
 
     const response = await fetch(
       `${url}/api/collections/${collection}/records?${params}`,

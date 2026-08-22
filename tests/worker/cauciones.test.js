@@ -1,5 +1,8 @@
 import { describe, expect, it } from 'vitest'
-import { CAUCIONES_COLLECTION } from '../../apps/worker/src/pocketbase/migrations/001_cauciones.js'
+import {
+  CAUCIONES_COLLECTION,
+  classifyCaucionMoneda,
+} from '../../apps/worker/src/pocketbase/migrations/001_cauciones.js'
 
 describe('worker cauciones migration schema', () => {
   it('defines normalized cauciones fields', () => {
@@ -11,8 +14,20 @@ describe('worker cauciones migration schema', () => {
       'montoContado',
       'tasaPromedio',
       'fechaVencimiento',
+      'moneda',
       'syncedAt',
     ])
+  })
+})
+
+describe('classifyCaucionMoneda', () => {
+  it('splits ARS vs USD by tasa gap', () => {
+    expect(classifyCaucionMoneda(18.5)).toBe('ars')
+    expect(classifyCaucionMoneda(25)).toBe('ars')
+    expect(classifyCaucionMoneda(1.25)).toBe('usd')
+    expect(classifyCaucionMoneda(2.95)).toBe('usd')
+    expect(classifyCaucionMoneda(9.99)).toBe('usd')
+    expect(classifyCaucionMoneda(10)).toBe('ars')
   })
 })
 

@@ -1,4 +1,4 @@
-import { loadCauciones } from './loaders/cauciones.js'
+import { loadCaucionesArs, loadCaucionesUsd } from './loaders/cauciones.js'
 
 const DEFAULT_TTL_MS = 15 * 60 * 1000
 
@@ -32,10 +32,16 @@ export function getDefaultDynamicEndpoints() {
   const ttlMs = resolveTtlMs()
   return [
     {
-      paths: ['/v1/finanzas/cauciones'],
-      cacheKey: 'v1/finanzas/cauciones',
+      paths: ['/v1/finanzas/cauciones/ars'],
+      cacheKey: 'v1/finanzas/cauciones/ars',
       ttlMs,
-      load: loadCauciones,
+      load: loadCaucionesArs,
+    },
+    {
+      paths: ['/v1/finanzas/cauciones/usd'],
+      cacheKey: 'v1/finanzas/cauciones/usd',
+      ttlMs,
+      load: loadCaucionesUsd,
     },
   ]
 }

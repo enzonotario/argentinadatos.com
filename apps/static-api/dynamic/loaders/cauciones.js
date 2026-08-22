@@ -7,20 +7,31 @@ function fechaVencimientoPublica(value) {
   return value
 }
 
+function mapRow(row) {
+  return {
+    plazo: row.plazo,
+    montoContado: row.montoContado,
+    tasaPromedio: row.tasaPromedio,
+    fechaVencimiento: fechaVencimientoPublica(row.fechaVencimiento),
+  }
+}
+
 /**
- * Payload público: misma forma que IOL `{ titulos: [...] }`.
+ * @param {'ars' | 'usd'} moneda
+ * @returns {Promise<Array<{ plazo: number, montoContado: number, tasaPromedio: number, fechaVencimiento: string }>>}
  */
-export async function loadCauciones() {
+export async function loadCaucionesByMoneda(moneda) {
   const rows = await listAllRecords('cauciones', {
     sort: 'fechaVencimiento,plazo',
+    filter: `moneda='${moneda}'`,
   })
+  return rows.map(mapRow)
+}
 
-  return {
-    titulos: rows.map(row => ({
-      plazo: row.plazo,
-      montoContado: row.montoContado,
-      tasaPromedio: row.tasaPromedio,
-      fechaVencimiento: fechaVencimientoPublica(row.fechaVencimiento),
-    })),
-  }
+export function loadCaucionesArs() {
+  return loadCaucionesByMoneda('ars')
+}
+
+export function loadCaucionesUsd() {
+  return loadCaucionesByMoneda('usd')
 }

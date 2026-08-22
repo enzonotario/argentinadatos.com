@@ -1,4 +1,5 @@
 import { createPocketBaseClient } from './client.js'
+import { classifyCaucionMoneda } from './migrations/001_cauciones.js'
 
 function toPocketBaseDate(value) {
   if (!value) return null
@@ -30,29 +31,37 @@ function toPocketBaseDate(value) {
 export async function replaceCauciones(payload, pb = createPocketBaseClient()) {
   const titulos = Array.isArray(payload?.titulos) ? payload.titulos : []
   const syncedAt = toPocketBaseDate(new Date())
+  const byMoneda = { ars: 0, usd: 0 }
 
   await pb.truncateCollection('cauciones')
 
   let created = 0
   for (const titulo of titulos) {
+    const moneda = classifyCaucionMoneda(titulo.tasaPromedio)
+    byMoneda[moneda] = (byMoneda[moneda] ?? 0) + 1
     await pb.createRecord('cauciones', {
       plazo: Number(titulo.plazo),
       montoContado: Number(titulo.montoContado),
       tasaPromedio: Number(titulo.tasaPromedio),
       fechaVencimiento: toPocketBaseDate(titulo.fechaVencimiento),
+      moneda,
       syncedAt,
     })
     created += 1
   }
 
-  return { created, syncedAt }
+  return { created, syncedAt, byMoneda }
 }
 
 /**
- * Lee todas las filas y arma el payload público `{ titulos: [...] }`.
+ * @param {'ars' | 'usd'} moneda
+ * @returns {Promise<Array<{ plazo: number, montoContado: number, tasaPromedio: number, fechaVencimiento: string }>>}
  */
-export async function listCaucionesAsPayload(pb = createPocketBaseClient()) {
-  const titulos = []
+export async function listCaucionesByMoneda(
+  moneda,
+  pb = createPocketBaseClient(),
+) {
+  const items = []
   let page = 1
   const perPage = 200
 
@@ -61,9 +70,10 @@ export async function listCaucionesAsPayload(pb = createPocketBaseClient()) {
       page,
       perPage,
       sort: 'fechaVencimiento,plazo',
+      filter: `moneda='${moneda}'`,
     })
     for (const row of result.items ?? []) {
-      titulos.push({
+      items.push({
         plazo: row.plazo,
         montoContado: row.montoContado,
         tasaPromedio: row.tasaPromedio,
@@ -74,7 +84,7 @@ export async function listCaucionesAsPayload(pb = createPocketBaseClient()) {
     page += 1
   }
 
-  return { titulos }
+  return items
 }
 
 function normalizeFechaVencimiento(value) {

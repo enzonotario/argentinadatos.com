@@ -42,21 +42,34 @@ describe('static api server', () => {
     server = startStaticServer(TEST_DIR, port, {
       dynamicEndpoints: [
         {
-          paths: ['/v1/finanzas/cauciones', '/v1/finanzas/cauciones/'],
-          cacheKey: 'test-cauciones',
+          paths: ['/v1/finanzas/cauciones/ars'],
+          cacheKey: 'test-cauciones-ars',
           ttlMs: 60_000,
           load: async () => {
             loadCount += 1
-            return {
-              titulos: [
-                {
-                  plazo: 1,
-                  montoContado: 100,
-                  tasaPromedio: 20,
-                  fechaVencimiento: '2026-08-22T00:00:00',
-                },
-              ],
-            }
+            return [
+              {
+                plazo: 1,
+                montoContado: 100,
+                tasaPromedio: 20,
+                fechaVencimiento: '2026-08-22T00:00:00',
+              },
+            ]
+          },
+        },
+        {
+          paths: ['/v1/finanzas/cauciones/usd'],
+          cacheKey: 'test-cauciones-usd',
+          ttlMs: 60_000,
+          load: async () => {
+            return [
+              {
+                plazo: 1,
+                montoContado: 50,
+                tasaPromedio: 1.5,
+                fechaVencimiento: '2026-08-22T00:00:00',
+              },
+            ]
           },
         },
       ],
@@ -93,25 +106,37 @@ describe('static api server', () => {
     expect(status).toBe(404)
   })
 
-  it('serves dynamic cauciones and caches the loader', async () => {
+  it('serves dynamic cauciones/ars as array and caches', async () => {
     loadCount = 0
     clearCache()
 
-    const first = await fetchText(port, '/v1/finanzas/cauciones')
+    const first = await fetchText(port, '/v1/finanzas/cauciones/ars')
     expect(first.status).toBe(200)
-    expect(JSON.parse(first.body).titulos).toHaveLength(1)
+    const body = JSON.parse(first.body)
+    expect(Array.isArray(body)).toBe(true)
+    expect(body).toHaveLength(1)
     expect(first.headers['x-cache']).toBe('MISS')
     expect(loadCount).toBe(1)
 
-    const second = await fetchText(port, '/v1/finanzas/cauciones/')
+    const second = await fetchText(port, '/v1/finanzas/cauciones/ars/')
     expect(second.status).toBe(200)
     expect(second.headers['x-cache']).toBe('HIT')
     expect(loadCount).toBe(1)
 
-    // Cloudflare rewrite: /v1/... → /v1/.../index.json
-    const rewritten = await fetchText(port, '/v1/finanzas/cauciones/index.json')
+    const rewritten = await fetchText(
+      port,
+      '/v1/finanzas/cauciones/ars/index.json',
+    )
     expect(rewritten.status).toBe(200)
     expect(rewritten.headers['x-cache']).toBe('HIT')
-    expect(loadCount).toBe(1)
+  })
+
+  it('serves dynamic cauciones/usd as array', async () => {
+    clearCache()
+    const res = await fetchText(port, '/v1/finanzas/cauciones/usd')
+    expect(res.status).toBe(200)
+    const body = JSON.parse(res.body)
+    expect(Array.isArray(body)).toBe(true)
+    expect(body[0].tasaPromedio).toBe(1.5)
   })
 })
