@@ -12,6 +12,8 @@ services:
     volumes:
       # Coolify Compose: mounts the repo checkout's datos/ (refreshed on each deploy).
       - ./datos:/app/datos:ro
+    # Da tiempo a SIGTERM + drain de keep-alive antes del SIGKILL.
+    stop_grace_period: 30s
     healthcheck:
       test:
         [
@@ -20,7 +22,8 @@ services:
           '-e',
           "fetch('http://127.0.0.1:3000/health').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
         ]
-      interval: 30s
-      timeout: 5s
-      retries: 3
+      interval: 5s
+      timeout: 3s
+      retries: 5
       start_period: 5s
+    restart: unless-stopped

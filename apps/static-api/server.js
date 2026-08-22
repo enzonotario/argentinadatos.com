@@ -80,7 +80,7 @@ async function handleDynamicEndpoint(endpoint, res) {
   }
 }
 
-async function handleRequest(staticDir, dynamicEndpoints, req, res) {
+async function handleRequest(staticDir, dynamicEndpoints, req, res, isReady) {
   if (req.method === 'OPTIONS') {
     res.writeHead(204, {
       'Access-Control-Allow-Origin': '*',
@@ -99,7 +99,16 @@ async function handleRequest(staticDir, dynamicEndpoints, req, res) {
   const url = req.url ?? '/'
 
   if (url === '/health' || url === '/health/') {
+    if (!isReady()) {
+      sendJson(res, 503, { status: 'draining' })
+      return
+    }
     sendJson(res, 200, { status: 'ok' })
+    return
+  }
+
+  if (!isReady()) {
+    sendJson(res, 503, { error: 'Service unavailable' })
     return
   }
 
@@ -130,7 +139,7 @@ async function handleRequest(staticDir, dynamicEndpoints, req, res) {
 /**
  * @param {string} staticDir
  * @param {number} port
- * @param {{ dynamicEndpoints?: Array }} [options]
+ * @param {{ dynamicEndpoints?: Array, shutdownTimeoutMs?: number }} [options]
  */
 export function startStaticServer(staticDir, port, options = {}) {
   if (!existsSync(staticDir)) {
@@ -139,13 +148,44 @@ export function startStaticServer(staticDir, port, options = {}) {
 
   const dynamicEndpoints =
     options.dynamicEndpoints ?? getDefaultDynamicEndpoints()
+  const shutdownTimeoutMs = options.shutdownTimeoutMs ?? 10_000
+
+  let accepting = true
+  const isReady = () => accepting
 
   const server = createServer((req, res) => {
-    handleRequest(staticDir, dynamicEndpoints, req, res).catch(err => {
+    handleRequest(staticDir, dynamicEndpoints, req, res, isReady).catch(err => {
       console.error('[Server] Request error:', err)
       sendJson(res, 500, { error: 'Internal server error' })
     })
   })
+
+  // Evita que conexiones keep-alive frenen el drain en deploy.
+  server.keepAliveTimeout = 5_000
+  server.headersTimeout = 6_000
+
+  function shutdown(signal) {
+    if (!accepting) return
+    accepting = false
+    console.log(`[Server] ${signal} received, draining...`)
+
+    server.close(err => {
+      if (err) {
+        console.error('[Server] Error during shutdown:', err)
+        process.exit(1)
+      }
+      console.log('[Server] Shutdown complete')
+      process.exit(0)
+    })
+
+    setTimeout(() => {
+      console.error('[Server] Forced shutdown after timeout')
+      process.exit(1)
+    }, shutdownTimeoutMs).unref()
+  }
+
+  process.once('SIGTERM', () => shutdown('SIGTERM'))
+  process.once('SIGINT', () => shutdown('SIGINT'))
 
   server.listen(port, () => {
     console.log(`[Server] Serving static API from ${staticDir} on port ${port}`)
