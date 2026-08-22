@@ -73,7 +73,10 @@ async function handleDynamicEndpoint(endpoint, res) {
       })
       return
     }
-    sendJson(res, 502, { error: 'Dynamic endpoint unavailable' })
+    sendJson(res, 502, {
+      error: 'Dynamic endpoint unavailable',
+      detail: String(err?.message || err).slice(0, 300),
+    })
   }
 }
 

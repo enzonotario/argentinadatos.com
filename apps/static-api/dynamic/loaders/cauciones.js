@@ -16,16 +16,37 @@ function mapRow(row) {
   }
 }
 
+function classifyMonedaFallback(tasaPromedio) {
+  const tasa = Number(tasaPromedio)
+  return Number.isFinite(tasa) && tasa < 10 ? 'usd' : 'ars'
+}
+
+function rowMoneda(row) {
+  if (row.moneda === 'ars' || row.moneda === 'usd') return row.moneda
+  return classifyMonedaFallback(row.tasaPromedio)
+}
+
 /**
  * @param {'ars' | 'usd'} moneda
  * @returns {Promise<Array<{ plazo: number, montoContado: number, tasaPromedio: number, fechaVencimiento: string }>>}
  */
 export async function loadCaucionesByMoneda(moneda) {
-  const rows = await listAllRecords('cauciones', {
-    sort: 'fechaVencimiento,plazo',
-    filter: `moneda='${moneda}'`,
-  })
-  return rows.map(mapRow)
+  try {
+    const rows = await listAllRecords('cauciones', {
+      sort: 'fechaVencimiento,plazo',
+      filter: `moneda='${moneda}'`,
+    })
+    return rows.map(mapRow)
+  } catch (err) {
+    console.error(
+      `[dynamic/cauciones] filter moneda=${moneda} failed, fallback:`,
+      err?.message || err,
+    )
+    const rows = await listAllRecords('cauciones', {
+      sort: 'fechaVencimiento,plazo',
+    })
+    return rows.filter(row => rowMoneda(row) === moneda).map(mapRow)
+  }
 }
 
 export function loadCaucionesArs() {

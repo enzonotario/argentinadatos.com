@@ -22,6 +22,7 @@ export async function listAllRecords(
   const items = []
   let page = 1
   const perPage = 200
+  const timeoutMs = Number(process.env.POCKETBASE_TIMEOUT_MS) || 15_000
 
   for (;;) {
     const params = new URLSearchParams({
@@ -31,15 +32,24 @@ export async function listAllRecords(
     if (sort) params.set('sort', sort)
     if (filter) params.set('filter', filter)
 
-    const response = await fetch(
-      `${url}/api/collections/${collection}/records?${params}`,
-      {
-        headers: {
-          Authorization: token,
-          Accept: 'application/json',
+    let response
+    try {
+      response = await fetch(
+        `${url}/api/collections/${collection}/records?${params}`,
+        {
+          headers: {
+            Authorization: token,
+            Accept: 'application/json',
+          },
+          signal: AbortSignal.timeout(timeoutMs),
         },
-      },
-    )
+      )
+    } catch (err) {
+      const reason = err?.name === 'TimeoutError' ? 'timeout' : err?.message
+      throw new Error(
+        `PocketBase list ${collection} network error (${reason}) via ${url}`,
+      )
+    }
 
     if (!response.ok) {
       const body = await response.text()

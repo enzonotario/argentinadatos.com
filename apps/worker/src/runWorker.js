@@ -1,5 +1,6 @@
 import { getPollIntervalMs } from './config.js'
 import { syncCauciones } from './jobs/syncCauciones.js'
+import { runMigrations } from './pocketbase/migrate.js'
 
 export function parseWorkerArgs(argv = process.argv.slice(2)) {
   return {
@@ -8,6 +9,9 @@ export function parseWorkerArgs(argv = process.argv.slice(2)) {
 }
 
 export async function runIolWorker({ watchMode = false } = {}) {
+  console.log('[worker] running pocketbase migrations')
+  await runMigrations()
+
   const runOnce = async () => {
     const started = Date.now()
     console.log('[worker] sync cauciones starting')
