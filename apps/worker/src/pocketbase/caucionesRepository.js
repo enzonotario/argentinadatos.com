@@ -83,6 +83,7 @@ export function buildExistingMinMaxBySerie(existingRows) {
 
 /**
  * Reemplaza el snapshot de cauciones preservando min/max del día por (moneda, plazo).
+ * IOL envía `tasaPromedio`; se persiste como `tasaActual`.
  * @param {{ titulos: Array<{ plazo: number, montoContado: number, tasaPromedio: number, fechaVencimiento: string }> }} payload
  */
 export async function replaceCauciones(payload, pb = createPocketBaseClient()) {
@@ -95,11 +96,12 @@ export async function replaceCauciones(payload, pb = createPocketBaseClient()) {
   const existingBySerie = buildExistingMinMaxBySerie(existingRows)
 
   const enriched = titulos.map(titulo => {
-    const moneda = classifyCaucionMoneda(titulo.tasaPromedio)
+    const tasaActual = Number(titulo.tasaPromedio)
+    const moneda = classifyCaucionMoneda(tasaActual)
     return {
       ...titulo,
       moneda,
-      tasaPromedio: Number(titulo.tasaPromedio),
+      tasaActual,
       plazo: Number(titulo.plazo),
       montoContado: Number(titulo.montoContado),
     }
@@ -109,7 +111,7 @@ export async function replaceCauciones(payload, pb = createPocketBaseClient()) {
   for (const titulo of enriched) {
     const key = caucionSerieKey(titulo.moneda, titulo.plazo)
     if (!tasasBySerie.has(key)) tasasBySerie.set(key, [])
-    tasasBySerie.get(key).push(titulo.tasaPromedio)
+    tasasBySerie.get(key).push(titulo.tasaActual)
   }
 
   const minMaxBySerie = new Map()
@@ -134,7 +136,7 @@ export async function replaceCauciones(payload, pb = createPocketBaseClient()) {
     await pb.createRecord('cauciones', {
       plazo: titulo.plazo,
       montoContado: titulo.montoContado,
-      tasaPromedio: titulo.tasaPromedio,
+      tasaActual: titulo.tasaActual,
       tasaMinDia: range.tasaMinDia,
       tasaMaxDia: range.tasaMaxDia,
       fechaOperacion: range.fechaOperacion,
@@ -170,7 +172,7 @@ export async function listCaucionesByMoneda(
       items.push({
         plazo: row.plazo,
         montoContado: row.montoContado,
-        tasaPromedio: row.tasaPromedio,
+        tasaActual: row.tasaActual ?? row.tasaPromedio,
         tasaMinDia: row.tasaMinDia,
         tasaMaxDia: row.tasaMaxDia,
         fechaOperacion: row.fechaOperacion,

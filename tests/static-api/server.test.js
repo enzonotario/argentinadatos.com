@@ -51,7 +51,7 @@ describe('static api server', () => {
               {
                 plazo: 1,
                 montoContado: 100,
-                tasaPromedio: 20,
+                tasaActual: 20,
                 tasaMinDia: 18,
                 tasaMaxDia: 25,
                 fechaOperacion: '2026-08-22',
@@ -69,7 +69,7 @@ describe('static api server', () => {
               {
                 plazo: 1,
                 montoContado: 50,
-                tasaPromedio: 1.5,
+                tasaActual: 1.5,
                 tasaMinDia: 1.2,
                 tasaMaxDia: 2.0,
                 fechaOperacion: '2026-08-22',
@@ -143,6 +143,6 @@ describe('static api server', () => {
     expect(res.status).toBe(200)
     const body = JSON.parse(res.body)
     expect(Array.isArray(body)).toBe(true)
-    expect(body[0].tasaPromedio).toBe(1.5)
+    expect(body[0].tasaActual).toBe(1.5)
   })
 })

@@ -15,7 +15,7 @@ describe('worker cauciones migration schema', () => {
     expect(CAUCIONES_COLLECTION.fields.map(f => f.name)).toEqual([
       'plazo',
       'montoContado',
-      'tasaPromedio',
+      'tasaActual',
       'tasaMinDia',
       'tasaMaxDia',
       'fechaOperacion',

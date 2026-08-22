@@ -7,26 +7,32 @@ function fechaVencimientoPublica(value) {
   return value
 }
 
+function tasaActualDe(row) {
+  const value = row.tasaActual ?? row.tasaPromedio
+  return Number(value)
+}
+
 function mapRow(row) {
+  const tasaActual = tasaActualDe(row)
   return {
     plazo: row.plazo,
     montoContado: row.montoContado,
-    tasaPromedio: row.tasaPromedio,
-    tasaMinDia: row.tasaMinDia ?? row.tasaPromedio,
-    tasaMaxDia: row.tasaMaxDia ?? row.tasaPromedio,
+    tasaActual,
+    tasaMinDia: row.tasaMinDia ?? tasaActual,
+    tasaMaxDia: row.tasaMaxDia ?? tasaActual,
     fechaOperacion: row.fechaOperacion ?? null,
     fechaVencimiento: fechaVencimientoPublica(row.fechaVencimiento),
   }
 }
 
-function classifyMonedaFallback(tasaPromedio) {
-  const tasa = Number(tasaPromedio)
+function classifyMonedaFallback(tasaActual) {
+  const tasa = Number(tasaActual)
   return Number.isFinite(tasa) && tasa < 10 ? 'usd' : 'ars'
 }
 
 function rowMoneda(row) {
   if (row.moneda === 'ars' || row.moneda === 'usd') return row.moneda
-  return classifyMonedaFallback(row.tasaPromedio)
+  return classifyMonedaFallback(tasaActualDe(row))
 }
 
 /**

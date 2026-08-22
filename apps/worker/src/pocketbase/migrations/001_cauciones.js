@@ -20,7 +20,7 @@ export const CAUCIONES_COLLECTION = {
       required: true,
     },
     {
-      name: 'tasaPromedio',
+      name: 'tasaActual',
       type: 'number',
       required: true,
     },
@@ -68,10 +68,10 @@ export const CAUCIONES_COLLECTION = {
  * IOL no envía moneda; el panel mezcla ARS (TNA ~15%+) y USD (TNA ~0–5%).
  * Gap observado típico ~3% vs ~18% → umbral 10.
  */
-export function classifyCaucionMoneda(tasaPromedio) {
-  const tasa = Number(tasaPromedio)
+export function classifyCaucionMoneda(tasaActual) {
+  const tasa = Number(tasaActual)
   if (!Number.isFinite(tasa)) {
-    throw new Error(`Invalid tasaPromedio: ${tasaPromedio}`)
+    throw new Error(`Invalid tasaActual: ${tasaActual}`)
   }
   return tasa < 10 ? 'usd' : 'ars'
 }
