@@ -717,6 +717,37 @@
         ]
       }
     },
+    "/v1/finanzas/brokers/comisiones": {
+      "get": {
+        "summary": "Comisiones de brokers",
+        "tags": [
+          "Finanzas",
+          "Brokers"
+        ],
+        "description": "Aranceles comparables de brokers por producto (acciones, cedears, bonos, ON, letras, cauciones, opciones, futuros, FCI, cheques, licitaciones, alquiler de títulos). Shape flat: una fila por arancel retail (canal web/app). Preferir `tasaAnualEquivalente` cuando `tasaBase` es mensual/anual/tna; respetar `tasaEsTope`. Agrupar en cliente por `producto` o `entidad`.",
+        "responses": {
+          "200": {
+            "description": "Comisiones de brokers con metadata de corrida",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComisionesBrokers"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-finanzas-brokers-comisiones",
+        "x-data-source": [
+          "[IOL Tarifas](https://www.invertironline.com/tarifas)",
+          "[Balanz Comisiones](https://balanz.com/comisiones/)",
+          "[Bull Market Help](https://help.bullmarketbrokers.com/)",
+          "[Cocos Tarifario](https://cocos.capital/tarifario)",
+          "[PPI Comisiones](https://www.portfoliopersonal.com/Contenido/comisiones)",
+          "[Fiwind Comisiones](https://www.fiwind.io/comisiones)"
+        ]
+      }
+    },
     "/v1/finanzas/creditos/hipotecariosUva": {
       "get": {
         "summary": "Créditos Hipotecarios UVA",
@@ -5830,6 +5861,173 @@
                 }
               }
             ]
+          }
+        }
+      },
+      "ComisionBroker": {
+        "title": "ComisionBroker",
+        "type": "object",
+        "required": [
+          "entidad",
+          "nombreComercial",
+          "producto",
+          "operacion",
+          "moneda",
+          "canal",
+          "tasa",
+          "tasaBase",
+          "tasaAnualEquivalente",
+          "tasaEsTope"
+        ],
+        "properties": {
+          "entidad": {
+            "type": "string",
+            "description": "Slug del broker"
+          },
+          "nombreComercial": {
+            "type": "string"
+          },
+          "producto": {
+            "type": "string",
+            "description": "Slug estable del instrumento comparable",
+            "enum": [
+              "acciones",
+              "cedears",
+              "bonos",
+              "obligaciones_negociables",
+              "letras",
+              "cauciones",
+              "opciones",
+              "futuros",
+              "fci",
+              "cheques",
+              "licitaciones",
+              "alquiler_titulos"
+            ],
+            "example": "cauciones"
+          },
+          "operacion": {
+            "type": "string",
+            "enum": [
+              "colocadora",
+              "tomadora",
+              "compra",
+              "venta",
+              "ambas"
+            ]
+          },
+          "moneda": {
+            "type": "string",
+            "enum": [
+              "ARS",
+              "USD"
+            ]
+          },
+          "canal": {
+            "type": "string",
+            "example": "web"
+          },
+          "plan": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tasa": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "tasaBase": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "mensual",
+              "anual",
+              "tna",
+              null
+            ]
+          },
+          "tasaAnualEquivalente": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "tasaEsTope": {
+            "type": "boolean"
+          },
+          "incluyeIva": {
+            "type": "boolean"
+          },
+          "ivaAdicional": {
+            "type": "boolean"
+          },
+          "prorrateoDias": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "comisionMinima": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "derechoMercado": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "enlace": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      },
+      "ComisionesBrokers": {
+        "title": "ComisionesBrokers",
+        "type": "object",
+        "required": [
+          "fechaActualizacion",
+          "comisiones"
+        ],
+        "properties": {
+          "fechaActualizacion": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "comisiones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComisionBroker"
+            }
+          },
+          "erroresExtraccion": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "fuente": {
+                  "type": "string"
+                },
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }
