@@ -2,7 +2,7 @@
   "fondoId": "539",
   "claseId": "1091",
   "nombre": "Consultatio Renta Balanceada - Clase C",
-  "fechaActualizacion": "2026-08-25T19:43:20.000Z",
+  "fechaActualizacion": "2026-08-26T08:14:54.000Z",
   "historico": [
     {
       "slug": "consultatio-renta-balanceada-clase-c",
@@ -25602,6 +25602,22 @@
       "retornoDiario": 0.197458,
       "retornoAcumulado": 7924.839883,
       "flujoEstimado": -153.881958,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-renta-balanceada-clase-c",
+      "fondoId": "539",
+      "claseId": "1091",
+      "nombre": "Consultatio Renta Balanceada - Clase C",
+      "fecha": "2026-08-25",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 767939.333,
+      "patrimonio": 47679178973.09,
+      "retornoDiario": -0.145152,
+      "retornoAcumulado": 7913.191642,
+      "flujoEstimado": -169.121872,
       "origen": "cnv-excel"
     }
   ]
