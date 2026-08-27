@@ -18,6 +18,7 @@ import { crawlMisiones } from '../misiones/crawlMisiones.ts'
 import { crawlViajes } from '../viajes/crawlViajes.ts'
 import { crawlPeriodos } from '../periodos/crawlPeriodos.ts'
 import { fillMissingFotosFromNomina, localDiputadoFotoUrl } from './scrapeNominaFotos.ts'
+import { fillBancasFromRecinto } from './scrapeRecinto.ts'
 
 export interface Diputado {
   id: string
@@ -37,6 +38,8 @@ export interface Diputado {
     fin: string | null
   }
   foto: string | null
+  /** Número de banca en el recinto HCDN (0–256). */
+  banca?: number | null
   meta?: {
     comisiones?: Array<{ id: string, nombre: string, cargo: string }>
   } | null
@@ -78,6 +81,18 @@ export async function crawlDiputados(): Promise<Diputado[]> {
   }
   catch (e: any) {
     console.error('Nómina HCDN: no se pudieron completar fotos', e?.message || e)
+  }
+
+  try {
+    const { matched, unmatched, payload } = await fillBancasFromRecinto(diputados)
+    console.log(
+      `Recinto: ${payload.asientos.length} asientos, `
+      + `${matched} matcheados, ${unmatched} sin id, `
+      + `${payload.vacantes.length} vacantes`,
+    )
+  }
+  catch (e: any) {
+    console.error('Recinto HCDN: no se pudo scrapear', e?.message || e)
   }
 
   if (shouldWriteJsonFiles()) {
