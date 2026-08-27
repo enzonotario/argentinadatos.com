@@ -300,6 +300,13 @@ export function crearComisionBroker(parcial) {
       parcial.prorrateoDias === undefined ? null : parcial.prorrateoDias,
     comisionMinima:
       parcial.comisionMinima === undefined ? null : parcial.comisionMinima,
+    /**
+     * Costo fijo de plan/membresía en la moneda de la fila (null si no aplica).
+     * Suele ser mensual y condicional (solo el mes que operás); ver metadata.notas.
+     */
+    membresiaMensual:
+      parcial.membresiaMensual === undefined ? null : parcial.membresiaMensual,
+    membresiaIvaAdicional: Boolean(parcial.membresiaIvaAdicional),
     derechoMercado:
       parcial.derechoMercado === undefined ? null : parcial.derechoMercado,
     enlace: parcial.enlace ?? null,

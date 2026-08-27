@@ -744,7 +744,8 @@
           "[Bull Market Help](https://help.bullmarketbrokers.com/)",
           "[Cocos Tarifario](https://cocos.capital/tarifario)",
           "[PPI Comisiones](https://www.portfoliopersonal.com/Contenido/comisiones)",
-          "[Fiwind Comisiones](https://www.fiwind.io/comisiones)"
+          "[Fiwind Comisiones](https://www.fiwind.io/comisiones)",
+          "[IEB+ / IEB MAS](https://www.iebmas.com.ar/)"
         ]
       }
     },
@@ -5977,6 +5978,19 @@
               "number",
               "null"
             ]
+          },
+          "membresiaMensual": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "description": "Costo fijo de membresía/plan en la moneda de la fila (típicamente mensual). Null si no aplica. No es comisión por operación.",
+            "example": 5000
+          },
+          "membresiaIvaAdicional": {
+            "type": "boolean",
+            "description": "Si a membresiaMensual hay que sumar IVA.",
+            "default": false
           },
           "derechoMercado": {
             "type": [

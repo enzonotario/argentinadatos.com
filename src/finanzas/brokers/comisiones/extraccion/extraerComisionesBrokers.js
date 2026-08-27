@@ -4,6 +4,7 @@ import { extraerBullMarket } from './extraerBullMarket.js'
 import { extraerCocos } from './extraerCocos.js'
 import { extraerPpi } from './extraerPpi.js'
 import { extraerFiwind } from './extraerFiwind.js'
+import { extraerIebMas } from './extraerIebMas.js'
 import { logGrupo, logError, logMensaje } from '@/log.js'
 
 const log = logGrupo({
@@ -18,6 +19,7 @@ const FUENTES = [
   { nombre: 'cocos', extraer: extraerCocos },
   { nombre: 'ppi', extraer: extraerPpi },
   { nombre: 'fiwind', extraer: extraerFiwind },
+  { nombre: 'iebmas', extraer: extraerIebMas },
 ]
 
 export async function extraerComisionesBrokers() {

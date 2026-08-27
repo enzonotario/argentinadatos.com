@@ -19,6 +19,7 @@ import {
 import { parsearCocos } from '@/finanzas/brokers/comisiones/extraccion/extraerCocos.js'
 import { parsearPpi } from '@/finanzas/brokers/comisiones/extraccion/extraerPpi.js'
 import { parsearFiwind } from '@/finanzas/brokers/comisiones/extraccion/extraerFiwind.js'
+import { parsearIebMas } from '@/finanzas/brokers/comisiones/extraccion/extraerIebMas.js'
 
 const fixturesDir = join(dirname(fileURLToPath(import.meta.url)), 'fixtures')
 
@@ -32,6 +33,7 @@ describe('catálogo producto', () => {
     )
     expect(normalizarProducto('Alquiler de Títulos')).toBe('alquiler_titulos')
     expect(PRODUCTOS_BROKER).toContain('licitaciones')
+    expect(PRODUCTOS_BROKER).not.toContain('abono')
   })
 
   it('expande conceptos unificados a varios productos', () => {
@@ -319,6 +321,43 @@ describe('parsearFiwind', () => {
   })
 })
 
+describe('parsearIebMas', () => {
+  it('emite comisión 0 con membresiaMensual en cada producto Investor', () => {
+    const html = readFileSync(
+      join(fixturesDir, 'iebmas-planes.html'),
+      'utf8',
+    )
+    const filas = parsearIebMas(html)
+
+    expect(filas.some((f) => f.producto === 'abono')).toBe(false)
+
+    const acciones = filas.find(
+      (f) => f.producto === 'acciones' && f.plan === 'investor',
+    )
+    expect(acciones).toMatchObject({
+      entidad: 'iebmas',
+      nombreComercial: 'IEB+',
+      tasa: 0,
+      tasaAnualEquivalente: 0,
+      operacion: 'ambas',
+      membresiaMensual: 5000,
+      membresiaIvaAdicional: true,
+    })
+
+    expect(filas.find((f) => f.producto === 'cauciones')).toMatchObject({
+      tasa: 0,
+      plan: 'investor',
+      membresiaMensual: 5000,
+      membresiaIvaAdicional: true,
+    })
+    expect(filas.find((f) => f.producto === 'fci' && f.plan === 'rookie')).toMatchObject({
+      tasa: 0,
+      membresiaMensual: null,
+      membresiaIvaAdicional: false,
+    })
+  })
+})
+
 describe('crearComisionBroker', () => {
   it('completa shape comparable', () => {
     const fila = crearComisionBroker({
@@ -330,6 +369,8 @@ describe('crearComisionBroker', () => {
     })
     expect(fila.producto).toBe('cauciones')
     expect(fila.tasaAnualEquivalente).toBe(0.018)
+    expect(fila.membresiaMensual).toBeNull()
+    expect(fila.membresiaIvaAdicional).toBe(false)
     expect(fila.metadata).toEqual({})
   })
 })
@@ -381,6 +422,12 @@ describe('extraerComisionesBrokers aggregator', () => {
       '@/finanzas/brokers/comisiones/extraccion/extraerFiwind.js',
       () => ({
         extraerFiwind: vi.fn(async () => []),
+      }),
+    )
+    vi.doMock(
+      '@/finanzas/brokers/comisiones/extraccion/extraerIebMas.js',
+      () => ({
+        extraerIebMas: vi.fn(async () => []),
       }),
     )
 
