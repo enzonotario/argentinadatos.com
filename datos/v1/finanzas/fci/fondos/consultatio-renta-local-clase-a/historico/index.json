@@ -2,7 +2,7 @@
   "fondoId": "538",
   "claseId": "1086",
   "nombre": "Consultatio Renta Local - Clase A",
-  "fechaActualizacion": "2026-08-26T08:14:54.000Z",
+  "fechaActualizacion": "2026-08-27T21:38:38.000Z",
   "historico": [
     {
       "slug": "consultatio-renta-local-clase-a",
@@ -25618,6 +25618,22 @@
       "retornoDiario": 0.077839,
       "retornoAcumulado": 5350.813134,
       "flujoEstimado": -52388.815128,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-renta-local-clase-a",
+      "fondoId": "538",
+      "claseId": "1086",
+      "nombre": "Consultatio Renta Local - Clase A",
+      "fecha": "2026-08-26",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 336190.647,
+      "patrimonio": 850730426.86,
+      "retornoDiario": 0.03548,
+      "retornoAcumulado": 5352.747064,
+      "flujoEstimado": -3.24205,
       "origen": "cnv-excel"
     }
   ]
