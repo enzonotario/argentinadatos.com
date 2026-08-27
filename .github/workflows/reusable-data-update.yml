@@ -32,7 +32,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          # >1 so concurrent data commits can rebase onto each other
+          fetch-depth: 50
 
       - name: Setup Node.js and pnpm
         uses: ./.github/actions/setup-node-pnpm

@@ -17,10 +17,24 @@ fi
 
 git commit -m "Latest data: $(TZ=America/Argentina/Buenos_Aires date +'%Y-%m-%d %H:%M ART')"
 
+# El cron/build puede dejar tracked files dirty fuera de datos/openapi.
+# Eso bloquea `git pull --rebase` ("cannot pull with rebase: You have unstaged changes").
+if ! git diff --quiet || ! git diff --cached --quiet || [ -n "$(git ls-files --others --exclude-standard)" ]; then
+  echo "Working tree dirty after commit (will stash before rebase):"
+  git status --porcelain || true
+  git stash push --include-untracked --message "gha-dirty-before-rebase" || true
+fi
+
 for attempt in $(seq 1 "$max_attempts"); do
   echo "Push attempt ${attempt}/${max_attempts}"
 
-  if ! git pull --rebase "${remote}" "${branch}"; then
+  if ! git fetch --no-tags --depth=50 "${remote}" "${branch}"; then
+    echo "Fetch failed on attempt ${attempt}"
+    sleep $((attempt * 15))
+    continue
+  fi
+
+  if ! git rebase "${remote}/${branch}"; then
     echo "Rebase failed on attempt ${attempt}"
     git rebase --abort || true
     sleep $((attempt * 15))
