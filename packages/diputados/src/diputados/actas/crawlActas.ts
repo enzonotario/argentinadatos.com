@@ -9,6 +9,7 @@ import { collect } from 'collect.js'
 import { getYear, parse } from 'date-fns'
 import { USER_AGENT, VOTACIONES_BASE_URL } from '../../constants.ts'
 import { ActasDatabaseService } from './database/service.ts'
+import { parseCabeceraPdf } from './parseCabeceraPdf.ts'
 
 enum TipoVoto {
   Afirmativo = 'afirmativo',
@@ -39,6 +40,18 @@ interface Acta {
   abstenciones: number
   ausentes: number
   votos: Voto[]
+  /** Línea de sesión del PDF (p. ej. "144° - Período Ordinario - …"). */
+  sesion?: string | null
+  /** Nominal, etc. */
+  votacion?: string | null
+  /** "Más de la mitad — Votos Emitidos". */
+  mayoria?: string | null
+  baseMayoria?: string | null
+  tipoMayoria?: string | null
+  miembros?: number | null
+  presentes?: number | null
+  sinVotar?: number | null
+  ultModVer?: string | null
 }
 
 const currentValues = JSON.parse(readEndpoint('diputados/actas') || '[]')
@@ -70,6 +83,27 @@ export async function crawlActas(): Promise<Acta[]> {
     )
     .sortBy('fecha')
     .all() as Acta[]
+
+  // Backfill cabecera PDF (campos que el HTML no trae) en actas recientes.
+  const toEnrich = [...actas]
+    .filter(a => a.miembros == null || a.sesion == null)
+    .sort((a, b) => b.fecha.getTime() - a.fecha.getTime())
+    .slice(0, 50)
+
+  if (toEnrich.length) {
+    console.log(`Cabeceras PDF: enriqueciendo ${toEnrich.length} actas…`)
+    const concurrency = 4
+    for (let i = 0; i < toEnrich.length; i += concurrency) {
+      const batch = toEnrich.slice(i, i + concurrency)
+      await Promise.all(
+        batch.map(async (acta) => {
+          const cabecera = await parseCabeceraPdf(String(acta.id))
+          if (!cabecera) return
+          Object.assign(acta, applyCabeceraPdf(acta, cabecera))
+        }),
+      )
+    }
+  }
 
   if (shouldWriteJsonFiles()) {
     writeEndpoint('diputados/actas', actas)
@@ -257,7 +291,14 @@ async function parseVotacionPage(url: string) {
       throw new Error('Empty response')
     }
 
-    return parseActa(id, response.data)
+    const acta = parseActa(id, response.data)
+    if (!acta) return null
+
+    const cabecera = await parseCabeceraPdf(id)
+    if (cabecera) {
+      return applyCabeceraPdf(acta, cabecera)
+    }
+    return acta
   }
   catch (error: any) {
     const status = error.response?.status
@@ -272,6 +313,28 @@ async function parseVotacionPage(url: string) {
       console.warn('Error al obtener votacion', { url, status, message: error.message })
     }
     return null
+  }
+}
+
+function applyCabeceraPdf(
+  acta: Acta,
+  cabecera: NonNullable<Awaited<ReturnType<typeof parseCabeceraPdf>>>,
+): Acta {
+  return {
+    ...acta,
+    sesion: cabecera.sesion ?? acta.sesion ?? null,
+    votacion: cabecera.votacion ?? acta.votacion ?? null,
+    mayoria: cabecera.mayoria ?? acta.mayoria ?? null,
+    baseMayoria: cabecera.baseMayoria ?? acta.baseMayoria ?? null,
+    tipoMayoria: cabecera.tipoMayoria ?? acta.tipoMayoria ?? null,
+    miembros: cabecera.miembros ?? acta.miembros ?? null,
+    presentes: cabecera.presentes ?? acta.presentes ?? null,
+    sinVotar: cabecera.sinVotar ?? acta.sinVotar ?? null,
+    ultModVer: cabecera.ultModVer ?? acta.ultModVer ?? null,
+    resultado: cabecera.resultado || acta.resultado,
+    presidente: cabecera.presidente
+      ? titleCaseSpanish(cabecera.presidente.toLowerCase())
+      : acta.presidente,
   }
 }
 
@@ -300,6 +363,18 @@ function parseActa(id: string, html: string): Acta | null {
     $('div#custom-share h4 b').text().trim().toLowerCase(),
   )
 
+  // HTML: "Más de la mitad - Votos Emitidos"
+  const mayoriaRaw = $('ul.col-in li.col-middle h5.text-muted').text().trim()
+  let mayoria: string | null = mayoriaRaw || null
+  let tipoMayoria: string | null = null
+  let baseMayoria: string | null = null
+  if (mayoriaRaw.includes(' - ')) {
+    const [tipo, base] = mayoriaRaw.split(/\s+-\s+/, 2)
+    tipoMayoria = tipo?.trim() || null
+    baseMayoria = base?.trim() || null
+    mayoria = [tipoMayoria, baseMayoria].filter(Boolean).join(' — ')
+  }
+
   const afirmativosUl = $(
     'div.col-lg-2.col-sm-6 ul h4:contains("AFIRMATIVOS")',
   ).parent()
@@ -312,6 +387,9 @@ function parseActa(id: string, html: string): Acta | null {
   const ausentesUl = $(
     'div.col-lg-2.col-sm-6 ul h4:contains("AUSENTES")',
   ).parent()
+  const sinVotarUl = $(
+    'div.col-lg-2.col-sm-6 ul h4:contains("SIN VOTAR")',
+  ).parent()
 
   const votosAfirmativos
     = Number.parseInt(afirmativosUl.find('h3').text().trim(), 10) || 0
@@ -320,6 +398,10 @@ function parseActa(id: string, html: string): Acta | null {
   const abstenciones
     = Number.parseInt(abstencionesUl.find('h3').text().trim(), 10) || 0
   const ausentes = Number.parseInt(ausentesUl.find('h3').text().trim(), 10) || 0
+  const sinVotarRaw = Number.parseInt(sinVotarUl.find('h3').text().trim(), 10)
+  const sinVotar = Number.isFinite(sinVotarRaw) ? sinVotarRaw : null
+  const presentes
+    = votosAfirmativos + votosNegativos + abstenciones + (sinVotar ?? 0)
 
   const votos: Voto[] = []
   $('#myTable tbody tr').each((_, row) => {
@@ -371,6 +453,15 @@ function parseActa(id: string, html: string): Acta | null {
     abstenciones,
     ausentes,
     votos,
+    mayoria,
+    tipoMayoria,
+    baseMayoria,
+    sinVotar,
+    presentes: presentes || null,
+    votacion: null,
+    sesion: null,
+    miembros: null,
+    ultModVer: null,
   }
 }
 
