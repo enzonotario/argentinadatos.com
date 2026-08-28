@@ -2,8 +2,9 @@ import { describe, expect, it } from 'vitest'
 import { extraerCuentasRemuneradasUsd } from '@/finanzas/cuentas-remuneradas-usd/extraccion/extraerCuentasRemuneradasUsd.js'
 
 const tieneIaCompleta =
+  import.meta.env.VITE_RUN_AI_TESTS === 'true' &&
   Boolean(import.meta.env.VITE_TABSTACK_API_KEY) &&
-  Boolean(import.meta.env.VITE_OPENAI_API_KEY)
+  Boolean(import.meta.env.VITE_OPENROUTER_KEY)
 
 describe.skipIf(!tieneIaCompleta)('extraerCuentasRemuneradasUsd (Real)', () => {
   it('extrae datos de todas las entidades', async () => {

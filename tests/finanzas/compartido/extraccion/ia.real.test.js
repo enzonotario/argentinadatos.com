@@ -3,8 +3,9 @@ import { extractWithAI } from '@/shared/extraction/ai/extractWithAI.js'
 import { logGrupo } from '@/log.js'
 
 const tieneIaCompleta =
+  import.meta.env.VITE_RUN_AI_TESTS === 'true' &&
   Boolean(import.meta.env.VITE_TABSTACK_API_KEY) &&
-  Boolean(import.meta.env.VITE_OPENAI_API_KEY)
+  Boolean(import.meta.env.VITE_OPENROUTER_KEY)
 
 describe.skipIf(!tieneIaCompleta)('extractWithAI (Real)', () => {
   it('extrae datos reales de BNA', async () => {

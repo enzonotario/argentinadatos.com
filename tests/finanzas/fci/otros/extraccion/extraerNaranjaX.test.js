@@ -1,7 +1,9 @@
 import { describe, it, expect } from 'vitest'
 import { extraerNaranjaX } from '@/finanzas/fci/otros/extraccion/extraerNaranjaX.js'
 
-const tieneOpenAI = Boolean(import.meta.env.VITE_OPENAI_API_KEY)
+const tieneOpenAI =
+  import.meta.env.VITE_RUN_AI_TESTS === 'true' &&
+  Boolean(import.meta.env.VITE_OPENROUTER_KEY)
 
 describe.skipIf(!tieneOpenAI)('extraerNaranjaX', () => {
   it('extrae datos reales desde Defuddle + IA', async () => {

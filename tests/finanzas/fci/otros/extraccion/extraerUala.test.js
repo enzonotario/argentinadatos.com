@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest'
 import { extraerUalaCuentaRemunerada } from '@/finanzas/fci/otros/extraccion/extraerUala.js'
 
-const tieneOpenAI = Boolean(import.meta.env.VITE_OPENAI_API_KEY)
+const tieneOpenAI =
+  import.meta.env.VITE_RUN_AI_TESTS === 'true' &&
+  Boolean(import.meta.env.VITE_OPENROUTER_KEY)
 
 import.meta.env.VITE_FORCE_IA = 'true'
 

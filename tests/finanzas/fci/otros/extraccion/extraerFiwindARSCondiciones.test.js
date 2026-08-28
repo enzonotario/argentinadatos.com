@@ -2,8 +2,9 @@ import { describe, expect, it } from 'vitest'
 import { extraerFiwindARSCondiciones } from '@/finanzas/fci/otros/extraccion/extraerFiwindARSCondiciones.js'
 
 const tieneIaCompleta =
+  import.meta.env.VITE_RUN_AI_TESTS === 'true' &&
   Boolean(import.meta.env.VITE_TABSTACK_API_KEY) &&
-  Boolean(import.meta.env.VITE_OPENAI_API_KEY)
+  Boolean(import.meta.env.VITE_OPENROUTER_KEY)
 
 describe.skipIf(!tieneIaCompleta)('extraerFiwindARSCondiciones', () => {
   it('extrae condiciones de Fiwind ARS', async () => {

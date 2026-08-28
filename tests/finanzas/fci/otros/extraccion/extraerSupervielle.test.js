@@ -2,8 +2,9 @@ import { describe, expect, it } from 'vitest'
 import { extraerSupervielleCuentaRemunerada } from '@/finanzas/fci/otros/extraccion/extraerSupervielle.js'
 
 const tieneIaCompleta =
+  import.meta.env.VITE_RUN_AI_TESTS === 'true' &&
   Boolean(import.meta.env.VITE_TABSTACK_API_KEY) &&
-  Boolean(import.meta.env.VITE_OPENAI_API_KEY)
+  Boolean(import.meta.env.VITE_OPENROUTER_KEY)
 
 import.meta.env.VITE_FORCE_IA = 'true'
 

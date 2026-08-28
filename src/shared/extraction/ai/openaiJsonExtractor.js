@@ -9,7 +9,7 @@ function buildOpenAIRequestBody({ markdown, prompt, schema, required }) {
   )
 
   return {
-    model: 'gpt-4o-mini',
+    model: 'openai/gpt-4o-mini',
     messages: [
       {
         role: 'system',
