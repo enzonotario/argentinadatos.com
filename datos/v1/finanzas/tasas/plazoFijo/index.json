@@ -23,7 +23,7 @@
   {
     "entidad": "BANCO SANTANDER ARGENTINA S.A.",
     "logo": "http://www.bcra.gob.ar/archivos/Imagenes/logosbancos/00072.png",
-    "tnaClientes": 0.16,
+    "tnaClientes": 0.17,
     "tnaNoClientes": 0,
     "enlace": null
   },
@@ -93,8 +93,8 @@
   {
     "entidad": "BANCO DE COMERCIO S.A.",
     "logo": "http://www.bcra.gob.ar/archivos/Imagenes/logosbancos/00432.png",
-    "tnaClientes": 0.235,
-    "tnaNoClientes": 0.235,
+    "tnaClientes": 0.215,
+    "tnaNoClientes": 0.215,
     "enlace": "https://bancodecomercio.com.ar/plazo-fijo-web"
   },
   {
@@ -149,14 +149,14 @@
   {
     "entidad": "BANCO MARIVA S.A.",
     "logo": "http://www.bcra.gob.ar/archivos/Imagenes/logosbancos/00254.png",
-    "tnaClientes": 0.225,
-    "tnaNoClientes": 0.2,
+    "tnaClientes": 0.23,
+    "tnaNoClientes": 0.23,
     "enlace": "https://pfweb.mariva.com.ar/"
   },
   {
     "entidad": "BANCO MASVENTAS S.A.",
     "logo": "http://www.bcra.gob.ar/archivos/Imagenes/logosbancos/00341.png",
-    "tnaClientes": 0.19,
+    "tnaClientes": 0.21,
     "tnaNoClientes": 0.19,
     "enlace": "https://www.bancomasventas.com.ar/personas/inversiones/plazo-fijo-web"
   },
@@ -177,8 +177,8 @@
   {
     "entidad": "BANCO VOII S.A.",
     "logo": "http://www.bcra.gob.ar/archivos/Imagenes/logosbancos/00312.png",
-    "tnaClientes": 0.2275,
-    "tnaNoClientes": 0.2275,
+    "tnaClientes": 0.23,
+    "tnaNoClientes": 0.23,
     "enlace": "https://www.voii.com.ar/plazo-fijo-web/",
     "tasas": [
       {
@@ -186,28 +186,28 @@
         "montoMaximo": 999999,
         "plazoMinDias": 30,
         "plazoMaxDias": 44,
-        "tna": 0.2275
+        "tna": 0.23
       },
       {
         "montoMinimo": 1000000,
         "montoMaximo": null,
         "plazoMinDias": 30,
         "plazoMaxDias": 44,
-        "tna": 0.2275
+        "tna": 0.23
       },
       {
         "montoMinimo": null,
         "montoMaximo": null,
         "plazoMinDias": 45,
         "plazoMaxDias": 59,
-        "tna": 0.2175
+        "tna": 0.22
       },
       {
         "montoMinimo": null,
         "montoMaximo": null,
         "plazoMinDias": 60,
         "plazoMaxDias": 89,
-        "tna": 0.2075
+        "tna": 0.21
       },
       {
         "montoMinimo": null,
@@ -231,8 +231,8 @@
         "tna": 0.18
       }
     ],
-    "condiciones": "TNA de 30 a 44 días de plazo. Hasta $999.999, TNA 22.75 % y su equivalente TEA 25.28 %. Igual o mayor a $1.000.000, TNA 22.75 % y su equivalente TEA 25.28 %. Si el vencimiento del plazo del depósito solicitado acaeciera un día inhábil bancario, su vencimiento se prorrogará automáticamente hasta el día hábil bancario siguiente. En dicho caso, la tasa aplicable será aquella que corresponda al plazo prorrogado conforme a las tasas vigentes y publicadas al momento de su constitución. Los depósitos en pesos y en moneda extranjera cuentan con la garantía de hasta $ 50.000.000. En las operaciones a nombre de dos o más personas, la garantía se prorrateará entre sus titulares. En ningún caso, el total de la garantía por persona y por depósito podrá exceder de $ 50.000.000, cualquiera sea el número de cuentas y/o depósitos. Ley 24.485, Decreto 540/95 y Com. “A” 2337 y sus modificatorias y complementarias. Se encuentran excluidos los captados a tasas superiores a la de referencia conforme a los límites establecidos por el Banco Central, los adquiridos por endoso y los efectuados por personas vinculadas a la entidad financiera.",
-    "condicionesCorto": "TNA 22.75% para plazos de 30 a 44 días."
+    "condiciones": "TNA 23.00% hasta $999.999 y TNA 23.00% desde $1.000.000. Plazo de 30 a 44 días. Los depósitos en pesos y en moneda extranjera cuentan con la garantía de hasta $50.000.000. Ley 24.485, Decreto 540/95 y Com. “A” 2337 y sus modificatorias.",
+    "condicionesCorto": "TNA 23% para plazos de 30 a 44 días."
   },
   {
     "entidad": "BIBANK S.A.",
