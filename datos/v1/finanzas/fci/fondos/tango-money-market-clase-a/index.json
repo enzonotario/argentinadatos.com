@@ -1,0 +1,82 @@
+{
+  "fondoId": "1823",
+  "claseId": "6263",
+  "nombre": "Tango Money Market - Clase A",
+  "fecha": "2026-08-27",
+  "administradora": "Tango Asset Management S.A.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": "Dinámico",
+  "region": "Argentina",
+  "benchmark": "Badlar",
+  "horizonte": "Corto Plazo",
+  "duracion": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1867",
+  "patrimonio": 1649104807.5,
+  "cantidadCuotapartes": 1547727068.68,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 0,
+  "rendimientos": {
+    "valorCuotaparte": 1065.501,
+    "variacionDiariaPct": 0.049,
+    "ultimos7Dias": 0.359,
+    "unMes": 1.6116,
+    "noventaDias": 4.7175,
+    "cientoOchentaDias": null,
+    "enElAnio": null,
+    "doceMeses": null
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 44.6
+    },
+    {
+      "nombre": "Cta Cte $ Rem Bco de Valo",
+      "porcentaje": 19.2
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Galicia",
+      "porcentaje": 12.6
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Santander Ri",
+      "porcentaje": 12.4
+    },
+    {
+      "nombre": "Cta Cte $ Rem Bco Patagonia",
+      "porcentaje": 11.2
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Standard and Poors",
+      "calificacion": "raAAA",
+      "fecha": "2026-06-10"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.25,
+    "honorarioDepositaria": 0.22,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Tango Asset Management S.A.",
+      "logo": null
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}
