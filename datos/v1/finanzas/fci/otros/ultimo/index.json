@@ -61,7 +61,7 @@
     "tope": 2000000,
     "fecha": "2026-08-29",
     "condiciones": "**CUENTA REMUNERADA EN PESOS**\nBENEFICIO CONSISTENTE EN LA REMUNERACIÓN DIARIA Y AUTOMÁTICA DEL SALDO DISPONIBLE EN LA CUENTA SUELDO DEL TITULAR. SE REMUNERA HASTA LA SUMA MÁXIMA DE $2.000.000,00.- (PESOS DOS MILLONES) A UNA TASA NOMINAL ANUAL DE 14,00% (TNA), TASA EFECTIVA ANUAL 15,0243%(TEA). EN CASO DE QUE EL SALDO DEPOSITADO SUPERE ESE MONTO, LOS INTERESES SERÁN CALCULADOS ÚNICAMENTE POR LOS PRIMEROS $2.000.000,00.- VÁLIDO EN LA REPÚBLICA ARGENTINA EXCLUSIVO PARA CLIENTES DE CARTERA CONSUMO TITULARES O COTITULARES DE UNA CUENTA SUELDO. NO SE REMUNERAN CUENTAS EN ESTADO BLOQUEADO Y/O CON EMBARGOS VIGENTES. LA TASA NOMINAL ANUAL (TNA) Y EL SALDO MÁXIMO A REMUNERAR PODRÁN SER MODIFICADOS, RESERVÁNDOSE EL BANCO EL DERECHO DE MODIFICAR, SUSPENDER O CANCELAR EL BENEFICIO EN CUALQUIER MOMENTO. DICHAS MODIFICACIONES SERÁN COMUNICADAS POR LOS MEDIOS HABILITADOS POR EL BANCO A TAL EFECTO. VIGENCIA DEL BENEFICIO DESDE EL 10/04/2026 AL 31/12/2026. BANCO DE LA NACIÓN ARGENTINA - BARTOLOMÉ MITRE 326, CABA - CUIT 30-50001091-2.",
-    "condicionesCorto": "Aplica para clientes de cuenta sueldo en Argentina.",
+    "condicionesCorto": "Clientes que tengan cuenta sueldo en BNA.",
     "plazoMinDias": null,
     "plazoMaxDias": null
   },
@@ -104,8 +104,8 @@
     "tea": 0.2213,
     "tope": 750000,
     "fecha": "2026-08-29",
-    "condiciones": "La bonificación puede ser modificada o descontinuada en cualquier momento. Sin fecha de vigencia garantizada.",
-    "condicionesCorto": "Bonificación sin fecha garantizada, puede cambiar o acabar.",
+    "condiciones": "La bonificación no tiene fecha de vigencia garantizada y puede ser modificada o descontinuada en cualquier momento.",
+    "condicionesCorto": "Bonificación sin fecha de vigencia garantizada.",
     "plazoMinDias": null,
     "plazoMaxDias": null
   },
@@ -138,7 +138,7 @@
     "tope": 30000000,
     "fecha": "2026-08-29",
     "condiciones": "Frascos te permite guardar hasta $ 30.000.000 y generar rendimientos. Podés mantener tu dinero creciendo durante 7, 14 o 28 días, con distintos porcentajes de TNA.",
-    "condicionesCorto": "Plazo elegible entre 7 y 28 días.",
+    "condicionesCorto": "plazo elegible entre 7 y 28 días.",
     "plazoMinDias": 14,
     "plazoMaxDias": 27
   },
@@ -149,7 +149,7 @@
     "tope": 30000000,
     "fecha": "2026-08-29",
     "condiciones": "Frascos te permite guardar hasta $ 30.000.000 y generar rendimientos. Podés mantener tu dinero creciendo durante 7, 14 o 28 días, con distintos porcentajes de TNA.",
-    "condicionesCorto": "Plazo elegible entre 7 y 28 días.",
+    "condicionesCorto": "plazo elegible entre 7 y 28 días.",
     "plazoMinDias": 28,
     "plazoMaxDias": 28
   },
@@ -160,7 +160,7 @@
     "tope": 30000000,
     "fecha": "2026-08-29",
     "condiciones": "Frascos te permite guardar hasta $ 30.000.000 y generar rendimientos. Podés mantener tu dinero creciendo durante 7, 14 o 28 días, con distintos porcentajes de TNA.",
-    "condicionesCorto": "Plazo elegible entre 7 y 28 días.",
+    "condicionesCorto": "plazo elegible entre 7 y 28 días.",
     "plazoMinDias": 7,
     "plazoMaxDias": 13
   },
@@ -204,7 +204,7 @@
     "tope": 1000000,
     "fecha": "2026-08-29",
     "condiciones": "Si sumás $250.000 en ciertas operaciones este mes, tu tasa sube hasta 21% TNA.",
-    "condicionesCorto": "Acumulá $250.000 entre inversiones y consumos para acceder a la tasa Plus 1 el próximo mes",
+    "condicionesCorto": "Acumulá $250.000 entre operaciones para acceder a la tasa Plus 1.",
     "plazoMinDias": null,
     "plazoMaxDias": null
   },
@@ -215,7 +215,7 @@
     "tope": 1000000,
     "fecha": "2026-08-29",
     "condiciones": "Si sumás $500.000 sube hasta 24% TNA.",
-    "condicionesCorto": "Acumulá $500.000 entre inversiones y consumos para acceder a la tasa Plus 2 el próximo mes",
+    "condicionesCorto": "Acumulá $500.000 entre operaciones para acceder a la tasa Plus 2.",
     "plazoMinDias": null,
     "plazoMaxDias": null
   },
@@ -225,8 +225,8 @@
     "tea": 0,
     "tope": 50000000,
     "fecha": "2026-08-29",
-    "condiciones": "Los depósitos en pesos y en moneda extranjera cuentan con la garantía de hasta $ 50.000.000. En las operaciones a nombre de dos o más personas, la garantía se prorrateará entre sus titulares. En ningún caso, el total de la garantía por persona y por depósito podrá exceder de $ 50.000.000, cualquiera sea el número de cuentas y/o depósitos. Ley 24.485, Decreto Nº 540/95 y modificatorios y Com. “A” 2337 y sus modificatorias y complementarias.",
-    "condicionesCorto": "Caja de ahorro sin costo, garantía de $50.000.000.",
+    "condiciones": "Los fondos en pesos que se acrediten en la Caja de Ahorros, estarán disponibles para su uso las 24 horas del día, los 365 días del año. Tasa de Interés Nominal Anual (TNA) de referencia 0%. Vigente desde el 25/08/2026. Sujeta a modificaciones. Los depósitos en pesos y en moneda extranjera cuentan con la garantía de hasta $ 50.000.000. En las operaciones a nombre de dos o más personas, la garantía se prorrateará entre sus titulares. En ningún caso, el total de la garantía por persona y por depósito podrá exceder de $ 50.000.000, cualquiera sea el número de cuentas y/o depósitos. Ley 24.485, Decreto Nº 540/95 y modificatorios y Com. “A” 2337 y sus modificatorias y complementarias. Se encuentran excluidos los captados a tasas superiores a la de referencia conforme a los límites establecidos por el Banco Central, los adquiridos por endoso y los efectuados por personas vinculadas a la entidad financiera. Las presentes términos y condiciones son suplementarios, deben ser leídos conjuntamente, y se integran, con los Términos y Condiciones Generales de Productos y Servicios del Banco.",
+    "condicionesCorto": "Caja de ahorro en pesos sin costo, acreditación instantánea.",
     "plazoMinDias": null,
     "plazoMaxDias": null
   }
