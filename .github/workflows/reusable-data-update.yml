@@ -28,7 +28,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          # >1 so concurrent data commits can rebase onto each other
+          # Tip de la rama al iniciar el job (no el SHA del trigger). Tras esperar
+          # en concurrency, el SHA del evento puede quedar atrás de main.
+          ref: ${{ github.ref_name }}
           fetch-depth: 50
 
       - name: Setup Node.js and pnpm
