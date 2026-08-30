@@ -18,11 +18,6 @@ on:
         type: string
         default: 'full'
 
-concurrency:
-  # Mismo grupo que los workflows caller (diario, fci, etc.) para serializar commits.
-  group: data-update-${{ github.ref_name }}
-  cancel-in-progress: false
-
 jobs:
   update:
     runs-on: ubuntu-latest
