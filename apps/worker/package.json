@@ -10,6 +10,7 @@
     "migrate:fresh": "node src/pocketbase/migrate.js --fresh"
   },
   "dependencies": {
+    "@argentinadatos/pocketbase": "workspace:*",
     "axios": "^1.13.2"
   }
 }

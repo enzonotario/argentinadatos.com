@@ -1,34 +1,17 @@
-import { MigrationRunner } from './migrations/migration-runner.js'
-import { crearClienteLibsql } from '@/utils/libsql.js'
-
-function mapFciOtrosRow(row) {
-  return {
-    id: row.id,
-    fondo: row.fondo,
-    tna: row.tna,
-    tea: row.tea,
-    tope: row.tope,
-    fecha: row.fecha,
-    condiciones: row.condiciones,
-    condicionesCorto: row.condicionesCorto,
-    plazoMinDias: row.plazoMinDias ?? null,
-    plazoMaxDias: row.plazoMaxDias ?? null,
-    timestamp: row.timestamp,
-  }
-}
+import {
+  FciOtrosRepository,
+  createPocketBaseClient,
+  runMigrations,
+} from '@argentinadatos/pocketbase'
 
 export class FciOtrosDatabaseService {
   constructor(url, authToken) {
-    this.db = crearClienteLibsql({
-      scope: 'fci-otros',
-      url,
-      authToken,
-    })
-    this.migrationRunner = new MigrationRunner(this.db, 'fci-otros')
+    this.pb = createPocketBaseClient(url, authToken)
+    this.repo = new FciOtrosRepository(this.pb)
   }
 
   async initialize() {
-    await this.migrationRunner.runPendingMigrations()
+    await runMigrations(this.pb)
   }
 
   async insertFciOtros(
@@ -43,138 +26,43 @@ export class FciOtrosDatabaseService {
     plazoMaxDias,
     timestamp,
   ) {
-    await this.db.execute({
-      sql: `
-        INSERT INTO fci_otros (
-          fondo, tna, tea, tope, fecha, condiciones, condicionesCorto,
-          plazoMinDias, plazoMaxDias, timestamp
-        )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-      `,
-      args: [
-        fondo,
-        tna,
-        tea,
-        tope,
-        fecha,
-        condiciones,
-        condicionesCorto,
-        plazoMinDias,
-        plazoMaxDias,
-        timestamp,
-      ],
-    })
+    return this.repo.insertFciOtros(
+      fondo,
+      tna,
+      tea,
+      tope,
+      fecha,
+      condiciones,
+      condicionesCorto,
+      plazoMinDias,
+      plazoMaxDias,
+      timestamp,
+    )
   }
 
   async getLatestFciOtrosByFondo(fondo) {
-    const resultado = await this.db.execute({
-      sql: `
-        SELECT id, fondo, tna, tea, tope, fecha, condiciones, condicionesCorto,
-               plazoMinDias, plazoMaxDias, timestamp
-        FROM fci_otros
-        WHERE fondo = ?
-        ORDER BY timestamp DESC, created_at DESC
-        LIMIT 1
-      `,
-      args: [fondo],
-    })
-
-    if (resultado.rows.length === 0) {
-      return null
-    }
-
-    return mapFciOtrosRow(resultado.rows[0])
+    return this.repo.getLatestFciOtrosByFondo(fondo)
   }
 
   async getAllLatestFciOtros() {
-    const resultado = await this.db.execute({
-      sql: `
-        SELECT c.*
-        FROM fci_otros c
-        INNER JOIN (
-          SELECT fondo, MAX(timestamp) AS max_timestamp
-          FROM fci_otros
-          GROUP BY fondo
-        ) latest ON c.fondo = latest.fondo
-          AND c.timestamp = latest.max_timestamp
-        ORDER BY c.fondo
-      `,
-    })
-
-    return resultado.rows.map(mapFciOtrosRow)
+    return this.repo.getAllLatestFciOtros()
   }
 
   async getFciOtrosByFecha(fecha) {
-    const resultado = await this.db.execute({
-      sql: `
-        SELECT c.*
-        FROM fci_otros c
-        INNER JOIN (
-          SELECT fondo, MAX(timestamp) AS max_timestamp
-          FROM fci_otros
-          WHERE fecha = ?
-          GROUP BY fondo
-        ) latest ON c.fondo = latest.fondo
-          AND c.timestamp = latest.max_timestamp
-        ORDER BY c.fondo
-      `,
-      args: [fecha],
-    })
-
-    return resultado.rows.map(mapFciOtrosRow)
+    return this.repo.getFciOtrosByFecha(fecha)
   }
 
   async getPenultimoFciOtros() {
-    const resultado = await this.db.execute({
-      sql: `
-        SELECT c.*
-        FROM fci_otros c
-        INNER JOIN (
-          SELECT fondo, MAX(timestamp) AS max_timestamp
-          FROM fci_otros c2
-          WHERE c2.timestamp < (
-            SELECT MAX(timestamp)
-            FROM fci_otros c3
-            WHERE c3.fondo = c2.fondo
-          )
-          GROUP BY fondo
-        ) penultimo ON c.fondo = penultimo.fondo
-          AND c.timestamp = penultimo.max_timestamp
-        ORDER BY c.fondo
-      `,
-    })
-
-    return resultado.rows.map(mapFciOtrosRow)
+    return this.repo.getPenultimoFciOtros()
   }
 
   async getHistorialPorFondo(fondo) {
-    const resultado = await this.db.execute({
-      sql: `
-        SELECT id, fondo, tna, tea, tope, fecha, condiciones, condicionesCorto,
-               plazoMinDias, plazoMaxDias, timestamp
-        FROM fci_otros
-        WHERE fondo = ?
-        ORDER BY fecha ASC, timestamp ASC
-      `,
-      args: [fondo],
-    })
-
-    return resultado.rows.map(mapFciOtrosRow)
+    return this.repo.getHistorialPorFondo(fondo)
   }
 
   async getAllFondos() {
-    const resultado = await this.db.execute({
-      sql: `
-        SELECT DISTINCT fondo
-        FROM fci_otros
-        ORDER BY fondo
-      `,
-    })
-
-    return resultado.rows.map(row => row.fondo)
+    return this.repo.getAllFondos()
   }
 
-  close() {
-    this.db.close()
-  }
+  close() {}
 }

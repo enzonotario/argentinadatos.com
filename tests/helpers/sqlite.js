@@ -2,6 +2,10 @@ import { mkdtempSync, rmSync } from 'node:fs'
 import { join } from 'node:path'
 import { tmpdir } from 'node:os'
 
+/**
+ * Backend temporal para tests de guardado.
+ * `file:` se resuelve a PocketBase in-memory (@argentinadatos/pocketbase).
+ */
 export function crearBaseDeDatosTemporal(scope = 'test') {
   const directorio = mkdtempSync(join(tmpdir(), 'esjs-argentina-datos-api-'))
   const ruta = join(directorio, `${scope}.sqlite`)

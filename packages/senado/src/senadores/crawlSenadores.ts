@@ -118,11 +118,11 @@ async function processJson() {
     writeEndpoint('/senado/senadores', senadoresConFotos)
   }
 
-  const TURSO_DATABASE_URL = process.env.VITE_TURSO_DATABASE_URL
-  const TURSO_AUTH_TOKEN = process.env.VITE_TURSO_AUTH_TOKEN
+  const POCKETBASE_URL = process.env.POCKETBASE_URL
+  const POCKETBASE_TOKEN = process.env.POCKETBASE_TOKEN
 
-  if (TURSO_DATABASE_URL && TURSO_AUTH_TOKEN && shouldWriteFromDatabase()) {
-    const db = new SenadoresDatabaseService(TURSO_DATABASE_URL, TURSO_AUTH_TOKEN)
+  if (POCKETBASE_TOKEN && shouldWriteFromDatabase()) {
+    const db = new SenadoresDatabaseService(POCKETBASE_URL, POCKETBASE_TOKEN)
 
     try {
       await db.initialize()
@@ -422,11 +422,11 @@ async function processWeb(): Promise<Senador[]> {
     writeEndpoint('/senado/senadores', senadores)
   }
 
-  const TURSO_DATABASE_URL = process.env.VITE_TURSO_DATABASE_URL
-  const TURSO_AUTH_TOKEN = process.env.VITE_TURSO_AUTH_TOKEN
+  const POCKETBASE_URL = process.env.POCKETBASE_URL
+  const POCKETBASE_TOKEN = process.env.POCKETBASE_TOKEN
 
-  if (TURSO_DATABASE_URL && TURSO_AUTH_TOKEN && shouldWriteFromDatabase()) {
-    const db = new SenadoresDatabaseService(TURSO_DATABASE_URL, TURSO_AUTH_TOKEN)
+  if (POCKETBASE_TOKEN && shouldWriteFromDatabase()) {
+    const db = new SenadoresDatabaseService(POCKETBASE_URL, POCKETBASE_TOKEN)
 
     try {
       await db.initialize()
@@ -455,11 +455,11 @@ async function persistSenadores(senadores: Senador[]): Promise<void> {
     writeEndpoint('/senado/senadores', senadores)
   }
 
-  const TURSO_DATABASE_URL = process.env.VITE_TURSO_DATABASE_URL
-  const TURSO_AUTH_TOKEN = process.env.VITE_TURSO_AUTH_TOKEN
+  const POCKETBASE_URL = process.env.POCKETBASE_URL
+  const POCKETBASE_TOKEN = process.env.POCKETBASE_TOKEN
 
-  if (TURSO_DATABASE_URL && TURSO_AUTH_TOKEN && shouldWriteFromDatabase()) {
-    const db = new SenadoresDatabaseService(TURSO_DATABASE_URL, TURSO_AUTH_TOKEN)
+  if (POCKETBASE_TOKEN && shouldWriteFromDatabase()) {
+    const db = new SenadoresDatabaseService(POCKETBASE_URL, POCKETBASE_TOKEN)
 
     try {
       await db.initialize()

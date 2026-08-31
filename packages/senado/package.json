@@ -12,7 +12,7 @@
     "test:run": "vitest --run"
   },
   "dependencies": {
-    "@libsql/client": "^0.15.15"
+    "@argentinadatos/pocketbase": "workspace:*"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.3.0",

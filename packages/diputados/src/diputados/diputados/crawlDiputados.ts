@@ -146,11 +146,11 @@ export async function crawlDiputados(): Promise<Diputado[]> {
     console.error('Periodos: no se pudo scrapear', e?.message || e)
   }
 
-  const TURSO_DATABASE_URL = process.env.VITE_TURSO_DATABASE_URL
-  const TURSO_AUTH_TOKEN = process.env.VITE_TURSO_AUTH_TOKEN
+  const POCKETBASE_URL = process.env.POCKETBASE_URL
+  const POCKETBASE_TOKEN = process.env.POCKETBASE_TOKEN
 
-  if (TURSO_DATABASE_URL && TURSO_AUTH_TOKEN && shouldWriteFromDatabase()) {
-    const db = new DiputadosDatabaseService(TURSO_DATABASE_URL, TURSO_AUTH_TOKEN)
+  if (POCKETBASE_TOKEN && shouldWriteFromDatabase()) {
+    const db = new DiputadosDatabaseService(POCKETBASE_URL, POCKETBASE_TOKEN)
 
     try {
       await db.initialize()

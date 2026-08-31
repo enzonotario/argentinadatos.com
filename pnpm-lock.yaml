@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@argentinadatos/pocketbase':
+        specifier: workspace:*
+        version: link:packages/pocketbase
       '@libsql/client':
         specifier: ^0.15.15
         version: 0.15.15
@@ -104,6 +107,9 @@ importers:
 
   apps/worker:
     dependencies:
+      '@argentinadatos/pocketbase':
+        specifier: workspace:*
+        version: link:../../packages/pocketbase
       axios:
         specifier: ^1.13.2
         version: 1.19.0
@@ -189,9 +195,9 @@ importers:
 
   packages/diputados:
     dependencies:
-      '@libsql/client':
-        specifier: ^0.15.15
-        version: 0.15.15
+      '@argentinadatos/pocketbase':
+        specifier: workspace:*
+        version: link:../pocketbase
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^4.3.0
@@ -236,6 +242,12 @@ importers:
         specifier: ^3.0.6
         version: 3.1.1(@types/debug@4.1.12)(@types/node@22.14.0)(jiti@2.7.0)(lightningcss@1.32.0)(yaml@2.8.3)
 
+  packages/pocketbase:
+    dependencies:
+      axios:
+        specifier: ^1.13.2
+        version: 1.19.0
+
   packages/proxy:
     devDependencies:
       '@cloudflare/workers-types':
@@ -250,9 +262,9 @@ importers:
 
   packages/senado:
     dependencies:
-      '@libsql/client':
-        specifier: ^0.15.15
-        version: 0.15.15
+      '@argentinadatos/pocketbase':
+        specifier: workspace:*
+        version: link:../pocketbase
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^4.3.0
