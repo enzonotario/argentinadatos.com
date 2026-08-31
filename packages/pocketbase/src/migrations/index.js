@@ -6,6 +6,7 @@ import * as fciOtros from './006_fci_otros.js'
 import * as fciVariables from './007_fci_variables.js'
 import * as remExpectativas from './008_rem_expectativas.js'
 import * as congreso from './009_congreso.js'
+import * as relaxZeroNumbers from './010_relax_zero_numbers.js'
 
 /** Orden estricto de migraciones PocketBase. */
 export const migrations = [
@@ -17,4 +18,5 @@ export const migrations = [
   fciVariables,
   remExpectativas,
   congreso,
+  relaxZeroNumbers,
 ]

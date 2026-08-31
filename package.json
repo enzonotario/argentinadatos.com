@@ -52,6 +52,7 @@
     "pb:migrate:fresh": "node packages/pocketbase/src/migrate.js --fresh",
     "pb:export-turso": "node scripts/turso-export.js",
     "pb:import-turso": "node scripts/pb-import-turso.js",
+    "pb:import-turso:fresh": "node scripts/pb-import-turso.js --fresh",
     "seed:fci-otros": "node scripts/seed-fci-otros.js",
     "procesar-dolares": "node scripts/procesar-dolares.js todos"
   },

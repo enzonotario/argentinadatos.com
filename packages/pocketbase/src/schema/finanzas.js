@@ -25,7 +25,8 @@ export const CRIPTOPESOS_COLLECTION = {
   fields: [
     textField('token', { required: true }),
     textField('entidad', { required: true }),
-    numberField('tna', { required: true }),
+    // required:false — PocketBase trata 0 como blank en number required
+    numberField('tna'),
     textField('timestamp', { required: true }),
   ],
   indexes: [
@@ -42,7 +43,7 @@ export const CUENTAS_REMUNERADAS_USD_COLLECTION = {
   ...PRIVATE_RULES,
   fields: [
     textField('entidad', { required: true }),
-    numberField('tasa', { required: true }),
+    numberField('tasa'),
     numberField('tope'),
     textField('timestamp', { required: true }),
   ],
@@ -58,8 +59,8 @@ export const FCI_OTROS_COLLECTION = {
   ...PRIVATE_RULES,
   fields: [
     textField('fondo', { required: true }),
-    numberField('tna', { required: true }),
-    numberField('tea', { required: true }),
+    numberField('tna'),
+    numberField('tea'),
     numberField('tope'),
     textField('fecha', { required: true }),
     textField('condiciones'),
@@ -83,8 +84,8 @@ export const FCI_VARIABLES_COLLECTION = {
     textField('nombre'),
     textField('fondo', { required: true }),
     textField('tipo'),
-    numberField('tna', { required: true }),
-    numberField('tea', { required: true }),
+    numberField('tna'),
+    numberField('tea'),
     numberField('tope'),
     textField('fecha', { required: true }),
     textField('condiciones'),
