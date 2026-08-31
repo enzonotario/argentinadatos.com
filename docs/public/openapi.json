@@ -1303,6 +1303,7 @@
       "get": {
         "summary": "Senadores",
         "tags": [
+          "Congreso",
           "Senado"
         ],
         "description": "Devuelve los senadores.",
@@ -1331,6 +1332,7 @@
       "get": {
         "summary": "Comisiones",
         "tags": [
+          "Congreso",
           "Senado"
         ],
         "description": "Devuelve las comisiones del Senado con su tipo e integrantes (senadores y, en bicamerales, diputados).",
@@ -1359,6 +1361,7 @@
       "get": {
         "summary": "Presidencia del Senado",
         "tags": [
+          "Congreso",
           "Senado"
         ],
         "description": "Devuelve los datos del presidente actual del Senado (vicepresidente de la Nación en ejercicio), scrapeados de la página oficial de Presidencia.",
@@ -1384,6 +1387,7 @@
       "get": {
         "summary": "Viajes nacionales e internacionales",
         "tags": [
+          "Congreso",
           "Senado"
         ],
         "description": "Devuelve el índice completo de viajes (documentos PDF + listados nacionales e internacionales). También hay recortes en `/v1/senado/viajes/nacionales`, `/v1/senado/viajes/internacionales` y `/v1/senado/senadores/{id}/viajes`.",
@@ -1409,6 +1413,7 @@
       "get": {
         "summary": "Viajes nacionales",
         "tags": [
+          "Congreso",
           "Senado"
         ],
         "description": "Devuelve todos los tramos aéreos nacionales parseados.",
@@ -1437,6 +1442,7 @@
       "get": {
         "summary": "Viajes nacionales por año",
         "tags": [
+          "Congreso",
           "Senado"
         ],
         "description": "Devuelve los tramos aéreos nacionales del año indicado.",
@@ -1478,6 +1484,7 @@
       "get": {
         "summary": "Viajes nacionales por año y mes",
         "tags": [
+          "Congreso",
           "Senado"
         ],
         "description": "Devuelve los tramos aéreos nacionales del mes indicado (1–12).",
@@ -1530,6 +1537,7 @@
       "get": {
         "summary": "Viajes internacionales",
         "tags": [
+          "Congreso",
           "Senado"
         ],
         "description": "Devuelve todos los viajes oficiales internacionales parseados.",
@@ -1558,6 +1566,7 @@
       "get": {
         "summary": "Viajes internacionales por año",
         "tags": [
+          "Congreso",
           "Senado"
         ],
         "description": "Devuelve los viajes oficiales internacionales del año indicado.",
@@ -1599,6 +1608,7 @@
       "get": {
         "summary": "Viajes de un senador",
         "tags": [
+          "Congreso",
           "Senado"
         ],
         "description": "Devuelve los viajes nacionales e internacionales asociados a un senador (`senadorId`).",
@@ -1635,6 +1645,7 @@
       "get": {
         "summary": "Comisión por id",
         "tags": [
+          "Congreso",
           "Senado"
         ],
         "description": "Devuelve el detalle de una comisión del Senado con sus integrantes.",
@@ -1671,6 +1682,7 @@
       "get": {
         "summary": "Comisiones de un senador",
         "tags": [
+          "Congreso",
           "Senado"
         ],
         "description": "Devuelve las comisiones en las que participa un senador (id, nombre y cargo).",
@@ -1721,6 +1733,7 @@
       "get": {
         "summary": "Actas por año",
         "tags": [
+          "Congreso",
           "Senado"
         ],
         "description": "Devuelve las actas del Senado del año indicado.",
@@ -1763,6 +1776,7 @@
       "get": {
         "summary": "Actas",
         "tags": [
+          "Congreso",
           "Senado"
         ],
         "description": "Devuelve las actas del Senado.",
@@ -1791,6 +1805,7 @@
       "get": {
         "summary": "Diputados",
         "tags": [
+          "Congreso",
           "Diputados"
         ],
         "description": "Devuelve los diputados.",
@@ -1819,6 +1834,7 @@
       "get": {
         "summary": "Períodos parlamentarios",
         "tags": [
+          "Congreso",
           "Diputados"
         ],
         "description": "Períodos parlamentarios oficiales de la HCDN (dataset `periodos_p`). Cada ítem agrega los tramos ordinario/extraordinario/prórroga en un rango `inicio`–`fin`. La clave `periodo` coincide con `acta.periodo`. También `/v1/diputados/periodos/lista`.",
@@ -1844,6 +1860,7 @@
       "get": {
         "summary": "Períodos parlamentarios (lista)",
         "tags": [
+          "Congreso",
           "Diputados"
         ],
         "description": "Lista de períodos (sin metadatos de fuente).",
@@ -1872,6 +1889,7 @@
       "get": {
         "summary": "Misiones oficiales de diputados",
         "tags": [
+          "Congreso",
           "Diputados"
         ],
         "description": "Índice de misiones oficiales al exterior (CSVs `misiones-oficiales`): `fuente`, `actualizado`, `recursos` y `misiones`. También `/v1/diputados/misiones/lista`, `/v1/diputados/misiones/{año}` y `/v1/diputados/diputados/{id}/misiones`.",
@@ -1897,6 +1915,7 @@
       "get": {
         "summary": "Misiones oficiales (lista)",
         "tags": [
+          "Congreso",
           "Diputados"
         ],
         "description": "Lista plana de misiones oficiales parseadas.",
@@ -1925,6 +1944,7 @@
       "get": {
         "summary": "Misiones oficiales por año",
         "tags": [
+          "Congreso",
           "Diputados"
         ],
         "description": "Misiones oficiales del año indicado.",
@@ -1964,6 +1984,7 @@
       "get": {
         "summary": "Misiones de un diputado",
         "tags": [
+          "Congreso",
           "Diputados"
         ],
         "description": "Misiones oficiales asociadas a un diputado.",
@@ -2000,6 +2021,7 @@
       "get": {
         "summary": "Viajes nacionales de diputados",
         "tags": [
+          "Congreso",
           "Diputados"
         ],
         "description": "Índice de viajes nacionales de diputados (CSVs `viajes-nacionales`). También hay recortes en `/v1/diputados/viajes/nacionales`, `/v1/diputados/viajes/conteo-12m` y `/v1/diputados/diputados/{id}/viajes`. Las misiones oficiales al exterior están en `/v1/diputados/misiones`.",
@@ -2025,6 +2047,7 @@
       "get": {
         "summary": "Viajes nacionales (lista)",
         "tags": [
+          "Congreso",
           "Diputados"
         ],
         "description": "Todos los tramos nacionales parseados desde los CSV semestrales.",
@@ -2053,6 +2076,7 @@
       "get": {
         "summary": "Conteo de viajes (últimos 12 meses)",
         "tags": [
+          "Congreso",
           "Diputados"
         ],
         "description": "Cantidad de tramos nacionales por diputado en la ventana móvil de 12 meses.",
@@ -2078,6 +2102,7 @@
       "get": {
         "summary": "Viajes de un diputado",
         "tags": [
+          "Congreso",
           "Diputados"
         ],
         "description": "Tramos nacionales asociados a un diputado.",
@@ -2114,6 +2139,7 @@
       "get": {
         "summary": "Comisiones de diputados",
         "tags": [
+          "Congreso",
           "Diputados"
         ],
         "description": "Comisiones de la HCDN con tipología e integrantes. También `/v1/diputados/comisiones/{id}` y `/v1/diputados/diputados/{id}/comisiones`.",
@@ -2142,6 +2168,7 @@
       "get": {
         "summary": "Comisión de diputados por ID",
         "tags": [
+          "Congreso",
           "Diputados"
         ],
         "description": "Detalle de una comisión e integrantes.",
@@ -2177,6 +2204,7 @@
       "get": {
         "summary": "Comisiones de un diputado",
         "tags": [
+          "Congreso",
           "Diputados"
         ],
         "description": "Membresías de comisiones asociadas a un diputado.",
@@ -2227,6 +2255,7 @@
       "get": {
         "summary": "Actas por año",
         "tags": [
+          "Congreso",
           "Diputados"
         ],
         "description": "Devuelve las actas de Diputados del año indicado.",
@@ -2269,6 +2298,7 @@
       "get": {
         "summary": "Actas",
         "tags": [
+          "Congreso",
           "Diputados"
         ],
         "description": "Devuelve las actas de Diputados.",

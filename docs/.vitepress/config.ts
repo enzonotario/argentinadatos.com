@@ -185,25 +185,22 @@ export default defineConfig({
         ],
       },
       {
-        text: 'Senado',
+        text: 'Congreso',
         items: [
-          addDocsPrefix(
-            sidebar.generateSidebarGroup({
-              tag: 'Senado',
-              text: '',
+          addDocsPrefix({
+            ...sidebar.generateSidebarGroup({
+              tag: ['Congreso', 'Senado'],
+              text: 'Senado',
             }),
-          ),
-        ],
-      },
-      {
-        text: 'Diputados',
-        items: [
-          addDocsPrefix(
-            sidebar.generateSidebarGroup({
-              tag: 'Diputados',
-              text: '',
+            collapsed: true,
+          }),
+          addDocsPrefix({
+            ...sidebar.generateSidebarGroup({
+              tag: ['Congreso', 'Diputados'],
+              text: 'Diputados',
             }),
-          ),
+            collapsed: true,
+          }),
         ],
       },
       {
