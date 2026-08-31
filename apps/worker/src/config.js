@@ -24,13 +24,13 @@ export function getIolCredentials() {
 }
 
 export function getPocketBaseConfig() {
-  const url = (readEnv('POCKETBASE_URL') || 'https://db.argentinadatos.com').replace(
-    /\/+$/,
-    '',
-  )
-  const token = readEnv('POCKETBASE_TOKEN')
+  const url = (
+    readEnv('POCKETBASE_URL', 'VITE_POCKETBASE_URL') ||
+    'https://db.argentinadatos.com'
+  ).replace(/\/+$/, '')
+  const token = readEnv('POCKETBASE_TOKEN', 'VITE_POCKETBASE_TOKEN')
   if (!token) {
-    throw new Error('Missing POCKETBASE_TOKEN')
+    throw new Error('Missing POCKETBASE_TOKEN (o VITE_POCKETBASE_TOKEN)')
   }
   return { url, token }
 }

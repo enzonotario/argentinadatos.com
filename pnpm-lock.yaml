@@ -247,6 +247,9 @@ importers:
       axios:
         specifier: ^1.13.2
         version: 1.19.0
+      dotenv:
+        specifier: ^16.6.1
+        version: 16.6.1
 
   packages/proxy:
     devDependencies:

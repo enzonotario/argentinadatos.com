@@ -13,12 +13,13 @@ function readEnv(...names) {
 export function getPocketBaseConfig(overrides = {}) {
   const url = (
     overrides.url ||
-    readEnv('POCKETBASE_URL') ||
+    readEnv('POCKETBASE_URL', 'VITE_POCKETBASE_URL') ||
     'https://db.argentinadatos.com'
   ).replace(/\/+$/, '')
-  const token = overrides.token || readEnv('POCKETBASE_TOKEN')
+  const token =
+    overrides.token || readEnv('POCKETBASE_TOKEN', 'VITE_POCKETBASE_TOKEN')
   if (!token) {
-    throw new Error('Missing POCKETBASE_TOKEN')
+    throw new Error('Missing POCKETBASE_TOKEN (o VITE_POCKETBASE_TOKEN)')
   }
   return { url, token }
 }
@@ -27,7 +28,7 @@ export function getPocketBaseConfig(overrides = {}) {
  * Resuelve cliente PB:
  * - `file:` / `memory:` → store en memoria (tests)
  * - url+token HTTP explícitos → ese PB
- * - sin args / libsql/turso → POCKETBASE_* de entorno
+ * - sin args → POCKETBASE_* / VITE_POCKETBASE_* de entorno
  */
 export function shouldUseMemoryBackend(url) {
   return (

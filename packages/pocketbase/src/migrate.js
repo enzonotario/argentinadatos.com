@@ -1,9 +1,15 @@
-import { pathToFileURL } from 'node:url'
+import { pathToFileURL, fileURLToPath } from 'node:url'
+import { dirname, resolve } from 'node:path'
+import { config as loadDotenv } from 'dotenv'
 import { createPocketBaseClient } from './client.js'
 import { appliedAtNow } from './dates.js'
 import { PRIVATE_RULES, dateField, textField } from './schema/fields.js'
 import { migrations } from './migrations/index.js'
 import { listAllRecords } from './records.js'
+
+const thisDir = dirname(fileURLToPath(import.meta.url))
+const repoRoot = resolve(thisDir, '../../..')
+loadDotenv({ path: resolve(repoRoot, '.env') })
 
 const MIGRATIONS_COLLECTION = {
   name: 'worker_migrations',

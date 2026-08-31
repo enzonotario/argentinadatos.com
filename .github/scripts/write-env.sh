@@ -11,8 +11,13 @@ write_if_set() {
 
 : > .env
 
-write_if_set POCKETBASE_URL "${POCKETBASE_URL:-}"
-write_if_set POCKETBASE_TOKEN "${POCKETBASE_TOKEN:-}"
+# PocketBase: escribir ambos nombres (worker/static-api + Vite SSR embebido)
+pb_url="${POCKETBASE_URL:-${VITE_POCKETBASE_URL:-}}"
+pb_token="${POCKETBASE_TOKEN:-${VITE_POCKETBASE_TOKEN:-}}"
+write_if_set POCKETBASE_URL "$pb_url"
+write_if_set POCKETBASE_TOKEN "$pb_token"
+write_if_set VITE_POCKETBASE_URL "$pb_url"
+write_if_set VITE_POCKETBASE_TOKEN "$pb_token"
 write_if_set VITE_FIRECRAWL_BASE_URL "${VITE_FIRECRAWL_BASE_URL:-}"
 write_if_set VITE_FIRECRAWL_API_KEY "${VITE_FIRECRAWL_API_KEY:-}"
 write_if_set VITE_PROXY_URL "${VITE_PROXY_URL:-}"
