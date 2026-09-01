@@ -1,0 +1,118 @@
+{
+  "fondoId": "165",
+  "claseId": "3979",
+  "nombre": "Fima Balanceado - Clase C",
+  "fecha": "2026-08-31",
+  "administradora": "Galicia Asset Management S.A.U.",
+  "depositaria": "Banco de Galicia y Buenos Aires S.A.",
+  "tipoRenta": "Mercado de Dinero",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Mediano Plazo",
+  "duracion": "No Aplicable",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "212",
+  "patrimonio": 12776659324.2,
+  "cantidadCuotapartes": 1779287183.89,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 7180.774,
+    "variacionDiariaPct": 0.045,
+    "ultimos7Dias": 0.1188,
+    "unMes": 1.3051,
+    "noventaDias": 5.9508,
+    "cientoOchentaDias": 9.0951,
+    "enElAnio": 7.4351,
+    "doceMeses": 21.0695
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Fut Rofex DLR082026",
+      "porcentaje": 48.2
+    },
+    {
+      "nombre": "Fut Rofex DLR072026",
+      "porcentaje": 24.4
+    },
+    {
+      "nombre": "Letra Tamar TEM TMF27",
+      "porcentaje": 17.8
+    },
+    {
+      "nombre": "Lecap S31G6",
+      "porcentaje": 13
+    },
+    {
+      "nombre": "Lecap S30S6",
+      "porcentaje": 11.4
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TZV27",
+      "porcentaje": 10.3
+    },
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 7.2
+    },
+    {
+      "nombre": "FF Mercado Credito 44 CA",
+      "porcentaje": 7.2
+    },
+    {
+      "nombre": "Bono Dual TTS26",
+      "porcentaje": 7.1
+    },
+    {
+      "nombre": "Bono Prov Mendoza TAMAR C2",
+      "porcentaje": 6.6
+    },
+    {
+      "nombre": "Bono Boncer TZXD7",
+      "porcentaje": 4.7
+    },
+    {
+      "nombre": "Bono Boncer TZXS7",
+      "porcentaje": 4.5
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional T15E7",
+      "porcentaje": 3.9
+    },
+    {
+      "nombre": "Lecap S13N6",
+      "porcentaje": 2.6
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "BBB(arg)v",
+      "fecha": "2026-08-31"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 1.5254,
+    "honorarioDepositaria": 0.2692,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Galicia Asset Management S.A.U.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00002G-01a59b57.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Galicia y Buenos Aires S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00081-d14fcb5c.jpg"
+    }
+  ]
+}

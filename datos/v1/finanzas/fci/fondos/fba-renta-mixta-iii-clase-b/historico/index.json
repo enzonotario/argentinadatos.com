@@ -2,7 +2,7 @@
   "fondoId": "1883",
   "claseId": "6518",
   "nombre": "FBA Renta Mixta III - Clase B",
-  "fechaActualizacion": "2026-08-31T20:13:18.000Z",
+  "fechaActualizacion": "2026-09-01T14:55:23.000Z",
   "historico": [
     {
       "slug": "fba-renta-mixta-iii-clase-b",
@@ -1122,6 +1122,22 @@
       "retornoDiario": 0.021814,
       "retornoAcumulado": 2.2515,
       "flujoEstimado": -0.61286,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "fba-renta-mixta-iii-clase-b",
+      "fondoId": "1883",
+      "claseId": "6518",
+      "nombre": "FBA Renta Mixta III - Clase B",
+      "fecha": "2026-08-31",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 1023.182,
+      "patrimonio": 1023181.82,
+      "retornoDiario": 0.065231,
+      "retornoAcumulado": 2.3182,
+      "flujoEstimado": 0.05339,
       "origen": "cnv-excel"
     }
   ]
