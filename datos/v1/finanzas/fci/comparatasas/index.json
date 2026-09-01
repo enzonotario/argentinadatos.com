@@ -8937,6 +8937,124 @@
     },
     {
       "fondoId": "1212",
+      "claseId": "6161",
+      "nombre": "Vinci Compass Liquidez - Clase E",
+      "fecha": "2026-08-31",
+      "administradora": "Investis Asset Management S.A.S.G.F.C.I.",
+      "depositaria": "Banco de Valores S.A.",
+      "tipoRenta": "Mercado de Dinero",
+      "tipoDD": "Clásico",
+      "region": "Argentina",
+      "benchmark": "No Registrado",
+      "horizonte": "Corto Plazo",
+      "duracion": "Menor o Igual a 0.5 Año",
+      "moneda": "Peso Argentino",
+      "codigoCNV": "1156",
+      "patrimonio": 0,
+      "cantidadCuotapartes": 0,
+      "inversionMinima": 1,
+      "monedaInversion": "Peso Argentino",
+      "plazoLiquidacionDias": 0,
+      "rendimientos": {
+        "valorCuotaparte": 1135.802,
+        "variacionDiariaPct": 0.174,
+        "ultimos7Dias": 0.4116,
+        "unMes": 1.8404,
+        "noventaDias": 5.1169,
+        "cientoOchentaDias": 10.4091,
+        "enElAnio": null,
+        "doceMeses": null
+      },
+      "composicionCartera": [
+        {
+          "nombre": "Caucion Colocadora $ Merval",
+          "porcentaje": 19.3
+        },
+        {
+          "nombre": "Cta Cte $ Rem Bco de Valo",
+          "porcentaje": 12.9
+        },
+        {
+          "nombre": "Pzo Fi $ Bco Coinag",
+          "porcentaje": 9.5
+        },
+        {
+          "nombre": "Pzo Fi $ Bco BBVA",
+          "porcentaje": 7.8
+        },
+        {
+          "nombre": "Pzo Fi $ Bco Sol",
+          "porcentaje": 7.8
+        },
+        {
+          "nombre": "Pzo Fi $ Bco Santander Ri",
+          "porcentaje": 7.8
+        },
+        {
+          "nombre": "Pzo Fi $ Bco Provincia",
+          "porcentaje": 7.2
+        },
+        {
+          "nombre": "Pzo Fi $ Bco Galicia",
+          "porcentaje": 5.9
+        },
+        {
+          "nombre": "Pzo Fi $ Banco VOII",
+          "porcentaje": 5.6
+        },
+        {
+          "nombre": "Pzo Fi $ Bco Patagonia",
+          "porcentaje": 3.9
+        },
+        {
+          "nombre": "Pzo Fi $ Banco de Serv y Transacciones (BST)",
+          "porcentaje": 3.9
+        },
+        {
+          "nombre": "Cta Cte $ Rem Bco Serv Tr",
+          "porcentaje": 3.6
+        },
+        {
+          "nombre": "Pzo Fi $ Bco CMF",
+          "porcentaje": 2.6
+        },
+        {
+          "nombre": "Cta Cte $ Rem Bco Supervi",
+          "porcentaje": 2.2
+        }
+      ],
+      "calificaciones": [
+        {
+          "calificadora": "FIX SCR S.A.",
+          "calificacion": "AAf(arg)",
+          "fecha": "2024-03-19"
+        }
+      ],
+      "honorarios": {
+        "honorarioGerente": 0,
+        "honorarioDepositaria": 0,
+        "comisionIngreso": 0,
+        "comisionEgreso": 0,
+        "comisionTransferencia": 0,
+        "gastosOrdinariosGestion": 0,
+        "comisionExito": null,
+        "otros": null
+      },
+      "sociedades": [
+        {
+          "tipo": "Administradora",
+          "nombre": "Investis Asset Management S.A.S.G.F.C.I.",
+          "logo": "https://api.argentinadatos.com/static/logos/fondos/00021G-d9e0d02c.jpg"
+        },
+        {
+          "tipo": "Depositaria",
+          "nombre": "Banco de Valores S.A.",
+          "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+        }
+      ]
+    },
+    {
+      "fondoId": "1212",
       "claseId": "6543",
       "nombre": "Vinci Compass Liquidez - Clase F",
       "fecha": "2026-08-31",
