@@ -3,7 +3,7 @@ import { extraerBelo } from '@/finanzas/criptopesos/extraccion/extraerBelo.js'
 import { guardarCriptopesos } from '@/finanzas/criptopesos/guardado/guardarCriptopesos.js'
 import { CriptopesosDatabaseService } from '@/finanzas/criptopesos/database/service.js'
 import { leerRuta } from '@/utils/rutas.js'
-import { crearBaseDeDatosTemporal } from '../../../helpers/sqlite.js'
+import { crearBaseDeDatosTemporal } from '../../../helpers/temp-database.js'
 
 describe('guardarCriptopesos', () => {
   let testDb

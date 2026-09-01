@@ -1,6 +1,6 @@
 import { fetchIolAccessToken } from '../iol/auth.js'
 import { fetchCauciones } from '../iol/fetchCauciones.js'
-import { replaceCauciones } from '../pocketbase/caucionesRepository.js'
+import { replaceCauciones } from '@argentinadatos/pocketbase'
 
 export async function syncCauciones() {
   const { accessToken } = await fetchIolAccessToken()

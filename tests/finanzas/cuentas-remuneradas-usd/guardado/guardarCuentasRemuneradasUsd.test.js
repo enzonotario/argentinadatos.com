@@ -3,7 +3,7 @@ import { extraerGalicia } from '@/finanzas/cuentas-remuneradas-usd/extraccion/ex
 import { guardarCuentasRemuneradasUsd } from '@/finanzas/cuentas-remuneradas-usd/guardado/guardarCuentasRemuneradasUsd.js'
 import { CuentasRemuneradasUsdDatabaseService } from '@/finanzas/cuentas-remuneradas-usd/database/service.js'
 import { leerRuta } from '@/utils/rutas.js'
-import { crearBaseDeDatosTemporal } from '../../../helpers/sqlite.js'
+import { crearBaseDeDatosTemporal } from '../../../helpers/temp-database.js'
 
 const tieneIaCompleta =
   import.meta.env.VITE_RUN_AI_TESTS === 'true' &&

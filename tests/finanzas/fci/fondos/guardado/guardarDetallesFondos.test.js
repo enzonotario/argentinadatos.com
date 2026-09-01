@@ -2,7 +2,7 @@ import Database from 'better-sqlite3'
 import { existsSync, readFileSync, rmSync, writeFileSync, mkdirSync } from 'node:fs'
 import { dirname } from 'node:path'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { crearBaseDeDatosTemporal } from '../../../../helpers/sqlite.js'
+import { crearBaseDeDatosTemporal } from '../../../../helpers/temp-database.js'
 
 vi.mock('@/finanzas/fci/fondos/preservarComposicionCartera.js', () => ({
   recuperarYLocalizarCamposFondo: async () => ({

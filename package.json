@@ -47,10 +47,8 @@
     "cafci-worker:db:rebuild-from-static": "pnpm --filter @argentinadatos/cafci-worker db:rebuild-from-static",
     "cafci-worker:db:backfill-cnv": "pnpm --filter @argentinadatos/cafci-worker db:backfill-cnv",
     "cafci-worker:fresh": "pnpm --filter @argentinadatos/cafci-worker db:fresh-cnv",
-    "migrate": "node scripts/migrate.js",
     "pb:migrate": "node packages/pocketbase/src/migrate.js",
     "pb:migrate:fresh": "node packages/pocketbase/src/migrate.js --fresh",
-    "pb:export-turso": "node scripts/turso-export.js",
     "pb:import-turso": "node scripts/pb-import-turso.js",
     "pb:import-turso:fresh": "node scripts/pb-import-turso.js --fresh",
     "pb:import-turso:congreso": "node scripts/pb-import-turso.js --only diputados_actas,senadores,senado_actas --fresh",
@@ -86,7 +84,6 @@
   },
   "dependencies": {
     "@argentinadatos/pocketbase": "workspace:*",
-    "@libsql/client": "^0.15.15",
     "better-sqlite3": "^12.11.1",
     "defuddle": "^0.18.1",
     "pdf-parse": "1.1.1",

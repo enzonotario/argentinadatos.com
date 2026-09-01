@@ -3,7 +3,7 @@ import { extraerBicaCuentaPositiva } from '@/finanzas/fci/otros/extraccion/extra
 import { guardarSerieOtros } from '@/finanzas/fci/otros/guardado/guardarSerieOtros.js'
 import { FciOtrosDatabaseService } from '@/finanzas/fci/otros/database/service.js'
 import { leerRuta } from '@/utils/rutas.js'
-import { crearBaseDeDatosTemporal } from '../../../../helpers/sqlite.js'
+import { crearBaseDeDatosTemporal } from '../../../../helpers/temp-database.js'
 
 describe('guardarSerieOtros', () => {
   let testDb

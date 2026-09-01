@@ -4,9 +4,9 @@ import {
   classifyCaucionMoneda,
   fechaOperacionHoy,
   mergeTasaMinMaxDia,
-} from '../../apps/worker/src/pocketbase/schema/cauciones.js'
-import { buildExistingMinMaxBySerie } from '../../apps/worker/src/pocketbase/caucionesRepository.js'
-import { migrations } from '../../apps/worker/src/pocketbase/migrations/index.js'
+  buildExistingMinMaxBySerie,
+  migrations,
+} from '@argentinadatos/pocketbase'
 
 describe('worker cauciones schema', () => {
   it('defines normalized cauciones fields', () => {
@@ -28,9 +28,11 @@ describe('worker cauciones schema', () => {
 })
 
 describe('pocketbase migrations registry', () => {
-  it('has a single cauciones migration', () => {
+  it('incluye la migración de cauciones al inicio del registry', () => {
     const ids = migrations.map(m => m.id)
-    expect(ids).toEqual(['002_cauciones'])
+    expect(ids[0]).toBe('002_cauciones')
+    expect(ids).toContain('003_letras')
+    expect(ids).toContain('009_congreso')
   })
 })
 

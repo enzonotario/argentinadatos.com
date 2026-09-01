@@ -3,7 +3,7 @@ import { extraerGlobal66CuentaRemunerada } from '@/finanzas/fci/variables/extrac
 import { guardarSerieVariables } from '@/finanzas/fci/variables/guardado/guardarSerieVariables.js'
 import { FciVariablesDatabaseService } from '@/finanzas/fci/variables/database/service.js'
 import { leerRuta } from '@/utils/rutas.js'
-import { crearBaseDeDatosTemporal } from '../../../../helpers/sqlite.js'
+import { crearBaseDeDatosTemporal } from '../../../../helpers/temp-database.js'
 
 const tieneGlobal66 =
   Boolean(import.meta.env.VITE_GLOBAL66_API_URL) &&

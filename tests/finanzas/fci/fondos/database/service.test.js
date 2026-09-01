@@ -1,6 +1,6 @@
 import Database from 'better-sqlite3'
 import { afterEach, describe, expect, it } from 'vitest'
-import { crearBaseDeDatosTemporal } from '../../../../helpers/sqlite.js'
+import { crearBaseDeDatosTemporal } from '../../../../helpers/temp-database.js'
 import { FciFondosDatabaseService } from '@/finanzas/fci/fondos/database/service.js'
 
 const cleanups = []

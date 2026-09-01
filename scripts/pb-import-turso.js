@@ -25,10 +25,10 @@ const IMPORT_TABLES = [
 ]
 
 /**
- * Importa un dump de `scripts/turso-export.js` hacia PocketBase.
+ * Importa un dump JSON (export histórico) hacia PocketBase.
  * Uso:
- *   node scripts/pb-import-turso.js [turso-export.json]
- *   node scripts/pb-import-turso.js --fresh [turso-export.json]
+ *   node scripts/pb-import-turso.js [dump.json]
+ *   node scripts/pb-import-turso.js --fresh [dump.json]
  *   node scripts/pb-import-turso.js --only diputados_actas,senadores,senado_actas --fresh
  *   node scripts/pb-import-turso.js --skip letras,criptopesos,fci_otros
  *

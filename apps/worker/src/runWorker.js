@@ -1,6 +1,6 @@
 import { getPollIntervalMs } from './config.js'
 import { syncCauciones } from './jobs/syncCauciones.js'
-import { runMigrations } from './pocketbase/migrate.js'
+import { runMigrations } from '@argentinadatos/pocketbase'
 
 export function parseWorkerArgs(argv = process.argv.slice(2)) {
   return {

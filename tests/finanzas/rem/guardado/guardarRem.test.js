@@ -19,7 +19,7 @@ describe('guardarRem', () => {
   })
 
   it(
-    'extrae, guarda en SQLite/libSQL y genera endpoints estáticos',
+    'extrae, guarda en PocketBase y genera endpoints estáticos',
     async () => {
       const items = await extraerRem(URLS_REM_2026)
 
