@@ -31,7 +31,6 @@ export {
   CRIPTOPESOS_COLLECTION,
   CUENTAS_REMUNERADAS_USD_COLLECTION,
   FCI_OTROS_COLLECTION,
-  FCI_VARIABLES_COLLECTION,
 } from './schema/finanzas.js'
 export { REM_EXPECTATIVAS_COLLECTION } from './schema/rem.js'
 export {
@@ -48,7 +47,6 @@ export {
 } from './repositories/finanzas-simple.js'
 export {
   FciOtrosRepository,
-  FciVariablesRepository,
 } from './repositories/fci.js'
 export { RemRepository } from './repositories/rem.js'
 export {

@@ -2323,46 +2323,6 @@
         ]
       }
     },
-    "/v1/finanzas/fci/variables/{fecha}": {
-      "get": {
-        "summary": "Variables",
-        "tags": [
-          "Finanzas",
-          "FCI"
-        ],
-        "description": "Devuelve los valores de Rendimientos Variables de los Fondos Comunes de Inversión en la fecha indicada (en formato `YYYY/MM/DD`).\n\nTambién se puede consultar el `ultimo` y `penultimo` día con valores utilizando los endpoints: \n\n- `/v1/finanzas/fci/variables/ultimo`\n- `/v1/finanzas/fci/variables/penultimo`",
-        "parameters": [
-          {
-            "name": "fecha",
-            "in": "path",
-            "description": "Fecha de consulta",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "date"
-            },
-            "example": "ultimo"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Devuelve una lista de Fondos Comunes de Inversión",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/FondoComunInversionVariable"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get-finanzas-fci-variables-fecha",
-        "x-data-source": []
-      }
-    },
     "/v1/finanzas/rem": {
       "get": {
         "summary": "Relevamientos de Expectativas de Mercado (REM)",
@@ -3746,61 +3706,6 @@
             "tea": 123.45,
             "tna": 123.45,
             "tope": 123.45
-          }
-        }
-      },
-      "FondoComunInversionVariable": {
-        "title": "FondoComunInversionVariable",
-        "type": "object",
-        "properties": {
-          "nombre": {
-            "type": "string",
-            "description": "Identificador de la fuente en Argentina Datos (por ejemplo el proveedor o el canal)."
-          },
-          "fondo": {
-            "type": "string",
-            "description": "Nombre del fondo común de inversión (clase o denominación oficial)."
-          },
-          "tipo": {
-            "type": "string",
-            "description": "Clasificación del instrumento. Valor conocido: `billetera` (cuenta remunerada en billetera digital).",
-            "enum": [
-              "billetera"
-            ]
-          },
-          "fecha": {
-            "type": "string"
-          },
-          "tea": {
-            "type": "number"
-          },
-          "tna": {
-            "type": "number"
-          },
-          "tope": {
-            "type": "number",
-            "nullable": true
-          },
-          "condiciones": {
-            "type": "string",
-            "nullable": true
-          },
-          "condicionesCorto": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "x-examples": {
-          "Example 1": {
-            "nombre": "GLOBAL66",
-            "fondo": "Compass Liquidez - Clase A",
-            "tipo": "billetera",
-            "fecha": "2026-04-23",
-            "tea": 0.2273,
-            "tna": 0.2048,
-            "tope": null,
-            "condiciones": "Solo clientes persona con servicio de rendimientos activado",
-            "condicionesCorto": "Solo clientes B2C"
           }
         }
       },

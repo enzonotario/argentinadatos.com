@@ -3,7 +3,6 @@ import {
   extraerSerieOtros,
   extraerSerieOtrosIA,
 } from '@/finanzas/fci/otros/extraccion/extraerSerieOtros.js'
-import { extraerSerieVariables } from '@/finanzas/fci/variables/extraccion/extraerSerieVariables.js'
 import { extraerUalaCuentaRemunerada } from '@/finanzas/fci/otros/extraccion/extraerUala.js'
 import { guardarSerieOtros } from '@/finanzas/fci/otros/guardado/guardarSerieOtros.js'
 import { FciOtrosDatabaseService } from '@/finanzas/fci/otros/database/service.js'
@@ -11,7 +10,6 @@ import { logGrupo, logMensaje } from '@/log.js'
 
 export default async function () {
   await extraerSerieOtros()
-  await extraerSerieVariables()
   await extraerSerieOtrosIA()
   await extraerUala()
 }

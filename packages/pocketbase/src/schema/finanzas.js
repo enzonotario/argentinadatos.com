@@ -75,26 +75,3 @@ export const FCI_OTROS_COLLECTION = {
     'CREATE INDEX idx_fci_otros_timestamp ON fci_otros (timestamp)',
   ],
 }
-
-export const FCI_VARIABLES_COLLECTION = {
-  name: 'fci_variables',
-  type: 'base',
-  ...PRIVATE_RULES,
-  fields: [
-    textField('nombre'),
-    textField('fondo', { required: true }),
-    textField('tipo'),
-    numberField('tna'),
-    numberField('tea'),
-    numberField('tope'),
-    textField('fecha', { required: true }),
-    textField('condiciones'),
-    textField('condicionesCorto'),
-    textField('timestamp', { required: true }),
-  ],
-  indexes: [
-    'CREATE INDEX idx_fci_variables_nombre ON fci_variables (nombre)',
-    'CREATE INDEX idx_fci_variables_fondo ON fci_variables (fondo)',
-    'CREATE INDEX idx_fci_variables_timestamp ON fci_variables (timestamp)',
-  ],
-}

@@ -23,5 +23,4 @@ export async function up(pb) {
   await relaxNumberFields(pb, 'criptopesos', ['tna'])
   await relaxNumberFields(pb, 'cuentas_remuneradas_usd', ['tasa'])
   await relaxNumberFields(pb, 'fci_otros', ['tna', 'tea'])
-  await relaxNumberFields(pb, 'fci_variables', ['tna', 'tea'])
 }

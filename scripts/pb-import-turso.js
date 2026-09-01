@@ -16,7 +16,6 @@ const IMPORT_TABLES = [
   'criptopesos',
   'cuentas_remuneradas_usd',
   'fci_otros',
-  'fci_variables',
   'rem_expectativas',
   'diputados',
   'diputados_actas',
@@ -115,7 +114,6 @@ async function main() {
     criptopesos: importCriptopesos,
     cuentas_remuneradas_usd: importCuentasRemuneradasUsd,
     fci_otros: importFciOtros,
-    fci_variables: importFciVariables,
     rem_expectativas: importRem,
     diputados: importDiputados,
     diputados_actas: importDiputadosActas,
@@ -264,31 +262,6 @@ async function importFciOtros(pb, rows) {
         timestamp: row.timestamp,
       },
       { index, row: { fondo: row.fondo, tna: row.tna, fecha: row.fecha } },
-    )
-    n += 1
-  }
-  return n
-}
-
-async function importFciVariables(pb, rows) {
-  let n = 0
-  for (const [index, row] of rows.entries()) {
-    await createOrThrow(
-      pb,
-      'fci_variables',
-      {
-        nombre: row.nombre ?? null,
-        fondo: row.fondo,
-        tipo: row.tipo ?? null,
-        tna: Number(row.tna),
-        tea: Number(row.tea),
-        tope: row.tope ?? null,
-        fecha: row.fecha,
-        condiciones: row.condiciones ?? null,
-        condicionesCorto: row.condicionesCorto ?? null,
-        timestamp: row.timestamp,
-      },
-      { index, row: { nombre: row.nombre, tna: row.tna } },
     )
     n += 1
   }
