@@ -53,6 +53,7 @@
     "pb:export-turso": "node scripts/turso-export.js",
     "pb:import-turso": "node scripts/pb-import-turso.js",
     "pb:import-turso:fresh": "node scripts/pb-import-turso.js --fresh",
+    "pb:import-turso:congreso": "node scripts/pb-import-turso.js --only diputados_actas,senadores,senado_actas --fresh",
     "seed:fci-otros": "node scripts/seed-fci-otros.js",
     "procesar-dolares": "node scripts/procesar-dolares.js todos"
   },
