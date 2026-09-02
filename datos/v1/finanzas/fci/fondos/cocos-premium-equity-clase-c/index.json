@@ -2,7 +2,7 @@
   "fondoId": "1734",
   "claseId": "6630",
   "nombre": "Cocos Premium Equity - Clase C",
-  "fecha": "2026-08-31",
+  "fecha": "2026-09-01",
   "administradora": "Cocos Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,22 +13,27 @@
   "duracion": null,
   "moneda": "Peso Argentino",
   "codigoCNV": "1734",
-  "patrimonio": 1004.8,
+  "patrimonio": 1005.24,
   "cantidadCuotapartes": 1000,
   "inversionMinima": 1000,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1004.8,
-    "variacionDiariaPct": 0.131,
-    "ultimos7Dias": 0.3085,
-    "unMes": null,
+    "valorCuotaparte": 1005.24,
+    "variacionDiariaPct": 0.044,
+    "ultimos7Dias": 0.3073,
+    "unMes": 0.044,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 99.94
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 3.5,

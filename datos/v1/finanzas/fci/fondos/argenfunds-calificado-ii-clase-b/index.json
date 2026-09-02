@@ -2,33 +2,50 @@
   "fondoId": "1912",
   "claseId": "6604",
   "nombre": "Argenfunds Calificado II - Clase B",
-  "fecha": "2026-08-31",
+  "fecha": "2026-09-01",
   "administradora": "Argenfunds S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
   "region": "Global",
   "benchmark": "Otro",
-  "horizonte": "Plazo Flexible",
+  "horizonte": "Mediano Plazo",
   "duracion": "Menor o Igual a 1 Año",
   "moneda": "Peso Argentino",
   "codigoCNV": "1925",
-  "patrimonio": 311355394.8,
+  "patrimonio": 312282756.37,
   "cantidadCuotapartes": 309586283.45,
   "inversionMinima": 1,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1005.714,
-    "variacionDiariaPct": -0.23,
-    "ultimos7Dias": -0.097,
-    "unMes": 0.5714,
+    "valorCuotaparte": 1008.71,
+    "variacionDiariaPct": 0.298,
+    "ultimos7Dias": 0.1014,
+    "unMes": 0.871,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Pagare #UMV231170006",
+      "porcentaje": 33.94
+    },
+    {
+      "nombre": "Pagare #UMV091170004",
+      "porcentaje": 32.95
+    },
+    {
+      "nombre": "Pagare #UMV161170007",
+      "porcentaje": 32.92
+    },
+    {
+      "nombre": "FCI ST Zero - Clase B",
+      "porcentaje": 71.28
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 1.4,
