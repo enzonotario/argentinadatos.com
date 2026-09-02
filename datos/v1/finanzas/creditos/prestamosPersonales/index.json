@@ -3,10 +3,10 @@
     "entidad": "BANCOR",
     "nombreComercial": "Bancor",
     "producto": "Préstamo personal Bancón",
-    "tna": 0.65,
-    "tea": 0.8837,
+    "tna": 0.55,
+    "tea": 0.7125,
     "cftTna": null,
-    "cftTea": 1.1428,
+    "cftTea": 0.9116,
     "tipoTasa": "fija",
     "moneda": "ARS",
     "requiereCliente": true,
@@ -22,9 +22,9 @@
         {
           "plazoMinMeses": 1,
           "plazoMaxMeses": 72,
-          "tna": 0.65,
-          "tea": 0.8837,
-          "cftTea": 1.1428
+          "tna": 0.55,
+          "tea": 0.7125,
+          "cftTea": 0.9116
         }
       ]
     }
@@ -42,8 +42,8 @@
     "requiereCliente": true,
     "condiciones": "Oferta exclusiva para clientes BBVA",
     "enlace": "https://www.bbva.com.ar/personas/productos/prestamos/personales.html",
-    "vigenciaDesde": "2026-08-01",
-    "vigenciaHasta": "2026-08-30",
+    "vigenciaDesde": "2026-09-01",
+    "vigenciaHasta": "2026-09-30",
     "metadata": {
       "fuentePdf": true,
       "plazoMesesEjemplo": 72,
@@ -584,7 +584,7 @@
     "requiereCliente": true,
     "condiciones": "Plan Sueldo",
     "enlace": "https://www.macro.com.ar/personas/prestamos/personales",
-    "vigenciaDesde": "2026-05-04",
+    "vigenciaDesde": "2026-09-01",
     "vigenciaHasta": null,
     "metadata": {
       "fuentePdf": true,
@@ -657,7 +657,7 @@
     "requiereCliente": true,
     "condiciones": "Jubilados",
     "enlace": "https://www.macro.com.ar/personas/prestamos/personales",
-    "vigenciaDesde": "2026-05-04",
+    "vigenciaDesde": "2026-09-01",
     "vigenciaHasta": null,
     "metadata": {
       "fuentePdf": true,
@@ -730,7 +730,7 @@
     "requiereCliente": false,
     "condiciones": "Mercado Abierto y PyN",
     "enlace": "https://www.macro.com.ar/personas/prestamos/personales",
-    "vigenciaDesde": "2026-05-04",
+    "vigenciaDesde": "2026-09-01",
     "vigenciaHasta": null,
     "metadata": {
       "fuentePdf": true,
@@ -803,7 +803,7 @@
     "requiereCliente": false,
     "condiciones": "Renta Presunta",
     "enlace": "https://www.macro.com.ar/personas/prestamos/personales",
-    "vigenciaDesde": "2026-05-04",
+    "vigenciaDesde": "2026-09-01",
     "vigenciaHasta": null,
     "metadata": {
       "fuentePdf": true,
@@ -854,7 +854,7 @@
     "requiereCliente": true,
     "condiciones": "Selecta",
     "enlace": "https://www.macro.com.ar/personas/prestamos/personales",
-    "vigenciaDesde": "2026-05-04",
+    "vigenciaDesde": "2026-09-01",
     "vigenciaHasta": null,
     "metadata": {
       "fuentePdf": true,
@@ -927,7 +927,7 @@
     "requiereCliente": false,
     "condiciones": "AUH",
     "enlace": "https://www.macro.com.ar/personas/prestamos/personales",
-    "vigenciaDesde": "2026-05-04",
+    "vigenciaDesde": "2026-09-01",
     "vigenciaHasta": null,
     "metadata": {
       "fuentePdf": true,
