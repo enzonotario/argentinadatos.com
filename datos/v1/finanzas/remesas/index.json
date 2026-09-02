@@ -1,5 +1,5 @@
 {
-  "fechaActualizacion": "2026-08-12T15:08:07.473Z",
+  "fechaActualizacion": "2026-09-02T01:21:56.420Z",
   "remesas": [
     {
       "compania": "wallbit",
@@ -13,7 +13,7 @@
       "retiroArs": "0",
       "detalles": null,
       "calificacionAndroid": 4.6,
-      "calificacionIos": 4
+      "calificacionIos": 4.6
     },
     {
       "compania": "takenos",
@@ -41,7 +41,7 @@
       "retiroArs": "5 USD",
       "detalles": null,
       "calificacionAndroid": 4.6,
-      "calificacionIos": 4
+      "calificacionIos": 4.6
     },
     {
       "compania": "airtm",
@@ -55,7 +55,7 @@
       "retiroArs": "0",
       "detalles": null,
       "calificacionAndroid": 4.65,
-      "calificacionIos": 4
+      "calificacionIos": 4.65
     },
     {
       "compania": "global66",
@@ -69,7 +69,7 @@
       "retiroArs": "0",
       "detalles": null,
       "calificacionAndroid": 4.75,
-      "calificacionIos": 4
+      "calificacionIos": 4.75
     },
     {
       "compania": "astropay",
@@ -83,7 +83,7 @@
       "retiroArs": "0",
       "detalles": null,
       "calificacionAndroid": 4.4,
-      "calificacionIos": 4
+      "calificacionIos": 4.4
     },
     {
       "compania": "payoneer",
@@ -97,7 +97,7 @@
       "retiroArs": "2%",
       "detalles": null,
       "calificacionAndroid": 4.35,
-      "calificacionIos": 4
+      "calificacionIos": 4.35
     },
     {
       "compania": "lemon",
@@ -109,7 +109,10 @@
       "costoMantenimientoTarjeta": "No tiene tarjeta emitida en EEUU.",
       "costoTarjeta": "No tiene tarjeta emitida en EEUU.",
       "retiroArs": "0",
-      "detalles": null,
+      "detalles": {
+        "costoMantenimientoTarjeta": "No tiene tarjeta emitida en EEUU.",
+        "costoTarjeta": "No tiene tarjeta emitida en EEUU."
+      },
       "calificacionAndroid": 4,
       "calificacionIos": 4
     },
@@ -125,7 +128,7 @@
       "retiroArs": "0",
       "detalles": null,
       "calificacionAndroid": 4.4,
-      "calificacionIos": 4
+      "calificacionIos": 4.4
     },
     {
       "compania": "wise",
@@ -137,9 +140,12 @@
       "costoMantenimientoTarjeta": "No tiene tarjeta emitida en EEUU.",
       "costoTarjeta": "No tiene tarjeta emitida en EEUU.",
       "retiroArs": "1%",
-      "detalles": null,
+      "detalles": {
+        "costoMantenimientoTarjeta": "No tiene tarjeta emitida en EEUU.",
+        "costoTarjeta": "No tiene tarjeta emitida en EEUU."
+      },
       "calificacionAndroid": 4.85,
-      "calificacionIos": 4
+      "calificacionIos": 4.85
     },
     {
       "compania": "Cocos",
@@ -166,16 +172,16 @@
       "costoRecibirPagos": "0.5%",
       "costoMantenimientoTarjeta": "0 USD",
       "costoTarjeta": "0%",
-      "retiroArs": "0",
+      "retiroArs": ">0%",
       "detalles": {
-        "cuentaPropia": "Permite abrir cuenta en dólares propia (ACH/Wire)",
-        "moneda": "Los fondos se acreditan como dólares digitales (USDC)",
+        "cuentaPropia": "Permite recibir pagos desde plataformas internacionales como PayPal y Upwork.",
+        "moneda": "Los fondos se acreditan como dólares digitales (USDC).",
         "inversiones": "Rendimientos / yield disponibles en la app",
-        "tarjetaUsa": "Emiten tarjeta LUX para uso internacional",
-        "costoRecibirPagos": "ACH y Wire: 0.5% (mín. 0.5 USD ACH / 20 USD Wire). Apertura cuenta USD: 3 USD/año",
-        "costoMantenimientoTarjeta": "Cero costo de mantenimiento mensual",
-        "costoTarjeta": "Sin costo de uso internacional",
-        "retiroArs": "Transferencia a CBU/CVU con conversión al tipo de cambio del momento; no confundir con extracción ATM"
+        "tarjetaUsa": "Tarjeta emitida en el exterior (Belo LUX) para pagar en dólares.",
+        "costoRecibirPagos": "Comisión por depósito de 0.5% para transferencias ACH y Wire.",
+        "costoMantenimientoTarjeta": "No tiene costo de mantenimiento mensual.",
+        "costoTarjeta": "Sin costo por uso de la tarjeta internacional.",
+        "retiroArs": "Costo por convertir a ARS no especificado."
       },
       "calificacionAndroid": 4.5,
       "calificacionIos": 4.83
@@ -189,16 +195,16 @@
       "costoRecibirPagos": "1.5%",
       "costoMantenimientoTarjeta": "0 USD",
       "costoTarjeta": "0%",
-      "retiroArs": "0",
+      "retiroArs": "/",
       "detalles": {
-        "cuentaPropia": "Cuenta en el exterior (Bridge) para recibir USD desde EE.UU. vía ACH/Wire",
-        "moneda": "Los depósitos se acreditan como UXD (criptodólar)",
-        "inversiones": "Recompensa ~2% anual en UXD; rendimientos en criptos",
-        "tarjetaUsa": "Ripio Card Visa prepaga argentina (Digipayments); uso internacional, no emitida en EEUU",
+        "cuentaPropia": "AHORA puedes tener una cuenta en el exterior para depositar y/o transferir dólares desde el extranjero.",
+        "moneda": "Acreditación en UXD, convirtiendo automáticamente 1 USD a 1 UXD.",
+        "inversiones": "Hold en UXD genera un interés del 2% anual, acreditado diariamente.",
+        "tarjetaUsa": "Ripio Card emitida en Argentina y no está bajo un esquema internacional.",
         "costoRecibirPagos": "1.5% + 0.50 USD (ACH) o + 20 USD (Wire). Mantenimiento cuenta exterior: 5 USD/año (persona física)",
         "costoMantenimientoTarjeta": "Card sin mantenimiento; la cuenta exterior cobra 5 USD/año (persona física)",
         "costoTarjeta": "Cashback desde 2% en cripto / 0.5% en ARS (no es fee de uso)",
-        "retiroArs": "Conversión/venta a ARS en la app; no confundir con extracción ATM"
+        "retiroArs": "No fue especificado."
       },
       "calificacionAndroid": 4.5,
       "calificacionIos": 4.3
