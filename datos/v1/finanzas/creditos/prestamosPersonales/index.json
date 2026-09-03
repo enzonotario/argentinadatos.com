@@ -361,7 +361,7 @@
     "condiciones": "Plan Sueldo",
     "enlace": "https://bancociudad.com.ar/institucional/micrositio/PrestamoPersonalCiudadVeloz",
     "vigenciaDesde": "2026-06-19",
-    "vigenciaHasta": "2026-08-31",
+    "vigenciaHasta": "2026-12-31",
     "metadata": {
       "plazoMesesEjemplo": 72,
       "plazoMinMeses": 1,
@@ -391,7 +391,7 @@
     "condiciones": "Jubilados y Pensionados ANSES",
     "enlace": "https://bancociudad.com.ar/institucional/micrositio/PrestamoPersonalCiudadVeloz",
     "vigenciaDesde": "2026-06-19",
-    "vigenciaHasta": "2026-08-31",
+    "vigenciaHasta": "2026-12-31",
     "metadata": {
       "plazoMesesEjemplo": 72,
       "plazoMinMeses": 1,
@@ -421,7 +421,7 @@
     "condiciones": "Cliente Fiel",
     "enlace": "https://bancociudad.com.ar/institucional/micrositio/PrestamoPersonalCiudadVeloz",
     "vigenciaDesde": "2026-06-19",
-    "vigenciaHasta": "2026-08-31",
+    "vigenciaHasta": "2026-12-31",
     "metadata": {
       "plazoMesesEjemplo": 72,
       "plazoMinMeses": 1,
@@ -949,10 +949,10 @@
     "entidad": "PATAGONIA",
     "nombreComercial": "Banco Patagonia",
     "producto": "Préstamo personal online",
-    "tna": 0.98,
-    "tea": 1.5665,
+    "tna": 0.87,
+    "tea": 1.3171,
     "cftTna": null,
-    "cftTea": 2.0978,
+    "cftTea": 1.743,
     "tipoTasa": "fija",
     "moneda": "ARS",
     "requiereCliente": true,
@@ -968,9 +968,9 @@
         {
           "plazoMinMeses": 1,
           "plazoMaxMeses": 60,
-          "tna": 0.98,
-          "tea": 1.5665,
-          "cftTea": 2.0978
+          "tna": 0.87,
+          "tea": 1.3171,
+          "cftTea": 1.743
         }
       ]
     }
