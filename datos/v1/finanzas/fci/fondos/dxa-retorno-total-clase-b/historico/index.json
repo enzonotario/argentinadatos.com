@@ -2,7 +2,7 @@
   "fondoId": "1899",
   "claseId": "6566",
   "nombre": "DXA Retorno Total - Clase B",
-  "fechaActualizacion": "2026-09-02T22:59:22.000Z",
+  "fechaActualizacion": "2026-09-03T11:34:15.000Z",
   "historico": [
     {
       "slug": "dxa-retorno-total-clase-b",
@@ -738,6 +738,22 @@
       "retornoDiario": 0.332494,
       "retornoAcumulado": -3.348539,
       "flujoEstimado": -7067.967236,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "dxa-retorno-total-clase-b",
+      "fondoId": "1899",
+      "claseId": "6566",
+      "nombre": "DXA Retorno Total - Clase B",
+      "fecha": "2026-09-02",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1012.5,
+      "patrimonio": 7180256349,
+      "retornoDiario": 1.677044,
+      "retornoAcumulado": -1.727652,
+      "flujoEstimado": -340531.140307,
       "origen": "cnv-excel"
     }
   ]

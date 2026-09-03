@@ -1,0 +1,88 @@
+{
+  "fondoId": "871",
+  "claseId": "2507",
+  "nombre": "MAF Global - Clase D",
+  "fecha": "2026-09-02",
+  "administradora": "Mariva Asset Management S.A.U.S.G.F.C.I.",
+  "depositaria": "Banco Mariva S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Global",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "1011",
+  "patrimonio": 3086629.45,
+  "cantidadCuotapartes": 2589166.45,
+  "inversionMinima": 300,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 1192.132,
+    "variacionDiariaPct": -0.17,
+    "ultimos7Dias": -0.1998,
+    "unMes": 0.3263,
+    "noventaDias": 0.1373,
+    "cientoOchentaDias": 0.7597,
+    "enElAnio": 1.3483,
+    "doceMeses": 5.6037
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte U$S Deutsche B NY",
+      "porcentaje": 72.3
+    },
+    {
+      "nombre": "Bono Corporativo 3.625% 010827",
+      "porcentaje": 5.5
+    },
+    {
+      "nombre": "BC Minerva Luxembourg 130933",
+      "porcentaje": 4.9
+    },
+    {
+      "nombre": "BC BRFSBZ 4.35 290926",
+      "porcentaje": 4.2
+    },
+    {
+      "nombre": "BC Petrobras 5.6% 2031",
+      "porcentaje": 4.1
+    },
+    {
+      "nombre": "BC Bradesco 2027",
+      "porcentaje": 2.8
+    },
+    {
+      "nombre": "BC Centrales Elec. Brasileras 2030",
+      "porcentaje": 2.7
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 3.6
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0.7,
+    "honorarioDepositaria": 0.12,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.4,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Mariva Asset Management S.A.U.S.G.F.C.I.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00371G-45045e78.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Mariva S.A.",
+      "logo": null
+    }
+  ]
+}
