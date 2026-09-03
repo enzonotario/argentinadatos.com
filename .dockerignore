@@ -7,6 +7,8 @@ dist
 docs
 .github
 packages
+!packages/pocketbase
+!packages/pocketbase/**
 src
 tests
 scripts

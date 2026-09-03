@@ -12,6 +12,7 @@ RUN corepack enable \
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY apps/worker ./apps/worker
+COPY packages/pocketbase ./packages/pocketbase
 
 RUN pnpm install --frozen-lockfile --filter @argentinadatos/worker...
 
