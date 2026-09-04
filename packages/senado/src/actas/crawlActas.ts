@@ -13,6 +13,11 @@ import {
   scrapeTituloFromHtml,
 } from './scrapeDetalleActa.ts'
 
+/** Evita tumbar senado.gob.ar con ~200 GETs en paralelo (fallan las actas nuevas). */
+const ACTA_CONCURRENCY = 6
+/** Mirar un poco más allá del max del listado por si hay actas recién publicadas. */
+const FORWARD_PADDING = 10
+
 export async function crawlActas({ year }: { year?: number } = {}): Promise<
   ActaData[]
 > {
@@ -35,36 +40,44 @@ export async function crawlActas({ year }: { year?: number } = {}): Promise<
   // Cada fila tiene varios <a> (expedientes sin href, OD, PDF, detalle, video).
   // Hay que tomar específicamente el link a detalleActa; el primero de la fila
   // suele ser "Ver Expedientes" sin href → Number(undefined) === NaN.
-  const actaIds = actasRows
-    .toArray()
-    .map((row) => {
-      const href = $(row).find('a[href*="detalleActa"]').attr('href')
-      return href ? Number(href.split('/').pop()) : NaN
-    })
-    .filter(id => Number.isFinite(id))
+  const listed = collectListedActas($, actasRows)
+  const listedIds = listed.map(row => row.id)
 
-  if (actaIds.length === 0) {
+  if (listedIds.length === 0) {
     console.warn(`No se encontraron actas para el año ${yearToSearch}`)
     return []
   }
 
-  // La tabla viene ordenada de más antigua a más reciente. Un window fijo de
-  // ±50 alrededor del primer ID deja afuera actas nuevas a mitad de año.
-  const minActaId = Math.min(...actaIds)
-  const maxActaId = Math.max(...actaIds)
-  const padding = 5
-  const startId = minActaId - padding
-  const endId = maxActaId + padding
+  const idsToProcess = buildActaIdsToProcess(listedIds, FORWARD_PADDING)
+  const knownTitulos = new Map(listed.map(row => [row.id, row.titulo]))
+  const existingIds = loadExistingActaIds(yearToSearch)
 
-  const actas = await Promise.all(
-    Array.from({ length: endId - startId + 1 }, (_, i) => {
-      const actaId = startId + i
+  // Priorizar actas que aún no están en el índice local (p.ej. sesión del 27/08).
+  idsToProcess.sort((a, b) => {
+    const aMiss = existingIds.has(a) ? 1 : 0
+    const bMiss = existingIds.has(b) ? 1 : 0
+    if (aMiss !== bMiss) return aMiss - bMiss
+    return a - b
+  })
 
-      return processActa(actaId, '', yearToSearch)
-    }),
+  console.log(
+    `Actas ${yearToSearch}: ${listedIds.length} en listado, `
+    + `${idsToProcess.length} a procesar `
+    + `(ids ${Math.min(...idsToProcess)}–${Math.max(...idsToProcess)}), `
+    + `${idsToProcess.filter(id => !existingIds.has(id)).length} nuevas`,
   )
 
-  const validActas = actas.filter(Boolean) as ActaData[]
+  const validActas: ActaData[] = []
+  await mapPool(idsToProcess, ACTA_CONCURRENCY, async (actaId) => {
+    const acta = await processActa(
+      actaId,
+      knownTitulos.get(actaId) || '',
+      yearToSearch,
+    )
+    if (acta) validActas.push(acta)
+  })
+
+  validActas.sort((a, b) => Number(a.actaId) - Number(b.actaId))
 
   if (shouldWriteJsonFiles()) {
     saveByYear(validActas, yearToSearch)
@@ -102,6 +115,86 @@ export async function crawlActas({ year }: { year?: number } = {}): Promise<
   }
 
   return validActas
+}
+
+export function collectListedActas(
+  $: cheerio.CheerioAPI,
+  actasRows: cheerio.Cheerio<any>,
+): Array<{ id: number, titulo: string }> {
+  const byId = new Map<number, string>()
+
+  for (const row of actasRows.toArray()) {
+    const $row = $(row)
+    const href = $row.find('a[href*="detalleActa"]').attr('href')
+    if (!href) continue
+    const id = Number(href.split('/').pop())
+    if (!Number.isFinite(id)) continue
+
+    // Columna Título: suele ser la 3ra (índice 2).
+    const titulo = $row.find('td').eq(2).text().replace(/\s+/g, ' ').trim()
+    if (!byId.has(id) || titulo) {
+      byId.set(id, titulo)
+    }
+  }
+
+  return [...byId.entries()]
+    .map(([id, titulo]) => ({ id, titulo }))
+    .sort((a, b) => a.id - b.id)
+}
+
+/**
+ * IDs del listado + ventana hacia adelante (actas recién publicadas).
+ * No rellena huecos internos: eso disparaba ~80 PDFs ajenos al año y
+ * saturaba el sitio con Promise.all.
+ */
+export function buildActaIdsToProcess(
+  listedIds: number[],
+  forwardPadding = FORWARD_PADDING,
+): number[] {
+  const unique = [...new Set(listedIds.filter(id => Number.isFinite(id)))]
+  if (!unique.length) return []
+
+  const maxId = Math.max(...unique)
+  const forward = Array.from(
+    { length: Math.max(0, forwardPadding) },
+    (_, i) => maxId + 1 + i,
+  )
+
+  return [...new Set([...unique, ...forward])].sort((a, b) => a - b)
+}
+
+function loadExistingActaIds(year: number): Set<number> {
+  try {
+    const raw = readEndpoint(`/senado/actas/${year}`) || '[]'
+    const list = JSON.parse(raw)
+    if (!Array.isArray(list)) return new Set()
+    return new Set(
+      list
+        .map((a: any) => Number(a?.actaId))
+        .filter((id: number) => Number.isFinite(id)),
+    )
+  }
+  catch {
+    return new Set()
+  }
+}
+
+async function mapPool<T>(
+  items: T[],
+  concurrency: number,
+  worker: (item: T) => Promise<void>,
+): Promise<void> {
+  let index = 0
+  const runners = Array.from(
+    { length: Math.min(concurrency, Math.max(items.length, 1)) },
+    async () => {
+      while (index < items.length) {
+        const current = items[index++]
+        await worker(current)
+      }
+    },
+  )
+  await Promise.all(runners)
 }
 
 async function processActa(
