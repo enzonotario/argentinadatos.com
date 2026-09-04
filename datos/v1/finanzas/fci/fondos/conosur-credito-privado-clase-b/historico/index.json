@@ -2,7 +2,7 @@
   "fondoId": "1672",
   "claseId": "5600",
   "nombre": "ConoSur Crédito Privado - Clase B",
-  "fechaActualizacion": "2026-09-03T11:34:15.000Z",
+  "fechaActualizacion": "2026-09-03T23:42:40.000Z",
   "historico": [
     {
       "slug": "conosur-credito-privado-clase-b",
@@ -3570,6 +3570,22 @@
       "retornoDiario": 0.065021,
       "retornoAcumulado": 37.1213,
       "flujoEstimado": -622.882463,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "conosur-credito-privado-clase-b",
+      "fondoId": "1672",
+      "claseId": "5600",
+      "nombre": "ConoSur Crédito Privado - Clase B",
+      "fecha": "2026-09-03",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1372.185,
+      "patrimonio": 1008725850.43,
+      "retornoDiario": 0.070886,
+      "retornoAcumulado": 37.2185,
+      "flujoEstimado": 668.46522,
       "origen": "cnv-excel"
     }
   ]
