@@ -1,7 +1,6 @@
 import {
   fetchCnvCuotaparteDocuments,
   listChronologicalCnvDocuments,
-  pickLatestAvailableDocument,
   pickLatestDocumentForDate,
 } from '../cnv/cnvClient.js'
 import { fetchCnvDocumentExcelCached } from '../cnv/fetchCnvDocumentExcelCached.js'
@@ -46,6 +45,25 @@ function formatDuration(ms) {
   }
 
   return `${rest}s`
+}
+
+/** Ventana para re-chequear fechas con marca legacy `'1'` sin presentationId. */
+export const CNV_REPUBLISH_LOOKBACK_DAYS = 21
+
+export function isRecentCnvReception(
+  receptionAt,
+  { now = Date.now(), withinDays = CNV_REPUBLISH_LOOKBACK_DAYS } = {},
+) {
+  if (!receptionAt) {
+    return false
+  }
+
+  const time = Date.parse(receptionAt)
+  if (!Number.isFinite(time)) {
+    return false
+  }
+
+  return now - time <= withinDays * 24 * 60 * 60 * 1000
 }
 
 export class FundDetailsSyncService {
@@ -294,7 +312,7 @@ export class FundDetailsSyncService {
     }
 
     if (failed === 0 && document.documentDate) {
-      this.repository.markCnvDateIngested(document.documentDate)
+      this.repository.markCnvDateIngested(document.documentDate, document)
     }
 
     return upserted
@@ -316,26 +334,90 @@ export class FundDetailsSyncService {
     })
   }
 
+  /**
+   * Días a ingerir en un ciclo: el pedido/último, más republicaciones
+   * (misma fecha, otra presentationId) detectadas en el catálogo.
+   */
+  selectDocumentsForCycle(documents, { documentDate = null, now = Date.now() } = {}) {
+    const chronological = listChronologicalCnvDocuments(documents)
+    const primary = documentDate
+      ? pickLatestDocumentForDate(documents, documentDate)
+      : chronological.at(-1) ?? null
+
+    if (!primary) {
+      return []
+    }
+
+    const selected = new Map()
+    selected.set(primary.documentDate, primary)
+
+    for (const document of chronological) {
+      if (document.documentDate === primary.documentDate) {
+        continue
+      }
+
+      const meta = this.repository.getCnvIngestedMeta(document.documentDate)
+      if (!meta) {
+        // Crawl no backfillea fechas nunca vistas.
+        continue
+      }
+
+      if (meta.presentationId) {
+        if (meta.presentationId !== document.presentationId) {
+          selected.set(document.documentDate, document)
+        }
+        continue
+      }
+
+      // Marca legacy `'1'`: re-chequear si la recepción es reciente
+      // (correcciones tardías que aparecen ahora en el listado CNV).
+      if (
+        meta.legacy &&
+        isRecentCnvReception(document.receptionAt, { now })
+      ) {
+        selected.set(document.documentDate, document)
+      }
+    }
+
+    return [...selected.values()].sort((a, b) =>
+      a.documentDate.localeCompare(b.documentDate),
+    )
+  }
+
   async runCycle({ documentDate = null } = {}) {
     const documents = await fetchCnvCuotaparteDocuments()
-    const document = documentDate
-      ? pickLatestDocumentForDate(documents, documentDate)
-      : pickLatestAvailableDocument(documents)
+    const toIngest = this.selectDocumentsForCycle(documents, { documentDate })
 
-    if (!document) {
+    if (toIngest.length === 0) {
       return {
         source: 'cnv',
         documentDate: documentDate || null,
         upserted: 0,
         parsedFunds: 0,
         currentFunds: this.repository.getCurrentFunds().length,
+        republished: 0,
         error: documentDate
           ? `No hay planilla CNV para ${documentDate}`
           : 'No hay planillas CNV disponibles',
       }
     }
 
-    const result = await this.ingestCnvDocument(document)
+    const results = []
+    for (const document of toIngest) {
+      results.push(await this.ingestCnvDocument(document))
+    }
+
+    const primary = toIngest[toIngest.length - 1]
+    const republished = toIngest.filter(
+      document => document.documentDate !== primary.documentDate,
+    )
+
+    if (republished.length > 0) {
+      console.log('[cafci-worker] CNV republicaciones re-ingeridas', {
+        count: republished.length,
+        dates: republished.map(document => document.documentDate),
+      })
+    }
 
     let composicion = null
     if (isComposicionEnrichEnabled()) {
@@ -353,9 +435,21 @@ export class FundDetailsSyncService {
       composicion = { skipped: true, reason: 'disabled' }
     }
 
+    const upserted = results.reduce((sum, item) => sum + (item.upserted || 0), 0)
+    const parsedFunds = results.reduce(
+      (sum, item) => sum + (item.parsedFunds || 0),
+      0,
+    )
+
     return {
       source: 'cnv',
-      ...result,
+      documentDate: primary.documentDate,
+      presentationId: primary.presentationId,
+      upserted,
+      parsedFunds,
+      daysIngested: results.length,
+      republished: republished.length,
+      results,
       composicion,
       currentFunds: this.repository.getCurrentFunds().length,
     }
@@ -380,15 +474,16 @@ export class FundDetailsSyncService {
       fromDate,
       toDate,
     })
-    const ingestedDates = skipExisting
-      ? new Set(this.repository.listIngestedCnvDates())
-      : new Set()
-    const alreadyIngested = chronological.filter(document =>
-      ingestedDates.has(document.documentDate),
-    )
-    const queue = chronological.filter(
-      document => !ingestedDates.has(document.documentDate),
-    )
+    const alreadyIngested = skipExisting
+      ? chronological.filter(document =>
+          this.repository.isCnvDocumentIngested(document),
+        )
+      : []
+    const queue = skipExisting
+      ? chronological.filter(
+          document => !this.repository.isCnvDocumentIngested(document),
+        )
+      : chronological
     const classIdToFondoId = this.resolveClassIdMap()
     const context = this.seedBackfillContext(classIdToFondoId)
     const downloadConcurrency = Math.min(

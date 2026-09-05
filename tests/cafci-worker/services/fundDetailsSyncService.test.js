@@ -94,7 +94,9 @@ describe('FundDetailsSyncService CNV', () => {
     const temp = await createTempRepository()
     cleanups.push(temp.cleanup)
 
-    temp.repository.markCnvDateIngested('2020-01-02')
+    temp.repository.markCnvDateIngested('2020-01-02', {
+      presentationId: 'old-p',
+    })
 
     const service = new FundDetailsSyncService(temp.repository)
     const ingested = []
@@ -112,10 +114,12 @@ describe('FundDetailsSyncService CNV', () => {
       documents: [
         {
           documentDate: '2020-01-02',
+          presentationId: 'old-p',
           receptionAt: '2020-01-02T12:00:00.000Z',
         },
         {
           documentDate: '2026-08-14',
+          presentationId: 'new-p',
           receptionAt: '2026-08-14T18:00:00.000Z',
         },
       ],
@@ -124,6 +128,130 @@ describe('FundDetailsSyncService CNV', () => {
     expect(summary.ingested).toBe(1)
     expect(summary.skippedExisting).toBe(1)
     expect(ingested).toEqual(['2026-08-14'])
+  })
+
+  it('fresh re-ingiere si la misma fecha tiene otra presentationId (corrección CNV)', async () => {
+    const temp = await createTempRepository()
+    cleanups.push(temp.cleanup)
+
+    temp.repository.markCnvDateIngested('2026-02-27', {
+      presentationId: 'original',
+      receptionAt: '2026-02-28T12:00:00.000Z',
+    })
+
+    const service = new FundDetailsSyncService(temp.repository)
+    const ingested = []
+    service.fetchDocumentExcel = async document => ({
+      buffer: Buffer.from(''),
+      fileName: 'dummy.xlsx',
+      document,
+    })
+    service.ingestCnvDocument = async document => {
+      ingested.push(document.presentationId)
+      return { documentDate: document.documentDate, upserted: 1 }
+    }
+
+    const summary = await service.fresh({
+      documents: [
+        {
+          documentDate: '2026-02-27',
+          presentationId: 'original',
+          receptionAt: '2026-02-28T12:00:00.000Z',
+        },
+        {
+          documentDate: '2026-02-27',
+          presentationId: 'updated-may',
+          receptionAt: '2026-05-13T18:10:00.000Z',
+        },
+      ],
+    })
+
+    expect(summary.ingested).toBe(1)
+    expect(summary.skippedExisting).toBe(0)
+    expect(ingested).toEqual(['updated-may'])
+  })
+
+  it('runCycle re-ingiere republicaciones de fechas ya vistas', async () => {
+    const temp = await createTempRepository()
+    cleanups.push(temp.cleanup)
+
+    temp.repository.markCnvDateIngested('2026-06-30', {
+      presentationId: 'old-jun',
+      receptionAt: '2026-07-01T12:00:00.000Z',
+    })
+    temp.repository.markCnvDateIngested('2026-09-04', {
+      presentationId: 'sep4-v1',
+      receptionAt: '2026-09-04T20:00:00.000Z',
+    })
+    // Marca legacy: correcciones recientes deben re-chequearse.
+    temp.repository.markCnvDateIngested('2026-02-27')
+
+    const service = new FundDetailsSyncService(temp.repository)
+    const ingested = []
+    service.ingestCnvDocument = async document => {
+      ingested.push({
+        date: document.documentDate,
+        presentationId: document.presentationId,
+      })
+      return {
+        documentDate: document.documentDate,
+        presentationId: document.presentationId,
+        upserted: 1,
+        parsedFunds: 1,
+      }
+    }
+
+    const documents = [
+      {
+        documentDate: '2026-02-27',
+        presentationId: 'feb-updated-may',
+        receptionAt: '2026-09-01T15:10:00.000Z',
+      },
+      {
+        documentDate: '2026-06-30',
+        presentationId: 'old-jun',
+        receptionAt: '2026-07-01T12:00:00.000Z',
+      },
+      {
+        documentDate: '2026-06-30',
+        presentationId: 'jun-republished',
+        receptionAt: '2026-09-01T18:16:00.000Z',
+      },
+      {
+        documentDate: '2026-09-03',
+        presentationId: 'sep3-evening',
+        receptionAt: '2026-09-03T23:20:00.000Z',
+      },
+      {
+        documentDate: '2026-09-03',
+        presentationId: 'sep3-next-day',
+        receptionAt: '2026-09-04T17:51:00.000Z',
+      },
+      {
+        documentDate: '2026-09-04',
+        presentationId: 'sep4-v2',
+        receptionAt: '2026-09-05T12:00:00.000Z',
+      },
+    ]
+
+    const selected = service.selectDocumentsForCycle(documents, {
+      now: Date.parse('2026-09-05T15:00:00.000Z'),
+    })
+    expect(selected.map(d => d.presentationId)).toEqual([
+      'feb-updated-may',
+      'jun-republished',
+      'sep4-v2',
+    ])
+
+    for (const document of selected) {
+      await service.ingestCnvDocument(document)
+    }
+
+    expect(ingested).toEqual([
+      { date: '2026-02-27', presentationId: 'feb-updated-may' },
+      { date: '2026-06-30', presentationId: 'jun-republished' },
+      { date: '2026-09-04', presentationId: 'sep4-v2' },
+    ])
   })
 
   it('en backfill calcula flujo en memoria y no relee toda la historia', async () => {
@@ -192,8 +320,20 @@ describe('FundDetailsSyncService CNV', () => {
       flujoEstimado: 15,
       fuenteOriginal: null,
     })
-    expect(temp.repository.getWorkerState('cnv_ingested:2020-01-02')).toBe('1')
-    expect(temp.repository.getWorkerState('cnv_ingested:2020-01-03')).toBe('1')
+    expect(temp.repository.getWorkerState('cnv_ingested:2020-01-02')).toEqual(
+      JSON.stringify({
+        presentationId: 'p1',
+        documentId: null,
+        receptionAt: null,
+      }),
+    )
+    expect(temp.repository.getWorkerState('cnv_ingested:2020-01-03')).toEqual(
+      JSON.stringify({
+        presentationId: 'p2',
+        documentId: null,
+        receptionAt: null,
+      }),
+    )
   })
 
   it('desambigua slugs cuando un nombre choca con un fondo ya persistido', async () => {
@@ -276,7 +416,13 @@ describe('FundDetailsSyncService CNV', () => {
         .listHistoricalSnapshotsBySlug('alpha')
         .map(snapshot => snapshot.fecha),
     ).toEqual(['2026-01-09'])
-    expect(temp.repository.getWorkerState('cnv_ingested:2026-01-09')).toBe('1')
+    expect(temp.repository.getWorkerState('cnv_ingested:2026-01-09')).toEqual(
+      JSON.stringify({
+        presentationId: '2026-01-09',
+        documentId: null,
+        receptionAt: null,
+      }),
+    )
   })
 
   it('conserva el slug interno si el del nombre actual ya pertenece a otra clase', async () => {

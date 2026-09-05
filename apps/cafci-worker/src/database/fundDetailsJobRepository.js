@@ -179,8 +179,89 @@ export class FundDetailsJobRepository {
     ).run(key, value)
   }
 
-  markCnvDateIngested(documentDate) {
-    this.setWorkerState(`${CNV_INGESTED_DATE_PREFIX}${documentDate}`, '1')
+  /**
+   * Marca una fecha CNV como ingerida.
+   * Value: JSON con presentationId/documentId/receptionAt, o legacy `'1'`.
+   */
+  markCnvDateIngested(documentDate, documentOrMeta = null) {
+    const key = `${CNV_INGESTED_DATE_PREFIX}${documentDate}`
+    const presentationId =
+      documentOrMeta?.presentationId ?? documentOrMeta?.presentation_id ?? null
+    const documentId =
+      documentOrMeta?.documentId ?? documentOrMeta?.document_id ?? null
+    const receptionAt =
+      documentOrMeta?.receptionAt ?? documentOrMeta?.reception_at ?? null
+
+    if (!presentationId && !documentId && !receptionAt) {
+      this.setWorkerState(key, '1')
+      return
+    }
+
+    this.setWorkerState(
+      key,
+      JSON.stringify({
+        presentationId: presentationId || null,
+        documentId: documentId || null,
+        receptionAt: receptionAt || null,
+      }),
+    )
+  }
+
+  getCnvIngestedMeta(documentDate) {
+    const raw = this.getWorkerState(`${CNV_INGESTED_DATE_PREFIX}${documentDate}`)
+    if (!raw) {
+      return null
+    }
+
+    if (raw === '1') {
+      return { legacy: true, presentationId: null, documentId: null, receptionAt: null }
+    }
+
+    try {
+      const parsed = JSON.parse(raw)
+      if (parsed && typeof parsed === 'object') {
+        return {
+          legacy: false,
+          presentationId: parsed.presentationId || null,
+          documentId: parsed.documentId || null,
+          receptionAt: parsed.receptionAt || null,
+        }
+      }
+    } catch {
+      // Value antiguo o presentationId plano.
+    }
+
+    return {
+      legacy: false,
+      presentationId: raw,
+      documentId: null,
+      receptionAt: null,
+    }
+  }
+
+  /**
+   * True si ya ingerimos exactamente esta presentación (o legacy sin id).
+   * False si no hay marca o hay otra presentationId → hay que re-ingerir.
+   */
+  isCnvDocumentIngested(document) {
+    if (!document?.documentDate) {
+      return false
+    }
+
+    const meta = this.getCnvIngestedMeta(document.documentDate)
+    if (!meta) {
+      return false
+    }
+
+    if (meta.legacy || !meta.presentationId) {
+      return true
+    }
+
+    if (!document.presentationId) {
+      return true
+    }
+
+    return meta.presentationId === document.presentationId
   }
 
   listHistoricalSourceDates() {

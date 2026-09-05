@@ -35,4 +35,27 @@ describe('listChronologicalCnvDocuments', () => {
   it('pickLatestAvailableDocument usa el último día del listado', () => {
     expect(pickLatestAvailableDocument(documents).presentationId).toBe('latest')
   })
+
+  it('elige la recepción más nueva cuando hay dos informes el mismo día', () => {
+    const listed = listChronologicalCnvDocuments([
+      {
+        documentDate: '2026-09-03',
+        presentationId: 'evening',
+        receptionAt: '2026-09-03T23:20:00.000Z',
+        documentId: '7-3566358-D',
+      },
+      {
+        documentDate: '2026-09-03',
+        presentationId: 'next-day',
+        receptionAt: '2026-09-04T17:51:00.000Z',
+        documentId: '7-3566576-D',
+      },
+    ])
+
+    expect(listed).toHaveLength(1)
+    expect(listed[0]).toMatchObject({
+      presentationId: 'next-day',
+      documentId: '7-3566576-D',
+    })
+  })
 })
