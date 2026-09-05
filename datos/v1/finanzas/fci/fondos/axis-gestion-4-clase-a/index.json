@@ -2,7 +2,7 @@
   "fondoId": "1792",
   "claseId": "6127",
   "nombre": "Axis Gestión 4 - Clase A",
-  "fecha": "2026-09-03",
+  "fecha": "2026-09-04",
   "administradora": "Axis S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
@@ -15,7 +15,7 @@
   "codigoCNV": "1845",
   "patrimonio": 0,
   "cantidadCuotapartes": 0,
-  "inversionMinima": 10000,
+  "inversionMinima": 1,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
@@ -336,12 +336,12 @@
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": 2,
+    "honorarioGerente": 0.6,
     "honorarioDepositaria": 0.15,
     "comisionIngreso": 0,
     "comisionEgreso": 0,
     "comisionTransferencia": 0,
-    "gastosOrdinariosGestion": 0,
+    "gastosOrdinariosGestion": 0.3,
     "comisionExito": null,
     "otros": null
   },
