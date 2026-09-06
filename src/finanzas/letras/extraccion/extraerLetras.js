@@ -1,417 +1,254 @@
-import * as XLSX from 'xlsx'
-import { obtenerFilasDeSheets } from '@/utils/gsheets.js'
-import { logGrupo, logError } from '@/log.js'
-
-const log = logGrupo({
-  fuente: 'extraerLetras',
-  tipo: 'extraccion',
-})
-
-const PAGINA_COLOCACIONES =
-  'https://www.argentina.gob.ar/economia/finanzas/deudapublica/colocacionesdedeuda'
-
-const URL_BASE = 'https://www.argentina.gob.ar'
-
-const CODIGOS_MES = {
-  E: 0,
-  F: 1,
-  M: 2,
-  A: 3,
-  Y: 4,
-  J: 5,
-  L: 6,
-  G: 7,
-  S: 8,
-  O: 9,
-  N: 10,
-  D: 11,
-}
-
-export function parsearVencimientoTicker(ticker) {
-  if (ticker.length < 5) return undefined
-
-  const tickerBase = ticker.slice(0, 5)
-  const tipo = tickerBase[0]
-
-  if (tipo !== 'S' && tipo !== 'T') return undefined
-
-  const cadeniaDia = tickerBase.slice(1, 3)
-  const codigoMes = tickerBase[3]
-  const digitoAnio = tickerBase[4]
-
-  const dia = parseInt(cadeniaDia)
-  const mes = CODIGOS_MES[codigoMes]
-  const ultimoDigitoAnio = parseInt(digitoAnio)
-
-  if (isNaN(dia) || mes === undefined || isNaN(ultimoDigitoAnio))
-    return undefined
-
-  const anioActual = new Date().getFullYear()
-  const decadaActual = Math.floor(anioActual / 10) * 10
-  let anio = decadaActual + ultimoDigitoAnio
-
-  if (anio < anioActual - 1) anio += 10
-
-  const fecha = new Date(anio, mes, dia)
-
-  if (isNaN(fecha.getTime())) return undefined
-
-  return fecha.toISOString().split('T')[0]
-}
-
-export function extraerTem(cupon) {
-  if (!cupon || typeof cupon !== 'string') return null
-
-  const coincidencia = cupon.match(/capitalizable\s+([\d,.]+)\s*%/)
-
-  if (!coincidencia) return null
-
-  return parseFloat(coincidencia[1].replace(',', '.'))
-}
-
-export function aFechaIso(valor) {
-  if (!valor) return null
-
-  if (valor instanceof Date) return valor.toISOString().split('T')[0]
-
-  if (typeof valor === 'string') {
-    if (/^\d{4}-\d{2}-\d{2}$/.test(valor)) return valor
-
-    const coincidenciaDMA = valor.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/)
-
-    if (coincidenciaDMA)
-      return `${coincidenciaDMA[3]}-${coincidenciaDMA[2].padStart(2, '0')}-${coincidenciaDMA[1].padStart(2, '0')}`
-
-    const coincidenciaMDA = valor.match(/^(\d{1,2})\/(\d{1,2})\/(\d{2})$/)
-
-    if (coincidenciaMDA) {
-      const aa = parseInt(coincidenciaMDA[3])
-      const anio = aa <= 50 ? 2000 + aa : 1900 + aa
-
-      return `${anio}-${coincidenciaMDA[1].padStart(2, '0')}-${coincidenciaMDA[2].padStart(2, '0')}`
-    }
-  }
-
-  return null
-}
-
-export function dias360(fecha1, fecha2) {
-  const [a1, m1, d1] = fecha1.split('-').map(Number)
-
-  const [a2, m2, d2] = fecha2.split('-').map(Number)
-
-  const dia1 = Math.min(d1, 30)
-  const dia2 = dia1 === 30 ? Math.min(d2, 30) : d2
-
-  return (a2 - a1) * 360 + (m2 - m1) * 30 + (dia2 - dia1)
-}
-
-export function calcularVpv(fechaEmision, fechaVencimiento, tem) {
-  const d360 = dias360(fechaEmision, fechaVencimiento)
-  const t = d360 / 30
-
-  return Math.round(100 * Math.pow(1 + tem / 100, t) * 100000) / 100000
-}
-
-async function obtenerTickersActivos() {
-  const [notas, bonos] = await Promise.all([
-    fetch('https://data912.com/live/arg_notes').then(r => r.json()),
-    fetch('https://data912.com/live/arg_bonds').then(r => r.json()),
-  ])
-
-  const vencimientoATicker = new Map()
-
-  for (const elemento of [...(notas || []), ...(bonos || [])]) {
-    const simbolo = elemento.symbol
-
-    if (!simbolo || !simbolo.match(/^[ST]\d{2}[EFMAYLGJSOND]\d/)) continue
-
-    const vencimiento = parsearVencimientoTicker(simbolo)
-
-    if (vencimiento) vencimientoATicker.set(vencimiento, simbolo)
-  }
-
-  return vencimientoATicker
-}
-
-async function obtenerUrlsExcel() {
-  const respuesta = await fetch(PAGINA_COLOCACIONES)
-  const html = await respuesta.text()
-  const coincidencias = [
-    ...html.matchAll(/href="([^"]*colocaciones[^"]*\.xlsx[^"]*)"/gi),
-  ]
-
-  const urls = coincidencias
-    .map(m => {
-      const href = m[1].replace(/^blank:#/, '')
-      return href.startsWith('http') ? href : `${URL_BASE}${href}`
-    })
-    .filter(Boolean)
-
-  return [...new Set(urls)]
-}
-
-export async function extraerLetrasDesdeRendimientos() {
-  try {
-    const respuesta = await fetch('https://rendimientos.co/config.json')
-
-    if (!respuesta.ok) return []
-
-    const data = await respuesta.json()
-    const letras = data.lecaps && data.lecaps.letras ? data.lecaps.letras : []
-
-    const especiales =
-      data.lecaps && data.lecaps.especiales ? data.lecaps.especiales : []
-
-    const boncaps =
-      data.lecaps && data.lecaps.boncaps ? data.lecaps.boncaps : []
-
-    const todos = [...letras, ...especiales, ...boncaps]
-
-    return todos
-      .filter(l => l.activo !== false)
-      .map(l => ({
-        ticker: l.ticker,
-        fechaVencimiento: l.fecha_vencimiento,
-        vpv: l.pago_final,
-        fechaEmision: null,
-        tem: null,
-      }))
-  } catch (error) {
-    logError(log, error)
-    return []
+function _nullishCoalesce(lhs, rhsFn) {
+  if (lhs != null) {
+    return lhs
+  } else {
+    return rhsFn()
   }
 }
 
-async function parsearBufferExcel(buffer, vencimientoATicker) {
-  const libro = XLSX.read(buffer, {
-    type: 'array',
-    cellDates: true,
+import { scrapeWithFirecrawl } from '@/shared/extraction/firecrawl/scrapeWithFirecrawl.js'
+import { logMensaje, logError, logGrupo } from '@/log.js'
+
+export const DOCTA_LETRAS_URL =
+  'https://app.docta.com.ar/dashboard/bonos/general/soberanos/fixed-rate'
+
+function parseNumeroFlexible(valor) {
+  if (valor === null || valor === undefined) return null
+
+  if (typeof valor === 'number' && !isNaN(valor)) return valor
+
+  let s = String(valor).trim().replace(/\$/g, '').replace(/\s/g, '')
+
+  if (s.includes(',') && s.includes('.')) {
+    s = s.replace(/\./g, '').replace(',', '.')
+  } else if (s.includes(',')) {
+    s = s.replace(',', '.')
+  }
+
+  const n = parseFloat(s)
+
+  return !isNaN(n) ? n : null
+}
+
+/** DD/MM/YYYY o DD-MM-YYYY → yyyy-MM-dd */
+function vencimientoDmaAIso(dma) {
+  if (!dma || typeof dma !== 'string') return null
+
+  const partes = dma
+    .trim()
+    .split(/[\/\-]/)
+    .map(p => p.trim())
+
+  if (partes.length !== 3) return null
+
+  const dd = parseInt(partes[0])
+  const mm = parseInt(partes[1])
+  const yyyy = parseInt(partes[2])
+
+  if (isNaN(dd) || isNaN(mm) || isNaN(yyyy)) return null
+
+  return `${yyyy}-${String(mm).padStart(2, '0')}-${String(dd).padStart(2, '0')}`
+}
+
+/** Instante en UTC (offset 0), ISO 8601 con sufijo `Z` (equiv. `Date#toISOString()`). */
+function fechaActualizacionUtc0() {
+  return new Date().toISOString()
+}
+
+function limpiarTicker(raw) {
+  let s = String(_nullishCoalesce(raw, () => ''))
+    .trim()
+    .toUpperCase()
+
+  s = s.replace(/\s*-\s*24HS$/i, '').replace(/\s+24HS$/i, '').trim()
+  return s
+}
+
+function redondear2(n) {
+  return Math.round(n * 100) / 100
+}
+
+/** Tabla Soberanos tasa fija (LECAP/BONCAP) en Docta (Firecrawl JSON extract → filas del endpoint). */
+async function extraerFilasLetrasDocta(log) {
+  const configuracion = {
+    url: DOCTA_LETRAS_URL,
+    prompt: `Estás en la página de cotización de LECAPs / bonos soberanos a tasa fija de Docta.
+Extraé **todas las filas visibles** de la tabla principal (no solo las primeras): ticker, precio en pesos, TNA, TEA, TEM, fecha de vencimiento, días al vencimiento, paridad y volumen nominal si figuran.
+
+Reglas:
+- ticker: código del instrumento (ej. S15S6, TTS26, T30A7). Sin texto extra tipo "24hs" ni "- 24hs".
+- precioArs: número decimal del precio cotización (ej. 106.68 para "ARS 106,68" o "$106,68").
+- tnaPorcentaje: TNA sin símbolo % (ej. 32.5 para "32,50%").
+- teaPorcentaje: TEA sin símbolo %.
+- temPorcentaje: TEM sin símbolo %.
+- vencimientoDma: fecha exactamente en formato DD/MM/YYYY como en la columna Vto.
+- diasAlVencimiento: entero de la columna D. al Vto. si figura.
+- paridadPorcentaje: paridad sin símbolo % (ej. 100.02 para "100,02%"); si no hay dato, omití.
+- volumenNominal: volumen en nominales, número sin separadores de miles; si no hay dato, omití.`,
+    schema: {
+      letras: {
+        type: 'array',
+        description: 'Filas de la grilla soberanos tasa fija (LECAP/BONCAP)',
+        items: {
+          type: 'object',
+          properties: {
+            ticker: {
+              type: 'string',
+              description: 'Código del instrumento',
+            },
+            precioArs: {
+              type: 'number',
+              description: 'Precio cotización en ARS (decimal)',
+            },
+            tnaPorcentaje: {
+              type: 'number',
+              description: 'TNA en % sin signo porcentaje',
+            },
+            teaPorcentaje: {
+              type: 'number',
+              description: 'TEA en % sin signo porcentaje',
+            },
+            temPorcentaje: {
+              type: 'number',
+              description: 'TEM en % sin signo porcentaje',
+            },
+            vencimientoDma: {
+              type: 'string',
+              description: 'Vencimiento DD/MM/AAAA',
+            },
+            diasAlVencimiento: {
+              type: 'number',
+              description: 'Días al vencimiento (opcional)',
+            },
+            paridadPorcentaje: {
+              type: 'number',
+              description: 'Paridad en % sin signo (opcional)',
+            },
+            volumenNominal: {
+              type: 'number',
+              description: 'Volumen nominal opcional',
+            },
+          },
+          required: [
+            'ticker',
+            'precioArs',
+            'tnaPorcentaje',
+            'teaPorcentaje',
+            'temPorcentaje',
+            'vencimientoDma',
+          ],
+        },
+      },
+    },
+    required: ['letras'],
+  }
+
+  logMensaje(log, 'Firecrawl: Docta soberanos tasa fija', {
+    url: DOCTA_LETRAS_URL,
   })
 
-  const resultados = []
-  const vistos = new Set()
+  const datos = await scrapeWithFirecrawl(log, configuracion)
 
-  for (const nombreHoja of ['Letras', 'Bonos']) {
-    const hoja = libro.Sheets[nombreHoja]
-
-    if (!hoja) continue
-
-    const filas = XLSX.utils.sheet_to_json(hoja, {
-      header: 1,
-      raw: false,
-      dateNF: 'yyyy-mm-dd',
-    })
-
-    for (let i = 2; i < filas.length; i++) {
-      const fila = filas[i]
-      const emisionBruta = fila[1]
-      const vencimientoBruto = fila[2]
-      const cupon = fila[3]
-
-      if (!emisionBruta || !vencimientoBruto) continue
-
-      const fechaEmision = aFechaIso(emisionBruta)
-      const fechaVencimiento = aFechaIso(vencimientoBruto)
-
-      if (!fechaEmision || !fechaVencimiento) continue
-
-      const ticker = vencimientoATicker.get(fechaVencimiento)
-
-      if (!ticker) continue
-
-      const tem = extraerTem(cupon)
-
-      if (tem === null) continue
-
-      const clave = `${ticker}:${fechaEmision}:${tem}`
-
-      if (vistos.has(clave)) continue
-
-      vistos.add(clave)
-
-      resultados.push({
-        ticker,
-        fechaEmision,
-        fechaVencimiento,
-        tem,
-        vpv: calcularVpv(fechaEmision, fechaVencimiento, tem),
-      })
-    }
-  }
-
-  return resultados
-}
-
-export function parsearFilaSheets(fila) {
-  const ticker = fila[0] && fila[0].trim()
-
-  if (!ticker) return null
-
-  const fechaEmision =
-    fila[1] && fila[1].trim() ? aFechaIso(fila[1].trim()) : null
-
-  const fechaVencimientoBruta = fila[2] && fila[2].trim()
-  const temBruto = fila[3] && fila[3].trim()
-  const vpvBruto = fila[4] && fila[4].trim()
-
-  let fechaVencimiento = fechaVencimientoBruta
-    ? aFechaIso(fechaVencimientoBruta)
-    : null
-
-  if (!fechaVencimiento) {
-    const vencimientoDeTicket = parsearVencimientoTicker(ticker)
-
-    if (vencimientoDeTicket) fechaVencimiento = vencimientoDeTicket
-  }
-
-  const tem = temBruto ? parseFloat(temBruto) : null
-  let vpv = vpvBruto ? parseFloat(vpvBruto) : null
-
-  if (
-    vpv === null &&
-    fechaEmision &&
-    fechaVencimiento &&
-    tem !== null &&
-    !isNaN(tem)
-  ) {
-    vpv = calcularVpv(fechaEmision, fechaVencimiento, tem)
-  }
-
-  return {
-    ticker,
-    fechaEmision,
-    fechaVencimiento,
-    tem,
-    vpv,
-  }
-}
-
-export async function extraerLetrasDesdeSheets() {
-  const spreadsheetId = import.meta.env.VITE_GSHEETS_LETRAS_SPREADSHEET_ID
-
-  if (!spreadsheetId) return []
-
-  try {
-    const filas = await obtenerFilasDeSheets(spreadsheetId, 'A:E')
-
-    if (filas.length <= 1) return []
-
-    const resultado = []
-
-    for (var i = 1; i < filas.length; i++) {
-      const item = parsearFilaSheets(filas[i])
-
-      if (item) resultado.push(item)
-    }
-
-    return resultado
-  } catch (error) {
-    logError(log, error)
-    return []
-  }
-}
-
-async function extraerLetrasDesdeExcel() {
-  const vencimientoATicker = await obtenerTickersActivos()
-  const urls = await obtenerUrlsExcel()
-  const todosDatos = new Map()
-
-  for (const url of urls) {
-    const respuesta = await fetch(url)
-
-    if (!respuesta.ok) continue
-
-    const buffer = await respuesta.arrayBuffer()
-    const instrumentos = await parsearBufferExcel(buffer, vencimientoATicker)
-
-    for (const instrumento of instrumentos) {
-      if (!todosDatos.has(instrumento.ticker))
-        todosDatos.set(instrumento.ticker, [])
-
-      todosDatos.get(instrumento.ticker).push(instrumento)
-    }
+  if (!datos || !Array.isArray(datos.letras)) {
+    throw new Error('Firecrawl Docta: respuesta sin array letras')
   }
 
   const resultado = []
 
-  for (const [, entradas] of todosDatos) {
-    const mejor = [...entradas].sort((a, b) => {
-      if (a.fechaEmision !== b.fechaEmision)
-        return a.fechaEmision < b.fechaEmision ? -1 : 1
+  for (const raw of datos.letras) {
+    const symbol = limpiarTicker(raw.ticker)
 
-      return a.tem - b.tem
-    })[0]
+    if (!symbol || symbol.length < 3) continue
 
-    resultado.push(mejor)
+    const precio = _nullishCoalesce(parseNumeroFlexible(raw.precioArs), () =>
+      parseNumeroFlexible(raw.precio),
+    )
+
+    const tna = parseNumeroFlexible(raw.tnaPorcentaje)
+    const tea = parseNumeroFlexible(raw.teaPorcentaje)
+    const tem = parseNumeroFlexible(raw.temPorcentaje)
+
+    if (precio === null || precio <= 0) continue
+
+    if (tna === null || tea === null || tem === null) continue
+
+    const maturity = vencimientoDmaAIso(raw.vencimientoDma || raw.vto || '')
+
+    if (!maturity) continue
+
+    let vol = raw.volumenNominal
+
+    if (vol !== null && typeof vol !== 'number') vol = parseNumeroFlexible(vol)
+
+    let dias = raw.diasAlVencimiento
+
+    if (dias !== null && typeof dias !== 'number')
+      dias = parseNumeroFlexible(dias)
+
+    let paridad = raw.paridadPorcentaje
+
+    if (paridad !== null && typeof paridad !== 'number')
+      paridad = parseNumeroFlexible(paridad)
+
+    const fila = {
+      ticker: symbol,
+      precioArs: redondear2(precio),
+      tnaPorcentaje: redondear2(tna),
+      teaPorcentaje: redondear2(tea),
+      temPorcentaje: redondear2(tem),
+      fechaVencimiento: maturity,
+    }
+
+    if (dias !== null && !isNaN(dias)) fila.diasAlVencimiento = Math.round(dias)
+
+    if (paridad !== null && !isNaN(paridad))
+      fila.paridadPorcentaje = redondear2(paridad)
+
+    if (vol !== null && !isNaN(vol)) fila.volumen = vol
+
+    resultado.push(fila)
   }
+
+  if (resultado.length === 0) {
+    throw new Error(
+      'Firecrawl Docta: no quedaron filas válidas tras normalizar',
+    )
+  }
+
+  resultado.sort((a, b) => a.fechaVencimiento.localeCompare(b.fechaVencimiento))
+
+  logMensaje(log, 'Docta letras: filas normalizadas', {
+    cantidad: resultado.length,
+    muestra: resultado
+      .slice(0, Math.min(5, resultado.length))
+      .map(r => r.ticker),
+  })
 
   return resultado
 }
 
 export async function extraerLetras() {
+  const log = logGrupo({
+    fuente: 'extraerLetras',
+    tipo: 'letras',
+  })
+
   try {
-    const [datosExcel, datosSheets, datosRendimientos] = await Promise.all([
-      extraerLetrasDesdeExcel(),
-      extraerLetrasDesdeSheets(),
-      extraerLetrasDesdeRendimientos(),
-    ])
+    const letras = await extraerFilasLetrasDocta(log)
 
-    const mapa = new Map()
-
-    for (const item of datosExcel) {
-      mapa.set(item.ticker, { ...item })
+    return {
+      fechaActualizacion: fechaActualizacionUtc0(),
+      letras,
     }
-
-    for (const item of datosSheets) {
-      const base = mapa.get(item.ticker) || {
-        fechaEmision: null,
-        fechaVencimiento: null,
-        tem: null,
-        vpv: null,
-      }
-
-      const merged = {
-        ...base,
-        ticker: item.ticker,
-      }
-
-      if (item.fechaEmision) merged.fechaEmision = item.fechaEmision
-
-      if (item.fechaVencimiento) merged.fechaVencimiento = item.fechaVencimiento
-
-      if (item.tem !== null && !isNaN(item.tem)) merged.tem = item.tem
-
-      if (item.vpv !== null && !isNaN(item.vpv)) merged.vpv = item.vpv
-
-      mapa.set(item.ticker, merged)
-    }
-
-    for (const item of datosRendimientos) {
-      const base = mapa.get(item.ticker) || {
-        fechaEmision: null,
-        fechaVencimiento: null,
-        tem: null,
-        vpv: null,
-      }
-
-      const merged = {
-        ...base,
-        ...item,
-      }
-
-      mapa.set(item.ticker, merged)
-    }
-
-    return [...mapa.values()].filter(
-      item =>
-        item.fechaVencimiento &&
-        item.vpv !== null &&
-        item.vpv !== undefined &&
-        !isNaN(item.vpv),
-    )
   } catch (error) {
     logError(log, error)
-    throw error
+    logMensaje(log, 'extraerLetras: falló Docta/Firecrawl', {
+      errorMessage: error.message,
+    })
+    return {
+      fechaActualizacion: fechaActualizacionUtc0(),
+      letras: [],
+      errorExtraccion: error.message,
+    }
   }
 }

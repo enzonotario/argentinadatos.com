@@ -6,7 +6,7 @@ export async function ejecutarLetras() {
     const datos = await extraerLetras()
     await guardarLetras(datos)
   } catch (error) {
-    console.error('Error al extraer datos de LECAPs/BONCAPs', error)
+    console.error('Error al extraer letras (tasa fija)', error)
   }
 }
 

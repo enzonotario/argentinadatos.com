@@ -144,13 +144,6 @@ export default defineConfig({
           }),
           addDocsPrefix({
             ...sidebar.generateSidebarGroup({
-              tag: ['Finanzas', 'Letras'],
-              text: 'Letras',
-            }),
-            collapsed: true,
-          }),
-          addDocsPrefix({
-            ...sidebar.generateSidebarGroup({
               tag: ['Finanzas', 'Remesas'],
               text: 'Remesas',
             }),

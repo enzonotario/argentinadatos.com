@@ -610,37 +610,6 @@
         ]
       }
     },
-    "/v1/finanzas/letras": {
-      "get": {
-        "summary": "Letras capitalizables (LECAP/BONCAP)",
-        "tags": [
-          "Finanzas",
-          "Letras"
-        ],
-        "description": "Pago final (VPV) y fechas de emisión y vencimiento de las letras capitalizables (LECAP) y bonos capitalizables (BONCAP) activos, calculados a partir de los archivos oficiales de la Secretaría de Finanzas.",
-        "responses": {
-          "200": {
-            "description": "Devuelve una lista de letras capitalizables activas",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/LetraCapitalizable"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get-finanzas-letras",
-        "x-data-source": [
-          "[@arielsbdar](https://x.com/arielsbdar)",
-          "[Ministerio de Economía](https://www.argentina.gob.ar/economia/finanzas/deudapublica/colocacionesdedeuda)",
-          "[https://data912.com](https://data912.com)"
-        ]
-      }
-    },
     "/v1/finanzas/remesas": {
       "get": {
         "summary": "Remesas",
@@ -2544,42 +2513,6 @@
   },
   "components": {
     "schemas": {
-      "LetraCapitalizable": {
-        "title": "LetraCapitalizable",
-        "type": "object",
-        "properties": {
-          "ticker": {
-            "type": "string",
-            "description": "Código del instrumento",
-            "example": "S31G5"
-          },
-          "fechaEmision": {
-            "type": "string",
-            "description": "Fecha de emisión original (ISO 8601)"
-          },
-          "fechaVencimiento": {
-            "type": "string",
-            "description": "Fecha de vencimiento (ISO 8601)"
-          },
-          "tem": {
-            "type": "number",
-            "description": "Tasa Efectiva Mensual (%)"
-          },
-          "vpv": {
-            "type": "number",
-            "description": "Valor de Pago al Vencimiento por cada $100 de valor nominal"
-          }
-        },
-        "x-examples": {
-          "Example 1": {
-            "ticker": "S31G5",
-            "fechaEmision": "2024-06-14",
-            "fechaVencimiento": "2025-08-31",
-            "tem": 3.75,
-            "vpv": 118.45612
-          }
-        }
-      },
       "BonoSoberanoCer": {
         "title": "BonoSoberanoCer",
         "type": "object",
@@ -2654,6 +2587,111 @@
                 "tirPorcentaje": -8.55,
                 "fechaVencimiento": "2026-06-30",
                 "volumen": 7197806107
+              }
+            ]
+          }
+        }
+      },
+      "LetraSoberanaTasaFija": {
+        "title": "LetraSoberanaTasaFija",
+        "type": "object",
+        "required": [
+          "ticker",
+          "precioArs",
+          "tnaPorcentaje",
+          "teaPorcentaje",
+          "temPorcentaje",
+          "fechaVencimiento"
+        ],
+        "properties": {
+          "ticker": {
+            "type": "string",
+            "description": "Código del instrumento",
+            "example": "S15S6"
+          },
+          "precioArs": {
+            "type": "number",
+            "description": "Precio de cotización en pesos argentinos"
+          },
+          "tnaPorcentaje": {
+            "type": "number",
+            "description": "Tasa Nominal Anual (TNA) en porcentaje"
+          },
+          "teaPorcentaje": {
+            "type": "number",
+            "description": "Tasa Efectiva Anual (TEA) en porcentaje"
+          },
+          "temPorcentaje": {
+            "type": "number",
+            "description": "Tasa Efectiva Mensual (TEM) en porcentaje"
+          },
+          "fechaVencimiento": {
+            "type": "string",
+            "format": "date",
+            "description": "Fecha de vencimiento (ISO 8601, solo fecha: yyyy-MM-dd)"
+          },
+          "diasAlVencimiento": {
+            "type": "number",
+            "description": "Días al vencimiento, si la fuente lo publica"
+          },
+          "paridadPorcentaje": {
+            "type": "number",
+            "description": "Paridad en porcentaje, si la fuente lo publica"
+          },
+          "volumen": {
+            "type": "number",
+            "description": "Volumen nominal negociado, si la fuente lo publica"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "ticker": "S15S6",
+            "precioArs": 106.68,
+            "tnaPorcentaje": 32.5,
+            "teaPorcentaje": 37.8,
+            "temPorcentaje": 2.71,
+            "fechaVencimiento": "2026-09-15",
+            "diasAlVencimiento": 9,
+            "paridadPorcentaje": 100.02,
+            "volumen": 17084204553
+          }
+        }
+      },
+      "Letras": {
+        "title": "Letras",
+        "type": "object",
+        "required": [
+          "fechaActualizacion",
+          "letras"
+        ],
+        "properties": {
+          "fechaActualizacion": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Instante en que se generó el recurso (UTC, ISO 8601 con sufijo Z)"
+          },
+          "letras": {
+            "type": "array",
+            "description": "Filas de la grilla soberanos tasa fija (LECAP/BONCAP)",
+            "items": {
+              "$ref": "#/components/schemas/LetraSoberanaTasaFija"
+            }
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "fechaActualizacion": "2026-09-06T13:00:00.000Z",
+            "letras": [
+              {
+                "ticker": "S15S6",
+                "precioArs": 106.68,
+                "tnaPorcentaje": 32.5,
+                "teaPorcentaje": 37.8,
+                "temPorcentaje": 2.71,
+                "fechaVencimiento": "2026-09-15",
+                "diasAlVencimiento": 9,
+                "paridadPorcentaje": 100.02,
+                "volumen": 17084204553
               }
             ]
           }

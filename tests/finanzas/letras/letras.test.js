@@ -1,59 +1,60 @@
 import { describe, expect, it } from 'vitest'
 import {
+  DOCTA_LETRAS_URL,
   extraerLetras,
-  extraerLetrasDesdeSheets,
 } from '@/finanzas/letras/extraccion/extraerLetras.js'
 
-describe('extraerLetrasDesdeSheets', () => {
-  it(
-    'obtiene datos del Google Sheet de letras',
-    async () => {
-      const datos = await extraerLetrasDesdeSheets()
+const tieneFirecrawl =
+  Boolean(import.meta.env.VITE_FIRECRAWL_API_KEY) &&
+  Boolean(import.meta.env.VITE_FIRECRAWL_BASE_URL)
 
-      expect(Array.isArray(datos)).toBe(true)
+describe.skipIf(!tieneFirecrawl)('extraerLetras (Firecrawl real)', () => {
+  it('extrae filas de soberanos tasa fija desde Docta', async () => {
+    expect(DOCTA_LETRAS_URL).toContain('docta.com.ar')
+    expect(DOCTA_LETRAS_URL).toContain('fixed-rate')
 
-      if (datos.length > 0) {
-        for (const item of datos) {
-          expect(item.ticker).toMatch(/^[ST]\d{2}[EFMAYLGJSOND]\d/)
+    const payload = await extraerLetras()
+    const letras = payload.letras
 
-          if (item.vpv !== null) {
-            expect(typeof item.vpv).toBe('number')
-            expect(item.vpv).toBeGreaterThan(100)
-          }
-        }
+    expect(payload.fechaActualizacion).toBeTruthy()
+    expect(payload.fechaActualizacion).toMatch(/Z$/)
+    expect(Array.isArray(letras)).toBe(true)
+    expect(letras.length).toBeGreaterThan(0)
+
+    const tickers = new Set(letras.map(l => l.ticker))
+    expect(tickers.size).toBe(letras.length)
+
+    for (const row of letras) {
+      expect(typeof row.ticker).toBe('string')
+      expect(row.ticker.length).toBeGreaterThanOrEqual(3)
+      expect(row.precioArs).toBeGreaterThan(0)
+      expect(row.tnaPorcentaje).toBeGreaterThan(-50)
+      expect(row.tnaPorcentaje).toBeLessThan(500)
+      expect(row.teaPorcentaje).toBeGreaterThan(-50)
+      expect(row.teaPorcentaje).toBeLessThan(500)
+      expect(row.temPorcentaje).toBeGreaterThan(-50)
+      expect(row.temPorcentaje).toBeLessThan(100)
+      expect(/^\d{4}-\d{2}-\d{2}$/.test(row.fechaVencimiento)).toBe(true)
+      expect(row.vpv).toBeUndefined()
+      expect(row.fechaEmision).toBeUndefined()
+      if (row.volumen !== undefined) {
+        expect(typeof row.volumen).toBe('number')
+        expect(row.volumen).toBeGreaterThanOrEqual(0)
       }
-    },
-    30000,
-  )
-})
-
-describe('extraerLetras', () => {
-  it(
-    'obtiene datos reales de LECAPs y BONCAPs desde fuentes oficiales',
-    async () => {
-      const datos = await extraerLetras()
-
-      expect(Array.isArray(datos)).toBe(true)
-
-      if (datos.length > 0) {
-        for (const item of datos) {
-          expect(item.ticker).toMatch(/^[ST]\d{2}[EFMAYLGJSOND]\d/)
-          expect(item.fechaVencimiento).toMatch(/^\d{4}-\d{2}-\d{2}$/)
-
-          if (item.fechaEmision) {
-            expect(item.fechaEmision).toMatch(/^\d{4}-\d{2}-\d{2}$/)
-            expect(item.fechaEmision <= item.fechaVencimiento).toBe(true)
-          }
-
-          if (item.tem !== null) {
-            expect(typeof item.tem).toBe('number')
-            expect(item.tem).toBeGreaterThan(0)
-          }
-
-          expect(item.vpv).toBeGreaterThan(100)
-        }
+      if (row.diasAlVencimiento !== undefined) {
+        expect(typeof row.diasAlVencimiento).toBe('number')
+        expect(row.diasAlVencimiento).toBeGreaterThanOrEqual(0)
       }
-    },
-    60000,
-  )
+      if (row.paridadPorcentaje !== undefined) {
+        expect(typeof row.paridadPorcentaje).toBe('number')
+      }
+    }
+
+    const conocidos = ['S15S6', 'TTS26', 'S30S6', 'TO26', 'T30A7']
+    expect(conocidos.some(t => tickers.has(t))).toBe(true)
+
+    console.log('[extraerLetras.real]', letras.length, 'letras', {
+      muestra: letras.slice(0, 3),
+    })
+  }, 120000)
 })
