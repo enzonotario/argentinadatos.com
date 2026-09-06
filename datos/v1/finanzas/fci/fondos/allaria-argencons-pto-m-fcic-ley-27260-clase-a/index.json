@@ -1,11 +1,11 @@
 {
-  "fondoId": "730",
+  "fondoId": "911",
   "claseId": "1586",
   "nombre": "Allaria Argencons Pto. M. FCIC Ley 27260 - Clase A",
-  "fecha": "2026-03-31",
+  "fecha": "2026-06-30",
   "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
-  "tipoRenta": "Fondos Cerrados",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "No Registrado",
@@ -13,20 +13,20 @@
   "duracion": "No Aplicable",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "911",
-  "patrimonio": 41552076.86,
-  "cantidadCuotapartes": null,
+  "patrimonio": 41177657.73,
+  "cantidadCuotapartes": 28812214,
   "inversionMinima": 250000,
   "monedaInversion": "Dolar Estadounidense",
-  "plazoLiquidacionDias": 0,
+  "plazoLiquidacionDias": 999,
   "rendimientos": {
-    "valorCuotaparte": null,
+    "valorCuotaparte": 1429.174,
     "variacionDiariaPct": null,
     "ultimos7Dias": null,
     "unMes": null,
     "noventaDias": null,
     "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "enElAnio": 1.682,
+    "doceMeses": -2.094
   },
   "composicionCartera": [
     {
@@ -46,25 +46,31 @@
       "porcentaje": 0.4
     }
   ],
-  "calificaciones": [],
+  "calificaciones": [
+    {
+      "calificadora": null,
+      "calificacion": "AA-",
+      "fecha": "2026-06-30"
+    }
+  ],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 0,
+    "honorarioDepositaria": 0,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }

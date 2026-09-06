@@ -1,32 +1,32 @@
 {
-  "fondoId": "1243",
+  "fondoId": "1161",
   "claseId": "3773",
   "nombre": "Allaria Nomada Renta Corporativa FCIC - Clase B",
   "fecha": "2026-06-30",
   "administradora": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
   "depositaria": "Banco Comafi S.A.",
-  "tipoRenta": "Fondos Cerrados",
+  "tipoRenta": "Mercado de Dinero",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Otro",
-  "horizonte": "Largo Plazo",
+  "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 3 Años",
-  "moneda": "Dolar Estadounidense",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1161",
   "patrimonio": 5230488175.4,
-  "cantidadCuotapartes": null,
+  "cantidadCuotapartes": 426620944,
   "inversionMinima": 20000,
-  "monedaInversion": "Peso Argentina",
-  "plazoLiquidacionDias": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 9999,
   "rendimientos": {
-    "valorCuotaparte": null,
+    "valorCuotaparte": 12260.271,
     "variacionDiariaPct": null,
     "ultimos7Dias": null,
     "unMes": null,
     "noventaDias": null,
     "cientoOchentaDias": null,
-    "enElAnio": null,
-    "doceMeses": null
+    "enElAnio": 4.849,
+    "doceMeses": 35
   },
   "composicionCartera": [
     {
@@ -44,23 +44,23 @@
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": null,
-    "honorarioDepositaria": null,
-    "comisionIngreso": null,
-    "comisionEgreso": null,
-    "comisionTransferencia": null,
-    "gastosOrdinariosGestion": null,
+    "honorarioGerente": 0.005,
+    "honorarioDepositaria": 0.0015,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0.02,
     "comisionExito": null,
     "otros": null
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Allaria Fondos Administrados S.G.F.C.I.S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00356G-ea35a573.jpg"
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco Comafi S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
     }
