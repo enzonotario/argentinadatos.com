@@ -61,7 +61,7 @@
     "tope": 2000000,
     "fecha": "2026-09-06",
     "condiciones": "**CUENTA REMUNERADA EN PESOS**\nBENEFICIO CONSISTENTE EN LA REMUNERACIÓN DIARIA Y AUTOMÁTICA DEL SALDO DISPONIBLE EN LA CUENTA SUELDO DEL TITULAR. SE REMUNERA HASTA LA SUMA MÁXIMA DE $2.000.000,00.- (PESOS DOS MILLONES) A UNA TASA NOMINAL ANUAL DE 14,00% (TNA), TASA EFECTIVA ANUAL 15,0243%(TEA). EN CASO DE QUE EL SALDO DEPOSITADO SUPERE ESE MONTO, LOS INTERESES SERÁN CALCULADOS ÚNICAMENTE POR LOS PRIMEROS $2.000.000,00.- VÁLIDO EN LA REPÚBLICA ARGENTINA EXCLUSIVO PARA CLIENTES DE CARTERA CONSUMO TITULARES O COTITULARES DE UNA CUENTA SUELDO. NO SE REMUNERAN CUENTAS EN ESTADO BLOQUEADO Y/O CON EMBARGOS VIGENTES. LA TASA NOMINAL ANUAL (TNA) Y EL SALDO MÁXIMO A REMUNERAR PODRÁN SER MODIFICADOS, RESERVÁNDOSE EL BANCO EL DERECHO DE MODIFICAR, SUSPENDER O CANCELAR EL BENEFICIO EN CUALQUIER MOMENTO. DICHAS MODIFICACIONES SERÁN COMUNICADAS POR LOS MEDIOS HABILITADOS POR EL BANCO A TAL EFECTO. VIGENCIA DEL BENEFICIO DESDE EL 10/04/2026 AL 31/12/2026. BANCO DE LA NACIÓN ARGENTINA - BARTOLOMÉ MITRE 326, CABA - CUIT 30-50001091-2.",
-    "condicionesCorto": "Clientes con cuenta sueldo y saldo menor a 2M",
+    "condicionesCorto": "Aplicable a clientes con Cuenta Sueldo activa.",
     "plazoMinDias": 0,
     "plazoMaxDias": 0
   },
@@ -104,8 +104,8 @@
     "tea": 0.2213,
     "tope": 750000,
     "fecha": "2026-09-06",
-    "condiciones": "La bonificación puede ser modificada o descontinuada en cualquier momento, sin fecha de vigencia garantizada.",
-    "condicionesCorto": "Bonificación sin fecha de vigencia garantizada, puede ser cambiada o eliminada.",
+    "condiciones": "Esta bonificación es una iniciativa propia de fiwind y no tiene fecha de vigencia garantizada: puede ser modificada o descontinuada en cualquier momento.",
+    "condicionesCorto": "Bonificación sin fecha de vigencia garantizada.",
     "plazoMinDias": 0,
     "plazoMaxDias": 0
   },
@@ -114,7 +114,7 @@
     "tna": 0.19,
     "tea": 0.2092,
     "tope": 0,
-    "fecha": "2026-09-05",
+    "fecha": "2026-09-06",
     "condiciones": "",
     "condicionesCorto": "",
     "plazoMinDias": 0,
@@ -204,7 +204,7 @@
     "tope": 1000000,
     "fecha": "2026-09-06",
     "condiciones": "Si sumás $250.000 en ciertas operaciones este mes, tu tasa sube hasta 21% TNA.",
-    "condicionesCorto": "Acumulá $250.000 entre inversiones y consumos para acceder a la tasa Plus 1 el próximo mes.",
+    "condicionesCorto": "Acumulá $250.000 entre inversiones y consumos para acceder a la tasa Plus 1 el próximo mes",
     "plazoMinDias": 0,
     "plazoMaxDias": 0
   },
@@ -214,8 +214,8 @@
     "tea": 0.2711,
     "tope": 1000000,
     "fecha": "2026-09-06",
-    "condiciones": "Si sumás $500.000 sube hasta 24% TNA. ¡La más alta del mercado!",
-    "condicionesCorto": "Acumulá $500.000 entre inversiones y consumos para acceder a la tasa Plus 2 el próximo mes.",
+    "condiciones": "Si sumás $500.000 sube hasta 24% TNA.",
+    "condicionesCorto": "Acumulá $500.000 entre inversiones y consumos para acceder a la tasa Plus 2 el próximo mes",
     "plazoMinDias": 0,
     "plazoMaxDias": 0
   },
@@ -223,10 +223,10 @@
     "fondo": "VOII",
     "tna": 0,
     "tea": 0,
-    "tope": 50000000,
+    "tope": 0,
     "fecha": "2026-09-06",
     "condiciones": "Caja de ahorros en pesos para personas humanas sin costos asociados. Los fondos en pesos que se acrediten en la Caja de Ahorros, estarán disponibles para su uso las 24 horas del día, los 365 días del año. Tasa de Interés Nominal Anual (TNA) de referencia 0%. Vigente desde el 25/08/2026. Sujeta a modificaciones. Los depósitos en pesos y en moneda extranjera cuentan con la garantía de hasta $ 50.000.000. En las operaciones a nombre de dos o más personas, la garantía se prorrateará entre sus titulares. En ningún caso, el total de la garantía por persona y por depósito podrá exceder de $ 50.000.000, cualquiera sea el número de cuentas y/o depósitos. Ley 24.485, Decreto Nº 540/95 y modificatorios y Com. “A” 2337 y sus modificatorias y complementarias. Se encuentran excluidos los captados a tasas superiores a la de referencia conforme a los límites establecidos por el Banco Central, los adquiridos por endoso y los efectuados por personas vinculadas a la entidad financiera. Las presentes términos y condiciones son suplementarios, deben ser leídos conjuntamente, y se integran, con los Términos y Condiciones Generales de Productos y Servicios del Banco.",
-    "condicionesCorto": "Caja de ahorro en pesos sin costos y con disponibilidad 24/7.",
+    "condicionesCorto": "Caja de ahorros sin costo; TNA de 0%.",
     "plazoMinDias": 0,
     "plazoMaxDias": 0
   }
