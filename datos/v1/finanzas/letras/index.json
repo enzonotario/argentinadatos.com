@@ -1,128 +1,170 @@
-[
-  {
-    "ticker": "S17A6",
-    "fechaEmision": "2025-12-15",
-    "fechaVencimiento": "2026-04-17",
-    "tem": 2.4,
-    "vpv": 110.12514
-  },
-  {
-    "ticker": "S30A6",
-    "fechaEmision": "2025-09-30",
-    "fechaVencimiento": "2026-04-30",
-    "tem": 3.53,
-    "vpv": 127.48629
-  },
-  {
-    "ticker": "S29Y6",
-    "fechaEmision": "2025-05-30",
-    "fechaVencimiento": "2026-05-29",
-    "tem": 2.35,
-    "vpv": 132.04377
-  },
-  {
-    "ticker": "T30J6",
-    "fechaEmision": "2025-01-17",
-    "fechaVencimiento": "2026-06-30",
-    "tem": 2.15,
-    "vpv": 144.89573
-  },
-  {
-    "ticker": "S17L6",
-    "fechaEmision": "",
-    "fechaVencimiento": "2026-07-17",
-    "tem": 0,
-    "vpv": 107.92
-  },
-  {
-    "ticker": "S31L6",
-    "fechaEmision": "",
-    "fechaVencimiento": "2026-07-31",
-    "tem": 0,
-    "vpv": 117.677
-  },
-  {
-    "ticker": "S14G6",
-    "fechaEmision": "",
-    "fechaVencimiento": "2026-08-14",
-    "tem": 0,
-    "vpv": 108.03
-  },
-  {
-    "ticker": "S31G6",
-    "fechaEmision": "",
-    "fechaVencimiento": "2026-08-31",
-    "tem": 0,
-    "vpv": 127.064
-  },
-  {
-    "ticker": "S15S6",
-    "fechaEmision": "2026-05-29",
-    "fechaVencimiento": "2026-09-15",
-    "tem": 1.99,
-    "vpv": 107.21038
-  },
-  {
-    "ticker": "S30S6",
-    "fechaEmision": "",
-    "fechaVencimiento": "2026-09-30",
-    "tem": 0,
-    "vpv": 117.536
-  },
-  {
-    "ticker": "S16O6",
-    "fechaEmision": "2026-07-31",
-    "fechaVencimiento": "2026-10-16",
-    "tem": 2.05,
-    "vpv": 105.27525
-  },
-  {
-    "ticker": "S30O6",
-    "fechaEmision": "",
-    "fechaVencimiento": "2026-10-30",
-    "tem": 0,
-    "vpv": 135.278
-  },
-  {
-    "ticker": "S13N6",
-    "fechaEmision": "",
-    "fechaVencimiento": "2026-11-13",
-    "tem": 0,
-    "vpv": 109.65
-  },
-  {
-    "ticker": "S30N6",
-    "fechaEmision": "",
-    "fechaVencimiento": "2026-11-30",
-    "tem": 0,
-    "vpv": 129.888
-  },
-  {
-    "ticker": "T15E7",
-    "fechaEmision": "",
-    "fechaVencimiento": "2027-01-15",
-    "tem": 0,
-    "vpv": 161.104
-  },
-  {
-    "ticker": "T30A7",
-    "fechaEmision": "",
-    "fechaVencimiento": "2027-04-30",
-    "tem": 0,
-    "vpv": 157.341
-  },
-  {
-    "ticker": "T31Y7",
-    "fechaEmision": "",
-    "fechaVencimiento": "2027-05-31",
-    "tem": 0,
-    "vpv": 151.563
-  },
-  {
-    "ticker": "T30J7",
-    "fechaEmision": "",
-    "fechaVencimiento": "2027-06-30",
-    "tem": 0,
-    "vpv": 156.037
-  }
-]
+{
+  "fechaActualizacion": "2026-09-06T13:39:39.025Z",
+  "letras": [
+    {
+      "ticker": "S15S6",
+      "precioArs": 106.68,
+      "tnaPorcentaje": 22.9,
+      "teaPorcentaje": 25.66,
+      "temPorcentaje": 1.92,
+      "fechaVencimiento": "2026-09-15",
+      "diasAlVencimiento": 8,
+      "paridadPorcentaje": 100.02,
+      "volumen": 17084204553
+    },
+    {
+      "ticker": "TTS26",
+      "precioArs": 169.38,
+      "tnaPorcentaje": -465.59,
+      "teaPorcentaje": -99.26,
+      "temPorcentaje": -33.59,
+      "fechaVencimiento": "2026-09-15",
+      "diasAlVencimiento": 8,
+      "paridadPorcentaje": 110.33,
+      "volumen": 21269315381
+    },
+    {
+      "ticker": "S30S6",
+      "precioArs": 115.82,
+      "tnaPorcentaje": 23.51,
+      "teaPorcentaje": 26.28,
+      "temPorcentaje": 1.96,
+      "fechaVencimiento": "2026-09-30",
+      "diasAlVencimiento": 23,
+      "paridadPorcentaje": 100.45,
+      "volumen": 8484640205
+    },
+    {
+      "ticker": "S16O6",
+      "precioArs": 102.66,
+      "tnaPorcentaje": 23.84,
+      "teaPorcentaje": 26.55,
+      "temPorcentaje": 1.98,
+      "fechaVencimiento": "2026-10-16",
+      "diasAlVencimiento": 39,
+      "paridadPorcentaje": 100.12,
+      "volumen": 61754426808
+    },
+    {
+      "ticker": "TO26",
+      "precioArs": 105,
+      "tnaPorcentaje": 22.76,
+      "teaPorcentaje": 25.19,
+      "temPorcentaje": 1.89,
+      "fechaVencimiento": "2026-10-19",
+      "diasAlVencimiento": 42,
+      "paridadPorcentaje": 99.03,
+      "volumen": 40187282
+    },
+    {
+      "ticker": "S30O6",
+      "precioArs": 130.7,
+      "tnaPorcentaje": 24.12,
+      "teaPorcentaje": 26.76,
+      "temPorcentaje": 2,
+      "fechaVencimiento": "2026-10-30",
+      "diasAlVencimiento": 53,
+      "paridadPorcentaje": 130.7,
+      "volumen": 1971339834
+    },
+    {
+      "ticker": "S13N6",
+      "precioArs": 104.84,
+      "tnaPorcentaje": 25,
+      "teaPorcentaje": 27.69,
+      "temPorcentaje": 2.06,
+      "fechaVencimiento": "2026-11-13",
+      "diasAlVencimiento": 67,
+      "paridadPorcentaje": 100.09,
+      "volumen": 24388187387
+    },
+    {
+      "ticker": "S30N6",
+      "precioArs": 122.77,
+      "tnaPorcentaje": 25.2,
+      "teaPorcentaje": 27.75,
+      "temPorcentaje": 2.06,
+      "fechaVencimiento": "2026-11-30",
+      "diasAlVencimiento": 84,
+      "paridadPorcentaje": 122.77,
+      "volumen": 67000899068
+    },
+    {
+      "ticker": "TTD26",
+      "precioArs": 169.15,
+      "tnaPorcentaje": -17.45,
+      "teaPorcentaje": -16.37,
+      "temPorcentaje": -1.48,
+      "fechaVencimiento": "2026-12-15",
+      "diasAlVencimiento": 99,
+      "paridadPorcentaje": 110.18,
+      "volumen": 5575531559
+    },
+    {
+      "ticker": "T15E7",
+      "precioArs": 147.67,
+      "tnaPorcentaje": 25.54,
+      "teaPorcentaje": 27.69,
+      "temPorcentaje": 2.06,
+      "fechaVencimiento": "2027-01-15",
+      "diasAlVencimiento": 130,
+      "paridadPorcentaje": 99.95,
+      "volumen": 2078522545
+    },
+    {
+      "ticker": "S29E7",
+      "precioArs": 101.24,
+      "tnaPorcentaje": 26.14,
+      "teaPorcentaje": 28.25,
+      "temPorcentaje": 2.09,
+      "fechaVencimiento": "2027-01-29",
+      "diasAlVencimiento": 144,
+      "paridadPorcentaje": 100.72,
+      "volumen": 19225199074
+    },
+    {
+      "ticker": "T30A7",
+      "precioArs": 133.6,
+      "tnaPorcentaje": 27.6,
+      "teaPorcentaje": 28.92,
+      "temPorcentaje": 2.14,
+      "fechaVencimiento": "2027-04-30",
+      "diasAlVencimiento": 235,
+      "paridadPorcentaje": 133.6,
+      "volumen": 10090626923
+    },
+    {
+      "ticker": "T31Y7",
+      "precioArs": 125.7,
+      "tnaPorcentaje": 28.91,
+      "teaPorcentaje": 30,
+      "temPorcentaje": 2.21,
+      "fechaVencimiento": "2027-05-31",
+      "diasAlVencimiento": 266,
+      "paridadPorcentaje": 125.7,
+      "volumen": 24010117615
+    },
+    {
+      "ticker": "T30J7",
+      "precioArs": 126.8,
+      "tnaPorcentaje": 28.43,
+      "teaPorcentaje": 29.16,
+      "temPorcentaje": 2.15,
+      "fechaVencimiento": "2027-06-30",
+      "diasAlVencimiento": 296,
+      "paridadPorcentaje": 104.22,
+      "volumen": 219151674
+    },
+    {
+      "ticker": "TY30P",
+      "precioArs": 111.1,
+      "tnaPorcentaje": 44.41,
+      "teaPorcentaje": 29.95,
+      "temPorcentaje": 2.21,
+      "fechaVencimiento": "2030-05-30",
+      "diasAlVencimiento": 1361,
+      "paridadPorcentaje": 103,
+      "volumen": 97088861
+    }
+  ]
+}
