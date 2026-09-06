@@ -48,6 +48,9 @@ describe.skipIf(!tieneFirecrawl)('extraerLetras (Firecrawl real)', () => {
       if (row.paridadPorcentaje !== undefined) {
         expect(typeof row.paridadPorcentaje).toBe('number')
       }
+      if (row.variacionPorcentaje !== undefined) {
+        expect(typeof row.variacionPorcentaje).toBe('number')
+      }
     }
 
     const conocidos = ['S15S6', 'TTS26', 'S30S6', 'TO26', 'T30A7']

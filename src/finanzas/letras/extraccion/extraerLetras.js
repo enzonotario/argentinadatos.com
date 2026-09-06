@@ -73,11 +73,12 @@ async function extraerFilasLetrasDocta(log) {
   const configuracion = {
     url: DOCTA_LETRAS_URL,
     prompt: `Estás en la página de cotización de LECAPs / bonos soberanos a tasa fija de Docta.
-Extraé **todas las filas visibles** de la tabla principal (no solo las primeras): ticker, precio en pesos, TNA, TEA, TEM, fecha de vencimiento, días al vencimiento, paridad y volumen nominal si figuran.
+Extraé **todas las filas visibles** de la tabla principal (no solo las primeras): ticker, precio en pesos, variación diaria %, TNA, TEA, TEM, fecha de vencimiento, días al vencimiento, paridad y volumen nominal si figuran.
 
 Reglas:
 - ticker: código del instrumento (ej. S15S6, TTS26, T30A7). Sin texto extra tipo "24hs" ni "- 24hs".
 - precioArs: número decimal del precio cotización (ej. 106.68 para "ARS 106,68" o "$106,68").
+- variacionPorcentaje: variación diaria de la columna Var. sin símbolo % (ej. 0.18 para "+0,18%" o -0.5 para "-0,50%"); si no hay dato, omití.
 - tnaPorcentaje: TNA sin símbolo % (ej. 32.5 para "32,50%").
 - teaPorcentaje: TEA sin símbolo %.
 - temPorcentaje: TEM sin símbolo %.
@@ -99,6 +100,10 @@ Reglas:
             precioArs: {
               type: 'number',
               description: 'Precio cotización en ARS (decimal)',
+            },
+            variacionPorcentaje: {
+              type: 'number',
+              description: 'Variación diaria en % sin signo (opcional)',
             },
             tnaPorcentaje: {
               type: 'number',
@@ -190,6 +195,11 @@ Reglas:
     if (paridad !== null && typeof paridad !== 'number')
       paridad = parseNumeroFlexible(paridad)
 
+    let variacion = raw.variacionPorcentaje
+
+    if (variacion !== null && typeof variacion !== 'number')
+      variacion = parseNumeroFlexible(variacion)
+
     const fila = {
       ticker: symbol,
       precioArs: redondear2(precio),
@@ -200,6 +210,9 @@ Reglas:
     }
 
     if (dias !== null && !isNaN(dias)) fila.diasAlVencimiento = Math.round(dias)
+
+    if (variacion !== null && !isNaN(variacion))
+      fila.variacionPorcentaje = redondear2(variacion)
 
     if (paridad !== null && !isNaN(paridad))
       fila.paridadPorcentaje = redondear2(paridad)

@@ -2613,6 +2613,10 @@
             "type": "number",
             "description": "Precio de cotización en pesos argentinos"
           },
+          "variacionPorcentaje": {
+            "type": "number",
+            "description": "Variación diaria del precio en porcentaje, si la fuente lo publica"
+          },
           "tnaPorcentaje": {
             "type": "number",
             "description": "Tasa Nominal Anual (TNA) en porcentaje"
@@ -2653,7 +2657,8 @@
             "fechaVencimiento": "2026-09-15",
             "diasAlVencimiento": 9,
             "paridadPorcentaje": 100.02,
-            "volumen": 17084204553
+            "volumen": 17084204553,
+            "variacionPorcentaje": 0.18
           }
         }
       },
@@ -2691,7 +2696,8 @@
                 "fechaVencimiento": "2026-09-15",
                 "diasAlVencimiento": 9,
                 "paridadPorcentaje": 100.02,
-                "volumen": 17084204553
+                "volumen": 17084204553,
+                "variacionPorcentaje": 0.18
               }
             ]
           }
