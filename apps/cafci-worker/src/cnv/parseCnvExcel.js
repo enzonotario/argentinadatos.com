@@ -59,6 +59,13 @@ function toText(value) {
   return String(value).trim() || null
 }
 
+/**
+ * Código de clasificación CAFCI/CNV (col 24) → etiqueta.
+ * Col 1 de la planilla es moneda (ARS/USD/USB), no el nombre de la categoría.
+ *
+ * Códigos observados en planillas diarias + alineación CAFCI
+ * (Mercado de Dinero, Renta Fija/Mixta/Variable, Retorno Total, PyMEs, etc.).
+ */
 function mapTipoRenta(clasificacionCodigo, clasificacionTexto) {
   const code = Number(clasificacionCodigo)
 
@@ -72,19 +79,84 @@ function mapTipoRenta(clasificacionCodigo, clasificacionTexto) {
     case 4:
       return 'Renta Mixta'
     case 5:
+      return 'PyMEs'
+    case 6:
       return 'Retorno Total'
+    case 7:
+      return 'Infraestructura'
+    case 8:
+      return 'Fondos Cerrados'
+    case 9:
+      return 'ASG'
+    case 10:
+      return 'RG900'
     default:
       break
   }
 
-  const text = toText(clasificacionTexto)?.toLowerCase() || ''
+  const text = toText(clasificacionTexto)
+  if (!text) {
+    return null
+  }
 
-  if (text.includes('mercado') || text === 'ars' || text === 'usd') {
+  const normalized = text
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim()
+
+  // Moneda de la clase, no clasificación.
+  if (normalized === 'ars' || normalized === 'usd' || normalized === 'usb') {
+    return null
+  }
+
+  if (
+    normalized.includes('mercado de dinero') ||
+    normalized === 'money market' ||
+    normalized === 'moneymarket'
+  ) {
     return 'Mercado de Dinero'
   }
 
-  return clasificacionTexto || null
+  if (normalized.includes('renta fija')) {
+    return 'Renta Fija'
+  }
+
+  if (normalized.includes('renta mixta')) {
+    return 'Renta Mixta'
+  }
+
+  if (normalized.includes('renta variable')) {
+    return 'Renta Variable'
+  }
+
+  if (normalized.includes('retorno total')) {
+    return 'Retorno Total'
+  }
+
+  if (normalized.includes('pyme')) {
+    return 'PyMEs'
+  }
+
+  if (normalized.includes('infraestructura')) {
+    return 'Infraestructura'
+  }
+
+  if (normalized.includes('asg')) {
+    return 'ASG'
+  }
+
+  if (normalized.includes('cerrado')) {
+    return 'Fondos Cerrados'
+  }
+
+  if (normalized.includes('rg900') || normalized.includes('rg 900')) {
+    return 'RG900'
+  }
+
+  return text
 }
+
 
 function mapHorizonte(codigo) {
   const code = Number(codigo)

@@ -82,7 +82,18 @@ function applyCompositionToPayload(payload, detalle, { detallesFciId, nowIso }) 
     ['tipoRenta', 'tipoRenta'],
   ]) {
     const value = detalle[fromKey]
-    if (value && (!next[toKey] || next[toKey] === '' || next[toKey] === 'No Registrado')) {
+    if (!value) {
+      continue
+    }
+
+    // Clasificación CNV DetallesFCI es la etiqueta oficial (p. ej. Retorno Total);
+    // preferirla sobre el código Excel cuando viene poblada.
+    if (toKey === 'tipoRenta') {
+      next[toKey] = value
+      continue
+    }
+
+    if (!next[toKey] || next[toKey] === '' || next[toKey] === 'No Registrado') {
       next[toKey] = value
     }
   }

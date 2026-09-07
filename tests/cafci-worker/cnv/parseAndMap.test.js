@@ -40,6 +40,46 @@ describe('parseCnvCuotaparteExcel', () => {
     expect(mercado.variacionDoceMesesPct).toBeCloseTo(27.617, 3)
   })
 
+  it('mapea código 6 (Cocos Pesos Plus) a Retorno Total, no Money Market', () => {
+    const parsed = parseCnvCuotaparteExcel(readFileSync(fixturePath), {
+      documentDate: '2026-08-12',
+    })
+
+    const cocos = parsed.funds.find(
+      fund => fund.nombre === 'Cocos Pesos Plus - Clase A',
+    )
+
+    expect(cocos).toMatchObject({
+      clasificacion: 'ARS',
+      codigoClasificacion: '6',
+      tipoRenta: 'Retorno Total',
+    })
+  })
+
+  it('no usa ARS/USD de col.1 como Mercado de Dinero', () => {
+    const parsed = parseCnvCuotaparteExcel(readFileSync(fixturePath), {
+      documentDate: '2026-08-12',
+    })
+
+    const pyme = parsed.funds.find(
+      fund => fund.nombre === 'Axis Rosental FCI Abierto Pymes - Clase A',
+    )
+
+    expect(pyme).toMatchObject({
+      codigoClasificacion: '5',
+      tipoRenta: 'PyMEs',
+    })
+
+    const rt = parsed.funds.find(
+      fund => fund.nombre === 'Ualintec Retorno Total - Clase A',
+    )
+
+    expect(rt).toMatchObject({
+      codigoClasificacion: '6',
+      tipoRenta: 'Retorno Total',
+    })
+  })
+
   it('expone retornos de período CNV para Fima Acciones', () => {
     const parsed = parseCnvCuotaparteExcel(readFileSync(fixturePath), {
       documentDate: '2026-08-12',
