@@ -36,28 +36,6 @@ function normalizarNombreEntidad(nombre) {
     .replace(/[^A-Z0-9]/g, '')
 }
 
-function extraerAtributoEtiqueta(contenido, nombreEtiqueta, nombreAtributo) {
-  const etiqueta = contenido.match(
-    new RegExp(`<${nombreEtiqueta}[^>]*>`, 'i'),
-  )?.[0]
-
-  if (!etiqueta) {
-    return null
-  }
-
-  const coincidencia = etiqueta.match(
-    new RegExp(`${nombreAtributo}="([^"]+)"`, 'i'),
-  )
-
-  return coincidencia?.[1] ?? null
-}
-
-function extraerTextoEtiqueta(contenido, selectorClase) {
-  return contenido
-    .match(new RegExp(`class="${selectorClase}"[^>]*>([^<]+)<`, 'i'))?.[1]
-    ?.trim()
-}
-
 function resolverUrlRelativa(url) {
   if (!url) {
     return null
@@ -70,14 +48,108 @@ function resolverUrlRelativa(url) {
   return new URL(url, URL_TU_PLAZO_FIJO_HOMEBANKING).href
 }
 
-function interpretarTnaDesdeCelda(valor) {
-  if (!valor || valor === '-') {
+function interpretarTnaPorcentaje(valor) {
+  if (valor === null || valor === undefined || valor === '') {
     return null
   }
 
-  const tna = interpretarDecimalConComa(valor.replace('%', '').trim()) / 100
+  const numerico =
+    typeof valor === 'number'
+      ? valor
+      : interpretarDecimalConComa(String(valor).replace('%', '').trim())
 
-  return Number.isNaN(tna) ? null : tna
+  if (Number.isNaN(numerico)) {
+    return null
+  }
+
+  return numerico / 100
+}
+
+function extraerBancosV2Tasas(html) {
+  const inicioAsignacion = html.search(/window\.V2_TASAS\s*=\s*\{/)
+
+  if (inicioAsignacion < 0) {
+    return []
+  }
+
+  const inicioBancos = html.indexOf('bancos:', inicioAsignacion)
+
+  if (inicioBancos < 0) {
+    return []
+  }
+
+  const inicioArray = html.indexOf('[', inicioBancos)
+
+  if (inicioArray < 0) {
+    return []
+  }
+
+  let profundidad = 0
+
+  for (let indice = inicioArray; indice < html.length; indice += 1) {
+    const caracter = html[indice]
+
+    if (caracter === '[') {
+      profundidad += 1
+    } else if (caracter === ']') {
+      profundidad -= 1
+
+      if (profundidad === 0) {
+        try {
+          const bancos = JSON.parse(html.slice(inicioArray, indice + 1))
+
+          return Array.isArray(bancos) ? bancos : []
+        } catch {
+          return []
+        }
+      }
+    }
+  }
+
+  return []
+}
+
+function mapearBancoV2Tasas(banco) {
+  const entidad = banco?.nombre?.trim()
+
+  if (!entidad || !banco?.t || typeof banco.t !== 'object') {
+    return null
+  }
+
+  const tasas = []
+
+  for (const plazo of PLAZOS_HOMEBANKING) {
+    const clave = String(plazo.plazoMinDias)
+    const tna = interpretarTnaPorcentaje(banco.t[clave])
+
+    if (tna === null || tna <= 0) {
+      continue
+    }
+
+    tasas.push({
+      montoMinimo: null,
+      montoMaximo: null,
+      ...plazo,
+      tna,
+    })
+  }
+
+  if (tasas.length === 0) {
+    return null
+  }
+
+  const slug = banco.slug?.trim()
+
+  return {
+    entidad,
+    enlace: slug
+      ? resolverUrlRelativa(`/plazos-fijos/bancos/${slug}/`)
+      : null,
+    logo: slug
+      ? resolverUrlRelativa(`/img/bancos/${slug}-round-65x65.png`)
+      : null,
+    tasas: ordenarTasas(tasas),
+  }
 }
 
 function ordenarTasas(tasas) {
@@ -154,61 +226,9 @@ export function parsearTasasHomebankingTuPlazoFijo(html) {
     return []
   }
 
-  const tbody =
-    html.match(
-      /aria-label="Tasas de plazos fijos en pesos"[\s\S]*?<tbody>([\s\S]*?)<\/tbody>/i,
-    )?.[1] ?? ''
-  const filas = [...tbody.matchAll(/<tr>([\s\S]*?)<\/tr>/gi)]
-  const registros = []
-
-  for (const [contenidoFila] of filas) {
-    const entidad = extraerTextoEtiqueta(contenidoFila, 'bank-name-table')
-
-    if (!entidad) {
-      continue
-    }
-
-    const enlace = resolverUrlRelativa(
-      extraerAtributoEtiqueta(contenidoFila, 'a', 'href'),
-    )
-    const logo = resolverUrlRelativa(
-      extraerAtributoEtiqueta(contenidoFila, 'img', 'src'),
-    )
-    const celdas = [
-      ...contenidoFila.matchAll(/<td>([\s\S]*?)<\/td>/gi),
-    ].map(coincidencia => coincidencia[1])
-    const tasas = []
-
-    for (let indice = 0; indice < PLAZOS_HOMEBANKING.length; indice += 1) {
-      const celda = celdas[indice + 1] ?? ''
-      const valor = celda.match(/class="rate-value">([^<]+)</)?.[1]?.trim()
-      const tna = interpretarTnaDesdeCelda(valor)
-
-      if (tna === null) {
-        continue
-      }
-
-      tasas.push({
-        montoMinimo: null,
-        montoMaximo: null,
-        ...PLAZOS_HOMEBANKING[indice],
-        tna,
-      })
-    }
-
-    if (tasas.length === 0) {
-      continue
-    }
-
-    registros.push({
-      entidad,
-      enlace,
-      logo,
-      tasas: ordenarTasas(tasas),
-    })
-  }
-
-  return registros
+  return extraerBancosV2Tasas(html)
+    .map(mapearBancoV2Tasas)
+    .filter(Boolean)
 }
 
 export function enriquecerPlazoFijoConTuPlazoFijo(items, registrosTuPlazoFijo) {
