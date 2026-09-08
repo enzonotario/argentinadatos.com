@@ -2613,9 +2613,21 @@
             "type": "number",
             "description": "Precio de cotización en pesos argentinos"
           },
+          "cierreArs": {
+            "type": "number",
+            "description": "Precio de cierre en pesos argentinos, si la fuente lo publica"
+          },
           "variacionPorcentaje": {
             "type": "number",
             "description": "Variación diaria del precio en porcentaje, si la fuente lo publica"
+          },
+          "volumen": {
+            "type": "number",
+            "description": "Volumen nominal negociado, si la fuente lo publica"
+          },
+          "volumenEfectivoArs": {
+            "type": "number",
+            "description": "Volumen efectivo negociado en pesos argentinos, si la fuente lo publica"
           },
           "tnaPorcentaje": {
             "type": "number",
@@ -2629,36 +2641,46 @@
             "type": "number",
             "description": "Tasa Efectiva Mensual (TEM) en porcentaje"
           },
+          "diasAlVencimiento": {
+            "type": "number",
+            "description": "Días al vencimiento, si la fuente lo publica"
+          },
           "fechaVencimiento": {
             "type": "string",
             "format": "date",
             "description": "Fecha de vencimiento (ISO 8601, solo fecha: yyyy-MM-dd)"
           },
-          "diasAlVencimiento": {
-            "type": "number",
-            "description": "Días al vencimiento, si la fuente lo publica"
-          },
           "paridadPorcentaje": {
             "type": "number",
             "description": "Paridad en porcentaje, si la fuente lo publica"
           },
-          "volumen": {
-            "type": "number",
-            "description": "Volumen nominal negociado, si la fuente lo publica"
+          "monedaCupon": {
+            "type": "string",
+            "description": "Moneda de cupón (ej. ARS), si la fuente lo publica",
+            "example": "ARS"
+          },
+          "isin": {
+            "type": "string",
+            "description": "Código ISIN, si la fuente lo publica",
+            "example": "AR0227219554"
           }
         },
         "x-examples": {
           "Example 1": {
             "ticker": "S15S6",
-            "precioArs": 106.68,
-            "tnaPorcentaje": 32.5,
-            "teaPorcentaje": 37.8,
-            "temPorcentaje": 2.71,
+            "precioArs": 106.74,
+            "tnaPorcentaje": 23.13,
+            "teaPorcentaje": 25.95,
+            "temPorcentaje": 1.94,
             "fechaVencimiento": "2026-09-15",
-            "diasAlVencimiento": 9,
+            "diasAlVencimiento": 7,
             "paridadPorcentaje": 100.02,
-            "volumen": 17084204553,
-            "variacionPorcentaje": 0.18
+            "volumen": 21453598713,
+            "variacionPorcentaje": 0.06,
+            "cierreArs": 106.74,
+            "volumenEfectivoArs": 22899870365.79,
+            "monedaCupon": "ARS",
+            "isin": "AR0227219554"
           }
         }
       },
@@ -2689,15 +2711,19 @@
             "letras": [
               {
                 "ticker": "S15S6",
-                "precioArs": 106.68,
-                "tnaPorcentaje": 32.5,
-                "teaPorcentaje": 37.8,
-                "temPorcentaje": 2.71,
+                "precioArs": 106.74,
+                "tnaPorcentaje": 23.13,
+                "teaPorcentaje": 25.95,
+                "temPorcentaje": 1.94,
                 "fechaVencimiento": "2026-09-15",
-                "diasAlVencimiento": 9,
+                "diasAlVencimiento": 7,
                 "paridadPorcentaje": 100.02,
-                "volumen": 17084204553,
-                "variacionPorcentaje": 0.18
+                "volumen": 21453598713,
+                "variacionPorcentaje": 0.06,
+                "cierreArs": 106.74,
+                "volumenEfectivoArs": 22899870365.79,
+                "monedaCupon": "ARS",
+                "isin": "AR0227219554"
               }
             ]
           }

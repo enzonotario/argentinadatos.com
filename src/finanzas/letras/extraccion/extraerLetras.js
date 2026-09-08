@@ -17,7 +17,13 @@ function parseNumeroFlexible(valor) {
 
   if (typeof valor === 'number' && !isNaN(valor)) return valor
 
-  let s = String(valor).trim().replace(/\$/g, '').replace(/\s/g, '')
+  let s = String(valor)
+    .trim()
+    .replace(/\$/g, '')
+    .replace(/ARS/gi, '')
+    .replace(/\s/g, '')
+
+  if (!s || s === '--' || s === '-' || s === '—') return null
 
   if (s.includes(',') && s.includes('.')) {
     s = s.replace(/\./g, '').replace(',', '.')
@@ -64,8 +70,36 @@ function limpiarTicker(raw) {
   return s
 }
 
+function limpiarIsin(raw) {
+  if (raw === null || raw === undefined) return null
+
+  const s = String(raw).trim().toUpperCase()
+
+  if (!s || s === '--' || s === '-' || s === '—') return null
+
+  return s
+}
+
+function limpiarMonedaCupon(raw) {
+  if (raw === null || raw === undefined) return null
+
+  const s = String(raw).trim().toUpperCase()
+
+  if (!s || s === '--' || s === '-' || s === '—') return null
+
+  return s
+}
+
 function redondear2(n) {
   return Math.round(n * 100) / 100
+}
+
+function opcionalNumero(raw) {
+  if (raw === null || raw === undefined) return null
+
+  if (typeof raw === 'number') return Number.isFinite(raw) ? raw : null
+
+  return parseNumeroFlexible(raw)
 }
 
 /** Tabla Soberanos tasa fija (LECAP/BONCAP) en Docta (Firecrawl JSON extract → filas del endpoint). */
@@ -73,19 +107,23 @@ async function extraerFilasLetrasDocta(log) {
   const configuracion = {
     url: DOCTA_LETRAS_URL,
     prompt: `Estás en la página de cotización de LECAPs / bonos soberanos a tasa fija de Docta.
-Extraé **todas las filas visibles** de la tabla principal (no solo las primeras): ticker, precio en pesos, variación diaria %, TNA, TEA, TEM, fecha de vencimiento, días al vencimiento, paridad y volumen nominal si figuran.
+Extraé **todas las filas visibles** de la tabla principal (no solo las primeras), con **todas** las columnas disponibles.
 
-Reglas:
+Columnas / reglas:
 - ticker: código del instrumento (ej. S15S6, TTS26, T30A7). Sin texto extra tipo "24hs" ni "- 24hs".
-- precioArs: número decimal del precio cotización (ej. 106.68 para "ARS 106,68" o "$106,68").
-- variacionPorcentaje: variación diaria de la columna Var. sin símbolo % (ej. 0.18 para "+0,18%" o -0.5 para "-0,50%"); si no hay dato, omití.
-- tnaPorcentaje: TNA sin símbolo % (ej. 32.5 para "32,50%").
+- precioArs: precio cotización en ARS (ej. 106.74 para "ARS 106,74").
+- cierreArs: precio de cierre en ARS (columna Cierre).
+- variacionPorcentaje: columna Var. sin símbolo % (ej. 0.06 para "+0,06%" o -0.05 para "-0,05%").
+- volumenNominal: columna Volumen (nominales), número sin separadores de miles.
+- volumenEfectivoArs: columna Volumen Efectivo en ARS, número sin separadores de miles.
+- tnaPorcentaje: TNA sin símbolo %.
 - teaPorcentaje: TEA sin símbolo %.
 - temPorcentaje: TEM sin símbolo %.
-- vencimientoDma: fecha exactamente en formato DD/MM/YYYY como en la columna Vto.
-- diasAlVencimiento: entero de la columna D. al Vto. si figura.
-- paridadPorcentaje: paridad sin símbolo % (ej. 100.02 para "100,02%"); si no hay dato, omití.
-- volumenNominal: volumen en nominales, número sin separadores de miles; si no hay dato, omití.`,
+- diasAlVencimiento: entero de D. al Vto.
+- vencimientoDma: fecha exactamente DD/MM/YYYY de la columna Vto.
+- paridadPorcentaje: Paridad sin símbolo %.
+- monedaCupon: columna M. de Cupón (ej. "ARS"); si es "--", omití.
+- isin: columna Código ISIN (ej. "AR0227219554"); si es "--" o vacío, omití.`,
     schema: {
       letras: {
         type: 'array',
@@ -101,9 +139,21 @@ Reglas:
               type: 'number',
               description: 'Precio cotización en ARS (decimal)',
             },
+            cierreArs: {
+              type: 'number',
+              description: 'Precio de cierre en ARS (decimal)',
+            },
             variacionPorcentaje: {
               type: 'number',
-              description: 'Variación diaria en % sin signo (opcional)',
+              description: 'Variación diaria en % sin signo',
+            },
+            volumenNominal: {
+              type: 'number',
+              description: 'Volumen nominal',
+            },
+            volumenEfectivoArs: {
+              type: 'number',
+              description: 'Volumen efectivo en ARS',
             },
             tnaPorcentaje: {
               type: 'number',
@@ -117,21 +167,25 @@ Reglas:
               type: 'number',
               description: 'TEM en % sin signo porcentaje',
             },
+            diasAlVencimiento: {
+              type: 'number',
+              description: 'Días al vencimiento',
+            },
             vencimientoDma: {
               type: 'string',
               description: 'Vencimiento DD/MM/AAAA',
             },
-            diasAlVencimiento: {
-              type: 'number',
-              description: 'Días al vencimiento (opcional)',
-            },
             paridadPorcentaje: {
               type: 'number',
-              description: 'Paridad en % sin signo (opcional)',
+              description: 'Paridad en % sin signo',
             },
-            volumenNominal: {
-              type: 'number',
-              description: 'Volumen nominal opcional',
+            monedaCupon: {
+              type: 'string',
+              description: 'Moneda de cupón (ej. ARS)',
+            },
+            isin: {
+              type: 'string',
+              description: 'Código ISIN',
             },
           },
           required: [
@@ -181,24 +235,16 @@ Reglas:
 
     if (!maturity) continue
 
-    let vol = raw.volumenNominal
-
-    if (vol !== null && typeof vol !== 'number') vol = parseNumeroFlexible(vol)
-
-    let dias = raw.diasAlVencimiento
-
-    if (dias !== null && typeof dias !== 'number')
-      dias = parseNumeroFlexible(dias)
-
-    let paridad = raw.paridadPorcentaje
-
-    if (paridad !== null && typeof paridad !== 'number')
-      paridad = parseNumeroFlexible(paridad)
-
-    let variacion = raw.variacionPorcentaje
-
-    if (variacion !== null && typeof variacion !== 'number')
-      variacion = parseNumeroFlexible(variacion)
+    const cierre = opcionalNumero(raw.cierreArs ?? raw.cierre)
+    const variacion = opcionalNumero(raw.variacionPorcentaje)
+    const vol = opcionalNumero(raw.volumenNominal ?? raw.volumen)
+    const volEfectivo = opcionalNumero(
+      raw.volumenEfectivoArs ?? raw.volumenEfectivo,
+    )
+    const dias = opcionalNumero(raw.diasAlVencimiento)
+    const paridad = opcionalNumero(raw.paridadPorcentaje)
+    const monedaCupon = limpiarMonedaCupon(raw.monedaCupon)
+    const isin = limpiarIsin(raw.isin ?? raw.codigoIsin ?? raw.codigoISIN)
 
     const fila = {
       ticker: symbol,
@@ -209,15 +255,21 @@ Reglas:
       fechaVencimiento: maturity,
     }
 
-    if (dias !== null && !isNaN(dias)) fila.diasAlVencimiento = Math.round(dias)
+    if (cierre !== null) fila.cierreArs = redondear2(cierre)
 
-    if (variacion !== null && !isNaN(variacion))
-      fila.variacionPorcentaje = redondear2(variacion)
+    if (variacion !== null) fila.variacionPorcentaje = redondear2(variacion)
 
-    if (paridad !== null && !isNaN(paridad))
-      fila.paridadPorcentaje = redondear2(paridad)
+    if (vol !== null) fila.volumen = vol
 
-    if (vol !== null && !isNaN(vol)) fila.volumen = vol
+    if (volEfectivo !== null) fila.volumenEfectivoArs = volEfectivo
+
+    if (dias !== null) fila.diasAlVencimiento = Math.round(dias)
+
+    if (paridad !== null) fila.paridadPorcentaje = redondear2(paridad)
+
+    if (monedaCupon) fila.monedaCupon = monedaCupon
+
+    if (isin) fila.isin = isin
 
     resultado.push(fila)
   }

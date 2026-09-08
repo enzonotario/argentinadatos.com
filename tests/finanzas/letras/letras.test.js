@@ -51,6 +51,22 @@ describe.skipIf(!tieneFirecrawl)('extraerLetras (Firecrawl real)', () => {
       if (row.variacionPorcentaje !== undefined) {
         expect(typeof row.variacionPorcentaje).toBe('number')
       }
+      if (row.cierreArs !== undefined) {
+        expect(typeof row.cierreArs).toBe('number')
+        expect(row.cierreArs).toBeGreaterThan(0)
+      }
+      if (row.volumenEfectivoArs !== undefined) {
+        expect(typeof row.volumenEfectivoArs).toBe('number')
+        expect(row.volumenEfectivoArs).toBeGreaterThanOrEqual(0)
+      }
+      if (row.monedaCupon !== undefined) {
+        expect(typeof row.monedaCupon).toBe('string')
+        expect(row.monedaCupon.length).toBeGreaterThan(0)
+      }
+      if (row.isin !== undefined) {
+        expect(typeof row.isin).toBe('string')
+        expect(row.isin.length).toBeGreaterThanOrEqual(8)
+      }
     }
 
     const conocidos = ['S15S6', 'TTS26', 'S30S6', 'TO26', 'T30A7']
