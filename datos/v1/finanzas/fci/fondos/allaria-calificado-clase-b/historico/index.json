@@ -2,7 +2,7 @@
   "fondoId": "1769",
   "claseId": "6035",
   "nombre": "Allaria Calificado - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "allaria-calificado-clase-b",
@@ -2703,9 +2703,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1031.838,
       "patrimonio": 8711839775.86,
-      "retornoDiario": 0,
+      "retornoDiario": 0.086717,
       "retornoAcumulado": 3.1838,
-      "flujoEstimado": 0,
+      "flujoEstimado": 6453.619513,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "allaria-calificado-clase-b",
+      "fondoId": "1769",
+      "claseId": "6035",
+      "nombre": "Allaria Calificado - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1033.083,
+      "patrimonio": 8722348734.33,
+      "retornoDiario": 0.120658,
+      "retornoAcumulado": 3.3083,
+      "flujoEstimado": -2573.166758,
       "origen": "cnv-excel"
     }
   ]

@@ -2,7 +2,7 @@
   "fondoId": "1822",
   "claseId": "6260",
   "nombre": "BAVSA Renta Balanceado VIII - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "bavsa-renta-balanceado-viii-clase-b",
@@ -1628,12 +1628,28 @@
       "fecha": "2026-09-04",
       "categoria": "Renta Fija",
       "categoriaKey": "rentaFija",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1114.909,
       "patrimonio": 710127179.8,
-      "retornoDiario": 0,
+      "retornoDiario": 0.219332,
       "retornoAcumulado": 11.4909,
-      "flujoEstimado": 0,
+      "flujoEstimado": 233.734346,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "bavsa-renta-balanceado-viii-clase-b",
+      "fondoId": "1822",
+      "claseId": "6260",
+      "nombre": "BAVSA Renta Balanceado VIII - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1115.533,
+      "patrimonio": 710524172.14,
+      "retornoDiario": 0.055969,
+      "retornoAcumulado": 11.5533,
+      "flujoEstimado": -458.741262,
       "origen": "cnv-excel"
     }
   ]

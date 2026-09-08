@@ -2,7 +2,7 @@
   "fondoId": "1612",
   "claseId": "5307",
   "nombre": "Compass Renta Fija V - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "compass-renta-fija-v-clase-b",
@@ -5919,9 +5919,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 1600.088,
       "patrimonio": 5403777766.1,
-      "retornoDiario": 0,
+      "retornoDiario": 0.058969,
       "retornoAcumulado": 60.018401,
-      "flujoEstimado": 0,
+      "flujoEstimado": -565.862942,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "compass-renta-fija-v-clase-b",
+      "fondoId": "1612",
+      "claseId": "5307",
+      "nombre": "Compass Renta Fija V - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1603.093,
+      "patrimonio": 5413924386.09,
+      "retornoDiario": 0.187802,
+      "retornoAcumulado": 60.318919,
+      "flujoEstimado": -1782.730291,
       "origen": "cnv-excel"
     }
   ]

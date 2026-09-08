@@ -2,7 +2,7 @@
   "fondoId": "1876",
   "claseId": "6486",
   "nombre": "BAVSA Renta Balanceado X - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "bavsa-renta-balanceado-x-clase-a",
@@ -1036,12 +1036,28 @@
       "fecha": "2026-09-04",
       "categoria": "Renta Variable",
       "categoriaKey": "rentaVariable",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1041.429,
       "patrimonio": 52101.79,
-      "retornoDiario": 0,
+      "retornoDiario": 0.218832,
       "retornoAcumulado": 4.1429,
-      "flujoEstimado": 0,
+      "flujoEstimado": -0.02649,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "bavsa-renta-balanceado-x-clase-a",
+      "fondoId": "1876",
+      "claseId": "6486",
+      "nombre": "BAVSA Renta Balanceado X - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Variable",
+      "categoriaKey": "rentaVariable",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1042.131,
+      "patrimonio": 52136.92,
+      "retornoDiario": 0.067407,
+      "retornoAcumulado": 4.2131,
+      "flujoEstimado": 0.009746,
       "origen": "cnv-excel"
     }
   ]

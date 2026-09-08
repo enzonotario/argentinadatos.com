@@ -2,7 +2,7 @@
   "fondoId": "828",
   "claseId": "2338",
   "nombre": "Ciclo Nova Retorno Total - Clase D",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "ciclo-nova-retorno-total-clase-d",
@@ -25596,11 +25596,27 @@
       "fecha": "2026-09-04",
       "categoria": "Renta Mixta",
       "categoriaKey": "rentaMixta",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 9.712,
       "patrimonio": null,
       "retornoDiario": 0,
       "retornoAcumulado": -45.603226,
+      "flujoEstimado": null,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "ciclo-nova-retorno-total-clase-d",
+      "fondoId": "828",
+      "claseId": "2338",
+      "nombre": "Ciclo Nova Retorno Total - Clase D",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 9.59,
+      "patrimonio": null,
+      "retornoDiario": -1.256178,
+      "retornoAcumulado": -46.286546,
       "flujoEstimado": null,
       "origen": "cnv-excel"
     }

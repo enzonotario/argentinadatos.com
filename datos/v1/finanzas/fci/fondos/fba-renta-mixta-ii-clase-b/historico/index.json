@@ -2,7 +2,7 @@
   "fondoId": "1884",
   "claseId": "6519",
   "nombre": "FBA Renta Mixta II - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "fba-renta-mixta-ii-clase-b",
@@ -1199,9 +1199,25 @@
       "horizonte": "Largo Plazo",
       "valorCuotaparte": 1024.077,
       "patrimonio": 1024077.15,
-      "retornoDiario": 0,
+      "retornoDiario": 0.021878,
       "retornoAcumulado": 2.4077,
-      "flujoEstimado": 0,
+      "flujoEstimado": 0.271467,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "fba-renta-mixta-ii-clase-b",
+      "fondoId": "1884",
+      "claseId": "6519",
+      "nombre": "FBA Renta Mixta II - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 1024.75,
+      "patrimonio": 1024749.83,
+      "retornoDiario": 0.065718,
+      "retornoAcumulado": 2.475,
+      "flujoEstimado": -0.323021,
       "origen": "cnv-excel"
     }
   ]

@@ -2,7 +2,7 @@
   "fondoId": "1786",
   "claseId": "6099",
   "nombre": "FBA Renta Mixta Dólar I - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "fba-renta-mixta-dolar-i-clase-b",
@@ -2671,9 +2671,25 @@
       "horizonte": "Largo Plazo",
       "valorCuotaparte": 999.063,
       "patrimonio": 99906.29,
-      "retornoDiario": 0,
+      "retornoDiario": -0.0003,
       "retornoAcumulado": -0.0937,
-      "flujoEstimado": 0,
+      "flujoEstimado": 0.02972,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "fba-renta-mixta-dolar-i-clase-b",
+      "fondoId": "1786",
+      "claseId": "6099",
+      "nombre": "FBA Renta Mixta Dólar I - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 999.055,
+      "patrimonio": 99905.48,
+      "retornoDiario": -0.000801,
+      "retornoAcumulado": -0.0945,
+      "flujoEstimado": -0.009751,
       "origen": "cnv-excel"
     }
   ]

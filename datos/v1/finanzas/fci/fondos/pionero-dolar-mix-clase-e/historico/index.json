@@ -2,7 +2,7 @@
   "fondoId": "1846",
   "claseId": "6372",
   "nombre": "Pionero Dólar Mix - Clase E",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "pionero-dolar-mix-clase-e",
@@ -1663,9 +1663,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1004.608,
       "patrimonio": 2131949.02,
-      "retornoDiario": 0,
+      "retornoDiario": 0.217472,
       "retornoAcumulado": 0.4608,
-      "flujoEstimado": 0,
+      "flujoEstimado": -0.17157,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "pionero-dolar-mix-clase-e",
+      "fondoId": "1846",
+      "claseId": "6372",
+      "nombre": "Pionero Dólar Mix - Clase E",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1004.436,
+      "patrimonio": 2131583.33,
+      "retornoDiario": -0.017121,
+      "retornoAcumulado": 0.4436,
+      "flujoEstimado": -0.679008,
       "origen": "cnv-excel"
     }
   ]

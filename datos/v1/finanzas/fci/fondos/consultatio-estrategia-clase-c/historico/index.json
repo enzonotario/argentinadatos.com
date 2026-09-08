@@ -2,7 +2,7 @@
   "fondoId": "648",
   "claseId": "1337",
   "nombre": "Consultatio Estrategia - Clase C",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "consultatio-estrategia-clase-c",
@@ -25740,11 +25740,27 @@
       "fecha": "2026-09-04",
       "categoria": "Renta Fija",
       "categoriaKey": "rentaFija",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 155949.223,
       "patrimonio": null,
-      "retornoDiario": 0,
+      "retornoDiario": 0.05627,
       "retornoAcumulado": 3855.57917,
+      "flujoEstimado": null,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-estrategia-clase-c",
+      "fondoId": "648",
+      "claseId": "1337",
+      "nombre": "Consultatio Estrategia - Clase C",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 156212.186,
+      "patrimonio": null,
+      "retornoDiario": 0.168621,
+      "retornoAcumulado": 3862.249104,
       "flujoEstimado": null,
       "origen": "cnv-excel"
     }

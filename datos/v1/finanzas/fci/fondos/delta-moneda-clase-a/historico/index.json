@@ -2,7 +2,7 @@
   "fondoId": "408",
   "claseId": "737",
   "nombre": "Delta Moneda - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "delta-moneda-clase-a",
@@ -25807,9 +25807,25 @@
       "horizonte": null,
       "valorCuotaparte": 296332.071,
       "patrimonio": 570773882.41,
-      "retornoDiario": 0,
+      "retornoDiario": 0.003285,
       "retornoAcumulado": 922.228568,
-      "flujoEstimado": 0,
+      "flujoEstimado": 2999997.780567,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "delta-moneda-clase-a",
+      "fondoId": "408",
+      "claseId": "737",
+      "nombre": "Delta Moneda - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 296640.633,
+      "patrimonio": 571567805.5,
+      "retornoDiario": 0.104127,
+      "retornoAcumulado": 923.292985,
+      "flujoEstimado": 199593.369463,
       "origen": "cnv-excel"
     }
   ]

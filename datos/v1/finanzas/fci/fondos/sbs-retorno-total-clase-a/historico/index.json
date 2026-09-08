@@ -2,7 +2,7 @@
   "fondoId": "522",
   "claseId": "1055",
   "nombre": "SBS Retorno Total - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "sbs-retorno-total-clase-a",
@@ -25679,9 +25679,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 557527.062,
       "patrimonio": 4183200780.62,
-      "retornoDiario": 0,
+      "retornoDiario": -0.195798,
       "retornoAcumulado": 4450.811874,
-      "flujoEstimado": 0,
+      "flujoEstimado": -10151263.123483,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "sbs-retorno-total-clase-a",
+      "fondoId": "522",
+      "claseId": "1055",
+      "nombre": "SBS Retorno Total - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Retorno Total",
+      "categoriaKey": "retornoTotal",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 557470.809,
+      "patrimonio": 4154045379.71,
+      "retornoDiario": -0.01009,
+      "retornoAcumulado": 4450.35271,
+      "flujoEstimado": -28733315.951235,
       "origen": "cnv-excel"
     }
   ]

@@ -2,7 +2,7 @@
   "fondoId": "1772",
   "claseId": "6043",
   "nombre": "Superfondo Renta Balance II - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "superfondo-renta-balance-ii-clase-b",
@@ -2783,9 +2783,25 @@
       "horizonte": null,
       "valorCuotaparte": 1183.995,
       "patrimonio": 38517634390.86,
-      "retornoDiario": 0,
+      "retornoDiario": 0.0185,
       "retornoAcumulado": 18.3995,
-      "flujoEstimado": 0,
+      "flujoEstimado": -6737.556328,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "superfondo-renta-balance-ii-clase-b",
+      "fondoId": "1772",
+      "claseId": "6043",
+      "nombre": "Superfondo Renta Balance II - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": null,
+      "valorCuotaparte": 1185.292,
+      "patrimonio": 38559845502.65,
+      "retornoDiario": 0.109544,
+      "retornoAcumulado": 18.5292,
+      "flujoEstimado": 17354.372871,
       "origen": "cnv-excel"
     }
   ]

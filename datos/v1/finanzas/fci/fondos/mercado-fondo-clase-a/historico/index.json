@@ -2,7 +2,7 @@
   "fondoId": "798",
   "claseId": "1982",
   "nombre": "Mercado Fondo - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "mercado-fondo-clase-a",
@@ -25727,9 +25727,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 25471.946,
       "patrimonio": 9221449152066.54,
-      "retornoDiario": 0,
+      "retornoDiario": 0.051444,
       "retornoAcumulado": 1290.092622,
-      "flujoEstimado": 0,
+      "flujoEstimado": 296053320209.8496,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "mercado-fondo-clase-a",
+      "fondoId": "798",
+      "claseId": "1982",
+      "nombre": "Mercado Fondo - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 25511.329,
+      "patrimonio": 9147787461727.58,
+      "retornoDiario": 0.154613,
+      "retornoAcumulado": 1292.241889,
+      "flujoEstimado": -87919249516.44336,
       "origen": "cnv-excel"
     }
   ]

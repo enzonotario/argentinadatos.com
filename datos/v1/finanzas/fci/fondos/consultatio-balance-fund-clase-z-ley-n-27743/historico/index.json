@@ -2,7 +2,7 @@
   "fondoId": "89",
   "claseId": "5041",
   "nombre": "Consultatio Balance Fund - Clase Z Ley N° 27.743",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "consultatio-balance-fund-clase-z-ley-n-27743",
@@ -7452,11 +7452,27 @@
       "fecha": "2026-09-04",
       "categoria": "Retorno Total",
       "categoriaKey": "retornoTotal",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 2036.801,
       "patrimonio": null,
-      "retornoDiario": 0,
+      "retornoDiario": 0.270911,
       "retornoAcumulado": 103.6801,
+      "flujoEstimado": null,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-balance-fund-clase-z-ley-n-27743",
+      "fondoId": "89",
+      "claseId": "5041",
+      "nombre": "Consultatio Balance Fund - Clase Z Ley N° 27.743",
+      "fecha": "2026-09-07",
+      "categoria": "Retorno Total",
+      "categoriaKey": "retornoTotal",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 2036.462,
+      "patrimonio": null,
+      "retornoDiario": -0.016644,
+      "retornoAcumulado": 103.6462,
       "flujoEstimado": null,
       "origen": "cnv-excel"
     }

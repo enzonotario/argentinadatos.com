@@ -2,7 +2,7 @@
   "fondoId": "1268",
   "claseId": "3529",
   "nombre": "Pellegrini Retorno Total - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "pellegrini-retorno-total-clase-b",
@@ -19535,9 +19535,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 26132.624,
       "patrimonio": 17510755287.96,
-      "retornoDiario": 0,
+      "retornoDiario": 0.134139,
       "retornoAcumulado": 2513.2624,
-      "flujoEstimado": 0,
+      "flujoEstimado": -25.059528,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "pellegrini-retorno-total-clase-b",
+      "fondoId": "1268",
+      "claseId": "3529",
+      "nombre": "Pellegrini Retorno Total - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 26150.939,
+      "patrimonio": 17523027407.04,
+      "retornoDiario": 0.070085,
+      "retornoAcumulado": 2515.0939,
+      "flujoEstimado": -293.763565,
       "origen": "cnv-excel"
     }
   ]

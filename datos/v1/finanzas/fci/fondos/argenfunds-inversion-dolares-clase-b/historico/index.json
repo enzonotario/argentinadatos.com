@@ -2,7 +2,7 @@
   "fondoId": "1379",
   "claseId": "3964",
   "nombre": "Argenfunds Inversión Dólares - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "argenfunds-inversion-dolares-clase-b",
@@ -14092,12 +14092,28 @@
       "fecha": "2026-09-04",
       "categoria": "Renta Fija",
       "categoriaKey": "rentaFija",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 998.545,
       "patrimonio": 2164908.4,
-      "retornoDiario": 0,
+      "retornoDiario": 0.100045,
       "retornoAcumulado": -0.1455,
-      "flujoEstimado": 0,
+      "flujoEstimado": 0.933015,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "argenfunds-inversion-dolares-clase-b",
+      "fondoId": "1379",
+      "claseId": "3964",
+      "nombre": "Argenfunds Inversión Dólares - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 999.227,
+      "patrimonio": 2166385.59,
+      "retornoDiario": 0.068299,
+      "retornoAcumulado": -0.0773,
+      "flujoEstimado": -1.420788,
       "origen": "cnv-excel"
     }
   ]

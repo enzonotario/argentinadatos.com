@@ -2,7 +2,7 @@
   "fondoId": "1635",
   "claseId": "5425",
   "nombre": "Cocos Dólares Plus - Clase B",
-  "fecha": "2026-09-04",
+  "fecha": "2026-09-07",
   "administradora": "Cocos Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,57 +13,65 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1436",
-  "patrimonio": 10331827.04,
-  "cantidadCuotapartes": 9611494.79,
+  "patrimonio": 13282990.28,
+  "cantidadCuotapartes": 12355557.93,
   "inversionMinima": 1,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1074.945,
-    "variacionDiariaPct": 0.038,
-    "ultimos7Dias": 0.2018,
-    "unMes": -0.1839,
-    "noventaDias": 0.476,
-    "cientoOchentaDias": 1.4803,
-    "enElAnio": 2.2765,
-    "doceMeses": 5.7824
+    "valorCuotaparte": 1075.062,
+    "variacionDiariaPct": 0.011,
+    "ultimos7Dias": 0.1864,
+    "unMes": -0.1636,
+    "noventaDias": 0.4247,
+    "cientoOchentaDias": 1.3241,
+    "enElAnio": 2.2876,
+    "doceMeses": 5.8641
   },
   "composicionCartera": [
     {
+      "nombre": "ON Pampa Energia C28",
+      "porcentaje": 6.21
+    },
+    {
       "nombre": "Bono del Tesoro Nacional AO27",
-      "porcentaje": 17.28
+      "porcentaje": 5
     },
     {
       "nombre": "Bono Bonar 2029 AO29",
-      "porcentaje": 6.43
-    },
-    {
-      "nombre": "Bono del Tesoro Nacional AO28",
-      "porcentaje": 4.34
+      "porcentaje": 4.59
     },
     {
       "nombre": "ON Pampa Energia C26",
-      "porcentaje": 3.17
-    },
-    {
-      "nombre": "ON Central Puerto Clase E",
-      "porcentaje": 2.47
-    },
-    {
-      "nombre": "ON Tecpetrol C13",
-      "porcentaje": 1.34
-    },
-    {
-      "nombre": "ON Bco Provincia Cl 5 PVC5O",
-      "porcentaje": 1.08
+      "porcentaje": 3.21
     },
     {
       "nombre": "ON YPF Clase 43",
-      "porcentaje": 0.88
+      "porcentaje": 2.43
+    },
+    {
+      "nombre": "ON Credicuotas Consumo S23",
+      "porcentaje": 2.33
+    },
+    {
+      "nombre": "ON Central Puerto Clase E",
+      "porcentaje": 2.16
+    },
+    {
+      "nombre": "ON Tecpetrol C13",
+      "porcentaje": 1.36
+    },
+    {
+      "nombre": "ON Supervielle Clase X",
+      "porcentaje": 1.19
+    },
+    {
+      "nombre": "ON Bco Provincia Cl 5 PVC5O",
+      "porcentaje": 1.1
     },
     {
       "nombre": "ON Futuros y Opciones.com S4 CA",
-      "porcentaje": 0.68
+      "porcentaje": 0.7
     },
     {
       "nombre": "ON Cresud Clase 52",
@@ -71,7 +79,7 @@
     },
     {
       "nombre": "ON Cresud Clase 50",
-      "porcentaje": 0.46
+      "porcentaje": 0.48
     },
     {
       "nombre": "ON Irsa Clase 25",
@@ -282,44 +290,52 @@
       "porcentaje": 0.01
     },
     {
-      "nombre": "FCI Balanz Money Market USD - Clase B",
-      "porcentaje": 14.27
+      "nombre": "Caucion Colocadora U$S Merval",
+      "porcentaje": 26.64
     },
     {
       "nombre": "FCI IAM Liquidez en Dólares - Clase B",
-      "porcentaje": 11.2
+      "porcentaje": 6.38
     },
     {
-      "nombre": "FCI Adcap Ahorro Dólares - Clase E",
-      "porcentaje": 7.39
-    },
-    {
-      "nombre": "FCI Schroder Liquidez Dolares - Clase B",
-      "porcentaje": 6.57
-    },
-    {
-      "nombre": "FCI Allaria Dólar Ahorro - Clase B",
-      "porcentaje": 4.87
+      "nombre": "FCI Balanz Money Market USD - Clase B",
+      "porcentaje": 4.49
     },
     {
       "nombre": "FCI 1822 Raices Ahorro Dólares - Clase A",
-      "porcentaje": 3.94
+      "porcentaje": 4
+    },
+    {
+      "nombre": "FCI Allaria Dólar Ahorro - Clase B",
+      "porcentaje": 3.41
     },
     {
       "nombre": "FCI Pellegrini Money Market USD - Clase B",
-      "porcentaje": 3.29
+      "porcentaje": 3.34
+    },
+    {
+      "nombre": "FCI Schroder Liquidez Dolares - Clase B",
+      "porcentaje": 3.34
     },
     {
       "nombre": "SBS Liquidez USD - Clase B",
-      "porcentaje": 2.27
+      "porcentaje": 2.3
+    },
+    {
+      "nombre": "FCI Adcap Ahorro Dólares - Clase E",
+      "porcentaje": 1.14
     },
     {
       "nombre": "FCI Megaqm Liquidez Dólar - Clase B",
-      "porcentaje": 0.66
+      "porcentaje": 0.67
+    },
+    {
+      "nombre": "FCI Consultatio Liquidez Dólar - Clase C",
+      "porcentaje": 0.67
     },
     {
       "nombre": "FCI Bull Market Liquidez Dólar - Clase B",
-      "porcentaje": 0.49
+      "porcentaje": 0.5
     },
     {
       "nombre": "FCI Toronto Trust Money Market Dólar - Clase B",

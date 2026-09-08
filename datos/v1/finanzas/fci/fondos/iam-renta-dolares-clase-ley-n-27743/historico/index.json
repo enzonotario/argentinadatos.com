@@ -2,7 +2,7 @@
   "fondoId": "731",
   "claseId": "5016",
   "nombre": "IAM Renta Dólares - Clase Ley Nº 27.743",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "iam-renta-dolares-clase-ley-n-27743",
@@ -7423,9 +7423,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 1152.135,
       "patrimonio": 148485.34,
-      "retornoDiario": 0,
+      "retornoDiario": 0.083567,
       "retornoAcumulado": 15.710128,
-      "flujoEstimado": 0,
+      "flujoEstimado": 0.058912,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "iam-renta-dolares-clase-ley-n-27743",
+      "fondoId": "731",
+      "claseId": "5016",
+      "nombre": "IAM Renta Dólares - Clase Ley Nº 27.743",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1151.054,
+      "patrimonio": 148345.93,
+      "retornoDiario": -0.093826,
+      "retornoAcumulado": 15.601562,
+      "flujoEstimado": -0.092145,
       "origen": "cnv-excel"
     }
   ]

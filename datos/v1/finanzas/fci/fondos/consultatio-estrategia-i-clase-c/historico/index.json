@@ -2,7 +2,7 @@
   "fondoId": "1701",
   "claseId": "5689",
   "nombre": "Consultatio Estrategia I - Clase C",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "consultatio-estrategia-i-clase-c",
@@ -3756,12 +3756,28 @@
       "fecha": "2026-09-04",
       "categoria": "Renta Mixta",
       "categoriaKey": "rentaMixta",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1051.172,
       "patrimonio": 48334349.28,
-      "retornoDiario": 0,
+      "retornoDiario": 0.025121,
       "retornoAcumulado": 5.1172,
-      "flujoEstimado": 0,
+      "flujoEstimado": -33.280797,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-estrategia-i-clase-c",
+      "fondoId": "1701",
+      "claseId": "5689",
+      "nombre": "Consultatio Estrategia I - Clase C",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1051.113,
+      "patrimonio": 48331630.43,
+      "retornoDiario": -0.005613,
+      "retornoAcumulado": 5.1113,
+      "flujoEstimado": -5.842975,
       "origen": "cnv-excel"
     }
   ]

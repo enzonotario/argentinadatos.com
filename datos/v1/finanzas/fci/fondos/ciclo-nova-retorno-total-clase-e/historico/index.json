@@ -2,7 +2,7 @@
   "fondoId": "828",
   "claseId": "2339",
   "nombre": "Ciclo Nova Retorno Total - Clase E",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "ciclo-nova-retorno-total-clase-e",
@@ -25596,11 +25596,27 @@
       "fecha": "2026-09-04",
       "categoria": "Renta Mixta",
       "categoriaKey": "rentaMixta",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 7.521,
       "patrimonio": null,
       "retornoDiario": 0,
       "retornoAcumulado": -43.873134,
+      "flujoEstimado": null,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "ciclo-nova-retorno-total-clase-e",
+      "fondoId": "828",
+      "claseId": "2339",
+      "nombre": "Ciclo Nova Retorno Total - Clase E",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 7.426,
+      "patrimonio": null,
+      "retornoDiario": -1.26313,
+      "retornoAcumulado": -44.58209,
       "flujoEstimado": null,
       "origen": "cnv-excel"
     }

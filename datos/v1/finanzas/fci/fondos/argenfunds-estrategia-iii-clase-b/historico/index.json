@@ -2,7 +2,7 @@
   "fondoId": "1845",
   "claseId": "6367",
   "nombre": "Argenfunds Estrategia III - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "argenfunds-estrategia-iii-clase-b",
@@ -1628,12 +1628,28 @@
       "fecha": "2026-09-04",
       "categoria": "Renta Fija",
       "categoriaKey": "rentaFija",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 999.098,
       "patrimonio": 49924.38,
-      "retornoDiario": 0,
+      "retornoDiario": 0.165924,
       "retornoAcumulado": -0.0902,
-      "flujoEstimado": 0,
+      "flujoEstimado": 0.030741,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "argenfunds-estrategia-iii-clase-b",
+      "fondoId": "1845",
+      "claseId": "6367",
+      "nombre": "Argenfunds Estrategia III - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 999.759,
+      "patrimonio": 49957.41,
+      "retornoDiario": 0.06616,
+      "retornoAcumulado": -0.0241,
+      "flujoEstimado": 0.00003,
       "origen": "cnv-excel"
     }
   ]

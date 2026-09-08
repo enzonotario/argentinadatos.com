@@ -2,7 +2,7 @@
   "fondoId": "1809",
   "claseId": "6203",
   "nombre": "Fundcorp Crecimiento - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "fundcorp-crecimiento-clase-a",
@@ -2175,9 +2175,25 @@
       "horizonte": "Largo Plazo",
       "valorCuotaparte": 3.682,
       "patrimonio": 9340469320.28,
-      "retornoDiario": 0,
+      "retornoDiario": -0.243836,
       "retornoAcumulado": -99.6318,
-      "flujoEstimado": 0,
+      "flujoEstimado": -59944290.438074,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "fundcorp-crecimiento-clase-a",
+      "fondoId": "1809",
+      "claseId": "6203",
+      "nombre": "Fundcorp Crecimiento - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 3.683,
+      "patrimonio": 9344627891.67,
+      "retornoDiario": 0.027159,
+      "retornoAcumulado": -99.6317,
+      "flujoEstimado": 1621793.327303,
       "origen": "cnv-excel"
     }
   ]

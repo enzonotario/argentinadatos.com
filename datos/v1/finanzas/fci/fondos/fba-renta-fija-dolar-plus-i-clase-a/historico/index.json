@@ -2,7 +2,7 @@
   "fondoId": "844",
   "claseId": "5409",
   "nombre": "FBA Renta Fija Dólar Plus I - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "fba-renta-fija-dolar-plus-i-clase-a",
@@ -5743,9 +5743,25 @@
       "horizonte": "Largo Plazo",
       "valorCuotaparte": 1222.193,
       "patrimonio": 57851243.15,
-      "retornoDiario": 0,
+      "retornoDiario": 0.397996,
       "retornoAcumulado": 23.62404,
-      "flujoEstimado": 0,
+      "flujoEstimado": 361998.801463,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "fba-renta-fija-dolar-plus-i-clase-a",
+      "fondoId": "844",
+      "claseId": "5409",
+      "nombre": "FBA Renta Fija Dólar Plus I - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 1222.037,
+      "patrimonio": 57819194.03,
+      "retornoDiario": -0.012764,
+      "retornoAcumulado": 23.608261,
+      "flujoEstimado": -24664.987324,
       "origen": "cnv-excel"
     }
   ]

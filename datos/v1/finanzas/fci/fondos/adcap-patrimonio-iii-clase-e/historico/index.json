@@ -2,7 +2,7 @@
   "fondoId": "1959",
   "claseId": "6688",
   "nombre": "Adcap Patrimonio III - Clase E",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "adcap-patrimonio-iii-clase-e",
@@ -15,8 +15,24 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1000,
       "patrimonio": null,
-      "retornoDiario": 0,
+      "retornoDiario": null,
       "retornoAcumulado": 0,
+      "flujoEstimado": null,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "adcap-patrimonio-iii-clase-e",
+      "fondoId": "1959",
+      "claseId": "6688",
+      "nombre": "Adcap Patrimonio III - Clase E",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 956.76,
+      "patrimonio": null,
+      "retornoDiario": -4.324,
+      "retornoAcumulado": -4.324,
       "flujoEstimado": null,
       "origen": "cnv-excel"
     }

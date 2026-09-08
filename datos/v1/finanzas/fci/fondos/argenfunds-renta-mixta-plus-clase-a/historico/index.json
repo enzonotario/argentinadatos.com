@@ -2,7 +2,7 @@
   "fondoId": "879",
   "claseId": "2538",
   "nombre": "Argenfunds Renta Mixta Plus - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "argenfunds-renta-mixta-plus-clase-a",
@@ -19727,9 +19727,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1148.951,
       "patrimonio": 292098.11,
-      "retornoDiario": 0,
+      "retornoDiario": 0.185643,
       "retornoAcumulado": 14.8951,
-      "flujoEstimado": 0,
+      "flujoEstimado": 0.05521,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "argenfunds-renta-mixta-plus-clase-a",
+      "fondoId": "879",
+      "claseId": "2538",
+      "nombre": "Argenfunds Renta Mixta Plus - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1147.996,
+      "patrimonio": 291855.3,
+      "retornoDiario": -0.083119,
+      "retornoAcumulado": 14.7996,
+      "flujoEstimado": -0.020972,
       "origen": "cnv-excel"
     }
   ]

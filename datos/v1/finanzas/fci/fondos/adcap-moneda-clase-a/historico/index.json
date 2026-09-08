@@ -2,7 +2,7 @@
   "fondoId": "612",
   "claseId": "1235",
   "nombre": "Adcap Moneda - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "adcap-moneda-clase-a",
@@ -25631,9 +25631,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 30695.131,
       "patrimonio": 1298414772.37,
-      "retornoDiario": 0,
+      "retornoDiario": 0.151922,
       "retornoAcumulado": 1816.577025,
-      "flujoEstimado": 0,
+      "flujoEstimado": -494752.033877,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "adcap-moneda-clase-a",
+      "fondoId": "612",
+      "claseId": "1235",
+      "nombre": "Adcap Moneda - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 30738.718,
+      "patrimonio": 1293906495.62,
+      "retornoDiario": 0.142,
+      "retornoAcumulado": 1819.298559,
+      "flujoEstimado": -6352025.726765,
       "origen": "cnv-excel"
     }
   ]

@@ -2,7 +2,7 @@
   "fondoId": "1297",
   "claseId": "3671",
   "nombre": "Balanz Lecaps - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "balanz-lecaps-clase-a",
@@ -17103,9 +17103,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 2116.096,
       "patrimonio": 79086143827.63,
-      "retornoDiario": 0,
+      "retornoDiario": 0.076851,
       "retornoAcumulado": 111.6096,
-      "flujoEstimado": 0,
+      "flujoEstimado": 664290425.158493,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "balanz-lecaps-clase-a",
+      "fondoId": "1297",
+      "claseId": "3671",
+      "nombre": "Balanz Lecaps - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 2119.972,
+      "patrimonio": 79105706610.15,
+      "retornoDiario": 0.183167,
+      "retornoAcumulado": 111.9972,
+      "flujoEstimado": -125296934.544769,
       "origen": "cnv-excel"
     }
   ]

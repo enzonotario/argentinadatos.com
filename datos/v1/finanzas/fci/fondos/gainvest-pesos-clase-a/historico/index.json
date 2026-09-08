@@ -2,7 +2,7 @@
   "fondoId": "638",
   "claseId": "3945",
   "nombre": "Gainvest Pesos - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "gainvest-pesos-clase-a",
@@ -14335,9 +14335,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 41491.948,
       "patrimonio": 864984267.94,
-      "retornoDiario": 0,
+      "retornoDiario": 0.051391,
       "retornoAcumulado": 458.317381,
-      "flujoEstimado": 0,
+      "flujoEstimado": -26020059.197278,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "gainvest-pesos-clase-a",
+      "fondoId": "638",
+      "claseId": "3945",
+      "nombre": "Gainvest Pesos - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 41556.48,
+      "patrimonio": 786629595.25,
+      "retornoDiario": 0.155529,
+      "retornoAcumulado": 459.185726,
+      "flujoEstimado": -79699974.072084,
       "origen": "cnv-excel"
     }
   ]

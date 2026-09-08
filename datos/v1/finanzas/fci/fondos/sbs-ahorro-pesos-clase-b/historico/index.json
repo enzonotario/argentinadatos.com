@@ -2,7 +2,7 @@
   "fondoId": "443",
   "claseId": "840",
   "nombre": "SBS Ahorro Pesos - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "sbs-ahorro-pesos-clase-b",
@@ -25743,9 +25743,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 176182.984,
       "patrimonio": 123185900844.61,
-      "retornoDiario": 0,
+      "retornoDiario": 0.052492,
       "retornoAcumulado": 1398.79633,
-      "flujoEstimado": 0,
+      "flujoEstimado": -48389386799.175644,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "sbs-ahorro-pesos-clase-b",
+      "fondoId": "443",
+      "claseId": "840",
+      "nombre": "SBS Ahorro Pesos - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 176468.114,
+      "patrimonio": 123182895682.16,
+      "retornoDiario": 0.161837,
+      "retornoAcumulado": 1401.221943,
+      "flujoEstimado": -202365528.799896,
       "origen": "cnv-excel"
     }
   ]

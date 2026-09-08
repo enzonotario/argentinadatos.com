@@ -2,7 +2,7 @@
   "fondoId": "1569",
   "claseId": "5077",
   "nombre": "Ciclo Nova Estructurado III - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "ciclo-nova-estructurado-iii-clase-b",
@@ -7052,12 +7052,28 @@
       "fecha": "2026-09-04",
       "categoria": "Renta Mixta",
       "categoriaKey": "rentaMixta",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1853.565,
       "patrimonio": 7218532055.53,
-      "retornoDiario": 0,
+      "retornoDiario": 0.096988,
       "retornoAcumulado": 85.3565,
-      "flujoEstimado": 0,
+      "flujoEstimado": 75750345.185055,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "ciclo-nova-estructurado-iii-clase-b",
+      "fondoId": "1569",
+      "claseId": "5077",
+      "nombre": "Ciclo Nova Estructurado III - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1858.792,
+      "patrimonio": 7329848218.46,
+      "retornoDiario": 0.281997,
+      "retornoAcumulado": 85.8792,
+      "flujoEstimado": 90960119.089367,
       "origen": "cnv-excel"
     }
   ]

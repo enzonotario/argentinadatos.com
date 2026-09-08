@@ -2,7 +2,7 @@
   "fondoId": "808",
   "claseId": "2113",
   "nombre": "Compass Ahorro en Dolares - Clase E",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "compass-ahorro-en-dolares-clase-e",
@@ -25788,12 +25788,28 @@
       "fecha": "2026-09-04",
       "categoria": "Retorno Total",
       "categoriaKey": "retornoTotal",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 2035600.162,
       "patrimonio": 38531725.26,
-      "retornoDiario": 0,
+      "retornoDiario": 0.040623,
       "retornoAcumulado": 3709.68346,
-      "flujoEstimado": 0,
+      "flujoEstimado": -0.186797,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "compass-ahorro-en-dolares-clase-e",
+      "fondoId": "808",
+      "claseId": "2113",
+      "nombre": "Compass Ahorro en Dolares - Clase E",
+      "fecha": "2026-09-07",
+      "categoria": "Retorno Total",
+      "categoriaKey": "retornoTotal",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 2038984.164,
+      "patrimonio": 38595778.15,
+      "retornoDiario": 0.166241,
+      "retornoAcumulado": 3716.016716,
+      "flujoEstimado": -2.635389,
       "origen": "cnv-excel"
     }
   ]

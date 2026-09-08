@@ -2,7 +2,7 @@
   "fondoId": "1389",
   "claseId": "4000",
   "nombre": "Axis S&C Argentina Absolute Return - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "axis-sc-argentina-absolute-return-clase-a",
@@ -13087,9 +13087,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 11687.887,
       "patrimonio": 14646600832.99,
-      "retornoDiario": 0,
+      "retornoDiario": 0.044562,
       "retornoAcumulado": 1068.7887,
-      "flujoEstimado": 0,
+      "flujoEstimado": -2201214.2061,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "axis-sc-argentina-absolute-return-clase-a",
+      "fondoId": "1389",
+      "claseId": "4000",
+      "nombre": "Axis S&C Argentina Absolute Return - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 11684.953,
+      "patrimonio": 14631769509.88,
+      "retornoDiario": -0.025103,
+      "retornoAcumulado": 1068.4953,
+      "flujoEstimado": -11154586.902895,
       "origen": "cnv-excel"
     }
   ]

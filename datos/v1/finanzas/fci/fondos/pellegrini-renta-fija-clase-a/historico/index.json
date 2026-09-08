@@ -2,7 +2,7 @@
   "fondoId": "271",
   "claseId": "271",
   "nombre": "Pellegrini Renta Fija - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "pellegrini-renta-fija-clase-a",
@@ -25791,9 +25791,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 40960.208,
       "patrimonio": 40483993326.86,
-      "retornoDiario": 0,
+      "retornoDiario": 0.185572,
       "retornoAcumulado": 2494.503683,
-      "flujoEstimado": 0,
+      "flujoEstimado": 46125198.21907,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "pellegrini-renta-fija-clase-a",
+      "fondoId": "271",
+      "claseId": "271",
+      "nombre": "Pellegrini Renta Fija - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 40984.239,
+      "patrimonio": 40704593519.76,
+      "retornoDiario": 0.058669,
+      "retornoAcumulado": 2496.025856,
+      "flujoEstimado": 196848638.855064,
       "origen": "cnv-excel"
     }
   ]

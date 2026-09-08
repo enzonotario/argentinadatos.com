@@ -2,7 +2,7 @@
   "fondoId": "1330",
   "claseId": "3796",
   "nombre": "Consultatio Gestion V - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "consultatio-gestion-v-clase-a",
@@ -15919,9 +15919,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1608.748,
       "patrimonio": 134833747.39,
-      "retornoDiario": 0,
+      "retornoDiario": 0.023813,
       "retornoAcumulado": 60.8748,
-      "flujoEstimado": 0,
+      "flujoEstimado": -5.377498,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-gestion-v-clase-a",
+      "fondoId": "1330",
+      "claseId": "3796",
+      "nombre": "Consultatio Gestion V - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1611.845,
+      "patrimonio": 135093259.67,
+      "retornoDiario": 0.19251,
+      "retornoAcumulado": 61.1845,
+      "flujoEstimado": -56.1671,
       "origen": "cnv-excel"
     }
   ]

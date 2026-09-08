@@ -2,7 +2,7 @@
   "fondoId": "893",
   "claseId": "2616",
   "nombre": "Alamerica Renta Fija Dolar Latam - Clase J",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "alamerica-renta-fija-dolar-latam-clase-j",
@@ -25791,9 +25791,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1166.543,
       "patrimonio": 682734.58,
-      "retornoDiario": 0,
+      "retornoDiario": 0.010459,
       "retornoAcumulado": 16.456208,
-      "flujoEstimado": 0,
+      "flujoEstimado": -6423.511507,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "alamerica-renta-fija-dolar-latam-clase-j",
+      "fondoId": "893",
+      "claseId": "2616",
+      "nombre": "Alamerica Renta Fija Dolar Latam - Clase J",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1166.275,
+      "patrimonio": 682577.88,
+      "retornoDiario": -0.022974,
+      "retornoAcumulado": 16.429453,
+      "flujoEstimado": 0.151442,
       "origen": "cnv-excel"
     }
   ]

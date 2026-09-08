@@ -2,7 +2,7 @@
   "fondoId": "1423",
   "claseId": "4160",
   "nombre": "ConoSur Visus - Clase D",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "conosur-visus-clase-d",
@@ -11884,12 +11884,28 @@
       "fecha": "2026-09-04",
       "categoria": "Retorno Total",
       "categoriaKey": "retornoTotal",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 6320.699,
       "patrimonio": 1035250624.21,
-      "retornoDiario": 0,
+      "retornoDiario": -0.080401,
       "retornoAcumulado": 532.0699,
-      "flujoEstimado": 0,
+      "flujoEstimado": -1.476734,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "conosur-visus-clase-d",
+      "fondoId": "1423",
+      "claseId": "4160",
+      "nombre": "ConoSur Visus - Clase D",
+      "fecha": "2026-09-07",
+      "categoria": "Retorno Total",
+      "categoriaKey": "retornoTotal",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 6313.205,
+      "patrimonio": 1034023221.19,
+      "retornoDiario": -0.118563,
+      "retornoAcumulado": 531.3205,
+      "flujoEstimado": 21.177582,
       "origen": "cnv-excel"
     }
   ]

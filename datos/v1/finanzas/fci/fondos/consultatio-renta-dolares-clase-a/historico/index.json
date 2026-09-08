@@ -2,7 +2,7 @@
   "fondoId": "824",
   "claseId": "2306",
   "nombre": "Consultatio Renta Dolares - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "consultatio-renta-dolares-clase-a",
@@ -25711,9 +25711,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 154156.251,
       "patrimonio": 1824718.53,
-      "retornoDiario": 0,
+      "retornoDiario": 0.233234,
       "retornoAcumulado": 6221.355885,
-      "flujoEstimado": 0,
+      "flujoEstimado": -0.000994,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-renta-dolares-clase-a",
+      "fondoId": "824",
+      "claseId": "2306",
+      "nombre": "Consultatio Renta Dolares - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 154123.547,
+      "patrimonio": 1824331.41,
+      "retornoDiario": -0.021215,
+      "retornoAcumulado": 6220.01482,
+      "flujoEstimado": -0.005964,
       "origen": "cnv-excel"
     }
   ]

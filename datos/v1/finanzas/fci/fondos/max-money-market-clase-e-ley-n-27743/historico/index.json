@@ -2,7 +2,7 @@
   "fondoId": "1350",
   "claseId": "4730",
   "nombre": "Max Money Market - Clase E Ley N° 27.743",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "max-money-market-clase-e-ley-n-27743",
@@ -7391,9 +7391,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 1672.585,
       "patrimonio": 8376.74,
-      "retornoDiario": 0,
+      "retornoDiario": 0.05306,
       "retornoAcumulado": 67.2585,
-      "flujoEstimado": 0,
+      "flujoEstimado": -0.002342,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "max-money-market-clase-e-ley-n-27743",
+      "fondoId": "1350",
+      "claseId": "4730",
+      "nombre": "Max Money Market - Clase E Ley N° 27.743",
+      "fecha": "2026-09-07",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1675.19,
+      "patrimonio": 8389.79,
+      "retornoDiario": 0.155747,
+      "retornoAcumulado": 67.519,
+      "flujoEstimado": 0.003479,
       "origen": "cnv-excel"
     }
   ]

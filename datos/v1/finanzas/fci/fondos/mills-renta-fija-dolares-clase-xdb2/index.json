@@ -1,8 +1,8 @@
 {
-  "fondoId": "1829",
+  "fondoId": "1874",
   "claseId": "6289",
   "nombre": "Mills Renta Fija Dólares - Clase XDB2",
-  "fecha": "2026-08-06",
+  "fecha": "2026-09-07",
   "administradora": "Mills Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,13 +13,13 @@
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1874",
-  "patrimonio": null,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 1500000,
-  "monedaInversion": "Dolar Estadounidense Billete",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
+    "valorCuotaparte": 1000,
     "variacionDiariaPct": null,
     "ultimos7Dias": null,
     "unMes": null,
@@ -115,12 +115,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mills Asset Management S.A.",
       "logo": null
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }

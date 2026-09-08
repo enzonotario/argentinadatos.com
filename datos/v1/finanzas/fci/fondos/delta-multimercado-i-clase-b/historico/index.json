@@ -2,7 +2,7 @@
   "fondoId": "466",
   "claseId": "915",
   "nombre": "Delta Multimercado I - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "delta-multimercado-i-clase-b",
@@ -25823,9 +25823,25 @@
       "horizonte": null,
       "valorCuotaparte": 1059985.934,
       "patrimonio": 4103518277.81,
-      "retornoDiario": 0,
+      "retornoDiario": 0.222262,
       "retornoAcumulado": 4227.40315,
-      "flujoEstimado": 0,
+      "flujoEstimado": 9.693912,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "delta-multimercado-i-clase-b",
+      "fondoId": "466",
+      "claseId": "915",
+      "nombre": "Delta Multimercado I - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1059604.893,
+      "patrimonio": 4102043153.92,
+      "retornoDiario": -0.035948,
+      "retornoAcumulado": 4225.847546,
+      "flujoEstimado": 8.860507,
       "origen": "cnv-excel"
     }
   ]

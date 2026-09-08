@@ -2,7 +2,7 @@
   "fondoId": "832",
   "claseId": "2357",
   "nombre": "Balanz Opportunity - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "balanz-opportunity-clase-b",
@@ -25791,9 +25791,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 42633.704,
       "patrimonio": 1121843864.17,
-      "retornoDiario": 0,
+      "retornoDiario": 0.142054,
       "retornoAcumulado": 2387.440131,
-      "flujoEstimado": 0,
+      "flujoEstimado": 5.430383,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "balanz-opportunity-clase-b",
+      "fondoId": "832",
+      "claseId": "2357",
+      "nombre": "Balanz Opportunity - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 42699.32,
+      "patrimonio": 1123570435.27,
+      "retornoDiario": 0.153906,
+      "retornoAcumulado": 2391.268461,
+      "flujoEstimado": -13.91759,
       "origen": "cnv-excel"
     }
   ]

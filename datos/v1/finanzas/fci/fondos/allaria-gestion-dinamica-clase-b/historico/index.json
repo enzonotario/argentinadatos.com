@@ -2,7 +2,7 @@
   "fondoId": "1706",
   "claseId": "5713",
   "nombre": "Allaria Gestión Dinámica - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "allaria-gestion-dinamica-clase-b",
@@ -991,9 +991,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1027.307,
       "patrimonio": 60611142081.36,
-      "retornoDiario": 0,
+      "retornoDiario": 0.440064,
       "retornoAcumulado": 2.7307,
-      "flujoEstimado": 0,
+      "flujoEstimado": 41413.946358,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "allaria-gestion-dinamica-clase-b",
+      "fondoId": "1706",
+      "claseId": "5713",
+      "nombre": "Allaria Gestión Dinámica - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1023.516,
+      "patrimonio": 60387435176.29,
+      "retornoDiario": -0.369023,
+      "retornoAcumulado": 2.3516,
+      "flujoEstimado": -37850.227104,
       "origen": "cnv-excel"
     }
   ]

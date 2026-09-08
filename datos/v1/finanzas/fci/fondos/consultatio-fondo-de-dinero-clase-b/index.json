@@ -2,7 +2,7 @@
   "fondoId": "1281",
   "claseId": "3569",
   "nombre": "Consultatio Fondo de Dinero - Clase B",
-  "fecha": "2026-09-04",
+  "fecha": "2026-09-07",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Mercado de Dinero",
@@ -13,57 +13,69 @@
   "duracion": "Menor o Igual a 0.5 Año",
   "moneda": "Peso Argentino",
   "codigoCNV": "1219",
-  "patrimonio": 11035201.32,
+  "patrimonio": 11044419.01,
   "cantidadCuotapartes": 2040217.58,
   "inversionMinima": 1000,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 0,
   "rendimientos": {
-    "valorCuotaparte": 5408.836,
-    "variacionDiariaPct": 0.028,
-    "ultimos7Dias": -0.5269,
-    "unMes": 0.1896,
-    "noventaDias": 0.3213,
-    "cientoOchentaDias": 0.6834,
-    "enElAnio": -5.3861,
-    "doceMeses": -15.8324
+    "valorCuotaparte": 5413.354,
+    "variacionDiariaPct": 0.084,
+    "ultimos7Dias": -0.5425,
+    "unMes": 0.214,
+    "noventaDias": 0.3088,
+    "cientoOchentaDias": 0.7165,
+    "enElAnio": -5.3071,
+    "doceMeses": -15.8238
   },
   "composicionCartera": [
     {
+      "nombre": "Pzo Fi $ Bco Nacion",
+      "porcentaje": 13.33
+    },
+    {
       "nombre": "Pzo Fi $ Bco Santander Ri",
-      "porcentaje": 24.14
+      "porcentaje": 13.02
     },
     {
       "nombre": "Pzo Fi $ Bco Cordoba",
-      "porcentaje": 16.1
+      "porcentaje": 12.51
+    },
+    {
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 7.43
     },
     {
       "nombre": "Pzo Fi $ Bco Hipotecario",
-      "porcentaje": 11.54
-    },
-    {
-      "nombre": "Pzo Fi $ Bco Nacion",
-      "porcentaje": 10.01
-    },
-    {
-      "nombre": "Pzo Fi $ Bco Galicia",
-      "porcentaje": 5.01
-    },
-    {
-      "nombre": "Pzo Fi $ Nvo Bco Indus",
-      "porcentaje": 4.99
+      "porcentaje": 6.66
     },
     {
       "nombre": "Pzo Fi $ Bco Coinag",
-      "porcentaje": 4.91
+      "porcentaje": 4.49
+    },
+    {
+      "nombre": "Pzo Fi $ Nvo Bco Indus",
+      "porcentaje": 4.19
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Galicia",
+      "porcentaje": 4.17
     },
     {
       "nombre": "Pzo Fi $ Bco Sol",
-      "porcentaje": 4.5
+      "porcentaje": 3.76
     },
     {
       "nombre": "Pzo Fi $ Bco BBVA",
-      "porcentaje": 3
+      "porcentaje": 2.52
+    },
+    {
+      "nombre": "Pzo Fi $ BNP Paribas",
+      "porcentaje": 2.08
+    },
+    {
+      "nombre": "Pzo Fi $ Nvo Bco Santa Fe",
+      "porcentaje": 0.83
     }
   ],
   "calificaciones": [

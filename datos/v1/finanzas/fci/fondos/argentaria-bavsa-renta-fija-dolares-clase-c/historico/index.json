@@ -2,7 +2,7 @@
   "fondoId": "1785",
   "claseId": "6097",
   "nombre": "Argentaria BAVSA Renta Fija Dólares - Clase C",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "argentaria-bavsa-renta-fija-dolares-clase-c",
@@ -1724,12 +1724,28 @@
       "fecha": "2026-09-04",
       "categoria": "Renta Fija",
       "categoriaKey": "rentaFija",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1013.733,
       "patrimonio": 15206,
-      "retornoDiario": 0,
+      "retornoDiario": 0.130876,
       "retornoAcumulado": 1.3733,
-      "flujoEstimado": 0,
+      "flujoEstimado": 0.005014,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "argentaria-bavsa-renta-fija-dolares-clase-c",
+      "fondoId": "1785",
+      "claseId": "6097",
+      "nombre": "Argentaria BAVSA Renta Fija Dólares - Clase C",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1013.707,
+      "patrimonio": 15205.6,
+      "retornoDiario": -0.002565,
+      "retornoAcumulado": 1.3707,
+      "flujoEstimado": -0.009966,
       "origen": "cnv-excel"
     }
   ]

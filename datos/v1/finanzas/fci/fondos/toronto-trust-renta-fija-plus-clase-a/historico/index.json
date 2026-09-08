@@ -2,7 +2,7 @@
   "fondoId": "563",
   "claseId": "1141",
   "nombre": "Toronto Trust Renta Fija Plus - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "toronto-trust-renta-fija-plus-clase-a",
@@ -25327,9 +25327,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 247549.062,
       "patrimonio": 826507394,
-      "retornoDiario": 0,
+      "retornoDiario": 0.245076,
       "retornoAcumulado": 4353.873706,
-      "flujoEstimado": 0,
+      "flujoEstimado": 4.182035,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "toronto-trust-renta-fija-plus-clase-a",
+      "fondoId": "563",
+      "claseId": "1141",
+      "nombre": "Toronto Trust Renta Fija Plus - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 247405.264,
+      "patrimonio": 825887715.37,
+      "retornoDiario": -0.058089,
+      "retornoAcumulado": 4351.28651,
+      "flujoEstimado": -139568.749899,
       "origen": "cnv-excel"
     }
   ]

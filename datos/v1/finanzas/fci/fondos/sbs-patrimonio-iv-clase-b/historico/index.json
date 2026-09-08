@@ -2,7 +2,7 @@
   "fondoId": "701",
   "claseId": "1499",
   "nombre": "SBS Patrimonio IV - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "sbs-patrimonio-iv-clase-b",
@@ -18431,9 +18431,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 42877.268,
       "patrimonio": 7103141977.55,
-      "retornoDiario": 0,
+      "retornoDiario": 0.167356,
       "retornoAcumulado": 1289.668222,
-      "flujoEstimado": 0,
+      "flujoEstimado": -26.869974,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "sbs-patrimonio-iv-clase-b",
+      "fondoId": "701",
+      "claseId": "1499",
+      "nombre": "SBS Patrimonio IV - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 42926.426,
+      "patrimonio": 7111285592.12,
+      "retornoDiario": 0.114648,
+      "retornoAcumulado": 1291.261451,
+      "flujoEstimado": 4.355577,
       "origen": "cnv-excel"
     }
   ]

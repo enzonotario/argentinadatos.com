@@ -2,7 +2,7 @@
   "fondoId": "531",
   "claseId": "1070",
   "nombre": "Adcap Renta Fija - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "adcap-renta-fija-clase-a",
@@ -25663,9 +25663,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 193100.414,
       "patrimonio": 5572071097.41,
-      "retornoDiario": 0,
+      "retornoDiario": 0.243267,
       "retornoAcumulado": 2517.013015,
-      "flujoEstimado": 0,
+      "flujoEstimado": -6919840.469066,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "adcap-renta-fija-clase-a",
+      "fondoId": "531",
+      "claseId": "1070",
+      "nombre": "Adcap Renta Fija - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 193131.9,
+      "patrimonio": 5548487629.66,
+      "retornoDiario": 0.016306,
+      "retornoAcumulado": 2517.439732,
+      "flujoEstimado": -24492049.663143,
       "origen": "cnv-excel"
     }
   ]

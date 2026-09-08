@@ -2,7 +2,7 @@
   "fondoId": "757",
   "claseId": "1667",
   "nombre": "Delta Gestion VII - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "delta-gestion-vii-clase-b",
@@ -25823,9 +25823,25 @@
       "horizonte": null,
       "valorCuotaparte": 145836.637,
       "patrimonio": 39823478259.47,
-      "retornoDiario": 0,
+      "retornoDiario": 0.026863,
       "retornoAcumulado": 6112.14015,
-      "flujoEstimado": 0,
+      "flujoEstimado": 100.195198,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "delta-gestion-vii-clase-b",
+      "fondoId": "757",
+      "claseId": "1667",
+      "nombre": "Delta Gestion VII - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 145624.313,
+      "patrimonio": 39765499223.94,
+      "retornoDiario": -0.14559,
+      "retornoAcumulado": 6103.095876,
+      "flujoEstimado": -33.532036,
       "origen": "cnv-excel"
     }
   ]

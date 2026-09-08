@@ -2,7 +2,7 @@
   "fondoId": "531",
   "claseId": "3343",
   "nombre": "Adcap Renta Fija - Clase C",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "adcap-renta-fija-clase-c",
@@ -23343,8 +23343,24 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 242619.665,
       "patrimonio": null,
-      "retornoDiario": 0,
+      "retornoDiario": 0.25121,
       "retornoAcumulado": 2388.406821,
+      "flujoEstimado": null,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "adcap-renta-fija-clase-c",
+      "fondoId": "531",
+      "claseId": "3343",
+      "nombre": "Adcap Renta Fija - Clase C",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 242716.916,
+      "patrimonio": null,
+      "retornoDiario": 0.040084,
+      "retornoAcumulado": 2389.404267,
       "flujoEstimado": null,
       "origen": "cnv-excel"
     }

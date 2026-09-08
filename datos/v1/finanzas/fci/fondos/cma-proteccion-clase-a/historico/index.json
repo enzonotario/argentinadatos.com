@@ -2,7 +2,7 @@
   "fondoId": "330",
   "claseId": "370",
   "nombre": "CMA Proteccion - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "cma-proteccion-clase-a",
@@ -25839,9 +25839,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 459839.478,
       "patrimonio": 3727934479.12,
-      "retornoDiario": 0,
+      "retornoDiario": 0.14231,
       "retornoAcumulado": 1978.385834,
-      "flujoEstimado": 0,
+      "flujoEstimado": 80450235.550301,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "cma-proteccion-clase-a",
+      "fondoId": "330",
+      "claseId": "370",
+      "nombre": "CMA Proteccion - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 460190.378,
+      "patrimonio": 3747850104.6,
+      "retornoDiario": 0.076309,
+      "retornoAcumulado": 1979.971834,
+      "flujoEstimado": 17070875.958328,
       "origen": "cnv-excel"
     }
   ]

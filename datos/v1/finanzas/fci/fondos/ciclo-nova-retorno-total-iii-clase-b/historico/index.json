@@ -2,7 +2,7 @@
   "fondoId": "1756",
   "claseId": "5939",
   "nombre": "Ciclo Nova Retorno Total III - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "ciclo-nova-retorno-total-iii-clase-b",
@@ -3052,12 +3052,28 @@
       "fecha": "2026-09-04",
       "categoria": "Retorno Total",
       "categoriaKey": "retornoTotal",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1284.193,
       "patrimonio": 4448739385.3,
-      "retornoDiario": 0,
+      "retornoDiario": 0.08456,
       "retornoAcumulado": 28.4193,
-      "flujoEstimado": 0,
+      "flujoEstimado": 504.458162,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "ciclo-nova-retorno-total-iii-clase-b",
+      "fondoId": "1756",
+      "claseId": "5939",
+      "nombre": "Ciclo Nova Retorno Total III - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Retorno Total",
+      "categoriaKey": "retornoTotal",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1287.339,
+      "patrimonio": 4459638350.74,
+      "retornoDiario": 0.244979,
+      "retornoAcumulado": 28.7339,
+      "flujoEstimado": 488.181286,
       "origen": "cnv-excel"
     }
   ]

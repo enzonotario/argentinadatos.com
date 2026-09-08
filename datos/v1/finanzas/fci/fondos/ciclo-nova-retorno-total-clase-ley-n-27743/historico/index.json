@@ -2,7 +2,7 @@
   "fondoId": "828",
   "claseId": "4877",
   "nombre": "Ciclo Nova Retorno Total - Clase Ley N° 27.743",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "ciclo-nova-retorno-total-clase-ley-n-27743",
@@ -7612,12 +7612,28 @@
       "fecha": "2026-09-04",
       "categoria": "Renta Mixta",
       "categoriaKey": "rentaMixta",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 2143.624,
       "patrimonio": 4988078.56,
-      "retornoDiario": 0,
+      "retornoDiario": 0.087499,
       "retornoAcumulado": 114.3624,
-      "flujoEstimado": 0,
+      "flujoEstimado": 0.176867,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "ciclo-nova-retorno-total-clase-ley-n-27743",
+      "fondoId": "828",
+      "claseId": "4877",
+      "nombre": "Ciclo Nova Retorno Total - Clase Ley N° 27.743",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 2149.225,
+      "patrimonio": 5001110.16,
+      "retornoDiario": 0.261286,
+      "retornoAcumulado": 114.9225,
+      "flujoEstimado": -1.550946,
       "origen": "cnv-excel"
     }
   ]

@@ -2,7 +2,7 @@
   "fondoId": "438",
   "claseId": "830",
   "nombre": "SBS Renta Pesos - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "sbs-renta-pesos-clase-a",
@@ -25727,9 +25727,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1484526.394,
       "patrimonio": 22071699991.89,
-      "retornoDiario": 0,
+      "retornoDiario": 0.360251,
       "retornoAcumulado": 6357.40379,
-      "flujoEstimado": 0,
+      "flujoEstimado": 98252627.735275,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "sbs-renta-pesos-clase-a",
+      "fondoId": "438",
+      "claseId": "830",
+      "nombre": "SBS Renta Pesos - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1486632.234,
+      "patrimonio": 22367472053.31,
+      "retornoDiario": 0.141853,
+      "retornoAcumulado": 6366.563788,
+      "flujoEstimado": 264462692.830505,
       "origen": "cnv-excel"
     }
   ]

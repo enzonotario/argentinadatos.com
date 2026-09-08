@@ -2,7 +2,7 @@
   "fondoId": "723",
   "claseId": "4940",
   "nombre": "CMA Renta Dólar - Clase Ley N° 27.743",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "cma-renta-dolar-clase-ley-n-27743",
@@ -7551,9 +7551,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1142.605,
       "patrimonio": 1335413.91,
-      "retornoDiario": 0,
+      "retornoDiario": 0.286657,
       "retornoAcumulado": 14.2605,
-      "flujoEstimado": 0,
+      "flujoEstimado": -0.707446,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "cma-renta-dolar-clase-ley-n-27743",
+      "fondoId": "723",
+      "claseId": "4940",
+      "nombre": "CMA Renta Dólar - Clase Ley N° 27.743",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1142.21,
+      "patrimonio": 1334952.3,
+      "retornoDiario": -0.03457,
+      "retornoAcumulado": 14.221,
+      "flujoEstimado": 0.042589,
       "origen": "cnv-excel"
     }
   ]

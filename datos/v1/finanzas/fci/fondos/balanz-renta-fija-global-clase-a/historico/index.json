@@ -2,7 +2,7 @@
   "fondoId": "1754",
   "claseId": "5929",
   "nombre": "Balanz Renta Fija Global - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "balanz-renta-fija-global-clase-a",
@@ -3215,9 +3215,25 @@
       "horizonte": "Largo Plazo",
       "valorCuotaparte": 1011.681,
       "patrimonio": 162267.25,
-      "retornoDiario": 0,
+      "retornoDiario": 0.028179,
       "retornoAcumulado": 1.1681,
-      "flujoEstimado": 0,
+      "flujoEstimado": -374.107797,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "balanz-renta-fija-global-clase-a",
+      "fondoId": "1754",
+      "claseId": "5929",
+      "nombre": "Balanz Renta Fija Global - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 1011.479,
+      "patrimonio": 162234.89,
+      "retornoDiario": -0.019967,
+      "retornoAcumulado": 1.1479,
+      "flujoEstimado": 0.039902,
       "origen": "cnv-excel"
     }
   ]

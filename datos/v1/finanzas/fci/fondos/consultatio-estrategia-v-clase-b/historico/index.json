@@ -2,7 +2,7 @@
   "fondoId": "1705",
   "claseId": "5708",
   "nombre": "Consultatio Estrategia V - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "consultatio-estrategia-v-clase-b",
@@ -3759,9 +3759,25 @@
       "horizonte": null,
       "valorCuotaparte": 856.887,
       "patrimonio": 9581.24,
-      "retornoDiario": 0,
+      "retornoDiario": 0.008403,
       "retornoAcumulado": -14.3113,
-      "flujoEstimado": 0,
+      "flujoEstimado": -0.005044,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-estrategia-v-clase-b",
+      "fondoId": "1705",
+      "claseId": "5708",
+      "nombre": "Consultatio Estrategia V - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": null,
+      "valorCuotaparte": 856.737,
+      "patrimonio": 9579.57,
+      "retornoDiario": -0.017505,
+      "retornoAcumulado": -14.3263,
+      "flujoEstimado": 0.007196,
       "origen": "cnv-excel"
     }
   ]

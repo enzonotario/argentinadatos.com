@@ -2,7 +2,7 @@
   "fondoId": "1727",
   "claseId": "5829",
   "nombre": "Max Retorno Total Pesos II - Clase D",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "max-retorno-total-pesos-ii-clase-d",
@@ -3468,12 +3468,28 @@
       "fecha": "2026-09-04",
       "categoria": "Retorno Total",
       "categoriaKey": "retornoTotal",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1112.733,
       "patrimonio": 69446522854.57,
-      "retornoDiario": 0,
+      "retornoDiario": 0.083648,
       "retornoAcumulado": 11.2733,
-      "flujoEstimado": 0,
+      "flujoEstimado": -31774.788071,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "max-retorno-total-pesos-ii-clase-d",
+      "fondoId": "1727",
+      "claseId": "5829",
+      "nombre": "Max Retorno Total Pesos II - Clase D",
+      "fecha": "2026-09-07",
+      "categoria": "Retorno Total",
+      "categoriaKey": "retornoTotal",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1114.713,
+      "patrimonio": 68247150282.59,
+      "retornoDiario": 0.17794,
+      "retornoAcumulado": 11.4713,
+      "flujoEstimado": -1322945714.747437,
       "origen": "cnv-excel"
     }
   ]

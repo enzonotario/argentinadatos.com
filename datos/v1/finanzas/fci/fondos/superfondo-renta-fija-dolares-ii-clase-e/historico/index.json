@@ -2,7 +2,7 @@
   "fondoId": "720",
   "claseId": "2011",
   "nombre": "Superfondo Renta Fija Dólares II - Clase E",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "superfondo-renta-fija-dolares-ii-clase-e",
@@ -25727,9 +25727,25 @@
       "horizonte": null,
       "valorCuotaparte": 1275.462,
       "patrimonio": 1921691.06,
-      "retornoDiario": 0,
+      "retornoDiario": -0.005096,
       "retornoAcumulado": 21.605991,
-      "flujoEstimado": 0,
+      "flujoEstimado": -0.095628,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "superfondo-renta-fija-dolares-ii-clase-e",
+      "fondoId": "720",
+      "claseId": "2011",
+      "nombre": "Superfondo Renta Fija Dólares II - Clase E",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": null,
+      "valorCuotaparte": 1275.528,
+      "patrimonio": 1921790.65,
+      "retornoDiario": 0.005175,
+      "retornoAcumulado": 21.612283,
+      "flujoEstimado": 0.142488,
       "origen": "cnv-excel"
     }
   ]

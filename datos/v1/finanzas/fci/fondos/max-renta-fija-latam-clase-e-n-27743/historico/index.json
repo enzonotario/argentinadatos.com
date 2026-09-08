@@ -2,7 +2,7 @@
   "fondoId": "1520",
   "claseId": "4617",
   "nombre": "Max Renta Fija Latam - Clase E N° 27.743",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "max-renta-fija-latam-clase-e-n-27743",
@@ -7631,9 +7631,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1043.329,
       "patrimonio": 424330.07,
-      "retornoDiario": 0,
+      "retornoDiario": 0.032503,
       "retornoAcumulado": 4.3329,
-      "flujoEstimado": 0,
+      "flujoEstimado": -0.195253,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "max-renta-fija-latam-clase-e-n-27743",
+      "fondoId": "1520",
+      "claseId": "4617",
+      "nombre": "Max Renta Fija Latam - Clase E N° 27.743",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1043.061,
+      "patrimonio": 424221.15,
+      "retornoDiario": -0.025687,
+      "retornoAcumulado": 4.3061,
+      "flujoEstimado": 0.077665,
       "origen": "cnv-excel"
     }
   ]

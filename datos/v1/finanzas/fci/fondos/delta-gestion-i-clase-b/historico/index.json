@@ -2,7 +2,7 @@
   "fondoId": "492",
   "claseId": "992",
   "nombre": "Delta Gestion I - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "delta-gestion-i-clase-b",
@@ -25820,12 +25820,28 @@
       "fecha": "2026-09-04",
       "categoria": "Renta Mixta",
       "categoriaKey": "rentaMixta",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 550116.369,
       "patrimonio": 111816295912.6,
-      "retornoDiario": 0,
+      "retornoDiario": 0.00595,
       "retornoAcumulado": 4726.213402,
-      "flujoEstimado": 0,
+      "flujoEstimado": -390.935974,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "delta-gestion-i-clase-b",
+      "fondoId": "492",
+      "claseId": "992",
+      "nombre": "Delta Gestion I - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 551425.911,
+      "patrimonio": 112082472481.83,
+      "retornoDiario": 0.238048,
+      "retornoAcumulado": 4737.702115,
+      "flujoEstimado": 113.135971,
       "origen": "cnv-excel"
     }
   ]

@@ -2,7 +2,7 @@
   "fondoId": "1717",
   "claseId": "5773",
   "nombre": "Ciclo Nova Estratégico II - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "ciclo-nova-estrategico-ii-clase-b",
@@ -3836,12 +3836,28 @@
       "fecha": "2026-09-04",
       "categoria": "Retorno Total",
       "categoriaKey": "retornoTotal",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1168.3,
       "patrimonio": 15319948.62,
-      "retornoDiario": 0,
+      "retornoDiario": 0.386664,
       "retornoAcumulado": 16.83,
-      "flujoEstimado": 0,
+      "flujoEstimado": -25541.992554,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "ciclo-nova-estrategico-ii-clase-b",
+      "fondoId": "1717",
+      "claseId": "5773",
+      "nombre": "Ciclo Nova Estratégico II - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Retorno Total",
+      "categoriaKey": "retornoTotal",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1166.4,
+      "patrimonio": 15294768.66,
+      "retornoDiario": -0.162629,
+      "retornoAcumulado": 16.64,
+      "flujoEstimado": -265.280759,
       "origen": "cnv-excel"
     }
   ]

@@ -2,7 +2,7 @@
   "fondoId": "1195",
   "claseId": "3265",
   "nombre": "Schroder Renta Performance - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "schroder-renta-performance-clase-b",
@@ -25311,9 +25311,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 3658637.968,
       "patrimonio": 38898340043.42,
-      "retornoDiario": 0,
+      "retornoDiario": 0.221099,
       "retornoAcumulado": 365763.7968,
-      "flujoEstimado": 0,
+      "flujoEstimado": -38926033.562515,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "schroder-renta-performance-clase-b-pesos",
+      "fondoId": "1195",
+      "claseId": "3265",
+      "nombre": "Schroder Renta Performance - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 3661317.476,
+      "patrimonio": 38929878572.79,
+      "retornoDiario": 0.073238,
+      "retornoAcumulado": 366031.7476,
+      "flujoEstimado": 3050163.088997,
       "origen": "cnv-excel"
     }
   ]

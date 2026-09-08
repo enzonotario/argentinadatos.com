@@ -2,7 +2,7 @@
   "fondoId": "1670",
   "claseId": "5591",
   "nombre": "ConoSur Renta Fija Corporativa - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "conosur-renta-fija-corporativa-clase-a",
@@ -4415,9 +4415,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 1068.395,
       "patrimonio": 18017214.41,
-      "retornoDiario": 0,
+      "retornoDiario": 0.252039,
       "retornoAcumulado": 6.8395,
-      "flujoEstimado": 0,
+      "flujoEstimado": 119187.069853,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "conosur-renta-fija-corporativa-clase-a",
+      "fondoId": "1670",
+      "claseId": "5591",
+      "nombre": "ConoSur Renta Fija Corporativa - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1069.108,
+      "patrimonio": 18059069.5,
+      "retornoDiario": 0.066736,
+      "retornoAcumulado": 6.9108,
+      "flujoEstimado": 29831.121791,
       "origen": "cnv-excel"
     }
   ]

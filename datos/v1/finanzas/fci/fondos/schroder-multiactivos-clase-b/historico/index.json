@@ -2,7 +2,7 @@
   "fondoId": "688",
   "claseId": "1453",
   "nombre": "Schroder Multiactivos - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "schroder-multiactivos-clase-b",
@@ -25775,9 +25775,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 164023.54,
       "patrimonio": 35958237935.04,
-      "retornoDiario": 0,
+      "retornoDiario": 0.249602,
       "retornoAcumulado": 5376.639309,
-      "flujoEstimado": 0,
+      "flujoEstimado": -59.537231,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "schroder-multiactivos-clase-b",
+      "fondoId": "688",
+      "claseId": "1453",
+      "nombre": "Schroder Multiactivos - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 164125.553,
+      "patrimonio": 35980601834.6,
+      "retornoDiario": 0.062194,
+      "retornoAcumulado": 5380.045456,
+      "flujoEstimado": 33.058678,
       "origen": "cnv-excel"
     }
   ]

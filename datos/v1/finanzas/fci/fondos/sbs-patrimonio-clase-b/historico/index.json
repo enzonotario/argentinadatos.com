@@ -2,7 +2,7 @@
   "fondoId": "799",
   "claseId": "1987",
   "nombre": "SBS Patrimonio - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "sbs-patrimonio-clase-b",
@@ -21951,9 +21951,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 45414.004,
       "patrimonio": 43245450921.69,
-      "retornoDiario": 0,
+      "retornoDiario": 0.304141,
       "retornoAcumulado": 2652.85105,
-      "flujoEstimado": 0,
+      "flujoEstimado": -147.695747,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "sbs-patrimonio-clase-b",
+      "fondoId": "799",
+      "claseId": "1987",
+      "nombre": "SBS Patrimonio - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 45459.634,
+      "patrimonio": 39804433981.13,
+      "retornoDiario": 0.100476,
+      "retornoAcumulado": 2655.616994,
+      "flujoEstimado": -3484468239.828087,
       "origen": "cnv-excel"
     }
   ]

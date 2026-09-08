@@ -2,7 +2,7 @@
   "fondoId": "1343",
   "claseId": "3831",
   "nombre": "Schroder Liquidez - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "schroder-liquidez-clase-b",
@@ -15663,9 +15663,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 7265.185,
       "patrimonio": 130406074232.65,
-      "retornoDiario": 0,
+      "retornoDiario": 0.05393,
       "retornoAcumulado": 626.5185,
-      "flujoEstimado": 0,
+      "flujoEstimado": -16763851961.916107,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "schroder-liquidez-clase-b",
+      "fondoId": "1343",
+      "claseId": "3831",
+      "nombre": "Schroder Liquidez - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 7277.625,
+      "patrimonio": 135450551997.51,
+      "retornoDiario": 0.171228,
+      "retornoAcumulado": 627.7625,
+      "flujoEstimado": 4821186052.072922,
       "origen": "cnv-excel"
     }
   ]

@@ -2,7 +2,7 @@
   "fondoId": "74",
   "claseId": "3661",
   "nombre": "Alpha Renta Cobertura - Clase K",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "alpha-renta-cobertura-clase-k",
@@ -16415,9 +16415,25 @@
       "horizonte": "Largo Plazo",
       "valorCuotaparte": 6513.865,
       "patrimonio": 12139666.75,
-      "retornoDiario": 0,
+      "retornoDiario": 0.045262,
       "retornoAcumulado": 551.3865,
-      "flujoEstimado": 0,
+      "flujoEstimado": -0.990546,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "alpha-renta-cobertura-clase-k",
+      "fondoId": "74",
+      "claseId": "3661",
+      "nombre": "Alpha Renta Cobertura - Clase K",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 6501.324,
+      "patrimonio": 12116295.88,
+      "retornoDiario": -0.192528,
+      "retornoAcumulado": 550.1324,
+      "flujoEstimado": 1.3876,
       "origen": "cnv-excel"
     }
   ]

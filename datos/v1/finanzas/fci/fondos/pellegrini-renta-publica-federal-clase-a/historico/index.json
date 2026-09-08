@@ -2,7 +2,7 @@
   "fondoId": "772",
   "claseId": "1736",
   "nombre": "Pellegrini Renta Publica Federal - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "pellegrini-renta-publica-federal-clase-a",
@@ -25823,9 +25823,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 77462.162,
       "patrimonio": 2892790899.69,
-      "retornoDiario": 0,
+      "retornoDiario": 0.040555,
       "retornoAcumulado": 3671.048445,
-      "flujoEstimado": 0,
+      "flujoEstimado": -15913618.614367,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "pellegrini-renta-publica-federal-clase-a",
+      "fondoId": "772",
+      "claseId": "1736",
+      "nombre": "Pellegrini Renta Publica Federal - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 77603.166,
+      "patrimonio": 2893638509.3,
+      "retornoDiario": 0.18203,
+      "retornoAcumulado": 3677.912866,
+      "flujoEstimado": -4418137.664706,
       "origen": "cnv-excel"
     }
   ]

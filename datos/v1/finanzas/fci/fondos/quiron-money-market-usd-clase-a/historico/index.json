@@ -2,7 +2,7 @@
   "fondoId": "1801",
   "claseId": "6168",
   "nombre": "Quiron Money Market USD - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "quiron-money-market-usd-clase-a",
@@ -1951,9 +1951,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 1005.18,
       "patrimonio": 714153.53,
-      "retornoDiario": 0,
+      "retornoDiario": 0.001194,
       "retornoAcumulado": 0.518,
-      "flujoEstimado": 0,
+      "flujoEstimado": 8173.5407,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "quiron-money-market-usd-clase-a",
+      "fondoId": "1801",
+      "claseId": "6168",
+      "nombre": "Quiron Money Market USD - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1005.218,
+      "patrimonio": 713346.87,
+      "retornoDiario": 0.00378,
+      "retornoAcumulado": 0.5218,
+      "flujoEstimado": -833.655003,
       "origen": "cnv-excel"
     }
   ]

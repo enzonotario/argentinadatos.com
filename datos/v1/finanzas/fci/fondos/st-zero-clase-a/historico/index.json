@@ -2,7 +2,7 @@
   "fondoId": "1222",
   "claseId": "3385",
   "nombre": "ST Zero - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "st-zero-clase-a",
@@ -22559,9 +22559,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 11439.517,
       "patrimonio": 2536715194.36,
-      "retornoDiario": 0,
+      "retornoDiario": 0.050202,
       "retornoAcumulado": 1043.9517,
-      "flujoEstimado": 0,
+      "flujoEstimado": -194561069.367919,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "st-zero-clase-a",
+      "fondoId": "1222",
+      "claseId": "3385",
+      "nombre": "ST Zero - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 11456.454,
+      "patrimonio": 2551792738.25,
+      "retornoDiario": 0.148057,
+      "retornoAcumulado": 1045.6454,
+      "flujoEstimado": 11321759.474686,
       "origen": "cnv-excel"
     }
   ]

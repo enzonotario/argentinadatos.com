@@ -2,7 +2,7 @@
   "fondoId": "705",
   "claseId": "1512",
   "nombre": "Argenfunds Renta Mixta - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "argenfunds-renta-mixta-clase-b",
@@ -25839,9 +25839,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 32033.933,
       "patrimonio": 45392328622.75,
-      "retornoDiario": 0,
+      "retornoDiario": 0.019096,
       "retornoAcumulado": 29355.135856,
-      "flujoEstimado": 0,
+      "flujoEstimado": -70321730.969711,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "argenfunds-renta-mixta-clase-b",
+      "fondoId": "705",
+      "claseId": "1512",
+      "nombre": "Argenfunds Renta Mixta - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 32100.528,
+      "patrimonio": 45470700120.52,
+      "retornoDiario": 0.207889,
+      "retornoAcumulado": 29416.369822,
+      "flujoEstimado": -15994160.280548,
       "origen": "cnv-excel"
     }
   ]

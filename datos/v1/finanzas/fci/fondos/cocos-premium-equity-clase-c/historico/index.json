@@ -2,7 +2,7 @@
   "fondoId": "1734",
   "claseId": "6630",
   "nombre": "Cocos Premium Equity - Clase C",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "cocos-premium-equity-clase-c",
@@ -223,9 +223,25 @@
       "horizonte": "Largo Plazo",
       "valorCuotaparte": 1006.73,
       "patrimonio": 1006.73,
-      "retornoDiario": 0,
+      "retornoDiario": 0.051679,
       "retornoAcumulado": 0.673,
-      "flujoEstimado": 0,
+      "flujoEstimado": 0.000001,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "cocos-premium-equity-clase-c",
+      "fondoId": "1734",
+      "claseId": "6630",
+      "nombre": "Cocos Premium Equity - Clase C",
+      "fecha": "2026-09-07",
+      "categoria": "Retorno Total",
+      "categoriaKey": "retornoTotal",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 1008.25,
+      "patrimonio": 1008.25,
+      "retornoDiario": 0.150984,
+      "retornoAcumulado": 0.825,
+      "flujoEstimado": -0.000001,
       "origen": "cnv-excel"
     }
   ]

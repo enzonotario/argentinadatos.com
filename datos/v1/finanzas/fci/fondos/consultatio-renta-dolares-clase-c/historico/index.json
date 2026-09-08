@@ -2,7 +2,7 @@
   "fondoId": "824",
   "claseId": "2308",
   "nombre": "Consultatio Renta Dolares - Clase C",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "consultatio-renta-dolares-clase-c",
@@ -25711,8 +25711,24 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 182120.659,
       "patrimonio": null,
-      "retornoDiario": 0,
+      "retornoDiario": 0.239729,
       "retornoAcumulado": 7259.406586,
+      "flujoEstimado": null,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-renta-dolares-clase-c",
+      "fondoId": "824",
+      "claseId": "2308",
+      "nombre": "Consultatio Renta Dolares - Clase C",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 182117.422,
+      "patrimonio": null,
+      "retornoDiario": -0.001777,
+      "retornoAcumulado": 7259.275781,
       "flujoEstimado": null,
       "origen": "cnv-excel"
     }

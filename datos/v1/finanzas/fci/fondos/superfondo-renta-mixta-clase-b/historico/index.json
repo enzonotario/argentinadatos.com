@@ -2,7 +2,7 @@
   "fondoId": "632",
   "claseId": "1283",
   "nombre": "Superfondo Renta Mixta - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "superfondo-renta-mixta-clase-b",
@@ -25839,9 +25839,25 @@
       "horizonte": null,
       "valorCuotaparte": 5227.452,
       "patrimonio": 136894350954.91,
-      "retornoDiario": 0,
+      "retornoDiario": 0.006906,
       "retornoAcumulado": 422.7452,
-      "flujoEstimado": 0,
+      "flujoEstimado": 6369.395798,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "superfondo-renta-mixta-clase-b",
+      "fondoId": "632",
+      "claseId": "1283",
+      "nombre": "Superfondo Renta Mixta - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": null,
+      "valorCuotaparte": 5240.088,
+      "patrimonio": 137225254362.74,
+      "retornoDiario": 0.241724,
+      "retornoAcumulado": 424.0088,
+      "flujoEstimado": -3093.07225,
       "origen": "cnv-excel"
     }
   ]

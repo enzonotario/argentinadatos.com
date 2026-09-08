@@ -2,7 +2,7 @@
   "fondoId": "1516",
   "claseId": "4535",
   "nombre": "Adcap Balance Multiactivo  - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "adcap-balance-multiactivo-clase-a",
@@ -8351,9 +8351,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1788.737,
       "patrimonio": 3545280331.91,
-      "retornoDiario": 0,
+      "retornoDiario": 0.171532,
       "retornoAcumulado": 78.8737,
-      "flujoEstimado": 0,
+      "flujoEstimado": 941428.002436,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "adcap-balance-multiactivo-clase-a",
+      "fondoId": "1516",
+      "claseId": "4535",
+      "nombre": "Adcap Balance Multiactivo  - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1787.601,
+      "patrimonio": 3546615788.14,
+      "retornoDiario": -0.063508,
+      "retornoAcumulado": 78.7601,
+      "flujoEstimado": 3586992.863189,
       "origen": "cnv-excel"
     }
   ]

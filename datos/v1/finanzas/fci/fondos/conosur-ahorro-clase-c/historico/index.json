@@ -2,7 +2,7 @@
   "fondoId": "1671",
   "claseId": "5597",
   "nombre": "ConoSur Ahorro - Clase C",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "conosur-ahorro-clase-c",
@@ -4447,9 +4447,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 2301.31,
       "patrimonio": 195935031.31,
-      "retornoDiario": 0,
+      "retornoDiario": 0.149399,
       "retornoAcumulado": 130.131,
-      "flujoEstimado": 0,
+      "flujoEstimado": 74.269165,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "conosur-ahorro-clase-c",
+      "fondoId": "1671",
+      "claseId": "5597",
+      "nombre": "ConoSur Ahorro - Clase C",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 2303.682,
+      "patrimonio": 176362165.18,
+      "retornoDiario": 0.103072,
+      "retornoAcumulado": 130.3682,
+      "flujoEstimado": -19774820.285472,
       "origen": "cnv-excel"
     }
   ]

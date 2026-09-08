@@ -2,7 +2,7 @@
   "fondoId": "149",
   "claseId": "3241",
   "nombre": "Superfondo Renta $ - Clase H",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "superfondo-renta-clase-h",
@@ -25535,9 +25535,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 40767.276,
       "patrimonio": 29014830.66,
-      "retornoDiario": 0,
+      "retornoDiario": 0.343038,
       "retornoAcumulado": 3976.7276,
-      "flujoEstimado": 0,
+      "flujoEstimado": 292999.343186,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "superfondo-renta-clase-h",
+      "fondoId": "149",
+      "claseId": "3241",
+      "nombre": "Superfondo Renta $ - Clase H",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 40781.948,
+      "patrimonio": 29025273,
+      "retornoDiario": 0.03599,
+      "retornoAcumulado": 3978.1948,
+      "flujoEstimado": -0.097555,
       "origen": "cnv-excel"
     }
   ]

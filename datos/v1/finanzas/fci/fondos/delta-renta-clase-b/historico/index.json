@@ -2,7 +2,7 @@
   "fondoId": "369",
   "claseId": "660",
   "nombre": "Delta Renta - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "delta-renta-clase-b",
@@ -25823,9 +25823,25 @@
       "horizonte": null,
       "valorCuotaparte": 1918591.029,
       "patrimonio": 5891402363.71,
-      "retornoDiario": 0,
+      "retornoDiario": 0.248219,
       "retornoAcumulado": 3205.358758,
-      "flujoEstimado": 0,
+      "flujoEstimado": 450016.615187,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "delta-renta-clase-b",
+      "fondoId": "369",
+      "claseId": "660",
+      "nombre": "Delta Renta - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1918606.685,
+      "patrimonio": 5891450438.14,
+      "retornoDiario": 0.000816,
+      "retornoAcumulado": 3205.385731,
+      "flujoEstimado": 0.586713,
       "origen": "cnv-excel"
     }
   ]

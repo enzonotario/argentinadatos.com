@@ -2,7 +2,7 @@
   "fondoId": "810",
   "claseId": "2149",
   "nombre": "Premier Renta Mixta - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "premier-renta-mixta-clase-b",
@@ -25759,9 +25759,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 55215.97,
       "patrimonio": 5095488685.82,
-      "retornoDiario": 0,
+      "retornoDiario": 0.156495,
       "retornoAcumulado": 3716.539082,
-      "flujoEstimado": 0,
+      "flujoEstimado": -17201616.634679,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "premier-renta-mixta-clase-b",
+      "fondoId": "810",
+      "claseId": "2149",
+      "nombre": "Premier Renta Mixta - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 55294.596,
+      "patrimonio": 5095668724.08,
+      "retornoDiario": 0.142397,
+      "retornoAcumulado": 3721.973727,
+      "flujoEstimado": -7075784.763947,
       "origen": "cnv-excel"
     }
   ]

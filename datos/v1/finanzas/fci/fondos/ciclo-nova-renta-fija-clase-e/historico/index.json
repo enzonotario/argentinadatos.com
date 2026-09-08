@@ -2,7 +2,7 @@
   "fondoId": "891",
   "claseId": "2602",
   "nombre": "Ciclo Nova Renta Fija - Clase E",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "ciclo-nova-renta-fija-clase-e",
@@ -25583,8 +25583,24 @@
       "horizonte": "Largo Plazo",
       "valorCuotaparte": 1.139,
       "patrimonio": null,
-      "retornoDiario": 0,
+      "retornoDiario": 0.175901,
       "retornoAcumulado": -92.749379,
+      "flujoEstimado": null,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "ciclo-nova-renta-fija-clase-e",
+      "fondoId": "891",
+      "claseId": "2602",
+      "nombre": "Ciclo Nova Renta Fija - Clase E",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 1.138,
+      "patrimonio": null,
+      "retornoDiario": -0.087796,
+      "retornoAcumulado": -92.755745,
       "flujoEstimado": null,
       "origen": "cnv-excel"
     }

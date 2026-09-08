@@ -2,7 +2,7 @@
   "fondoId": "871",
   "claseId": "2507",
   "nombre": "MAF Global - Clase D",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "maf-global-clase-d",
@@ -25823,9 +25823,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1193.558,
       "patrimonio": 3090320.06,
-      "retornoDiario": 0,
+      "retornoDiario": 0.15171,
       "retornoAcumulado": 14.440577,
-      "flujoEstimado": 0,
+      "flujoEstimado": -1.575066,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "maf-global-clase-d",
+      "fondoId": "871",
+      "claseId": "2507",
+      "nombre": "MAF Global - Clase D",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1193.436,
+      "patrimonio": 3090003.71,
+      "retornoDiario": -0.010222,
+      "retornoAcumulado": 14.42888,
+      "flujoEstimado": -0.457483,
       "origen": "cnv-excel"
     }
   ]

@@ -2,7 +2,7 @@
   "fondoId": "468",
   "claseId": "919",
   "nombre": "SBS Balanceado - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "sbs-balanceado-clase-a",
@@ -25695,9 +25695,25 @@
       "horizonte": "Largo Plazo",
       "valorCuotaparte": 145375.302,
       "patrimonio": 4932589606.67,
-      "retornoDiario": 0,
+      "retornoDiario": -0.024132,
       "retornoAcumulado": 5651.451638,
-      "flujoEstimado": 0,
+      "flujoEstimado": 2962816.164884,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "sbs-balanceado-clase-a",
+      "fondoId": "468",
+      "claseId": "919",
+      "nombre": "SBS Balanceado - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 145355.988,
+      "patrimonio": 4910644463.01,
+      "retornoDiario": -0.013286,
+      "retornoAcumulado": 5650.687522,
+      "flujoEstimado": -21289799.804857,
       "origen": "cnv-excel"
     }
   ]

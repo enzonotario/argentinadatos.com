@@ -2,7 +2,7 @@
   "fondoId": "692",
   "claseId": "1470",
   "nombre": "Schroder Balanceado - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "schroder-balanceado-clase-b",
@@ -25759,9 +25759,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 152476.291,
       "patrimonio": 28063372038.98,
-      "retornoDiario": 0,
+      "retornoDiario": 0.196763,
       "retornoAcumulado": 15748.245924,
-      "flujoEstimado": 0,
+      "flujoEstimado": -102.389812,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "schroder-balanceado-clase-b",
+      "fondoId": "692",
+      "claseId": "1470",
+      "nombre": "Schroder Balanceado - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 152515.684,
+      "patrimonio": 28070622346,
+      "retornoDiario": 0.025835,
+      "retornoAcumulado": 15752.340396,
+      "flujoEstimado": 134.853729,
       "origen": "cnv-excel"
     }
   ]

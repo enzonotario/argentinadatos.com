@@ -2,7 +2,7 @@
   "fondoId": "1645",
   "claseId": "5477",
   "nombre": "Novus Income Dólares - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "novus-income-dolares-clase-b",
@@ -4719,9 +4719,25 @@
       "horizonte": null,
       "valorCuotaparte": 982.8,
       "patrimonio": 982.8,
-      "retornoDiario": 0,
+      "retornoDiario": 0.33998,
       "retornoAcumulado": -1.72,
-      "flujoEstimado": 0,
+      "flujoEstimado": -0.000002,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "novus-income-dolares-clase-b",
+      "fondoId": "1645",
+      "claseId": "5477",
+      "nombre": "Novus Income Dólares - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": null,
+      "valorCuotaparte": 985.41,
+      "patrimonio": 985.41,
+      "retornoDiario": 0.265568,
+      "retornoAcumulado": -1.459,
+      "flujoEstimado": -0.000002,
       "origen": "cnv-excel"
     }
   ]

@@ -2,7 +2,7 @@
   "fondoId": "1811",
   "claseId": "6214",
   "nombre": "BAVSA Renta Balanceado VII - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "bavsa-renta-balanceado-vii-clase-a",
@@ -1740,12 +1740,28 @@
       "fecha": "2026-09-04",
       "categoria": "Renta Fija",
       "categoriaKey": "rentaFija",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1168.537,
       "patrimonio": 4119808087.99,
-      "retornoDiario": 0,
+      "retornoDiario": -0.033963,
       "retornoAcumulado": 16.8537,
-      "flujoEstimado": 0,
+      "flujoEstimado": 5301187.822099,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "bavsa-renta-balanceado-vii-clase-a",
+      "fondoId": "1811",
+      "claseId": "6214",
+      "nombre": "BAVSA Renta Balanceado VII - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1172.473,
+      "patrimonio": 4134448457.13,
+      "retornoDiario": 0.336831,
+      "retornoAcumulado": 17.2473,
+      "flujoEstimado": 763578.359143,
       "origen": "cnv-excel"
     }
   ]

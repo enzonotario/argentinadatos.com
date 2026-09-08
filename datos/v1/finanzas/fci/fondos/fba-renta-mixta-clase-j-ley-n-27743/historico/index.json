@@ -2,7 +2,7 @@
   "fondoId": "690",
   "claseId": "4829",
   "nombre": "FBA Renta Mixta - Clase J Ley N° 27.743",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "fba-renta-mixta-clase-j-ley-n-27743",
@@ -7647,9 +7647,25 @@
       "horizonte": "Largo Plazo",
       "valorCuotaparte": 23334.534,
       "patrimonio": 137169693.82,
-      "retornoDiario": 0,
+      "retornoDiario": 0.153661,
       "retornoAcumulado": 91.924785,
-      "flujoEstimado": 0,
+      "flujoEstimado": -0.650127,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "fba-renta-mixta-clase-j-ley-n-27743",
+      "fondoId": "690",
+      "claseId": "4829",
+      "nombre": "FBA Renta Mixta - Clase J Ley N° 27.743",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 23318.736,
+      "patrimonio": 137076826.5,
+      "retornoDiario": -0.067702,
+      "retornoAcumulado": 91.794848,
+      "flujoEstimado": -0.69389,
       "origen": "cnv-excel"
     }
   ]

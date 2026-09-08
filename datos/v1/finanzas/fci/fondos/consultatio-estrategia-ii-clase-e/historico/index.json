@@ -2,7 +2,7 @@
   "fondoId": "1702",
   "claseId": "5696",
   "nombre": "Consultatio Estrategia II - Clase E",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "consultatio-estrategia-ii-clase-e",
@@ -3759,8 +3759,24 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 1021.045,
       "patrimonio": null,
-      "retornoDiario": 0,
+      "retornoDiario": 0.001959,
       "retornoAcumulado": 2.1045,
+      "flujoEstimado": null,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-estrategia-ii-clase-e",
+      "fondoId": "1702",
+      "claseId": "5696",
+      "nombre": "Consultatio Estrategia II - Clase E",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1020.525,
+      "patrimonio": null,
+      "retornoDiario": -0.050928,
+      "retornoAcumulado": 2.0525,
       "flujoEstimado": null,
       "origen": "cnv-excel"
     }

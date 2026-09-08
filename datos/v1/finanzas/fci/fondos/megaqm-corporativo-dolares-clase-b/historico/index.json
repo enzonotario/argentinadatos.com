@@ -2,7 +2,7 @@
   "fondoId": "722",
   "claseId": "1561",
   "nombre": "MEGAQM Corporativo Dólares - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "megaqm-corporativo-dolares-clase-b",
@@ -25807,9 +25807,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1313.919,
       "patrimonio": 13722494.39,
-      "retornoDiario": 0,
+      "retornoDiario": 0.154204,
       "retornoAcumulado": 47.778961,
-      "flujoEstimado": 0,
+      "flujoEstimado": -144899.952441,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "megaqm-corporativo-dolares-clase-b",
+      "fondoId": "722",
+      "claseId": "1561",
+      "nombre": "MEGAQM Corporativo Dólares - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1313.373,
+      "patrimonio": 13733798.08,
+      "retornoDiario": -0.041555,
+      "retornoAcumulado": 47.717552,
+      "flujoEstimado": 17006.072544,
       "origen": "cnv-excel"
     }
   ]

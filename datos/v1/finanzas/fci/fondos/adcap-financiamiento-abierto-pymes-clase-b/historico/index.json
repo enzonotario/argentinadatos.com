@@ -2,7 +2,7 @@
   "fondoId": "550",
   "claseId": "1113",
   "nombre": "Adcap Financiamiento Abierto Pymes - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "adcap-financiamiento-abierto-pymes-clase-b",
@@ -25519,9 +25519,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 53383.619,
       "patrimonio": 6485045082.08,
-      "retornoDiario": 0,
+      "retornoDiario": 0.120226,
       "retornoAcumulado": 1749.022194,
-      "flujoEstimado": 0,
+      "flujoEstimado": -24.803299,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "adcap-financiamiento-abierto-pymes-clase-b",
+      "fondoId": "550",
+      "claseId": "1113",
+      "nombre": "Adcap Financiamiento Abierto Pymes - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "PyMEs",
+      "categoriaKey": null,
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 53465.921,
+      "patrimonio": 6495043229.01,
+      "retornoDiario": 0.154171,
+      "retornoAcumulado": 1751.872848,
+      "flujoEstimado": 88.076508,
       "origen": "cnv-excel"
     }
   ]

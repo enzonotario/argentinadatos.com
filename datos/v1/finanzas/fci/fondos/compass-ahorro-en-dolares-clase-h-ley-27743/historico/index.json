@@ -2,7 +2,7 @@
   "fondoId": "808",
   "claseId": "4743",
   "nombre": "Compass Ahorro en Dolares - Clase H Ley 27.743",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "compass-ahorro-en-dolares-clase-h-ley-27743",
@@ -7660,12 +7660,28 @@
       "fecha": "2026-09-04",
       "categoria": "Retorno Total",
       "categoriaKey": "retornoTotal",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1643.802,
       "patrimonio": 1144682.8,
-      "retornoDiario": 0,
+      "retornoDiario": 0.100783,
       "retornoAcumulado": 64.3802,
-      "flujoEstimado": 0,
+      "flujoEstimado": 0.085928,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "compass-ahorro-en-dolares-clase-h-ley-27743",
+      "fondoId": "808",
+      "claseId": "4743",
+      "nombre": "Compass Ahorro en Dolares - Clase H Ley 27.743",
+      "fecha": "2026-09-07",
+      "categoria": "Retorno Total",
+      "categoriaKey": "retornoTotal",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1643.649,
+      "patrimonio": 1144576.19,
+      "retornoDiario": -0.009308,
+      "retornoAcumulado": 64.3649,
+      "flujoEstimado": -0.062925,
       "origen": "cnv-excel"
     }
   ]

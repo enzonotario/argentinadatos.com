@@ -2,7 +2,7 @@
   "fondoId": "1725",
   "claseId": "5819",
   "nombre": "Alpha Dólar - Clase Q - Ley Nº 27.743",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "alpha-dolar-clase-q-ley-n-27743",
@@ -2031,9 +2031,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 1007.124,
       "patrimonio": 280006.68,
-      "retornoDiario": 0,
+      "retornoDiario": 0.001688,
       "retornoAcumulado": 0.33454,
-      "flujoEstimado": 0,
+      "flujoEstimado": -0.076434,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "alpha-dolar-clase-q-ley-n-27743",
+      "fondoId": "1725",
+      "claseId": "5819",
+      "nombre": "Alpha Dólar - Clase Q - Ley Nº 27.743",
+      "fecha": "2026-09-07",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1007.169,
+      "patrimonio": 280019.16,
+      "retornoDiario": 0.004468,
+      "retornoAcumulado": 0.339023,
+      "flujoEstimado": -0.030698,
       "origen": "cnv-excel"
     }
   ]

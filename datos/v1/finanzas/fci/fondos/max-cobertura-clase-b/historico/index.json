@@ -2,7 +2,7 @@
   "fondoId": "1352",
   "claseId": "3859",
   "nombre": "Max Cobertura - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "max-cobertura-clase-b",
@@ -14079,9 +14079,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 7175.267,
       "patrimonio": 32750206292.28,
-      "retornoDiario": 0,
+      "retornoDiario": 0.063229,
       "retornoAcumulado": 617.5267,
-      "flujoEstimado": 0,
+      "flujoEstimado": 1071221631.367565,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "max-cobertura-clase-b",
+      "fondoId": "1352",
+      "claseId": "3859",
+      "nombre": "Max Cobertura - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 7182.007,
+      "patrimonio": 32779967637.86,
+      "retornoDiario": 0.093934,
+      "retornoAcumulado": 618.2007,
+      "flujoEstimado": -1002233.198586,
       "origen": "cnv-excel"
     }
   ]

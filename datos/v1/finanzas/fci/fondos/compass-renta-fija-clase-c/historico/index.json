@@ -2,7 +2,7 @@
   "fondoId": "274",
   "claseId": "337",
   "nombre": "Compass Renta Fija - Clase C",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "compass-renta-fija-clase-c",
@@ -25788,12 +25788,28 @@
       "fecha": "2026-09-04",
       "categoria": "Renta Fija",
       "categoriaKey": "rentaFija",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 3305.904,
       "patrimonio": 21377181.34,
-      "retornoDiario": 0,
+      "retornoDiario": 0.056022,
       "retornoAcumulado": 14.59555,
-      "flujoEstimado": 0,
+      "flujoEstimado": -3.270966,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "compass-renta-fija-clase-c",
+      "fondoId": "274",
+      "claseId": "337",
+      "nombre": "Compass Renta Fija - Clase C",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 3305.788,
+      "patrimonio": 21376430.87,
+      "retornoDiario": -0.003509,
+      "retornoAcumulado": 14.591529,
+      "flujoEstimado": -0.344707,
       "origen": "cnv-excel"
     }
   ]

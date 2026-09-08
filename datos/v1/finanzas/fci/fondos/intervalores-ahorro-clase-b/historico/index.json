@@ -2,7 +2,7 @@
   "fondoId": "819",
   "claseId": "2277",
   "nombre": "Intervalores Ahorro - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "intervalores-ahorro-clase-b",
@@ -25167,9 +25167,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 65944.457,
       "patrimonio": 1034227672.41,
-      "retornoDiario": 0,
+      "retornoDiario": 0.235612,
       "retornoAcumulado": 3741.061457,
-      "flujoEstimado": 0,
+      "flujoEstimado": 3.969978,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "intervalores-ahorro-clase-b",
+      "fondoId": "819",
+      "claseId": "2277",
+      "nombre": "Intervalores Ahorro - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 65972.253,
+      "patrimonio": 1034663597.56,
+      "retornoDiario": 0.042151,
+      "retornoAcumulado": 3742.680488,
+      "flujoEstimado": -12.156198,
       "origen": "cnv-excel"
     }
   ]

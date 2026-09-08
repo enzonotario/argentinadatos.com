@@ -2,7 +2,7 @@
   "fondoId": "1413",
   "claseId": "4125",
   "nombre": "GMC Retorno Total II - Clase C",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "gmc-retorno-total-ii-clase-c",
@@ -9023,9 +9023,25 @@
       "horizonte": "Largo Plazo",
       "valorCuotaparte": 2616.9,
       "patrimonio": 9479195838.94,
-      "retornoDiario": 0,
+      "retornoDiario": 0.245164,
       "retornoAcumulado": 161.69,
-      "flujoEstimado": 0,
+      "flujoEstimado": 95316.145376,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "gmc-retorno-total-ii-clase-c",
+      "fondoId": "1413",
+      "claseId": "4125",
+      "nombre": "GMC Retorno Total II - Clase C",
+      "fecha": "2026-09-07",
+      "categoria": "Retorno Total",
+      "categoriaKey": "retornoTotal",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 2618.9,
+      "patrimonio": 9486303872.19,
+      "retornoDiario": 0.076426,
+      "retornoAcumulado": 161.89,
+      "flujoEstimado": -136536.961868,
       "origen": "cnv-excel"
     }
   ]

@@ -2,7 +2,7 @@
   "fondoId": "633",
   "claseId": "1440",
   "nombre": "IAM Renta Plus - Clase C",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "iam-renta-plus-clase-c",
@@ -25775,9 +25775,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 230641.393,
       "patrimonio": 807660987.12,
-      "retornoDiario": 0,
+      "retornoDiario": 0.181153,
       "retornoAcumulado": 7178.469946,
-      "flujoEstimado": 0,
+      "flujoEstimado": 5536283.120391,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "iam-renta-plus-clase-c",
+      "fondoId": "633",
+      "claseId": "1440",
+      "nombre": "IAM Renta Plus - Clase C",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 230872.839,
+      "patrimonio": 824999423.25,
+      "retornoDiario": 0.100349,
+      "retornoAcumulado": 7185.773808,
+      "flujoEstimado": 16527956.406035,
       "origen": "cnv-excel"
     }
   ]

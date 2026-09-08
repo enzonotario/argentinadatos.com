@@ -2,7 +2,7 @@
   "fondoId": "496",
   "claseId": "1001",
   "nombre": "Quiron Fixed Income - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "quiron-fixed-income-clase-b",
@@ -24447,9 +24447,25 @@
       "horizonte": null,
       "valorCuotaparte": 205140.824,
       "patrimonio": 601952523.18,
-      "retornoDiario": 0,
+      "retornoDiario": -0.065056,
       "retornoAcumulado": 2346.604613,
-      "flujoEstimado": 0,
+      "flujoEstimado": 0.722208,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "quiron-fixed-income-clase-b",
+      "fondoId": "496",
+      "claseId": "1001",
+      "nombre": "Quiron Fixed Income - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": null,
+      "valorCuotaparte": 205534.612,
+      "patrimonio": 601104190.16,
+      "retornoDiario": 0.19196,
+      "retornoAcumulado": 2351.301112,
+      "flujoEstimado": -2003841.083496,
       "origen": "cnv-excel"
     }
   ]

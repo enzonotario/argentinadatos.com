@@ -2,7 +2,7 @@
   "fondoId": "408",
   "claseId": "1921",
   "nombre": "Delta Moneda - Clase F",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "delta-moneda-clase-f",
@@ -25807,8 +25807,24 @@
       "horizonte": null,
       "valorCuotaparte": 347.48,
       "patrimonio": null,
-      "retornoDiario": 0,
+      "retornoDiario": 0.067099,
       "retornoAcumulado": -50.169148,
+      "flujoEstimado": null,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "delta-moneda-clase-f",
+      "fondoId": "408",
+      "claseId": "1921",
+      "nombre": "Delta Moneda - Clase F",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 346.896,
+      "patrimonio": null,
+      "retornoDiario": -0.168067,
+      "retornoAcumulado": -50.252897,
       "flujoEstimado": null,
       "origen": "cnv-excel"
     }

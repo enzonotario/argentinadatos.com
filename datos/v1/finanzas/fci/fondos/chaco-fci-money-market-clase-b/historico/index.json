@@ -2,7 +2,7 @@
   "fondoId": "1465",
   "claseId": "4333",
   "nombre": "Chaco FCI Money Market - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "chaco-fci-money-market-clase-b",
@@ -9471,9 +9471,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 2570.026,
       "patrimonio": 61230232544.22,
-      "retornoDiario": 0,
+      "retornoDiario": 0.054543,
       "retornoAcumulado": 157.0026,
-      "flujoEstimado": 0,
+      "flujoEstimado": 10305100530.542427,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "chaco-fci-money-market-clase-b",
+      "fondoId": "1465",
+      "claseId": "4333",
+      "nombre": "Chaco FCI Money Market - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 2574.235,
+      "patrimonio": 64764925690.69,
+      "retornoDiario": 0.163773,
+      "retornoAcumulado": 157.4235,
+      "flujoEstimado": 3434414557.725365,
       "origen": "cnv-excel"
     }
   ]

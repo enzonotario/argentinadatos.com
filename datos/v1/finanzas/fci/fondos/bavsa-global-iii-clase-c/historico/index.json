@@ -2,7 +2,7 @@
   "fondoId": "1773",
   "claseId": "6116",
   "nombre": "BAVSA Global III - Clase C",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "bavsa-global-iii-clase-c",
@@ -2428,12 +2428,28 @@
       "fecha": "2026-09-04",
       "categoria": "Renta Fija",
       "categoriaKey": "rentaFija",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1163.019,
       "patrimonio": 571386107.52,
-      "retornoDiario": 0,
+      "retornoDiario": 0.190902,
       "retornoAcumulado": 16.3019,
-      "flujoEstimado": 0,
+      "flujoEstimado": -51.37735,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "bavsa-global-iii-clase-c",
+      "fondoId": "1773",
+      "claseId": "6116",
+      "nombre": "BAVSA Global III - Clase C",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1163.222,
+      "patrimonio": 671483759.25,
+      "retornoDiario": 0.017455,
+      "retornoAcumulado": 16.3222,
+      "flujoEstimado": 99997916.284932,
       "origen": "cnv-excel"
     }
   ]

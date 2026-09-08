@@ -2,7 +2,7 @@
   "fondoId": "1987",
   "claseId": "6657",
   "nombre": "Puente Renta Fija Pesos I - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "puente-renta-fija-pesos-i-clase-b",
@@ -111,9 +111,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1006.401,
       "patrimonio": 9037886587.73,
-      "retornoDiario": 0,
+      "retornoDiario": 0.091299,
       "retornoAcumulado": 0.6401,
-      "flujoEstimado": 0,
+      "flujoEstimado": 2000003672.468599,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "puente-renta-fija-pesos-i-clase-b",
+      "fondoId": "1987",
+      "claseId": "6657",
+      "nombre": "Puente Renta Fija Pesos I - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1008.212,
+      "patrimonio": 19179148676.39,
+      "retornoDiario": 0.179948,
+      "retornoAcumulado": 0.8212,
+      "flujoEstimado": 10124998592.50311,
       "origen": "cnv-excel"
     }
   ]

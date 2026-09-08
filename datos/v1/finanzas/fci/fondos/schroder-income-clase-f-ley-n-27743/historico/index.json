@@ -2,7 +2,7 @@
   "fondoId": "833",
   "claseId": "4885",
   "nombre": "Schroder Income - Clase F Ley N° 27.743",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "schroder-income-clase-f-ley-n-27743",
@@ -7567,9 +7567,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1038.195,
       "patrimonio": 3430275.01,
-      "retornoDiario": 0,
+      "retornoDiario": 0.028808,
       "retornoAcumulado": 3.8195,
-      "flujoEstimado": 0,
+      "flujoEstimado": -1.439443,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "schroder-income-clase-f-ley-n-27743",
+      "fondoId": "833",
+      "claseId": "4885",
+      "nombre": "Schroder Income - Clase F Ley N° 27.743",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1037.993,
+      "patrimonio": 3429609.71,
+      "retornoDiario": -0.019457,
+      "retornoAcumulado": 3.7993,
+      "flujoEstimado": 2.128609,
       "origen": "cnv-excel"
     }
   ]

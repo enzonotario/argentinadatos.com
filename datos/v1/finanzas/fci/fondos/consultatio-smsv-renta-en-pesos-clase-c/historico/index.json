@@ -2,7 +2,7 @@
   "fondoId": "784",
   "claseId": "1776",
   "nombre": "Consultatio SMSV Renta en Pesos - Clase C",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "consultatio-smsv-renta-en-pesos-clase-c",
@@ -25759,9 +25759,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 84098.309,
       "patrimonio": 15297086864.33,
-      "retornoDiario": 0,
+      "retornoDiario": 0.217052,
       "retornoAcumulado": 3531.383775,
-      "flujoEstimado": 0,
+      "flujoEstimado": -1.338762,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-smsv-renta-en-pesos-clase-c",
+      "fondoId": "784",
+      "claseId": "1776",
+      "nombre": "Consultatio SMSV Renta en Pesos - Clase C",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 84140.222,
+      "patrimonio": 15304710540.78,
+      "retornoDiario": 0.049838,
+      "retornoAcumulado": 3533.193588,
+      "flujoEstimado": -85.701445,
       "origen": "cnv-excel"
     }
   ]

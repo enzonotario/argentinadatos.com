@@ -2,7 +2,7 @@
   "fondoId": "1507",
   "claseId": "4506",
   "nombre": "Argenfunds Renta Fija II - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "argenfunds-renta-fija-ii-clase-b",
@@ -8572,12 +8572,28 @@
       "fecha": "2026-09-04",
       "categoria": "Renta Fija",
       "categoriaKey": "rentaFija",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1917.623,
       "patrimonio": 136211331415.41,
-      "retornoDiario": 0,
+      "retornoDiario": 0.091238,
       "retornoAcumulado": 91.7623,
-      "flujoEstimado": 0,
+      "flujoEstimado": 31510.57666,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "argenfunds-renta-fija-ii-clase-b",
+      "fondoId": "1507",
+      "claseId": "4506",
+      "nombre": "Argenfunds Renta Fija II - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1920.885,
+      "patrimonio": 136443003284.33,
+      "retornoDiario": 0.170106,
+      "retornoAcumulado": 92.0885,
+      "flujoEstimado": -31778.497498,
       "origen": "cnv-excel"
     }
   ]

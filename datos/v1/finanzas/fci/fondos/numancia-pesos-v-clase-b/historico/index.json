@@ -2,7 +2,7 @@
   "fondoId": "1796",
   "claseId": "5894",
   "nombre": "Numancia Pesos V - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "numancia-pesos-v-clase-b",
@@ -271,9 +271,25 @@
       "horizonte": "Largo Plazo",
       "valorCuotaparte": 999.514,
       "patrimonio": 9995.14,
-      "retornoDiario": 0,
+      "retornoDiario": -0.002101,
       "retornoAcumulado": -0.0486,
-      "flujoEstimado": 0,
+      "flujoEstimado": 0.000002,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "numancia-pesos-v-clase-b",
+      "fondoId": "1796",
+      "claseId": "5894",
+      "nombre": "Numancia Pesos V - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 999.45,
+      "patrimonio": 9994.5,
+      "retornoDiario": -0.006403,
+      "retornoAcumulado": -0.055,
+      "flujoEstimado": -0.000011,
       "origen": "cnv-excel"
     }
   ]

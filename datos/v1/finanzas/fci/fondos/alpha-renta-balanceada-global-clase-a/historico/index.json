@@ -2,7 +2,7 @@
   "fondoId": "502",
   "claseId": "1013",
   "nombre": "Alpha Renta Balanceada Global - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "alpha-renta-balanceada-global-clase-a",
@@ -25756,12 +25756,28 @@
       "fecha": "2026-09-04",
       "categoria": "Renta Mixta",
       "categoriaKey": "rentaMixta",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 522034.656,
       "patrimonio": 1806090252.58,
-      "retornoDiario": 0,
+      "retornoDiario": -0.060767,
       "retornoAcumulado": 7119.051388,
-      "flujoEstimado": 0,
+      "flujoEstimado": -14087780.381943,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "alpha-renta-balanceada-global-clase-a",
+      "fondoId": "502",
+      "claseId": "1013",
+      "nombre": "Alpha Renta Balanceada Global - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 521572.758,
+      "patrimonio": 1804492216.06,
+      "retornoDiario": -0.08848,
+      "retornoAcumulado": 7112.663948,
+      "flujoEstimado": -7.864517,
       "origen": "cnv-excel"
     }
   ]

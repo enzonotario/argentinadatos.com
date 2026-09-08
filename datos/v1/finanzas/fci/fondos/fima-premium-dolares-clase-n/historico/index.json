@@ -2,7 +2,7 @@
   "fondoId": "1633",
   "claseId": "6331",
   "nombre": "Fima Premium Dólares - Clase N",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "fima-premium-dolares-clase-n",
@@ -1535,9 +1535,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 1001.911,
       "patrimonio": 67430882.32,
-      "retornoDiario": 0,
+      "retornoDiario": 0.001697,
       "retornoAcumulado": 0.1911,
-      "flujoEstimado": 0,
+      "flujoEstimado": 101709.493326,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "fima-premium-dolares-clase-n",
+      "fondoId": "1633",
+      "claseId": "6331",
+      "nombre": "Fima Premium Dólares - Clase N",
+      "fecha": "2026-09-07",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1001.961,
+      "patrimonio": 67211643.1,
+      "retornoDiario": 0.00499,
+      "retornoAcumulado": 0.1961,
+      "flujoEstimado": -222604.021028,
       "origen": "cnv-excel"
     }
   ]

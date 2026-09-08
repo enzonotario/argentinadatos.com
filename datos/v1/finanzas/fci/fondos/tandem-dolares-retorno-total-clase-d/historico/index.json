@@ -2,7 +2,7 @@
   "fondoId": "1511",
   "claseId": "4518",
   "nombre": "Tandem Dólares Retorno Total - Clase D",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "tandem-dolares-retorno-total-clase-d",
@@ -7727,9 +7727,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1063.868,
       "patrimonio": 18369995.66,
-      "retornoDiario": 0,
+      "retornoDiario": 0.062265,
       "retornoAcumulado": 6.3868,
-      "flujoEstimado": 0,
+      "flujoEstimado": -0.440584,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "tandem-dolares-retorno-total-clase-d",
+      "fondoId": "1511",
+      "claseId": "4518",
+      "nombre": "Tandem Dólares Retorno Total - Clase D",
+      "fecha": "2026-09-07",
+      "categoria": "Retorno Total",
+      "categoriaKey": "retornoTotal",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1064.178,
+      "patrimonio": 18375352.3,
+      "retornoDiario": 0.029139,
+      "retornoAcumulado": 6.4178,
+      "flujoEstimado": 3.806965,
       "origen": "cnv-excel"
     }
   ]

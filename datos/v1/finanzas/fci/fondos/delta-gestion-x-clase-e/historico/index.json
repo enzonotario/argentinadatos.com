@@ -2,7 +2,7 @@
   "fondoId": "1215",
   "claseId": "5239",
   "nombre": "Delta Gestion X - Clase E",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "delta-gestion-x-clase-e",
@@ -6431,9 +6431,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 1472.537,
       "patrimonio": 6840426253.2,
-      "retornoDiario": 0,
+      "retornoDiario": 0.520646,
       "retornoAcumulado": 47.2537,
-      "flujoEstimado": 0,
+      "flujoEstimado": -839.668156,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "delta-gestion-x-clase-e",
+      "fondoId": "1215",
+      "claseId": "5239",
+      "nombre": "Delta Gestion X - Clase E",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1473.986,
+      "patrimonio": 6847157936,
+      "retornoDiario": 0.098402,
+      "retornoAcumulado": 47.3986,
+      "flujoEstimado": 566.558327,
       "origen": "cnv-excel"
     }
   ]

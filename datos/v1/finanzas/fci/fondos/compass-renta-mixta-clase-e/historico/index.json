@@ -2,7 +2,7 @@
   "fondoId": "481",
   "claseId": "1890",
   "nombre": "Compass Renta Mixta - Clase E",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "compass-renta-mixta-clase-e",
@@ -25791,9 +25791,25 @@
       "horizonte": "Largo Plazo",
       "valorCuotaparte": 78.268,
       "patrimonio": 1142453.85,
-      "retornoDiario": 0,
+      "retornoDiario": 0.024281,
       "retornoAcumulado": 231.335196,
-      "flujoEstimado": 0,
+      "flujoEstimado": -2.322444,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "compass-renta-mixta-clase-e",
+      "fondoId": "481",
+      "claseId": "1890",
+      "nombre": "Compass Renta Mixta - Clase E",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 78.158,
+      "patrimonio": 1140849.48,
+      "retornoDiario": -0.140543,
+      "retornoAcumulado": 230.869528,
+      "flujoEstimado": 1.268914,
       "origen": "cnv-excel"
     }
   ]

@@ -2,7 +2,7 @@
   "fondoId": "74",
   "claseId": "1850",
   "nombre": "Alpha Renta Cobertura - Clase D",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "alpha-renta-cobertura-clase-d",
@@ -25759,9 +25759,25 @@
       "horizonte": "Largo Plazo",
       "valorCuotaparte": 4322.328,
       "patrimonio": 7888.21,
-      "retornoDiario": 0,
+      "retornoDiario": 0.30607,
       "retornoAcumulado": 9.713029,
-      "flujoEstimado": 0,
+      "flujoEstimado": 0.000227,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "alpha-renta-cobertura-clase-d",
+      "fondoId": "74",
+      "claseId": "1850",
+      "nombre": "Alpha Renta Cobertura - Clase D",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 4306.921,
+      "patrimonio": 7860.09,
+      "retornoDiario": -0.356451,
+      "retornoAcumulado": 9.321955,
+      "flujoEstimado": -0.002397,
       "origen": "cnv-excel"
     }
   ]

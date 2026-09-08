@@ -2,7 +2,7 @@
   "fondoId": "274",
   "claseId": "4738",
   "nombre": "Compass Renta Fija - Clase I Ley 27.743",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "compass-renta-fija-clase-i-ley-27743",
@@ -7628,12 +7628,28 @@
       "fecha": "2026-09-04",
       "categoria": "Renta Fija",
       "categoriaKey": "rentaFija",
-      "horizonte": null,
+      "horizonte": "Mediano Plazo",
       "valorCuotaparte": 1058.747,
       "patrimonio": 2023233.59,
-      "retornoDiario": 0,
+      "retornoDiario": 0.052259,
       "retornoAcumulado": 5.8747,
-      "flujoEstimado": 0,
+      "flujoEstimado": 1.431363,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "compass-renta-fija-clase-i-ley-27743",
+      "fondoId": "274",
+      "claseId": "4738",
+      "nombre": "Compass Renta Fija - Clase I Ley 27.743",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1058.67,
+      "patrimonio": 2023086.47,
+      "retornoDiario": -0.007273,
+      "retornoAcumulado": 5.867,
+      "flujoEstimado": 0.029779,
       "origen": "cnv-excel"
     }
   ]

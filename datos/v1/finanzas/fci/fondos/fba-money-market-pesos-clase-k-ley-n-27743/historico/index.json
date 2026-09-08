@@ -2,7 +2,7 @@
   "fondoId": "111",
   "claseId": "4814",
   "nombre": "FBA Money Market Pesos - Clase K Ley Nº 27.743",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "fba-money-market-pesos-clase-k-ley-n-27743",
@@ -7519,9 +7519,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 194649.625,
       "patrimonio": 3292942.44,
-      "retornoDiario": 0,
+      "retornoDiario": 0.05102,
       "retornoAcumulado": 71.312869,
-      "flujoEstimado": 0,
+      "flujoEstimado": -0.002505,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "fba-money-market-pesos-clase-k-ley-n-27743",
+      "fondoId": "111",
+      "claseId": "4814",
+      "nombre": "FBA Money Market Pesos - Clase K Ley Nº 27.743",
+      "fecha": "2026-09-07",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 194949.375,
+      "patrimonio": 3298013.39,
+      "retornoDiario": 0.153995,
+      "retornoAcumulado": 71.576681,
+      "flujoEstimado": -0.01671,
       "origen": "cnv-excel"
     }
   ]

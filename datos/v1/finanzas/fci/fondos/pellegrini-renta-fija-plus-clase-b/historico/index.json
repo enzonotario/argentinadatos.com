@@ -2,7 +2,7 @@
   "fondoId": "119",
   "claseId": "634",
   "nombre": "Pellegrini Renta Fija Plus - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "pellegrini-renta-fija-plus-clase-b",
@@ -25807,9 +25807,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 423154.474,
       "patrimonio": 7969539994.44,
-      "retornoDiario": 0,
+      "retornoDiario": 0.065735,
       "retornoAcumulado": 5492.464929,
-      "flujoEstimado": 0,
+      "flujoEstimado": -13000030.523769,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "pellegrini-renta-fija-plus-clase-b",
+      "fondoId": "119",
+      "claseId": "634",
+      "nombre": "Pellegrini Renta Fija Plus - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 423474.015,
+      "patrimonio": 8018058119.04,
+      "retornoDiario": 0.075514,
+      "retornoAcumulado": 5496.688024,
+      "flujoEstimado": 42500006.168598,
       "origen": "cnv-excel"
     }
   ]

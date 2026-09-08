@@ -2,7 +2,7 @@
   "fondoId": "1393",
   "claseId": "4033",
   "nombre": "Quiron Money Market - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "quiron-money-market-clase-b",
@@ -12639,9 +12639,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 4157.991,
       "patrimonio": 10178034788.65,
-      "retornoDiario": 0,
+      "retornoDiario": 0.031564,
       "retornoAcumulado": 315.7991,
-      "flujoEstimado": 0,
+      "flujoEstimado": 139248035.854126,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "quiron-money-market-clase-b",
+      "fondoId": "1393",
+      "claseId": "4033",
+      "nombre": "Quiron Money Market - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 4163.963,
+      "patrimonio": 9114567475.1,
+      "retornoDiario": 0.143627,
+      "retornoAcumulado": 316.3963,
+      "flujoEstimado": -1078085719.575893,
       "origen": "cnv-excel"
     }
   ]

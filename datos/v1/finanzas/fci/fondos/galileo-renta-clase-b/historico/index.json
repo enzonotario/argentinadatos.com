@@ -2,7 +2,7 @@
   "fondoId": "840",
   "claseId": "2395",
   "nombre": "Galileo Renta - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "galileo-renta-clase-b",
@@ -25743,9 +25743,25 @@
       "horizonte": "Mediano Plazo",
       "valorCuotaparte": 42078.784,
       "patrimonio": 14478258985.61,
-      "retornoDiario": 0,
+      "retornoDiario": 0.241649,
       "retornoAcumulado": 4107.8784,
-      "flujoEstimado": 0,
+      "flujoEstimado": 85.422729,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "galileo-renta-clase-b",
+      "fondoId": "840",
+      "claseId": "2395",
+      "nombre": "Galileo Renta - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 42072.797,
+      "patrimonio": 14476198946.6,
+      "retornoDiario": -0.014228,
+      "retornoAcumulado": 4107.2797,
+      "flujoEstimado": -72.321527,
       "origen": "cnv-excel"
     }
   ]

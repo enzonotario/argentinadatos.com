@@ -2,7 +2,7 @@
   "fondoId": "1494",
   "claseId": "4457",
   "nombre": "Novus Renta Dólar - Clase B",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "novus-renta-dolar-clase-b",
@@ -9103,9 +9103,25 @@
       "horizonte": "Largo Plazo",
       "valorCuotaparte": 1341.305,
       "patrimonio": 4561544.04,
-      "retornoDiario": 0,
+      "retornoDiario": 0.172517,
       "retornoAcumulado": 34.1305,
-      "flujoEstimado": 0,
+      "flujoEstimado": -0.376841,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "novus-renta-dolar-clase-b",
+      "fondoId": "1494",
+      "claseId": "4457",
+      "nombre": "Novus Renta Dólar - Clase B",
+      "fecha": "2026-09-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 1341.601,
+      "patrimonio": 4562552.21,
+      "retornoDiario": 0.022068,
+      "retornoAcumulado": 34.1601,
+      "flujoEstimado": 1.528461,
       "origen": "cnv-excel"
     }
   ]

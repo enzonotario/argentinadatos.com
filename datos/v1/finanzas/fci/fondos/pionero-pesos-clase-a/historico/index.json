@@ -2,7 +2,7 @@
   "fondoId": "346",
   "claseId": "578",
   "nombre": "Pionero Pesos - Clase A",
-  "fechaActualizacion": "2026-09-07T17:30:06.000Z",
+  "fechaActualizacion": "2026-09-07T23:57:28.000Z",
   "historico": [
     {
       "slug": "pionero-pesos-clase-a",
@@ -25695,9 +25695,25 @@
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 99066.571,
       "patrimonio": 156360991148.51,
-      "retornoDiario": 0,
+      "retornoDiario": 0.045647,
       "retornoAcumulado": 1290.130183,
-      "flujoEstimado": 0,
+      "flujoEstimado": -1249895630.551422,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "pionero-pesos-clase-a",
+      "fondoId": "346",
+      "claseId": "578",
+      "nombre": "Pionero Pesos - Clase A",
+      "fecha": "2026-09-07",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 99205.778,
+      "patrimonio": 155577739411.04,
+      "retornoDiario": 0.140519,
+      "retornoAcumulado": 1292.083575,
+      "flujoEstimado": -1002968638.621979,
       "origen": "cnv-excel"
     }
   ]
