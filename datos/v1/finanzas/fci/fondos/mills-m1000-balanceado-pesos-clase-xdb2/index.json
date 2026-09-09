@@ -1,8 +1,8 @@
 {
-  "fondoId": "1826",
+  "fondoId": "1870",
   "claseId": "6278",
   "nombre": "Mills M1000 Balanceado Pesos - Clase XDB2",
-  "fecha": "2026-08-06",
+  "fecha": "2026-09-08",
   "administradora": "Mills Asset Management S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -11,15 +11,15 @@
   "benchmark": "Otro",
   "horizonte": "Corto Plazo",
   "duracion": "Menor o Igual a 1 Año",
-  "moneda": "Peso Argentina",
+  "moneda": "Peso Argentino",
   "codigoCNV": "1870",
-  "patrimonio": null,
-  "cantidadCuotapartes": null,
-  "inversionMinima": 2000,
-  "monedaInversion": "Peso Argentina",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": null,
+    "valorCuotaparte": 1000,
     "variacionDiariaPct": null,
     "ultimos7Dias": null,
     "unMes": null,
@@ -131,12 +131,12 @@
   },
   "sociedades": [
     {
-      "tipo": "Sociedad Gerente:",
+      "tipo": "Administradora",
       "nombre": "Mills Asset Management S.A.",
       "logo": null
     },
     {
-      "tipo": "Sociedad Depositaria:",
+      "tipo": "Depositaria",
       "nombre": "Banco de Valores S.A.",
       "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
     }
