@@ -106,10 +106,10 @@
     "entidad": "BNA",
     "nombreComercial": "Banco Nación",
     "producto": "Nación Sueldos",
-    "tna": 0.56,
-    "tea": 0.7286,
-    "cftTna": 0.6776,
-    "cftTea": 0.9332,
+    "tna": 0.49,
+    "tea": 0.6165,
+    "cftTna": 0.5929,
+    "cftTea": 0.7838,
     "tipoTasa": "fija",
     "moneda": "ARS",
     "requiereCliente": true,
@@ -125,9 +125,9 @@
         {
           "plazoMinMeses": 1,
           "plazoMaxMeses": 72,
-          "tna": 0.56,
-          "tea": 0.7286,
-          "cftTea": 0.9332
+          "tna": 0.49,
+          "tea": 0.6165,
+          "cftTea": 0.7838
         }
       ],
       "afectacionIngresos": "35%"
@@ -137,10 +137,10 @@
     "entidad": "BNA",
     "nombreComercial": "Banco Nación",
     "producto": "Nación Sueldos",
-    "tna": 0.64,
-    "tea": 0.8655,
-    "cftTna": 0.7744,
-    "cftTea": 1.1179,
+    "tna": 0.49,
+    "tea": 0.6165,
+    "cftTna": 0.5929,
+    "cftTea": 0.7838,
     "tipoTasa": "fija",
     "moneda": "ARS",
     "requiereCliente": true,
@@ -156,9 +156,9 @@
         {
           "plazoMinMeses": 1,
           "plazoMaxMeses": 72,
-          "tna": 0.64,
-          "tea": 0.8655,
-          "cftTea": 1.1179
+          "tna": 0.49,
+          "tea": 0.6165,
+          "cftTea": 0.7838
         }
       ],
       "afectacionIngresos": "35%"
@@ -168,10 +168,10 @@
     "entidad": "BNA",
     "nombreComercial": "Banco Nación",
     "producto": "Nación Sueldos",
-    "tna": 0.72,
-    "tea": 1.0122,
-    "cftTna": 0.8712,
-    "cftTea": 1.3187,
+    "tna": 0.71,
+    "tea": 0.9933,
+    "cftTna": 0.8591,
+    "cftTea": 1.2927,
     "tipoTasa": "fija",
     "moneda": "ARS",
     "requiereCliente": false,
@@ -187,9 +187,9 @@
         {
           "plazoMinMeses": 1,
           "plazoMaxMeses": 72,
-          "tna": 0.72,
-          "tea": 1.0122,
-          "cftTea": 1.3187
+          "tna": 0.71,
+          "tea": 0.9933,
+          "cftTea": 1.2927
         }
       ],
       "afectacionIngresos": "35%"
@@ -199,10 +199,10 @@
     "entidad": "BNA",
     "nombreComercial": "Banco Nación",
     "producto": "Nación Destino Libre",
-    "tna": 0.74,
-    "tea": 1.0505,
-    "cftTna": 1.0426,
-    "cftTea": 1.7176,
+    "tna": 0.71,
+    "tea": 0.9933,
+    "cftTna": 0.8591,
+    "cftTea": 1.2927,
     "tipoTasa": "fija",
     "moneda": "ARS",
     "requiereCliente": true,
@@ -218,40 +218,9 @@
         {
           "plazoMinMeses": 1,
           "plazoMaxMeses": 72,
-          "tna": 0.74,
-          "tea": 1.0505,
-          "cftTea": 1.7176
-        }
-      ],
-      "afectacionIngresos": "30%"
-    }
-  },
-  {
-    "entidad": "BNA",
-    "nombreComercial": "Banco Nación",
-    "producto": "Nación Destino Libre",
-    "tna": 0.91,
-    "tea": 1.404,
-    "cftTna": 1.1011,
-    "cftTea": 1.8676,
-    "tipoTasa": "fija",
-    "moneda": "ARS",
-    "requiereCliente": false,
-    "condiciones": "Sin paquete Cuenta Nación",
-    "enlace": "https://bna.com.ar/Personas/NacionDestinoLibre",
-    "vigenciaDesde": null,
-    "vigenciaHasta": null,
-    "metadata": {
-      "plazoMesesEjemplo": 72,
-      "plazoMinMeses": 1,
-      "plazoMaxMeses": 72,
-      "tasasPorPlazo": [
-        {
-          "plazoMinMeses": 1,
-          "plazoMaxMeses": 72,
-          "tna": 0.91,
-          "tea": 1.404,
-          "cftTea": 1.8676
+          "tna": 0.71,
+          "tea": 0.9933,
+          "cftTea": 1.2927
         }
       ],
       "afectacionIngresos": "30%"
@@ -261,10 +230,10 @@
     "entidad": "BNA",
     "nombreComercial": "Banco Nación",
     "producto": "Nación Previsional BNA",
-    "tna": 0.56,
-    "tea": 0.7292,
-    "cftTna": 0.6777,
-    "cftTea": 0.9332,
+    "tna": 0.49,
+    "tea": 0.617,
+    "cftTna": 0.5929,
+    "cftTea": 0.7838,
     "tipoTasa": "fija",
     "moneda": "ARS",
     "requiereCliente": true,
@@ -280,9 +249,9 @@
         {
           "plazoMinMeses": 1,
           "plazoMaxMeses": 36,
-          "tna": 0.56,
-          "tea": 0.7292,
-          "cftTea": 0.9332
+          "tna": 0.49,
+          "tea": 0.617,
+          "cftTea": 0.7838
         }
       ]
     }
@@ -291,10 +260,10 @@
     "entidad": "BNA",
     "nombreComercial": "Banco Nación",
     "producto": "Nación Previsional BNA",
-    "tna": 0.56,
-    "tea": 0.7292,
-    "cftTna": 0.6777,
-    "cftTea": 0.9332,
+    "tna": 0.49,
+    "tea": 0.617,
+    "cftTna": 0.5929,
+    "cftTea": 0.7838,
     "tipoTasa": "fija",
     "moneda": "ARS",
     "requiereCliente": true,
@@ -310,9 +279,9 @@
         {
           "plazoMinMeses": 1,
           "plazoMaxMeses": 72,
-          "tna": 0.56,
-          "tea": 0.7292,
-          "cftTea": 0.9332
+          "tna": 0.49,
+          "tea": 0.617,
+          "cftTea": 0.7838
         }
       ]
     }
@@ -351,16 +320,16 @@
     "entidad": "CIUDAD",
     "nombreComercial": "Banco Ciudad",
     "producto": "Ciudad Veloz Plan Sueldo",
-    "tna": 0.7,
-    "tea": 0.9746,
+    "tna": 0.72,
+    "tea": 1.0122,
     "cftTna": null,
-    "cftTea": 1.267,
+    "cftTea": 1.3188,
     "tipoTasa": "fija",
     "moneda": "ARS",
     "requiereCliente": true,
     "condiciones": "Plan Sueldo",
     "enlace": "https://bancociudad.com.ar/institucional/micrositio/PrestamoPersonalCiudadVeloz",
-    "vigenciaDesde": "2026-06-19",
+    "vigenciaDesde": "2026-09-08",
     "vigenciaHasta": "2026-12-31",
     "metadata": {
       "plazoMesesEjemplo": 72,
@@ -370,9 +339,9 @@
         {
           "plazoMinMeses": 1,
           "plazoMaxMeses": 72,
-          "tna": 0.7,
-          "tea": 0.9746,
-          "cftTea": 1.267
+          "tna": 0.72,
+          "tea": 1.0122,
+          "cftTea": 1.3188
         }
       ]
     }
@@ -381,16 +350,16 @@
     "entidad": "CIUDAD",
     "nombreComercial": "Banco Ciudad",
     "producto": "Ciudad Veloz Jubilados y Pensionados ANSES",
-    "tna": 0.65,
-    "tea": 0.8833,
+    "tna": 0.67,
+    "tea": 0.9193,
     "cftTna": null,
-    "cftTea": 1.1421,
+    "cftTea": 1.1913,
     "tipoTasa": "fija",
     "moneda": "ARS",
     "requiereCliente": true,
     "condiciones": "Jubilados y Pensionados ANSES",
     "enlace": "https://bancociudad.com.ar/institucional/micrositio/PrestamoPersonalCiudadVeloz",
-    "vigenciaDesde": "2026-06-19",
+    "vigenciaDesde": "2026-09-08",
     "vigenciaHasta": "2026-12-31",
     "metadata": {
       "plazoMesesEjemplo": 72,
@@ -400,9 +369,9 @@
         {
           "plazoMinMeses": 1,
           "plazoMaxMeses": 72,
-          "tna": 0.65,
-          "tea": 0.8833,
-          "cftTea": 1.1421
+          "tna": 0.67,
+          "tea": 0.9193,
+          "cftTea": 1.1913
         }
       ]
     }
@@ -411,16 +380,16 @@
     "entidad": "CIUDAD",
     "nombreComercial": "Banco Ciudad",
     "producto": "Ciudad Veloz Cliente Fiel",
-    "tna": 0.87,
-    "tea": 1.3162,
+    "tna": 0.89,
+    "tea": 1.3597,
     "cftTna": null,
-    "cftTea": 1.743,
+    "cftTea": 1.8047,
     "tipoTasa": "fija",
     "moneda": "ARS",
     "requiereCliente": true,
     "condiciones": "Cliente Fiel",
     "enlace": "https://bancociudad.com.ar/institucional/micrositio/PrestamoPersonalCiudadVeloz",
-    "vigenciaDesde": "2026-06-19",
+    "vigenciaDesde": "2026-09-08",
     "vigenciaHasta": "2026-12-31",
     "metadata": {
       "plazoMesesEjemplo": 72,
@@ -430,9 +399,9 @@
         {
           "plazoMinMeses": 1,
           "plazoMaxMeses": 72,
-          "tna": 0.87,
-          "tea": 1.3162,
-          "cftTea": 1.743
+          "tna": 0.89,
+          "tea": 1.3597,
+          "cftTea": 1.8047
         }
       ]
     }
