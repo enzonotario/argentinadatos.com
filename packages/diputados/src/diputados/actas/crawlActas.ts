@@ -63,8 +63,9 @@ export async function crawlActas(): Promise<Acta[]> {
 
   const votacionesUrls = await getVotacionesUrls(currentIds)
 
+  // Concurrencia acotada: Promise.all masivo satura votaciones.hcdn.gob.ar → 403.
   const newValues = (
-    await Promise.all(votacionesUrls.map(url => parseVotacionPage(url)))
+    await mapPool(votacionesUrls, HTML_CONCURRENCY, url => parseVotacionPage(url))
   ).filter(Boolean)
 
   // Save all actas.
@@ -77,10 +78,9 @@ export async function crawlActas(): Promise<Acta[]> {
     )
     // @ts-expect-error: TS can't infer the type of the collection
     .filter((acta: Acta) => acta.fecha instanceof Date)
-    .unique(
-      (acta: Acta) =>
-        `${acta.periodo}-${acta.reunion}-${acta.numeroActa}`,
-    )
+    // Deduplicar por id (el dataset histórico tiene filas repetidas).
+    // No usar periodo-reunion-numeroActa: colapsaba actas distintas y reescribía todo.
+    .unique((acta: Acta) => String(acta.id))
     .sortBy('fecha')
     .all() as Acta[]
 
@@ -92,21 +92,15 @@ export async function crawlActas(): Promise<Acta[]> {
 
   if (toEnrich.length) {
     console.log(`Cabeceras PDF: enriqueciendo ${toEnrich.length} actas…`)
-    const concurrency = 4
-    for (let i = 0; i < toEnrich.length; i += concurrency) {
-      const batch = toEnrich.slice(i, i + concurrency)
-      await Promise.all(
-        batch.map(async (acta) => {
-          const cabecera = await parseCabeceraPdf(String(acta.id))
-          if (!cabecera) return
-          Object.assign(acta, applyCabeceraPdf(acta, cabecera))
-        }),
-      )
-    }
+    await mapPool(toEnrich, PDF_CONCURRENCY, async (acta) => {
+      const cabecera = await parseCabeceraPdf(String(acta.id))
+      if (!cabecera) return
+      Object.assign(acta, applyCabeceraPdf(acta, cabecera))
+    })
   }
 
   if (shouldWriteJsonFiles()) {
-    writeEndpoint('diputados/actas', actas)
+    writeEndpoint('diputados/actas', actas, { compact: true })
 
     collect(actas)
       .groupBy((acta: Acta) => getYear(acta.fecha))
@@ -117,7 +111,9 @@ export async function crawlActas(): Promise<Acta[]> {
           .sortBy('fecha')
           .all(),
       }))
-      .each(({ year, actas }) => writeEndpoint(`diputados/actas/${year}`, actas))
+      .each(({ year, actas }) =>
+        writeEndpoint(`diputados/actas/${year}`, actas, { compact: true }),
+      )
 
     writeEndpoint('diputados/diputados', diputados)
   }
@@ -154,7 +150,7 @@ export async function crawlActas(): Promise<Acta[]> {
 async function generateEndpointEstatico(db: ActasDatabaseService, actas: Acta[]) {
   const todosLosDatos = await db.getAllActas()
 
-  writeEndpoint('diputados/actas', todosLosDatos)
+  writeEndpoint('diputados/actas', todosLosDatos, { compact: true })
 
   const years = collect(actas)
     .groupBy((acta: Acta) => getYear(acta.fecha))
@@ -166,8 +162,44 @@ async function generateEndpointEstatico(db: ActasDatabaseService, actas: Acta[])
       continue
     }
     const actasData = await db.getActasByAño(yearNum)
-    writeEndpoint(`diputados/actas/${year}`, actasData)
+    writeEndpoint(`diputados/actas/${year}`, actasData, { compact: true })
   }
+}
+
+const HTML_CONCURRENCY = 6
+const PDF_CONCURRENCY = 3
+/** Sin ancla de home (captcha): no barrer cientos de IDs; alcanza para huecos recientes. */
+const FORWARD_WITHOUT_HOME = 50
+const FORWARD_WITH_HOME = 40
+const BACKWARD_WITH_DATA = 10
+const BACKWARD_WITHOUT_DATA = 20
+
+async function mapPool<T, R>(
+  items: T[],
+  concurrency: number,
+  worker: (item: T, index: number) => Promise<R>,
+): Promise<R[]> {
+  const out = new Array<R>(items.length)
+  let next = 0
+
+  async function run() {
+    while (true) {
+      const i = next++
+      if (i >= items.length) return
+      out[i] = await worker(items[i]!, i)
+    }
+  }
+
+  const runners = Array.from(
+    { length: Math.min(concurrency, Math.max(items.length, 1)) },
+    () => run(),
+  )
+  await Promise.all(runners)
+  return out
+}
+
+async function sleep(ms: number) {
+  await new Promise(resolve => setTimeout(resolve, ms))
 }
 
 async function fetchWithRetry(url: string, retries = 3) {
@@ -176,11 +208,25 @@ async function fetchWithRetry(url: string, retries = 3) {
       const response = await axios.get(url, {
         headers: {
           'User-Agent': USER_AGENT,
+          Referer: `${VOTACIONES_BASE_URL}/`,
+          Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         },
         validateStatus: status => status < 500,
+        timeout: 30_000,
       })
 
-      if (response.status === 404 || response.status === 417 || response.status === 403) {
+      if (response.status === 404 || response.status === 417) {
+        const error: any = new Error(`HTTP ${response.status}`)
+        error.response = response
+        throw error
+      }
+
+      // 403 suele ser rate-limit: reintentar con backoff corto.
+      if (response.status === 403) {
+        if (i < retries - 1) {
+          await sleep(500 * (i + 1))
+          continue
+        }
         const error: any = new Error(`HTTP ${response.status}`)
         error.response = response
         throw error
@@ -190,10 +236,14 @@ async function fetchWithRetry(url: string, retries = 3) {
     }
     catch (error: any) {
       const status = error?.response?.status
-      // 403/404/417 no tienen sentido reintentar.
-      if (status === 403 || status === 404 || status === 417 || i === retries - 1) {
+      if (status === 404 || status === 417 || i === retries - 1) {
         throw error
       }
+      if (status === 403) {
+        await sleep(500 * (i + 1))
+        continue
+      }
+      await sleep(300 * (i + 1))
     }
   }
 }
@@ -211,17 +261,20 @@ async function getVotacionesUrls(currentIds: string[]) {
   }
 
   const hasKnownIds = Number.isFinite(maxKnownId)
-  // Sin home (captcha), no sabemos el techo: barrer más hacia adelante.
-  let forwardCount = Number.isFinite(homeAnchorId) ? 150 : 250
+  // Sin home (captcha), barrido corto hacia adelante — no +250 en paralelo.
+  let forwardCount = Number.isFinite(homeAnchorId)
+    ? FORWARD_WITH_HOME
+    : FORWARD_WITHOUT_HOME
   if (Number.isFinite(homeAnchorId) && homeAnchorId > startFrom) {
-    forwardCount = Math.max(forwardCount, homeAnchorId - startFrom + 40)
+    forwardCount = Math.max(forwardCount, homeAnchorId - startFrom + 20)
   }
 
   const forwardIds = Array.from({ length: forwardCount }, (_, i) =>
     String(startFrom + i + (hasKnownIds ? 1 : 0)),
   )
-  const backwardIds = Array.from({ length: hasKnownIds ? 15 : 40 }, (_, i) =>
-    String(startFrom - i - (hasKnownIds ? 0 : 1)),
+  const backwardIds = Array.from(
+    { length: hasKnownIds ? BACKWARD_WITH_DATA : BACKWARD_WITHOUT_DATA },
+    (_, i) => String(startFrom - i - (hasKnownIds ? 0 : 1)),
   )
 
   const allIds = [...new Set([...forwardIds, ...backwardIds])]
@@ -248,8 +301,11 @@ async function resolveAnchorIdFromHome(): Promise<number> {
     const response = await axios.get(VOTACIONES_BASE_URL, {
       headers: {
         'User-Agent': USER_AGENT,
+        Referer: `${VOTACIONES_BASE_URL}/`,
+        Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
       },
       validateStatus: status => status < 500,
+      timeout: 30_000,
     })
 
     if (response.status !== 200) {
@@ -291,14 +347,8 @@ async function parseVotacionPage(url: string) {
       throw new Error('Empty response')
     }
 
-    const acta = parseActa(id, response.data)
-    if (!acta) return null
-
-    const cabecera = await parseCabeceraPdf(id)
-    if (cabecera) {
-      return applyCabeceraPdf(acta, cabecera)
-    }
-    return acta
+    // Cabecera PDF se enriquece en batch después (evita HTML+PDF en paralelo).
+    return parseActa(id, response.data)
   }
   catch (error: any) {
     const status = error.response?.status

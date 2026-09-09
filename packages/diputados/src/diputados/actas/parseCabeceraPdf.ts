@@ -1,5 +1,6 @@
+import axios from 'axios'
 import { PdfDataParser } from 'pdf-data-parser'
-import { VOTACIONES_BASE_URL } from '../../constants.ts'
+import { USER_AGENT, VOTACIONES_BASE_URL } from '../../constants.ts'
 
 export function actaPdfUrl(actaId: string | number): string {
   return `${VOTACIONES_BASE_URL}/pdf/acta/${encodeURIComponent(String(actaId))}`
@@ -148,7 +149,27 @@ export function parseCabeceraFromPdfRows(rows: string[][]): ActaCabeceraPdf {
 
 export async function fetchActaPdfRows(actaId: string): Promise<string[][]> {
   const url = actaPdfUrl(actaId)
-  const parser = new PdfDataParser({ url })
+  // Descargar con axios (UA/Referer): pdfjs directo a la URL suele recibir 403.
+  const response = await axios.get<ArrayBuffer>(url, {
+    responseType: 'arraybuffer',
+    headers: {
+      'User-Agent': USER_AGENT,
+      Referer: `${VOTACIONES_BASE_URL}/`,
+      Accept: 'application/pdf,*/*',
+    },
+    validateStatus: status => status < 500,
+    timeout: 30_000,
+  })
+
+  if (response.status !== 200) {
+    throw new Error(`HTTP ${response.status} al descargar PDF ${url}`)
+  }
+
+  // En Node axios (arraybuffer) suele devolver Buffer; pdfjs lo rechaza.
+  // Copiar a Uint8Array "puro" siempre.
+  const bytes = new Uint8Array(response.data)
+
+  const parser = new PdfDataParser({ data: bytes as unknown as ArrayBuffer })
   const data = await parser.parse()
   if (!Array.isArray(data)) return []
   return data as string[][]

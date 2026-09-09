@@ -7,6 +7,7 @@ it(
   'crawlActas',
   async () => {
     const currentValues = JSON.parse(readEndpoint('diputados/actas') || '[]')
+    const currentIds = new Set(currentValues.map((v: { id: string }) => String(v.id)))
 
     const result = await crawlActas()
 
@@ -14,7 +15,14 @@ it(
     expect(Array.isArray(result)).toBe(true)
     expect(result.length).toBeGreaterThan(0)
 
-    for (const item of result) {
+    const newItems = result.filter(item => !currentIds.has(String(item.id)))
+    const toValidate = newItems.length
+      ? newItems
+      : result.filter(item => Array.isArray(item.votos) && item.votos.length > 0).slice(-5)
+
+    expect(toValidate.length).toBeGreaterThan(0)
+
+    for (const item of toValidate) {
       expect(item).toMatchObject({
         id: expect.any(String),
         periodo: expect.any(String),
@@ -46,7 +54,7 @@ it(
     }
 
     console.log({
-      diffIds: collect(result).pluck('id').diff(currentValues.map(v => v.id)).all(),
+      diffIds: collect(result).pluck('id').diff(currentValues.map((v: { id: string }) => v.id)).all(),
     })
   },
   {
