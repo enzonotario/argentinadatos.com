@@ -20,6 +20,16 @@
     }
   },
   {
+    "entidad": "Hipotecario",
+    "nombreComercial": "Hipotecario",
+    "tna": 0.075,
+    "metadata": {
+      "plazo_max_anios": 15,
+      "relacion_cuota_ingreso": "20%",
+      "financiamiento": "80%"
+    }
+  },
+  {
     "entidad": "Ciudad",
     "nombreComercial": "Ciudad",
     "tna": 0.075,
@@ -27,6 +37,16 @@
       "plazo_max_anios": 25,
       "relacion_cuota_ingreso": "25%",
       "financiamiento": "70%"
+    }
+  },
+  {
+    "entidad": "Supervielle",
+    "nombreComercial": "Supervielle",
+    "tna": 0.075,
+    "metadata": {
+      "plazo_max_anios": 15,
+      "relacion_cuota_ingreso": "25%",
+      "financiamiento": "65%"
     }
   },
   {
@@ -50,6 +70,16 @@
     }
   },
   {
+    "entidad": "Galicia",
+    "nombreComercial": "Galicia",
+    "tna": 0.075,
+    "metadata": {
+      "plazo_max_anios": 20,
+      "relacion_cuota_ingreso": "25%",
+      "financiamiento": "70%"
+    }
+  },
+  {
     "entidad": "Credicoop",
     "nombreComercial": "Credicoop",
     "tna": 0.075,
@@ -57,6 +87,16 @@
       "plazo_max_anios": 20,
       "relacion_cuota_ingreso": "25%",
       "financiamiento": "70%"
+    }
+  },
+  {
+    "entidad": "Patagonia",
+    "nombreComercial": "Patagonia",
+    "tna": 0.085,
+    "metadata": {
+      "plazo_max_anios": 30,
+      "relacion_cuota_ingreso": "25%",
+      "financiamiento": "75%"
     }
   },
   {
@@ -80,38 +120,8 @@
     }
   },
   {
-    "entidad": "Patagonia",
-    "nombreComercial": "Patagonia",
-    "tna": 0.0925,
-    "metadata": {
-      "plazo_max_anios": 30,
-      "relacion_cuota_ingreso": "25%",
-      "financiamiento": "75%"
-    }
-  },
-  {
-    "entidad": "Hipotecario",
-    "nombreComercial": "Hipotecario",
-    "tna": 0.095,
-    "metadata": {
-      "plazo_max_anios": 15,
-      "relacion_cuota_ingreso": "20%",
-      "financiamiento": "80%"
-    }
-  },
-  {
     "entidad": "Santander",
     "nombreComercial": "Santander",
-    "tna": 0.095,
-    "metadata": {
-      "plazo_max_anios": 20,
-      "relacion_cuota_ingreso": "25%",
-      "financiamiento": "70%"
-    }
-  },
-  {
-    "entidad": "Galicia",
-    "nombreComercial": "Galicia",
     "tna": 0.095,
     "metadata": {
       "plazo_max_anios": 20,
@@ -167,16 +177,6 @@
       "plazo_max_anios": 30,
       "relacion_cuota_ingreso": "25%",
       "financiamiento": "70%"
-    }
-  },
-  {
-    "entidad": "Supervielle",
-    "nombreComercial": "Supervielle",
-    "tna": 0.15,
-    "metadata": {
-      "plazo_max_anios": 15,
-      "relacion_cuota_ingreso": "25%",
-      "financiamiento": "65%"
     }
   }
 ]
