@@ -1,5 +1,6 @@
 import { computed } from 'vue'
 import { useDark, useECharts } from '@pureadmin/utils'
+import { normalizeEchartsOptionColors } from '../utils/toEchartsColor'
 
 export const useEcharts = (chartRef) => {
   const { isDark } = useDark()
@@ -8,7 +9,14 @@ export const useEcharts = (chartRef) => {
     return isDark.value ? 'dark' : 'default'
   })
 
-  const { setOptions, getInstance } = useECharts(chartRef, { theme, renderer: 'svg' })
+  const { setOptions: setOptionsRaw, getInstance } = useECharts(chartRef, {
+    theme,
+    renderer: 'svg',
+  })
+
+  const setOptions = (options: unknown, ...rest: unknown[]) => {
+    return setOptionsRaw(normalizeEchartsOptionColors(options) as any, ...rest as any)
+  }
 
   return {
     setOptions,

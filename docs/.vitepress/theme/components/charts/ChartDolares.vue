@@ -131,28 +131,21 @@ async function setChartOptions() {
         type: 'cross',
       },
       formatter: (params: any) => {
-        const date = params[0].axisValue
+        if (!Array.isArray(params) || !params.length)
+          return ''
+
+        const date = params.find((item: any) => item.axisValue)?.axisValue
+        if (!date)
+          return ''
 
         const items = params
+          .filter((item: any) => typeof item.value === 'number')
           .map((item: any) => {
-            const casa = item.seriesName
-            const value = item.value
-
-            return `<div class="flex items-center gap-2">
-              <div class="w-3 h-3 rounded-full" style="background-color: ${
-                colorsMap.hasOwnProperty(casa)
-                  ? colorsMap[casa][theme.value === 'dark' ? 300 : 500]
-                  : colors.gray[theme.value === 'dark' ? 300 : 500]
-              }"></div>
-              <div>${casa}: $${value.toLocaleString('es-AR')}</div>
-            </div>`
+            return `${item.marker} ${item.seriesName}: <b>$${item.value.toLocaleString('es-AR')}</b>`
           })
-          .join('')
+          .join('<br/>')
 
-        return `<div class="flex flex-col gap-1">
-          <div>${format(parseISO(date), 'dd/MM/yyyy')}</div>
-          ${items}
-        </div>`
+        return `${format(parseISO(date), 'dd/MM/yyyy')}<br/>${items}`
       },
     },
     dataZoom: [
