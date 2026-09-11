@@ -48,9 +48,13 @@ export function normalizeEchartsOptionColors<T>(input: T): T {
   if (Array.isArray(input))
     return input.map(item => normalizeEchartsOptionColors(item)) as T
 
-  // Dejar instancias (p.ej. echarts.graphic.LinearGradient) intactas
-  if (Object.getPrototypeOf(input) !== Object.prototype)
+  // Instancias (p.ej. echarts.graphic.LinearGradient): normalizar colorStops si existen
+  if (Object.getPrototypeOf(input) !== Object.prototype) {
+    const withStops = input as { colorStops?: unknown }
+    if (Array.isArray(withStops.colorStops))
+      withStops.colorStops = normalizeEchartsOptionColors(withStops.colorStops)
     return input
+  }
 
   const result: Record<string, unknown> = {}
   for (const [key, value] of Object.entries(input as Record<string, unknown>))
