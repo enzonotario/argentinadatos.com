@@ -47,6 +47,9 @@ describe('extraerPlazoFijo', () => {
 
       const voii = items.find(item => item.entidad?.toUpperCase().includes('VOII'))
       const uala = items.find(item => item.entidad?.toUpperCase() === 'UALA')
+      const macro = items.find(item =>
+        item.entidad?.toUpperCase().includes('MACRO'),
+      )
       const galicia = items.find(item =>
         item.entidad?.toUpperCase().includes('GALICIA'),
       )
@@ -54,6 +57,7 @@ describe('extraerPlazoFijo', () => {
 
       expect(voii).toBeDefined()
       expect(uala).toBeDefined()
+      expect(macro).toBeDefined()
       expect(galicia).toBeDefined()
       expect(brubank).toBeDefined()
       expect(uala.tasas).toBeInstanceOf(Array)
@@ -64,6 +68,15 @@ describe('extraerPlazoFijo', () => {
       expect(
         uala.tasas.some(tramo => tramo.plazoMinDias === 365 && tramo.plazoMaxDias === 365),
       ).toBe(true)
+      expect(macro.tasas).toBeInstanceOf(Array)
+      expect(macro.tasas.length).toBeGreaterThanOrEqual(8)
+      expect(
+        macro.tasas.some(
+          tramo => tramo.plazoMinDias === 30 && tramo.montoMinimo === 1,
+        ),
+      ).toBe(true)
+      expect(macro.tasas.some(tramo => tramo.montoMaximo === null)).toBe(true)
+      expect(macro.enlace).toMatch(/macro\.com\.ar/)
       expect(galicia.tasas).toBeInstanceOf(Array)
       expect(
         galicia.tasas.some(tramo => tramo.plazoMinDias === 60 && tramo.plazoMaxDias === 60),

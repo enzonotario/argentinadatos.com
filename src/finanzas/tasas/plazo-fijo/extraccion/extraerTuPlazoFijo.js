@@ -17,7 +17,6 @@ const MAPEO_ENTIDAD_BCRA_A_TU_PLAZO_FIJO = {
   'BANCO BBVA ARGENTINA S.A.': 'BBVA',
   'BANCO SANTANDER ARGENTINA S.A.': 'Santander',
   'BANCO DE LA PROVINCIA DE BUENOS AIRES': 'Banco Provincia',
-  'BANCO MACRO S.A.': 'Banco Macro',
   'INDUSTRIAL AND COMMERCIAL BANK OF CHINA (ARGENTINA) S.A.U.': 'ICBC',
   'BANCO DE LA CIUDAD DE BUENOS AIRES': 'Banco Ciudad',
   'BANCO CREDICOOP COOPERATIVO LIMITADO': 'Banco Credicoop',
@@ -174,7 +173,11 @@ function mismoPlazo(a, b) {
 export function entidadUsaExtraccionPropiaPlazoFijo(entidad) {
   const normalizada = normalizarNombreEntidad(entidad)
 
-  return normalizada.includes('VOII') || normalizada.includes('UALA')
+  return (
+    normalizada.includes('VOII') ||
+    normalizada.includes('UALA') ||
+    normalizada.includes('MACRO')
+  )
 }
 
 export function esEntidadTuPlazoFijoExcluida(nombreTuPlazoFijo) {
