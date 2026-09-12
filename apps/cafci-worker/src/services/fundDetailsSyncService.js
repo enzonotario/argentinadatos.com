@@ -14,6 +14,7 @@ import {
 import {
   getComposicionEnrichLimit,
   getCnvExcelCacheDir,
+  getCycleLookbackFiles,
   getFreshDownloadConcurrency,
   getPollIntervalMs,
   getR2UploadIntervalMs,
@@ -50,6 +51,9 @@ function formatDuration(ms) {
 /** Ventana para re-chequear fechas con marca legacy `'1'` sin presentationId. */
 export const CNV_REPUBLISH_LOOKBACK_DAYS = 21
 
+/** Planillas CNV recientes a re-chequear en cada ciclo del worker. */
+export const CNV_CYCLE_LOOKBACK_FILES = 10
+
 export function isRecentCnvReception(
   receptionAt,
   { now = Date.now(), withinDays = CNV_REPUBLISH_LOOKBACK_DAYS } = {},
@@ -72,6 +76,13 @@ export class FundDetailsSyncService {
     this.pollIntervalMs = options.pollIntervalMs ?? getPollIntervalMs()
     this.r2UploadIntervalMs =
       options.r2UploadIntervalMs ?? getR2UploadIntervalMs()
+    this.cycleLookbackFiles = Math.min(
+      60,
+      Math.max(
+        1,
+        Math.floor(options.cycleLookbackFiles ?? getCycleLookbackFiles()),
+      ),
+    )
     this.excelCacheDir =
       options.excelCacheDir ?? getCnvExcelCacheDir(repository.databasePath)
     this.downloadConcurrency = Math.min(
@@ -335,66 +346,87 @@ export class FundDetailsSyncService {
   }
 
   /**
-   * Días a ingerir en un ciclo: el pedido/último, más republicaciones
-   * (misma fecha, otra presentationId) detectadas en el catálogo.
+   * True si la planilla aún no está ingerida, cambió de presentationId,
+   * o es marca legacy con recepción reciente (posible corrección CNV).
    */
-  selectDocumentsForCycle(documents, { documentDate = null, now = Date.now() } = {}) {
-    const chronological = listChronologicalCnvDocuments(documents)
-    const primary = documentDate
-      ? pickLatestDocumentForDate(documents, documentDate)
-      : chronological.at(-1) ?? null
+  documentNeedsCnvIngest(document, { now = Date.now() } = {}) {
+    if (!document?.documentDate) {
+      return false
+    }
 
-    if (!primary) {
+    const meta = this.repository.getCnvIngestedMeta(document.documentDate)
+    if (!meta) {
+      return true
+    }
+
+    if (meta.presentationId) {
+      if (!document.presentationId) {
+        return false
+      }
+
+      return meta.presentationId !== document.presentationId
+    }
+
+    // Marca legacy `'1'` (o sin presentationId): re-chequear si la recepción
+    // es reciente (correcciones tardías en el listado CNV).
+    return (
+      Boolean(meta.legacy) &&
+      isRecentCnvReception(document.receptionAt, { now })
+    )
+  }
+
+  /**
+   * Días a ingerir en un ciclo: los últimos N archivos del catálogo CNV que
+   * aún requieren proceso (nunca vistos, republicados o legacy reciente).
+   */
+  selectDocumentsForCycle(
+    documents,
+    {
+      documentDate = null,
+      now = Date.now(),
+      lookback = this.cycleLookbackFiles,
+    } = {},
+  ) {
+    if (documentDate) {
+      const targeted = pickLatestDocumentForDate(documents, documentDate)
+      if (!targeted || !this.documentNeedsCnvIngest(targeted, { now })) {
+        return []
+      }
+
+      return [targeted]
+    }
+
+    const chronological = listChronologicalCnvDocuments(documents)
+    if (chronological.length === 0) {
       return []
     }
 
-    const selected = new Map()
-    selected.set(primary.documentDate, primary)
+    const windowSize = Math.min(
+      chronological.length,
+      Math.max(1, Math.floor(lookback)),
+    )
+    const recent = chronological.slice(-windowSize)
 
-    for (const document of chronological) {
-      if (document.documentDate === primary.documentDate) {
-        continue
-      }
-
-      const meta = this.repository.getCnvIngestedMeta(document.documentDate)
-      if (!meta) {
-        // Crawl no backfillea fechas nunca vistas.
-        continue
-      }
-
-      if (meta.presentationId) {
-        if (meta.presentationId !== document.presentationId) {
-          selected.set(document.documentDate, document)
-        }
-        continue
-      }
-
-      // Marca legacy `'1'`: re-chequear si la recepción es reciente
-      // (correcciones tardías que aparecen ahora en el listado CNV).
-      if (
-        meta.legacy &&
-        isRecentCnvReception(document.receptionAt, { now })
-      ) {
-        selected.set(document.documentDate, document)
-      }
-    }
-
-    return [...selected.values()].sort((a, b) =>
-      a.documentDate.localeCompare(b.documentDate),
+    return recent.filter(document =>
+      this.documentNeedsCnvIngest(document, { now }),
     )
   }
 
   async runCycle({ documentDate = null } = {}) {
     const documents = await fetchCnvCuotaparteDocuments()
+    const chronological = listChronologicalCnvDocuments(documents)
+    const latest = chronological.at(-1) ?? null
     const toIngest = this.selectDocumentsForCycle(documents, { documentDate })
 
-    if (toIngest.length === 0) {
+    if (chronological.length === 0) {
       return {
         source: 'cnv',
         documentDate: documentDate || null,
         upserted: 0,
         parsedFunds: 0,
         currentFunds: this.repository.getCurrentFunds().length,
+        lookback: this.cycleLookbackFiles,
+        pending: 0,
         republished: 0,
         error: documentDate
           ? `No hay planilla CNV para ${documentDate}`
@@ -402,20 +434,61 @@ export class FundDetailsSyncService {
       }
     }
 
+    if (documentDate && toIngest.length === 0) {
+      const targeted = pickLatestDocumentForDate(documents, documentDate)
+      return {
+        source: 'cnv',
+        documentDate,
+        upserted: 0,
+        parsedFunds: 0,
+        currentFunds: this.repository.getCurrentFunds().length,
+        lookback: this.cycleLookbackFiles,
+        pending: 0,
+        republished: 0,
+        error: targeted
+          ? null
+          : `No hay planilla CNV para ${documentDate}`,
+        upToDate: Boolean(targeted),
+      }
+    }
+
+    if (toIngest.length === 0) {
+      return {
+        source: 'cnv',
+        documentDate: latest.documentDate,
+        presentationId: latest.presentationId,
+        upserted: 0,
+        parsedFunds: 0,
+        currentFunds: this.repository.getCurrentFunds().length,
+        lookback: this.cycleLookbackFiles,
+        pending: 0,
+        daysIngested: 0,
+        republished: 0,
+        upToDate: true,
+        composicion: { skipped: true, reason: 'up-to-date' },
+      }
+    }
+
+    console.log('[cafci-worker] CNV cycle pending days', {
+      lookback: this.cycleLookbackFiles,
+      pending: toIngest.length,
+      dates: toIngest.map(document => document.documentDate),
+    })
+
     const results = []
     for (const document of toIngest) {
       results.push(await this.ingestCnvDocument(document))
     }
 
     const primary = toIngest[toIngest.length - 1]
-    const republished = toIngest.filter(
+    const catchUp = toIngest.filter(
       document => document.documentDate !== primary.documentDate,
     )
 
-    if (republished.length > 0) {
-      console.log('[cafci-worker] CNV republicaciones re-ingeridas', {
-        count: republished.length,
-        dates: republished.map(document => document.documentDate),
+    if (catchUp.length > 0) {
+      console.log('[cafci-worker] CNV días previos / republicaciones', {
+        count: catchUp.length,
+        dates: catchUp.map(document => document.documentDate),
       })
     }
 
@@ -447,8 +520,10 @@ export class FundDetailsSyncService {
       presentationId: primary.presentationId,
       upserted,
       parsedFunds,
+      lookback: this.cycleLookbackFiles,
+      pending: toIngest.length,
       daysIngested: results.length,
-      republished: republished.length,
+      republished: catchUp.length,
       results,
       composicion,
       currentFunds: this.repository.getCurrentFunds().length,

@@ -171,7 +171,7 @@ describe('FundDetailsSyncService CNV', () => {
     expect(ingested).toEqual(['updated-may'])
   })
 
-  it('runCycle re-ingiere republicaciones de fechas ya vistas', async () => {
+  it('runCycle re-chequa los últimos N días y solo ingiere lo pendiente', async () => {
     const temp = await createTempRepository()
     cleanups.push(temp.cleanup)
 
@@ -185,8 +185,15 @@ describe('FundDetailsSyncService CNV', () => {
     })
     // Marca legacy: correcciones recientes deben re-chequearse.
     temp.repository.markCnvDateIngested('2026-02-27')
+    // Día ya al día: no debe re-ingerirse.
+    temp.repository.markCnvDateIngested('2026-09-02', {
+      presentationId: 'sep2-ok',
+      receptionAt: '2026-09-02T20:00:00.000Z',
+    })
 
-    const service = new FundDetailsSyncService(temp.repository)
+    const service = new FundDetailsSyncService(temp.repository, {
+      cycleLookbackFiles: 10,
+    })
     const ingested = []
     service.ingestCnvDocument = async document => {
       ingested.push({
@@ -218,6 +225,11 @@ describe('FundDetailsSyncService CNV', () => {
         receptionAt: '2026-09-01T18:16:00.000Z',
       },
       {
+        documentDate: '2026-09-02',
+        presentationId: 'sep2-ok',
+        receptionAt: '2026-09-02T20:00:00.000Z',
+      },
+      {
         documentDate: '2026-09-03',
         presentationId: 'sep3-evening',
         receptionAt: '2026-09-03T23:20:00.000Z',
@@ -240,6 +252,7 @@ describe('FundDetailsSyncService CNV', () => {
     expect(selected.map(d => d.presentationId)).toEqual([
       'feb-updated-may',
       'jun-republished',
+      'sep3-next-day',
       'sep4-v2',
     ])
 
@@ -250,8 +263,82 @@ describe('FundDetailsSyncService CNV', () => {
     expect(ingested).toEqual([
       { date: '2026-02-27', presentationId: 'feb-updated-may' },
       { date: '2026-06-30', presentationId: 'jun-republished' },
+      { date: '2026-09-03', presentationId: 'sep3-next-day' },
       { date: '2026-09-04', presentationId: 'sep4-v2' },
     ])
+  })
+
+  it('el lookback no incluye fechas fuera de la ventana aunque falten', () => {
+    const tempRepository = {
+      getCnvIngestedMeta: () => null,
+    }
+    const service = new FundDetailsSyncService(tempRepository, {
+      cycleLookbackFiles: 2,
+    })
+
+    const selected = service.selectDocumentsForCycle(
+      [
+        {
+          documentDate: '2026-09-01',
+          presentationId: 'd1',
+          receptionAt: '2026-09-01T12:00:00.000Z',
+        },
+        {
+          documentDate: '2026-09-02',
+          presentationId: 'd2',
+          receptionAt: '2026-09-02T12:00:00.000Z',
+        },
+        {
+          documentDate: '2026-09-03',
+          presentationId: 'd3',
+          receptionAt: '2026-09-03T12:00:00.000Z',
+        },
+      ],
+      { now: Date.parse('2026-09-05T15:00:00.000Z') },
+    )
+
+    expect(selected.map(d => d.documentDate)).toEqual([
+      '2026-09-02',
+      '2026-09-03',
+    ])
+  })
+
+  it('salta planillas ya ingeridas con la misma presentationId', () => {
+    const tempRepository = {
+      getCnvIngestedMeta: documentDate => {
+        if (documentDate === '2026-09-04') {
+          return {
+            legacy: false,
+            presentationId: 'sep4-v1',
+            documentId: null,
+            receptionAt: '2026-09-04T20:00:00.000Z',
+          }
+        }
+
+        return null
+      },
+    }
+    const service = new FundDetailsSyncService(tempRepository, {
+      cycleLookbackFiles: 10,
+    })
+
+    const selected = service.selectDocumentsForCycle(
+      [
+        {
+          documentDate: '2026-09-03',
+          presentationId: 'sep3',
+          receptionAt: '2026-09-03T20:00:00.000Z',
+        },
+        {
+          documentDate: '2026-09-04',
+          presentationId: 'sep4-v1',
+          receptionAt: '2026-09-04T20:00:00.000Z',
+        },
+      ],
+      { now: Date.parse('2026-09-05T15:00:00.000Z') },
+    )
+
+    expect(selected.map(d => d.presentationId)).toEqual(['sep3'])
   })
 
   it('en backfill calcula flujo en memoria y no relee toda la historia', async () => {

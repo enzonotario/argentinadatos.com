@@ -69,6 +69,11 @@ export function getPollIntervalMs() {
   )
 }
 
+/** Cantidad de planillas CNV recientes a re-chequear en cada ciclo. */
+export function getCycleLookbackFiles() {
+  return readNumberEnv(['CAFCI_WORKER_CYCLE_LOOKBACK'], 10)
+}
+
 export function getR2UploadIntervalMs() {
   return readNumberEnv(
     ['CAFCI_WORKER_R2_UPLOAD_INTERVAL_MS'],
