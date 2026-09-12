@@ -2,7 +2,7 @@
   "fondoId": "1916",
   "claseId": "6624",
   "nombre": "Fundcorp Renta Pesos - Clase B",
-  "fechaActualizacion": "2026-09-11T14:20:04.000Z",
+  "fechaActualizacion": "2026-09-11T20:27:03.000Z",
   "historico": [
     {
       "slug": "fundcorp-renta-pesos-clase-b",
@@ -450,6 +450,22 @@
       "retornoDiario": -0.002944,
       "retornoAcumulado": 1.882,
       "flujoEstimado": -0.000005,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "fundcorp-renta-pesos-clase-b",
+      "fondoId": "1916",
+      "claseId": "6624",
+      "nombre": "Fundcorp Renta Pesos - Clase B",
+      "fecha": "2026-09-10",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": null,
+      "valorCuotaparte": 1019.1,
+      "patrimonio": 1019.1,
+      "retornoDiario": 0.027483,
+      "retornoAcumulado": 1.91,
+      "flujoEstimado": -0.000002,
       "origen": "cnv-excel"
     }
   ]

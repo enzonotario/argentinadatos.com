@@ -2,7 +2,7 @@
   "fondoId": "1973",
   "claseId": "6585",
   "nombre": "ConoSur Financiamiento II - Clase C",
-  "fecha": "2026-09-09",
+  "fecha": "2026-09-10",
   "administradora": "Cono Sur S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,22 +13,31 @@
   "duracion": null,
   "moneda": "Peso Argentino",
   "codigoCNV": "1973",
-  "patrimonio": 1003.6,
+  "patrimonio": 1002.97,
   "cantidadCuotapartes": 1000,
   "inversionMinima": 1,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1003.6,
-    "variacionDiariaPct": 0.328,
-    "ultimos7Dias": -2.2318,
-    "unMes": -2.169,
+    "valorCuotaparte": 1002.97,
+    "variacionDiariaPct": -0.063,
+    "ultimos7Dias": -2.0489,
+    "unMes": -2.23,
     "noventaDias": null,
     "cientoOchentaDias": null,
     "enElAnio": null,
     "doceMeses": null
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Pagare #UMV301060054",
+      "porcentaje": 60.38
+    },
+    {
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 38.5
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 0,

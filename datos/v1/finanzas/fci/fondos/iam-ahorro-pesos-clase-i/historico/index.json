@@ -2,7 +2,7 @@
   "fondoId": "636",
   "claseId": "6055",
   "nombre": "IAM Ahorro Pesos - Clase I",
-  "fechaActualizacion": "2026-09-11T14:20:04.000Z",
+  "fechaActualizacion": "2026-09-11T20:27:03.000Z",
   "historico": [
     {
       "slug": "iam-ahorro-pesos-clase-i",
@@ -2830,10 +2830,26 @@
       "categoriaKey": "mercadoDinero",
       "horizonte": "Corto Plazo",
       "valorCuotaparte": 1159.142,
-      "patrimonio": 416203232.44,
+      "patrimonio": 415819744.96,
       "retornoDiario": 0.049889,
       "retornoAcumulado": 15.719444,
-      "flujoEstimado": 19.466756,
+      "flujoEstimado": -383468.013244,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "iam-ahorro-pesos-clase-i",
+      "fondoId": "636",
+      "claseId": "6055",
+      "nombre": "IAM Ahorro Pesos - Clase I",
+      "fecha": "2026-09-10",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1159.73,
+      "patrimonio": 416030518.47,
+      "retornoDiario": 0.050727,
+      "retornoAcumulado": 15.778145,
+      "flujoEstimado": -159.372026,
       "origen": "cnv-excel"
     }
   ]
