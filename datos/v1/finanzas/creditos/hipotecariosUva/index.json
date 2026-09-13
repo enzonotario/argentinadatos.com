@@ -1,5 +1,15 @@
 [
   {
+    "entidad": "Ciudad",
+    "nombreComercial": "Ciudad",
+    "tna": 0.065,
+    "metadata": {
+      "plazo_max_anios": 25,
+      "relacion_cuota_ingreso": "25%",
+      "financiamiento": "70%"
+    }
+  },
+  {
     "entidad": "BNA",
     "nombreComercial": "BNA",
     "tna": 0.067,
@@ -30,21 +40,11 @@
     }
   },
   {
-    "entidad": "Ciudad",
-    "nombreComercial": "Ciudad",
-    "tna": 0.075,
-    "metadata": {
-      "plazo_max_anios": 25,
-      "relacion_cuota_ingreso": "25%",
-      "financiamiento": "70%"
-    }
-  },
-  {
     "entidad": "Supervielle",
     "nombreComercial": "Supervielle",
     "tna": 0.075,
     "metadata": {
-      "plazo_max_anios": 15,
+      "plazo_max_anios": 20,
       "relacion_cuota_ingreso": "25%",
       "financiamiento": "65%"
     }
@@ -87,6 +87,16 @@
       "plazo_max_anios": 20,
       "relacion_cuota_ingreso": "25%",
       "financiamiento": "70%"
+    }
+  },
+  {
+    "entidad": "Grupo Petersen",
+    "nombreComercial": "Grupo Petersen",
+    "tna": 0.075,
+    "metadata": {
+      "plazo_max_anios": 20,
+      "relacion_cuota_ingreso": "30%",
+      "financiamiento": "75%"
     }
   },
   {
@@ -147,16 +157,6 @@
       "plazo_max_anios": 12,
       "relacion_cuota_ingreso": "25%",
       "financiamiento": "70%"
-    }
-  },
-  {
-    "entidad": "Grupo Petersen",
-    "nombreComercial": "Grupo Petersen",
-    "tna": 0.099,
-    "metadata": {
-      "plazo_max_anios": 20,
-      "relacion_cuota_ingreso": "30%",
-      "financiamiento": "75%"
     }
   },
   {
