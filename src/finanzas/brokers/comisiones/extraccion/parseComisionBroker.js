@@ -51,6 +51,7 @@ export function normalizarProducto(texto) {
   }
   if (
     /cheque/.test(t) ||
+    /echeq/.test(t) ||
     /pagare/.test(t) ||
     /\bfce\b/.test(t) ||
     /factura de credito/.test(t)
@@ -114,7 +115,7 @@ export function productosDesdeConcepto(texto) {
   if (/alquiler/.test(t) || (/prestamo/.test(t) && /titulo|valor/.test(t))) {
     return ['alquiler_titulos']
   }
-  if (/cheque|pagare|\bfce\b|factura de credito/.test(t)) return ['cheques']
+  if (/cheque|echeq|pagare|\bfce\b|factura de credito/.test(t)) return ['cheques']
   if (/licitacion|canje|suscripcion(es)? primaria/.test(t)) {
     return ['licitaciones']
   }

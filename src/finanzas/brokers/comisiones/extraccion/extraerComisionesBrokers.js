@@ -5,6 +5,10 @@ import { extraerCocos } from './extraerCocos.js'
 import { extraerPpi } from './extraerPpi.js'
 import { extraerFiwind } from './extraerFiwind.js'
 import { extraerIebMas } from './extraerIebMas.js'
+import { extraerEcoValores } from './extraerEcoValores.js'
+import { extraerMacroSecurities } from './extraerMacroSecurities.js'
+import { extraerPuente } from './extraerPuente.js'
+import { extraerGaliciaSecurities } from './extraerGaliciaSecurities.js'
 import { logGrupo, logError, logMensaje } from '@/log.js'
 
 const log = logGrupo({
@@ -20,6 +24,10 @@ const FUENTES = [
   { nombre: 'ppi', extraer: extraerPpi },
   { nombre: 'fiwind', extraer: extraerFiwind },
   { nombre: 'iebmas', extraer: extraerIebMas },
+  { nombre: 'ecovalores', extraer: extraerEcoValores },
+  { nombre: 'macro', extraer: extraerMacroSecurities },
+  { nombre: 'puente', extraer: extraerPuente },
+  { nombre: 'galicia', extraer: extraerGaliciaSecurities },
 ]
 
 export async function extraerComisionesBrokers() {

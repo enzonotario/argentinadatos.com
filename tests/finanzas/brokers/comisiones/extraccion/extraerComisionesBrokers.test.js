@@ -20,6 +20,10 @@ import { parsearCocos } from '@/finanzas/brokers/comisiones/extraccion/extraerCo
 import { parsearPpi } from '@/finanzas/brokers/comisiones/extraccion/extraerPpi.js'
 import { parsearFiwind } from '@/finanzas/brokers/comisiones/extraccion/extraerFiwind.js'
 import { parsearIebMas } from '@/finanzas/brokers/comisiones/extraccion/extraerIebMas.js'
+import { parsearEcoValores } from '@/finanzas/brokers/comisiones/extraccion/extraerEcoValores.js'
+import { parsearMacroSecuritiesTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerMacroSecurities.js'
+import { parsearPuenteTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerPuente.js'
+import { parsearGaliciaSecurities } from '@/finanzas/brokers/comisiones/extraccion/extraerGaliciaSecurities.js'
 
 const fixturesDir = join(dirname(fileURLToPath(import.meta.url)), 'fixtures')
 
@@ -32,6 +36,7 @@ describe('catálogo producto', () => {
       'obligaciones_negociables',
     )
     expect(normalizarProducto('Alquiler de Títulos')).toBe('alquiler_titulos')
+    expect(normalizarProducto('Echeqs / CPD')).toBe('cheques')
     expect(PRODUCTOS_BROKER).toContain('licitaciones')
     expect(PRODUCTOS_BROKER).not.toContain('abono')
   })
@@ -358,6 +363,174 @@ describe('parsearIebMas', () => {
   })
 })
 
+describe('parsearEcoValores', () => {
+  it('toma No Asesorados sin club/intraday y máximos de cauciones/cheques/fci', () => {
+    const html = readFileSync(join(fixturesDir, 'eco-tarifario.html'), 'utf8')
+    const filas = parsearEcoValores(html)
+
+    expect(filas.find((f) => f.producto === 'acciones')).toMatchObject({
+      entidad: 'ecovalores',
+      plan: 'no_asesorado',
+      tasa: 0.0033,
+      derechoMercado: 0.0005,
+    })
+    expect(filas.find((f) => f.producto === 'cedears')).toMatchObject({
+      tasa: 0.0033,
+    })
+    expect(filas.find((f) => f.producto === 'bonos')).toMatchObject({
+      tasa: 0.0049,
+      derechoMercado: 0.0001,
+    })
+    expect(filas.find((f) => f.producto === 'futuros')).toMatchObject({
+      tasa: 0.001,
+    })
+    expect(filas.find((f) => f.producto === 'opciones')).toMatchObject({
+      tasa: 0.0021,
+    })
+    expect(
+      filas.find((f) => f.producto === 'cauciones' && f.operacion === 'colocadora'),
+    ).toMatchObject({
+      tasa: 0.0025,
+      tasaEsTope: true,
+      tasaBase: 'mensual',
+      prorrateoDias: 30,
+    })
+    expect(
+      filas.find((f) => f.producto === 'cauciones' && f.operacion === 'tomadora'),
+    ).toMatchObject({
+      tasa: 0.005,
+    })
+    expect(filas.find((f) => f.producto === 'cheques')).toMatchObject({
+      tasa: 0.07,
+      tasaEsTope: true,
+    })
+    expect(filas.find((f) => f.producto === 'fci')).toMatchObject({
+      tasa: 0,
+    })
+  })
+})
+
+describe('parsearMacroSecuritiesTexto', () => {
+  it('extrae aranceles indicativos parseables', () => {
+    const texto = readFileSync(join(fixturesDir, 'macro-aranceles.txt'), 'utf8')
+    const filas = parsearMacroSecuritiesTexto(texto)
+
+    expect(filas.find((f) => f.producto === 'acciones')).toMatchObject({
+      entidad: 'macro',
+      tasa: 0.01,
+      ivaAdicional: true,
+      comisionMinima: 5,
+    })
+    expect(filas.find((f) => f.producto === 'bonos')).toMatchObject({
+      tasa: 0.01,
+    })
+    expect(filas.find((f) => f.producto === 'obligaciones_negociables')).toMatchObject({
+      tasa: 0.005,
+    })
+    expect(filas.find((f) => f.producto === 'opciones')).toMatchObject({
+      tasa: 0.015,
+    })
+    expect(filas.find((f) => f.producto === 'futuros')).toMatchObject({
+      tasa: 0.01,
+    })
+    expect(filas.find((f) => f.producto === 'licitaciones')).toMatchObject({
+      tasa: 0.01,
+    })
+    expect(filas.find((f) => f.producto === 'cheques')).toMatchObject({
+      tasa: 0.04,
+      tasaBase: 'tna',
+    })
+    expect(filas.some((f) => f.producto === 'cauciones')).toBe(false)
+  })
+})
+
+describe('parsearPuenteTexto', () => {
+  it('toma columna Internet del PDF de comisiones', () => {
+    const texto = readFileSync(
+      join(fixturesDir, 'puente-comisiones.txt'),
+      'utf8',
+    )
+    const filas = parsearPuenteTexto(texto)
+
+    expect(filas.find((f) => f.producto === 'acciones' && f.moneda === 'ARS')).toMatchObject({
+      entidad: 'puente',
+      tasa: 0.005,
+      ivaAdicional: true,
+      derechoMercado: 0.0006,
+    })
+    expect(
+      filas.find((f) => f.producto === 'cauciones' && f.operacion === 'colocadora' && f.moneda === 'ARS'),
+    ).toMatchObject({
+      tasa: 0.015,
+      prorrateoDias: 90,
+    })
+    expect(
+      filas.find((f) => f.producto === 'cauciones' && f.operacion === 'tomadora' && f.moneda === 'ARS'),
+    ).toMatchObject({
+      tasa: 0.05,
+    })
+    expect(filas.find((f) => f.producto === 'opciones')).toMatchObject({
+      tasa: 0.01,
+    })
+    expect(filas.find((f) => f.producto === 'futuros')).toMatchObject({
+      tasa: 0.01,
+    })
+    expect(filas.find((f) => f.producto === 'cheques')).toMatchObject({
+      tasa: 0.01,
+    })
+    expect(
+      filas.some((f) => f.producto === 'alquiler_titulos' && f.operacion === 'colocadora'),
+    ).toBe(true)
+  })
+})
+
+describe('parsearGaliciaSecurities', () => {
+  it('extrae comisiones máximas del tarifario publicado', () => {
+    const html = readFileSync(
+      join(fixturesDir, 'galicia-comisiones.html'),
+      'utf8',
+    )
+    const filas = parsearGaliciaSecurities(html)
+
+    expect(filas.find((f) => f.producto === 'acciones')).toMatchObject({
+      entidad: 'galicia',
+      tasa: 0.015,
+      tasaEsTope: true,
+      ivaAdicional: true,
+    })
+    expect(filas.find((f) => f.producto === 'cedears')).toMatchObject({
+      tasa: 0.015,
+    })
+    expect(filas.find((f) => f.producto === 'bonos')).toMatchObject({
+      tasa: 0.015,
+      tasaEsTope: true,
+    })
+    expect(filas.find((f) => f.producto === 'cauciones')).toMatchObject({
+      tasa: 0.004,
+      tasaBase: 'mensual',
+      prorrateoDias: 30,
+    })
+    expect(filas.find((f) => f.producto === 'opciones')).toMatchObject({
+      tasa: 0.025,
+    })
+    expect(filas.find((f) => f.producto === 'futuros')).toMatchObject({
+      tasa: 0.02,
+    })
+    expect(
+      filas.find((f) => f.producto === 'cheques' && f.operacion === 'venta'),
+    ).toMatchObject({
+      tasa: 0.025,
+      comisionMinima: 50,
+    })
+    expect(
+      filas.find((f) => f.producto === 'cheques' && f.operacion === 'compra'),
+    ).toMatchObject({
+      tasa: 0.015,
+      comisionMinima: 50,
+    })
+  })
+})
+
 describe('crearComisionBroker', () => {
   it('completa shape comparable', () => {
     const fila = crearComisionBroker({
@@ -428,6 +601,30 @@ describe('extraerComisionesBrokers aggregator', () => {
       '@/finanzas/brokers/comisiones/extraccion/extraerIebMas.js',
       () => ({
         extraerIebMas: vi.fn(async () => []),
+      }),
+    )
+    vi.doMock(
+      '@/finanzas/brokers/comisiones/extraccion/extraerEcoValores.js',
+      () => ({
+        extraerEcoValores: vi.fn(async () => []),
+      }),
+    )
+    vi.doMock(
+      '@/finanzas/brokers/comisiones/extraccion/extraerMacroSecurities.js',
+      () => ({
+        extraerMacroSecurities: vi.fn(async () => []),
+      }),
+    )
+    vi.doMock(
+      '@/finanzas/brokers/comisiones/extraccion/extraerPuente.js',
+      () => ({
+        extraerPuente: vi.fn(async () => []),
+      }),
+    )
+    vi.doMock(
+      '@/finanzas/brokers/comisiones/extraccion/extraerGaliciaSecurities.js',
+      () => ({
+        extraerGaliciaSecurities: vi.fn(async () => []),
       }),
     )
 

@@ -7,6 +7,11 @@ import { parsearBullPdfTexto } from '@/finanzas/brokers/comisiones/extraccion/ex
 import { parsearCocos } from '@/finanzas/brokers/comisiones/extraccion/extraerCocos.js'
 import { parsearPpi } from '@/finanzas/brokers/comisiones/extraccion/extraerPpi.js'
 import { parsearFiwind } from '@/finanzas/brokers/comisiones/extraccion/extraerFiwind.js'
+import { parsearIebMas } from '@/finanzas/brokers/comisiones/extraccion/extraerIebMas.js'
+import { parsearEcoValores } from '@/finanzas/brokers/comisiones/extraccion/extraerEcoValores.js'
+import { parsearMacroSecuritiesTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerMacroSecurities.js'
+import { parsearPuenteTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerPuente.js'
+import { parsearGaliciaSecurities } from '@/finanzas/brokers/comisiones/extraccion/extraerGaliciaSecurities.js'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const fx = join(
@@ -21,6 +26,17 @@ const comisiones = [
   ...parsearCocos(readFileSync(join(fx, 'cocos-tarifario.html'), 'utf8')),
   ...parsearPpi(readFileSync(join(fx, 'ppi-comisiones.html'), 'utf8')),
   ...parsearFiwind(readFileSync(join(fx, 'fiwind-comisiones.html'), 'utf8')),
+  ...parsearIebMas(readFileSync(join(fx, 'iebmas-planes.html'), 'utf8')),
+  ...parsearEcoValores(readFileSync(join(fx, 'eco-tarifario.html'), 'utf8')),
+  ...parsearMacroSecuritiesTexto(
+    readFileSync(join(fx, 'macro-aranceles.txt'), 'utf8'),
+  ),
+  ...parsearPuenteTexto(
+    readFileSync(join(fx, 'puente-comisiones.txt'), 'utf8'),
+  ),
+  ...parsearGaliciaSecurities(
+    readFileSync(join(fx, 'galicia-comisiones.html'), 'utf8'),
+  ),
 ]
 
 const payload = {
