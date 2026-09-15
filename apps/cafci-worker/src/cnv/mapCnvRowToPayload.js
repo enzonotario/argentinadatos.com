@@ -33,7 +33,24 @@ export function periodReturnPercent(vcpNew, vcpOld) {
 }
 
 /**
- * Anualiza un retorno de período al estilo TNA simple: (ret/días)*365*100
+ * Anualiza un retorno de período (%) al estilo TNA simple: (ret%/días)*365.
+ * Útil para rankings de money market; no sustituye los campos de período CNV.
+ */
+export function annualizePeriodReturnPercent(periodPercent, days) {
+  if (
+    typeof periodPercent !== 'number' ||
+    !Number.isFinite(periodPercent) ||
+    !days ||
+    days <= 0
+  ) {
+    return null
+  }
+
+  return Number(((periodPercent / days) * 365).toFixed(4))
+}
+
+/**
+ * Anualiza un retorno VCP al estilo TNA simple: (ret/días)*365*100
  * Útil para rankings de money market; no usar para campos publicados de CNV.
  */
 export function annualizeReturnPercent(vcpNew, vcpOld, days) {
@@ -73,6 +90,9 @@ function lookbackToleranceDays(targetDays) {
  * rolling). Preferimos rolling cuando hay histórico; CNV queda como fallback.
  * `noventaDias`/`cientoOchentaDias` de CAFCI suelen venir anualizados — no
  * usarlos como período.
+ *
+ * Además expone `dias*` (días reales del lookback) y `tnaEstimada` (TNA
+ * simple: unMes → 7D → variación diaria, alineada a esos días).
  */
 export function computeRendimientosFromHistory({
   fecha,
@@ -180,25 +200,69 @@ export function computeRendimientosFromHistory({
   const twelveMonths = findNear(365)
   const ytd = findYtd()
 
+  // Rolling ~30D; CNV unMes (= vs fin de mes previo) solo como fallback.
+  const unMesFromCnv =
+    thirty == null && typeof variacionUnMesPct === 'number'
+      ? variacionUnMesPct
+      : null
+  const unMes = thirty?.value ?? unMesFromCnv
+  // Días reales del lookback VCP; si cae al unMes CNV se asume 30.
+  const diasUnMes = thirty?.days ?? (unMesFromCnv != null ? 30 : null)
+
+  const ultimos7Dias = seven?.value ?? null
+  const diasUltimos7Dias = seven?.days ?? null
+  const daily =
+    typeof variacionDiariaPct === 'number' ? variacionDiariaPct : null
+
+  const tnaEstimadaPick =
+    unMes != null && diasUnMes != null
+      ? {
+          value: annualizePeriodReturnPercent(unMes, diasUnMes),
+          days: diasUnMes,
+          periodo: 'unMes',
+        }
+      : ultimos7Dias != null && diasUltimos7Dias != null
+        ? {
+            value: annualizePeriodReturnPercent(
+              ultimos7Dias,
+              diasUltimos7Dias,
+            ),
+            days: diasUltimos7Dias,
+            periodo: 'ultimos7Dias',
+          }
+        : daily != null
+          ? {
+              value: annualizePeriodReturnPercent(daily, 1),
+              days: 1,
+              periodo: 'variacionDiariaPct',
+            }
+          : null
+
   return {
     valorCuotaparte: valorCuotaparte ?? null,
-    variacionDiariaPct:
-      typeof variacionDiariaPct === 'number' ? variacionDiariaPct : null,
-    ultimos7Dias: seven?.value ?? null,
-    // Rolling ~30D; CNV unMes (= vs fin de mes previo) solo como fallback.
-    unMes:
-      thirty?.value ??
-      (typeof variacionUnMesPct === 'number' ? variacionUnMesPct : null),
+    variacionDiariaPct: daily,
+    ultimos7Dias,
+    diasUltimos7Dias,
+    unMes,
+    diasUnMes,
     noventaDias: ninety?.value ?? null,
+    diasNoventaDias: ninety?.days ?? null,
     cientoOchentaDias: oneEighty?.value ?? null,
+    diasCientoOchentaDias: oneEighty?.days ?? null,
     enElAnio:
       ytd?.value ??
       (typeof variacionEnElAnioPct === 'number' ? variacionEnElAnioPct : null),
+    diasEnElAnio: ytd?.days ?? null,
     doceMeses:
       twelveMonths?.value ??
       (typeof variacionDoceMesesPct === 'number'
         ? variacionDoceMesesPct
         : null),
+    diasDoceMeses: twelveMonths?.days ?? null,
+    // TNA simple alineada a los días reales del lookback (unMes → 7D → 1D).
+    tnaEstimada: tnaEstimadaPick?.value ?? null,
+    tnaEstimadaDias: tnaEstimadaPick?.days ?? null,
+    tnaEstimadaPeriodo: tnaEstimadaPick?.periodo ?? null,
   }
 }
 

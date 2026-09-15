@@ -5205,7 +5205,7 @@
       "RendimientosHistoricoFondo": {
         "title": "RendimientosHistoricoFondo",
         "type": "object",
-        "description": "Retornos de período en % (planilla CNV Cuotapartes), no TNA anualizada. `unMes`/`enElAnio`/`doceMeses` salen de las columnas de variación del Excel; `ultimos7Dias` se estima desde VCP histórico cuando hay datos.",
+        "description": "Retornos de período en % (planilla CNV / lookback VCP). Los campos `dias*` son los días reales usados en cada ventana (el lookback admite tolerancia). `tnaEstimada` es TNA simple `(retorno/días)*365` con fallback unMes → ultimos7Dias → variacionDiariaPct.",
         "properties": {
           "valorCuotaparte": {
             "type": "number",
@@ -5220,25 +5220,67 @@
             "type": "number",
             "nullable": true
           },
+          "diasUltimos7Dias": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Días calendario reales entre el VCP de lookback ~7D y la fecha actual"
+          },
           "unMes": {
             "type": "number",
             "nullable": true
           },
+          "diasUnMes": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Días reales del lookback ~30D; si el valor viene de la columna CNV unMes (sin histórico), se asume 30"
+          },
           "noventaDias": {
             "type": "number",
+            "nullable": true
+          },
+          "diasNoventaDias": {
+            "type": "integer",
             "nullable": true
           },
           "cientoOchentaDias": {
             "type": "number",
             "nullable": true
           },
+          "diasCientoOchentaDias": {
+            "type": "integer",
+            "nullable": true
+          },
           "enElAnio": {
             "type": "number",
+            "nullable": true
+          },
+          "diasEnElAnio": {
+            "type": "integer",
             "nullable": true
           },
           "doceMeses": {
             "type": "number",
             "nullable": true
+          },
+          "diasDoceMeses": {
+            "type": "integer",
+            "nullable": true
+          },
+          "tnaEstimada": {
+            "type": "number",
+            "nullable": true,
+            "description": "TNA simple estimada: (retorno de período / días) × 365. Prioridad unMes → ultimos7Dias → variacionDiariaPct"
+          },
+          "tnaEstimadaDias": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Días usados para calcular tnaEstimada"
+          },
+          "tnaEstimadaPeriodo": {
+            "type": "string",
+            "nullable": true,
+            "enum": ["unMes", "ultimos7Dias", "variacionDiariaPct"],
+            "description": "Ventana de origen de tnaEstimada"
           }
         }
       },

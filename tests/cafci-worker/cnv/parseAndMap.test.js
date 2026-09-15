@@ -4,6 +4,7 @@ import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { parseCnvCuotaparteExcel } from '../../../apps/cafci-worker/src/cnv/parseCnvExcel.js'
 import {
+  annualizePeriodReturnPercent,
   computeRendimientosFromHistory,
   mapCnvRowToPayload,
   periodReturnPercent,
@@ -154,10 +155,18 @@ describe('computeRendimientosFromHistory', () => {
       3,
     )
     expect(rendimientos.unMes).not.toBeCloseTo(-9.849, 3)
+    expect(rendimientos.diasUnMes).toBe(30)
     expect(rendimientos.enElAnio).toBeCloseTo(-6.474, 3)
     expect(rendimientos.doceMeses).toBeCloseTo(26.535, 3)
     expect(rendimientos.ultimos7Dias).toBeCloseTo(
       periodReturnPercent(250943.119, 255000),
+      3,
+    )
+    expect(rendimientos.diasUltimos7Dias).toBe(7)
+    expect(rendimientos.tnaEstimadaPeriodo).toBe('unMes')
+    expect(rendimientos.tnaEstimadaDias).toBe(30)
+    expect(rendimientos.tnaEstimada).toBeCloseTo(
+      annualizePeriodReturnPercent(rendimientos.unMes, 30),
       3,
     )
   })
@@ -175,6 +184,46 @@ describe('computeRendimientosFromHistory', () => {
       3,
     )
     expect(rendimientos.unMes).toBeCloseTo(-9.849, 3)
+    expect(rendimientos.diasUnMes).toBe(30)
+    expect(rendimientos.tnaEstimadaPeriodo).toBe('unMes')
+    expect(rendimientos.tnaEstimada).toBeCloseTo(
+      annualizePeriodReturnPercent(-9.849, 30),
+      3,
+    )
+  })
+
+  it('anualiza desde 7D cuando no hay unMes', () => {
+    const rendimientos = computeRendimientosFromHistory({
+      fecha: '2026-08-14',
+      valorCuotaparte: 250943.119,
+      history: [{ fecha: '2026-08-07', valorCuotaparte: 255000 }],
+    })
+
+    expect(rendimientos.unMes).toBeNull()
+    expect(rendimientos.tnaEstimadaPeriodo).toBe('ultimos7Dias')
+    expect(rendimientos.tnaEstimadaDias).toBe(7)
+    expect(rendimientos.tnaEstimada).toBeCloseTo(
+      annualizePeriodReturnPercent(rendimientos.ultimos7Dias, 7),
+      3,
+    )
+  })
+
+  it('anualiza desde variación diaria cuando no hay ventanas más largas', () => {
+    const rendimientos = computeRendimientosFromHistory({
+      fecha: '2026-08-14',
+      valorCuotaparte: 250943.119,
+      variacionDiariaPct: 0.05,
+      history: [],
+    })
+
+    expect(rendimientos.unMes).toBeNull()
+    expect(rendimientos.ultimos7Dias).toBeNull()
+    expect(rendimientos.tnaEstimadaPeriodo).toBe('variacionDiariaPct')
+    expect(rendimientos.tnaEstimadaDias).toBe(1)
+    expect(rendimientos.tnaEstimada).toBeCloseTo(
+      annualizePeriodReturnPercent(0.05, 1),
+      3,
+    )
   })
 
   it('usa VCP histórico como período (no TNA) cuando faltan columnas CNV', () => {
@@ -198,6 +247,13 @@ describe('computeRendimientosFromHistory', () => {
       3,
     )
     expect(Math.abs(rendimientos.unMes)).toBeLessThan(5)
+    expect(rendimientos.diasUnMes).toBe(28)
+    expect(rendimientos.tnaEstimadaPeriodo).toBe('unMes')
+    expect(rendimientos.tnaEstimadaDias).toBe(28)
+    expect(rendimientos.tnaEstimada).toBeCloseTo(
+      annualizePeriodReturnPercent(rendimientos.unMes, 28),
+      3,
+    )
   })
 
   it('devuelve null en 30D si no hay historia suficiente tras filtrar placeholders', () => {
@@ -213,6 +269,7 @@ describe('computeRendimientosFromHistory', () => {
 
     expect(rendimientos.ultimos7Dias).toBeTypeOf('number')
     expect(rendimientos.unMes).toBeNull()
+    expect(rendimientos.tnaEstimadaPeriodo).toBe('ultimos7Dias')
   })
 })
 

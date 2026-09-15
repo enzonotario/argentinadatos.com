@@ -39,14 +39,34 @@ export function normalizarPayloadFondo(payload = {}) {
         rendimientos.dailyVariationPct ??
         null,
       ultimos7Dias: rendimientos.ultimos7Dias ?? rendimientos.last7Days ?? null,
+      diasUltimos7Dias:
+        rendimientos.diasUltimos7Dias ?? rendimientos.last7DaysDays ?? null,
       unMes: rendimientos.unMes ?? rendimientos.oneMonth ?? null,
+      diasUnMes: rendimientos.diasUnMes ?? rendimientos.oneMonthDays ?? null,
       noventaDias: rendimientos.noventaDias ?? rendimientos.ninetyDays ?? null,
+      diasNoventaDias:
+        rendimientos.diasNoventaDias ?? rendimientos.ninetyDaysDays ?? null,
       cientoOchentaDias:
         rendimientos.cientoOchentaDias ??
         rendimientos.oneHundredEightyDays ??
         null,
+      diasCientoOchentaDias:
+        rendimientos.diasCientoOchentaDias ??
+        rendimientos.oneHundredEightyDaysDays ??
+        null,
       enElAnio: rendimientos.enElAnio ?? rendimientos.yearToDate ?? null,
+      diasEnElAnio:
+        rendimientos.diasEnElAnio ?? rendimientos.yearToDateDays ?? null,
       doceMeses: rendimientos.doceMeses ?? rendimientos.twelveMonths ?? null,
+      diasDoceMeses:
+        rendimientos.diasDoceMeses ?? rendimientos.twelveMonthsDays ?? null,
+      tnaEstimada: rendimientos.tnaEstimada ?? rendimientos.estimatedTna ?? null,
+      tnaEstimadaDias:
+        rendimientos.tnaEstimadaDias ?? rendimientos.estimatedTnaDays ?? null,
+      tnaEstimadaPeriodo:
+        rendimientos.tnaEstimadaPeriodo ??
+        rendimientos.estimatedTnaPeriod ??
+        null,
     },
     composicionCartera: composicionCartera.map(item => ({
       nombre: item.nombre ?? item.name ?? null,
