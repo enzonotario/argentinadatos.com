@@ -24,6 +24,7 @@ import { parsearEcoValores } from '@/finanzas/brokers/comisiones/extraccion/extr
 import { parsearMacroSecuritiesTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerMacroSecurities.js'
 import { parsearPuenteTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerPuente.js'
 import { parsearGaliciaSecurities } from '@/finanzas/brokers/comisiones/extraccion/extraerGaliciaSecurities.js'
+import { parsearRava } from '@/finanzas/brokers/comisiones/extraccion/extraerRava.js'
 
 const fixturesDir = join(dirname(fileURLToPath(import.meta.url)), 'fixtures')
 
@@ -531,6 +532,53 @@ describe('parsearGaliciaSecurities', () => {
   })
 })
 
+describe('parsearRava', () => {
+  it('extrae máximos de renta variable, fija y futuros', () => {
+    const html = readFileSync(join(fixturesDir, 'rava-aranceles.html'), 'utf8')
+    const filas = parsearRava(html)
+
+    expect(filas.find((f) => f.producto === 'acciones')).toMatchObject({
+      entidad: 'rava',
+      nombreComercial: 'Rava Bursátil',
+      tasa: 0.008,
+      tasaEsTope: true,
+      derechoMercado: 0.0008,
+      ivaAdicional: true,
+    })
+    expect(filas.find((f) => f.producto === 'cedears')).toMatchObject({
+      tasa: 0.008,
+    })
+    expect(filas.find((f) => f.producto === 'bonos')).toMatchObject({
+      tasa: 0.008,
+      derechoMercado: 0.0001,
+    })
+    expect(
+      filas.find((f) => f.producto === 'cauciones' && f.operacion === 'tomadora'),
+    ).toMatchObject({
+      tasa: 0.006,
+      tasaBase: 'mensual',
+      prorrateoDias: 30,
+    })
+    expect(
+      filas.find((f) => f.producto === 'cauciones' && f.operacion === 'colocadora'),
+    ).toMatchObject({
+      tasa: 0.0045,
+    })
+    expect(filas.find((f) => f.producto === 'opciones')).toMatchObject({
+      tasa: 0.012,
+    })
+    expect(filas.find((f) => f.producto === 'futuros')).toMatchObject({
+      tasa: 0.005,
+    })
+    expect(filas.find((f) => f.producto === 'licitaciones')).toMatchObject({
+      tasa: 0.0025,
+    })
+    expect(
+      filas.some((f) => f.producto === 'alquiler_titulos'),
+    ).toBe(true)
+  })
+})
+
 describe('crearComisionBroker', () => {
   it('completa shape comparable', () => {
     const fila = crearComisionBroker({
@@ -625,6 +673,12 @@ describe('extraerComisionesBrokers aggregator', () => {
       '@/finanzas/brokers/comisiones/extraccion/extraerGaliciaSecurities.js',
       () => ({
         extraerGaliciaSecurities: vi.fn(async () => []),
+      }),
+    )
+    vi.doMock(
+      '@/finanzas/brokers/comisiones/extraccion/extraerRava.js',
+      () => ({
+        extraerRava: vi.fn(async () => []),
       }),
     )
 
