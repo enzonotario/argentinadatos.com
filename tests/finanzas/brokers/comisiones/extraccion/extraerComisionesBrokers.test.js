@@ -25,6 +25,10 @@ import { parsearEcoValores } from '@/finanzas/brokers/comisiones/extraccion/extr
 import { parsearMacroSecuritiesTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerMacroSecurities.js'
 import { parsearPuenteTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerPuente.js'
 import { parsearAllariaTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerAllaria.js'
+import {
+  parsearSbsTexto,
+  resolverUrlPdfSbs,
+} from '@/finanzas/brokers/comisiones/extraccion/extraerSbs.js'
 import { parsearGaliciaSecurities } from '@/finanzas/brokers/comisiones/extraccion/extraerGaliciaSecurities.js'
 import { parsearRava } from '@/finanzas/brokers/comisiones/extraccion/extraerRava.js'
 
@@ -749,6 +753,89 @@ describe('parsearAllariaTexto', () => {
   })
 })
 
+describe('parsearSbsTexto', () => {
+  it('extrae columna Quicktrade del PDF de aranceles', () => {
+    const texto = readFileSync(join(fixturesDir, 'sbs-aranceles.txt'), 'utf8')
+    const filas = parsearSbsTexto(texto)
+
+    expect(
+      filas.find((f) => f.producto === 'acciones' && f.moneda === 'ARS'),
+    ).toMatchObject({
+      entidad: 'sbs',
+      nombreComercial: 'SBS Trading',
+      plan: 'quicktrade',
+      tasa: 0.007,
+      comisionMinima: 50,
+      ivaAdicional: true,
+    })
+    expect(filas.find((f) => f.producto === 'cedears')).toMatchObject({
+      tasa: 0.007,
+      comisionMinima: 50,
+    })
+    expect(
+      filas.find(
+        (f) =>
+          f.producto === 'acciones' &&
+          f.moneda === 'USD' &&
+          f.metadata?.mercado === 'exterior',
+      ),
+    ).toMatchObject({ tasa: 0.007 })
+    expect(
+      filas.find((f) => f.producto === 'bonos' && f.moneda === 'ARS'),
+    ).toMatchObject({
+      tasa: 0.005,
+      comisionMinima: 50,
+    })
+    expect(
+      filas.find((f) => f.producto === 'obligaciones_negociables'),
+    ).toMatchObject({ tasa: 0.005 })
+    expect(filas.find((f) => f.producto === 'futuros')).toMatchObject({
+      tasa: 0.005,
+    })
+    expect(filas.find((f) => f.producto === 'opciones')).toMatchObject({
+      tasa: 0.007,
+    })
+    expect(filas.find((f) => f.producto === 'cheques')).toMatchObject({
+      tasa: 0.007,
+    })
+    expect(
+      filas.find((f) => f.producto === 'letras' && f.moneda === 'ARS'),
+    ).toMatchObject({
+      tasa: 0.02,
+      tasaBase: 'anual',
+    })
+    expect(
+      filas.find((f) => f.producto === 'letras' && f.moneda === 'USD'),
+    ).toMatchObject({
+      tasa: 0.007,
+      tasaBase: 'anual',
+    })
+    expect(
+      filas.find(
+        (f) => f.producto === 'cauciones' && f.operacion === 'colocadora',
+      ),
+    ).toMatchObject({
+      tasa: 0.015,
+      tasaBase: 'anual',
+    })
+    expect(
+      filas.find((f) => f.producto === 'cauciones' && f.operacion === 'tomadora'),
+    ).toMatchObject({
+      tasa: 0.06,
+      tasaBase: 'anual',
+    })
+    expect(filas.find((f) => f.producto === 'fci')).toMatchObject({
+      tasa: 0,
+      ivaAdicional: false,
+    })
+  })
+
+  it('resuelve PDF desde la página de productos', () => {
+    const html = readFileSync(join(fixturesDir, 'sbs-productos.html'), 'utf8')
+    expect(resolverUrlPdfSbs(html)).toMatch(/arancaeles-trading.*\.pdf$/i)
+  })
+})
+
 describe('crearComisionBroker', () => {
   it('completa shape comparable', () => {
     const fila = crearComisionBroker({
@@ -855,6 +942,12 @@ describe('extraerComisionesBrokers aggregator', () => {
       '@/finanzas/brokers/comisiones/extraccion/extraerAllaria.js',
       () => ({
         extraerAllaria: vi.fn(async () => []),
+      }),
+    )
+    vi.doMock(
+      '@/finanzas/brokers/comisiones/extraccion/extraerSbs.js',
+      () => ({
+        extraerSbs: vi.fn(async () => []),
       }),
     )
 
