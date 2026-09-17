@@ -13,6 +13,7 @@ import { parsearMacroSecuritiesTexto } from '@/finanzas/brokers/comisiones/extra
 import { parsearPuenteTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerPuente.js'
 import { parsearGaliciaSecurities } from '@/finanzas/brokers/comisiones/extraccion/extraerGaliciaSecurities.js'
 import { parsearRava } from '@/finanzas/brokers/comisiones/extraccion/extraerRava.js'
+import { parsearAllariaTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerAllaria.js'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const fx = join(
@@ -39,6 +40,9 @@ const comisiones = [
     readFileSync(join(fx, 'galicia-comisiones.html'), 'utf8'),
   ),
   ...parsearRava(readFileSync(join(fx, 'rava-aranceles.html'), 'utf8')),
+  ...parsearAllariaTexto(
+    readFileSync(join(fx, 'allaria-aranceles.txt'), 'utf8'),
+  ),
 ]
 
 const payload = {

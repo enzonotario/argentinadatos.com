@@ -23,6 +23,7 @@ import { parsearIebMas } from '@/finanzas/brokers/comisiones/extraccion/extraerI
 import { parsearEcoValores } from '@/finanzas/brokers/comisiones/extraccion/extraerEcoValores.js'
 import { parsearMacroSecuritiesTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerMacroSecurities.js'
 import { parsearPuenteTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerPuente.js'
+import { parsearAllariaTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerAllaria.js'
 import { parsearGaliciaSecurities } from '@/finanzas/brokers/comisiones/extraccion/extraerGaliciaSecurities.js'
 import { parsearRava } from '@/finanzas/brokers/comisiones/extraccion/extraerRava.js'
 
@@ -579,6 +580,112 @@ describe('parsearRava', () => {
   })
 })
 
+describe('parsearAllariaTexto', () => {
+  it('extrae autogestión y asistida del PDF de aranceles', () => {
+    const texto = readFileSync(
+      join(fixturesDir, 'allaria-aranceles.txt'),
+      'utf8',
+    )
+    const filas = parsearAllariaTexto(texto)
+
+    expect(
+      filas.find((f) => f.producto === 'acciones' && f.plan === 'autogestion'),
+    ).toMatchObject({
+      entidad: 'allaria',
+      nombreComercial: 'Allaria Inversiones',
+      tasa: 0.005,
+      tasaEsTope: true,
+      ivaAdicional: true,
+    })
+    expect(
+      filas.find((f) => f.producto === 'bonos' && f.plan === 'autogestion'),
+    ).toMatchObject({
+      tasa: 0.0025,
+      ivaAdicional: false,
+    })
+    expect(
+      filas.find((f) => f.producto === 'opciones' && f.plan === 'autogestion'),
+    ).toMatchObject({
+      tasa: 0.006,
+      ivaAdicional: true,
+    })
+    expect(
+      filas.find(
+        (f) =>
+          f.producto === 'acciones' &&
+          f.plan === 'asistida' &&
+          f.moneda === 'ARS' &&
+          !f.metadata?.mercado,
+      ),
+    ).toMatchObject({
+      tasa: 0.015,
+      comisionMinima: 20,
+      ivaAdicional: true,
+    })
+    expect(
+      filas.find(
+        (f) =>
+          f.producto === 'acciones' &&
+          f.plan === 'asistida' &&
+          f.moneda === 'USD',
+      ),
+    ).toMatchObject({
+      tasa: 0.015,
+      comisionMinima: 10,
+      metadata: expect.objectContaining({ mercado: 'exterior' }),
+    })
+    expect(
+      filas.find(
+        (f) =>
+          f.producto === 'bonos' && f.plan === 'asistida' && f.moneda === 'ARS',
+      ),
+    ).toMatchObject({
+      tasa: 0.015,
+      comisionMinima: 20,
+    })
+    expect(
+      filas.find(
+        (f) =>
+          f.producto === 'bonos' && f.plan === 'asistida' && f.moneda === 'USD',
+      ),
+    ).toMatchObject({
+      tasa: 0.015,
+      comisionMinima: 10,
+    })
+    expect(
+      filas.find((f) => f.producto === 'obligaciones_negociables'),
+    ).toMatchObject({
+      plan: 'asistida',
+      tasa: 0.015,
+    })
+    expect(
+      filas.find((f) => f.producto === 'opciones' && f.plan === 'asistida'),
+    ).toMatchObject({
+      tasa: 0.025,
+      comisionMinima: 20,
+    })
+    expect(filas.find((f) => f.producto === 'futuros')).toMatchObject({
+      plan: 'asistida',
+      tasa: 0.015,
+      comisionMinima: 20,
+    })
+    expect(
+      filas.find((f) => f.producto === 'cauciones' && f.operacion === 'tomadora'),
+    ).toMatchObject({
+      tasa: 0.004,
+      prorrateoDias: 30,
+    })
+    expect(
+      filas.find(
+        (f) => f.producto === 'cauciones' && f.operacion === 'colocadora',
+      ),
+    ).toMatchObject({
+      tasa: 0.002,
+      prorrateoDias: 30,
+    })
+  })
+})
+
 describe('crearComisionBroker', () => {
   it('completa shape comparable', () => {
     const fila = crearComisionBroker({
@@ -679,6 +786,12 @@ describe('extraerComisionesBrokers aggregator', () => {
       '@/finanzas/brokers/comisiones/extraccion/extraerRava.js',
       () => ({
         extraerRava: vi.fn(async () => []),
+      }),
+    )
+    vi.doMock(
+      '@/finanzas/brokers/comisiones/extraccion/extraerAllaria.js',
+      () => ({
+        extraerAllaria: vi.fn(async () => []),
       }),
     )
 
