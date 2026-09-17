@@ -2,7 +2,7 @@
   "fondoId": "2008",
   "claseId": "6722",
   "nombre": "Unico Liquidez Pesos - Clase B",
-  "fechaActualizacion": "2026-09-16T19:52:50.000Z",
+  "fechaActualizacion": "2026-09-16T23:28:16.000Z",
   "historico": [
     {
       "slug": "unico-liquidez-pesos-clase-b",
@@ -18,6 +18,22 @@
       "retornoDiario": null,
       "retornoAcumulado": 0,
       "flujoEstimado": null,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "unico-liquidez-pesos-clase-b",
+      "fondoId": "2008",
+      "claseId": "6722",
+      "nombre": "Unico Liquidez Pesos - Clase B",
+      "fecha": "2026-09-16",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 1000.438,
+      "patrimonio": 1000438356.17,
+      "retornoDiario": 0.0438,
+      "retornoAcumulado": 0.0438,
+      "flujoEstimado": 356.17,
       "origen": "cnv-excel"
     }
   ]
