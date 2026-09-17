@@ -67,7 +67,7 @@ export function normalizarProducto(texto) {
   }
   if (/futuro/.test(t)) return 'futuros'
   if (/opcion|ejercicio de opcion/.test(t)) return 'opciones'
-  if (/\bfci\b|fondos? comunes?/.test(t)) return 'fci'
+  if (/\bfcis?\b|fondos? comunes?/.test(t)) return 'fci'
   if (/cedear/.test(t)) return 'cedears'
   if (
     /\bon\b|obligacion(es)? negociable/.test(t) ||
@@ -130,7 +130,7 @@ export function productosDesdeConcepto(texto) {
   if (/futuro/.test(t) && !/accion|cedear|bono|opcion/.test(t)) {
     return ['futuros']
   }
-  if (/\bfci\b|fondos? comunes?/.test(t)) return ['fci']
+  if (/\bfcis?\b|fondos? comunes?/.test(t)) return ['fci']
 
   // Labels que juntan varios instrumentos → una fila por producto comparable.
   if (/cedear/.test(t)) push('cedears')

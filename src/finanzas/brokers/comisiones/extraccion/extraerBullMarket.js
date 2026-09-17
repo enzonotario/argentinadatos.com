@@ -6,9 +6,13 @@ import {
   crearComisionBroker,
   parseTasaComisionTexto,
   parseComisionMinimaTexto,
+  productosDesdeConcepto,
 } from '@/finanzas/brokers/comisiones/extraccion/parseComisionBroker.js'
 import { porcentajeADecimal } from '@/finanzas/compartido/utils/tasas.js'
 
+/** Guía pública con tabla de comisiones preferenciales (acciones/CEDEARs/etc.). */
+export const BULL_COMISIONES_URL =
+  'https://help.bullmarketbrokers.com/guia/comisiones/'
 export const BULL_HELP_URL = 'https://help.bullmarketbrokers.com/'
 export const BULL_MEDIA_API_URL =
   'https://help.bullmarketbrokers.com/wp-json/wp/v2/media'
@@ -21,6 +25,52 @@ const log = logGrupo({
 })
 
 const DERECHO_MERCADO_DEFAULT = porcentajeADecimal(0.045, 6)
+
+const BROWSER_HEADERS = {
+  'User-Agent':
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+  Accept:
+    'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'Accept-Language': 'es-AR,es;q=0.9',
+}
+
+/** Productos que salen de la tabla HTML de la guía (no del PDF de aranceles). */
+const PRODUCTOS_GUIA_HTML = new Set([
+  'acciones',
+  'cedears',
+  'bonos',
+  'opciones',
+  'futuros',
+  'licitaciones',
+  'fci',
+])
+
+/**
+ * @param {string} header
+ * @returns {string|null}
+ */
+function planDesdeHeader(header) {
+  const t = String(header)
+    .normalize('NFD')
+    .replace(/\p{M}/gu, '')
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .trim()
+
+  if (/digital\s*account/.test(t)) return 'digital_account'
+  if (/active\s*trader\s*plus/.test(t)) return 'active_trader_plus'
+  if (/active\s*trader/.test(t)) return 'active_trader'
+  return null
+}
+
+/**
+ * @param {string} producto
+ * @returns {boolean}
+ */
+function ivaAdicionalBullGuia(producto) {
+  // Nota de la guía: títulos públicos (bonos/letras) sin IVA.
+  return producto !== 'bonos' && producto !== 'letras' && producto !== 'fci'
+}
 
 /**
  * @param {string} html
@@ -73,6 +123,97 @@ export function resolverUrlPdfDesdeMedia(media) {
     ) || pdfs[0]
 
   return preferido?.source_url || null
+}
+
+/**
+ * Tabla de comisiones preferenciales en /guia/comisiones/
+ * (Digital Account / Active Trader / Active Trader Plus).
+ * @param {string} html
+ */
+export function parsearBullComisionesHtml(html) {
+  const $ = load(html)
+  /** @type {Array<object>} */
+  const filas = []
+
+  $('table').each((_, table) => {
+    const headerCells = $(table)
+      .find('thead tr')
+      .first()
+      .find('th,td')
+      .map((__, c) => $(c).text().replace(/\s+/g, ' ').trim())
+      .get()
+
+    if (headerCells.length < 2) return
+
+    /** @type {Array<{ idx: number, plan: string }>} */
+    const columnasPlan = []
+    for (let i = 1; i < headerCells.length; i++) {
+      const plan = planDesdeHeader(headerCells[i])
+      if (plan) columnasPlan.push({ idx: i, plan })
+    }
+    if (!columnasPlan.length) return
+
+    $(table)
+      .find('tbody tr')
+      .each((__, tr) => {
+        const celdas = $(tr)
+          .find('th,td')
+          .map((___, c) => $(c).text().replace(/\s+/g, ' ').trim())
+          .get()
+
+        if (celdas.length < 2) return
+
+        const concepto = celdas[0]
+        if (
+          /activaci[oó]n|volumen\s+mensual|tipo\s+de\s+cuenta/i.test(concepto)
+        ) {
+          return
+        }
+
+        const productos = productosDesdeConcepto(concepto)
+        if (!productos.length) return
+
+        for (const { idx, plan } of columnasPlan) {
+          const celda = celdas[idx] || ''
+          const esSinCosto = /^sin\s+(cargo|costo)$/i.test(celda.trim())
+          const parsed = parseTasaComisionTexto(celda)
+
+          if (parsed.tasa === null && !esSinCosto) continue
+
+          const tasa = esSinCosto ? 0 : parsed.tasa
+
+          for (const producto of productos) {
+            filas.push(
+              crearComisionBroker({
+                entidad: 'bullmarket',
+                nombreComercial: 'Bull Market Brokers',
+                producto,
+                operacion: 'ambas',
+                moneda: 'ARS',
+                canal: 'web',
+                plan,
+                tasa,
+                tasaBase: parsed.tasaBaseHint,
+                tasaEsTope: parsed.tasaEsTope,
+                incluyeIva: false,
+                ivaAdicional: ivaAdicionalBullGuia(producto),
+                enlace: BULL_COMISIONES_URL,
+                metadata: {
+                  fuenteUrl: BULL_COMISIONES_URL,
+                  celdaOriginal: `${concepto} | ${headerCells[idx]}: ${celda}`,
+                  notas:
+                    productos.length > 1
+                      ? `Guía /guia/comisiones/. Concepto unificado; fila expandida a ${producto}. Sin IVA ni derechos de mercado en la tabla publicada.`
+                      : 'Guía /guia/comisiones/. Comisiones preferenciales por plan; sin IVA ni derechos de mercado en la tabla publicada.',
+                },
+              }),
+            )
+          }
+        }
+      })
+  })
+
+  return filas
 }
 
 /**
@@ -198,7 +339,7 @@ export function parsearBullPdfTexto(texto) {
         prorrateoDias: null,
         comisionMinima: extraido.minimo ?? spec.defaultMinimo,
         derechoMercado: extraido.derecho ?? spec.defaultDerecho,
-        enlace: BULL_HELP_URL,
+        enlace: BULL_COMISIONES_URL,
         metadata: {
           fuenteUrl: BULL_PDF_FALLBACK_URL,
           celdaOriginal: `${spec.producto}/${spec.operacion}: ${extraido.tasaTexto}`,
@@ -245,7 +386,7 @@ export function parsearBullPdfTexto(texto) {
           ivaAdicional: true,
           comisionMinima: spec.minimo,
           derechoMercado: DERECHO_MERCADO_DEFAULT,
-          enlace: BULL_HELP_URL,
+          enlace: BULL_COMISIONES_URL,
           metadata: {
             fuenteUrl: BULL_PDF_FALLBACK_URL,
             celdaOriginal: `Caución – Pase Bursátil: ${spec.operacion} ${spec.tasaTexto}% mensual`,
@@ -298,7 +439,7 @@ export function parsearBullPdfTexto(texto) {
         tasaEsTope: false,
         incluyeIva: false,
         ivaAdicional: true,
-        enlace: BULL_HELP_URL,
+        enlace: BULL_COMISIONES_URL,
         metadata: {
           fuenteUrl: BULL_PDF_FALLBACK_URL,
           celdaOriginal: `${spec.nota}: ${m[1]}%`,
@@ -326,7 +467,7 @@ export function parsearBullPdfTexto(texto) {
             canal: 'web',
             tasa: parsed.tasa,
             ivaAdicional: true,
-            enlace: BULL_HELP_URL,
+            enlace: BULL_COMISIONES_URL,
             metadata: {
               fuenteUrl: BULL_PDF_FALLBACK_URL,
               celdaOriginal: `Licitación en general: ${m[1]}%`,
@@ -341,15 +482,34 @@ export function parsearBullPdfTexto(texto) {
   return filas
 }
 
-async function descubrirUrlPdf() {
+/**
+ * @param {string} [htmlGuia]
+ */
+async function descubrirUrlPdf(htmlGuia) {
+  if (htmlGuia) {
+    const desdeGuia = resolverUrlPdfBull(htmlGuia)
+    if (desdeGuia) return { url: desdeGuia, origen: 'guia' }
+  }
+
+  try {
+    const help = await axios.get(BULL_COMISIONES_URL, {
+      responseType: 'text',
+      timeout: 20000,
+      headers: BROWSER_HEADERS,
+    })
+    const desdeHelp = resolverUrlPdfBull(String(help.data))
+    if (desdeHelp) return { url: desdeHelp, origen: 'guia' }
+  } catch (error) {
+    logMensaje(log, 'Bull guía comisiones falló (PDF)', {
+      errorMessage: error.message,
+    })
+  }
+
   try {
     const help = await axios.get(BULL_HELP_URL, {
       responseType: 'text',
       timeout: 20000,
-      headers: {
-        'User-Agent':
-          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-      },
+      headers: BROWSER_HEADERS,
     })
     const desdeHelp = resolverUrlPdfBull(String(help.data))
     if (desdeHelp) return { url: desdeHelp, origen: 'help' }
@@ -361,10 +521,7 @@ async function descubrirUrlPdf() {
     const media = await axios.get(BULL_MEDIA_API_URL, {
       params: { search: 'Agosto', per_page: 20 },
       timeout: 20000,
-      headers: {
-        'User-Agent':
-          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-      },
+      headers: BROWSER_HEADERS,
     })
     const desdeMedia = resolverUrlPdfDesdeMedia(media.data)
     if (desdeMedia) return { url: desdeMedia, origen: 'wp-json' }
@@ -396,26 +553,58 @@ export async function parsearBullPdfBuffer(
 
 export async function extraerBullMarket() {
   try {
-    const descubierto = await descubrirUrlPdf()
+    /** @type {string|null} */
+    let htmlGuia = null
+    /** @type {Array<object>} */
+    let filasGuia = []
+
+    try {
+      const guia = await axios.get(BULL_COMISIONES_URL, {
+        responseType: 'text',
+        timeout: 25000,
+        headers: BROWSER_HEADERS,
+      })
+      htmlGuia = String(guia.data)
+      filasGuia = parsearBullComisionesHtml(htmlGuia)
+      logMensaje(log, 'Bull guía HTML parseada', { filas: filasGuia.length })
+    } catch (error) {
+      logMensaje(log, 'Bull guía HTML falló', { errorMessage: error.message })
+    }
+
+    const descubierto = await descubrirUrlPdf(htmlGuia || undefined)
     logMensaje(log, 'Bull PDF resuelto', descubierto)
 
-    const respuesta = await axios.get(descubierto.url, {
-      responseType: 'arraybuffer',
-      timeout: 45000,
-      headers: {
-        'User-Agent':
-          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        Accept: 'application/pdf,*/*',
-      },
-    })
+    /** @type {Array<object>} */
+    let filasPdf = []
+    try {
+      const respuesta = await axios.get(descubierto.url, {
+        responseType: 'arraybuffer',
+        timeout: 45000,
+        headers: {
+          ...BROWSER_HEADERS,
+          Accept: 'application/pdf,*/*',
+        },
+      })
 
-    const comisiones = await parsearBullPdfBuffer(
-      Buffer.from(respuesta.data),
-      descubierto.url,
-    )
+      filasPdf = await parsearBullPdfBuffer(
+        Buffer.from(respuesta.data),
+        descubierto.url,
+      )
+
+      // Si la guía ya trae licitaciones/acciones/etc., no duplicar desde el PDF.
+      if (filasGuia.some((f) => PRODUCTOS_GUIA_HTML.has(f.producto))) {
+        filasPdf = filasPdf.filter((f) => !PRODUCTOS_GUIA_HTML.has(f.producto))
+      }
+    } catch (error) {
+      logMensaje(log, 'Bull PDF falló', { errorMessage: error.message })
+    }
+
+    const comisiones = [...filasGuia, ...filasPdf]
 
     logMensaje(log, 'Bull Market parseado', {
       filas: comisiones.length,
+      guia: filasGuia.length,
+      pdf: filasPdf.length,
       pdfUrl: descubierto.url,
     })
 

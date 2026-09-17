@@ -3,7 +3,7 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { parsearIol } from '@/finanzas/brokers/comisiones/extraccion/extraerIol.js'
 import { parsearBalanz } from '@/finanzas/brokers/comisiones/extraccion/extraerBalanz.js'
-import { parsearBullPdfTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerBullMarket.js'
+import { parsearBullPdfTexto, parsearBullComisionesHtml } from '@/finanzas/brokers/comisiones/extraccion/extraerBullMarket.js'
 import { parsearCocos } from '@/finanzas/brokers/comisiones/extraccion/extraerCocos.js'
 import { parsearPpi } from '@/finanzas/brokers/comisiones/extraccion/extraerPpi.js'
 import { parsearFiwind } from '@/finanzas/brokers/comisiones/extraccion/extraerFiwind.js'
@@ -24,7 +24,15 @@ const fx = join(
 const comisiones = [
   ...parsearIol(readFileSync(join(fx, 'iol-tarifas.html'), 'utf8')),
   ...parsearBalanz(readFileSync(join(fx, 'balanz-comisiones.html'), 'utf8')),
-  ...parsearBullPdfTexto(readFileSync(join(fx, 'bull-aranceles.txt'), 'utf8')),
+  ...parsearBullComisionesHtml(
+    readFileSync(join(fx, 'bull-comisiones.html'), 'utf8'),
+  ),
+  ...parsearBullPdfTexto(readFileSync(join(fx, 'bull-aranceles.txt'), 'utf8')).filter(
+    (f) =>
+      !['acciones', 'cedears', 'bonos', 'opciones', 'futuros', 'licitaciones', 'fci'].includes(
+        f.producto,
+      ),
+  ),
   ...parsearCocos(readFileSync(join(fx, 'cocos-tarifario.html'), 'utf8')),
   ...parsearPpi(readFileSync(join(fx, 'ppi-comisiones.html'), 'utf8')),
   ...parsearFiwind(readFileSync(join(fx, 'fiwind-comisiones.html'), 'utf8')),

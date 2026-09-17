@@ -14,6 +14,7 @@ import { parsearIol } from '@/finanzas/brokers/comisiones/extraccion/extraerIol.
 import { parsearBalanz } from '@/finanzas/brokers/comisiones/extraccion/extraerBalanz.js'
 import {
   parsearBullPdfTexto,
+  parsearBullComisionesHtml,
   resolverUrlPdfBull,
 } from '@/finanzas/brokers/comisiones/extraccion/extraerBullMarket.js'
 import { parsearCocos } from '@/finanzas/brokers/comisiones/extraccion/extraerCocos.js'
@@ -222,6 +223,68 @@ describe('parsearBullPdfTexto', () => {
   it('resuelve PDF desde HTML de help', () => {
     const html = readFileSync(join(fixturesDir, 'bull-help.html'), 'utf8')
     expect(resolverUrlPdfBull(html)).toMatch(/\.pdf$/i)
+  })
+})
+
+describe('parsearBullComisionesHtml', () => {
+  it('extrae acciones/cedears/bonos/opciones por plan desde la guía', () => {
+    const html = readFileSync(
+      join(fixturesDir, 'bull-comisiones.html'),
+      'utf8',
+    )
+    const filas = parsearBullComisionesHtml(html)
+
+    expect(
+      filas.find(
+        (f) =>
+          f.producto === 'cedears' && f.plan === 'digital_account',
+      ),
+    ).toMatchObject({
+      entidad: 'bullmarket',
+      tasa: 0.005,
+      ivaAdicional: true,
+      enlace: 'https://help.bullmarketbrokers.com/guia/comisiones/',
+    })
+    expect(
+      filas.find(
+        (f) => f.producto === 'acciones' && f.plan === 'digital_account',
+      ),
+    ).toMatchObject({ tasa: 0.005 })
+    expect(
+      filas.find((f) => f.producto === 'bonos' && f.plan === 'digital_account'),
+    ).toMatchObject({
+      tasa: 0.005,
+      ivaAdicional: false,
+    })
+    expect(
+      filas.find(
+        (f) => f.producto === 'opciones' && f.plan === 'active_trader',
+      ),
+    ).toMatchObject({ tasa: 0.0025 })
+    expect(
+      filas.find(
+        (f) =>
+          f.producto === 'cedears' && f.plan === 'active_trader_plus',
+      ),
+    ).toMatchObject({ tasa: 0.001 })
+    expect(
+      filas.find(
+        (f) => f.producto === 'futuros' && f.plan === 'digital_account',
+      ),
+    ).toMatchObject({ tasa: 0.005 })
+    expect(
+      filas.find(
+        (f) =>
+          f.producto === 'licitaciones' && f.plan === 'digital_account',
+      ),
+    ).toMatchObject({ tasa: 0.0025 })
+    expect(
+      filas.find((f) => f.producto === 'fci' && f.plan === 'digital_account'),
+    ).toMatchObject({
+      tasa: 0,
+      ivaAdicional: false,
+    })
+    expect(resolverUrlPdfBull(html)).toMatch(/Agosto-2025\.pdf$/i)
   })
 })
 
