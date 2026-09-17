@@ -8,13 +8,18 @@ on:
         required: true
         type: choice
         options:
+          # --- Predefinidos (alias que agrupan varios paths) ---
           - pnpm run cron diario
           - pnpm run cron mensual
-          - pnpm run cron rendimientos
           - pnpm run cron fci
+          - pnpm run cron fci-fondos
           - pnpm run cron fciIA
           - pnpm run cron riesgoPais
           - pnpm run cron confianzaGobierno
+          - pnpm run cron rendimientos
+          - pnpm run cron criptopesos
+          - pnpm run cron rem
+          # --- Paths individuales ---
           - pnpm run cron /v1/feriados
           - pnpm run cron /v1/feriados-bancarios
           - pnpm run cron /v1/cotizaciones
@@ -23,20 +28,23 @@ on:
           - pnpm run cron /v1/finanzas/fci/fondos
           - pnpm run cron /v1/finanzas/fciIA
           - pnpm run cron /v1/finanzas/riesgo-pais
-          - pnpm run cron /v1/politica/indices/confianza-gobierno
           - pnpm run cron /v1/finanzas/rendimientos
           - pnpm run cron /v1/finanzas/criptopesos
           - pnpm run cron /v1/finanzas/plazo-fijo
           - pnpm run cron /v1/finanzas/tasas/plazo-fijo-uva-pago-periodico
           - pnpm run cron /v1/finanzas/cuentas-remuneradas-usd
           - pnpm run cron /v1/finanzas/creditos/prestamosPersonales
+          - pnpm run cron /v1/finanzas/creditos/prestamosPersonalesBcra
           - pnpm run cron /v1/finanzas/letras
           - pnpm run cron /v1/finanzas/rem
           - pnpm run cron /v1/finanzas/remesas
           - pnpm run cron /v1/finanzas/bonos-cer
-          - pnpm run senado:test:run
-          - pnpm run diputados:test:run
-          - pnpm run cron deploy:comparatasas
+          - pnpm run cron /v1/finanzas/cobros/comisiones
+          - pnpm run cron /v1/finanzas/brokers/comisiones
+          - pnpm run cron /v1/politica/indices/confianza-gobierno
+          - pnpm run cron /v1/presidentes
+          # --- Utilidades ---
+          - pnpm run cron actualizar-openapi-year
       needs_build:
         description: 'Ejecutar build antes del comando'
         required: false
