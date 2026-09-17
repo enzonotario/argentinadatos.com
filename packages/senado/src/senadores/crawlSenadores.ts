@@ -6,6 +6,7 @@ import { titleCaseSpanish } from '@argentinadatos/core/src/utils/titleCaseSpanis
 import { writeEndpoint } from '@argentinadatos/core/src/utils/writeEndpoint.ts'
 import { writeStaticBuffer } from '@argentinadatos/core/src/utils/writeStaticBuffer.ts'
 import { shouldWriteJsonFiles, shouldWriteFromDatabase } from '@argentinadatos/core/src/utils/database-mode.ts'
+import { tryGetPocketBaseConfig } from '@argentinadatos/pocketbase'
 import axios from 'axios'
 import * as cheerio from 'cheerio'
 import { format, parse } from 'date-fns'
@@ -118,11 +119,10 @@ async function processJson() {
     writeEndpoint('/senado/senadores', senadoresConFotos)
   }
 
-  const POCKETBASE_URL = process.env.POCKETBASE_URL
-  const POCKETBASE_TOKEN = process.env.POCKETBASE_TOKEN
+  const pb = tryGetPocketBaseConfig()
 
-  if (POCKETBASE_TOKEN && shouldWriteFromDatabase()) {
-    const db = new SenadoresDatabaseService(POCKETBASE_URL, POCKETBASE_TOKEN)
+  if (pb && shouldWriteFromDatabase()) {
+    const db = new SenadoresDatabaseService(pb.url, pb.token)
 
     try {
       await db.initialize()
@@ -422,11 +422,10 @@ async function processWeb(): Promise<Senador[]> {
     writeEndpoint('/senado/senadores', senadores)
   }
 
-  const POCKETBASE_URL = process.env.POCKETBASE_URL
-  const POCKETBASE_TOKEN = process.env.POCKETBASE_TOKEN
+  const pb = tryGetPocketBaseConfig()
 
-  if (POCKETBASE_TOKEN && shouldWriteFromDatabase()) {
-    const db = new SenadoresDatabaseService(POCKETBASE_URL, POCKETBASE_TOKEN)
+  if (pb && shouldWriteFromDatabase()) {
+    const db = new SenadoresDatabaseService(pb.url, pb.token)
 
     try {
       await db.initialize()
@@ -455,11 +454,10 @@ async function persistSenadores(senadores: Senador[]): Promise<void> {
     writeEndpoint('/senado/senadores', senadores)
   }
 
-  const POCKETBASE_URL = process.env.POCKETBASE_URL
-  const POCKETBASE_TOKEN = process.env.POCKETBASE_TOKEN
+  const pb = tryGetPocketBaseConfig()
 
-  if (POCKETBASE_TOKEN && shouldWriteFromDatabase()) {
-    const db = new SenadoresDatabaseService(POCKETBASE_URL, POCKETBASE_TOKEN)
+  if (pb && shouldWriteFromDatabase()) {
+    const db = new SenadoresDatabaseService(pb.url, pb.token)
 
     try {
       await db.initialize()

@@ -1,4 +1,8 @@
-export { getPocketBaseConfig, shouldUseMemoryBackend } from './config.js'
+export {
+  getPocketBaseConfig,
+  tryGetPocketBaseConfig,
+  shouldUseMemoryBackend,
+} from './config.js'
 export {
   createHttpPocketBaseClient,
   createPocketBaseClient,

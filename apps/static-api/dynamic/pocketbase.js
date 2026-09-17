@@ -4,14 +4,14 @@
  */
 export function getPocketBaseConfigFromEnv() {
   const url = (
-    process.env.POCKETBASE_URL ||
     process.env.VITE_POCKETBASE_URL ||
+    process.env.POCKETBASE_URL ||
     'https://db.argentinadatos.com'
   ).replace(/\/+$/, '')
   const token =
-    process.env.POCKETBASE_TOKEN || process.env.VITE_POCKETBASE_TOKEN
+    process.env.VITE_POCKETBASE_TOKEN || process.env.POCKETBASE_TOKEN
   if (!token) {
-    throw new Error('Missing POCKETBASE_TOKEN (o VITE_POCKETBASE_TOKEN)')
+    throw new Error('Missing VITE_POCKETBASE_TOKEN (o POCKETBASE_TOKEN)')
   }
   return { url, token }
 }
@@ -24,7 +24,9 @@ export async function listAllRecords(
   const items = []
   let page = 1
   const perPage = 200
-  const timeoutMs = Number(process.env.POCKETBASE_TIMEOUT_MS) || 15_000
+  const timeoutMs =
+    Number(process.env.VITE_POCKETBASE_TIMEOUT_MS || process.env.POCKETBASE_TIMEOUT_MS) ||
+    15_000
 
   for (;;) {
     const params = new URLSearchParams({

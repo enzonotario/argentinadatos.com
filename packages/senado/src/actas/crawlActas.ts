@@ -2,6 +2,7 @@ import type { ActaData } from './parseActa.ts'
 import { shouldWriteFromDatabase, shouldWriteJsonFiles } from '@argentinadatos/core/src/utils/database-mode.ts'
 import { readEndpoint } from '@argentinadatos/core/src/utils/readEndpoint.ts'
 import { writeEndpoint } from '@argentinadatos/core/src/utils/writeEndpoint.ts'
+import { tryGetPocketBaseConfig } from '@argentinadatos/pocketbase'
 import * as cheerio from 'cheerio'
 import { ActasDatabaseService } from './database/service.ts'
 import { downloadPdf } from './downloadPdf.ts'
@@ -84,11 +85,10 @@ export async function crawlActas({ year }: { year?: number } = {}): Promise<
     saveAll(validActas)
   }
 
-  const POCKETBASE_URL = process.env.POCKETBASE_URL
-  const POCKETBASE_TOKEN = process.env.POCKETBASE_TOKEN
+  const pb = tryGetPocketBaseConfig()
 
-  if (POCKETBASE_TOKEN && shouldWriteFromDatabase()) {
-    const db = new ActasDatabaseService(POCKETBASE_URL, POCKETBASE_TOKEN)
+  if (pb && shouldWriteFromDatabase()) {
+    const db = new ActasDatabaseService(pb.url, pb.token)
 
     try {
       await db.initialize()
@@ -345,6 +345,12 @@ async function generateEndpointEstatico(db: ActasDatabaseService, año: number) 
   const todosLosDatos = await db.getActasByAño(año)
 
   writeEndpoint(`/senado/actas/${año}`, todosLosDatos)
+
+  for (const acta of todosLosDatos) {
+    const actaId = Number((acta as ActaData)?.actaId)
+    if (!Number.isFinite(actaId)) continue
+    writeEndpoint(`/senado/actas/${año}/${actaId}`, acta)
+  }
 }
 
 async function generateEndpointEstaticoAll(db: ActasDatabaseService) {

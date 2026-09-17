@@ -4,6 +4,7 @@ import { titleCaseSpanish } from '@argentinadatos/core/src/utils/titleCaseSpanis
 import { writeEndpoint } from '@argentinadatos/core/src/utils/writeEndpoint.ts'
 import { writeStaticBuffer } from '@argentinadatos/core/src/utils/writeStaticBuffer.ts'
 import { shouldWriteJsonFiles, shouldWriteFromDatabase } from '@argentinadatos/core/src/utils/database-mode.ts'
+import { tryGetPocketBaseConfig } from '@argentinadatos/pocketbase'
 import axios from 'axios'
 import * as cheerio from 'cheerio'
 import { formatISO, isValid, parse, parseISO } from 'date-fns'
@@ -146,11 +147,10 @@ export async function crawlDiputados(): Promise<Diputado[]> {
     console.error('Periodos: no se pudo scrapear', e?.message || e)
   }
 
-  const POCKETBASE_URL = process.env.POCKETBASE_URL
-  const POCKETBASE_TOKEN = process.env.POCKETBASE_TOKEN
+  const pb = tryGetPocketBaseConfig()
 
-  if (POCKETBASE_TOKEN && shouldWriteFromDatabase()) {
-    const db = new DiputadosDatabaseService(POCKETBASE_URL, POCKETBASE_TOKEN)
+  if (pb && shouldWriteFromDatabase()) {
+    const db = new DiputadosDatabaseService(pb.url, pb.token)
 
     try {
       await db.initialize()

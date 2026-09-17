@@ -3,6 +3,7 @@ import { shouldWriteFromDatabase, shouldWriteJsonFiles } from '@argentinadatos/c
 import { readEndpoint } from '@argentinadatos/core/src/utils/readEndpoint.ts'
 import { titleCaseSpanish } from '@argentinadatos/core/src/utils/titleCaseSpanish.ts'
 import { writeEndpoint } from '@argentinadatos/core/src/utils/writeEndpoint.ts'
+import { tryGetPocketBaseConfig } from '@argentinadatos/pocketbase'
 import axios from 'axios'
 import * as cheerio from 'cheerio'
 import { collect } from 'collect.js'
@@ -118,11 +119,10 @@ export async function crawlActas(): Promise<Acta[]> {
     writeEndpoint('diputados/diputados', diputados)
   }
 
-  const POCKETBASE_URL = process.env.POCKETBASE_URL
-  const POCKETBASE_TOKEN = process.env.POCKETBASE_TOKEN
+  const pb = tryGetPocketBaseConfig()
 
-  if (POCKETBASE_TOKEN && shouldWriteFromDatabase()) {
-    const db = new ActasDatabaseService(POCKETBASE_URL, POCKETBASE_TOKEN)
+  if (pb && shouldWriteFromDatabase()) {
+    const db = new ActasDatabaseService(pb.url, pb.token)
 
     try {
       await db.initialize()
