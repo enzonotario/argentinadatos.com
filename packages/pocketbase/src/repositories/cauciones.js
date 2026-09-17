@@ -4,7 +4,8 @@ import { listAllRecords } from '../records.js'
 import {
   caucionSerieKey,
   classifyCaucionMoneda,
-  fechaOperacionHoy,
+  deriveFechaOperacion,
+  isCaucionPlazoCoherent,
   mergeTasaMinMaxDia,
 } from '../schema/cauciones.js'
 
@@ -52,6 +53,8 @@ export function buildExistingMinMaxBySerie(existingRows) {
 
 /**
  * Reemplaza el snapshot de cauciones preservando min/max del día por (moneda, plazo).
+ * Deriva la fecha de rueda desde vencimiento−plazo (IOL no la envía) y descarta series
+ * con plazo incoherente (p. ej. ~+160 días).
  */
 export async function replaceCauciones(
   payload,
@@ -59,23 +62,31 @@ export async function replaceCauciones(
 ) {
   const titulos = Array.isArray(payload?.titulos) ? payload.titulos : []
   const fechaActualizacion = toPocketBaseDate(new Date())
-  const fechaOperacion = fechaOperacionHoy()
+  const fechaOperacion = deriveFechaOperacion(titulos)
   const byMoneda = { ars: 0, usd: 0 }
 
   const existingRows = await listAllRecords(pb, 'cauciones')
   const existingBySerie = buildExistingMinMaxBySerie(existingRows)
 
-  const enriched = titulos.map(titulo => {
-    const tasaActual = Number(titulo.tasaPromedio)
-    const moneda = classifyCaucionMoneda(tasaActual)
-    return {
-      ...titulo,
-      moneda,
-      tasaActual,
-      plazo: Number(titulo.plazo),
-      montoContado: Number(titulo.montoContado),
-    }
-  })
+  const enriched = titulos
+    .map(titulo => {
+      const tasaActual = Number(titulo.tasaPromedio)
+      const moneda = classifyCaucionMoneda(tasaActual)
+      return {
+        ...titulo,
+        moneda,
+        tasaActual,
+        plazo: Number(titulo.plazo),
+        montoContado: Number(titulo.montoContado),
+      }
+    })
+    .filter(titulo =>
+      isCaucionPlazoCoherent(
+        titulo.plazo,
+        fechaOperacion,
+        titulo.fechaVencimiento,
+      ),
+    )
 
   const tasasBySerie = new Map()
   for (const titulo of enriched) {
@@ -117,7 +128,13 @@ export async function replaceCauciones(
     created += 1
   }
 
-  return { created, fechaActualizacion, byMoneda, fechaOperacion }
+  return {
+    created,
+    skipped: titulos.length - enriched.length,
+    fechaActualizacion,
+    byMoneda,
+    fechaOperacion,
+  }
 }
 
 /**

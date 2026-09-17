@@ -10,6 +10,7 @@ export async function syncCauciones() {
   return {
     titulos: payload.titulos.length,
     created: result.created,
+    skipped: result.skipped,
     byMoneda: result.byMoneda,
     fechaOperacion: result.fechaOperacion,
     fechaActualizacion: result.fechaActualizacion,

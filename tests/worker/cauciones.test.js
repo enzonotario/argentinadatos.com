@@ -2,7 +2,10 @@ import { describe, expect, it } from 'vitest'
 import {
   CAUCIONES_COLLECTION,
   classifyCaucionMoneda,
+  deriveFechaOperacion,
   fechaOperacionHoy,
+  impliedFechaOperacion,
+  isCaucionPlazoCoherent,
   mergeTasaMinMaxDia,
   buildExistingMinMaxBySerie,
   migrations,
@@ -116,6 +119,91 @@ describe('fechaOperacionHoy', () => {
     expect(
       fechaOperacionHoy(new Date('2026-08-22T15:00:00.000Z')),
     ).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+  })
+})
+
+describe('deriveFechaOperacion / coherencia IOL', () => {
+  const iolTitulos = [
+    {
+      plazo: 1,
+      montoContado: 5883015385726,
+      tasaPromedio: 20.5,
+      fechaVencimiento: '2026-09-11T00:00:00',
+    },
+    {
+      plazo: 40,
+      montoContado: 148034045,
+      tasaPromedio: 20.2,
+      fechaVencimiento: '2026-10-20T00:00:00',
+    },
+    {
+      plazo: 160,
+      montoContado: 811612,
+      tasaPromedio: 20.3,
+      fechaVencimiento: '2026-09-18T00:00:00',
+    },
+    {
+      plazo: 4,
+      montoContado: 20037442972,
+      tasaPromedio: 20.6,
+      fechaVencimiento: '2026-09-14T00:00:00',
+    },
+    {
+      plazo: 8,
+      montoContado: 646641481,
+      tasaPromedio: 20,
+      fechaVencimiento: '2026-09-18T00:00:00',
+    },
+    {
+      plazo: 44,
+      montoContado: 100,
+      tasaPromedio: 1.25,
+      fechaVencimiento: '2026-09-22T00:00:00',
+    },
+  ]
+
+  it('infiere vencimiento − plazo', () => {
+    expect(impliedFechaOperacion('2026-09-11T00:00:00', 1)).toBe('2026-09-10')
+    expect(impliedFechaOperacion('2026-10-20T00:00:00', 40)).toBe('2026-09-10')
+    expect(impliedFechaOperacion('2026-09-18T00:00:00', 160)).toBe('2026-04-11')
+  })
+
+  it('elige la rueda modal reciente (no “hoy” ni outliers +160)', () => {
+    expect(
+      deriveFechaOperacion(iolTitulos, {
+        now: new Date('2026-09-17T18:00:00.000Z'),
+      }),
+    ).toBe('2026-09-10')
+  })
+
+  it('acepta series coherentes con la rueda y rechaza plazos inflados', () => {
+    const fechaOperacion = '2026-09-10'
+    expect(
+      isCaucionPlazoCoherent(1, fechaOperacion, '2026-09-11T00:00:00'),
+    ).toBe(true)
+    expect(
+      isCaucionPlazoCoherent(40, fechaOperacion, '2026-10-20T00:00:00'),
+    ).toBe(true)
+    expect(
+      isCaucionPlazoCoherent(160, fechaOperacion, '2026-09-18T00:00:00'),
+    ).toBe(false)
+    expect(
+      isCaucionPlazoCoherent(44, fechaOperacion, '2026-09-22T00:00:00'),
+    ).toBe(false)
+  })
+
+  it('cae a hoy si no hay consenso reciente', () => {
+    expect(
+      deriveFechaOperacion(
+        [
+          {
+            plazo: 160,
+            fechaVencimiento: '2026-09-18T00:00:00',
+          },
+        ],
+        { now: new Date('2026-09-17T18:00:00.000Z') },
+      ),
+    ).toBe('2026-09-17')
   })
 })
 
