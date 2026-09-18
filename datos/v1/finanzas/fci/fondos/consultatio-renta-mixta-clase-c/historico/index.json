@@ -2,7 +2,7 @@
   "fondoId": "517",
   "claseId": "1197",
   "nombre": "Consultatio Renta Mixta - Clase C",
-  "fechaActualizacion": "2026-09-17T18:11:03.000Z",
+  "fechaActualizacion": "2026-09-17T23:47:13.000Z",
   "historico": [
     {
       "slug": "consultatio-renta-mixta-clase-c",
@@ -25874,6 +25874,22 @@
       "retornoDiario": 0.229057,
       "retornoAcumulado": 4767.832349,
       "flujoEstimado": -627.963196,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-renta-mixta-clase-c",
+      "fondoId": "517",
+      "claseId": "1197",
+      "nombre": "Consultatio Renta Mixta - Clase C",
+      "fecha": "2026-09-17",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 325888.64,
+      "patrimonio": 222900309144.95,
+      "retornoDiario": 0.037631,
+      "retornoAcumulado": 4769.664177,
+      "flujoEstimado": 460.653351,
       "origen": "cnv-excel"
     }
   ]

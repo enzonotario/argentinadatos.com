@@ -2,7 +2,7 @@
   "fondoId": "532",
   "claseId": "1077",
   "nombre": "Consultatio Renta Nacional - Clase B",
-  "fechaActualizacion": "2026-09-17T18:11:03.000Z",
+  "fechaActualizacion": "2026-09-17T23:47:13.000Z",
   "historico": [
     {
       "slug": "consultatio-renta-nacional-clase-b",
@@ -25874,6 +25874,22 @@
       "retornoDiario": 0.114982,
       "retornoAcumulado": 3586.547089,
       "flujoEstimado": -128347622.110413,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-renta-nacional-clase-b",
+      "fondoId": "532",
+      "claseId": "1077",
+      "nombre": "Consultatio Renta Nacional - Clase B",
+      "fecha": "2026-09-17",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 258606.575,
+      "patrimonio": 92504029304.1,
+      "retornoDiario": 0.134387,
+      "retornoAcumulado": 3591.501327,
+      "flujoEstimado": 2404799622.959442,
       "origen": "cnv-excel"
     }
   ]
