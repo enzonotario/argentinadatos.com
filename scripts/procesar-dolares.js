@@ -72,7 +72,7 @@ async function rellenarDiasFaltantes() {
   }
 
   if (fechasFaltantes.length > 0) {
-    await escribirRuta('/cotizaciones/dolares', output, false)
+    await escribirRuta('/cotizaciones/dolares', ordenarPorFecha(output), false)
     console.log(`Se rellenaron ${fechasFaltantes.length} días faltantes`)
   } else {
     console.log('No hay días faltantes')
@@ -145,7 +145,7 @@ async function rellenarDiasFaltantesPorCasa() {
   }
 
   if (diasAgregados > 0) {
-    await escribirRuta('/cotizaciones/dolares', output, false)
+    await escribirRuta('/cotizaciones/dolares', ordenarPorFecha(output), false)
     console.log(`Se agregaron ${diasAgregados} registros faltantes por casa`)
   } else {
     console.log('No hay registros faltantes por casa')
@@ -153,32 +153,35 @@ async function rellenarDiasFaltantesPorCasa() {
 }
 
 /**
+ * Normaliza campos y ordena de más viejo a más nuevo por fecha
+ */
+function ordenarPorFecha(dolares) {
+  return dolares
+    .map(dolar => ({
+      casa: dolar.casa,
+      compra: dolar.compra,
+      venta: dolar.venta,
+      fecha: dolar.fecha,
+    }))
+    .sort((a, b) => a.fecha.localeCompare(b.fecha) || a.casa.localeCompare(b.casa))
+}
+
+/**
  * Re-ordena y formatea el archivo principal /dolares/index.json
- * Ordena por fecha y mantiene solo los campos necesarios
+ * Ordena por fecha (más viejo → más nuevo) y mantiene solo los campos necesarios
  */
 async function prettify() {
   const dolares = await leerRuta('/cotizaciones/dolares')
 
-  const formateado = collect(dolares)
-    .sortBy('fecha')
-    .map(dolar => ({
-      casa: dolar.casa,
-      compra: dolar.compra,
-      venta: dolar.venta,
-      fecha: dolar.fecha,
-    }))
-    .toArray()
+  const actual = dolares.map(dolar => ({
+    casa: dolar.casa,
+    compra: dolar.compra,
+    venta: dolar.venta,
+    fecha: dolar.fecha,
+  }))
+  const formateado = ordenarPorFecha(dolares)
 
-  const normalizado = dolares
-    .map(dolar => ({
-      casa: dolar.casa,
-      compra: dolar.compra,
-      venta: dolar.venta,
-      fecha: dolar.fecha,
-    }))
-    .sort((a, b) => a.fecha.localeCompare(b.fecha))
-
-  if (JSON.stringify(normalizado) !== JSON.stringify(formateado)) {
+  if (JSON.stringify(actual) !== JSON.stringify(formateado)) {
     await escribirRuta('/cotizaciones/dolares', formateado, false)
     console.log('Se reordenó y formateó el archivo principal')
   } else {
