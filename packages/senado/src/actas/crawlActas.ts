@@ -117,6 +117,21 @@ export async function crawlActas({ year }: { year?: number } = {}): Promise<
   return validActas
 }
 
+/**
+ * Título de la celda del listado: solo text nodes directos.
+ * Ignora <a>Ver Expedientes</a> y el div de expedientes ocultos.
+ */
+export function scrapeTituloFromListadoTd(
+  $td: cheerio.Cheerio<any>,
+): string {
+  return $td
+    .contents()
+    .filter((_, node) => node.type === 'text')
+    .text()
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
 export function collectListedActas(
   $: cheerio.CheerioAPI,
   actasRows: cheerio.Cheerio<any>,
@@ -131,7 +146,7 @@ export function collectListedActas(
     if (!Number.isFinite(id)) continue
 
     // Columna Título: suele ser la 3ra (índice 2).
-    const titulo = $row.find('td').eq(2).text().replace(/\s+/g, ' ').trim()
+    const titulo = scrapeTituloFromListadoTd($row.find('td').eq(2))
     if (!byId.has(id) || titulo) {
       byId.set(id, titulo)
     }

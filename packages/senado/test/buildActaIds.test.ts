@@ -55,4 +55,34 @@ describe('collectListedActas', () => {
       { id: 2802, titulo: 'Acuerdo Bertuzzi' },
     ])
   })
+
+  it('ignora el link Ver Expedientes y el div oculto en el título', () => {
+    const html = `
+      <table id="actasTable"><tbody>
+        <tr>
+          <td>17/09/2026</td>
+          <td>1</td>
+          <td class="ocultar" style="max-width: 300px !important;">
+            Moción para el tratamiento sobre tablas del expediente S-1563/26.
+            <a onclick="mostrar(2805)" id="botonMostrar2805">Ver
+                                    Expedientes</a>
+            <div id="mostrarOcultarDiv2805" class="expedientesOcultos" style="display: none;"></div>
+          </td>
+          <td>EN GENERAL</td>
+          <td>AFIRMATIVO</td>
+          <td><a href="/votaciones/verActaVotacion/2805">descargar</a></td>
+          <td>SIMPLE</td>
+          <td><a href="/votaciones/detalleActa/2805">VER</a></td>
+        </tr>
+      </tbody></table>
+    `
+    const $ = cheerio.load(html)
+    const rows = collectListedActas($, $('table#actasTable tbody tr'))
+    expect(rows).toEqual([
+      {
+        id: 2805,
+        titulo: 'Moción para el tratamiento sobre tablas del expediente S-1563/26.',
+      },
+    ])
+  })
 })
