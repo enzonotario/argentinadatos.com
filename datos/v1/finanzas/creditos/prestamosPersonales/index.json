@@ -842,6 +842,36 @@
     }
   },
   {
+    "entidad": "PATAGONIA",
+    "nombreComercial": "Banco Patagonia",
+    "producto": "Préstamo personal online",
+    "tna": 0.87,
+    "tea": 1.3171,
+    "cftTna": null,
+    "cftTea": 1.743,
+    "tipoTasa": "fija",
+    "moneda": "ARS",
+    "requiereCliente": true,
+    "condiciones": "Cartera de consumo",
+    "enlace": "https://www.bancopatagonia.com.ar/landings/prestamos-online.php",
+    "vigenciaDesde": "2025-11-13",
+    "vigenciaHasta": "2026-12-31",
+    "metadata": {
+      "plazoMesesEjemplo": 60,
+      "plazoMinMeses": 1,
+      "plazoMaxMeses": 60,
+      "tasasPorPlazo": [
+        {
+          "plazoMinMeses": 1,
+          "plazoMaxMeses": 60,
+          "tna": 0.87,
+          "tea": 1.3171,
+          "cftTea": 1.743
+        }
+      ]
+    }
+  },
+  {
     "entidad": "SANTANDER",
     "nombreComercial": "Santander",
     "producto": "Préstamo personal",
