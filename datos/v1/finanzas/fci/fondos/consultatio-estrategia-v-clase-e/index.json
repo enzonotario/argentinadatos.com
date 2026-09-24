@@ -2,14 +2,14 @@
   "fondoId": "1705",
   "claseId": "5711",
   "nombre": "Consultatio Estrategia V - Clase E",
-  "fecha": "2026-09-22",
+  "fecha": "2026-09-23",
   "administradora": "One618 Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": "Otro",
-  "horizonte": "Plazo Flexible",
+  "horizonte": "Mediano Plazo",
   "duracion": "Mayor a 1 y Menor Igual 3 Años",
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1711",
@@ -19,28 +19,36 @@
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 2,
   "rendimientos": {
-    "valorCuotaparte": 857.549,
-    "variacionDiariaPct": 0.008,
-    "ultimos7Dias": -0.0312,
+    "valorCuotaparte": 857.417,
+    "variacionDiariaPct": -0.015,
+    "ultimos7Dias": 0.029,
     "diasUltimos7Dias": 7,
-    "unMes": -0.2385,
-    "diasUnMes": 29,
-    "noventaDias": -1.0359,
+    "unMes": -0.2538,
+    "diasUnMes": 30,
+    "noventaDias": -1.0844,
     "diasNoventaDias": 90,
-    "cientoOchentaDias": -2.4072,
+    "cientoOchentaDias": -2.4178,
     "diasCientoOchentaDias": 180,
-    "enElAnio": -7.301,
-    "diasEnElAnio": 266,
-    "doceMeses": -14.2451,
+    "enElAnio": -7.3153,
+    "diasEnElAnio": 267,
+    "doceMeses": -14.2583,
     "diasDoceMeses": 365,
-    "tnaEstimada": -3.0018,
-    "tnaEstimadaDias": 29,
+    "tnaEstimada": -3.0879,
+    "tnaEstimadaDias": 30,
     "tnaEstimadaPeriodo": "unMes"
   },
   "composicionCartera": [
     {
-      "nombre": "FCI Allaria Ahorro - Clase C",
-      "porcentaje": 14.8
+      "nombre": "Lecap S30N6",
+      "porcentaje": 25.02
+    },
+    {
+      "nombre": "Bono Dual TTD26",
+      "porcentaje": 23.98
+    },
+    {
+      "nombre": "FCI IEB Ahorro - Clase E",
+      "porcentaje": 100.01
     }
   ],
   "calificaciones": [],

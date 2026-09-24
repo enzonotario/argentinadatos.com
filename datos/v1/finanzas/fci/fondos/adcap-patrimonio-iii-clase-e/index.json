@@ -2,7 +2,7 @@
   "fondoId": "1959",
   "claseId": "6688",
   "nombre": "Adcap Patrimonio III - Clase E",
-  "fecha": "2026-09-22",
+  "fecha": "2026-09-23",
   "administradora": "Adcap Asset Management S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,15 +13,15 @@
   "duracion": null,
   "moneda": "Dolar Estadounidense",
   "codigoCNV": "1959",
-  "patrimonio": 1001.4,
+  "patrimonio": 1001.6,
   "cantidadCuotapartes": 999.73,
   "inversionMinima": 0,
   "monedaInversion": "Dolar Estadounidense",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1001.666,
-    "variacionDiariaPct": 0.031,
-    "ultimos7Dias": 0.099,
+    "valorCuotaparte": 1001.866,
+    "variacionDiariaPct": 0.02,
+    "ultimos7Dias": 0.127,
     "diasUltimos7Dias": 7,
     "unMes": null,
     "diasUnMes": null,
@@ -33,11 +33,20 @@
     "diasEnElAnio": null,
     "doceMeses": null,
     "diasDoceMeses": null,
-    "tnaEstimada": 5.1621,
+    "tnaEstimada": 6.6221,
     "tnaEstimadaDias": 7,
     "tnaEstimadaPeriodo": "ultimos7Dias"
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Pagare #UMV070370004",
+      "porcentaje": 94.96
+    },
+    {
+      "nombre": "FCI Allaria Dólar Ahorro - Clase B",
+      "porcentaje": 2.74
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 0,

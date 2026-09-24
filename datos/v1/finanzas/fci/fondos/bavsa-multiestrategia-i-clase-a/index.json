@@ -2,14 +2,14 @@
   "fondoId": "1705",
   "claseId": "5677",
   "nombre": "BAVSA Multiestrategia I - Clase A",
-  "fecha": "2026-09-22",
+  "fecha": "2026-09-23",
   "administradora": "BAVSA Fondos S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Mixta",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": null,
-  "horizonte": null,
+  "horizonte": "Mediano Plazo",
   "duracion": null,
   "moneda": "Peso Argentino",
   "codigoCNV": "1705",
@@ -19,25 +19,38 @@
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1006.776,
-    "variacionDiariaPct": 0.003,
-    "ultimos7Dias": 0.2059,
+    "valorCuotaparte": 1002.168,
+    "variacionDiariaPct": -0.458,
+    "ultimos7Dias": -0.2824,
     "diasUltimos7Dias": 7,
     "unMes": null,
     "diasUnMes": null,
     "noventaDias": null,
     "diasNoventaDias": null,
-    "cientoOchentaDias": -15.5993,
-    "diasCientoOchentaDias": 194,
-    "enElAnio": -15.8316,
-    "diasEnElAnio": 266,
-    "doceMeses": 6.6634,
+    "cientoOchentaDias": -15.9856,
+    "diasCientoOchentaDias": 195,
+    "enElAnio": -16.2168,
+    "diasEnElAnio": 267,
+    "doceMeses": 3.0505,
     "diasDoceMeses": 365,
-    "tnaEstimada": 10.7362,
+    "tnaEstimada": -14.7251,
     "tnaEstimadaDias": 7,
     "tnaEstimadaPeriodo": "ultimos7Dias"
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Lecap S30N6",
+      "porcentaje": 25.02
+    },
+    {
+      "nombre": "Bono Dual TTD26",
+      "porcentaje": 23.98
+    },
+    {
+      "nombre": "FCI IEB Ahorro - Clase E",
+      "porcentaje": 100.01
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 1.25,
