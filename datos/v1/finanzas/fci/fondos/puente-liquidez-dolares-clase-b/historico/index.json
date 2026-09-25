@@ -2,7 +2,7 @@
   "fondoId": "1909",
   "claseId": "6596",
   "nombre": "Puente Liquidez Dólares - Clase B",
-  "fechaActualizacion": "2026-09-23T23:43:13.000Z",
+  "fechaActualizacion": "2026-09-25T00:28:00.000Z",
   "historico": [
     {
       "slug": "puente-liquidez-dolares-clase-b",
@@ -722,6 +722,22 @@
       "retornoDiario": 0.001099,
       "retornoAcumulado": 0.0909,
       "flujoEstimado": 1447950.070078,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "puente-liquidez-dolares-clase-b",
+      "fondoId": "1909",
+      "claseId": "6596",
+      "nombre": "Puente Liquidez Dólares - Clase B",
+      "fecha": "2026-09-24",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1000.919,
+      "patrimonio": 10236864.5,
+      "retornoDiario": 0.000999,
+      "retornoAcumulado": 0.0919,
+      "flujoEstimado": 190000.532832,
       "origen": "cnv-excel"
     }
   ]

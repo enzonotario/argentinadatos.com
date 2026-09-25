@@ -2,7 +2,7 @@
   "fondoId": "1281",
   "claseId": "3569",
   "nombre": "Consultatio Fondo de Dinero - Clase B",
-  "fechaActualizacion": "2026-09-23T23:43:13.000Z",
+  "fechaActualizacion": "2026-09-25T00:28:00.000Z",
   "historico": [
     {
       "slug": "consultatio-fondo-de-dinero-clase-b",
@@ -18930,6 +18930,22 @@
       "retornoDiario": 0.028335,
       "retornoAcumulado": 443.6605,
       "flujoEstimado": 0.08244,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-fondo-de-dinero-clase-b",
+      "fondoId": "1281",
+      "claseId": "3569",
+      "nombre": "Consultatio Fondo de Dinero - Clase B",
+      "fecha": "2026-09-24",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 5438.145,
+      "patrimonio": 11094999.46,
+      "retornoDiario": 0.028327,
+      "retornoAcumulado": 443.8145,
+      "flujoEstimado": -0.180517,
       "origen": "cnv-excel"
     }
   ]
