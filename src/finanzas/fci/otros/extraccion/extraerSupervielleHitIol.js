@@ -31,7 +31,7 @@ export async function extraerSupervielleHitIolCuentaRemunerada() {
       required: ['tna'],
     })
 
-    if (!datos || typeof datos.tna !== 'number') {
+    if (!datos || typeof datos.tna !== 'number' || datos.tna <= 0) {
       logMensaje(log, 'Datos inválidos de Supervielle Hit IOL: falta TNA', {
         datos,
       })

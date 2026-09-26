@@ -31,7 +31,7 @@ export async function extraerSupervielleCuentaRemunerada() {
       required: ['tna'],
     })
 
-    if (!datos || typeof datos.tna !== 'number') {
+    if (!datos || typeof datos.tna !== 'number' || datos.tna <= 0) {
       logMensaje(log, 'Datos inválidos de Supervielle: falta TNA', { datos })
       throw new Error('Datos inválidos de Supervielle: falta TNA')
     }

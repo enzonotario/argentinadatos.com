@@ -33,7 +33,7 @@ Devolvé:
       required: ['tna', 'tope', 'condiciones'],
     })
 
-    if (!datos || typeof datos.tna !== 'number') {
+    if (!datos || typeof datos.tna !== 'number' || datos.tna <= 0) {
       logMensaje(log, 'Datos inválidos de BNA: falta TNA', { datos })
       throw new Error('Datos inválidos de BNA: falta TNA')
     }

@@ -30,7 +30,7 @@ export async function extraerNaranjaX() {
       required: ['tna', 'tope'],
     })
 
-    if (!datos || typeof datos.tna !== 'number') {
+    if (!datos || typeof datos.tna !== 'number' || datos.tna <= 0) {
       logMensaje(log, 'Naranja X: TNA inválida', { datos })
       throw new Error('Naranja X: falta TNA')
     }
