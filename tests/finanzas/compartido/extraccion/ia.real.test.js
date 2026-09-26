@@ -4,8 +4,7 @@ import { logGrupo } from '@/log.js'
 
 const tieneIaCompleta =
   import.meta.env.VITE_RUN_AI_TESTS === 'true' &&
-  Boolean(import.meta.env.VITE_TABSTACK_API_KEY) &&
-  Boolean(import.meta.env.VITE_OPENROUTER_KEY)
+  Boolean(import.meta.env.VITE_SCRAPIAR_API_KEY)
 
 describe.skipIf(!tieneIaCompleta)('extractWithAI (Real)', () => {
   it('extrae datos reales de BNA', async () => {
@@ -48,5 +47,5 @@ describe.skipIf(!tieneIaCompleta)('extractWithAI (Real)', () => {
         throw error
       }
     }
-  }, 30000) // Timeout extendido para IA
+  }, 150_000) // Timeout extendido: scrapiar renderiza con Chrome
 })

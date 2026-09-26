@@ -1,13 +1,13 @@
 import { describe, expect, it } from 'vitest'
 import { extraerUalaCuentaRemunerada } from '@/finanzas/fci/otros/extraccion/extraerUala.js'
 
-const tieneOpenAI =
+const tieneScrapiar =
   import.meta.env.VITE_RUN_AI_TESTS === 'true' &&
-  Boolean(import.meta.env.VITE_OPENROUTER_KEY)
+  Boolean(import.meta.env.VITE_SCRAPIAR_API_KEY)
 
 import.meta.env.VITE_FORCE_IA = 'true'
 
-describe.skipIf(!tieneOpenAI)('extraerUala', () => {
+describe.skipIf(!tieneScrapiar)('extraerUala', () => {
   it(
     'extrae Uala Cuenta Remunerada correctamente',
     async () => {

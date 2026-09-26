@@ -3,8 +3,7 @@ import { extraerFiwindARSCondiciones } from '@/finanzas/fci/otros/extraccion/ext
 
 const tieneIaCompleta =
   import.meta.env.VITE_RUN_AI_TESTS === 'true' &&
-  Boolean(import.meta.env.VITE_TABSTACK_API_KEY) &&
-  Boolean(import.meta.env.VITE_OPENROUTER_KEY)
+  Boolean(import.meta.env.VITE_SCRAPIAR_API_KEY)
 
 describe.skipIf(!tieneIaCompleta)('extraerFiwindARSCondiciones', () => {
   it('extrae condiciones de Fiwind ARS', async () => {

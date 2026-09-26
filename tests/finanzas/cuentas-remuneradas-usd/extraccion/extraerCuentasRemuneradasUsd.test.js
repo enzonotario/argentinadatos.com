@@ -3,8 +3,7 @@ import { extraerCuentasRemuneradasUsd } from '@/finanzas/cuentas-remuneradas-usd
 
 const tieneIaCompleta =
   import.meta.env.VITE_RUN_AI_TESTS === 'true' &&
-  Boolean(import.meta.env.VITE_TABSTACK_API_KEY) &&
-  Boolean(import.meta.env.VITE_OPENROUTER_KEY)
+  Boolean(import.meta.env.VITE_SCRAPIAR_API_KEY)
 
 describe.skipIf(!tieneIaCompleta)('extraerCuentasRemuneradasUsd (Real)', () => {
   it('extrae datos de todas las entidades', async () => {

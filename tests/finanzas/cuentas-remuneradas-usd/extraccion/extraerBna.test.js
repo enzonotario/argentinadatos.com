@@ -3,8 +3,7 @@ import { extraerBna } from '@/finanzas/cuentas-remuneradas-usd/extraccion/extrae
 
 const tieneIaCompleta =
   import.meta.env.VITE_RUN_AI_TESTS === 'true' &&
-  Boolean(import.meta.env.VITE_TABSTACK_API_KEY) &&
-  Boolean(import.meta.env.VITE_OPENROUTER_KEY)
+  Boolean(import.meta.env.VITE_SCRAPIAR_API_KEY)
 
 describe.skipIf(!tieneIaCompleta)('extraerBna (Real)', () => {
   it('extrae datos correctamente de BNA', async () => {

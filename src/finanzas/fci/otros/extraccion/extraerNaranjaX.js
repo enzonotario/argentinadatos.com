@@ -23,7 +23,7 @@ export async function extraerNaranjaX() {
   try {
     const datos = await extractWithAI(log, {
       url: URL_NARANJA_BLOG_TNA,
-      markdownSource: 'defuddle',
+      effort: 'min',
       prompt:
         'El markdown es el artículo del blog de Naranja X. Extraé la TNA nominal anual vigente de la cuenta remunerada en pesos y el tope máximo de saldo remunerado si figura (monto en pesos, sin puntos de miles en el número). TNA en decimal (ej. 0.19 para 19%). tope null si no se indica límite claro.',
       schema: schemaNaranja,

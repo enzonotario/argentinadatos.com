@@ -3,8 +3,7 @@ import { extraerSupervielleHitIolCuentaRemunerada } from '@/finanzas/fci/otros/e
 
 const tieneIaCompleta =
   import.meta.env.VITE_RUN_AI_TESTS === 'true' &&
-  Boolean(import.meta.env.VITE_TABSTACK_API_KEY) &&
-  Boolean(import.meta.env.VITE_OPENROUTER_KEY)
+  Boolean(import.meta.env.VITE_SCRAPIAR_API_KEY)
 
 import.meta.env.VITE_FORCE_IA = 'true'
 
