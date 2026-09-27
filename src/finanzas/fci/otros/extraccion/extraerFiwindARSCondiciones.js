@@ -11,7 +11,7 @@ export async function extraerFiwindARSCondiciones() {
     const datos = await extractWithAI(log, {
       url: 'https://help.fiwind.io/es/articles/11723346-tus-primeros-pesos-rinden-mas',
       prompt:
-        'Extrae las condiciones del rendimiento bonificado respecto a la fecha de vigencia. No extraigas tasas actuales. En condiciones incluí la fecha de vigencia. En condicionesCorto resumilo en menos de 100 caracteres.',
+        'Extrae el aviso sobre la vigencia de la bonificación: el texto que aclara si tiene fecha de vigencia garantizada o si puede ser modificada o descontinuada (suele empezar con "Tené en cuenta que esta bonificación..."). No extraigas tasas, montos ni la fecha de inicio de la promoción. En condiciones copiá ese aviso textual. En condicionesCorto resumí ese mismo aviso en menos de 100 caracteres.',
       schema: {
         condiciones: { type: 'string' },
         condicionesCorto: { type: 'string', maxLength: 100 },
