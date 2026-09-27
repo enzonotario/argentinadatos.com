@@ -50,10 +50,6 @@ export async function extractWithAI(log, extractionConfig) {
           required: required ?? Object.keys(schema),
         },
         effort,
-        nocache: true,
-        geo_target: {
-          country: 'AR',
-        },
       }),
       signal: AbortSignal.timeout(SCRAPIAR_TIMEOUT_MS),
     })

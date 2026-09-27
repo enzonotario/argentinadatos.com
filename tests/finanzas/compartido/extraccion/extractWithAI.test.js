@@ -72,8 +72,6 @@ describe('extractWithAI (scrapiar)', () => {
         required: ['tasa', 'tope'],
       },
       effort: 'standard',
-      nocache: true,
-      geo_target: { country: 'AR' },
     })
   })
 
