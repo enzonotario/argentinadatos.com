@@ -32,6 +32,7 @@ export const comparatasasFondos = [
   'ciclo-nova-value-clase-a',
   'iol-cash-management-clase-a',
   'iol-dolar-ahorro-plus-clase-d',
+  'megaqm-pesos-clase-e',
   'mercado-fondo-clase-a',
   'mp-ahorro-clase-a',
   'pionero-acciones',
