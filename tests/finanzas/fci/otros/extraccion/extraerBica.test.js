@@ -1,7 +1,10 @@
 import { describe, expect, it } from 'vitest'
 import { extraerBicaCuentaPositiva } from '@/finanzas/fci/otros/extraccion/extraerBica.js'
 
-describe('extraerBicaCuentaPositiva', () => {
+// Real request: Banco Bica is only reachable through scrapiar (residential Argentine IP).
+const tieneScrapiar = Boolean(import.meta.env.VITE_SCRAPIAR_API_KEY)
+
+describe.skipIf(!tieneScrapiar)('extraerBicaCuentaPositiva', () => {
   it('extrae los niveles de Cuenta Positiva desde la web de Banco Bica', async () => {
     const resultado = await extraerBicaCuentaPositiva()
 
@@ -36,5 +39,5 @@ describe('extraerBicaCuentaPositiva', () => {
     )
 
     expect(Math.abs(resultado[0].tea - teaCalculada)).toBeLessThan(0.01)
-  }, 15000)
+  }, 150000)
 })

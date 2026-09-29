@@ -1,9 +1,5 @@
 import { logError, logMensaje } from '@/log.js'
-
-const SCRAPIAR_API_URL =
-  import.meta.env.VITE_SCRAPIAR_API_URL || 'https://scrapiar.localhost'
-const SCRAPIAR_API_KEY = import.meta.env.VITE_SCRAPIAR_API_KEY
-const SCRAPIAR_TIMEOUT_MS = 120_000
+import { requestScrapiar } from '@/shared/extraction/scrapiar.js'
 
 /**
  * Extracts structured data from a URL using scrapiar, which renders the page,
@@ -35,41 +31,16 @@ export async function extractWithAI(log, extractionConfig) {
       effort,
     })
 
-    const response = await fetch(`${SCRAPIAR_API_URL}/v1/extract/json`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${SCRAPIAR_API_KEY}`,
+    const result = await requestScrapiar(log, '/v1/extract/json', {
+      url,
+      prompt,
+      json_schema: {
+        type: 'object',
+        properties: schema,
+        required: required ?? Object.keys(schema),
       },
-      body: JSON.stringify({
-        url,
-        prompt,
-        json_schema: {
-          type: 'object',
-          properties: schema,
-          required: required ?? Object.keys(schema),
-        },
-        effort,
-      }),
-      signal: AbortSignal.timeout(SCRAPIAR_TIMEOUT_MS),
+      effort,
     })
-
-    if (!response.ok) {
-      const responseText = await response.text()
-
-      logMensaje(log, 'scrapiar returned a non-OK response', {
-        status: response.status,
-        statusText: response.statusText,
-        url,
-        responseBody: responseText,
-      })
-
-      throw new Error(
-        `scrapiar request failed: ${response.status} ${response.statusText}. URL: ${url}`,
-      )
-    }
-
-    const result = await response.json()
 
     logMensaje(log, 'scrapiar extraction succeeded', {
       url,

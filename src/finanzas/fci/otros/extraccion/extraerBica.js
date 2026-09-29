@@ -1,7 +1,7 @@
 import { load } from 'cheerio'
 import { format } from 'date-fns'
 import { logGrupo, logError, logMensaje } from '@/log.js'
-import { construirRequestConProxy } from '@/utils/proxy.js'
+import { fetchHtmlWithScrapiar } from '@/shared/extraction/scrapiar.js'
 import {
   calcularTeaDesdeTna,
   porcentajeADecimal,
@@ -10,18 +10,6 @@ import {
 
 const URL_BICA_CUENTA_POSITIVA =
   'https://www.bancobica.com.ar/soluciones/cuentaspositivas.aspx'
-
-const URLS_BICA_CUENTA_POSITIVA = [
-  URL_BICA_CUENTA_POSITIVA,
-  'https://bancobica.com.ar/soluciones/cuentaspositivas.aspx',
-]
-
-const HEADERS_BICA = {
-  'User-Agent':
-    'Mozilla/5.0 (compatible; ArgentinaDatosBot/1.0; +https://argentinadatos.com)',
-  Accept: 'text/html,application/xhtml+xml',
-  'Accept-Language': 'es-AR,es;q=0.9',
-}
 
 const NOMBRES_FONDO = [
   'BICA CUENTA POSITIVA 1',
@@ -65,9 +53,7 @@ function parsearTnaDesdeTexto(texto) {
     return null
   }
 
-  return porcentajeADecimal(
-    Number(coincidencia[1].replace(',', '.')),
-  )
+  return porcentajeADecimal(Number(coincidencia[1].replace(',', '.')))
 }
 
 export function parsearNivelesCuentaPositivaBica(html) {
@@ -75,7 +61,9 @@ export function parsearNivelesCuentaPositivaBica(html) {
   const contenedor = $('#C\\+1')
 
   if (!contenedor.length) {
-    throw new Error('No se encontró la sección C+1 de Cuenta Positiva en Banco Bica')
+    throw new Error(
+      'No se encontró la sección C+1 de Cuenta Positiva en Banco Bica',
+    )
   }
 
   const celdas = contenedor
@@ -85,7 +73,9 @@ export function parsearNivelesCuentaPositivaBica(html) {
     .map(elemento => $(elemento).text().replace(/\s+/g, ' ').trim())
 
   if (celdas.length < 10) {
-    throw new Error('La tabla de tasas de Banco Bica no tiene el formato esperado')
+    throw new Error(
+      'La tabla de tasas de Banco Bica no tiene el formato esperado',
+    )
   }
 
   const niveles = []
@@ -97,7 +87,9 @@ export function parsearNivelesCuentaPositivaBica(html) {
     const tna = parsearTnaDesdeTexto(tnaTexto)
 
     if (tna === null) {
-      throw new Error(`No se pudo interpretar la TNA del nivel ${indice + 1} de Banco Bica`)
+      throw new Error(
+        `No se pudo interpretar la TNA del nivel ${indice + 1} de Banco Bica`,
+      )
     }
 
     niveles.push({
@@ -112,79 +104,18 @@ export function parsearNivelesCuentaPositivaBica(html) {
   return niveles
 }
 
-function esperarMs(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms))
-}
-
+// Banco Bica answers 403 to datacenter IPs (GitHub Actions): the page is loaded
+// through scrapiar, which runs on an Argentine residential IP.
 async function obtenerHtmlCuentaPositivaBica(log) {
-  const intentos = 3
-  const timeoutMs = 30000
-  let ultimoError = null
-  let usaProxy = false
+  const html = await fetchHtmlWithScrapiar(log, URL_BICA_CUENTA_POSITIVA, {
+    effort: 'min',
+  })
 
-  for (const url of URLS_BICA_CUENTA_POSITIVA) {
-    for (let intento = 1; intento <= intentos; intento += 1) {
-      const controller = new AbortController()
-      const timeout = setTimeout(() => controller.abort(), timeoutMs)
+  logMensaje(log, 'HTML de Banco Bica obtenido correctamente', {
+    url: URL_BICA_CUENTA_POSITIVA,
+  })
 
-      try {
-        const request = construirRequestConProxy(url, {
-          headers: HEADERS_BICA,
-          signal: controller.signal,
-        })
-
-        if (request.usaProxy) {
-          usaProxy = true
-        }
-
-        const respuesta = await fetch(request.url, request.opciones)
-
-        if (!respuesta.ok) {
-          throw new Error(
-            `Error al obtener la página de Banco Bica: ${respuesta.status} ${respuesta.statusText}`,
-          )
-        }
-
-        const html = await respuesta.text()
-
-        if (!html.includes('id="C+1"')) {
-          throw new Error(
-            'La respuesta de Banco Bica no contiene la sección C+1 de Cuenta Positiva',
-          )
-        }
-
-        logMensaje(log, 'HTML de Banco Bica obtenido correctamente', {
-          url,
-          intento,
-          usaProxy,
-        })
-
-        return html
-      } catch (error) {
-        ultimoError = error
-
-        logMensaje(log, 'Fallo al obtener HTML de Banco Bica', {
-          url,
-          intento,
-          usaProxy,
-          errorMessage: error.message,
-          errorCause:
-            error.cause?.code ||
-            error.cause?.message ||
-            error.cause ||
-            null,
-        })
-
-        if (intento < intentos) {
-          await esperarMs(1000 * intento)
-        }
-      } finally {
-        clearTimeout(timeout)
-      }
-    }
-  }
-
-  throw ultimoError || new Error('No se pudo obtener la página de Banco Bica')
+  return html
 }
 
 export async function extraerBicaCuentaPositiva() {
