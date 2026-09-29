@@ -2,7 +2,7 @@
   "fondoId": "1946",
   "claseId": "6652",
   "nombre": "Puente Retorno Pesos - Clase A",
-  "fechaActualizacion": "2026-09-28T15:49:36.000Z",
+  "fechaActualizacion": "2026-09-28T23:23:45.000Z",
   "historico": [
     {
       "slug": "puente-retorno-pesos-clase-a",
@@ -402,6 +402,22 @@
       "retornoDiario": 0.102572,
       "retornoAcumulado": 2.9604,
       "flujoEstimado": 40.811462,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "puente-retorno-pesos-clase-a",
+      "fondoId": "1946",
+      "claseId": "6652",
+      "nombre": "Puente Retorno Pesos - Clase A",
+      "fecha": "2026-09-28",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 1027.918,
+      "patrimonio": 95057699.8,
+      "retornoDiario": -0.163752,
+      "retornoAcumulado": 2.7918,
+      "flujoEstimado": -23.334534,
       "origen": "cnv-excel"
     }
   ]

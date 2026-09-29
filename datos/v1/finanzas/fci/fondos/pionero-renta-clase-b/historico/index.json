@@ -2,7 +2,7 @@
   "fondoId": "101",
   "claseId": "5844",
   "nombre": "Pionero Renta - Clase B",
-  "fechaActualizacion": "2026-09-28T15:49:36.000Z",
+  "fechaActualizacion": "2026-09-28T23:23:45.000Z",
   "historico": [
     {
       "slug": "pionero-renta-clase-b",
@@ -3810,6 +3810,22 @@
       "retornoDiario": 0.005647,
       "retornoAcumulado": 178239.5034,
       "flujoEstimado": 214286274.202568,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "pionero-renta-clase-b",
+      "fondoId": "101",
+      "claseId": "5844",
+      "nombre": "Pionero Renta - Clase B",
+      "fecha": "2026-09-28",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1778881.972,
+      "patrimonio": 28589598991.52,
+      "retornoDiario": -0.25306,
+      "retornoAcumulado": 177788.1972,
+      "flujoEstimado": -7890033.532433,
       "origen": "cnv-excel"
     }
   ]
