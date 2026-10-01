@@ -2,7 +2,7 @@
   "fondoId": "141",
   "claseId": "141",
   "nombre": "Lombard Renta Fija",
-  "fechaActualizacion": "2026-09-30T18:22:09.000Z",
+  "fechaActualizacion": "2026-09-30T23:26:32.000Z",
   "historico": [
     {
       "slug": "lombard-renta-fija",
@@ -25826,6 +25826,22 @@
       "retornoDiario": 0.212252,
       "retornoAcumulado": 1690.857078,
       "flujoEstimado": -75843544.974915,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "lombard-renta-fija",
+      "fondoId": "141",
+      "claseId": "141",
+      "nombre": "Lombard Renta Fija",
+      "fecha": "2026-09-30",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 763205.524,
+      "patrimonio": 32440488875.13,
+      "retornoDiario": -0.013252,
+      "retornoAcumulado": 1690.61975,
+      "flujoEstimado": -9990419.827576,
       "origen": "cnv-excel"
     }
   ]

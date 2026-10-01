@@ -2,7 +2,7 @@
   "fondoId": "1522",
   "claseId": "4558",
   "nombre": "IAM Liquidez en Dólares - Clase B",
-  "fechaActualizacion": "2026-09-30T18:22:09.000Z",
+  "fechaActualizacion": "2026-09-30T23:26:32.000Z",
   "historico": [
     {
       "slug": "iam-liquidez-en-dolares-clase-b",
@@ -8530,6 +8530,22 @@
       "retornoDiario": 0.003972,
       "retornoAcumulado": 4.539821,
       "flujoEstimado": -4400535.582524,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "iam-liquidez-en-dolares-clase-b",
+      "fondoId": "1522",
+      "claseId": "4558",
+      "nombre": "IAM Liquidez en Dólares - Clase B",
+      "fecha": "2026-09-30",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1032.408,
+      "patrimonio": 161172042.93,
+      "retornoDiario": 0.00465,
+      "retornoAcumulado": 4.544681,
+      "flujoEstimado": -12297348.511635,
       "origen": "cnv-excel"
     }
   ]

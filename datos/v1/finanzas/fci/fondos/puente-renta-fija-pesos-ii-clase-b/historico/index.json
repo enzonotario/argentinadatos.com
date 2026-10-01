@@ -2,7 +2,7 @@
   "fondoId": "1988",
   "claseId": "6663",
   "nombre": "Puente Renta Fija Pesos II - Clase B",
-  "fechaActualizacion": "2026-09-30T18:22:09.000Z",
+  "fechaActualizacion": "2026-09-30T23:26:32.000Z",
   "historico": [
     {
       "slug": "puente-renta-fija-pesos-ii-clase-b",
@@ -370,6 +370,22 @@
       "retornoDiario": 0.001498,
       "retornoAcumulado": 0.1511,
       "flujoEstimado": -0.005201,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "puente-renta-fija-pesos-ii-clase-b",
+      "fondoId": "1988",
+      "claseId": "6663",
+      "nombre": "Puente Renta Fija Pesos II - Clase B",
+      "fecha": "2026-09-30",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1001.778,
+      "patrimonio": 25053.85,
+      "retornoDiario": 0.02666,
+      "retornoAcumulado": 0.1778,
+      "flujoEstimado": 0.012427,
       "origen": "cnv-excel"
     }
   ]
