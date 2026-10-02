@@ -2,7 +2,7 @@
   "fondoId": "1565",
   "claseId": "5024",
   "nombre": "Ualintec Retorno Total - Clase A",
-  "fechaActualizacion": "2026-10-01T16:07:31.000Z",
+  "fechaActualizacion": "2026-10-01T23:42:50.000Z",
   "historico": [
     {
       "slug": "ualintec-retorno-total-clase-a",
@@ -7730,6 +7730,22 @@
       "retornoDiario": 1.0767,
       "retornoAcumulado": 110.6492,
       "flujoEstimado": -14375251.518822,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "ualintec-retorno-total-clase-a",
+      "fondoId": "1565",
+      "claseId": "5024",
+      "nombre": "Ualintec Retorno Total - Clase A",
+      "fecha": "2026-10-01",
+      "categoria": "Retorno Total",
+      "categoriaKey": "retornoTotal",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 2102.207,
+      "patrimonio": 2179031491.42,
+      "retornoDiario": -0.203419,
+      "retornoAcumulado": 110.2207,
+      "flujoEstimado": -2794375.287181,
       "origen": "cnv-excel"
     }
   ]

@@ -2,7 +2,7 @@
   "fondoId": "1865",
   "claseId": "6447",
   "nombre": "GMC Retorno Total VI - Clase C",
-  "fechaActualizacion": "2026-10-01T16:07:31.000Z",
+  "fechaActualizacion": "2026-10-01T23:42:50.000Z",
   "historico": [
     {
       "slug": "gmc-retorno-total-vi-clase-c",
@@ -1538,6 +1538,22 @@
       "retornoDiario": -0.026205,
       "retornoAcumulado": 7.2051,
       "flujoEstimado": 573073120.656445,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "gmc-retorno-total-vi-clase-c",
+      "fondoId": "1865",
+      "claseId": "6447",
+      "nombre": "GMC Retorno Total VI - Clase C",
+      "fecha": "2026-10-01",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 1072.453,
+      "patrimonio": 4128450391.2,
+      "retornoDiario": 0.037498,
+      "retornoAcumulado": 7.2453,
+      "flujoEstimado": 2336000158.53371,
       "origen": "cnv-excel"
     }
   ]
