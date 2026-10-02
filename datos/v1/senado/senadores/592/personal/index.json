@@ -1,0 +1,111 @@
+{
+  "senadorId": "592",
+  "personal": [
+    {
+      "nombre": "CAMILA SOFIA BRISIGHELLI",
+      "categoria": "A-5"
+    },
+    {
+      "nombre": "MARIA VICTORIA DE ALMEIDA",
+      "categoria": "A-5"
+    },
+    {
+      "nombre": "MARCOS CRISTOBAL MAIOLI ABAN",
+      "categoria": "A-5"
+    },
+    {
+      "nombre": "MELINA CRISTIANO",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "SERGIO MAURICIO LOPEZ DE APARICI",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "ROQUE ARTURO RUEDA TORINO",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "LEANDRO MATIAS GIL",
+      "categoria": "A-14"
+    }
+  ],
+  "fuente": "https://www.senado.gob.ar/senadores/senador/592",
+  "personalDetalle": [
+    {
+      "nombre": "CAMILA SOFIA BRISIGHELLI",
+      "categoria": "A-5",
+      "brutoBase": 1520706.08,
+      "brutoConAdicionalFuncion": 1520706.08
+    },
+    {
+      "nombre": "MARIA VICTORIA DE ALMEIDA",
+      "categoria": "A-5",
+      "brutoBase": 1520706.08,
+      "brutoConAdicionalFuncion": 1520706.08
+    },
+    {
+      "nombre": "MARCOS CRISTOBAL MAIOLI ABAN",
+      "categoria": "A-5",
+      "brutoBase": 1520706.08,
+      "brutoConAdicionalFuncion": 1520706.08
+    },
+    {
+      "nombre": "MELINA CRISTIANO",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "SERGIO MAURICIO LOPEZ DE APARICI",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "ROQUE ARTURO RUEDA TORINO",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "LEANDRO MATIAS GIL",
+      "categoria": "A-14",
+      "brutoBase": 621326.51,
+      "brutoConAdicionalFuncion": 621326.51
+    }
+  ],
+  "gasto": {
+    "agentes": 7,
+    "brutoMensualEstimado": 12953257.34,
+    "brutoMensualConAdicionalFuncion": 13659117.17,
+    "sinCategoriaMatch": 0,
+    "porCategoria": [
+      {
+        "categoria": "A-1",
+        "cantidad": 3,
+        "montoUnitario": 2589937.53,
+        "montoUnitarioConAdicionalFuncion": 2825224.14,
+        "subtotal": 7769812.59,
+        "subtotalConAdicionalFuncion": 8475672.42
+      },
+      {
+        "categoria": "A-5",
+        "cantidad": 3,
+        "montoUnitario": 1520706.08,
+        "montoUnitarioConAdicionalFuncion": 1520706.08,
+        "subtotal": 4562118.24,
+        "subtotalConAdicionalFuncion": 4562118.24
+      },
+      {
+        "categoria": "A-14",
+        "cantidad": 1,
+        "montoUnitario": 621326.51,
+        "montoUnitarioConAdicionalFuncion": 621326.51,
+        "subtotal": 621326.51,
+        "subtotalConAdicionalFuncion": 621326.51
+      }
+    ],
+    "metodo": "totalEnPesos + RC (escala salarial); adicional función 10% en A-1..A-3 opcional"
+  }
+}

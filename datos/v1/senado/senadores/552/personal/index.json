@@ -1,0 +1,129 @@
+{
+  "senadorId": "552",
+  "personal": [
+    {
+      "nombre": "MARIA MERCEDES MAZZA",
+      "categoria": "A-4"
+    },
+    {
+      "nombre": "GABRIELA FERNANDA LOZA",
+      "categoria": "A-5"
+    },
+    {
+      "nombre": "ABRIL FLORENCIA LOBO",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "HUGO EMILIO CAPONE",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "CARLA LORENA ALONGI",
+      "categoria": "A-5"
+    },
+    {
+      "nombre": "MARTIN NICOLAS RAVENTOS",
+      "categoria": "A-5"
+    },
+    {
+      "nombre": "DIEGO ALBERTO ALTOMARE",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "LUCAS SEBASTIAN RAFFO",
+      "categoria": "A-2"
+    }
+  ],
+  "fuente": "https://www.senado.gob.ar/senadores/senador/552",
+  "personalDetalle": [
+    {
+      "nombre": "MARIA MERCEDES MAZZA",
+      "categoria": "A-4",
+      "brutoBase": 1710049.15,
+      "brutoConAdicionalFuncion": 1710049.15
+    },
+    {
+      "nombre": "GABRIELA FERNANDA LOZA",
+      "categoria": "A-5",
+      "brutoBase": 1520706.08,
+      "brutoConAdicionalFuncion": 1520706.08
+    },
+    {
+      "nombre": "ABRIL FLORENCIA LOBO",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "HUGO EMILIO CAPONE",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "CARLA LORENA ALONGI",
+      "categoria": "A-5",
+      "brutoBase": 1520706.08,
+      "brutoConAdicionalFuncion": 1520706.08
+    },
+    {
+      "nombre": "MARTIN NICOLAS RAVENTOS",
+      "categoria": "A-5",
+      "brutoBase": 1520706.08,
+      "brutoConAdicionalFuncion": 1520706.08
+    },
+    {
+      "nombre": "DIEGO ALBERTO ALTOMARE",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "LUCAS SEBASTIAN RAFFO",
+      "categoria": "A-2",
+      "brutoBase": 2230742.59,
+      "brutoConAdicionalFuncion": 2430109.7
+    }
+  ],
+  "gasto": {
+    "agentes": 8,
+    "brutoMensualEstimado": 16272722.57,
+    "brutoMensualConAdicionalFuncion": 17177949.51,
+    "sinCategoriaMatch": 0,
+    "porCategoria": [
+      {
+        "categoria": "A-1",
+        "cantidad": 3,
+        "montoUnitario": 2589937.53,
+        "montoUnitarioConAdicionalFuncion": 2825224.14,
+        "subtotal": 7769812.59,
+        "subtotalConAdicionalFuncion": 8475672.42
+      },
+      {
+        "categoria": "A-2",
+        "cantidad": 1,
+        "montoUnitario": 2230742.59,
+        "montoUnitarioConAdicionalFuncion": 2430109.7,
+        "subtotal": 2230742.59,
+        "subtotalConAdicionalFuncion": 2430109.7
+      },
+      {
+        "categoria": "A-4",
+        "cantidad": 1,
+        "montoUnitario": 1710049.15,
+        "montoUnitarioConAdicionalFuncion": 1710049.15,
+        "subtotal": 1710049.15,
+        "subtotalConAdicionalFuncion": 1710049.15
+      },
+      {
+        "categoria": "A-5",
+        "cantidad": 3,
+        "montoUnitario": 1520706.08,
+        "montoUnitarioConAdicionalFuncion": 1520706.08,
+        "subtotal": 4562118.24,
+        "subtotalConAdicionalFuncion": 4562118.24
+      }
+    ],
+    "metodo": "totalEnPesos + RC (escala salarial); adicional función 10% en A-1..A-3 opcional"
+  }
+}

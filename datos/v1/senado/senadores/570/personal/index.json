@@ -1,0 +1,109 @@
+{
+  "senadorId": "570",
+  "personal": [
+    {
+      "nombre": "ALEJANDRA DORY GOICOECHEA",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "VALERIA LOURDES METHOL",
+      "categoria": "A-8"
+    },
+    {
+      "nombre": "BELÉN DE LOS ANGELES LATORRE",
+      "categoria": "A-5"
+    },
+    {
+      "nombre": "KARINA MARIANA SANTANGELO",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "MARIA FLORENCIA ANDRADE",
+      "categoria": "A-5"
+    },
+    {
+      "nombre": "FACUNDO NICOLAS ARAOZ",
+      "categoria": "A-6"
+    }
+  ],
+  "fuente": "https://www.senado.gob.ar/senadores/senador/570",
+  "personalDetalle": [
+    {
+      "nombre": "ALEJANDRA DORY GOICOECHEA",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "VALERIA LOURDES METHOL",
+      "categoria": "A-8",
+      "brutoBase": 1089115.26,
+      "brutoConAdicionalFuncion": 1089115.26
+    },
+    {
+      "nombre": "BELÉN DE LOS ANGELES LATORRE",
+      "categoria": "A-5",
+      "brutoBase": 1520706.08,
+      "brutoConAdicionalFuncion": 1520706.08
+    },
+    {
+      "nombre": "KARINA MARIANA SANTANGELO",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "MARIA FLORENCIA ANDRADE",
+      "categoria": "A-5",
+      "brutoBase": 1520706.08,
+      "brutoConAdicionalFuncion": 1520706.08
+    },
+    {
+      "nombre": "FACUNDO NICOLAS ARAOZ",
+      "categoria": "A-6",
+      "brutoBase": 1356423.12,
+      "brutoConAdicionalFuncion": 1356423.12
+    }
+  ],
+  "gasto": {
+    "agentes": 6,
+    "brutoMensualEstimado": 10666825.6,
+    "brutoMensualConAdicionalFuncion": 11137398.82,
+    "sinCategoriaMatch": 0,
+    "porCategoria": [
+      {
+        "categoria": "A-1",
+        "cantidad": 2,
+        "montoUnitario": 2589937.53,
+        "montoUnitarioConAdicionalFuncion": 2825224.14,
+        "subtotal": 5179875.06,
+        "subtotalConAdicionalFuncion": 5650448.28
+      },
+      {
+        "categoria": "A-5",
+        "cantidad": 2,
+        "montoUnitario": 1520706.08,
+        "montoUnitarioConAdicionalFuncion": 1520706.08,
+        "subtotal": 3041412.16,
+        "subtotalConAdicionalFuncion": 3041412.16
+      },
+      {
+        "categoria": "A-6",
+        "cantidad": 1,
+        "montoUnitario": 1356423.12,
+        "montoUnitarioConAdicionalFuncion": 1356423.12,
+        "subtotal": 1356423.12,
+        "subtotalConAdicionalFuncion": 1356423.12
+      },
+      {
+        "categoria": "A-8",
+        "cantidad": 1,
+        "montoUnitario": 1089115.26,
+        "montoUnitarioConAdicionalFuncion": 1089115.26,
+        "subtotal": 1089115.26,
+        "subtotalConAdicionalFuncion": 1089115.26
+      }
+    ],
+    "metodo": "totalEnPesos + RC (escala salarial); adicional función 10% en A-1..A-3 opcional"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "senadorId": "560",
+  "personal": [
+    {
+      "nombre": "MARIA JOSE CASTILLO GOYTIA",
+      "categoria": "A-3"
+    },
+    {
+      "nombre": "LUIS ORLANDO STECIUK",
+      "categoria": "A-4"
+    },
+    {
+      "nombre": "JUAN ANDRES LAGEZE",
+      "categoria": "A-4"
+    },
+    {
+      "nombre": "ALEJANDRO JOSE DOUBÑA",
+      "categoria": "A-5"
+    },
+    {
+      "nombre": "ALEJANDRO ESTEBAN SAN JOSE",
+      "categoria": "A-3"
+    },
+    {
+      "nombre": "CAROLINA BELEN RAMOS",
+      "categoria": "A-4"
+    }
+  ],
+  "fuente": "https://www.senado.gob.ar/senadores/senador/560",
+  "personalDetalle": [
+    {
+      "nombre": "MARIA JOSE CASTILLO GOYTIA",
+      "categoria": "A-3",
+      "brutoBase": 1924452.33,
+      "brutoConAdicionalFuncion": 2093190.42
+    },
+    {
+      "nombre": "LUIS ORLANDO STECIUK",
+      "categoria": "A-4",
+      "brutoBase": 1710049.15,
+      "brutoConAdicionalFuncion": 1710049.15
+    },
+    {
+      "nombre": "JUAN ANDRES LAGEZE",
+      "categoria": "A-4",
+      "brutoBase": 1710049.15,
+      "brutoConAdicionalFuncion": 1710049.15
+    },
+    {
+      "nombre": "ALEJANDRO JOSE DOUBÑA",
+      "categoria": "A-5",
+      "brutoBase": 1520706.08,
+      "brutoConAdicionalFuncion": 1520706.08
+    },
+    {
+      "nombre": "ALEJANDRO ESTEBAN SAN JOSE",
+      "categoria": "A-3",
+      "brutoBase": 1924452.33,
+      "brutoConAdicionalFuncion": 2093190.42
+    },
+    {
+      "nombre": "CAROLINA BELEN RAMOS",
+      "categoria": "A-4",
+      "brutoBase": 1710049.15,
+      "brutoConAdicionalFuncion": 1710049.15
+    }
+  ],
+  "gasto": {
+    "agentes": 6,
+    "brutoMensualEstimado": 10499758.19,
+    "brutoMensualConAdicionalFuncion": 10837234.37,
+    "sinCategoriaMatch": 0,
+    "porCategoria": [
+      {
+        "categoria": "A-3",
+        "cantidad": 2,
+        "montoUnitario": 1924452.33,
+        "montoUnitarioConAdicionalFuncion": 2093190.42,
+        "subtotal": 3848904.66,
+        "subtotalConAdicionalFuncion": 4186380.84
+      },
+      {
+        "categoria": "A-4",
+        "cantidad": 3,
+        "montoUnitario": 1710049.15,
+        "montoUnitarioConAdicionalFuncion": 1710049.15,
+        "subtotal": 5130147.45,
+        "subtotalConAdicionalFuncion": 5130147.45
+      },
+      {
+        "categoria": "A-5",
+        "cantidad": 1,
+        "montoUnitario": 1520706.08,
+        "montoUnitarioConAdicionalFuncion": 1520706.08,
+        "subtotal": 1520706.08,
+        "subtotalConAdicionalFuncion": 1520706.08
+      }
+    ],
+    "metodo": "totalEnPesos + RC (escala salarial); adicional función 10% en A-1..A-3 opcional"
+  }
+}

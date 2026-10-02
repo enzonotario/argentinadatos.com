@@ -1,0 +1,91 @@
+{
+  "senadorId": "580",
+  "personal": [
+    {
+      "nombre": "MARTIN CAMPS",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "MARIA CLAUDIA BRUN PEÑA",
+      "categoria": "A-6"
+    },
+    {
+      "nombre": "GERARDO FABIAN MILMAN",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "MATEO ETCHENAUSSE",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "ALEJANDRA GABRIELA WAISBLAT",
+      "categoria": "A-4"
+    }
+  ],
+  "fuente": "https://www.senado.gob.ar/senadores/senador/580",
+  "personalDetalle": [
+    {
+      "nombre": "MARTIN CAMPS",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "MARIA CLAUDIA BRUN PEÑA",
+      "categoria": "A-6",
+      "brutoBase": 1356423.12,
+      "brutoConAdicionalFuncion": 1356423.12
+    },
+    {
+      "nombre": "GERARDO FABIAN MILMAN",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "MATEO ETCHENAUSSE",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "ALEJANDRA GABRIELA WAISBLAT",
+      "categoria": "A-4",
+      "brutoBase": 1710049.15,
+      "brutoConAdicionalFuncion": 1710049.15
+    }
+  ],
+  "gasto": {
+    "agentes": 5,
+    "brutoMensualEstimado": 10836284.86,
+    "brutoMensualConAdicionalFuncion": 11542144.69,
+    "sinCategoriaMatch": 0,
+    "porCategoria": [
+      {
+        "categoria": "A-1",
+        "cantidad": 3,
+        "montoUnitario": 2589937.53,
+        "montoUnitarioConAdicionalFuncion": 2825224.14,
+        "subtotal": 7769812.59,
+        "subtotalConAdicionalFuncion": 8475672.42
+      },
+      {
+        "categoria": "A-4",
+        "cantidad": 1,
+        "montoUnitario": 1710049.15,
+        "montoUnitarioConAdicionalFuncion": 1710049.15,
+        "subtotal": 1710049.15,
+        "subtotalConAdicionalFuncion": 1710049.15
+      },
+      {
+        "categoria": "A-6",
+        "cantidad": 1,
+        "montoUnitario": 1356423.12,
+        "montoUnitarioConAdicionalFuncion": 1356423.12,
+        "subtotal": 1356423.12,
+        "subtotalConAdicionalFuncion": 1356423.12
+      }
+    ],
+    "metodo": "totalEnPesos + RC (escala salarial); adicional función 10% en A-1..A-3 opcional"
+  }
+}

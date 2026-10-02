@@ -1,0 +1,137 @@
+{
+  "senadorId": "578",
+  "personal": [
+    {
+      "nombre": "JORGE ALFREDO MORENO",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "ZACARIAS MIGUEL ISSOLIO",
+      "categoria": "A-7"
+    },
+    {
+      "nombre": "JUAN MARTIN MERSCH",
+      "categoria": "A-3"
+    },
+    {
+      "nombre": "ELEONORA LAFOURCADE",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "WALTER JAVIER GUARNIERI MELIS",
+      "categoria": "A-3"
+    },
+    {
+      "nombre": "MARIA ROSANA KRONEBERGER",
+      "categoria": "A-3"
+    },
+    {
+      "nombre": "DARIO ALEJANDRO VERON",
+      "categoria": "A-2"
+    },
+    {
+      "nombre": "JOSE NICOLAS ROMERO",
+      "categoria": "A-4"
+    }
+  ],
+  "fuente": "https://www.senado.gob.ar/senadores/senador/578",
+  "personalDetalle": [
+    {
+      "nombre": "JORGE ALFREDO MORENO",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "ZACARIAS MIGUEL ISSOLIO",
+      "categoria": "A-7",
+      "brutoBase": 1211631.36,
+      "brutoConAdicionalFuncion": 1211631.36
+    },
+    {
+      "nombre": "JUAN MARTIN MERSCH",
+      "categoria": "A-3",
+      "brutoBase": 1924452.33,
+      "brutoConAdicionalFuncion": 2093190.42
+    },
+    {
+      "nombre": "ELEONORA LAFOURCADE",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "WALTER JAVIER GUARNIERI MELIS",
+      "categoria": "A-3",
+      "brutoBase": 1924452.33,
+      "brutoConAdicionalFuncion": 2093190.42
+    },
+    {
+      "nombre": "MARIA ROSANA KRONEBERGER",
+      "categoria": "A-3",
+      "brutoBase": 1924452.33,
+      "brutoConAdicionalFuncion": 2093190.42
+    },
+    {
+      "nombre": "DARIO ALEJANDRO VERON",
+      "categoria": "A-2",
+      "brutoBase": 2230742.59,
+      "brutoConAdicionalFuncion": 2430109.7
+    },
+    {
+      "nombre": "JOSE NICOLAS ROMERO",
+      "categoria": "A-4",
+      "brutoBase": 1710049.15,
+      "brutoConAdicionalFuncion": 1710049.15
+    }
+  ],
+  "gasto": {
+    "agentes": 8,
+    "brutoMensualEstimado": 16105655.15,
+    "brutoMensualConAdicionalFuncion": 17281809.75,
+    "sinCategoriaMatch": 0,
+    "porCategoria": [
+      {
+        "categoria": "A-1",
+        "cantidad": 2,
+        "montoUnitario": 2589937.53,
+        "montoUnitarioConAdicionalFuncion": 2825224.14,
+        "subtotal": 5179875.06,
+        "subtotalConAdicionalFuncion": 5650448.28
+      },
+      {
+        "categoria": "A-2",
+        "cantidad": 1,
+        "montoUnitario": 2230742.59,
+        "montoUnitarioConAdicionalFuncion": 2430109.7,
+        "subtotal": 2230742.59,
+        "subtotalConAdicionalFuncion": 2430109.7
+      },
+      {
+        "categoria": "A-3",
+        "cantidad": 3,
+        "montoUnitario": 1924452.33,
+        "montoUnitarioConAdicionalFuncion": 2093190.42,
+        "subtotal": 5773356.99,
+        "subtotalConAdicionalFuncion": 6279571.26
+      },
+      {
+        "categoria": "A-4",
+        "cantidad": 1,
+        "montoUnitario": 1710049.15,
+        "montoUnitarioConAdicionalFuncion": 1710049.15,
+        "subtotal": 1710049.15,
+        "subtotalConAdicionalFuncion": 1710049.15
+      },
+      {
+        "categoria": "A-7",
+        "cantidad": 1,
+        "montoUnitario": 1211631.36,
+        "montoUnitarioConAdicionalFuncion": 1211631.36,
+        "subtotal": 1211631.36,
+        "subtotalConAdicionalFuncion": 1211631.36
+      }
+    ],
+    "metodo": "totalEnPesos + RC (escala salarial); adicional función 10% en A-1..A-3 opcional"
+  }
+}

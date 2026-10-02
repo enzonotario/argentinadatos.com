@@ -1,0 +1,174 @@
+{
+  "id": "95",
+  "nombre": "Convicción Federal",
+  "presidente": "María Carolina Moises",
+  "integrantes": 3,
+  "senadores": [
+    {
+      "id": "519",
+      "nombre": "Guillermo Eduardo Andrada"
+    },
+    {
+      "id": "540",
+      "nombre": "Sandra Mariela Mendoza"
+    },
+    {
+      "id": "554",
+      "nombre": "María Carolina Moises"
+    }
+  ],
+  "personal": [
+    {
+      "nombre": "SERGIO EDGARDO MAMANI",
+      "categoria": "A-9"
+    },
+    {
+      "nombre": "GONZALO ALVAREZ",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "VICTOR ORLANDO NAVARRO",
+      "categoria": "A-4"
+    },
+    {
+      "nombre": "HECTOR ESTEBAN BLESA",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "MARIANO KYRIACOS KONTOS",
+      "categoria": "A-5"
+    },
+    {
+      "nombre": "PAOLA ROMINA SANCHEZ",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "ROCIO MELINA ROMERO",
+      "categoria": "A-3"
+    },
+    {
+      "nombre": "SILVIA MARIA ACUÑA",
+      "categoria": "A-3"
+    },
+    {
+      "nombre": "NATALIA TURBINER",
+      "categoria": "A-4"
+    },
+    {
+      "nombre": "OSCAR ALFREDO BARRAZA",
+      "categoria": "A-5"
+    }
+  ],
+  "fuente": "https://www.senado.gob.ar/senadores/listados/agrupados-por-bloques",
+  "personalDetalle": [
+    {
+      "nombre": "SERGIO EDGARDO MAMANI",
+      "categoria": "A-9",
+      "brutoBase": 944323.51,
+      "brutoConAdicionalFuncion": 944323.51
+    },
+    {
+      "nombre": "GONZALO ALVAREZ",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "VICTOR ORLANDO NAVARRO",
+      "categoria": "A-4",
+      "brutoBase": 1710049.15,
+      "brutoConAdicionalFuncion": 1710049.15
+    },
+    {
+      "nombre": "HECTOR ESTEBAN BLESA",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "MARIANO KYRIACOS KONTOS",
+      "categoria": "A-5",
+      "brutoBase": 1520706.08,
+      "brutoConAdicionalFuncion": 1520706.08
+    },
+    {
+      "nombre": "PAOLA ROMINA SANCHEZ",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "ROCIO MELINA ROMERO",
+      "categoria": "A-3",
+      "brutoBase": 1924452.33,
+      "brutoConAdicionalFuncion": 2093190.42
+    },
+    {
+      "nombre": "SILVIA MARIA ACUÑA",
+      "categoria": "A-3",
+      "brutoBase": 1924452.33,
+      "brutoConAdicionalFuncion": 2093190.42
+    },
+    {
+      "nombre": "NATALIA TURBINER",
+      "categoria": "A-4",
+      "brutoBase": 1710049.15,
+      "brutoConAdicionalFuncion": 1710049.15
+    },
+    {
+      "nombre": "OSCAR ALFREDO BARRAZA",
+      "categoria": "A-5",
+      "brutoBase": 1520706.08,
+      "brutoConAdicionalFuncion": 1520706.08
+    }
+  ],
+  "gasto": {
+    "agentes": 10,
+    "brutoMensualEstimado": 19024551.22,
+    "brutoMensualConAdicionalFuncion": 20067887.23,
+    "sinCategoriaMatch": 0,
+    "porCategoria": [
+      {
+        "categoria": "A-1",
+        "cantidad": 3,
+        "montoUnitario": 2589937.53,
+        "montoUnitarioConAdicionalFuncion": 2825224.14,
+        "subtotal": 7769812.59,
+        "subtotalConAdicionalFuncion": 8475672.42
+      },
+      {
+        "categoria": "A-3",
+        "cantidad": 2,
+        "montoUnitario": 1924452.33,
+        "montoUnitarioConAdicionalFuncion": 2093190.42,
+        "subtotal": 3848904.66,
+        "subtotalConAdicionalFuncion": 4186380.84
+      },
+      {
+        "categoria": "A-4",
+        "cantidad": 2,
+        "montoUnitario": 1710049.15,
+        "montoUnitarioConAdicionalFuncion": 1710049.15,
+        "subtotal": 3420098.3,
+        "subtotalConAdicionalFuncion": 3420098.3
+      },
+      {
+        "categoria": "A-5",
+        "cantidad": 2,
+        "montoUnitario": 1520706.08,
+        "montoUnitarioConAdicionalFuncion": 1520706.08,
+        "subtotal": 3041412.16,
+        "subtotalConAdicionalFuncion": 3041412.16
+      },
+      {
+        "categoria": "A-9",
+        "cantidad": 1,
+        "montoUnitario": 944323.51,
+        "montoUnitarioConAdicionalFuncion": 944323.51,
+        "subtotal": 944323.51,
+        "subtotalConAdicionalFuncion": 944323.51
+      }
+    ],
+    "metodo": "totalEnPesos + RC (escala salarial); adicional función 10% en A-1..A-3 opcional"
+  }
+}

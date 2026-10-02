@@ -1,0 +1,155 @@
+{
+  "senadorId": "557",
+  "personal": [
+    {
+      "nombre": "CAROLA FABIANA MENEM",
+      "categoria": "A-4"
+    },
+    {
+      "nombre": "FRANCISCO JAVIER DE STEFANO",
+      "categoria": "A-6"
+    },
+    {
+      "nombre": "JUAN MARIA PAGOTTO",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "ENRIQUE RAUL ALIVES",
+      "categoria": "A-6"
+    },
+    {
+      "nombre": "MARIA FLORENCIA SALATINO",
+      "categoria": "A-2"
+    },
+    {
+      "nombre": "LAURA JIMENA BAHAMONDE",
+      "categoria": "A-2"
+    },
+    {
+      "nombre": "ROSANA CARINA GRAMAJO",
+      "categoria": "A-5"
+    },
+    {
+      "nombre": "LUCAS IGNACIO FIORDELISI",
+      "categoria": "A-2"
+    },
+    {
+      "nombre": "MICAELA ESTHER TELLO LENCINA",
+      "categoria": "A-8"
+    }
+  ],
+  "fuente": "https://www.senado.gob.ar/senadores/senador/557",
+  "personalDetalle": [
+    {
+      "nombre": "CAROLA FABIANA MENEM",
+      "categoria": "A-4",
+      "brutoBase": 1710049.15,
+      "brutoConAdicionalFuncion": 1710049.15
+    },
+    {
+      "nombre": "FRANCISCO JAVIER DE STEFANO",
+      "categoria": "A-6",
+      "brutoBase": 1356423.12,
+      "brutoConAdicionalFuncion": 1356423.12
+    },
+    {
+      "nombre": "JUAN MARIA PAGOTTO",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "ENRIQUE RAUL ALIVES",
+      "categoria": "A-6",
+      "brutoBase": 1356423.12,
+      "brutoConAdicionalFuncion": 1356423.12
+    },
+    {
+      "nombre": "MARIA FLORENCIA SALATINO",
+      "categoria": "A-2",
+      "brutoBase": 2230742.59,
+      "brutoConAdicionalFuncion": 2430109.7
+    },
+    {
+      "nombre": "LAURA JIMENA BAHAMONDE",
+      "categoria": "A-2",
+      "brutoBase": 2230742.59,
+      "brutoConAdicionalFuncion": 2430109.7
+    },
+    {
+      "nombre": "ROSANA CARINA GRAMAJO",
+      "categoria": "A-5",
+      "brutoBase": 1520706.08,
+      "brutoConAdicionalFuncion": 1520706.08
+    },
+    {
+      "nombre": "LUCAS IGNACIO FIORDELISI",
+      "categoria": "A-2",
+      "brutoBase": 2230742.59,
+      "brutoConAdicionalFuncion": 2430109.7
+    },
+    {
+      "nombre": "MICAELA ESTHER TELLO LENCINA",
+      "categoria": "A-8",
+      "brutoBase": 1089115.26,
+      "brutoConAdicionalFuncion": 1089115.26
+    }
+  ],
+  "gasto": {
+    "agentes": 9,
+    "brutoMensualEstimado": 16314882.03,
+    "brutoMensualConAdicionalFuncion": 17148269.97,
+    "sinCategoriaMatch": 0,
+    "porCategoria": [
+      {
+        "categoria": "A-1",
+        "cantidad": 1,
+        "montoUnitario": 2589937.53,
+        "montoUnitarioConAdicionalFuncion": 2825224.14,
+        "subtotal": 2589937.53,
+        "subtotalConAdicionalFuncion": 2825224.14
+      },
+      {
+        "categoria": "A-2",
+        "cantidad": 3,
+        "montoUnitario": 2230742.59,
+        "montoUnitarioConAdicionalFuncion": 2430109.7,
+        "subtotal": 6692227.77,
+        "subtotalConAdicionalFuncion": 7290329.1
+      },
+      {
+        "categoria": "A-4",
+        "cantidad": 1,
+        "montoUnitario": 1710049.15,
+        "montoUnitarioConAdicionalFuncion": 1710049.15,
+        "subtotal": 1710049.15,
+        "subtotalConAdicionalFuncion": 1710049.15
+      },
+      {
+        "categoria": "A-5",
+        "cantidad": 1,
+        "montoUnitario": 1520706.08,
+        "montoUnitarioConAdicionalFuncion": 1520706.08,
+        "subtotal": 1520706.08,
+        "subtotalConAdicionalFuncion": 1520706.08
+      },
+      {
+        "categoria": "A-6",
+        "cantidad": 2,
+        "montoUnitario": 1356423.12,
+        "montoUnitarioConAdicionalFuncion": 1356423.12,
+        "subtotal": 2712846.24,
+        "subtotalConAdicionalFuncion": 2712846.24
+      },
+      {
+        "categoria": "A-8",
+        "cantidad": 1,
+        "montoUnitario": 1089115.26,
+        "montoUnitarioConAdicionalFuncion": 1089115.26,
+        "subtotal": 1089115.26,
+        "subtotalConAdicionalFuncion": 1089115.26
+      }
+    ],
+    "metodo": "totalEnPesos + RC (escala salarial); adicional función 10% en A-1..A-3 opcional"
+  }
+}

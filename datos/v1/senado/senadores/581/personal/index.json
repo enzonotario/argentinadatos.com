@@ -1,0 +1,53 @@
+{
+  "senadorId": "581",
+  "personal": [
+    {
+      "nombre": "SANDARA SOLEDAD STADELMAN",
+      "categoria": "A-2"
+    },
+    {
+      "nombre": "LORENA SOLEDAD MORALES",
+      "categoria": "A-3"
+    }
+  ],
+  "fuente": "https://www.senado.gob.ar/senadores/senador/581",
+  "personalDetalle": [
+    {
+      "nombre": "SANDARA SOLEDAD STADELMAN",
+      "categoria": "A-2",
+      "brutoBase": 2230742.59,
+      "brutoConAdicionalFuncion": 2430109.7
+    },
+    {
+      "nombre": "LORENA SOLEDAD MORALES",
+      "categoria": "A-3",
+      "brutoBase": 1924452.33,
+      "brutoConAdicionalFuncion": 2093190.42
+    }
+  ],
+  "gasto": {
+    "agentes": 2,
+    "brutoMensualEstimado": 4155194.92,
+    "brutoMensualConAdicionalFuncion": 4523300.12,
+    "sinCategoriaMatch": 0,
+    "porCategoria": [
+      {
+        "categoria": "A-2",
+        "cantidad": 1,
+        "montoUnitario": 2230742.59,
+        "montoUnitarioConAdicionalFuncion": 2430109.7,
+        "subtotal": 2230742.59,
+        "subtotalConAdicionalFuncion": 2430109.7
+      },
+      {
+        "categoria": "A-3",
+        "cantidad": 1,
+        "montoUnitario": 1924452.33,
+        "montoUnitarioConAdicionalFuncion": 2093190.42,
+        "subtotal": 1924452.33,
+        "subtotalConAdicionalFuncion": 2093190.42
+      }
+    ],
+    "metodo": "totalEnPesos + RC (escala salarial); adicional función 10% en A-1..A-3 opcional"
+  }
+}

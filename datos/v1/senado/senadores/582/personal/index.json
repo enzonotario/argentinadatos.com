@@ -1,0 +1,45 @@
+{
+  "senadorId": "582",
+  "personal": [
+    {
+      "nombre": "MATIAS GARAICOECHEA",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "KAREN CASANDRA SAYES PIMIENTA",
+      "categoria": "A-1"
+    }
+  ],
+  "fuente": "https://www.senado.gob.ar/senadores/senador/582",
+  "personalDetalle": [
+    {
+      "nombre": "MATIAS GARAICOECHEA",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "KAREN CASANDRA SAYES PIMIENTA",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    }
+  ],
+  "gasto": {
+    "agentes": 2,
+    "brutoMensualEstimado": 5179875.06,
+    "brutoMensualConAdicionalFuncion": 5650448.28,
+    "sinCategoriaMatch": 0,
+    "porCategoria": [
+      {
+        "categoria": "A-1",
+        "cantidad": 2,
+        "montoUnitario": 2589937.53,
+        "montoUnitarioConAdicionalFuncion": 2825224.14,
+        "subtotal": 5179875.06,
+        "subtotalConAdicionalFuncion": 5650448.28
+      }
+    ],
+    "metodo": "totalEnPesos + RC (escala salarial); adicional función 10% en A-1..A-3 opcional"
+  }
+}

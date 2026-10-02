@@ -1,0 +1,131 @@
+{
+  "senadorId": "400",
+  "personal": [
+    {
+      "nombre": "PAMELA HUMILDAD D'FELICE",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "EUGENIO YAMIL FORNARI",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "NICOLAS REYNERIO GOITEA",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "MARCELO CLAUDIO LEMOS",
+      "categoria": "A-14"
+    },
+    {
+      "nombre": "PRISCILA MICAELA CARNERO",
+      "categoria": "A-14"
+    },
+    {
+      "nombre": "LEONEL HERNAN FRASSETTI",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "ARIEL LEANDRO FRASSETTI",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "RICARDO ARIEL PALAVECINO",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "LEONEL NORBERTO PERTICA",
+      "categoria": "A-2"
+    }
+  ],
+  "fuente": "https://www.senado.gob.ar/senadores/senador/400",
+  "personalDetalle": [
+    {
+      "nombre": "PAMELA HUMILDAD D'FELICE",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "EUGENIO YAMIL FORNARI",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "NICOLAS REYNERIO GOITEA",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "MARCELO CLAUDIO LEMOS",
+      "categoria": "A-14",
+      "brutoBase": 621326.51,
+      "brutoConAdicionalFuncion": 621326.51
+    },
+    {
+      "nombre": "PRISCILA MICAELA CARNERO",
+      "categoria": "A-14",
+      "brutoBase": 621326.51,
+      "brutoConAdicionalFuncion": 621326.51
+    },
+    {
+      "nombre": "LEONEL HERNAN FRASSETTI",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "ARIEL LEANDRO FRASSETTI",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "RICARDO ARIEL PALAVECINO",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "LEONEL NORBERTO PERTICA",
+      "categoria": "A-2",
+      "brutoBase": 2230742.59,
+      "brutoConAdicionalFuncion": 2430109.7
+    }
+  ],
+  "gasto": {
+    "agentes": 9,
+    "brutoMensualEstimado": 19013020.79,
+    "brutoMensualConAdicionalFuncion": 20624107.56,
+    "sinCategoriaMatch": 0,
+    "porCategoria": [
+      {
+        "categoria": "A-1",
+        "cantidad": 6,
+        "montoUnitario": 2589937.53,
+        "montoUnitarioConAdicionalFuncion": 2825224.14,
+        "subtotal": 15539625.18,
+        "subtotalConAdicionalFuncion": 16951344.84
+      },
+      {
+        "categoria": "A-2",
+        "cantidad": 1,
+        "montoUnitario": 2230742.59,
+        "montoUnitarioConAdicionalFuncion": 2430109.7,
+        "subtotal": 2230742.59,
+        "subtotalConAdicionalFuncion": 2430109.7
+      },
+      {
+        "categoria": "A-14",
+        "cantidad": 2,
+        "montoUnitario": 621326.51,
+        "montoUnitarioConAdicionalFuncion": 621326.51,
+        "subtotal": 1242653.02,
+        "subtotalConAdicionalFuncion": 1242653.02
+      }
+    ],
+    "metodo": "totalEnPesos + RC (escala salarial); adicional función 10% en A-1..A-3 opcional"
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "id": "64",
+  "nombre": "Frente Pro",
+  "presidente": "Enrique Martín Goerling Lara",
+  "integrantes": 3,
+  "senadores": [
+    {
+      "id": "570",
+      "nombre": "Andrea Marcela Cristina"
+    },
+    {
+      "id": "560",
+      "nombre": "Enrique Martín Goerling Lara"
+    },
+    {
+      "id": "531",
+      "nombre": "María Victoria Huala"
+    }
+  ],
+  "personal": [
+    {
+      "nombre": "NATALIA VERONICA FERRARO",
+      "categoria": "A-6"
+    },
+    {
+      "nombre": "LILIANA GRACIELA SCORDIA",
+      "categoria": "A-2"
+    },
+    {
+      "nombre": "GUILLERMO SALEH",
+      "categoria": "A-3"
+    },
+    {
+      "nombre": "ALEJO LIZZI",
+      "categoria": "A-4"
+    },
+    {
+      "nombre": "RAFAEL HUGO STAFFOLANI",
+      "categoria": "A-2"
+    },
+    {
+      "nombre": "FLORENCIA GROSSI",
+      "categoria": "A-4"
+    },
+    {
+      "nombre": "LUCIANO AUGUSTO DODARO",
+      "categoria": "A-2"
+    },
+    {
+      "nombre": "ANA MARIA SANSOLINO",
+      "categoria": "A-2"
+    },
+    {
+      "nombre": "SANTIAGO EDUARDO RIOBO",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "MANUEL ALEJANDRO MELGAREJO",
+      "categoria": "A-1"
+    },
+    {
+      "nombre": "JOSEFINA PRILLE",
+      "categoria": "A-4"
+    }
+  ],
+  "fuente": "https://www.senado.gob.ar/senadores/listados/agrupados-por-bloques",
+  "personalDetalle": [
+    {
+      "nombre": "NATALIA VERONICA FERRARO",
+      "categoria": "A-6",
+      "brutoBase": 1356423.12,
+      "brutoConAdicionalFuncion": 1356423.12
+    },
+    {
+      "nombre": "LILIANA GRACIELA SCORDIA",
+      "categoria": "A-2",
+      "brutoBase": 2230742.59,
+      "brutoConAdicionalFuncion": 2430109.7
+    },
+    {
+      "nombre": "GUILLERMO SALEH",
+      "categoria": "A-3",
+      "brutoBase": 1924452.33,
+      "brutoConAdicionalFuncion": 2093190.42
+    },
+    {
+      "nombre": "ALEJO LIZZI",
+      "categoria": "A-4",
+      "brutoBase": 1710049.15,
+      "brutoConAdicionalFuncion": 1710049.15
+    },
+    {
+      "nombre": "RAFAEL HUGO STAFFOLANI",
+      "categoria": "A-2",
+      "brutoBase": 2230742.59,
+      "brutoConAdicionalFuncion": 2430109.7
+    },
+    {
+      "nombre": "FLORENCIA GROSSI",
+      "categoria": "A-4",
+      "brutoBase": 1710049.15,
+      "brutoConAdicionalFuncion": 1710049.15
+    },
+    {
+      "nombre": "LUCIANO AUGUSTO DODARO",
+      "categoria": "A-2",
+      "brutoBase": 2230742.59,
+      "brutoConAdicionalFuncion": 2430109.7
+    },
+    {
+      "nombre": "ANA MARIA SANSOLINO",
+      "categoria": "A-2",
+      "brutoBase": 2230742.59,
+      "brutoConAdicionalFuncion": 2430109.7
+    },
+    {
+      "nombre": "SANTIAGO EDUARDO RIOBO",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "MANUEL ALEJANDRO MELGAREJO",
+      "categoria": "A-1",
+      "brutoBase": 2589937.53,
+      "brutoConAdicionalFuncion": 2825224.14
+    },
+    {
+      "nombre": "JOSEFINA PRILLE",
+      "categoria": "A-4",
+      "brutoBase": 1710049.15,
+      "brutoConAdicionalFuncion": 1710049.15
+    }
+  ],
+  "gasto": {
+    "agentes": 11,
+    "brutoMensualEstimado": 22513868.32,
+    "brutoMensualConAdicionalFuncion": 23950648.07,
+    "sinCategoriaMatch": 0,
+    "porCategoria": [
+      {
+        "categoria": "A-1",
+        "cantidad": 2,
+        "montoUnitario": 2589937.53,
+        "montoUnitarioConAdicionalFuncion": 2825224.14,
+        "subtotal": 5179875.06,
+        "subtotalConAdicionalFuncion": 5650448.28
+      },
+      {
+        "categoria": "A-2",
+        "cantidad": 4,
+        "montoUnitario": 2230742.59,
+        "montoUnitarioConAdicionalFuncion": 2430109.7,
+        "subtotal": 8922970.36,
+        "subtotalConAdicionalFuncion": 9720438.8
+      },
+      {
+        "categoria": "A-3",
+        "cantidad": 1,
+        "montoUnitario": 1924452.33,
+        "montoUnitarioConAdicionalFuncion": 2093190.42,
+        "subtotal": 1924452.33,
+        "subtotalConAdicionalFuncion": 2093190.42
+      },
+      {
+        "categoria": "A-4",
+        "cantidad": 3,
+        "montoUnitario": 1710049.15,
+        "montoUnitarioConAdicionalFuncion": 1710049.15,
+        "subtotal": 5130147.45,
+        "subtotalConAdicionalFuncion": 5130147.45
+      },
+      {
+        "categoria": "A-6",
+        "cantidad": 1,
+        "montoUnitario": 1356423.12,
+        "montoUnitarioConAdicionalFuncion": 1356423.12,
+        "subtotal": 1356423.12,
+        "subtotalConAdicionalFuncion": 1356423.12
+      }
+    ],
+    "metodo": "totalEnPesos + RC (escala salarial); adicional función 10% en A-1..A-3 opcional"
+  }
+}

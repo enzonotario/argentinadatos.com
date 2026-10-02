@@ -1,0 +1,63 @@
+{
+  "senadorId": "450",
+  "personal": [
+    {
+      "nombre": "LAURA ELIZABETH CHAVEZ",
+      "categoria": "A-6"
+    },
+    {
+      "nombre": "MANUELA SALVATIERRA PEREZ",
+      "categoria": "A-2"
+    },
+    {
+      "nombre": "SANTIAGO MANUEL VIAÑA",
+      "categoria": "A-2"
+    }
+  ],
+  "fuente": "https://www.senado.gob.ar/senadores/senador/450",
+  "personalDetalle": [
+    {
+      "nombre": "LAURA ELIZABETH CHAVEZ",
+      "categoria": "A-6",
+      "brutoBase": 1356423.12,
+      "brutoConAdicionalFuncion": 1356423.12
+    },
+    {
+      "nombre": "MANUELA SALVATIERRA PEREZ",
+      "categoria": "A-2",
+      "brutoBase": 2230742.59,
+      "brutoConAdicionalFuncion": 2430109.7
+    },
+    {
+      "nombre": "SANTIAGO MANUEL VIAÑA",
+      "categoria": "A-2",
+      "brutoBase": 2230742.59,
+      "brutoConAdicionalFuncion": 2430109.7
+    }
+  ],
+  "gasto": {
+    "agentes": 3,
+    "brutoMensualEstimado": 5817908.3,
+    "brutoMensualConAdicionalFuncion": 6216642.52,
+    "sinCategoriaMatch": 0,
+    "porCategoria": [
+      {
+        "categoria": "A-2",
+        "cantidad": 2,
+        "montoUnitario": 2230742.59,
+        "montoUnitarioConAdicionalFuncion": 2430109.7,
+        "subtotal": 4461485.18,
+        "subtotalConAdicionalFuncion": 4860219.4
+      },
+      {
+        "categoria": "A-6",
+        "cantidad": 1,
+        "montoUnitario": 1356423.12,
+        "montoUnitarioConAdicionalFuncion": 1356423.12,
+        "subtotal": 1356423.12,
+        "subtotalConAdicionalFuncion": 1356423.12
+      }
+    ],
+    "metodo": "totalEnPesos + RC (escala salarial); adicional función 10% en A-1..A-3 opcional"
+  }
+}
