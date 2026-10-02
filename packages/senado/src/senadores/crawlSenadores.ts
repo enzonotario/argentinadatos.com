@@ -109,13 +109,50 @@ export async function crawlSenadores(): Promise<Senador[]> {
   return JSON.parse(readEndpoint('/senado/senadores') || '[]')
 }
 
+function senadorMandatoKey(s: {
+  id: string
+  periodoLegal?: { inicio: string | null, fin: string | null }
+  periodoReal?: { inicio: string | null, fin: string | null }
+}): string {
+  const legal = s.periodoLegal || { inicio: null, fin: null }
+  const real = s.periodoReal || { inicio: null, fin: null }
+  return [
+    String(s.id),
+    legal.inicio || '',
+    legal.fin || '',
+    real.inicio || '',
+    real.fin || '',
+  ].join('|')
+}
+
+/**
+ * El JSON histórico del Senado no trae meta/contacto/bloque. Conservamos lo ya
+ * scrapado para que un re-crawl no borre dietas/personal/comisiones.
+ */
+function preserveScrapedFields(prev: Senador | undefined, next: Senador): Senador {
+  if (!prev) {
+    return next
+  }
+  return {
+    ...next,
+    foto: next.foto || prev.foto || null,
+    email: next.email || prev.email || null,
+    telefono: next.telefono || prev.telefono || null,
+    redes: (next.redes && next.redes.length > 0) ? next.redes : prev.redes,
+    bloque: next.bloque || prev.bloque || null,
+    meta: next.meta || prev.meta || null,
+  }
+}
+
 async function processJson() {
   const currentValues = JSON.parse(readEndpoint('/senado/senadores') || '[]') as Senador[]
   const fotosPorId = new Map<string, string>()
+  const prevByMandato = new Map<string, Senador>()
   for (const s of currentValues) {
     if (s.id && s.foto && !fotosPorId.has(String(s.id))) {
       fotosPorId.set(String(s.id), s.foto)
     }
+    prevByMandato.set(senadorMandatoKey(s), s)
   }
 
   const json = await downloadJson()
@@ -133,10 +170,13 @@ async function processJson() {
     }
   })
 
-  const senadoresConFotos = senadores.map((senador: Senador) => ({
-    ...senador,
-    foto: fotosPorId.get(String(senador.id)) || null,
-  }))
+  const senadoresConFotos = senadores.map((senador: Senador) => {
+    const withFoto: Senador = {
+      ...senador,
+      foto: fotosPorId.get(String(senador.id)) || null,
+    }
+    return preserveScrapedFields(prevByMandato.get(senadorMandatoKey(withFoto)), withFoto)
+  })
 
   if (shouldWriteJsonFiles()) {
     writeEndpoint('/senado/senadores', senadoresConFotos)
@@ -584,6 +624,18 @@ async function processGasto(): Promise<void> {
   const senadores = JSON.parse(readEndpoint('/senado/senadores') || '[]') as Senador[]
 
   try {
+    // Reaplicar mecanismos desde caché por si un crawl parcial dejó meta.dieta vacío.
+    try {
+      const cache = await scrapeDietasMecanismos({ force: false })
+      applyDietasMecanismosMeta(senadores, cache)
+    }
+    catch (e: any) {
+      console.warn(
+        'Gasto: no se pudo reaplicar dietas/mecanismos',
+        e?.message || e,
+      )
+    }
+
     const { escala, bloques, senadoresPersonal, gasto } = await crawlGastoSenado({
       senadores,
     })
