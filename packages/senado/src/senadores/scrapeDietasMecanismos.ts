@@ -27,6 +27,9 @@ export interface SenadorDietaMeta {
   aportesPartidarios: boolean
   fuente: string
   actualizado: string
+  /** Bruto estimado: 4000 módulos × valor módulo vigente. */
+  brutoEstimado?: number
+  valorModulo?: number
 }
 
 const PROMPT = `Extraé TODAS las filas de la tabla de senadores del PDF (ambas páginas).

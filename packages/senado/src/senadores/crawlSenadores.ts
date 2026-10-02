@@ -27,6 +27,10 @@ import {
   type SenadorDietaMeta,
 } from './scrapeDietasMecanismos.ts'
 import type { SenadorComisionMeta } from './crawlComisiones.ts'
+import {
+  applyPersonalMetaToSenadores,
+  crawlGastoSenado,
+} from './gastoSenado.ts'
 
 export interface Senador {
   id: string
@@ -50,8 +54,24 @@ export interface Senador {
   telefono: string | null
   redes: string[] | null
   meta: {
-    dieta?: SenadorDietaMeta
+    dieta?: SenadorDietaMeta & {
+      brutoEstimado?: number
+      valorModulo?: number
+    }
+    dietaEstimada?: {
+      brutoEstimado: number
+      valorModulo: number
+      totalModulos: number
+      fuente: string
+      nota: string
+    }
     comisiones?: SenadorComisionMeta[]
+    personal?: {
+      agentes: number
+      brutoMensualEstimado: number
+      brutoMensualConAdicionalFuncion: number
+      fuente: string
+    }
   } | null
 }
 
@@ -78,6 +98,8 @@ export async function crawlSenadores(): Promise<Senador[]> {
   await processDietasMecanismos()
 
   await processComisiones()
+
+  await processGasto()
 
   await processPresidencia()
 
@@ -555,6 +577,27 @@ async function processDietasMecanismos(): Promise<Senador[]> {
 
   await persistSenadores(senadores)
   return senadores
+}
+
+async function processGasto(): Promise<void> {
+  const senadores = JSON.parse(readEndpoint('/senado/senadores') || '[]') as Senador[]
+
+  try {
+    const { escala, bloques, senadoresPersonal, gasto } = await crawlGastoSenado({
+      senadores,
+    })
+    applyPersonalMetaToSenadores(senadores, senadoresPersonal, escala)
+    await persistSenadores(senadores)
+    console.log(
+      `Gasto: ${bloques.length} bloques, ${senadoresPersonal.length} despachos, `
+      + `personal bloques $${gasto.totales.bloquesPersonalBruto}, `
+      + `despachos $${gasto.totales.despachosPersonalBruto}, `
+      + `dietas $${gasto.totales.dietasSenadoresBruto}`,
+    )
+  }
+  catch (e: any) {
+    console.error('Gasto/escala/personal: no se pudo scrapear', e?.message || e)
+  }
 }
 
 async function generateEndpointEstatico(db: SenadoresDatabaseService) {

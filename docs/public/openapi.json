@@ -1305,6 +1305,164 @@
         ]
       }
     },
+    "/v1/senado/escala-salarial": {
+      "get": {
+        "summary": "Escala salarial",
+        "tags": [
+          "Congreso",
+          "Senado"
+        ],
+        "description": "Escala salarial de planta permanente y temporaria del Senado (valor de módulo, categorías A-1..A-14, RC 2 y 6/22, fórmula de dieta). Montos estimados: Total en Pesos + RC.",
+        "responses": {
+          "200": {
+            "description": "Escala salarial vigente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EscalaSalarialSenado"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-senado-escala-salarial",
+        "x-data-source": [
+          "[Senado — Escala Salarial](https://www.senado.gob.ar/prensa/adjunto/descargarArchivo/tipo/EscalaSalarial)",
+          "[Senado — Dietas](https://www.senado.gob.ar/dietas)"
+        ]
+      }
+    },
+    "/v1/senado/bloques": {
+      "get": {
+        "summary": "Bloques con personal y gasto estimado",
+        "tags": [
+          "Congreso",
+          "Senado"
+        ],
+        "description": "Listado de bloques parlamentarios con senadores, personal/asesores del bloque y gasto bruto estimado según escala salarial (Total en Pesos + RC).",
+        "responses": {
+          "200": {
+            "description": "Lista de bloques",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BloqueSenado"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-senado-bloques",
+        "x-data-source": [
+          "[Senado — Agrupados por bloques](https://www.senado.gob.ar/senadores/listados/agrupados-por-bloques)"
+        ]
+      }
+    },
+    "/v1/senado/bloques/{id}": {
+      "get": {
+        "summary": "Bloque por id",
+        "tags": [
+          "Congreso",
+          "Senado"
+        ],
+        "description": "Detalle de un bloque con personal y gasto estimado.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Id del bloque en el sitio del Senado"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Bloque",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BloqueSenado"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-senado-bloques-id",
+        "x-data-source": [
+          "[Senado — Agrupados por bloques](https://www.senado.gob.ar/senadores/listados/agrupados-por-bloques)"
+        ]
+      }
+    },
+    "/v1/senado/gasto": {
+      "get": {
+        "summary": "Gasto estimado del Senado",
+        "tags": [
+          "Congreso",
+          "Senado"
+        ],
+        "description": "Agregado de gasto bruto estimado: personal de bloques, personal de despachos y dietas de senadores (4000 módulos × valor módulo).",
+        "responses": {
+          "200": {
+            "description": "Resumen de gasto",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GastoSenado"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-senado-gasto",
+        "x-data-source": [
+          "[Senado — Escala Salarial](https://www.senado.gob.ar/prensa/adjunto/descargarArchivo/tipo/EscalaSalarial)",
+          "[Senado — Agrupados por bloques](https://www.senado.gob.ar/senadores/listados/agrupados-por-bloques)",
+          "[Senado — Dietas](https://www.senado.gob.ar/dietas)"
+        ]
+      }
+    },
+    "/v1/senado/senadores/{id}/personal": {
+      "get": {
+        "summary": "Personal del despacho de un senador",
+        "tags": [
+          "Congreso",
+          "Senado"
+        ],
+        "description": "Personal/asesores publicados en la ficha del senador, con gasto bruto estimado por categoría (Total en Pesos + RC).",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Id del senador"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Personal del despacho",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SenadorPersonal"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-senado-senadores-id-personal",
+        "x-data-source": [
+          "[Senado — Ficha senador](https://www.senado.gob.ar/senadores/listados/listaSenadoRes)"
+        ]
+      }
+    },
     "/v1/senado/comisiones": {
       "get": {
         "summary": "Comisiones",
@@ -4001,6 +4159,13 @@
                   "actualizado": {
                     "type": "string",
                     "format": "date-time"
+                  },
+                  "brutoEstimado": {
+                    "type": "number",
+                    "description": "Dieta bruta estimada (4000 módulos × valor módulo)"
+                  },
+                  "valorModulo": {
+                    "type": "number"
                   }
                 }
               },
@@ -4018,6 +4183,45 @@
                     "cargo": {
                       "type": "string"
                     }
+                  }
+                }
+              },
+              "personal": {
+                "type": "object",
+                "properties": {
+                  "agentes": {
+                    "type": "integer"
+                  },
+                  "brutoMensualEstimado": {
+                    "type": "number"
+                  },
+                  "brutoMensualConAdicionalFuncion": {
+                    "type": "number"
+                  },
+                  "fuente": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                }
+              },
+              "dietaEstimada": {
+                "type": "object",
+                "properties": {
+                  "brutoEstimado": {
+                    "type": "number"
+                  },
+                  "valorModulo": {
+                    "type": "number"
+                  },
+                  "totalModulos": {
+                    "type": "integer"
+                  },
+                  "fuente": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "nota": {
+                    "type": "string"
                   }
                 }
               }
@@ -5281,7 +5485,11 @@
           "tnaEstimadaPeriodo": {
             "type": "string",
             "nullable": true,
-            "enum": ["unMes", "ultimos7Dias", "variacionDiariaPct"],
+            "enum": [
+              "unMes",
+              "ultimos7Dias",
+              "variacionDiariaPct"
+            ],
             "description": "Ventana de origen de tnaEstimada"
           }
         }
@@ -6094,6 +6302,230 @@
                   "type": "string"
                 }
               }
+            }
+          }
+        }
+      },
+      "EscalaCategoriaSenado": {
+        "title": "EscalaCategoriaSenado",
+        "type": "object",
+        "properties": {
+          "categoria": {
+            "type": "integer"
+          },
+          "codigo": {
+            "type": "string",
+            "example": "A-1"
+          },
+          "totalEnPesos": {
+            "type": "number"
+          },
+          "rc": {
+            "type": "number",
+            "description": "RC 2 y 6/22 en pesos"
+          },
+          "brutoBase": {
+            "type": "number",
+            "description": "Total en Pesos + RC"
+          },
+          "brutoConAdicionalFuncion": {
+            "type": "number"
+          }
+        }
+      },
+      "EscalaSalarialSenado": {
+        "title": "EscalaSalarialSenado",
+        "type": "object",
+        "properties": {
+          "fuente": {
+            "type": "string",
+            "format": "uri"
+          },
+          "vigencia": {
+            "type": "string",
+            "nullable": true
+          },
+          "valorModulo": {
+            "type": "number"
+          },
+          "scrapedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "categorias": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EscalaCategoriaSenado"
+            }
+          },
+          "dietaSenador": {
+            "type": "object",
+            "properties": {
+              "totalModulos": {
+                "type": "integer"
+              },
+              "brutoEstimado": {
+                "type": "number"
+              },
+              "nota": {
+                "type": "string"
+              }
+            }
+          },
+          "notas": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "GastoPersonalResumen": {
+        "title": "GastoPersonalResumen",
+        "type": "object",
+        "properties": {
+          "agentes": {
+            "type": "integer"
+          },
+          "brutoMensualEstimado": {
+            "type": "number"
+          },
+          "brutoMensualConAdicionalFuncion": {
+            "type": "number"
+          },
+          "sinCategoriaMatch": {
+            "type": "integer"
+          },
+          "porCategoria": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "metodo": {
+            "type": "string"
+          }
+        }
+      },
+      "BloqueSenado": {
+        "title": "BloqueSenado",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "presidente": {
+            "type": "string",
+            "nullable": true
+          },
+          "integrantes": {
+            "type": "integer"
+          },
+          "senadores": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "personal": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "personalDetalle": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "gasto": {
+            "$ref": "#/components/schemas/GastoPersonalResumen"
+          },
+          "fuente": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      },
+      "SenadorPersonal": {
+        "title": "SenadorPersonal",
+        "type": "object",
+        "properties": {
+          "senadorId": {
+            "type": "string"
+          },
+          "personal": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "personalDetalle": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "gasto": {
+            "$ref": "#/components/schemas/GastoPersonalResumen"
+          },
+          "fuente": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      },
+      "GastoSenado": {
+        "title": "GastoSenado",
+        "type": "object",
+        "properties": {
+          "valorModulo": {
+            "type": "number"
+          },
+          "vigenciaEscala": {
+            "type": "string",
+            "nullable": true
+          },
+          "dietaSenadorBrutoEstimado": {
+            "type": "number"
+          },
+          "totales": {
+            "type": "object",
+            "properties": {
+              "bloquesPersonalBruto": {
+                "type": "number"
+              },
+              "despachosPersonalBruto": {
+                "type": "number"
+              },
+              "dietasSenadoresBruto": {
+                "type": "number"
+              },
+              "grandTotalEstimado": {
+                "type": "number"
+              }
+            }
+          },
+          "bloques": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "senadores": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "notas": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           }
         }
