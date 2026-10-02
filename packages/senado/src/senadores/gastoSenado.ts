@@ -225,6 +225,15 @@ export function buildGastoSenado(input: {
     input.senadoresPersonal.map(p => [String(p.senadorId), p]),
   )
 
+  const bloquePorSenadorId = new Map<string, string>()
+  for (const bloque of input.bloques) {
+    for (const integrante of bloque.senadores) {
+      if (integrante.id && bloque.nombre) {
+        bloquePorSenadorId.set(String(integrante.id), bloque.nombre)
+      }
+    }
+  }
+
   const dietaBruto = input.escala.dietaSenador.brutoEstimado
   const senadoresResumen: SenadorGastoResumen[] = [...byId.values()].map((s) => {
     const pers = personalById.get(String(s.id))
@@ -233,11 +242,15 @@ export function buildGastoSenado(input: {
     const renuncia = s.meta?.dieta?.renunciaAlAumento ?? null
     // Si renunció al aumento, no inventamos el monto congelado: reportamos estimado pleno + flag
     const dieta = dietaBruto
+    const bloque
+      = s.bloque
+        || bloquePorSenadorId.get(String(s.id))
+        || null
 
     return {
       senadorId: String(s.id),
       nombre: s.nombre,
-      bloque: s.bloque ?? null,
+      bloque,
       dietaBrutoEstimado: dieta,
       renunciaAlAumento: renuncia,
       personalAgentes: pers?.gasto.agentes || 0,
@@ -363,6 +376,27 @@ export async function crawlGastoSenado(options?: {
   persistGasto(gasto)
 
   return { escala, bloques, senadoresPersonal, gasto }
+}
+
+/** Completa `senador.bloque` desde el listado agrupados-por-bloques si falta. */
+export function applyBloquesFromBloquesPersonal<T extends {
+  id: string
+  bloque?: string | null
+}>(senadores: T[], bloques: Array<{ nombre: string, senadores: Array<{ id: string }> }>): T[] {
+  const bloquePorId = new Map<string, string>()
+  for (const bloque of bloques) {
+    for (const integrante of bloque.senadores) {
+      if (integrante.id && bloque.nombre) {
+        bloquePorId.set(String(integrante.id), bloque.nombre)
+      }
+    }
+  }
+  for (const s of senadores) {
+    if (!s.bloque) {
+      s.bloque = bloquePorId.get(String(s.id)) || null
+    }
+  }
+  return senadores
 }
 
 export function applyPersonalMetaToSenadores<T extends {

@@ -9,6 +9,7 @@ import {
 } from '../src/senadores/escalaSalarial'
 import {
   attachGastoToBloques,
+  buildGastoSenado,
   computeGastoPersonal,
 } from '../src/senadores/gastoSenado'
 import { parseBloquesPersonalHtml } from '../src/senadores/scrapeBloquesPersonal'
@@ -113,5 +114,28 @@ describe('compute gasto', () => {
     )
     expect(gasto.sinCategoriaMatch).toBe(1)
     expect(gasto.brutoMensualEstimado).toBe(0)
+  })
+
+  it('completa bloque del senador desde el listado de bloques', () => {
+    const escala = buildEscalaFromSeed()
+    const html = readFileSync(
+      join(fixtures, 'bloques-agrupados-sample.html'),
+      'utf8',
+    )
+    const bloques = attachGastoToBloques(parseBloquesPersonalHtml(html), escala)
+    const resumen = buildGastoSenado({
+      escala,
+      bloques,
+      senadoresPersonal: [],
+      senadores: [
+        {
+          id: '554',
+          nombre: 'Moises, María Carolina',
+          bloque: null,
+          periodoReal: { fin: null },
+        },
+      ],
+    })
+    expect(resumen.senadores[0]?.bloque).toMatch(/Convicción Federal/i)
   })
 })

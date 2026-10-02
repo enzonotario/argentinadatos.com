@@ -28,6 +28,7 @@ import {
 } from './scrapeDietasMecanismos.ts'
 import type { SenadorComisionMeta } from './crawlComisiones.ts'
 import {
+  applyBloquesFromBloquesPersonal,
   applyPersonalMetaToSenadores,
   crawlGastoSenado,
 } from './gastoSenado.ts'
@@ -586,6 +587,7 @@ async function processGasto(): Promise<void> {
     const { escala, bloques, senadoresPersonal, gasto } = await crawlGastoSenado({
       senadores,
     })
+    applyBloquesFromBloquesPersonal(senadores, bloques)
     applyPersonalMetaToSenadores(senadores, senadoresPersonal, escala)
     await persistSenadores(senadores)
     console.log(
