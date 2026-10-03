@@ -1,0 +1,69 @@
+{
+  "fondoId": "1408",
+  "claseId": "4106",
+  "nombre": "Pionero Soja - Clase B",
+  "fecha": "2026-10-02",
+  "administradora": "Macro Fondos S.G.F.C.I.S.A.",
+  "depositaria": "Banco Macro S.A.",
+  "tipoRenta": "Renta Mixta",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "IAMC",
+  "horizonte": "Plazo Flexible",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1372",
+  "patrimonio": 830722439.35,
+  "cantidadCuotapartes": 502576142.95,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 2,
+  "rendimientos": {
+    "valorCuotaparte": 1652.929,
+    "variacionDiariaPct": -0.025,
+    "ultimos7Dias": -3.316,
+    "diasUltimos7Dias": 7,
+    "unMes": -0.4093,
+    "diasUnMes": 30,
+    "noventaDias": -0.4093,
+    "diasNoventaDias": 91,
+    "cientoOchentaDias": -0.4093,
+    "diasCientoOchentaDias": 179,
+    "enElAnio": -0.4093,
+    "diasEnElAnio": 276,
+    "doceMeses": -0.4093,
+    "diasDoceMeses": 365,
+    "tnaEstimada": -4.9798,
+    "tnaEstimadaDias": 30,
+    "tnaEstimadaPeriodo": "unMes"
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Bco Macro Ban",
+      "porcentaje": 100
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0,
+    "honorarioDepositaria": 0,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Macro Fondos S.G.F.C.I.S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00054G-82963f72.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Macro S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00098-871484a2.jpg"
+    }
+  ]
+}
