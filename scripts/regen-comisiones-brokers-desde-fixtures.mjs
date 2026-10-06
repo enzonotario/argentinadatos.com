@@ -15,6 +15,7 @@ import { parsearGaliciaSecurities } from '@/finanzas/brokers/comisiones/extracci
 import { parsearRava } from '@/finanzas/brokers/comisiones/extraccion/extraerRava.js'
 import { parsearAllariaTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerAllaria.js'
 import { parsearSbsTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerSbs.js'
+import { parsearFiveTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerFive.js'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const fx = join(
@@ -53,6 +54,7 @@ const comisiones = [
     readFileSync(join(fx, 'allaria-aranceles.txt'), 'utf8'),
   ),
   ...parsearSbsTexto(readFileSync(join(fx, 'sbs-aranceles.txt'), 'utf8')),
+  ...parsearFiveTexto(readFileSync(join(fx, 'five-aranceles.txt'), 'utf8')),
 ]
 
 const payload = {

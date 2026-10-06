@@ -12,6 +12,7 @@ import { extraerGaliciaSecurities } from './extraerGaliciaSecurities.js'
 import { extraerRava } from './extraerRava.js'
 import { extraerAllaria } from './extraerAllaria.js'
 import { extraerSbs } from './extraerSbs.js'
+import { extraerFive } from './extraerFive.js'
 import { logGrupo, logError, logMensaje } from '@/log.js'
 
 const log = logGrupo({
@@ -34,6 +35,7 @@ const FUENTES = [
   { nombre: 'rava', extraer: extraerRava },
   { nombre: 'allaria', extraer: extraerAllaria },
   { nombre: 'sbs', extraer: extraerSbs },
+  { nombre: 'five', extraer: extraerFive },
 ]
 
 export async function extraerComisionesBrokers() {

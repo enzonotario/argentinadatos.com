@@ -29,6 +29,10 @@ import {
   parsearSbsTexto,
   resolverUrlPdfSbs,
 } from '@/finanzas/brokers/comisiones/extraccion/extraerSbs.js'
+import {
+  parsearFiveTexto,
+  resolverUrlPdfFive,
+} from '@/finanzas/brokers/comisiones/extraccion/extraerFive.js'
 import { parsearGaliciaSecurities } from '@/finanzas/brokers/comisiones/extraccion/extraerGaliciaSecurities.js'
 import { parsearRava } from '@/finanzas/brokers/comisiones/extraccion/extraerRava.js'
 
@@ -836,6 +840,86 @@ describe('parsearSbsTexto', () => {
   })
 })
 
+describe('parsearFiveTexto', () => {
+  it('extrae máximos CNV con descuento internet 50%', () => {
+    const texto = readFileSync(join(fixturesDir, 'five-aranceles.txt'), 'utf8')
+    const filas = parsearFiveTexto(texto)
+
+    expect(filas.find((f) => f.producto === 'acciones')).toMatchObject({
+      entidad: 'five',
+      nombreComercial: 'Five',
+      canal: 'web',
+      tasa: 0.0125,
+      tasaEsTope: true,
+      metadata: expect.objectContaining({
+        tasaPublicada: 0.025,
+        factorInternet: 0.5,
+      }),
+    })
+    expect(filas.find((f) => f.producto === 'cedears')).toMatchObject({
+      tasa: 0.0125,
+    })
+    expect(filas.find((f) => f.producto === 'bonos')).toMatchObject({
+      tasa: 0.01125,
+    })
+    expect(filas.find((f) => f.producto === 'letras')).toMatchObject({
+      tasa: 0.01125,
+    })
+    expect(
+      filas.find((f) => f.producto === 'obligaciones_negociables'),
+    ).toMatchObject({ tasa: 0.01125 })
+    expect(
+      filas.find(
+        (f) => f.producto === 'cauciones' && f.operacion === 'colocadora',
+      ),
+    ).toMatchObject({
+      tasa: 0.0075,
+      prorrateoDias: 90,
+    })
+    expect(
+      filas.find((f) => f.producto === 'cauciones' && f.operacion === 'tomadora'),
+    ).toMatchObject({
+      tasa: 0.015,
+      prorrateoDias: 90,
+    })
+    expect(filas.find((f) => f.producto === 'opciones')).toMatchObject({
+      tasa: 0.01125,
+    })
+    expect(filas.find((f) => f.producto === 'futuros')).toMatchObject({
+      tasa: 0.01125,
+    })
+    expect(
+      filas.find(
+        (f) =>
+          f.producto === 'alquiler_titulos' && f.operacion === 'colocadora',
+      ),
+    ).toMatchObject({
+      tasa: 0.0075,
+      prorrateoDias: 90,
+    })
+    expect(
+      filas.find(
+        (f) => f.producto === 'alquiler_titulos' && f.operacion === 'tomadora',
+      ),
+    ).toMatchObject({
+      tasa: 0.015,
+      prorrateoDias: 90,
+    })
+    expect(filas.find((f) => f.producto === 'licitaciones')).toMatchObject({
+      tasa: 0.01,
+    })
+    expect(filas.find((f) => f.producto === 'cheques')).toMatchObject({
+      tasa: 0.0225,
+      ivaAdicional: true,
+    })
+  })
+
+  it('resuelve PDF desde el botón Descargar de la página', () => {
+    const html = readFileSync(join(fixturesDir, 'five-comisiones.html'), 'utf8')
+    expect(resolverUrlPdfFive(html)).toMatch(/fivesa-comisiones-25\.pdf$/i)
+  })
+})
+
 describe('crearComisionBroker', () => {
   it('completa shape comparable', () => {
     const fila = crearComisionBroker({
@@ -948,6 +1032,12 @@ describe('extraerComisionesBrokers aggregator', () => {
       '@/finanzas/brokers/comisiones/extraccion/extraerSbs.js',
       () => ({
         extraerSbs: vi.fn(async () => []),
+      }),
+    )
+    vi.doMock(
+      '@/finanzas/brokers/comisiones/extraccion/extraerFive.js',
+      () => ({
+        extraerFive: vi.fn(async () => []),
       }),
     )
 
