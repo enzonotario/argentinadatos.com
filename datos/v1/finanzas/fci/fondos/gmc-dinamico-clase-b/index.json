@@ -1,0 +1,69 @@
+{
+  "fondoId": "1576",
+  "claseId": "5125",
+  "nombre": "GMC Dinámico - Clase B",
+  "fecha": "2026-10-06",
+  "administradora": "GMC Asset Management S.A.U.",
+  "depositaria": "Banco de Valores S.A.",
+  "tipoRenta": "PyMEs",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1485",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1189.7,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0,
+    "diasUltimos7Dias": 7,
+    "unMes": 0,
+    "diasUnMes": 29,
+    "noventaDias": 0,
+    "diasNoventaDias": 90,
+    "cientoOchentaDias": 2.8796,
+    "diasCientoOchentaDias": 180,
+    "enElAnio": 8.3121,
+    "diasEnElAnio": 280,
+    "doceMeses": 8.3121,
+    "diasDoceMeses": 365,
+    "tnaEstimada": 0,
+    "tnaEstimadaDias": 29,
+    "tnaEstimadaPeriodo": "unMes"
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Bco de Valores",
+      "porcentaje": 100
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0.22,
+    "honorarioDepositaria": 0.12,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "GMC Asset Management S.A.U.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00394G-6fce82d3.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco de Valores S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00065-6aaeaf00.jpg"
+    }
+  ]
+}
