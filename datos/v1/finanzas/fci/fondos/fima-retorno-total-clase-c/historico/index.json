@@ -2,7 +2,7 @@
   "fondoId": "838",
   "claseId": "6675",
   "nombre": "Fima Retorno Total - Clase C",
-  "fechaActualizacion": "2026-10-07T16:39:06.000Z",
+  "fechaActualizacion": "2026-10-08T16:54:25.000Z",
   "historico": [
     {
       "slug": "fima-retorno-total-clase-c",
@@ -450,6 +450,22 @@
       "retornoDiario": 0.26627,
       "retornoAcumulado": 3.72562,
       "flujoEstimado": 415.563812,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "fima-retorno-total-clase-c",
+      "fondoId": "838",
+      "claseId": "6675",
+      "nombre": "Fima Retorno Total - Clase C",
+      "fecha": "2026-10-07",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 43009.994,
+      "patrimonio": 113205013933.9,
+      "retornoDiario": -0.023982,
+      "retornoAcumulado": 3.700745,
+      "flujoEstimado": -1055.471848,
       "origen": "cnv-excel"
     }
   ]
