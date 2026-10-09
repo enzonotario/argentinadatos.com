@@ -2,7 +2,7 @@
   "fondoId": "1937",
   "claseId": "6781",
   "nombre": "BAVSA Cobertura - Clase D",
-  "fecha": "2026-10-07",
+  "fecha": "2026-10-08",
   "administradora": "BAVSA Fondos S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
@@ -21,8 +21,8 @@
   "rendimientos": {
     "valorCuotaparte": 1000,
     "variacionDiariaPct": 0,
-    "ultimos7Dias": null,
-    "diasUltimos7Dias": null,
+    "ultimos7Dias": 0,
+    "diasUltimos7Dias": 3,
     "unMes": null,
     "diasUnMes": null,
     "noventaDias": null,
@@ -34,8 +34,8 @@
     "doceMeses": 0,
     "diasDoceMeses": null,
     "tnaEstimada": 0,
-    "tnaEstimadaDias": 1,
-    "tnaEstimadaPeriodo": "variacionDiariaPct"
+    "tnaEstimadaDias": 3,
+    "tnaEstimadaPeriodo": "ultimos7Dias"
   },
   "composicionCartera": [
     {
