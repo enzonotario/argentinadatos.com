@@ -2,7 +2,7 @@
   "fondoId": "538",
   "claseId": "1087",
   "nombre": "Consultatio Renta Local - Clase B",
-  "fechaActualizacion": "2026-10-09T19:44:11.000Z",
+  "fechaActualizacion": "2026-10-09T23:49:29.000Z",
   "historico": [
     {
       "slug": "consultatio-renta-local-clase-b",
@@ -26130,6 +26130,22 @@
       "retornoDiario": 0.037989,
       "retornoAcumulado": 5987.675012,
       "flujoEstimado": -10.680107,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-renta-local-clase-b",
+      "fondoId": "538",
+      "claseId": "1087",
+      "nombre": "Consultatio Renta Local - Clase B",
+      "fecha": "2026-10-09",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 127675.98,
+      "patrimonio": 26970679906.47,
+      "retornoDiario": 0.064764,
+      "retornoAcumulado": 5991.617607,
+      "flujoEstimado": 699626330.267002,
       "origen": "cnv-excel"
     }
   ]
