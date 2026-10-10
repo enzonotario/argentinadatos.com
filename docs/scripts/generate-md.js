@@ -1,21 +1,26 @@
 import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { useOpenapi } from 'vitepress-openapi/client'
 
-const loadJSON = (path) =>
-  JSON.parse(fs.readFileSync(new URL(path, import.meta.url)))
+const scriptDir = path.dirname(fileURLToPath(import.meta.url))
+const operationsDir = path.resolve(scriptDir, '../docs/operations')
+const specPath = path.resolve(scriptDir, '../public/openapi.json')
 
-const spec = loadJSON('../public/openapi.json')
+const spec = JSON.parse(fs.readFileSync(specPath, 'utf8'))
 
 const openapi = useOpenapi({ spec })
 
 export function init() {
-  return Object.keys(spec.paths).map((path) => {
-    const { operationId } = spec.paths[path].get
+  for (const apiPath of Object.keys(spec.paths)) {
+    const operation = spec.paths[apiPath].get
+    if (!operation?.operationId) continue
 
-    const markdown = generateMarkdown(operationId)
+    const filePath = path.join(operationsDir, `${operation.operationId}.md`)
+    if (fs.existsSync(filePath)) continue
 
-    fs.writeFileSync(`docs/operations/${operationId}.md`, markdown)
-  })
+    fs.writeFileSync(filePath, generateMarkdown(operation.operationId))
+  }
 }
 
 function generateMarkdown(operationId) {
@@ -33,7 +38,22 @@ function generateMarkdown(operationId) {
 `
     : ''
 
-  const markdown = `---
+  const footerFile = path.join(
+    operationsDir,
+    'parts',
+    `${operationId}-footer.md`,
+  )
+  const footer = fs.existsSync(footerFile)
+    ? `
+<template #footer="footer">
+
+<!--@include: ./parts/${operationId}-footer.md -->
+
+</template>
+`
+    : ''
+
+  return `---
 aside: false
 outline: false
 title: ${operation.summary}
@@ -47,20 +67,14 @@ const route = useRoute()
 </script>
 
 <OAOperation operation-id="${operationId}">
-${dataSource}
-<template #footer="footer">
-
-<!--@include: ./parts/${operationId}-footer.md -->
-
-</template>
-
+${dataSource}${footer}
 </OAOperation>
 `
-  return markdown
 }
 
 try {
   init()
 } catch (error) {
   console.error(error)
+  process.exitCode = 1
 }

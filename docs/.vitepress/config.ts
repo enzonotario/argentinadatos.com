@@ -19,12 +19,69 @@ function addDocsPrefix(group: string) {
   return {
     ...group,
     items: group.items.map((item) => {
+      if (!item.link) return item
       return {
         ...item,
         link: `/docs${item.link}`,
       }
     }),
   }
+}
+
+function itemsByOperationId(tag: string | string[]) {
+  const group = sidebar.generateSidebarGroup({ tag, text: '' })
+  return new Map(
+    group.items.map(item => [item.link?.split('/').pop(), item]),
+  )
+}
+
+function takeItems(
+  items: Map<string | undefined, { link?: string }>,
+  ids: string[],
+) {
+  return ids.map((id) => {
+    const item = items.get(id)
+    if (!item) throw new Error(`Falta el ítem de sidebar ${id}`)
+    items.delete(id)
+    return item
+  })
+}
+
+function subgroup(text: string, items: { link?: string }[]) {
+  return {
+    text,
+    items: items.map(item => ({
+      ...item,
+      link: `/docs${item.link}`,
+    })),
+  }
+}
+
+function congresoGroup(
+  text: string,
+  tag: string,
+  sections: { text?: string, ids: string[] }[],
+) {
+  const items = itemsByOperationId(['Congreso', tag])
+  const built = []
+
+  for (const section of sections) {
+    const picked = takeItems(items, section.ids)
+    if (section.text) built.push(subgroup(section.text, picked))
+    else built.push(...picked)
+  }
+
+  if (items.size > 0) {
+    throw new Error(
+      `${text}: operaciones sin grupo: ${[...items.keys()].join(', ')}`,
+    )
+  }
+
+  return addDocsPrefix({
+    text,
+    collapsed: true,
+    items: built,
+  })
 }
 
 export default defineConfig({
@@ -113,6 +170,13 @@ export default defineConfig({
           }),
           addDocsPrefix({
             ...sidebar.generateSidebarGroup({
+              tag: ['Finanzas', 'Cauciones'],
+              text: 'Cauciones',
+            }),
+            collapsed: true,
+          }),
+          addDocsPrefix({
+            ...sidebar.generateSidebarGroup({
               tag: ['Finanzas', 'Créditos'],
               text: 'Créditos',
             }),
@@ -144,6 +208,13 @@ export default defineConfig({
           }),
           addDocsPrefix({
             ...sidebar.generateSidebarGroup({
+              tag: ['Finanzas', 'Bonos'],
+              text: 'Bonos',
+            }),
+            collapsed: true,
+          }),
+          addDocsPrefix({
+            ...sidebar.generateSidebarGroup({
               tag: ['Finanzas', 'Remesas'],
               text: 'Remesas',
             }),
@@ -153,6 +224,13 @@ export default defineConfig({
             ...sidebar.generateSidebarGroup({
               tag: ['Finanzas', 'Cobros'],
               text: 'Cobros',
+            }),
+            collapsed: true,
+          }),
+          addDocsPrefix({
+            ...sidebar.generateSidebarGroup({
+              tag: ['Finanzas', 'Brokers'],
+              text: 'Brokers',
             }),
             collapsed: true,
           }),
@@ -180,20 +258,96 @@ export default defineConfig({
       {
         text: 'Congreso',
         items: [
-          addDocsPrefix({
-            ...sidebar.generateSidebarGroup({
-              tag: ['Congreso', 'Senado'],
-              text: 'Senado',
-            }),
-            collapsed: true,
-          }),
-          addDocsPrefix({
-            ...sidebar.generateSidebarGroup({
-              tag: ['Congreso', 'Diputados'],
-              text: 'Diputados',
-            }),
-            collapsed: true,
-          }),
+          congresoGroup('Senado', 'Senado', [
+            {
+              ids: [
+                'get-senado-senadores',
+                'get-senado-senadores-dietas-mecanismos',
+                'get-senado-presidencia',
+              ],
+            },
+            {
+              text: 'Bloques',
+              ids: ['get-senado-bloques', 'get-senado-bloques-id'],
+            },
+            {
+              text: 'Gasto',
+              ids: [
+                'get-senado-escala-salarial',
+                'get-senado-gasto',
+                'get-senado-senadores-id-personal',
+              ],
+            },
+            {
+              text: 'Comisiones',
+              ids: [
+                'get-senado-comisiones',
+                'get-senado-comisiones-id',
+                'get-senado-senadores-id-comisiones',
+              ],
+            },
+            {
+              text: 'Viajes',
+              ids: [
+                'get-senado-viajes',
+                'get-senado-viajes-nacionales',
+                'get-senado-viajes-nacionales-año',
+                'get-senado-viajes-nacionales-año-mes',
+                'get-senado-viajes-internacionales',
+                'get-senado-viajes-internacionales-año',
+                'get-senado-viajes-conteo',
+                'get-senado-viajes-conteo-12m',
+                'get-senado-senadores-id-viajes',
+              ],
+            },
+            {
+              text: 'Actas',
+              ids: ['get-senado-actas-año', 'get-senado-actas'],
+            },
+          ]),
+          congresoGroup('Diputados', 'Diputados', [
+            {
+              ids: ['get-diputados-diputados', 'get-diputados-recinto'],
+            },
+            {
+              text: 'Períodos',
+              ids: [
+                'get-diputados-periodos',
+                'get-diputados-periodos-lista',
+              ],
+            },
+            {
+              text: 'Comisiones',
+              ids: [
+                'get-diputados-comisiones',
+                'get-diputados-comision',
+                'get-diputados-diputado-comisiones',
+              ],
+            },
+            {
+              text: 'Misiones',
+              ids: [
+                'get-diputados-misiones',
+                'get-diputados-misiones-lista',
+                'get-diputados-misiones-año',
+                'get-diputados-diputado-misiones',
+              ],
+            },
+            {
+              text: 'Viajes',
+              ids: [
+                'get-diputados-viajes',
+                'get-diputados-viajes-nacionales',
+                'get-diputados-viajes-conteo-12m',
+                'get-diputados-viajes-conteo',
+                'get-diputados-diputado-viajes',
+              ],
+            },
+            {
+              text: 'Actas',
+              ids: ['get-diputados-actas-año', 'get-diputados-actas'],
+            },
+          ]),
         ],
       },
       {

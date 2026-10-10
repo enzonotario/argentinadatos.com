@@ -232,6 +232,81 @@
         ]
       }
     },
+    "/v1/cotizaciones": {
+      "get": {
+        "summary": "Cotizaciones históricas (todas las monedas)",
+        "tags": [
+          "Cotizaciones históricas"
+        ],
+        "description": "Serie histórica de cotizaciones de monedas extranjeras (USD, EUR, BRL, CLP, UYU, etc.).",
+        "responses": {
+          "200": {
+            "description": "Cotizaciones históricas (todas las monedas)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CotizacionMoneda"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-cotizaciones",
+        "x-data-source": [
+          "[DolarApi](https://dolarapi.com)"
+        ]
+      }
+    },
+    "/v1/cotizaciones/{moneda}": {
+      "get": {
+        "summary": "Cotizaciones históricas por moneda",
+        "tags": [
+          "Cotizaciones históricas"
+        ],
+        "description": "Serie histórica de cotizaciones de una moneda (por ejemplo `usd`, `eur`, `brl`, `clp`, `uyu`).",
+        "responses": {
+          "200": {
+            "description": "Cotizaciones históricas por moneda",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CotizacionMoneda"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-cotizaciones-moneda",
+        "parameters": [
+          {
+            "name": "moneda",
+            "in": "path",
+            "required": true,
+            "description": "Código de moneda en minúsculas",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "usd",
+                "eur",
+                "brl",
+                "clp",
+                "uyu"
+              ]
+            },
+            "example": "usd"
+          }
+        ],
+        "x-data-source": [
+          "[DolarApi](https://dolarapi.com)"
+        ]
+      }
+    },
     "/v1/eventos/presidenciales": {
       "get": {
         "summary": "Eventos presidenciales",
@@ -857,6 +932,92 @@
         ]
       }
     },
+    "/v1/finanzas/cauciones/ars": {
+      "get": {
+        "summary": "Cauciones en pesos (ARS)",
+        "tags": [
+          "Finanzas",
+          "Cauciones"
+        ],
+        "description": "Curva de cauciones colocadoras en pesos: plazo, montos y tasas del día (actual, mínima y máxima), con fechas de operación, actualización y vencimiento. Endpoint dinámico (no es JSON estático).",
+        "responses": {
+          "200": {
+            "description": "Cauciones en pesos (ARS)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Caucion"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-finanzas-cauciones-ars",
+        "x-data-source": [
+          "[IOL — Cauciones](https://www.invertironline.com/)"
+        ],
+        "x-sidebar-title": "Cauciones ARS"
+      }
+    },
+    "/v1/finanzas/cauciones/usd": {
+      "get": {
+        "summary": "Cauciones en dólares (USD)",
+        "tags": [
+          "Finanzas",
+          "Cauciones"
+        ],
+        "description": "Curva de cauciones colocadoras en dólares: plazo, montos y tasas del día (actual, mínima y máxima), con fechas de operación, actualización y vencimiento. Endpoint dinámico (no es JSON estático).",
+        "responses": {
+          "200": {
+            "description": "Cauciones en dólares (USD)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Caucion"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-finanzas-cauciones-usd",
+        "x-data-source": [
+          "[IOL — Cauciones](https://www.invertironline.com/)"
+        ],
+        "x-sidebar-title": "Cauciones USD"
+      }
+    },
+    "/v1/finanzas/bonos-cer": {
+      "get": {
+        "summary": "Bonos soberanos ajustados por CER",
+        "tags": [
+          "Finanzas",
+          "Bonos"
+        ],
+        "description": "Bonos soberanos en pesos indexados por CER: cotización y TIR.",
+        "responses": {
+          "200": {
+            "description": "Bonos soberanos ajustados por CER",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BonosCer"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-finanzas-bonos-cer",
+        "x-data-source": [
+          "[Docta Capital](https://app.doctacapital.com.ar/dashboard/bonos/general/soberanos/cer)"
+        ]
+      }
+    },
     "/v1/finanzas/fci/mercadoDinero/{fecha}": {
       "get": {
         "summary": "Mercado de dinero",
@@ -1119,6 +1280,32 @@
         ]
       }
     },
+    "/v1/finanzas/fci/mercado/historico": {
+      "get": {
+        "summary": "FCI — histórico de mercado agregado",
+        "tags": [
+          "Finanzas",
+          "FCI"
+        ],
+        "description": "Serie diaria agregada del mercado de FCI: cantidad de clases, patrimonio y flujo estimado, con desglose por tipo de renta.",
+        "responses": {
+          "200": {
+            "description": "FCI — histórico de mercado agregado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FciMercadoHistorico"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-finanzas-fci-mercado-historico",
+        "x-data-source": [
+          "[CNV — Cuotapartes](https://www.argentina.gob.ar/cnv)"
+        ]
+      }
+    },
     "/v1/presidentes": {
       "get": {
         "summary": "Presidentes",
@@ -1302,6 +1489,32 @@
         "operationId": "get-senado-senadores",
         "x-data-source": [
           "[Senado](https://www.senado.gob.ar)"
+        ]
+      }
+    },
+    "/v1/senado/senadores/dietas-mecanismos": {
+      "get": {
+        "summary": "Dietas y mecanismos (Senado)",
+        "tags": [
+          "Congreso",
+          "Senado"
+        ],
+        "description": "Listado de senadores con indicadores de renuncia al aumento de dieta, donación y aportes partidarios.",
+        "responses": {
+          "200": {
+            "description": "Dietas y mecanismos (Senado)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DietasMecanismosSenado"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-senado-senadores-dietas-mecanismos",
+        "x-data-source": [
+          "[Senado — PDF dietas/mecanismos](https://www.senado.gob.ar/bundles/senadoportal/webNueva/pdf/dietas/mecanismos.pdf)"
         ]
       }
     },
@@ -1739,6 +1952,58 @@
         ]
       }
     },
+    "/v1/senado/viajes/conteo": {
+      "get": {
+        "summary": "Conteo total de viajes (Senado)",
+        "tags": [
+          "Congreso",
+          "Senado"
+        ],
+        "description": "Cantidad acumulada de tramos nacionales e internacionales por senador.",
+        "responses": {
+          "200": {
+            "description": "Conteo total de viajes (Senado)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ViajesConteoSenado"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-senado-viajes-conteo",
+        "x-data-source": [
+          "[Senado de la Nación](https://www.senado.gob.ar/)"
+        ]
+      }
+    },
+    "/v1/senado/viajes/conteo-12m": {
+      "get": {
+        "summary": "Conteo de viajes (últimos 12 meses, Senado)",
+        "tags": [
+          "Congreso",
+          "Senado"
+        ],
+        "description": "Cantidad de tramos nacionales e internacionales por senador en la ventana móvil de 12 meses.",
+        "responses": {
+          "200": {
+            "description": "Conteo de viajes (últimos 12 meses, Senado)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ViajesConteo12mSenado"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-senado-viajes-conteo-12m",
+        "x-data-source": [
+          "[Senado de la Nación](https://www.senado.gob.ar/)"
+        ]
+      }
+    },
     "/v1/senado/senadores/{id}/viajes": {
       "get": {
         "summary": "Viajes de un senador",
@@ -1962,6 +2227,32 @@
         "operationId": "get-diputados-diputados",
         "x-data-source": [
           "[Diputados](https://datos.hcdn.gob.ar)"
+        ]
+      }
+    },
+    "/v1/diputados/recinto": {
+      "get": {
+        "summary": "Recinto de Diputados",
+        "tags": [
+          "Congreso",
+          "Diputados"
+        ],
+        "description": "Mapa de bancas del recinto de la HCDN: asientos ocupados, vacantes y metadatos de scrape.",
+        "responses": {
+          "200": {
+            "description": "Recinto de Diputados",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecintoDiputados"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-diputados-recinto",
+        "x-data-source": [
+          "[HCDN — Recinto web](https://parlamentaria.hcdn.gob.ar/recintoweb)"
         ]
       }
     },
@@ -2228,6 +2519,32 @@
           }
         },
         "operationId": "get-diputados-viajes-conteo-12m",
+        "x-data-source": [
+          "[HCDN — Viajes Nacionales](https://datos.hcdn.gob.ar/dataset/viajes-nacionales)"
+        ]
+      }
+    },
+    "/v1/diputados/viajes/conteo": {
+      "get": {
+        "summary": "Conteo total de viajes (Diputados)",
+        "tags": [
+          "Congreso",
+          "Diputados"
+        ],
+        "description": "Cantidad acumulada de tramos nacionales por diputado (histórico completo disponible).",
+        "responses": {
+          "200": {
+            "description": "Conteo total de viajes (Diputados)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ViajesConteoDiputados"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-diputados-viajes-conteo",
         "x-data-source": [
           "[HCDN — Viajes Nacionales](https://datos.hcdn.gob.ar/dataset/viajes-nacionales)"
         ]
@@ -2675,6 +2992,32 @@
           "[CNV - Cuotapartes](https://www.cnv.gov.ar/SitioWeb/FondosComunesInversion/CuotaPartes)"
         ]
       }
+    },
+    "/v1/finanzas/fci/comparatasas": {
+      "get": {
+        "summary": "FCI — subset ComparaTasas",
+        "tags": [
+          "Finanzas",
+          "FCI Detalles"
+        ],
+        "description": "Detalle de fondos/clases usados por ComparaTasas (mismo shape que `/v1/finanzas/fci/fondos`, filtrado al subset publicado).",
+        "responses": {
+          "200": {
+            "description": "FCI — subset ComparaTasas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FondosDetalles"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-finanzas-fci-comparatasas",
+        "x-data-source": [
+          "[CNV — Cuotapartes](https://www.argentina.gob.ar/cnv)"
+        ]
+      }
     }
   },
   "components": {
@@ -2753,143 +3096,6 @@
                 "tirPorcentaje": -8.55,
                 "fechaVencimiento": "2026-06-30",
                 "volumen": 7197806107
-              }
-            ]
-          }
-        }
-      },
-      "LetraSoberanaTasaFija": {
-        "title": "LetraSoberanaTasaFija",
-        "type": "object",
-        "required": [
-          "ticker",
-          "precioArs",
-          "tnaPorcentaje",
-          "teaPorcentaje",
-          "temPorcentaje",
-          "fechaVencimiento"
-        ],
-        "properties": {
-          "ticker": {
-            "type": "string",
-            "description": "Código del instrumento",
-            "example": "S15S6"
-          },
-          "precioArs": {
-            "type": "number",
-            "description": "Precio de cotización en pesos argentinos"
-          },
-          "cierreArs": {
-            "type": "number",
-            "description": "Precio de cierre en pesos argentinos, si la fuente lo publica"
-          },
-          "variacionPorcentaje": {
-            "type": "number",
-            "description": "Variación diaria del precio en porcentaje, si la fuente lo publica"
-          },
-          "volumen": {
-            "type": "number",
-            "description": "Volumen nominal negociado, si la fuente lo publica"
-          },
-          "volumenEfectivoArs": {
-            "type": "number",
-            "description": "Volumen efectivo negociado en pesos argentinos, si la fuente lo publica"
-          },
-          "tnaPorcentaje": {
-            "type": "number",
-            "description": "Tasa Nominal Anual (TNA) en porcentaje"
-          },
-          "teaPorcentaje": {
-            "type": "number",
-            "description": "Tasa Efectiva Anual (TEA) en porcentaje"
-          },
-          "temPorcentaje": {
-            "type": "number",
-            "description": "Tasa Efectiva Mensual (TEM) en porcentaje"
-          },
-          "diasAlVencimiento": {
-            "type": "number",
-            "description": "Días al vencimiento, si la fuente lo publica"
-          },
-          "fechaVencimiento": {
-            "type": "string",
-            "format": "date",
-            "description": "Fecha de vencimiento (ISO 8601, solo fecha: yyyy-MM-dd)"
-          },
-          "paridadPorcentaje": {
-            "type": "number",
-            "description": "Paridad en porcentaje, si la fuente lo publica"
-          },
-          "monedaCupon": {
-            "type": "string",
-            "description": "Moneda de cupón (ej. ARS), si la fuente lo publica",
-            "example": "ARS"
-          },
-          "isin": {
-            "type": "string",
-            "description": "Código ISIN, si la fuente lo publica",
-            "example": "AR0227219554"
-          }
-        },
-        "x-examples": {
-          "Example 1": {
-            "ticker": "S15S6",
-            "precioArs": 106.74,
-            "tnaPorcentaje": 23.13,
-            "teaPorcentaje": 25.95,
-            "temPorcentaje": 1.94,
-            "fechaVencimiento": "2026-09-15",
-            "diasAlVencimiento": 7,
-            "paridadPorcentaje": 100.02,
-            "volumen": 21453598713,
-            "variacionPorcentaje": 0.06,
-            "cierreArs": 106.74,
-            "volumenEfectivoArs": 22899870365.79,
-            "monedaCupon": "ARS",
-            "isin": "AR0227219554"
-          }
-        }
-      },
-      "Letras": {
-        "title": "Letras",
-        "type": "object",
-        "required": [
-          "fechaActualizacion",
-          "letras"
-        ],
-        "properties": {
-          "fechaActualizacion": {
-            "type": "string",
-            "format": "date-time",
-            "description": "Instante en que se generó el recurso (UTC, ISO 8601 con sufijo Z)"
-          },
-          "letras": {
-            "type": "array",
-            "description": "Filas de la grilla soberanos tasa fija (LECAP/BONCAP)",
-            "items": {
-              "$ref": "#/components/schemas/LetraSoberanaTasaFija"
-            }
-          }
-        },
-        "x-examples": {
-          "Example 1": {
-            "fechaActualizacion": "2026-09-06T13:00:00.000Z",
-            "letras": [
-              {
-                "ticker": "S15S6",
-                "precioArs": 106.74,
-                "tnaPorcentaje": 23.13,
-                "teaPorcentaje": 25.95,
-                "temPorcentaje": 1.94,
-                "fechaVencimiento": "2026-09-15",
-                "diasAlVencimiento": 7,
-                "paridadPorcentaje": 100.02,
-                "volumen": 21453598713,
-                "variacionPorcentaje": 0.06,
-                "cierreArs": 106.74,
-                "volumenEfectivoArs": 22899870365.79,
-                "monedaCupon": "ARS",
-                "isin": "AR0227219554"
               }
             ]
           }
@@ -6526,6 +6732,416 @@
             "type": "array",
             "items": {
               "type": "string"
+            }
+          }
+        }
+      },
+      "Caucion": {
+        "title": "Caucion",
+        "type": "object",
+        "required": [
+          "plazo",
+          "montoContado",
+          "tasaActual",
+          "fechaVencimiento"
+        ],
+        "properties": {
+          "plazo": {
+            "type": "integer",
+            "description": "Plazo en días",
+            "example": 1
+          },
+          "montoContado": {
+            "type": "number",
+            "description": "Monto operado al contado"
+          },
+          "tasaActual": {
+            "type": "number",
+            "description": "Tasa colocadora actual (última observada)"
+          },
+          "tasaMinDia": {
+            "type": "number",
+            "description": "Tasa mínima del día de operación"
+          },
+          "tasaMaxDia": {
+            "type": "number",
+            "description": "Tasa máxima del día de operación"
+          },
+          "fechaOperacion": {
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "description": "Fecha de la rueda/operación (yyyy-MM-dd)"
+          },
+          "fechaActualizacion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "Instante de actualización del snapshot"
+          },
+          "fechaVencimiento": {
+            "type": "string",
+            "description": "Vencimiento (ISO local sin offset, p.ej. 2026-08-26T00:00:00)"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "plazo": 1,
+            "montoContado": 6447999105279,
+            "tasaActual": 22,
+            "tasaMinDia": 19.9,
+            "tasaMaxDia": 24,
+            "fechaOperacion": "2026-08-31",
+            "fechaActualizacion": "2026-08-31T19:35:55.722Z",
+            "fechaVencimiento": "2026-08-26T00:00:00"
+          }
+        }
+      },
+      "CotizacionMoneda": {
+        "title": "CotizacionMoneda",
+        "type": "object",
+        "properties": {
+          "moneda": {
+            "type": "string",
+            "example": "USD"
+          },
+          "compra": {
+            "type": "number"
+          },
+          "venta": {
+            "type": "number"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date"
+          },
+          "casa": {
+            "type": "string",
+            "description": "Casa de la cotización, cuando la fuente la publica",
+            "example": "oficial"
+          }
+        },
+        "x-examples": {
+          "Example 1": {
+            "moneda": "USD",
+            "compra": 347.5,
+            "venta": 365.5,
+            "fecha": "2023-10-22"
+          }
+        }
+      },
+      "FciMercadoHistoricoPuntoTipo": {
+        "title": "FciMercadoHistoricoPuntoTipo",
+        "type": "object",
+        "properties": {
+          "clases": {
+            "type": "integer"
+          },
+          "conPatrimonio": {
+            "type": "integer"
+          },
+          "patrimonio": {
+            "type": "number"
+          },
+          "conFlujo": {
+            "type": "integer"
+          },
+          "flujoEstimado": {
+            "type": "number"
+          }
+        }
+      },
+      "FciMercadoHistoricoPunto": {
+        "title": "FciMercadoHistoricoPunto",
+        "type": "object",
+        "properties": {
+          "fecha": {
+            "type": "string",
+            "format": "date"
+          },
+          "clases": {
+            "type": "integer"
+          },
+          "conPatrimonio": {
+            "type": "integer"
+          },
+          "patrimonio": {
+            "type": "number"
+          },
+          "conFlujo": {
+            "type": "integer"
+          },
+          "flujoEstimado": {
+            "type": "number"
+          },
+          "byType": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/FciMercadoHistoricoPuntoTipo"
+            },
+            "description": "Desglose por tipo (mercadoDinero, rentaVariable, rentaFija, rentaMixta, retornoTotal)"
+          }
+        }
+      },
+      "FciMercadoHistorico": {
+        "title": "FciMercadoHistorico",
+        "type": "object",
+        "required": [
+          "fechaActualizacion",
+          "puntos"
+        ],
+        "properties": {
+          "fechaActualizacion": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "puntos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FciMercadoHistoricoPunto"
+            }
+          }
+        }
+      },
+      "AsientoRecintoDiputados": {
+        "title": "AsientoRecintoDiputados",
+        "type": "object",
+        "properties": {
+          "banca": {
+            "type": "integer"
+          },
+          "idAutoridad": {
+            "type": "string",
+            "nullable": true
+          },
+          "cuil": {
+            "type": "string",
+            "nullable": true
+          },
+          "apellido": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "distrito": {
+            "type": "string",
+            "nullable": true
+          },
+          "bloque": {
+            "type": "string",
+            "nullable": true
+          },
+          "bloqueColor": {
+            "type": "string",
+            "nullable": true
+          },
+          "interbloque": {
+            "type": "string",
+            "nullable": true
+          },
+          "interbloqueColor": {
+            "type": "string",
+            "nullable": true
+          },
+          "mandato": {
+            "type": "string",
+            "nullable": true
+          },
+          "mandatoFin": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          },
+          "diputadoId": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "RecintoDiputados": {
+        "title": "RecintoDiputados",
+        "type": "object",
+        "required": [
+          "fuente",
+          "scrapedAt",
+          "asientos",
+          "vacantes"
+        ],
+        "properties": {
+          "fuente": {
+            "type": "string",
+            "format": "uri"
+          },
+          "scrapedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "asientos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AsientoRecintoDiputados"
+            }
+          },
+          "vacantes": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "Números de banca vacantes"
+          }
+        }
+      },
+      "ViajesConteoDiputados": {
+        "title": "ViajesConteoDiputados",
+        "type": "object",
+        "properties": {
+          "actualizado": {
+            "type": "string",
+            "format": "date"
+          },
+          "porDiputado": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "nacionales": {
+                  "type": "integer"
+                },
+                "total": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ViajesConteoSenado": {
+        "title": "ViajesConteoSenado",
+        "type": "object",
+        "properties": {
+          "actualizado": {
+            "type": "string",
+            "format": "date"
+          },
+          "porSenador": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "nacionales": {
+                  "type": "integer"
+                },
+                "internacionales": {
+                  "type": "integer"
+                },
+                "total": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ViajesConteo12mSenado": {
+        "title": "ViajesConteo12mSenado",
+        "type": "object",
+        "properties": {
+          "ventanaMeses": {
+            "type": "integer"
+          },
+          "desde": {
+            "type": "object",
+            "properties": {
+              "anio": {
+                "type": "integer"
+              },
+              "mes": {
+                "type": "integer"
+              }
+            }
+          },
+          "hasta": {
+            "type": "object",
+            "properties": {
+              "anio": {
+                "type": "integer"
+              },
+              "mes": {
+                "type": "integer"
+              }
+            }
+          },
+          "actualizado": {
+            "type": "string",
+            "format": "date"
+          },
+          "porSenador": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "nacionales": {
+                  "type": "integer"
+                },
+                "internacionales": {
+                  "type": "integer"
+                },
+                "total": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      },
+      "DietaMecanismoSenador": {
+        "title": "DietaMecanismoSenador",
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string"
+          },
+          "provincia": {
+            "type": "string"
+          },
+          "renunciaAlAumento": {
+            "type": "boolean"
+          },
+          "donacion": {
+            "type": "boolean"
+          },
+          "aportesPartidarios": {
+            "type": "boolean"
+          }
+        }
+      },
+      "DietasMecanismosSenado": {
+        "title": "DietasMecanismosSenado",
+        "type": "object",
+        "required": [
+          "fuente",
+          "scrapedAt",
+          "senadores"
+        ],
+        "properties": {
+          "fuente": {
+            "type": "string",
+            "format": "uri"
+          },
+          "scrapedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "senadores": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DietaMecanismoSenador"
             }
           }
         }
