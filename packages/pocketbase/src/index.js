@@ -30,6 +30,8 @@ export {
   CAUCION_PLAZO_TOLERANCIA_DIAS,
   isCaucionPlazoCoherent,
   deriveFechaOperacion,
+  addDaysDateOnly,
+  prepareCaucionesSnapshot,
   caucionSerieKey,
   mergeTasaMinMaxDia,
   fieldNames,

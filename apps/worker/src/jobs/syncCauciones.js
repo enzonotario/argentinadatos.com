@@ -13,6 +13,7 @@ export async function syncCauciones() {
     skipped: result.skipped,
     byMoneda: result.byMoneda,
     fechaOperacion: result.fechaOperacion,
+    fechasCorridas: result.fechasCorridas,
     fechaActualizacion: result.fechaActualizacion,
   }
 }

@@ -4,9 +4,8 @@ import { listAllRecords } from '../records.js'
 import {
   caucionSerieKey,
   classifyCaucionMoneda,
-  deriveFechaOperacion,
-  isCaucionPlazoCoherent,
   mergeTasaMinMaxDia,
+  prepareCaucionesSnapshot,
 } from '../schema/cauciones.js'
 
 function rowFechaOperacion(row) {
@@ -55,6 +54,8 @@ export function buildExistingMinMaxBySerie(existingRows) {
  * Reemplaza el snapshot de cauciones preservando min/max del día por (moneda, plazo).
  * Deriva la fecha de rueda desde vencimiento−plazo (IOL no la envía) y descarta series
  * con plazo incoherente (p. ej. ~+160 días).
+ * Si el vencimiento viene corrido y ninguna serie cae en los últimos 14 días,
+ * conserva el cluster modal y lo publica con la fecha de hoy.
  */
 export async function replaceCauciones(
   payload,
@@ -62,31 +63,35 @@ export async function replaceCauciones(
 ) {
   const titulos = Array.isArray(payload?.titulos) ? payload.titulos : []
   const fechaActualizacion = toPocketBaseDate(new Date())
-  const fechaOperacion = deriveFechaOperacion(titulos)
+  const prepared = prepareCaucionesSnapshot(titulos)
+  const fechaOperacion = prepared.fechaOperacion
   const byMoneda = { ars: 0, usd: 0 }
+
+  if (prepared.titulos.length === 0) {
+    return {
+      created: 0,
+      skipped: titulos.length,
+      fechaActualizacion,
+      byMoneda,
+      fechaOperacion,
+      fechasCorridas: false,
+    }
+  }
 
   const existingRows = await listAllRecords(pb, 'cauciones')
   const existingBySerie = buildExistingMinMaxBySerie(existingRows)
 
-  const enriched = titulos
-    .map(titulo => {
-      const tasaActual = Number(titulo.tasaPromedio)
-      const moneda = classifyCaucionMoneda(tasaActual)
-      return {
-        ...titulo,
-        moneda,
-        tasaActual,
-        plazo: Number(titulo.plazo),
-        montoContado: Number(titulo.montoContado),
-      }
-    })
-    .filter(titulo =>
-      isCaucionPlazoCoherent(
-        titulo.plazo,
-        fechaOperacion,
-        titulo.fechaVencimiento,
-      ),
-    )
+  const enriched = prepared.titulos.map(titulo => {
+    const tasaActual = Number(titulo.tasaPromedio)
+    const moneda = classifyCaucionMoneda(tasaActual)
+    return {
+      ...titulo,
+      moneda,
+      tasaActual,
+      plazo: Number(titulo.plazo),
+      montoContado: Number(titulo.montoContado),
+    }
+  })
 
   const tasasBySerie = new Map()
   for (const titulo of enriched) {
@@ -134,6 +139,7 @@ export async function replaceCauciones(
     fechaActualizacion,
     byMoneda,
     fechaOperacion,
+    fechasCorridas: prepared.fechasCorridas,
   }
 }
 

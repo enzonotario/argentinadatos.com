@@ -122,6 +122,68 @@ export function deriveFechaOperacion(
   return best
 }
 
+/**
+ * Suma días calendario a una fecha YYYY-MM-DD.
+ * @returns {string | null}
+ */
+export function addDaysDateOnly(day, days) {
+  const ms = parseDateOnlyUtc(day)
+  const n = Number(days)
+  if (ms == null || !Number.isFinite(n)) return null
+  return new Date(ms + n * 86_400_000).toISOString().slice(0, 10)
+}
+
+/**
+ * Elige las series de la rueda.
+ * Si IOL manda `fechaVencimiento` corrida (el cluster modal queda fuera de 14 días),
+ * igual conserva ese cluster y publica la rueda como hoy (AR), con vencimiento = hoy + plazo.
+ * @returns {{ fechaOperacion: string, titulos: object[], fechasCorridas: boolean }}
+ */
+export function prepareCaucionesSnapshot(titulos, options = {}) {
+  const rows = Array.isArray(titulos) ? titulos : []
+  const now = options.now ?? new Date()
+  const today = fechaOperacionHoy(now)
+  const fechaReciente = deriveFechaOperacion(rows, {
+    now,
+    maxAgeDays: options.maxAgeDays ?? 14,
+  })
+  const recientes = rows.filter(titulo =>
+    isCaucionPlazoCoherent(
+      titulo.plazo,
+      fechaReciente,
+      titulo.fechaVencimiento,
+    ),
+  )
+
+  if (recientes.length > 0) {
+    return {
+      fechaOperacion: fechaReciente,
+      titulos: recientes,
+      fechasCorridas: false,
+    }
+  }
+
+  const fechaModal = deriveFechaOperacion(rows, { now, maxAgeDays: 10_000 })
+  if (fechaModal === today) {
+    return { fechaOperacion: today, titulos: [], fechasCorridas: false }
+  }
+
+  const cluster = rows.filter(titulo =>
+    isCaucionPlazoCoherent(titulo.plazo, fechaModal, titulo.fechaVencimiento),
+  )
+  const corregidos = cluster.flatMap(titulo => {
+    const vencimiento = addDaysDateOnly(today, titulo.plazo)
+    if (!vencimiento) return []
+    return [{ ...titulo, fechaVencimiento: `${vencimiento}T00:00:00` }]
+  })
+
+  return {
+    fechaOperacion: today,
+    titulos: corregidos,
+    fechasCorridas: corregidos.length > 0,
+  }
+}
+
 export function caucionSerieKey(moneda, plazo) {
   return `${moneda}:${Number(plazo)}`
 }

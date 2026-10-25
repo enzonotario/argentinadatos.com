@@ -7,6 +7,7 @@ import {
   impliedFechaOperacion,
   isCaucionPlazoCoherent,
   mergeTasaMinMaxDia,
+  prepareCaucionesSnapshot,
   buildExistingMinMaxBySerie,
   migrations,
 } from '@argentinadatos/pocketbase'
@@ -204,6 +205,58 @@ describe('deriveFechaOperacion / coherencia IOL', () => {
         { now: new Date('2026-09-17T18:00:00.000Z') },
       ),
     ).toBe('2026-09-17')
+  })
+
+  it('si el vencimiento está corrido, publica el cluster con la rueda de hoy', () => {
+    const snapshot = prepareCaucionesSnapshot(
+      [
+        {
+          plazo: 3,
+          montoContado: 6889472818959,
+          tasaPromedio: 14,
+          fechaVencimiento: '2026-09-28T00:00:00',
+        },
+        {
+          plazo: 4,
+          montoContado: 21319744857,
+          tasaPromedio: 17.5,
+          fechaVencimiento: '2026-09-28T00:00:00',
+        },
+        {
+          plazo: 32,
+          montoContado: 1693998170,
+          tasaPromedio: 24,
+          fechaVencimiento: '2026-10-26T00:00:00',
+        },
+        {
+          plazo: 162,
+          montoContado: 2000000,
+          tasaPromedio: 20.6,
+          fechaVencimiento: '2026-10-26T00:00:00',
+        },
+      ],
+      { now: new Date('2026-10-25T20:00:00.000Z') },
+    )
+
+    expect(snapshot.fechasCorridas).toBe(true)
+    expect(snapshot.fechaOperacion).toBe('2026-10-25')
+    expect(snapshot.titulos.map(t => t.plazo).sort((a, b) => a - b)).toEqual([
+      3, 4, 32,
+    ])
+    expect(
+      snapshot.titulos.find(t => t.plazo === 3)?.fechaVencimiento,
+    ).toBe('2026-10-28T00:00:00')
+  })
+
+  it('no reescribe vencimientos cuando la rueda reciente cierra', () => {
+    const snapshot = prepareCaucionesSnapshot(iolTitulos, {
+      now: new Date('2026-09-17T18:00:00.000Z'),
+    })
+    expect(snapshot.fechasCorridas).toBe(false)
+    expect(snapshot.fechaOperacion).toBe('2026-09-10')
+    expect(snapshot.titulos.map(t => t.plazo).sort((a, b) => a - b)).toEqual([
+      1, 4, 8, 40,
+    ])
   })
 })
 
