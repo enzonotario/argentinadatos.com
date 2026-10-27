@@ -16,6 +16,7 @@ La documentación de la API se encuentra en [ArgentinaDatos.com](https://argenti
 - [Dólar Ahora](https://play.google.com/store/apps/details?id=com.fraancogaalfras.dolarahora): App móvil para consultar el precio de los dólares financieros en Argentina.
 - [Toolrail](https://toolrail.dev/): API de utilidades para agentes de IA con datos LATAM.
 - [Ruki Portfolio](https://rukiportfolio.com): App argentina (iOS, Android y web) para el seguimiento de carteras de inversión.
+- [Dólar Claro](https://dolarclaro.com): Cotizaciones del dólar en Argentina con histórico, comparación con inflación y UVA, calculadoras y alertas.
 
 > [!NOTE]  
 > Para agregar tu aplicación puedes [Editar esta lista](https://github.com/enzonotario/esjs-argentina-datos-api/edit/main/README.md) y hacer un Pull Request, o abrir un [Issue](https://github.com/enzonotario/esjs-argentina-datos-api/issues/new?assignees=&labels=documentation&projects=&template=nueva-aplicaci%C3%B3n.md&title=Listar+Aplicaci%C3%B3n).
