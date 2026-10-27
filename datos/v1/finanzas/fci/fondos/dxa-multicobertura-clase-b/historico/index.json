@@ -2,7 +2,7 @@
   "fondoId": "1869",
   "claseId": "6461",
   "nombre": "DXA Multicobertura - Clase B",
-  "fechaActualizacion": "2026-10-23T19:25:27.000Z",
+  "fechaActualizacion": "2026-10-26T19:47:46.000Z",
   "historico": [
     {
       "slug": "dxa-multicobertura-clase-b",
@@ -1794,6 +1794,22 @@
       "retornoDiario": 0.054985,
       "retornoAcumulado": 9.18,
       "flujoEstimado": 85019.939178,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "dxa-multicobertura-clase-b",
+      "fondoId": "1869",
+      "claseId": "6461",
+      "nombre": "DXA Multicobertura - Clase B",
+      "fecha": "2026-10-23",
+      "categoria": "Retorno Total",
+      "categoriaKey": "retornoTotal",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1098.3,
+      "patrimonio": 1739377191.8,
+      "retornoDiario": 0.595347,
+      "retornoAcumulado": 9.83,
+      "flujoEstimado": 6315.281226,
       "origen": "cnv-excel"
     }
   ]
