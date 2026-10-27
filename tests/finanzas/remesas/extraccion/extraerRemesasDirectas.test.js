@@ -1,7 +1,10 @@
 import { describe, expect, it } from 'vitest'
 import { logGrupo } from '@/log.js'
 import { mapearAstropayRemesas } from '@/finanzas/remesas/extraccion/extraerAstropayRemesas.js'
-import { mapearGlobal66Remesas } from '@/finanzas/remesas/extraccion/extraerGlobal66Remesas.js'
+import {
+  detectarCuentaPropiaGlobal66,
+  mapearGlobal66Remesas,
+} from '@/finanzas/remesas/extraccion/extraerGlobal66Remesas.js'
 import { mapearLemonRemesas } from '@/finanzas/remesas/extraccion/extraerLemonRemesas.js'
 import { mapearArqRemesas } from '@/finanzas/remesas/extraccion/extraerArqRemesas.js'
 import { mapearGrabrfiRemesas } from '@/finanzas/remesas/extraccion/extraerGrabrfiRemesas.js'
@@ -165,8 +168,8 @@ describe('mapear remesas desde fuente oficial', () => {
     expect(remesa.detalles.costoRecibirPagos).toContain('no publican')
   })
 
-  it('lee Global66 desde tarjeta, cobros y centro de ayuda', () => {
-    const remesa = mapearGlobal66Remesas(`
+  it('lee Global66 y marca cuentaPropia desde /ar/freelancers/', () => {
+    const texto = `
       Sin conversiones automáticas ni recargos por moneda extranjera.
       Es una tarjeta digital y global.
       Las transferencias ACH son gratuitas.
@@ -178,8 +181,13 @@ describe('mapear remesas desde fuente oficial', () => {
       Sin costos de mantención.
       Recepción gratuita.
       Rendimiento de hasta 6% anual.
-      Global66 no permite que las transferencias lleguen a tu nombre, sino al nombre de su proveedor de pagos.
-    `)
+      Te damos un número de cuenta en Estados Unidos y Europa a tu nombre.
+      Al abrir tu cuenta, te damos datos bancarios locales a tu nombre (Routing Number y Account Number para USA, e IBAN para Europa).
+    `
+
+    expect(detectarCuentaPropiaGlobal66(texto)).toBe(true)
+
+    const remesa = mapearGlobal66Remesas(texto)
 
     expect(remesa).toMatchObject({
       compania: 'Global66',
@@ -192,8 +200,17 @@ describe('mapear remesas desde fuente oficial', () => {
       costoTarjeta: '0',
       retiroArs: null,
     })
-    expect(remesa.detalles.cuentaPropia).toContain('tipo Checking')
+    expect(remesa.detalles.cuentaPropia).toContain('freelancers')
+    expect(remesa.detalles.cuentaPropia).toContain('a tu nombre')
     expect(remesa.detalles.costoRecibirPagos).toContain('10 USD')
+  })
+
+  it('no marca cuentaPropia Global66 sin claim a tu nombre', () => {
+    expect(
+      detectarCuentaPropiaGlobal66(
+        'Cuenta tipo Checking con Routing Number y Account Number.',
+      ),
+    ).toBe(false)
   })
 
   it('lee Lemon desde la tarjeta y el centro de ayuda', () => {

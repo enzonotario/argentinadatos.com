@@ -16,12 +16,12 @@ const FUENTES_GLOBAL66_REMESAS = [
     url: 'https://www.global66.com/ar/viajeros/',
   },
   {
-    nombre: 'recibir',
-    url: 'https://ayuda.global66.com/docs/primeros-pasos/recibe-dinero-directamente-a-tu-cuenta-en-usd-eur-y-gbp-con-global66/',
+    nombre: 'freelancers',
+    url: 'https://www.global66.com/ar/freelancers/',
   },
   {
-    nombre: 'cuenta-propia',
-    url: 'https://ayuda.global66.com/docs/transferencias/puedo-usar-global66-para-enviar-dinero-a-wise-en-estados-unidos/',
+    nombre: 'recibir',
+    url: 'https://ayuda.global66.com/docs/primeros-pasos/recibe-dinero-directamente-a-tu-cuenta-en-usd-eur-y-gbp-con-global66/',
   },
 ]
 
@@ -29,6 +29,27 @@ function exigir(texto, fragmento) {
   if (!texto.toLowerCase().includes(fragmento.toLowerCase())) {
     throw new Error(`Fuente oficial sin "${fragmento}"`)
   }
+}
+
+/**
+ * Cuenta propia según /ar/freelancers/: datos bancarios USA/Europa a tu nombre.
+ * @param {string} texto
+ * @returns {boolean}
+ */
+export function detectarCuentaPropiaGlobal66(texto) {
+  const t = String(texto || '')
+    .normalize('NFD')
+    .replace(/\p{M}/gu, '')
+    .toLowerCase()
+
+  const aTuNombre = /a tu nombre/.test(t)
+  const datosUsa =
+    /routing number/.test(t) ||
+    /account number/.test(t) ||
+    /numero de cuenta/.test(t)
+  const datosEuropa = /\biban\b/.test(t)
+
+  return aTuNombre && (datosUsa || datosEuropa)
 }
 
 export function mapearGlobal66Remesas(texto) {
@@ -43,12 +64,21 @@ export function mapearGlobal66Remesas(texto) {
   exigir(texto, 'sin costos de mantención')
   exigir(texto, 'Recepción gratuita')
   exigir(texto, 'rendimiento de hasta 6%')
-  exigir(texto, 'no permite que las transferencias lleguen a tu nombre')
-  exigir(texto, 'proveedor de pagos')
+  // /ar/freelancers/: señal canónica de cuenta a nombre del usuario.
+  exigir(texto, 'a tu nombre')
+  exigir(texto, 'Routing Number')
+  exigir(texto, 'Account Number')
+
+  const cuentaPropia = detectarCuentaPropiaGlobal66(texto)
+  if (!cuentaPropia) {
+    throw new Error(
+      'Global66 freelancers: no se pudo confirmar cuenta a tu nombre',
+    )
+  }
 
   return normalizarRemesa({
     compania: 'Global66',
-    cuentaPropia: true,
+    cuentaPropia,
     moneda: 'FIAT',
     inversiones: true,
     tarjetaUsa: true,
@@ -58,7 +88,7 @@ export function mapearGlobal66Remesas(texto) {
     retiroArs: null,
     detalles: {
       cuentaPropia:
-        'Dan Account Number y Routing Number y la describen como una cuenta tipo Checking a tu nombre.',
+        'En global66.com/ar/freelancers/ dicen que dan datos bancarios locales a tu nombre: Routing Number y Account Number (USA) e IBAN (Europa).',
       costoRecibirPagos:
         'ACH gratis. Wire y SWIFT tienen un costo fijo de recepción de 10 USD.',
       costoMantenimientoTarjeta:
