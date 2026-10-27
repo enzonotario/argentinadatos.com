@@ -2,7 +2,7 @@
   "fondoId": "1937",
   "claseId": "6779",
   "nombre": "BAVSA Cobertura - Clase B",
-  "fechaActualizacion": "2026-10-26T19:47:46.000Z",
+  "fechaActualizacion": "2026-10-26T23:51:58.000Z",
   "historico": [
     {
       "slug": "bavsa-cobertura-clase-b",
@@ -226,6 +226,22 @@
       "retornoDiario": 0.321143,
       "retornoAcumulado": 1.4011,
       "flujoEstimado": -337.693805,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "bavsa-cobertura-clase-b",
+      "fondoId": "1937",
+      "claseId": "6779",
+      "nombre": "BAVSA Cobertura - Clase B",
+      "fecha": "2026-10-26",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1017.703,
+      "patrimonio": 614383613.92,
+      "retornoDiario": 0.364099,
+      "retornoAcumulado": 1.7703,
+      "flujoEstimado": 21.160609,
       "origen": "cnv-excel"
     }
   ]

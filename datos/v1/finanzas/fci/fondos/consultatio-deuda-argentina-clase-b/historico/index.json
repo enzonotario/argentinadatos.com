@@ -2,7 +2,7 @@
   "fondoId": "281",
   "claseId": "281",
   "nombre": "Consultatio Deuda Argentina - Clase B",
-  "fechaActualizacion": "2026-10-26T19:47:46.000Z",
+  "fechaActualizacion": "2026-10-26T23:51:58.000Z",
   "historico": [
     {
       "slug": "consultatio-deuda-argentina-clase-b",
@@ -26290,6 +26290,22 @@
       "retornoDiario": 0.149107,
       "retornoAcumulado": 10047.23473,
       "flujoEstimado": 509332944.655273,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-deuda-argentina-clase-b",
+      "fondoId": "281",
+      "claseId": "281",
+      "nombre": "Consultatio Deuda Argentina - Clase B",
+      "fecha": "2026-10-26",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 2962840.269,
+      "patrimonio": 182348445821.61,
+      "retornoDiario": -0.142986,
+      "retornoAcumulado": 10032.725578,
+      "flujoEstimado": -365668697.494293,
       "origen": "cnv-excel"
     }
   ]
