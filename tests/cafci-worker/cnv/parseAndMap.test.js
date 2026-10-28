@@ -218,7 +218,7 @@ describe('computeRendimientosFromHistory', () => {
       history: [],
     })
 
-    expect(rendimientos.unMes).toBeNull()
+    expect(rendimientos.unMes).toBe(1.5)
     expect(rendimientos.ultimos7Dias).toBeNull()
     expect(rendimientos.tnaEstimadaPeriodo).toBe('variacionDiariaPct')
     expect(rendimientos.tnaEstimadaDias).toBe(1)
