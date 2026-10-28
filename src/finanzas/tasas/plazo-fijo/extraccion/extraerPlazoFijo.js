@@ -9,6 +9,7 @@ import {
 } from '@/finanzas/tasas/plazo-fijo/extraccion/extraerMacro.js'
 import { extraerUalaPlazoFijo } from '@/finanzas/tasas/plazo-fijo/extraccion/extraerUala.js'
 import { extraerVoiiPlazoFijo } from '@/finanzas/tasas/plazo-fijo/extraccion/extraerVoii.js'
+import { extraerCocosPlazoFijo } from '@/finanzas/tasas/plazo-fijo/extraccion/extraerCocos.js'
 import { porcentajeADecimal } from '@/finanzas/compartido/utils/tasas.js'
 import { logGrupo, logError } from '@/log.js'
 
@@ -37,11 +38,19 @@ export function enriquecerPlazoFijoConVoii(items, detalleVoii) {
   })
 }
 
+function agregarSiValido(lista, item) {
+  if (!item || Array.isArray(item) || typeof item.entidad !== 'string') {
+    return lista
+  }
+  return [...lista, item]
+}
+
 export async function extraerPlazoFijo() {
-  const [items, uala, detalleVoii, detalleMacro, registrosTuPlazoFijo] =
+  const [items, uala, cocos, detalleVoii, detalleMacro, registrosTuPlazoFijo] =
     await Promise.all([
       obtenerRespuesta(),
       extraerUalaPlazoFijo(),
+      extraerCocosPlazoFijo(),
       extraerVoiiPlazoFijo(),
       extraerMacroPlazoFijo(),
       extraerTuPlazoFijoHomebanking(),
@@ -54,11 +63,7 @@ export async function extraerPlazoFijo() {
     registrosTuPlazoFijo,
   )
 
-  if (!uala || Array.isArray(uala) || typeof uala.entidad !== 'string') {
-    return enriquecidos
-  }
-
-  return [...enriquecidos, uala]
+  return agregarSiValido(agregarSiValido(enriquecidos, uala), cocos)
 }
 
 export async function obtenerRespuesta() {
