@@ -1,0 +1,93 @@
+{
+  "fondoId": "1258",
+  "claseId": "3492",
+  "nombre": "Lombard Abierto Pymes - Clase A",
+  "fecha": "2026-10-27",
+  "administradora": "Patagonia Inversora S.A.U. S.G.F.C.I.",
+  "depositaria": "Banco Patagonia S.A.",
+  "tipoRenta": "PyMEs",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1191",
+  "patrimonio": 12147605535.88,
+  "cantidadCuotapartes": 1311222218,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 9264.338,
+    "variacionDiariaPct": 0.057,
+    "ultimos7Dias": 0.4107,
+    "diasUltimos7Dias": 7,
+    "unMes": 1.7333,
+    "diasUnMes": 29,
+    "noventaDias": 5.5402,
+    "diasNoventaDias": 90,
+    "cientoOchentaDias": 11.6387,
+    "diasCientoOchentaDias": 180,
+    "enElAnio": 22.7951,
+    "diasEnElAnio": 301,
+    "doceMeses": 30.531,
+    "diasDoceMeses": 365,
+    "tnaEstimada": 21.8157,
+    "tnaEstimadaDias": 29,
+    "tnaEstimadaPeriodo": "unMes"
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Lecap S13N6",
+      "porcentaje": 5.1
+    },
+    {
+      "nombre": "Lecap S14G6",
+      "porcentaje": 4.8
+    },
+    {
+      "nombre": "FCI Allaria Ahorro - Clase C",
+      "porcentaje": 3.9
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Comafi",
+      "porcentaje": 3
+    },
+    {
+      "nombre": "Pzo Fi $ Bco Nacion",
+      "porcentaje": 2.8
+    },
+    {
+      "nombre": "Caucion Colocadora $ MAE",
+      "porcentaje": 2
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 74
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 1.6,
+    "honorarioDepositaria": 0.4,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Patagonia Inversora S.A.U. S.G.F.C.I.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00017G-57ea7826.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Patagonia S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00209-6f3e2645.jpg"
+    }
+  ]
+}

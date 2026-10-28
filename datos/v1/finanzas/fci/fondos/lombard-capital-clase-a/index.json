@@ -1,0 +1,127 @@
+{
+  "fondoId": "423",
+  "claseId": "786",
+  "nombre": "Lombard Capital - Clase A",
+  "fecha": "2026-10-27",
+  "administradora": "Patagonia Inversora S.A.U. S.G.F.C.I.",
+  "depositaria": "Banco Patagonia S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Badlar",
+  "horizonte": "Corto Plazo",
+  "duracion": "Menor o Igual a 0.5 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "552",
+  "patrimonio": 129592519455.07,
+  "cantidadCuotapartes": 463921895,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 279341.244,
+    "variacionDiariaPct": 0.059,
+    "ultimos7Dias": 0.4436,
+    "diasUltimos7Dias": 7,
+    "unMes": 1.7615,
+    "diasUnMes": 29,
+    "noventaDias": 5.6505,
+    "diasNoventaDias": 90,
+    "cientoOchentaDias": 11.2214,
+    "diasCientoOchentaDias": 180,
+    "enElAnio": 22.8552,
+    "diasEnElAnio": 301,
+    "doceMeses": 30.163,
+    "diasDoceMeses": 365,
+    "tnaEstimada": 22.1706,
+    "tnaEstimadaDias": 29,
+    "tnaEstimadaPeriodo": "unMes"
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono del Tesoro Nacional D31G6",
+      "porcentaje": 26.17
+    },
+    {
+      "nombre": "Lelink D30S6",
+      "porcentaje": 25.52
+    },
+    {
+      "nombre": "Lecap S15S6",
+      "porcentaje": 9
+    },
+    {
+      "nombre": "Lecap S30S6",
+      "porcentaje": 8.03
+    },
+    {
+      "nombre": "Lecap S13N6",
+      "porcentaje": 6.05
+    },
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 5.37
+    },
+    {
+      "nombre": "ON Vista Gas y Oil Arg C18",
+      "porcentaje": 5.35
+    },
+    {
+      "nombre": "Bono Boncer TZXD7",
+      "porcentaje": 3.81
+    },
+    {
+      "nombre": "ON Vista Gas y Oil Arg C17",
+      "porcentaje": 2.05
+    },
+    {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 0.42
+    },
+    {
+      "nombre": "ON Pan American C40",
+      "porcentaje": 0.12
+    },
+    {
+      "nombre": "ON YPF Clase XXVII",
+      "porcentaje": 0.01
+    },
+    {
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 7.93
+    },
+    {
+      "nombre": "FCI Fima Premium Clase B",
+      "porcentaje": 0.02
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moodys Local Calif. Riesgo",
+      "calificacion": "alta calidad = AA",
+      "fecha": "2014-09-12"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.24,
+    "honorarioDepositaria": 0.56,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Patagonia Inversora S.A.U. S.G.F.C.I.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00017G-57ea7826.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Patagonia S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00209-6f3e2645.jpg"
+    }
+  ]
+}
