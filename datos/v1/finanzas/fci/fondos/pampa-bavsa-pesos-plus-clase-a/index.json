@@ -1,0 +1,85 @@
+{
+  "fondoId": "1822",
+  "claseId": "6259",
+  "nombre": "Pampa BAVSA Pesos Plus - Clase A",
+  "fecha": "2026-10-28",
+  "administradora": "BAVSA Fondos S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1900",
+  "patrimonio": 8160074171.91,
+  "cantidadCuotapartes": 7366156613.91,
+  "inversionMinima": 1000,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1107.779,
+    "variacionDiariaPct": 0.114,
+    "ultimos7Dias": 0.1946,
+    "diasUltimos7Dias": 7,
+    "unMes": 2.4765,
+    "diasUnMes": 30,
+    "noventaDias": 6.0683,
+    "diasNoventaDias": 90,
+    "cientoOchentaDias": 10.7779,
+    "diasCientoOchentaDias": 181,
+    "enElAnio": null,
+    "diasEnElAnio": null,
+    "doceMeses": null,
+    "diasDoceMeses": null,
+    "tnaEstimada": 30.1307,
+    "tnaEstimadaDias": 30,
+    "tnaEstimadaPeriodo": "unMes"
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Dual TTD26",
+      "porcentaje": 26.14
+    },
+    {
+      "nombre": "Bono Boncer TXMJ9",
+      "porcentaje": 24.87
+    },
+    {
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 23.82
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TMVE8",
+      "porcentaje": 14.69
+    },
+    {
+      "nombre": "Bono Dual TXMJ0",
+      "porcentaje": 10.48
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0.7,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "BAVSA Fondos S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/03118G-d03fc40c.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

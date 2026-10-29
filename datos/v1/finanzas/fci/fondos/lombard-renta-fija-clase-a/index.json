@@ -1,0 +1,127 @@
+{
+  "fondoId": "141",
+  "claseId": "141",
+  "nombre": "Lombard Renta Fija - Clase A",
+  "fecha": "2026-10-28",
+  "administradora": "Patagonia Inversora S.A.U. S.G.F.C.I.",
+  "depositaria": "Banco Patagonia S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Largo Plazo",
+  "duracion": "Mayor a 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "186",
+  "patrimonio": 38248897527.74,
+  "cantidadCuotapartes": 49381180,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 774564.268,
+    "variacionDiariaPct": 0.121,
+    "ultimos7Dias": 0.5021,
+    "diasUltimos7Dias": 7,
+    "unMes": 1.6902,
+    "diasUnMes": 30,
+    "noventaDias": 3.5484,
+    "diasNoventaDias": 90,
+    "cientoOchentaDias": 10.5851,
+    "diasCientoOchentaDias": 181,
+    "enElAnio": 13.35,
+    "diasEnElAnio": 302,
+    "doceMeses": 16.224,
+    "diasDoceMeses": 365,
+    "tnaEstimada": 20.5641,
+    "tnaEstimadaDias": 30,
+    "tnaEstimadaPeriodo": "unMes"
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Fut Reg ARS",
+      "porcentaje": 34.7
+    },
+    {
+      "nombre": "Bono Prov de Buenos Aires TZV28",
+      "porcentaje": 24.7
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TZVD8",
+      "porcentaje": 24.1
+    },
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 11
+    },
+    {
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 6.2
+    },
+    {
+      "nombre": "Bono Boncer TZXS8",
+      "porcentaje": 5.2
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 4.8
+    },
+    {
+      "nombre": "Pagare #MAV180860044",
+      "porcentaje": 4.5
+    },
+    {
+      "nombre": "FCI BM Smart Money Market - Clase B",
+      "porcentaje": 4.2
+    },
+    {
+      "nombre": "Bono Dual TXMJ0",
+      "porcentaje": 3.8
+    },
+    {
+      "nombre": "Caucion Colocadora $ MAE",
+      "porcentaje": 3.3
+    },
+    {
+      "nombre": "Bono CER TZX27",
+      "porcentaje": 2.7
+    },
+    {
+      "nombre": "Lecer X30N6",
+      "porcentaje": 2.5
+    },
+    {
+      "nombre": "Bono Boncer TX26",
+      "porcentaje": 2
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Moodys Local Calif. Riesgo",
+      "calificacion": "alta calidad = AA",
+      "fecha": "2014-09-12"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.24,
+    "honorarioDepositaria": 0.56,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "Patagonia Inversora S.A.U. S.G.F.C.I.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00017G-57ea7826.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Patagonia S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00209-6f3e2645.jpg"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   "fondoId": "1545",
   "claseId": "6605",
   "nombre": "Allaria Dólar Retorno Total - Clase P",
-  "fechaActualizacion": "2026-10-28T20:20:42.000Z",
+  "fechaActualizacion": "2026-10-29T15:12:25.000Z",
   "historico": [
     {
       "slug": "allaria-dolar-retorno-total-clase-p",
@@ -1090,6 +1090,22 @@
       "retornoDiario": 0.301859,
       "retornoAcumulado": 0.7807,
       "flujoEstimado": -0.000022,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "allaria-dolar-retorno-total-clase-p",
+      "fondoId": "1545",
+      "claseId": "6605",
+      "nombre": "Allaria Dólar Retorno Total - Clase P",
+      "fecha": "2026-10-28",
+      "categoria": "Retorno Total",
+      "categoriaKey": "retornoTotal",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1002.421,
+      "patrimonio": 191.7,
+      "retornoDiario": -0.534428,
+      "retornoAcumulado": 0.2421,
+      "flujoEstimado": 0.000003,
       "origen": "cnv-excel"
     }
   ]

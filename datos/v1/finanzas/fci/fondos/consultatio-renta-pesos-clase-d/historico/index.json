@@ -2,7 +2,7 @@
   "fondoId": "647",
   "claseId": "1334",
   "nombre": "Consultatio Renta Pesos - Clase D",
-  "fechaActualizacion": "2026-10-28T20:20:42.000Z",
+  "fechaActualizacion": "2026-10-29T15:12:25.000Z",
   "historico": [
     {
       "slug": "consultatio-renta-pesos-clase-d",
@@ -26322,6 +26322,22 @@
       "retornoDiario": -0.563302,
       "retornoAcumulado": 4630.340778,
       "flujoEstimado": 156.044807,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-renta-pesos-clase-d",
+      "fondoId": "647",
+      "claseId": "1334",
+      "nombre": "Consultatio Renta Pesos - Clase D",
+      "fecha": "2026-10-28",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 125262.918,
+      "patrimonio": 35653728164.57,
+      "retornoDiario": 0.070398,
+      "retornoAcumulado": 4633.670822,
+      "flujoEstimado": -145.922066,
       "origen": "cnv-excel"
     }
   ]
