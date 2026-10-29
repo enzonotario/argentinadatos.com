@@ -15,7 +15,7 @@
   "codigoCNV": "1937",
   "patrimonio": 613222680.03,
   "cantidadCuotapartes": 603696509.75,
-  "inversionMinima": 0,
+  "inversionMinima": 1000,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
@@ -69,12 +69,12 @@
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": 8,
-    "honorarioDepositaria": 1.5,
-    "comisionIngreso": 5,
-    "comisionEgreso": 5,
+    "honorarioGerente": 2,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
     "comisionTransferencia": 0,
-    "gastosOrdinariosGestion": 2.5,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },

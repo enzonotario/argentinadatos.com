@@ -15,7 +15,7 @@
   "codigoCNV": "1970",
   "patrimonio": 0,
   "cantidadCuotapartes": 0,
-  "inversionMinima": 100000000,
+  "inversionMinima": 1000,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
@@ -97,12 +97,12 @@
   ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": 8,
-    "honorarioDepositaria": 1.5,
-    "comisionIngreso": 5,
-    "comisionEgreso": 5,
+    "honorarioGerente": 3,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
     "comisionTransferencia": 0,
-    "gastosOrdinariosGestion": 2.5,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },

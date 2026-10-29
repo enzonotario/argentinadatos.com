@@ -9,13 +9,13 @@
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": null,
-  "horizonte": null,
+  "horizonte": "Mediano Plazo",
   "duracion": null,
   "moneda": "Peso Argentino",
   "codigoCNV": "1782",
   "patrimonio": 4984084835.43,
   "cantidadCuotapartes": 5000000000,
-  "inversionMinima": 0,
+  "inversionMinima": 1000,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
@@ -37,15 +37,20 @@
     "tnaEstimadaDias": 7,
     "tnaEstimadaPeriodo": "ultimos7Dias"
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 100
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
-    "honorarioGerente": 8,
-    "honorarioDepositaria": 1.5,
-    "comisionIngreso": 5,
-    "comisionEgreso": 5,
+    "honorarioGerente": 1.8,
+    "honorarioDepositaria": 0.1,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
     "comisionTransferencia": 0,
-    "gastosOrdinariosGestion": 2.5,
+    "gastosOrdinariosGestion": 0,
     "comisionExito": null,
     "otros": null
   },
