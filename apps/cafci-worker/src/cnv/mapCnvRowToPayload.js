@@ -92,7 +92,7 @@ function lookbackToleranceDays(targetDays) {
  * usarlos como período.
  *
  * Además expone `dias*` (días reales del lookback) y `tnaEstimada` (TNA
- * simple: unMes → 7D → variación diaria, alineada a esos días).
+ * simple: 7D → variación diaria, alineada a esos días).
  */
 export function computeRendimientosFromHistory({
   fecha,
@@ -215,28 +215,22 @@ export function computeRendimientosFromHistory({
     typeof variacionDiariaPct === 'number' ? variacionDiariaPct : null
 
   const tnaEstimadaPick =
-    unMes != null && diasUnMes != null
+    ultimos7Dias != null && diasUltimos7Dias != null
       ? {
-          value: annualizePeriodReturnPercent(unMes, diasUnMes),
-          days: diasUnMes,
-          periodo: 'unMes',
+          value: annualizePeriodReturnPercent(
+            ultimos7Dias,
+            diasUltimos7Dias,
+          ),
+          days: diasUltimos7Dias,
+          periodo: 'ultimos7Dias',
         }
-      : ultimos7Dias != null && diasUltimos7Dias != null
+      : daily != null
         ? {
-            value: annualizePeriodReturnPercent(
-              ultimos7Dias,
-              diasUltimos7Dias,
-            ),
-            days: diasUltimos7Dias,
-            periodo: 'ultimos7Dias',
+            value: annualizePeriodReturnPercent(daily, 1),
+            days: 1,
+            periodo: 'variacionDiariaPct',
           }
-        : daily != null
-          ? {
-              value: annualizePeriodReturnPercent(daily, 1),
-              days: 1,
-              periodo: 'variacionDiariaPct',
-            }
-          : null
+        : null
 
   return {
     valorCuotaparte: valorCuotaparte ?? null,
@@ -259,7 +253,7 @@ export function computeRendimientosFromHistory({
         ? variacionDoceMesesPct
         : null),
     diasDoceMeses: twelveMonths?.days ?? null,
-    // TNA simple alineada a los días reales del lookback (unMes → 7D → 1D).
+    // TNA simple alineada a los días reales del lookback (7D → 1D).
     tnaEstimada: tnaEstimadaPick?.value ?? null,
     tnaEstimadaDias: tnaEstimadaPick?.days ?? null,
     tnaEstimadaPeriodo: tnaEstimadaPick?.periodo ?? null,

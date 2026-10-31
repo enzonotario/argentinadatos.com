@@ -135,7 +135,7 @@ describe('parseCnvCuotaparteExcel', () => {
 })
 
 describe('computeRendimientosFromHistory', () => {
-  it('prioriza rolling 30D sobre CNV unMes (vs fin de mes previo)', () => {
+  it('prioriza la TNA de 7D sobre el rendimiento mensual', () => {
     const rendimientos = computeRendimientosFromHistory({
       fecha: '2026-08-14',
       valorCuotaparte: 250943.119,
@@ -163,15 +163,15 @@ describe('computeRendimientosFromHistory', () => {
       3,
     )
     expect(rendimientos.diasUltimos7Dias).toBe(7)
-    expect(rendimientos.tnaEstimadaPeriodo).toBe('unMes')
-    expect(rendimientos.tnaEstimadaDias).toBe(30)
+    expect(rendimientos.tnaEstimadaPeriodo).toBe('ultimos7Dias')
+    expect(rendimientos.tnaEstimadaDias).toBe(7)
     expect(rendimientos.tnaEstimada).toBeCloseTo(
-      annualizePeriodReturnPercent(rendimientos.unMes, 30),
+      annualizePeriodReturnPercent(rendimientos.ultimos7Dias, 7),
       3,
     )
   })
 
-  it('usa CNV unMes solo si no hay histórico suficiente para 30D', () => {
+  it('usa 7D aunque haya unMes CNV disponible', () => {
     const rendimientos = computeRendimientosFromHistory({
       fecha: '2026-08-14',
       valorCuotaparte: 250943.119,
@@ -185,9 +185,10 @@ describe('computeRendimientosFromHistory', () => {
     )
     expect(rendimientos.unMes).toBeCloseTo(-9.849, 3)
     expect(rendimientos.diasUnMes).toBe(30)
-    expect(rendimientos.tnaEstimadaPeriodo).toBe('unMes')
+    expect(rendimientos.tnaEstimadaPeriodo).toBe('ultimos7Dias')
+    expect(rendimientos.tnaEstimadaDias).toBe(7)
     expect(rendimientos.tnaEstimada).toBeCloseTo(
-      annualizePeriodReturnPercent(-9.849, 30),
+      annualizePeriodReturnPercent(rendimientos.ultimos7Dias, 7),
       3,
     )
   })
@@ -208,15 +209,16 @@ describe('computeRendimientosFromHistory', () => {
     )
   })
 
-  it('anualiza desde variación diaria cuando no hay ventanas más largas', () => {
+  it('anualiza desde variación diaria cuando no hay 7D disponible', () => {
     const rendimientos = computeRendimientosFromHistory({
       fecha: '2026-08-14',
       valorCuotaparte: 250943.119,
       variacionDiariaPct: 0.05,
+      variacionUnMesPct: 1.5,
       history: [],
     })
 
-    expect(rendimientos.unMes).toBeNull()
+    expect(rendimientos.unMes).toBe(1.5)
     expect(rendimientos.ultimos7Dias).toBeNull()
     expect(rendimientos.tnaEstimadaPeriodo).toBe('variacionDiariaPct')
     expect(rendimientos.tnaEstimadaDias).toBe(1)
@@ -248,10 +250,10 @@ describe('computeRendimientosFromHistory', () => {
     )
     expect(Math.abs(rendimientos.unMes)).toBeLessThan(5)
     expect(rendimientos.diasUnMes).toBe(28)
-    expect(rendimientos.tnaEstimadaPeriodo).toBe('unMes')
-    expect(rendimientos.tnaEstimadaDias).toBe(28)
+    expect(rendimientos.tnaEstimadaPeriodo).toBe('ultimos7Dias')
+    expect(rendimientos.tnaEstimadaDias).toBe(7)
     expect(rendimientos.tnaEstimada).toBeCloseTo(
-      annualizePeriodReturnPercent(rendimientos.unMes, 28),
+      annualizePeriodReturnPercent(rendimientos.ultimos7Dias, 7),
       3,
     )
   })
