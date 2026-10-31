@@ -2,7 +2,7 @@
   "fondoId": "723",
   "claseId": "6236",
   "nombre": "CMA Renta Dólar - Clase F",
-  "fechaActualizacion": "2026-10-30T18:16:30.000Z",
+  "fechaActualizacion": "2026-10-30T23:51:47.000Z",
   "historico": [
     {
       "slug": "cma-renta-dolar-clase-f",
@@ -2482,6 +2482,22 @@
       "retornoDiario": -0.024264,
       "retornoAcumulado": 0.9486,
       "flujoEstimado": 0.01055,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "cma-renta-dolar-clase-f",
+      "fondoId": "723",
+      "claseId": "6236",
+      "nombre": "CMA Renta Dólar - Clase F",
+      "fecha": "2026-10-30",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1010.26,
+      "patrimonio": 288564.09,
+      "retornoDiario": 0.076673,
+      "retornoAcumulado": 1.026,
+      "flujoEstimado": -0.101313,
       "origen": "cnv-excel"
     }
   ]
