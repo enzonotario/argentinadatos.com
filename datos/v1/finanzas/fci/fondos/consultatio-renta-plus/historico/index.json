@@ -2,7 +2,7 @@
   "fondoId": "535",
   "claseId": "1082",
   "nombre": "Consultatio Renta Plus",
-  "fechaActualizacion": "2026-11-02T19:00:51.000Z",
+  "fechaActualizacion": "2026-11-03T00:36:38.000Z",
   "historico": [
     {
       "slug": "consultatio-renta-plus",
@@ -26370,6 +26370,22 @@
       "retornoDiario": 0.021602,
       "retornoAcumulado": 5013.353085,
       "flujoEstimado": 604.193054,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-renta-plus",
+      "fondoId": "535",
+      "claseId": "1082",
+      "nombre": "Consultatio Renta Plus",
+      "fecha": "2026-11-02",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 583755.56,
+      "patrimonio": 189011842577.41,
+      "retornoDiario": -0.254279,
+      "retornoAcumulado": 5000.350883,
+      "flujoEstimado": -785.124573,
       "origen": "cnv-excel"
     }
   ]

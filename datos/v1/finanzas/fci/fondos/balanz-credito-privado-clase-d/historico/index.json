@@ -2,7 +2,7 @@
   "fondoId": "1668",
   "claseId": "5581",
   "nombre": "Balanz Credito Privado - Clase D",
-  "fechaActualizacion": "2026-11-02T19:00:51.000Z",
+  "fechaActualizacion": "2026-11-03T00:36:38.000Z",
   "historico": [
     {
       "slug": "balanz-credito-privado-clase-d",
@@ -5138,6 +5138,22 @@
       "retornoDiario": 0,
       "retornoAcumulado": 36.3051,
       "flujoEstimado": null,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "balanz-credito-privado-clase-d",
+      "fondoId": "1668",
+      "claseId": "5581",
+      "nombre": "Balanz Credito Privado - Clase D",
+      "fecha": "2026-11-02",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1365.152,
+      "patrimonio": 915909325.07,
+      "retornoDiario": 0.15414,
+      "retornoAcumulado": 36.5152,
+      "flujoEstimado": -285.23,
       "origen": "cnv-excel"
     }
   ]
