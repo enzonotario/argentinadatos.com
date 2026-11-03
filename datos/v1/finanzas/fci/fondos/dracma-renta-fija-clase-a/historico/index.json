@@ -2,7 +2,7 @@
   "fondoId": "1908",
   "claseId": "6837",
   "nombre": "Dracma Renta Fija - Clase A",
-  "fechaActualizacion": "2026-11-03T00:36:38.000Z",
+  "fechaActualizacion": "2026-11-03T14:31:06.000Z",
   "historico": [
     {
       "slug": "dracma-renta-fija-clase-a",
@@ -34,6 +34,22 @@
       "retornoDiario": 0.06,
       "retornoAcumulado": 0.06,
       "flujoEstimado": -0.02,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "dracma-renta-fija-clase-a",
+      "fondoId": "1908",
+      "claseId": "6837",
+      "nombre": "Dracma Renta Fija - Clase A",
+      "fecha": "2026-11-02",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1000.6,
+      "patrimonio": 30019.43,
+      "retornoDiario": 0,
+      "retornoAcumulado": 0.06,
+      "flujoEstimado": 1.45,
       "origen": "cnv-excel"
     }
   ]
