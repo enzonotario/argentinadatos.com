@@ -214,36 +214,6 @@
     }
   },
   {
-    "entidad": "CHUBUT",
-    "nombreComercial": "Banco del Chubut",
-    "producto": "Préstamos Personales con Descuento de Haberes",
-    "tna": 0.695,
-    "tea": 0.9657,
-    "cftTna": null,
-    "cftTea": 1.255,
-    "tipoTasa": "fija",
-    "moneda": "ARS",
-    "requiereCliente": true,
-    "condiciones": "Descuento de haberes",
-    "enlace": "https://www.bancochubut.com.ar/webinstitucional/personas/prestamos/todos_los_prestamos/tasa_fija",
-    "vigenciaDesde": "2025-08-26",
-    "vigenciaHasta": null,
-    "metadata": {
-      "plazoMesesEjemplo": 60,
-      "plazoMinMeses": 2,
-      "plazoMaxMeses": 60,
-      "tasasPorPlazo": [
-        {
-          "plazoMinMeses": 2,
-          "plazoMaxMeses": 60,
-          "tna": 0.695,
-          "tea": 0.9657,
-          "cftTea": 1.255
-        }
-      ]
-    }
-  },
-  {
     "entidad": "CIUDAD",
     "nombreComercial": "Banco Ciudad",
     "producto": "Ciudad Veloz Plan Sueldo",
