@@ -2,7 +2,7 @@
   "fondoId": "1982",
   "claseId": "6628",
   "nombre": "BAVSA Credito Productivo I - Clase A",
-  "fechaActualizacion": "2026-11-04T19:19:23.000Z",
+  "fechaActualizacion": "2026-11-04T23:54:04.000Z",
   "historico": [
     {
       "slug": "bavsa-credito-productivo-i-clase-a",
@@ -946,6 +946,22 @@
       "retornoDiario": -0.007555,
       "retornoAcumulado": -98.6765,
       "flujoEstimado": 0.078464,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "bavsa-credito-productivo-i-clase-a",
+      "fondoId": "1982",
+      "claseId": "6628",
+      "nombre": "BAVSA Credito Productivo I - Clase A",
+      "fecha": "2026-11-04",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": null,
+      "valorCuotaparte": 13.235,
+      "patrimonio": 2097.31,
+      "retornoDiario": 0,
+      "retornoAcumulado": -98.6765,
+      "flujoEstimado": -0.08,
       "origen": "cnv-excel"
     }
   ]

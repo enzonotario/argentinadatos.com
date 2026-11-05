@@ -1,0 +1,69 @@
+{
+  "fondoId": "1319",
+  "claseId": "3761",
+  "nombre": "Stonex Balanceado IV - Clase B",
+  "fecha": "2026-11-04",
+  "administradora": "StoneX Asset Management S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1274",
+  "patrimonio": 110920.35,
+  "cantidadCuotapartes": 135186.55,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 820.498,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0,
+    "diasUltimos7Dias": 7,
+    "unMes": -0.4638,
+    "diasUnMes": 30,
+    "noventaDias": -0.4576,
+    "diasNoventaDias": 90,
+    "cientoOchentaDias": -4.3775,
+    "diasCientoOchentaDias": 166,
+    "enElAnio": -47.518,
+    "diasEnElAnio": 1394,
+    "doceMeses": -91.303,
+    "diasDoceMeses": null,
+    "tnaEstimada": 0,
+    "tnaEstimadaDias": 7,
+    "tnaEstimadaPeriodo": "ultimos7Dias"
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte $ Rem Bco Comafi",
+      "porcentaje": 100
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0,
+    "honorarioDepositaria": 0,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "StoneX Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00311G-be0f6f28.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

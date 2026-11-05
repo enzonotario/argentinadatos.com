@@ -1,0 +1,99 @@
+{
+  "fondoId": "545",
+  "claseId": "4785",
+  "nombre": "Stonex Balanceado - Clase Ley N° 27.743",
+  "fecha": "2026-11-04",
+  "administradora": "StoneX Asset Management S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Fija",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Mediano Plazo",
+  "duracion": "No Aplicable",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "679",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1530.22,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0,
+    "diasUltimos7Dias": 7,
+    "unMes": 0,
+    "diasUnMes": 30,
+    "noventaDias": 0,
+    "diasNoventaDias": 90,
+    "cientoOchentaDias": 0,
+    "diasCientoOchentaDias": 180,
+    "enElAnio": 0.3825,
+    "diasEnElAnio": 309,
+    "doceMeses": 7.4352,
+    "diasDoceMeses": 365,
+    "tnaEstimada": 0,
+    "tnaEstimadaDias": 7,
+    "tnaEstimadaPeriodo": "ultimos7Dias"
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer 2028 TZXM8",
+      "porcentaje": 29.18
+    },
+    {
+      "nombre": "Bono Dual TXMD9",
+      "porcentaje": 27.83
+    },
+    {
+      "nombre": "Bono Boncer TZXD7",
+      "porcentaje": 13.96
+    },
+    {
+      "nombre": "Bono Boncer TZXS8",
+      "porcentaje": 13.95
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TZXO7",
+      "porcentaje": 12.74
+    },
+    {
+      "nombre": "Bono Boncer TZX28",
+      "porcentaje": 2.43
+    },
+    {
+      "nombre": "FCI Delta $ - Clase B",
+      "porcentaje": 0.83
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Standard and Poors",
+      "calificacion": "EF-3",
+      "fecha": "2013-09-17"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.5,
+    "honorarioDepositaria": 0,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "StoneX Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00311G-be0f6f28.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

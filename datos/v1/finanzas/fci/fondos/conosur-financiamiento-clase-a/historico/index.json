@@ -2,7 +2,7 @@
   "fondoId": "1672",
   "claseId": "5599",
   "nombre": "ConoSur Financiamiento - Clase A",
-  "fechaActualizacion": "2026-11-04T19:19:23.000Z",
+  "fechaActualizacion": "2026-11-04T23:54:04.000Z",
   "historico": [
     {
       "slug": "conosur-financiamiento-clase-a",
@@ -3714,6 +3714,22 @@
       "retornoDiario": 0.061367,
       "retornoAcumulado": 32.2375,
       "flujoEstimado": -593.003775,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "conosur-financiamiento-clase-a",
+      "fondoId": "1672",
+      "claseId": "5599",
+      "nombre": "ConoSur Financiamiento - Clase A",
+      "fecha": "2026-11-04",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1323.511,
+      "patrimonio": 1679951542.96,
+      "retornoDiario": 0.085906,
+      "retornoAcumulado": 32.3511,
+      "flujoEstimado": 577.636674,
       "origen": "cnv-excel"
     }
   ]

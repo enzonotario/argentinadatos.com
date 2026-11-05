@@ -2,7 +2,7 @@
   "fondoId": "643",
   "claseId": "1306",
   "nombre": "Consultatio Renta y Capital - Clase B",
-  "fechaActualizacion": "2026-11-04T19:19:23.000Z",
+  "fechaActualizacion": "2026-11-04T23:54:04.000Z",
   "historico": [
     {
       "slug": "consultatio-renta-y-capital-clase-b",
@@ -26402,6 +26402,22 @@
       "retornoDiario": -0.005289,
       "retornoAcumulado": 4893.147022,
       "flujoEstimado": 0.036625,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "consultatio-renta-y-capital-clase-b",
+      "fondoId": "643",
+      "claseId": "1306",
+      "nombre": "Consultatio Renta y Capital - Clase B",
+      "fecha": "2026-11-04",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 100741.004,
+      "patrimonio": 10440491.41,
+      "retornoDiario": 0.063451,
+      "retornoAcumulado": 4896.315242,
+      "flujoEstimado": -0.005501,
       "origen": "cnv-excel"
     }
   ]

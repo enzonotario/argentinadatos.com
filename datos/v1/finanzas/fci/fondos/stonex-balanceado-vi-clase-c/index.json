@@ -1,0 +1,97 @@
+{
+  "fondoId": "1440",
+  "claseId": "4231",
+  "nombre": "Stonex Balanceado VI - Clase C",
+  "fecha": "2026-11-04",
+  "administradora": "StoneX Asset Management S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Mixta",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Mediano Plazo",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "1412",
+  "patrimonio": 0,
+  "cantidadCuotapartes": 0,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 1000,
+    "variacionDiariaPct": 0,
+    "ultimos7Dias": 0,
+    "diasUltimos7Dias": 7,
+    "unMes": 0,
+    "diasUnMes": 30,
+    "noventaDias": 0,
+    "diasNoventaDias": 90,
+    "cientoOchentaDias": 0,
+    "diasCientoOchentaDias": 180,
+    "enElAnio": 0,
+    "diasEnElAnio": 309,
+    "doceMeses": 0,
+    "diasDoceMeses": 365,
+    "tnaEstimada": 0,
+    "tnaEstimadaDias": 7,
+    "tnaEstimadaPeriodo": "ultimos7Dias"
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 29.6
+    },
+    {
+      "nombre": "Bono Boncer TZXO6",
+      "porcentaje": 19.5
+    },
+    {
+      "nombre": "Cheque #MAV240860043",
+      "porcentaje": 16.6
+    },
+    {
+      "nombre": "Pagare #MAV040860070",
+      "porcentaje": 11.9
+    },
+    {
+      "nombre": "Cheque E *MAV110901276",
+      "porcentaje": 10.5
+    },
+    {
+      "nombre": "Pagare #MAV070860035",
+      "porcentaje": 4.7
+    },
+    {
+      "nombre": "Pagare #MAV180860057",
+      "porcentaje": 2.7
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 4.6
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0.8,
+    "honorarioDepositaria": 0.1452,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "StoneX Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00311G-be0f6f28.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "fondoId": "1649",
+  "claseId": "5490",
+  "nombre": "Stonex Performance II - Clase B",
+  "fecha": "2026-11-04",
+  "administradora": "StoneX Asset Management S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Mixta",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Plazo Flexible",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "1667",
+  "patrimonio": 454.24,
+  "cantidadCuotapartes": 1000,
+  "inversionMinima": 1,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 454.24,
+    "variacionDiariaPct": -1.087,
+    "ultimos7Dias": 0.9086,
+    "diasUltimos7Dias": 7,
+    "unMes": 6.2823,
+    "diasUnMes": 30,
+    "noventaDias": -15.6675,
+    "diasNoventaDias": 90,
+    "cientoOchentaDias": null,
+    "diasCientoOchentaDias": null,
+    "enElAnio": -54.576,
+    "diasEnElAnio": null,
+    "doceMeses": -54.576,
+    "diasDoceMeses": null,
+    "tnaEstimada": 47.377,
+    "tnaEstimadaDias": 7,
+    "tnaEstimadaPeriodo": "ultimos7Dias"
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Cta Cte U$D Bank Of New York",
+      "porcentaje": 44.9
+    },
+    {
+      "nombre": "Cta Cte U$S Bco Comafi",
+      "porcentaje": 43.4
+    },
+    {
+      "nombre": "Cta Cte $ Rem Bco Comafi",
+      "porcentaje": 11.7
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 0,
+    "honorarioDepositaria": 0,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "StoneX Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00311G-be0f6f28.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "fondoId": "465",
+  "claseId": "913",
+  "nombre": "Stonex PYMEs - Clase A",
+  "fecha": "2026-11-04",
+  "administradora": "StoneX Asset Management S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "PyMEs",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "No Registrado",
+  "horizonte": "Plazo Flexible",
+  "duracion": "Menor o Igual a 1 Año",
+  "moneda": "Peso Argentino",
+  "codigoCNV": "613",
+  "patrimonio": 15006686.71,
+  "cantidadCuotapartes": 462542.2,
+  "inversionMinima": 1,
+  "monedaInversion": "Peso Argentino",
+  "plazoLiquidacionDias": 1,
+  "rendimientos": {
+    "valorCuotaparte": 32443.93,
+    "variacionDiariaPct": 0.134,
+    "ultimos7Dias": 0.3697,
+    "diasUltimos7Dias": 7,
+    "unMes": 1.6764,
+    "diasUnMes": 30,
+    "noventaDias": 5.4969,
+    "diasNoventaDias": 90,
+    "cientoOchentaDias": 11.3796,
+    "diasCientoOchentaDias": 180,
+    "enElAnio": 21.2046,
+    "diasEnElAnio": 309,
+    "doceMeses": 26.5405,
+    "diasDoceMeses": 365,
+    "tnaEstimada": 19.2772,
+    "tnaEstimadaDias": 7,
+    "tnaEstimadaPeriodo": "ultimos7Dias"
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Fut Reg ARS",
+      "porcentaje": 17.9
+    },
+    {
+      "nombre": "Letra Tamar TEM TMF27",
+      "porcentaje": 5.5
+    },
+    {
+      "nombre": "Bono Dual TXMD9",
+      "porcentaje": 4.4
+    },
+    {
+      "nombre": "Bono Dual TXMJ0",
+      "porcentaje": 4.2
+    },
+    {
+      "nombre": "ON Tecnovax S1 C1",
+      "porcentaje": 3.5
+    },
+    {
+      "nombre": "Bono del Tesoro Nacional TZXO7",
+      "porcentaje": 3.2
+    },
+    {
+      "nombre": "ON PyME Sion Serie 1",
+      "porcentaje": 3
+    },
+    {
+      "nombre": "Lecap S13N6",
+      "porcentaje": 2.6
+    },
+    {
+      "nombre": "Pagare #MAV110860049",
+      "porcentaje": 2.5
+    },
+    {
+      "nombre": "FF Hab Serie 5 A",
+      "porcentaje": 2.1
+    },
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 42
+    }
+  ],
+  "calificaciones": [
+    {
+      "calificadora": "Standard and Poors",
+      "calificacion": "A-bf.ar",
+      "fecha": "2013-09-17"
+    }
+  ],
+  "honorarios": {
+    "honorarioGerente": 2.5,
+    "honorarioDepositaria": 0.1452,
+    "comisionIngreso": 0,
+    "comisionEgreso": 5,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "StoneX Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00311G-be0f6f28.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

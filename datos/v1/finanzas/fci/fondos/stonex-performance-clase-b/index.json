@@ -1,0 +1,69 @@
+{
+  "fondoId": "1650",
+  "claseId": "5493",
+  "nombre": "Stonex Performance - Clase B",
+  "fecha": "2026-11-04",
+  "administradora": "StoneX Asset Management S.A.",
+  "depositaria": "Banco Comafi S.A.",
+  "tipoRenta": "Renta Mixta",
+  "tipoDD": "No Aplica",
+  "region": "Argentina",
+  "benchmark": "Otro",
+  "horizonte": "Plazo Flexible",
+  "duracion": "Mayor a 1 y Menor Igual 3 Años",
+  "moneda": "Dolar Estadounidense",
+  "codigoCNV": "1666",
+  "patrimonio": 13907390.13,
+  "cantidadCuotapartes": 12701773.92,
+  "inversionMinima": 1,
+  "monedaInversion": "Dolar Estadounidense",
+  "plazoLiquidacionDias": 5,
+  "rendimientos": {
+    "valorCuotaparte": 1094.917,
+    "variacionDiariaPct": 0.021,
+    "ultimos7Dias": 0.1505,
+    "diasUltimos7Dias": 7,
+    "unMes": 0.6355,
+    "diasUnMes": 30,
+    "noventaDias": 1.8769,
+    "diasNoventaDias": 90,
+    "cientoOchentaDias": 3.9189,
+    "diasCientoOchentaDias": 180,
+    "enElAnio": 6.768,
+    "diasEnElAnio": 309,
+    "doceMeses": 8.3316,
+    "diasDoceMeses": 365,
+    "tnaEstimada": 7.8475,
+    "tnaEstimadaDias": 7,
+    "tnaEstimadaPeriodo": "ultimos7Dias"
+  },
+  "composicionCartera": [
+    {
+      "nombre": "Resto de Activos",
+      "porcentaje": 100.7
+    }
+  ],
+  "calificaciones": [],
+  "honorarios": {
+    "honorarioGerente": 2.5,
+    "honorarioDepositaria": 0.1452,
+    "comisionIngreso": 0,
+    "comisionEgreso": 0,
+    "comisionTransferencia": 0,
+    "gastosOrdinariosGestion": 0,
+    "comisionExito": null,
+    "otros": null
+  },
+  "sociedades": [
+    {
+      "tipo": "Administradora",
+      "nombre": "StoneX Asset Management S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00311G-be0f6f28.jpg"
+    },
+    {
+      "tipo": "Depositaria",
+      "nombre": "Banco Comafi S.A.",
+      "logo": "https://api.argentinadatos.com/static/logos/fondos/00115-2f3a5b01.jpg"
+    }
+  ]
+}

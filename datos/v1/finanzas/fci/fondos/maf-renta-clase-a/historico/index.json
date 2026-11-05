@@ -2,7 +2,7 @@
   "fondoId": "497",
   "claseId": "1002",
   "nombre": "MAF Renta - Clase A",
-  "fechaActualizacion": "2026-11-04T19:19:23.000Z",
+  "fechaActualizacion": "2026-11-04T23:54:04.000Z",
   "historico": [
     {
       "slug": "maf-renta-clase-a",
@@ -26482,6 +26482,22 @@
       "retornoDiario": -0.206592,
       "retornoAcumulado": 4247.678606,
       "flujoEstimado": -999986.904218,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "maf-renta-clase-a",
+      "fondoId": "497",
+      "claseId": "1002",
+      "nombre": "MAF Renta - Clase A",
+      "fecha": "2026-11-04",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 353016.23,
+      "patrimonio": 3406357327.84,
+      "retornoDiario": 0.042233,
+      "retornoAcumulado": 4249.514756,
+      "flujoEstimado": -5.01202,
       "origen": "cnv-excel"
     }
   ]
