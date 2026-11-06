@@ -2,7 +2,7 @@
   "fondoId": "2027",
   "claseId": "6853",
   "nombre": "Conosur Financiamiento III - Clase C",
-  "fechaActualizacion": "2026-11-05T20:10:18.000Z",
+  "fechaActualizacion": "2026-11-06T00:45:41.000Z",
   "historico": [
     {
       "slug": "conosur-financiamiento-iii-clase-c",
@@ -130,6 +130,22 @@
       "retornoDiario": 0,
       "retornoAcumulado": 0,
       "flujoEstimado": 50000000,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "conosur-financiamiento-iii-clase-c",
+      "fondoId": "2027",
+      "claseId": "6853",
+      "nombre": "Conosur Financiamiento III - Clase C",
+      "fecha": "2026-11-05",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1000.587,
+      "patrimonio": 50039340.42,
+      "retornoDiario": 0.0587,
+      "retornoAcumulado": 0.0587,
+      "flujoEstimado": -15.45,
       "origen": "cnv-excel"
     }
   ]

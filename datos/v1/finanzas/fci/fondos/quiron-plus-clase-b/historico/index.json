@@ -2,7 +2,7 @@
   "fondoId": "2022",
   "claseId": "6804",
   "nombre": "Quiron Plus - Clase B",
-  "fechaActualizacion": "2026-11-05T20:10:18.000Z",
+  "fechaActualizacion": "2026-11-06T00:45:41.000Z",
   "historico": [
     {
       "slug": "quiron-plus-clase-b",
@@ -18,6 +18,22 @@
       "retornoDiario": null,
       "retornoAcumulado": 0,
       "flujoEstimado": null,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "quiron-plus-clase-b",
+      "fondoId": "2022",
+      "claseId": "6804",
+      "nombre": "Quiron Plus - Clase B",
+      "fecha": "2026-11-05",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1000,
+      "patrimonio": 50000,
+      "retornoDiario": 0,
+      "retornoAcumulado": 0,
+      "flujoEstimado": -50000,
       "origen": "cnv-excel"
     }
   ]
