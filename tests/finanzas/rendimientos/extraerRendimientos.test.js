@@ -1,4 +1,3 @@
-
 import { describe, expect, it } from 'vitest'
 import { extraerNexo } from '@/finanzas/rendimientos/extraerNexo.js'
 import { extraerFiwind } from '@/finanzas/rendimientos/extraerFiwind.js'
@@ -13,6 +12,7 @@ import { extraerVesseo } from '@/finanzas/rendimientos/extraerVesseo.js'
 import { extraerAstroPay } from '@/finanzas/rendimientos/extraerAstroPay.js'
 import { extraerLunefi } from '@/finanzas/rendimientos/extraerLunefi.js'
 import { extraerBerry } from '@/finanzas/rendimientos/extraerBerry.js'
+import { extraerPrex } from '@/finanzas/rendimientos/extraerPrex.js'
 
 function testItems(items) {
   expect(items.length).toBeGreaterThan(0)
@@ -102,5 +102,13 @@ describe('extraerRendimientos', () => {
 
     testItems(items)
     expect(items[0].moneda).toBe('USDC')
+  })
+
+  it('guarda prex', async () => {
+    const items = await extraerPrex()
+
+    testItems(items)
+    expect(items[0].moneda).toBe('USD')
+    expect(items[0].apy).toBeGreaterThan(0)
   })
 })
