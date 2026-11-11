@@ -1,4 +1,5 @@
 import { logGrupo, logError, logMensaje } from '@/log.js'
+import { extraerAdcapFal } from './extraerAdcapFal.js'
 import { extraerBalanzFal } from './extraerBalanzFal.js'
 import { extraerBnaFal } from './extraerBnaFal.js'
 import { extraerBbvaFal } from './extraerBbvaFal.js'
@@ -31,6 +32,7 @@ const FUENTES = [
   { nombre: 'cocos', extraer: extraerCocosFal },
   { nombre: 'galicia', extraer: extraerGaliciaFal },
   { nombre: 'gst', extraer: extraerGstFal },
+  { nombre: 'adcap', extraer: extraerAdcapFal },
 ]
 
 export async function extraerAlternativasFal() {

@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import { parsearAdcapFal } from '@/finanzas/fal/extraccion/extraerAdcapFal.js'
 import { parsearBalanzFal } from '@/finanzas/fal/extraccion/extraerBalanzFal.js'
 import { parsearBbvaFal } from '@/finanzas/fal/extraccion/extraerBbvaFal.js'
 import { parsearCocosFal } from '@/finanzas/fal/extraccion/extraerCocosFal.js'
@@ -230,6 +231,36 @@ describe('parsear alternativas FAL', () => {
     })
     expect(filas[1].horizonte).toBe('inflacion')
     expect(filas[2].horizonte).toBeNull()
+  })
+
+  it('arma el FAL de Adcap sin inventar comisión ni nombre de fondo', () => {
+    const [fila] = parsearAdcapFal(`
+      Fondo de Asistencia Laboral. FAL para empresas.
+      Adcap Asset Management Sociedad Gerente de Fondos Comunes de Inversión S.A.
+      Estructuración integral del vehículo FAL.
+      Fondos Comunes de Inversión.
+      Obligatorio desde el 1º de diciembre de 2026.
+      Gestioná tu ID FAL.
+    `)
+
+    expect(fila).toMatchObject({
+      entidad: 'adcap',
+      nombreComercial: 'Adcap',
+      vehiculo: 'fci_abierto',
+      sociedadGerente:
+        'Adcap Asset Management Sociedad Gerente de Fondos Comunes de Inversión S.A.',
+      comisionAnual: null,
+      vigenciaDeclarada: '2026-12-01',
+      canal: 'web',
+      enlace: 'https://asset.ad-cap.com.ar/fal',
+    })
+    expect(fila.nombrePlan).toBeNull()
+  })
+
+  it('no publica Adcap si falta la oferta FAL', () => {
+    expect(parsearAdcapFal('Adcap Asset Management. Fondos Comunes de Inversión.')).toEqual(
+      [],
+    )
   })
 
   it('arma los tres FAL del BNA sin convertir el reintegro en una comisión 0', () => {

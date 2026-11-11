@@ -1,5 +1,5 @@
 {
-  "fechaActualizacion": "2026-10-22T21:57:18.616Z",
+  "fechaActualizacion": "2026-11-11T18:19:55.237Z",
   "alternativas": [
     {
       "entidad": "bbva",
@@ -140,6 +140,62 @@
       }
     },
     {
+      "entidad": "santander",
+      "nombreComercial": "Santander",
+      "plan": "superfondo-reserva-fal",
+      "nombrePlan": "Superfondo Reserva FAL",
+      "vehiculo": "fci_abierto",
+      "sociedadGerente": null,
+      "sociedadDepositaria": null,
+      "comisionAnual": null,
+      "comisionEsTope": false,
+      "incluyeIva": null,
+      "ivaAdicional": null,
+      "comisionVigenciaHasta": null,
+      "comisionPosteriorAnual": null,
+      "horizonte": "corto_plazo",
+      "vidaPromedioMesesMin": null,
+      "vidaPromedioMesesMax": null,
+      "moneda": "ARS",
+      "reintegroAportes": null,
+      "canal": "banca_empresas",
+      "vigenciaDeclarada": "2026-12-01",
+      "enlace": "https://www.santander.com.ar/empresas/fondo-de-asistencia-laboral",
+      "condiciones": "La página no publica la comisión de administración. El alta del ID FAL es por Online Banking Empresas.",
+      "metadata": {
+        "fuenteUrl": "https://www.santander.com.ar/empresas/fondo-de-asistencia-laboral",
+        "calificacion": "AAAf.ar (Moody’s Local Argentina)"
+      }
+    },
+    {
+      "entidad": "santander",
+      "nombreComercial": "Santander",
+      "plan": "superfondo-reserva-plus-fal",
+      "nombrePlan": "Superfondo Reserva Plus FAL",
+      "vehiculo": "fci_abierto",
+      "sociedadGerente": null,
+      "sociedadDepositaria": null,
+      "comisionAnual": null,
+      "comisionEsTope": false,
+      "incluyeIva": null,
+      "ivaAdicional": null,
+      "comisionVigenciaHasta": null,
+      "comisionPosteriorAnual": null,
+      "horizonte": "inflacion",
+      "vidaPromedioMesesMin": null,
+      "vidaPromedioMesesMax": null,
+      "moneda": "ARS",
+      "reintegroAportes": null,
+      "canal": "banca_empresas",
+      "vigenciaDeclarada": "2026-12-01",
+      "enlace": "https://www.santander.com.ar/empresas/fondo-de-asistencia-laboral",
+      "condiciones": "Renta fija con deuda soberana ajustada por CER. La página no publica la comisión de administración.",
+      "metadata": {
+        "fuenteUrl": "https://www.santander.com.ar/empresas/fondo-de-asistencia-laboral",
+        "calificacion": "AAAf.ar (Moody’s Local Argentina)"
+      }
+    },
+    {
       "entidad": "balanz",
       "nombreComercial": "Balanz",
       "plan": null,
@@ -165,6 +221,90 @@
       "metadata": {
         "fuenteUrl": "https://balanz.com/inversiones/fondos/fondo-de-asistencia-laboral/",
         "topeLegalAnual": 0.01
+      }
+    },
+    {
+      "entidad": "bna",
+      "nombreComercial": "BNA",
+      "plan": "ahorro",
+      "nombrePlan": "FAL Ahorro",
+      "vehiculo": null,
+      "sociedadGerente": "Pellegrini FCI S.A.",
+      "sociedadDepositaria": null,
+      "comisionAnual": null,
+      "comisionEsTope": false,
+      "incluyeIva": null,
+      "ivaAdicional": null,
+      "comisionVigenciaHasta": null,
+      "comisionPosteriorAnual": null,
+      "horizonte": "corto_plazo",
+      "vidaPromedioMesesMin": null,
+      "vidaPromedioMesesMax": null,
+      "moneda": "ARS",
+      "reintegroAportes": null,
+      "canal": "formulario",
+      "vigenciaDeclarada": "2026-11-01",
+      "enlace": "https://www.bna.com.ar/home/fal",
+      "condiciones": "Fondo multiempleador de corto plazo, con foco en liquidez. El BNA reintegra el 100% de la comisión de administración hasta el 31/12/2027. La página no publica ese porcentaje.",
+      "metadata": {
+        "fuenteUrl": "https://www.bna.com.ar/home/fal",
+        "reintegroComisionHasta": "2027-12-31"
+      }
+    },
+    {
+      "entidad": "bna",
+      "nombreComercial": "BNA",
+      "plan": "crecimiento",
+      "nombrePlan": "FAL Crecimiento",
+      "vehiculo": null,
+      "sociedadGerente": "Pellegrini FCI S.A.",
+      "sociedadDepositaria": null,
+      "comisionAnual": null,
+      "comisionEsTope": false,
+      "incluyeIva": null,
+      "ivaAdicional": null,
+      "comisionVigenciaHasta": null,
+      "comisionPosteriorAnual": null,
+      "horizonte": "inflacion",
+      "vidaPromedioMesesMin": null,
+      "vidaPromedioMesesMax": null,
+      "moneda": "ARS",
+      "reintegroAportes": null,
+      "canal": "formulario",
+      "vigenciaDeclarada": "2026-11-01",
+      "enlace": "https://www.bna.com.ar/home/fal",
+      "condiciones": "Horizonte mediano o largo, con exposición a CER. El BNA reintegra el 100% de la comisión de administración hasta el 31/12/2027. La página no publica ese porcentaje.",
+      "metadata": {
+        "fuenteUrl": "https://www.bna.com.ar/home/fal",
+        "reintegroComisionHasta": "2027-12-31"
+      }
+    },
+    {
+      "entidad": "bna",
+      "nombreComercial": "BNA",
+      "plan": "exclusivo",
+      "nombrePlan": "Fondo exclusivo",
+      "vehiculo": null,
+      "sociedadGerente": "Pellegrini FCI S.A.",
+      "sociedadDepositaria": null,
+      "comisionAnual": null,
+      "comisionEsTope": false,
+      "incluyeIva": null,
+      "ivaAdicional": null,
+      "comisionVigenciaHasta": null,
+      "comisionPosteriorAnual": null,
+      "horizonte": null,
+      "vidaPromedioMesesMin": null,
+      "vidaPromedioMesesMax": null,
+      "moneda": "ARS",
+      "reintegroAportes": null,
+      "canal": "formulario",
+      "vigenciaDeclarada": "2026-11-01",
+      "enlace": "https://www.bna.com.ar/home/fal",
+      "condiciones": "Cartera a medida para grandes empresas. Se evalúa caso por caso. El BNA reintegra el 100% de la comisión de administración hasta el 31/12/2027. La página no publica ese porcentaje.",
+      "metadata": {
+        "fuenteUrl": "https://www.bna.com.ar/home/fal",
+        "reintegroComisionHasta": "2027-12-31"
       }
     },
     {
@@ -216,7 +356,7 @@
       "moneda": "ARS",
       "reintegroAportes": null,
       "canal": "formulario",
-      "vigenciaDeclarada": "2026-11-01",
+      "vigenciaDeclarada": null,
       "enlace": "https://www.marivafondos.com.ar/fal/",
       "condiciones": "La página no publica la comisión. Dice que gastos, comisiones y honorarios se informan en las oficinas y en los sitios de Mariva.",
       "metadata": {
@@ -224,12 +364,12 @@
       }
     },
     {
-      "entidad": "ieb",
-      "nombreComercial": "IEB",
+      "entidad": "max-capital",
+      "nombreComercial": "Max Capital",
       "plan": null,
       "nombrePlan": null,
       "vehiculo": "fci_abierto",
-      "sociedadGerente": null,
+      "sociedadGerente": "Max Capital Asset Management",
       "sociedadDepositaria": null,
       "comisionAnual": null,
       "comisionEsTope": false,
@@ -243,11 +383,39 @@
       "moneda": "ARS",
       "reintegroAportes": null,
       "canal": "formulario",
-      "vigenciaDeclarada": "2026-11-01",
-      "enlace": "https://fondofal.com.ar/",
-      "condiciones": "La página no publica la comisión de administración.",
+      "vigenciaDeclarada": "2026-12-01",
+      "enlace": "https://www.max.capital/FAL",
+      "condiciones": "La página no publica la comisión ni el nombre del fondo FAL.",
       "metadata": {
-        "fuenteUrl": "https://fondofal.com.ar/"
+        "fuenteUrl": "https://www.max.capital/FAL"
+      }
+    },
+    {
+      "entidad": "cocos",
+      "nombreComercial": "Cocos",
+      "plan": null,
+      "nombrePlan": null,
+      "vehiculo": null,
+      "sociedadGerente": "Cocos Asset Management",
+      "sociedadDepositaria": null,
+      "comisionAnual": null,
+      "comisionEsTope": false,
+      "incluyeIva": null,
+      "ivaAdicional": null,
+      "comisionVigenciaHasta": null,
+      "comisionPosteriorAnual": null,
+      "horizonte": null,
+      "vidaPromedioMesesMin": null,
+      "vidaPromedioMesesMax": null,
+      "moneda": "ARS",
+      "reintegroAportes": null,
+      "canal": null,
+      "vigenciaDeclarada": null,
+      "enlace": "https://cocos.capital/fondos-de-asistencia-laboral",
+      "condiciones": "La página dice que la información es preliminar y no publica la comisión.",
+      "metadata": {
+        "fuenteUrl": "https://cocos.capital/fondos-de-asistencia-laboral",
+        "preliminar": true
       }
     },
     {
@@ -361,68 +529,12 @@
       }
     },
     {
-      "entidad": "bna",
-      "nombreComercial": "BNA",
-      "plan": "ahorro",
-      "nombrePlan": "FAL Ahorro",
-      "vehiculo": null,
-      "sociedadGerente": "Pellegrini FCI S.A.",
-      "sociedadDepositaria": null,
-      "comisionAnual": null,
-      "comisionEsTope": false,
-      "incluyeIva": null,
-      "ivaAdicional": null,
-      "comisionVigenciaHasta": null,
-      "comisionPosteriorAnual": null,
-      "horizonte": "corto_plazo",
-      "vidaPromedioMesesMin": null,
-      "vidaPromedioMesesMax": null,
-      "moneda": "ARS",
-      "reintegroAportes": null,
-      "canal": "formulario",
-      "vigenciaDeclarada": "2026-11-01",
-      "enlace": "https://www.bna.com.ar/home/fal",
-      "condiciones": "Fondo multiempleador de corto plazo, con foco en liquidez. El BNA reintegra el 100% de la comisión de administración hasta el 31/12/2027. La página no publica ese porcentaje.",
-      "metadata": {
-        "fuenteUrl": "https://www.bna.com.ar/home/fal",
-        "reintegroComisionHasta": "2027-12-31"
-      }
-    },
-    {
-      "entidad": "bna",
-      "nombreComercial": "BNA",
-      "plan": "crecimiento",
-      "nombrePlan": "FAL Crecimiento",
-      "vehiculo": null,
-      "sociedadGerente": "Pellegrini FCI S.A.",
-      "sociedadDepositaria": null,
-      "comisionAnual": null,
-      "comisionEsTope": false,
-      "incluyeIva": null,
-      "ivaAdicional": null,
-      "comisionVigenciaHasta": null,
-      "comisionPosteriorAnual": null,
-      "horizonte": "inflacion",
-      "vidaPromedioMesesMin": null,
-      "vidaPromedioMesesMax": null,
-      "moneda": "ARS",
-      "reintegroAportes": null,
-      "canal": "formulario",
-      "vigenciaDeclarada": "2026-11-01",
-      "enlace": "https://www.bna.com.ar/home/fal",
-      "condiciones": "Horizonte mediano o largo, con exposición a CER. El BNA reintegra el 100% de la comisión de administración hasta el 31/12/2027. La página no publica ese porcentaje.",
-      "metadata": {
-        "fuenteUrl": "https://www.bna.com.ar/home/fal",
-        "reintegroComisionHasta": "2027-12-31"
-      }
-    },
-    {
-      "entidad": "bna",
-      "nombreComercial": "BNA",
-      "plan": "exclusivo",
-      "nombrePlan": "Fondo exclusivo",
-      "vehiculo": null,
-      "sociedadGerente": "Pellegrini FCI S.A.",
+      "entidad": "adcap",
+      "nombreComercial": "Adcap",
+      "plan": null,
+      "nombrePlan": null,
+      "vehiculo": "fci_abierto",
+      "sociedadGerente": "Adcap Asset Management Sociedad Gerente de Fondos Comunes de Inversión S.A.",
       "sociedadDepositaria": null,
       "comisionAnual": null,
       "comisionEsTope": false,
@@ -435,28 +547,19 @@
       "vidaPromedioMesesMax": null,
       "moneda": "ARS",
       "reintegroAportes": null,
-      "canal": "formulario",
-      "vigenciaDeclarada": "2026-11-01",
-      "enlace": "https://www.bna.com.ar/home/fal",
-      "condiciones": "Cartera a medida para grandes empresas. Se evalúa caso por caso. El BNA reintegra el 100% de la comisión de administración hasta el 31/12/2027. La página no publica ese porcentaje.",
+      "canal": "web",
+      "vigenciaDeclarada": "2026-12-01",
+      "enlace": "https://asset.ad-cap.com.ar/fal",
+      "condiciones": "Estructura vehículos FAL a medida. La página no publica la comisión ni el nombre de un fondo FAL concreto.",
       "metadata": {
-        "fuenteUrl": "https://www.bna.com.ar/home/fal",
-        "reintegroComisionHasta": "2027-12-31"
+        "fuenteUrl": "https://asset.ad-cap.com.ar/fal"
       }
     }
   ],
   "erroresExtraccion": [
     {
-      "fuente": "santander",
-      "error": "No se pudo leer https://www.santander.com.ar/empresas/fondo-de-asistencia-laboral"
-    },
-    {
-      "fuente": "max-capital",
-      "error": "No se pudo leer https://www.max.capital/FAL"
-    },
-    {
-      "fuente": "cocos",
-      "error": "No se pudo leer https://cocos.capital/fondos-de-asistencia-laboral"
+      "fuente": "ieb",
+      "error": "La página no publicó una alternativa reconocible"
     }
   ]
 }
