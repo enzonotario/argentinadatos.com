@@ -2,7 +2,7 @@
   "fondoId": "1617",
   "claseId": "5327",
   "nombre": "BAVSA Retorno Total - Clase D",
-  "fechaActualizacion": "2026-11-12T16:25:01.000Z",
+  "fechaActualizacion": "2026-11-13T02:03:09.000Z",
   "historico": [
     {
       "slug": "bavsa-retorno-total-clase-d",
@@ -6354,6 +6354,22 @@
       "retornoDiario": 0.95174,
       "retornoAcumulado": 7.5027,
       "flujoEstimado": -107.378503,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "bavsa-retorno-total-clase-d",
+      "fondoId": "1617",
+      "claseId": "5327",
+      "nombre": "BAVSA Retorno Total - Clase D",
+      "fecha": "2026-11-12",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1074.607,
+      "patrimonio": 400183717.04,
+      "retornoDiario": -0.039069,
+      "retornoAcumulado": 7.4607,
+      "flujoEstimado": 257.183279,
       "origen": "cnv-excel"
     }
   ]
