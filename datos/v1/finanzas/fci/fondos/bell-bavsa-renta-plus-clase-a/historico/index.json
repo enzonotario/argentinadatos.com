@@ -2,7 +2,7 @@
   "fondoId": "1782",
   "claseId": "6239",
   "nombre": "Bell BAVSA Renta Plus - Clase A",
-  "fechaActualizacion": "2026-11-16T18:13:29.000Z",
+  "fechaActualizacion": "2026-11-16T23:29:22.000Z",
   "historico": [
     {
       "slug": "bell-bavsa-renta-plus-clase-a",
@@ -290,6 +290,22 @@
       "retornoDiario": 0.059238,
       "retornoAcumulado": 0.1643,
       "flujoEstimado": 0.033686,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "bell-bavsa-renta-plus-clase-a",
+      "fondoId": "1782",
+      "claseId": "6239",
+      "nombre": "Bell BAVSA Renta Plus - Clase A",
+      "fecha": "2026-11-16",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1001.234,
+      "patrimonio": 172212.19,
+      "retornoDiario": -0.040833,
+      "retornoAcumulado": 0.1234,
+      "flujoEstimado": -0.041854,
       "origen": "cnv-excel"
     }
   ]
