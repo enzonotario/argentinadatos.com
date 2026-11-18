@@ -13,6 +13,7 @@ import { extraerRava } from './extraerRava.js'
 import { extraerAllaria } from './extraerAllaria.js'
 import { extraerSbs } from './extraerSbs.js'
 import { extraerFive } from './extraerFive.js'
+import { extraerAdcap } from './extraerAdcap.js'
 import { logGrupo, logError, logMensaje } from '@/log.js'
 
 const log = logGrupo({
@@ -36,6 +37,7 @@ const FUENTES = [
   { nombre: 'allaria', extraer: extraerAllaria },
   { nombre: 'sbs', extraer: extraerSbs },
   { nombre: 'five', extraer: extraerFive },
+  { nombre: 'adcap', extraer: extraerAdcap },
 ]
 
 export async function extraerComisionesBrokers() {

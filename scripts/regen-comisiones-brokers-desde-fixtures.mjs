@@ -16,6 +16,7 @@ import { parsearRava } from '@/finanzas/brokers/comisiones/extraccion/extraerRav
 import { parsearAllariaTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerAllaria.js'
 import { parsearSbsTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerSbs.js'
 import { parsearFiveTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerFive.js'
+import { parsearAdcapPdf } from '@/finanzas/brokers/comisiones/extraccion/extraerAdcap.js'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const fx = join(
@@ -55,6 +56,7 @@ const comisiones = [
   ),
   ...parsearSbsTexto(readFileSync(join(fx, 'sbs-aranceles.txt'), 'utf8')),
   ...parsearFiveTexto(readFileSync(join(fx, 'five-aranceles.txt'), 'utf8')),
+  ...(await parsearAdcapPdf(readFileSync(join(fx, 'adcap-aranceles.pdf')))),
 ]
 
 const payload = {

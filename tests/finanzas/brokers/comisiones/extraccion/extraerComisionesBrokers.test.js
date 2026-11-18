@@ -35,6 +35,10 @@ import {
 } from '@/finanzas/brokers/comisiones/extraccion/extraerFive.js'
 import { parsearGaliciaSecurities } from '@/finanzas/brokers/comisiones/extraccion/extraerGaliciaSecurities.js'
 import { parsearRava } from '@/finanzas/brokers/comisiones/extraccion/extraerRava.js'
+import {
+  parsearAdcapPdf,
+  resolverUrlPdfAdcap,
+} from '@/finanzas/brokers/comisiones/extraccion/extraerAdcap.js'
 
 const fixturesDir = join(dirname(fileURLToPath(import.meta.url)), 'fixtures')
 
@@ -840,6 +844,56 @@ describe('parsearSbsTexto', () => {
   })
 })
 
+describe('parsearAdcapPdf', () => {
+  it('extrae aranceles máximos desde la tabla del PDF', async () => {
+    const filas = await parsearAdcapPdf(
+      readFileSync(join(fixturesDir, 'adcap-aranceles.pdf')),
+    )
+    const buscar = (producto, operacion = 'ambas') =>
+      filas.find((f) => f.producto === producto && f.operacion === operacion)
+
+    expect(filas).toHaveLength(13)
+    expect(buscar('acciones')).toMatchObject({
+      entidad: 'adcap',
+      nombreComercial: 'Adcap',
+      moneda: 'ARS',
+      tasa: 0.03,
+      tasaEsTope: true,
+      ivaAdicional: true,
+    })
+    expect(buscar('cedears')).toMatchObject({ tasa: 0.03 })
+    expect(buscar('bonos')).toMatchObject({ tasa: 0.02 })
+    expect(buscar('obligaciones_negociables')).toMatchObject({ tasa: 0.015 })
+    expect(buscar('letras')).toMatchObject({ tasa: 0.015, moneda: 'ARS' })
+    expect(buscar('futuros')).toMatchObject({ tasa: 0.015 })
+    expect(buscar('opciones')).toMatchObject({ tasa: 0.01 })
+    expect(buscar('cauciones', 'colocadora')).toMatchObject({
+      tasa: 0.08,
+      tasaBase: 'tna',
+    })
+    expect(buscar('cauciones', 'tomadora')).toMatchObject({
+      tasa: 0.08,
+      tasaBase: 'tna',
+    })
+    expect(buscar('cheques', 'compra')).toMatchObject({
+      tasa: 0.15,
+      tasaBase: 'tna',
+    })
+    expect(buscar('cheques', 'venta')).toMatchObject({ tasa: 0.15 })
+    expect(buscar('alquiler_titulos', 'colocadora')).toMatchObject({
+      tasa: 0.1,
+    })
+    expect(buscar('alquiler_titulos', 'tomadora')).toMatchObject({ tasa: 0.1 })
+  })
+
+  it('resuelve el PDF desde la página de legales', () => {
+    const html = readFileSync(join(fixturesDir, 'adcap-legales.html'), 'utf8')
+    expect(resolverUrlPdfAdcap(html)).toBe(
+      'https://cdn.ad-cap.com.ar/adcap-web/pdf/aranceles-y-comisiones.pdf',
+    )
+  })
+})
+
 describe('parsearFiveTexto', () => {
   it('extrae máximos CNV con descuento internet 50%', () => {
     const texto = readFileSync(join(fixturesDir, 'five-aranceles.txt'), 'utf8')
@@ -1038,6 +1092,12 @@ describe('extraerComisionesBrokers aggregator', () => {
       '@/finanzas/brokers/comisiones/extraccion/extraerFive.js',
       () => ({
         extraerFive: vi.fn(async () => []),
+      }),
+    )
+    vi.doMock(
+      '@/finanzas/brokers/comisiones/extraccion/extraerAdcap.js',
+      () => ({
+        extraerAdcap: vi.fn(async () => []),
       }),
     )
 
