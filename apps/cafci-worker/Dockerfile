@@ -12,7 +12,8 @@ RUN corepack enable \
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY apps/cafci-worker ./apps/cafci-worker
-COPY datos/v1/finanzas/fci ./datos/v1/finanzas/fci
+# Only the CNV classId→fondoId map; not the full fci/ tree (API data / offline rebuild).
+COPY datos/v1/finanzas/fci/fondos/index.json ./datos/v1/finanzas/fci/fondos/index.json
 
 RUN pnpm install --frozen-lockfile --filter @argentinadatos/cafci-worker...
 
