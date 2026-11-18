@@ -71,3 +71,32 @@ export async function fetchHtmlWithScrapiar(log, url, { effort = 'min' } = {}) {
 
   return html
 }
+
+/**
+ * Downloads a file (e.g. a PDF) through scrapiar and returns its raw bytes.
+ * For files hosted on sites that block datacenter IPs.
+ *
+ * @param {object} log
+ * @param {string} url
+ * @returns {Promise<{ buffer: Buffer, contentType: string | null }>}
+ */
+export async function fetchFileWithScrapiar(log, url) {
+  logMensaje(log, 'Starting scrapiar file fetch', { url })
+
+  const { content_base64: contentBase64, content_type: contentType } =
+    await requestScrapiar(log, '/v1/extract/file', { url })
+
+  if (typeof contentBase64 !== 'string') {
+    throw new Error(`scrapiar returned no file content. URL: ${url}`)
+  }
+
+  const buffer = Buffer.from(contentBase64, 'base64')
+
+  logMensaje(log, 'scrapiar file fetch succeeded', {
+    url,
+    contentType,
+    bytes: buffer.length,
+  })
+
+  return { buffer, contentType: contentType ?? null }
+}

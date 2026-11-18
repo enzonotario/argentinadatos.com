@@ -1,7 +1,10 @@
-import axios from 'axios'
 import { load } from 'cheerio'
 import pdf from 'pdf-parse/lib/pdf-parse.js'
 import { logGrupo, logError, logMensaje } from '@/log.js'
+import {
+  fetchFileWithScrapiar,
+  fetchHtmlWithScrapiar,
+} from '@/shared/extraction/scrapiar.js'
 import {
   crearComisionBroker,
   parseTasaComisionTexto,
@@ -18,13 +21,6 @@ const log = logGrupo({
   fuente: 'extraerSbsComisionesBrokers',
   tipo: 'extraccion',
 })
-
-const BROWSER_HEADERS = {
-  'User-Agent':
-    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-  Accept: 'text/html,application/xhtml+xml,application/pdf,*/*;q=0.8',
-  'Accept-Language': 'es-AR,es;q=0.9',
-}
 
 /**
  * Filas retail Quicktrade del PDF (OCR a veces rompe letras).
@@ -110,8 +106,7 @@ const FILAS_SBS = [
     tasaBase: 'anual',
   },
   {
-    labelRe:
-      /Fondos\s+Comunes\s+de\s+Inversi[oó]n\s+Abiertos|FCI\s+Abiertos/i,
+    labelRe: /Fondos\s+Comunes\s+de\s+Inversi[oó]n\s+Abiertos|FCI\s+Abiertos/i,
     producto: 'fci',
     sinCosto: true,
     ivaAdicional: false,
@@ -135,7 +130,7 @@ export function resolverUrlPdfSbs(html) {
   })
 
   const preferido =
-    candidatos.find((c) =>
+    candidatos.find(c =>
       /arancel|arancael|tabla|trading|comisi/i.test(`${c.text} ${c.href}`),
     ) || candidatos[0]
 
@@ -188,9 +183,7 @@ function minimoSbs(ventana) {
  * @returns {{ tasaTexto: string, minimo: number|null }|null}
  */
 function extraerQuicktradeDeVentana(ventana) {
-  const rates = [
-    ...ventana.matchAll(/([\d]+(?:[.,]\d+)?)\s*%\s*(anual)?/gi),
-  ]
+  const rates = [...ventana.matchAll(/([\d]+(?:[.,]\d+)?)\s*%\s*(anual)?/gi)]
   if (!rates.length) return null
 
   const last = rates[rates.length - 1]
@@ -293,12 +286,10 @@ export function parsearSbsTexto(texto, fuenteUrl = SBS_PDF_FALLBACK_URL) {
 
 async function descubrirUrlPdf() {
   try {
-    const respuesta = await axios.get(SBS_PRODUCTOS_URL, {
-      responseType: 'text',
-      timeout: 25000,
-      headers: BROWSER_HEADERS,
+    const html = await fetchHtmlWithScrapiar(log, SBS_PRODUCTOS_URL, {
+      effort: 'min',
     })
-    const desdePagina = resolverUrlPdfSbs(String(respuesta.data))
+    const desdePagina = resolverUrlPdfSbs(html)
     if (desdePagina) return { url: desdePagina, origen: 'productos' }
   } catch (error) {
     logMensaje(log, 'SBS productos page falló', { errorMessage: error.message })
@@ -312,17 +303,11 @@ export async function extraerSbs() {
     const descubierto = await descubrirUrlPdf()
     logMensaje(log, 'SBS PDF resuelto', descubierto)
 
-    const respuesta = await axios.get(descubierto.url, {
-      responseType: 'arraybuffer',
-      timeout: 45000,
-      headers: {
-        ...BROWSER_HEADERS,
-        Accept: 'application/pdf,*/*',
-        Referer: SBS_PRODUCTOS_URL,
-      },
-    })
+    // SBS answers 403 to datacenter IPs (GitHub Actions): both the page and the
+    // PDF are loaded through scrapiar, which runs on an Argentine residential IP.
+    const { buffer } = await fetchFileWithScrapiar(log, descubierto.url)
 
-    const data = await pdf(Buffer.from(respuesta.data))
+    const data = await pdf(buffer)
     const comisiones = parsearSbsTexto(data.text || '', descubierto.url)
     logMensaje(log, 'SBS Trading parseado', {
       filas: comisiones.length,
