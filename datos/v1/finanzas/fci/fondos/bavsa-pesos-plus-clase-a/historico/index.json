@@ -2,7 +2,7 @@
   "fondoId": "1427",
   "claseId": "4172",
   "nombre": "BAVSA Pesos Plus - Clase A",
-  "fechaActualizacion": "2026-11-17T17:29:18.000Z",
+  "fechaActualizacion": "2026-11-17T23:46:17.000Z",
   "historico": [
     {
       "slug": "bavsa-pesos-plus-clase-a",
@@ -3794,6 +3794,22 @@
       "retornoDiario": 0.038933,
       "retornoAcumulado": 1.4946,
       "flujoEstimado": -20000045.233522,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "bavsa-pesos-plus-clase-a",
+      "fondoId": "1427",
+      "claseId": "4172",
+      "nombre": "BAVSA Pesos Plus - Clase A",
+      "fecha": "2026-11-17",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1015.893,
+      "patrimonio": 117687172.43,
+      "retornoDiario": 0.093305,
+      "retornoAcumulado": 1.5893,
+      "flujoEstimado": 9.363354,
       "origen": "cnv-excel"
     }
   ]

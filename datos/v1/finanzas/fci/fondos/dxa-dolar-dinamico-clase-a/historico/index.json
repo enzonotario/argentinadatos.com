@@ -2,7 +2,7 @@
   "fondoId": "2033",
   "claseId": "6874",
   "nombre": "DXA Dolar Dinamico - Clase A",
-  "fechaActualizacion": "2026-11-17T17:29:18.000Z",
+  "fechaActualizacion": "2026-11-17T23:46:17.000Z",
   "historico": [
     {
       "slug": "dxa-dolar-dinamico-clase-a",
@@ -16,6 +16,22 @@
       "valorCuotaparte": 1000,
       "patrimonio": null,
       "retornoDiario": null,
+      "retornoAcumulado": 0,
+      "flujoEstimado": null,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "dxa-dolar-dinamico-clase-a",
+      "fondoId": "2033",
+      "claseId": "6874",
+      "nombre": "DXA Dolar Dinamico - Clase A",
+      "fecha": "2026-11-17",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1000,
+      "patrimonio": null,
+      "retornoDiario": 0,
       "retornoAcumulado": 0,
       "flujoEstimado": null,
       "origen": "cnv-excel"
