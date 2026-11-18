@@ -10,6 +10,7 @@ import { extraerMontemarPayCuentaRemunerada } from '@/finanzas/fci/otros/extracc
 import { extraerBeloCuentaRemunerada } from '@/finanzas/fci/otros/extraccion/extraerBelo.js'
 import { extraerNaranjaXFrascos } from '@/finanzas/fci/otros/extraccion/extraerNaranjaXFrascos.js'
 import { extraerRebaCuentaRemunerada } from '@/finanzas/fci/otros/extraccion/extraerReba.js'
+import { extraerBrubankCuentaMax } from '@/finanzas/fci/otros/extraccion/extraerBrubank.js'
 import { extraerBicaCuentaPositiva } from '@/finanzas/fci/otros/extraccion/extraerBica.js'
 import { guardarSerieOtros } from '@/finanzas/fci/otros/guardado/guardarSerieOtros.js'
 import { logGrupo, logMensaje, logError } from '@/log.js'
@@ -29,6 +30,7 @@ export async function extraerSerieOtros() {
       await extraerBeloCuentaRemunerada(),
       await extraerRebaCuentaRemunerada(),
       ...(await extraerBicaCuentaPositiva()),
+      ...(await extraerBrubankCuentaMax()),
     ]
 
     const valoresExtraidos = resultados.filter(item => item.fondo)
