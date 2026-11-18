@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { getPocketBaseConfig, shouldUseMemoryBackend } from './config.js'
 import { createMemoryPocketBaseClient } from './memoryClient.js'
+import { withRetry } from './withRetry.js'
 
 export function createHttpPocketBaseClient(config = getPocketBaseConfig()) {
   const http = axios.create({
@@ -12,43 +13,47 @@ export function createHttpPocketBaseClient(config = getPocketBaseConfig()) {
     timeout: 60_000,
   })
 
+  const request = fn => withRetry(fn)
+
   return {
     url: config.url,
     kind: 'http',
     async getCollection(name) {
-      const { data } = await http.get(`/collections/${name}`)
+      const { data } = await request(() => http.get(`/collections/${name}`))
       return data
     },
     async createCollection(body) {
-      const { data } = await http.post('/collections', body)
+      const { data } = await request(() => http.post('/collections', body))
       return data
     },
     async updateCollection(name, body) {
-      const { data } = await http.patch(`/collections/${name}`, body)
+      const { data } = await request(() =>
+        http.patch(`/collections/${name}`, body),
+      )
       return data
     },
     async deleteCollection(name) {
-      await http.delete(`/collections/${name}`)
+      await request(() => http.delete(`/collections/${name}`))
     },
     async truncateCollection(name) {
-      await http.delete(`/collections/${name}/truncate`)
+      await request(() => http.delete(`/collections/${name}/truncate`))
     },
     async createRecord(collection, body) {
-      const { data } = await http.post(
-        `/collections/${collection}/records`,
-        body,
+      const { data } = await request(() =>
+        http.post(`/collections/${collection}/records`, body),
       )
       return data
     },
     async updateRecord(collection, id, body) {
-      const { data } = await http.patch(
-        `/collections/${collection}/records/${id}`,
-        body,
+      const { data } = await request(() =>
+        http.patch(`/collections/${collection}/records/${id}`, body),
       )
       return data
     },
     async deleteRecord(collection, id) {
-      await http.delete(`/collections/${collection}/records/${id}`)
+      await request(() =>
+        http.delete(`/collections/${collection}/records/${id}`),
+      )
     },
     async listRecords(
       collection,
@@ -57,9 +62,11 @@ export function createHttpPocketBaseClient(config = getPocketBaseConfig()) {
       const params = { page, perPage }
       if (sort) params.sort = sort
       if (filter) params.filter = filter
-      const { data } = await http.get(`/collections/${collection}/records`, {
-        params,
-      })
+      const { data } = await request(() =>
+        http.get(`/collections/${collection}/records`, {
+          params,
+        }),
+      )
       return data
     },
   }
