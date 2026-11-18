@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { load } from 'cheerio'
 import { logGrupo, logError, logMensaje } from '@/log.js'
-import { scrapeHtmlWithFirecrawl } from '@/shared/extraction/firecrawl/scrapeHtmlWithFirecrawl.js'
+import { fetchHtmlWithScrapiar } from '@/shared/extraction/scrapiar.js'
 import {
   crearComisionBroker,
   parseTasaComisionTexto,
@@ -81,67 +81,104 @@ function clasificarConceptoCocos(concepto) {
 }
 
 /**
+ * Filas de celdas de la página: soporta el layout viejo (`<table>`) y el actual
+ * (CSS grid de `<div>` con `<span>` por celda). Cada fila trae el índice de la
+ * columna "Personas humanas" de su encabezado.
+ * @param {import('cheerio').CheerioAPI} $
+ * @returns {Array<{ celdas: string[], colWebApp: number }>}
+ */
+function filasTarifarioCocos($) {
+  const texto = el => $(el).text().replace(/\s+/g, ' ').trim()
+  /** @type {Array<{ celdas: string[], colWebApp: number }>} */
+  const filas = []
+
+  $('table').each((_, table) => {
+    const colWebApp = indiceColumnaWebAppPersonasHumanas($, table)
+    $(table)
+      .find('tr')
+      .each((__, tr) => {
+        const celdas = $(tr)
+          .find('th,td')
+          .map((___, c) => texto(c))
+          .get()
+        filas.push({ celdas, colWebApp })
+      })
+  })
+
+  let colWebApp = -1
+  $('div.grid[style*="grid-template-columns"]').each((_, grid) => {
+    const celdas = $(grid)
+      .children('span')
+      .map((__, c) => texto(c))
+      .get()
+
+    if (/^concepto$/i.test(celdas[0] || '')) {
+      colWebApp = celdas.findIndex(c => /personas humanas/i.test(c))
+      return
+    }
+
+    if (colWebApp > 0) filas.push({ celdas, colWebApp })
+  })
+
+  return filas
+}
+
+/**
  * @param {string} html
  */
 export function parsearCocos(html) {
   const $ = load(html)
   /** @type {Array<object>} */
   const filas = []
+  /** @type {Set<string>} */
+  const conceptosVistos = new Set()
 
-  $('table').each((_, table) => {
-    const colWebApp = indiceColumnaWebAppPersonasHumanas($, table)
+  for (const { celdas, colWebApp } of filasTarifarioCocos($)) {
+    if (celdas.length <= colWebApp) continue
 
-    $(table)
-      .find('tr')
-      .each((__, tr) => {
-        const celdas = $(tr)
-          .find('th,td')
-          .map((___, c) => $(c).text().replace(/\s+/g, ' ').trim())
-          .get()
+    const concepto = celdas[0]
+    if (conceptosVistos.has(concepto)) continue
 
-        if (celdas.length <= colWebApp) return
+    const clase = clasificarConceptoCocos(concepto)
+    if (!clase) continue
 
-        const concepto = celdas[0]
-        const clase = clasificarConceptoCocos(concepto)
-        if (!clase) return
+    const celda = celdas[colWebApp]
+    const parsed = parseTasaComisionTexto(celda)
+    if (parsed.tasa === null) continue
 
-        const celda = celdas[colWebApp]
-        const parsed = parseTasaComisionTexto(celda)
-        if (parsed.tasa === null) return
+    conceptosVistos.add(concepto)
 
-        const tasaBase =
-          parsed.tasaBaseHint ||
-          (clase.producto === 'cauciones' || clase.producto === 'cheques'
-            ? 'tna'
-            : null)
+    const tasaBase =
+      parsed.tasaBaseHint ||
+      (clase.producto === 'cauciones' || clase.producto === 'cheques'
+        ? 'tna'
+        : null)
 
-        filas.push(
-          crearComisionBroker({
-            entidad: 'cocos',
-            nombreComercial: 'Cocos',
-            producto: clase.producto,
-            operacion: clase.operacion,
-            moneda: 'ARS',
-            canal: 'web',
-            plan: 'personas_humanas',
-            tasa: parsed.tasa,
-            tasaBase,
-            tasaEsTope: false,
-            incluyeIva: false,
-            ivaAdicional: parsed.ivaAdicional,
-            prorrateoDias: null,
-            derechoMercado: null,
-            enlace: COCOS_TARIFARIO_URL,
-            metadata: {
-              fuenteUrl: COCOS_TARIFARIO_URL,
-              celdaOriginal: `${concepto} | web/app personas humanas: ${celda}`,
-              notas:
-                'Columna default retail: Comisión web/app → Personas humanas.',
-            },
-          }),
-        )
-      })
-  })
+    filas.push(
+      crearComisionBroker({
+        entidad: 'cocos',
+        nombreComercial: 'Cocos',
+        producto: clase.producto,
+        operacion: clase.operacion,
+        moneda: 'ARS',
+        canal: 'web',
+        plan: 'personas_humanas',
+        tasa: parsed.tasa,
+        tasaBase,
+        tasaEsTope: false,
+        incluyeIva: false,
+        ivaAdicional: parsed.ivaAdicional,
+        prorrateoDias: null,
+        derechoMercado: null,
+        enlace: COCOS_TARIFARIO_URL,
+        metadata: {
+          fuenteUrl: COCOS_TARIFARIO_URL,
+          celdaOriginal: `${concepto} | web/app personas humanas: ${celda}`,
+          notas: 'Columna default retail: Comisión web/app → Personas humanas.',
+        },
+      }),
+    )
+  }
 
   return filas
 }
@@ -169,19 +206,18 @@ async function obtenerHtmlCocos() {
     if (!pareceChallengeOVacio(html) && parsearCocos(html).length) {
       return html
     }
-    logMensaje(log, 'Cocos axios sin tasas, pruebo Firecrawl', {
+    logMensaje(log, 'Cocos axios sin tasas, pruebo scrapiar', {
       length: html.length,
     })
   } catch (error) {
-    logMensaje(log, 'Cocos axios falló, pruebo Firecrawl', {
+    logMensaje(log, 'Cocos axios falló, pruebo scrapiar', {
       errorMessage: error.message,
     })
   }
 
-  if (!import.meta.env.VITE_FIRECRAWL_API_KEY) return ''
-
-  const scraped = await scrapeHtmlWithFirecrawl(log, COCOS_TARIFARIO_URL)
-  return scraped.html || scraped.markdown || ''
+  // Cocos answers 403 to datacenter IPs (GitHub Actions): scrapiar runs on an
+  // Argentine residential IP and renders the page in a browser.
+  return fetchHtmlWithScrapiar(log, COCOS_TARIFARIO_URL, { effort: 'standard' })
 }
 
 export async function extraerCocos() {

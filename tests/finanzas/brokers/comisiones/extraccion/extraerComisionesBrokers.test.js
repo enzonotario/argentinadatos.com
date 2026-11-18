@@ -301,6 +301,29 @@ describe('parsearBullComisionesHtml', () => {
 })
 
 describe('parsearCocos', () => {
+  it('parsea el layout en grid (sin <table>) del tarifario actual', () => {
+    const html = readFileSync(
+      join(fixturesDir, 'cocos-tarifario-grid.html'),
+      'utf8',
+    )
+    const filas = parsearCocos(html)
+
+    expect(filas).toHaveLength(10)
+    expect(filas.find((f) => f.producto === 'acciones')).toMatchObject({
+      entidad: 'cocos',
+      plan: 'personas_humanas',
+      tasa: 0.0045,
+    })
+    expect(
+      filas.find(
+        (f) => f.producto === 'cauciones' && f.operacion === 'colocadora',
+      ),
+    ).toMatchObject({ tasa: 0.02, tasaBase: 'tna' })
+    expect(
+      filas.find((f) => f.producto === 'cauciones' && f.operacion === 'tomadora'),
+    ).toMatchObject({ tasa: 0.1, tasaBase: 'tna' })
+  })
+
   it('toma columna web/app personas humanas en varios productos', () => {
     const html = readFileSync(
       join(fixturesDir, 'cocos-tarifario.html'),
