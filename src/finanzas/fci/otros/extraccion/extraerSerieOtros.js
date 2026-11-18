@@ -9,6 +9,7 @@ import { extraerCarrefourCuentaRemunerada } from '@/finanzas/fci/otros/extraccio
 import { extraerMontemarPayCuentaRemunerada } from '@/finanzas/fci/otros/extraccion/extraerMontemarPay.js'
 import { extraerBeloCuentaRemunerada } from '@/finanzas/fci/otros/extraccion/extraerBelo.js'
 import { extraerNaranjaXFrascos } from '@/finanzas/fci/otros/extraccion/extraerNaranjaXFrascos.js'
+import { extraerRebaCuentaRemunerada } from '@/finanzas/fci/otros/extraccion/extraerReba.js'
 import { extraerBicaCuentaPositiva } from '@/finanzas/fci/otros/extraccion/extraerBica.js'
 import { guardarSerieOtros } from '@/finanzas/fci/otros/guardado/guardarSerieOtros.js'
 import { logGrupo, logMensaje, logError } from '@/log.js'
@@ -26,6 +27,7 @@ export async function extraerSerieOtros() {
       await extraerMontemarPayCuentaRemunerada(),
       await extraerCresiumCuentaRemunerada(),
       await extraerBeloCuentaRemunerada(),
+      await extraerRebaCuentaRemunerada(),
       ...(await extraerBicaCuentaPositiva()),
     ]
 
