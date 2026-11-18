@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { extraerBicaCuentaPositiva } from '@/finanzas/fci/otros/extraccion/extraerBica.js'
-import { guardarSerieOtros } from '@/finanzas/fci/otros/guardado/guardarSerieOtros.js'
+import { filtrarFondosVigentes, guardarSerieOtros } from '@/finanzas/fci/otros/guardado/guardarSerieOtros.js'
 import { FciOtrosDatabaseService } from '@/finanzas/fci/otros/database/service.js'
 import { leerRuta } from '@/utils/rutas.js'
 import { crearBaseDeDatosTemporal } from '../../../../helpers/temp-database.js'
@@ -70,4 +70,18 @@ describe('guardarSerieOtros', () => {
     },
     30000,
   )
+
+  it('excluye de ultimo los fondos sin actualizar hace más de 30 días', () => {
+    const items = [
+      { fondo: 'BRUBANK', fecha: '2025-08-06' },
+      { fondo: 'VOII', fecha: '2026-09-15' },
+      { fondo: 'REBA', fecha: '2026-10-20' },
+      { fondo: 'BRUBANK CUENTA MAX', fecha: '2026-11-18' },
+    ]
+
+    expect(filtrarFondosVigentes(items).map(item => item.fondo)).toEqual([
+      'REBA',
+      'BRUBANK CUENTA MAX',
+    ])
+  })
 })

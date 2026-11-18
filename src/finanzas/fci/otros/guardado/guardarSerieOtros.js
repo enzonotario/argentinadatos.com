@@ -41,6 +41,32 @@ function historialCambio(item, prev) {
   )
 }
 
+// Un fondo que no se actualiza hace más de estos días respecto del más
+// reciente se considera discontinuado (ej. BRUBANK reemplazado por BRUBANK
+// CUENTA MAX) y no se publica en ultimo/penultimo. Su historial se mantiene.
+export const DIAS_MAXIMOS_SIN_ACTUALIZAR = 30
+
+const MS_POR_DIA = 24 * 60 * 60 * 1000
+
+export function filtrarFondosVigentes(
+  items,
+  diasMaximos = DIAS_MAXIMOS_SIN_ACTUALIZAR,
+) {
+  const tiempos = items
+    .map(item => Date.parse(item.fecha))
+    .filter(Number.isFinite)
+  if (tiempos.length === 0) return items
+
+  const masReciente = Math.max(...tiempos)
+  return items.filter(item => {
+    const tiempo = Date.parse(item.fecha)
+    return (
+      !Number.isFinite(tiempo) ||
+      masReciente - tiempo <= diasMaximos * MS_POR_DIA
+    )
+  })
+}
+
 export async function guardarSerieOtros(items, url, authToken) {
   const db = new FciOtrosDatabaseService(url, authToken)
 
@@ -93,13 +119,16 @@ export async function guardarSerieOtros(items, url, authToken) {
 }
 
 async function generarEndpointsEstaticos(db) {
-  const todosLosDatos = await db.getAllLatestFciOtros()
+  const todosLosDatos = filtrarFondosVigentes(await db.getAllLatestFciOtros())
   const resultado = todosLosDatos.map(mapItemParaEndpoint)
 
   escribirRuta('/finanzas/fci/otros/ultimo', resultado)
 
+  const fondosVigentes = new Set(todosLosDatos.map(item => item.fondo))
   const penultimo = await db.getPenultimoFciOtros()
-  const penultimoResultado = penultimo.map(mapItemParaEndpoint)
+  const penultimoResultado = penultimo
+    .filter(item => fondosVigentes.has(item.fondo))
+    .map(mapItemParaEndpoint)
 
   if (penultimoResultado.length > 0) {
     escribirRuta('/finanzas/fci/otros/penultimo', penultimoResultado)
