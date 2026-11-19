@@ -2,14 +2,14 @@
   "fondoId": "1962",
   "claseId": "6575",
   "nombre": "Blacktoro Gestion Calificado I - Clase A",
-  "fecha": "2026-11-17",
+  "fecha": "2026-11-18",
   "administradora": "Blacktoro Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": null,
-  "horizonte": null,
+  "horizonte": "Mediano Plazo",
   "duracion": null,
   "moneda": "Peso Argentino",
   "codigoCNV": "1962",
@@ -22,9 +22,9 @@
     "valorCuotaparte": 1000,
     "variacionDiariaPct": 0,
     "ultimos7Dias": 0,
-    "diasUltimos7Dias": 6,
+    "diasUltimos7Dias": 7,
     "unMes": 0,
-    "diasUnMes": 29,
+    "diasUnMes": 30,
     "noventaDias": null,
     "diasNoventaDias": null,
     "cientoOchentaDias": null,
@@ -34,10 +34,51 @@
     "doceMeses": null,
     "diasDoceMeses": null,
     "tnaEstimada": 0,
-    "tnaEstimadaDias": 6,
+    "tnaEstimadaDias": 7,
     "tnaEstimadaPeriodo": "ultimos7Dias"
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 13.91
+    },
+    {
+      "nombre": "Letra Tesoro Nac T30A7",
+      "porcentaje": 13.64
+    },
+    {
+      "nombre": "Lecer X30N6",
+      "porcentaje": 11.89
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 10.32
+    },
+    {
+      "nombre": "Lecer X29E7",
+      "porcentaje": 10.3
+    },
+    {
+      "nombre": "Lecap S26F7",
+      "porcentaje": 10.04
+    },
+    {
+      "nombre": "Boncer TZXY7",
+      "porcentaje": 8.37
+    },
+    {
+      "nombre": "Letra Tamar TEM TMF27",
+      "porcentaje": 8.35
+    },
+    {
+      "nombre": "Lecap S30N6",
+      "porcentaje": 8.1
+    },
+    {
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 5.1
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 2.5,

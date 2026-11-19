@@ -2,7 +2,7 @@
   "fondoId": "686",
   "claseId": "1447",
   "nombre": "GSS Retorno Total - Clase B",
-  "fechaActualizacion": "2026-11-18T15:08:43.000Z",
+  "fechaActualizacion": "2026-11-18T23:46:03.000Z",
   "historico": [
     {
       "slug": "gss-retorno-total-clase-b",
@@ -26578,6 +26578,22 @@
       "retornoDiario": 0.116733,
       "retornoAcumulado": 4638.084988,
       "flujoEstimado": -352473.186512,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "gss-retorno-total-clase-b",
+      "fondoId": "686",
+      "claseId": "1447",
+      "nombre": "GSS Retorno Total - Clase B",
+      "fecha": "2026-11-18",
+      "categoria": "Retorno Total",
+      "categoriaKey": "retornoTotal",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 140548.25,
+      "patrimonio": 19628789813.76,
+      "retornoDiario": 0.016872,
+      "retornoAcumulado": 4638.884388,
+      "flujoEstimado": 1599758.235775,
       "origen": "cnv-excel"
     }
   ]

@@ -2,7 +2,7 @@
   "fondoId": "2027",
   "claseId": "6853",
   "nombre": "Conosur Financiamiento III - Clase C",
-  "fecha": "2026-11-17",
+  "fecha": "2026-11-18",
   "administradora": "Cono Sur S.G.F.C.I.S.A.",
   "depositaria": "Banco de Valores S.A.",
   "tipoRenta": "Renta Fija",
@@ -13,17 +13,17 @@
   "duracion": null,
   "moneda": "Peso Argentino",
   "codigoCNV": "2027",
-  "patrimonio": 50418072.57,
+  "patrimonio": 50445432.42,
   "cantidadCuotapartes": 50010000,
   "inversionMinima": 1,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1008.16,
+    "valorCuotaparte": 1008.707,
     "variacionDiariaPct": 0.054,
-    "ultimos7Dias": 0.3413,
-    "diasUltimos7Dias": 6,
-    "unMes": 0.816,
+    "ultimos7Dias": 0.3957,
+    "diasUltimos7Dias": 7,
+    "unMes": 0.871,
     "diasUnMes": 30,
     "noventaDias": null,
     "diasNoventaDias": null,
@@ -33,11 +33,16 @@
     "diasEnElAnio": null,
     "doceMeses": null,
     "diasDoceMeses": null,
-    "tnaEstimada": 20.7624,
-    "tnaEstimadaDias": 6,
+    "tnaEstimada": 20.6329,
+    "tnaEstimadaDias": 7,
     "tnaEstimadaPeriodo": "ultimos7Dias"
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 99.92
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 0,

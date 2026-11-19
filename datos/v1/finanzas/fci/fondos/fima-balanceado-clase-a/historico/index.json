@@ -2,7 +2,7 @@
   "fondoId": "212",
   "claseId": "6676",
   "nombre": "Fima Balanceado - Clase A",
-  "fechaActualizacion": "2026-11-18T15:08:43.000Z",
+  "fechaActualizacion": "2026-11-18T23:46:03.000Z",
   "historico": [
     {
       "slug": "fima-balanceado-clase-a",
@@ -866,6 +866,22 @@
       "retornoDiario": -0.060836,
       "retornoAcumulado": 4.747587,
       "flujoEstimado": 0.000101,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "fima-balanceado-clase-a",
+      "fondoId": "212",
+      "claseId": "6676",
+      "nombre": "Fima Balanceado - Clase A",
+      "fecha": "2026-11-18",
+      "categoria": "Retorno Total",
+      "categoriaKey": "retornoTotal",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 94682.104,
+      "patrimonio": 40050.53,
+      "retornoDiario": 0.660075,
+      "retornoAcumulado": 5.439,
+      "flujoEstimado": 0.000019,
       "origen": "cnv-excel"
     }
   ]

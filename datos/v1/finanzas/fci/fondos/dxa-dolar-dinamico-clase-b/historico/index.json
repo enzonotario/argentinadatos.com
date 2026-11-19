@@ -2,7 +2,7 @@
   "fondoId": "2033",
   "claseId": "6875",
   "nombre": "DXA Dolar Dinamico - Clase B",
-  "fechaActualizacion": "2026-11-18T15:08:43.000Z",
+  "fechaActualizacion": "2026-11-18T23:46:03.000Z",
   "historico": [
     {
       "slug": "dxa-dolar-dinamico-clase-b",
@@ -34,6 +34,22 @@
       "retornoDiario": 0.43,
       "retornoAcumulado": 0.43,
       "flujoEstimado": 1296631.58,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "dxa-dolar-dinamico-clase-b",
+      "fondoId": "2033",
+      "claseId": "6875",
+      "nombre": "DXA Dolar Dinamico - Clase B",
+      "fecha": "2026-11-18",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Mediano Plazo",
+      "valorCuotaparte": 1004.3,
+      "patrimonio": 1397061.58,
+      "retornoDiario": 0,
+      "retornoAcumulado": 0.43,
+      "flujoEstimado": 0,
       "origen": "cnv-excel"
     }
   ]

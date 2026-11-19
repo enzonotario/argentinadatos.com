@@ -2,7 +2,7 @@
   "fondoId": "186",
   "claseId": "6905",
   "nombre": "Lombard Renta Fija - Clase B",
-  "fechaActualizacion": "2026-11-18T15:08:43.000Z",
+  "fechaActualizacion": "2026-11-18T23:46:03.000Z",
   "historico": [
     {
       "slug": "lombard-renta-fija-clase-b",
@@ -18,6 +18,22 @@
       "retornoDiario": null,
       "retornoAcumulado": 0,
       "flujoEstimado": null,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "lombard-renta-fija-clase-b",
+      "fondoId": "186",
+      "claseId": "6905",
+      "nombre": "Lombard Renta Fija - Clase B",
+      "fecha": "2026-11-18",
+      "categoria": "Renta Fija",
+      "categoriaKey": "rentaFija",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 780171.734,
+      "patrimonio": 34995758541,
+      "retornoDiario": 0.288137,
+      "retornoAcumulado": 0.288137,
+      "flujoEstimado": 2867139.237602,
       "origen": "cnv-excel"
     }
   ]

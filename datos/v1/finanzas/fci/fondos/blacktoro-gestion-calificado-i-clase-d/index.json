@@ -2,29 +2,29 @@
   "fondoId": "1962",
   "claseId": "6796",
   "nombre": "Blacktoro Gestion Calificado I - Clase D",
-  "fecha": "2026-11-17",
+  "fecha": "2026-11-18",
   "administradora": "Blacktoro Asset Management S.A.",
   "depositaria": "Banco Comafi S.A.",
   "tipoRenta": "Renta Fija",
   "tipoDD": "No Aplica",
   "region": "Argentina",
   "benchmark": null,
-  "horizonte": null,
+  "horizonte": "Mediano Plazo",
   "duracion": null,
   "moneda": "Peso Argentino",
   "codigoCNV": "1962",
-  "patrimonio": 15421362641.96,
+  "patrimonio": 15434670151.35,
   "cantidadCuotapartes": 15231501789.72,
   "inversionMinima": 1000,
   "monedaInversion": "Peso Argentino",
   "plazoLiquidacionDias": 1,
   "rendimientos": {
-    "valorCuotaparte": 1012.465,
-    "variacionDiariaPct": 0.065,
-    "ultimos7Dias": 0.5133,
-    "diasUltimos7Dias": 6,
-    "unMes": 1.2465,
-    "diasUnMes": 29,
+    "valorCuotaparte": 1013.339,
+    "variacionDiariaPct": 0.086,
+    "ultimos7Dias": 0.6,
+    "diasUltimos7Dias": 7,
+    "unMes": 1.3339,
+    "diasUnMes": 30,
     "noventaDias": null,
     "diasNoventaDias": null,
     "cientoOchentaDias": null,
@@ -33,11 +33,52 @@
     "diasEnElAnio": null,
     "doceMeses": null,
     "diasDoceMeses": null,
-    "tnaEstimada": 31.2258,
-    "tnaEstimadaDias": 6,
+    "tnaEstimada": 31.2857,
+    "tnaEstimadaDias": 7,
     "tnaEstimadaPeriodo": "ultimos7Dias"
   },
-  "composicionCartera": [],
+  "composicionCartera": [
+    {
+      "nombre": "Bono Boncer 2027 TZXM7",
+      "porcentaje": 13.91
+    },
+    {
+      "nombre": "Letra Tesoro Nac T30A7",
+      "porcentaje": 13.64
+    },
+    {
+      "nombre": "Lecer X30N6",
+      "porcentaje": 11.89
+    },
+    {
+      "nombre": "Bono Boncer TZXD6",
+      "porcentaje": 10.32
+    },
+    {
+      "nombre": "Lecer X29E7",
+      "porcentaje": 10.3
+    },
+    {
+      "nombre": "Lecap S26F7",
+      "porcentaje": 10.04
+    },
+    {
+      "nombre": "Boncer TZXY7",
+      "porcentaje": 8.37
+    },
+    {
+      "nombre": "Letra Tamar TEM TMF27",
+      "porcentaje": 8.35
+    },
+    {
+      "nombre": "Lecap S30N6",
+      "porcentaje": 8.1
+    },
+    {
+      "nombre": "Caucion Colocadora $ Merval",
+      "porcentaje": 5.1
+    }
+  ],
   "calificaciones": [],
   "honorarios": {
     "honorarioGerente": 0.8,

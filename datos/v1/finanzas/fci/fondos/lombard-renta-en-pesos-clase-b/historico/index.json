@@ -2,7 +2,7 @@
   "fondoId": "121",
   "claseId": "6895",
   "nombre": "Lombard Renta en Pesos - Clase B",
-  "fechaActualizacion": "2026-11-18T15:08:43.000Z",
+  "fechaActualizacion": "2026-11-18T23:46:03.000Z",
   "historico": [
     {
       "slug": "lombard-renta-en-pesos-clase-b",
@@ -18,6 +18,22 @@
       "retornoDiario": null,
       "retornoAcumulado": 0,
       "flujoEstimado": null,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "lombard-renta-en-pesos-clase-b",
+      "fondoId": "121",
+      "claseId": "6895",
+      "nombre": "Lombard Renta en Pesos - Clase B",
+      "fecha": "2026-11-18",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 257924.743,
+      "patrimonio": 1597775128986.14,
+      "retornoDiario": 0.055256,
+      "retornoAcumulado": 0.055256,
+      "flujoEstimado": 26299337978.266113,
       "origen": "cnv-excel"
     }
   ]
