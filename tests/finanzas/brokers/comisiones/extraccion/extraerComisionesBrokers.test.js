@@ -23,7 +23,11 @@ import { parsearFiwind } from '@/finanzas/brokers/comisiones/extraccion/extraerF
 import { parsearIebMas } from '@/finanzas/brokers/comisiones/extraccion/extraerIebMas.js'
 import { parsearEcoValores } from '@/finanzas/brokers/comisiones/extraccion/extraerEcoValores.js'
 import { parsearMacroSecuritiesTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerMacroSecurities.js'
-import { parsearPuenteTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerPuente.js'
+import {
+  parsearPuentePdf,
+  resolverUrlPdfPuente,
+  PUENTE_PDF_FALLBACK_URL,
+} from '@/finanzas/brokers/comisiones/extraccion/extraerPuente.js'
 import { parsearAllariaTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerAllaria.js'
 import {
   parsearSbsTexto,
@@ -544,20 +548,37 @@ describe('parsearMacroSecuritiesTexto', () => {
   })
 })
 
-describe('parsearPuenteTexto', () => {
-  it('toma columna Internet del PDF de comisiones', () => {
-    const texto = readFileSync(
-      join(fixturesDir, 'puente-comisiones.txt'),
-      'utf8',
+describe('parsearPuentePdf', () => {
+  it('reconstruye la tabla por coordenadas y toma la columna Internet', async () => {
+    const filas = await parsearPuentePdf(
+      readFileSync(join(fixturesDir, 'puente-aranceles.pdf')),
     )
-    const filas = parsearPuenteTexto(texto)
 
+    expect(filas.length).toBeGreaterThanOrEqual(20)
     expect(filas.find((f) => f.producto === 'acciones' && f.moneda === 'ARS')).toMatchObject({
       entidad: 'puente',
+      canal: 'web',
       tasa: 0.005,
       ivaAdicional: true,
+      comisionMinima: 10,
       derechoMercado: 0.0006,
+      enlace: PUENTE_PDF_FALLBACK_URL,
+      metadata: expect.objectContaining({ comisionMinimaMoneda: 'USD' }),
     })
+    expect(
+      filas.find(
+        (f) => f.producto === 'acciones' && f.moneda === 'USD' && f.metadata.mercado === 'exterior',
+      ),
+    ).toMatchObject({ tasa: 0.005, comisionMinima: 50 })
+    expect(
+      filas.find((f) => f.producto === 'obligaciones_negociables' && f.moneda === 'ARS'),
+    ).toMatchObject({ tasa: 0.005, derechoMercado: 0.0001 })
+    expect(
+      filas.find((f) => f.producto === 'letras' && f.moneda === 'USD'),
+    ).toMatchObject({ tasa: 0.0025 })
+    expect(
+      filas.find((f) => f.producto === 'cauciones' && f.operacion === 'colocadora' && f.moneda === 'USD'),
+    ).toMatchObject({ tasa: 0.005, comisionMinima: 20 })
     expect(
       filas.find((f) => f.producto === 'cauciones' && f.operacion === 'colocadora' && f.moneda === 'ARS'),
     ).toMatchObject({
@@ -578,9 +599,23 @@ describe('parsearPuenteTexto', () => {
     expect(filas.find((f) => f.producto === 'cheques')).toMatchObject({
       tasa: 0.01,
     })
+    expect(filas.find((f) => f.producto === 'cheques')).toMatchObject({
+      metadata: expect.objectContaining({
+        celdaOriginal: expect.stringContaining('FCE - Compra / Venta'),
+      }),
+    })
     expect(
       filas.some((f) => f.producto === 'alquiler_titulos' && f.operacion === 'colocadora'),
     ).toBe(true)
+  })
+
+  it('resuelve la URL del PDF desde la home', () => {
+    const html =
+      '<a href="/otro.pdf">x</a><a class="b" href="/repo/arch/tabla-aranceles-puente-2027.pdf">Aranceles</a>'
+    expect(resolverUrlPdfPuente(html)).toBe(
+      'https://www.puentenet.com/repo/arch/tabla-aranceles-puente-2027.pdf',
+    )
+    expect(resolverUrlPdfPuente('<a href="/x.pdf">x</a>')).toBeNull()
   })
 })
 

@@ -10,7 +10,7 @@ import { parsearFiwind } from '@/finanzas/brokers/comisiones/extraccion/extraerF
 import { parsearIebMas } from '@/finanzas/brokers/comisiones/extraccion/extraerIebMas.js'
 import { parsearEcoValores } from '@/finanzas/brokers/comisiones/extraccion/extraerEcoValores.js'
 import { parsearMacroSecuritiesTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerMacroSecurities.js'
-import { parsearPuenteTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerPuente.js'
+import { parsearPuentePdf } from '@/finanzas/brokers/comisiones/extraccion/extraerPuente.js'
 import { parsearGaliciaSecurities } from '@/finanzas/brokers/comisiones/extraccion/extraerGaliciaSecurities.js'
 import { parsearRava } from '@/finanzas/brokers/comisiones/extraccion/extraerRava.js'
 import { parsearAllariaTexto } from '@/finanzas/brokers/comisiones/extraccion/extraerAllaria.js'
@@ -44,9 +44,7 @@ const comisiones = [
   ...parsearMacroSecuritiesTexto(
     readFileSync(join(fx, 'macro-aranceles.txt'), 'utf8'),
   ),
-  ...parsearPuenteTexto(
-    readFileSync(join(fx, 'puente-comisiones.txt'), 'utf8'),
-  ),
+  ...(await parsearPuentePdf(readFileSync(join(fx, 'puente-aranceles.pdf')))),
   ...parsearGaliciaSecurities(
     readFileSync(join(fx, 'galicia-comisiones.html'), 'utf8'),
   ),
