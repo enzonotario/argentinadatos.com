@@ -56,4 +56,5 @@ export const comparatasasFondos = [
   'ualintec-renta-variable-pesos-clase-a',
   'vinci-compass-liquidez-clase-d',
   'vinci-compass-liquidez-clase-f',
+  'vinci-compass-liquidez-clase-g',
 ]
