@@ -2,7 +2,7 @@
   "fondoId": "1893",
   "claseId": "6540",
   "nombre": "GMC Renta Fija Dolares - Clase C",
-  "fechaActualizacion": "2026-11-20T16:17:10.000Z",
+  "fechaActualizacion": "2026-11-20T23:52:16.000Z",
   "historico": [
     {
       "slug": "gmc-renta-fija-dolares-clase-c",
@@ -1554,6 +1554,22 @@
       "retornoDiario": 0.002634,
       "retornoAcumulado": -1.308695,
       "flujoEstimado": 1.15438,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "gmc-renta-fija-dolares-clase-c",
+      "fondoId": "1893",
+      "claseId": "6540",
+      "nombre": "GMC Renta Fija Dolares - Clase C",
+      "fecha": "2026-11-20",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 986.931,
+      "patrimonio": 3611323.68,
+      "retornoDiario": -0.00618,
+      "retornoAcumulado": -1.314795,
+      "flujoEstimado": -0.446376,
       "origen": "cnv-excel"
     }
   ]
