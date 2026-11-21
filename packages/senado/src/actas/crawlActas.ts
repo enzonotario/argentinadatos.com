@@ -51,6 +51,11 @@ export async function crawlActas({ year }: { year?: number } = {}): Promise<
 
   const idsToProcess = buildActaIdsToProcess(listedIds, FORWARD_PADDING)
   const knownTitulos = new Map(listed.map(row => [row.id, row.titulo]))
+  const knownFechaSesion = new Map(
+    listed
+      .filter(row => row.fechaSesion)
+      .map(row => [row.id, row.fechaSesion!] as const),
+  )
   const existingIds = loadExistingActaIds(yearToSearch)
 
   // Priorizar actas que aún no están en el índice local (p.ej. sesión del 27/08).
@@ -74,6 +79,7 @@ export async function crawlActas({ year }: { year?: number } = {}): Promise<
       actaId,
       knownTitulos.get(actaId) || '',
       yearToSearch,
+      knownFechaSesion.get(actaId),
     )
     if (acta) validActas.push(acta)
   })
@@ -132,11 +138,41 @@ export function scrapeTituloFromListadoTd(
     .trim()
 }
 
+/**
+ * Fecha de sesión del listado → `yyyy-MM-dd`.
+ * La celda real suele ser `<span style="display:none">20260211</span> 11/02/2026`.
+ */
+export function parseFechaSesionListado(
+  raw: string | null | undefined,
+): string | undefined {
+  const text = String(raw || '').replace(/\s+/g, ' ').trim()
+  if (!text) return undefined
+
+  // Preferir el marcador compacto yyyyMMdd del span oculto (orden estable).
+  const compact = text.match(/\b(\d{4})(\d{2})(\d{2})\b/)
+  if (compact) {
+    return `${compact[1]}-${compact[2]}-${compact[3]}`
+  }
+
+  const dmy = text.match(/\b(\d{1,2})\/(\d{1,2})\/(\d{4})\b/)
+  if (!dmy) return undefined
+  const dd = dmy[1]!.padStart(2, '0')
+  const mm = dmy[2]!.padStart(2, '0')
+  return `${dmy[3]}-${mm}-${dd}`
+}
+
+export type ListedActa = {
+  id: number
+  titulo: string
+  /** Día de sesión del listado oficial (`yyyy-MM-dd`). */
+  fechaSesion?: string
+}
+
 export function collectListedActas(
   $: cheerio.CheerioAPI,
   actasRows: cheerio.Cheerio<any>,
-): Array<{ id: number, titulo: string }> {
-  const byId = new Map<number, string>()
+): ListedActa[] {
+  const byId = new Map<number, ListedActa>()
 
   for (const row of actasRows.toArray()) {
     const $row = $(row)
@@ -145,16 +181,21 @@ export function collectListedActas(
     const id = Number(href.split('/').pop())
     if (!Number.isFinite(id)) continue
 
-    // Columna Título: suele ser la 3ra (índice 2).
-    const titulo = scrapeTituloFromListadoTd($row.find('td').eq(2))
-    if (!byId.has(id) || titulo) {
-      byId.set(id, titulo)
+    const tds = $row.find('td')
+    // Col 0 = Fecha de sesión, col 1 = Nº acta, col 2 = Título.
+    const fechaSesion = parseFechaSesionListado(tds.eq(0).text())
+    const titulo = scrapeTituloFromListadoTd(tds.eq(2))
+    const prev = byId.get(id)
+    if (!prev || titulo || fechaSesion) {
+      byId.set(id, {
+        id,
+        titulo: titulo || prev?.titulo || '',
+        fechaSesion: fechaSesion || prev?.fechaSesion,
+      })
     }
   }
 
-  return [...byId.entries()]
-    .map(([id, titulo]) => ({ id, titulo }))
-    .sort((a, b) => a.id - b.id)
+  return [...byId.values()].sort((a, b) => a.id - b.id)
 }
 
 /**
@@ -216,6 +257,7 @@ async function processActa(
   actaId: number,
   titulo: string,
   yearToSearch: number,
+  fechaSesion?: string,
 ): Promise<ActaData | null> {
   try {
     const pdfPath = await downloadPdf(actaId)
@@ -250,6 +292,14 @@ async function processActa(
     }
     else {
       acta = await parseActa(actaId, finalTitulo, pdfPath)
+    }
+
+    if (fechaSesion) {
+      acta.fechaSesion = fechaSesion
+    }
+    else {
+      const existing = readExistingFechaSesion(actaId, yearToSearch)
+      if (existing) acta.fechaSesion = existing
     }
 
     if (shouldWriteJsonFiles()) {
@@ -294,6 +344,38 @@ function readExistingTitulo(actaId: number, year: number): string {
   return ''
 }
 
+function readExistingFechaSesion(
+  actaId: number,
+  year: number,
+): string | undefined {
+  try {
+    const rawDetail = readEndpoint(`/senado/actas/${year}/${actaId}`)
+    if (rawDetail) {
+      const detail = JSON.parse(rawDetail)
+      const f = String(detail?.fechaSesion || '').trim()
+      if (/^\d{4}-\d{2}-\d{2}$/.test(f)) return f
+    }
+  }
+  catch {
+    // ignore
+  }
+
+  try {
+    const rawYear = readEndpoint(`/senado/actas/${year}`) || '[]'
+    const list = JSON.parse(rawYear)
+    if (Array.isArray(list)) {
+      const found = list.find((a: any) => Number(a?.actaId) === actaId)
+      const f = String(found?.fechaSesion || '').trim()
+      if (/^\d{4}-\d{2}-\d{2}$/.test(f)) return f
+    }
+  }
+  catch {
+    // ignore
+  }
+
+  return undefined
+}
+
 /**
  * Merge por actaId: la entrada nueva gana, pero no pisa un título bueno
  * con string vacío (el scrape HTML a veces falla bajo carga paralela).
@@ -317,11 +399,14 @@ function mergeActasById(incoming: ActaData[], existing: any[]): ActaData[] {
 
     const newTitulo = String(acta.titulo || '').trim()
     const prevTitulo = String(prev.titulo || '').trim()
+    const newFechaSesion = String(acta.fechaSesion || '').trim()
+    const prevFechaSesion = String(prev.fechaSesion || '').trim()
 
     byId.set(id, {
       ...prev,
       ...acta,
       titulo: newTitulo || prevTitulo || acta.titulo || '',
+      fechaSesion: newFechaSesion || prevFechaSesion || undefined,
     })
   }
 

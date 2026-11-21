@@ -29,7 +29,16 @@ export interface ActaData {
   proyecto: string
   descripcion: string
   quorumTipo: string
+  /**
+   * Timestamp de la votación (ISO), desde PDF/HTML `Fecha:`.
+   * Puede caer en el día calendario siguiente si la sesión se extiende.
+   */
   fecha: string
+  /**
+   * Día de sesión del listado oficial (`yyyy-MM-dd`).
+   * Distinto de `fecha` cuando la votación pasa de medianoche.
+   */
+  fechaSesion?: string
   acta: string
   mayoria: string
   /** Tipo de votación (p. ej. NOMINAL). */

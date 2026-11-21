@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import {
   buildActaIdsToProcess,
   collectListedActas,
+  parseFechaSesionListado,
 } from '../src/actas/crawlActas.ts'
 import * as cheerio from 'cheerio'
 
@@ -23,7 +24,7 @@ describe('buildActaIdsToProcess', () => {
 })
 
 describe('collectListedActas', () => {
-  it('toma detalleActa y el título de la fila', () => {
+  it('toma detalleActa, título y fecha de sesión de la fila', () => {
     const html = `
       <table id="actasTable"><tbody>
         <tr>
@@ -46,13 +47,36 @@ describe('collectListedActas', () => {
           <td>SIMPLE</td>
           <td><a href="/votaciones/detalleActa/2802">VER</a></td>
         </tr>
+        <tr>
+          <td>19/11/2026</td>
+          <td>7</td>
+          <td>O.D. 418/2026</td>
+          <td>EN GENERAL</td>
+          <td>AFIRMATIVO</td>
+          <td><a href="/votaciones/verActaVotacion/2885">descargar</a></td>
+          <td>SIMPLE</td>
+          <td><a href="/votaciones/detalleActa/2885">VER</a></td>
+        </tr>
       </tbody></table>
     `
     const $ = cheerio.load(html)
     const rows = collectListedActas($, $('table#actasTable tbody tr'))
     expect(rows).toEqual([
-      { id: 2801, titulo: 'Acuerdo para designaciones' },
-      { id: 2802, titulo: 'Acuerdo Bertuzzi' },
+      {
+        id: 2801,
+        titulo: 'Acuerdo para designaciones',
+        fechaSesion: '2026-08-27',
+      },
+      {
+        id: 2802,
+        titulo: 'Acuerdo Bertuzzi',
+        fechaSesion: '2026-08-27',
+      },
+      {
+        id: 2885,
+        titulo: 'O.D. 418/2026',
+        fechaSesion: '2026-11-19',
+      },
     ])
   })
 
@@ -82,6 +106,42 @@ describe('collectListedActas', () => {
       {
         id: 2805,
         titulo: 'Moción para el tratamiento sobre tablas del expediente S-1563/26.',
+        fechaSesion: '2026-09-17',
+      },
+    ])
+  })
+})
+
+describe('parseFechaSesionListado', () => {
+  it('normaliza dd/MM/yyyy y el span oculto yyyyMMdd', () => {
+    expect(parseFechaSesionListado('19/11/2026')).toBe('2026-11-19')
+    expect(parseFechaSesionListado('7/1/2025')).toBe('2025-01-07')
+    expect(parseFechaSesionListado('20260211 11/02/2026')).toBe('2026-02-11')
+    expect(parseFechaSesionListado('')).toBeUndefined()
+  })
+
+  it('lee la celda real del listado con span oculto', () => {
+    const html = `
+      <table id="actasTable"><tbody>
+        <tr>
+          <td><span style="display:none">20261119</span> 19/11/2026</td>
+          <td>7</td>
+          <td>O.D. 418/2026</td>
+          <td>EN GENERAL</td>
+          <td>AFIRMATIVO</td>
+          <td><a href="/votaciones/verActaVotacion/2885">descargar</a></td>
+          <td>SIMPLE</td>
+          <td><a href="/votaciones/detalleActa/2885">VER</a></td>
+        </tr>
+      </tbody></table>
+    `
+    const $ = cheerio.load(html)
+    const rows = collectListedActas($, $('table#actasTable tbody tr'))
+    expect(rows).toEqual([
+      {
+        id: 2885,
+        titulo: 'O.D. 418/2026',
+        fechaSesion: '2026-11-19',
       },
     ])
   })
