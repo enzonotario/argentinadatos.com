@@ -151,8 +151,8 @@ importers:
         specifier: ^1.6.4
         version: 1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.19.0)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3)
       vitepress-openapi:
-        specifier: ^0.2.17
-        version: 0.2.17(vitepress@1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.19.0)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3))(vue@3.5.13(typescript@5.9.3))
+        specifier: ^0.2.18
+        version: 0.2.18(vitepress@1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.19.0)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3))(vue@3.5.13(typescript@5.9.3))
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.9.3)
@@ -6388,8 +6388,8 @@ packages:
       yaml:
         optional: true
 
-  vitepress-openapi@0.2.17:
-    resolution: {integrity: sha512-KnApOJ14d73RSzvZgq1YQ7ujw7W4ZOhhZCFtXGkdue8rG7L2GUNUyfbpa4Nb17xdSJO0EPx32Ehnmd2i1KcaJw==}
+  vitepress-openapi@0.2.18:
+    resolution: {integrity: sha512-f6v4/z5DmmKFDKQjG6mFkFRDGrVkINd1UA6z4kohj9Jtfg/GGj+oa+e39nWe3BgcVRxt5NLWdT5kGEhhkT4kdQ==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24.0.0}
     hasBin: true
     peerDependencies:
@@ -13299,7 +13299,7 @@ snapshots:
       lightningcss: 1.32.0
       yaml: 2.8.3
 
-  vitepress-openapi@0.2.17(vitepress@1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.19.0)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3))(vue@3.5.13(typescript@5.9.3)):
+  vitepress-openapi@0.2.18(vitepress@1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.19.0)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3))(vue@3.5.13(typescript@5.9.3)):
     dependencies:
       '@lucide/vue': 1.70.0(vue@3.5.13(typescript@5.9.3))
       '@vueuse/core': 14.4.0(vue@3.5.13(typescript@5.9.3))
