@@ -151,8 +151,8 @@ importers:
         specifier: ^1.6.4
         version: 1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.19.0)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3)
       vitepress-openapi:
-        specifier: ^0.2.8
-        version: 0.2.8(vitepress@1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.19.0)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3))(vue@3.5.13(typescript@5.9.3))
+        specifier: ^0.2.17
+        version: 0.2.17(vitepress@1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.19.0)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3))(vue@3.5.13(typescript@5.9.3))
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.9.3)
@@ -2736,11 +2736,6 @@ packages:
   '@vueuse/shared@12.8.2':
     resolution: {integrity: sha512-dznP38YzxZoNloI0qpEfpkms8knDtaoQ6Y/sfS0L7Yki4zh40LFHEhur0odJC6xTHG5dxWVPiUWBXn+wCG2s5w==}
 
-  '@vueuse/shared@14.2.1':
-    resolution: {integrity: sha512-shTJncjV9JTI4oVNyF1FQonetYAiTBd+Qj7cY89SWbXSkx7gyhrgtEdF2ZAVWS1S3SHlaROO6F2IesJxQEkZBw==}
-    peerDependencies:
-      vue: ^3.5.0
-
   '@vueuse/shared@14.4.0':
     resolution: {integrity: sha512-JRgY90Sz8DDtPMsaDflvPMp9xYk69JZAmbuDvAquUVXKr2gEjqtzGNTTthLfckH0BzBqvnu31gb4a8TGLRe79g==}
     peerDependencies:
@@ -3347,6 +3342,9 @@ packages:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
     engines: {node: '>=4'}
     hasBin: true
+
+  cssfilter@0.0.10:
+    resolution: {integrity: sha512-FAaLDaplstoRsDR8XGYH51znUN0UY7nMc6Z9/fvE8EXGwvJE9hu7W2vHwx1+bd6gCYnln9nLbzxFTrcO9YQDZw==}
 
   cssom@0.5.0:
     resolution: {integrity: sha512-iKuQcq+NdHqlAcwUY0o/HL69XQrUaQdMjmStJ8JFmUaiiQErlhrmuigkg/CU4E2J0IyUKUrMAgl36TvN67MqTw==}
@@ -6390,12 +6388,16 @@ packages:
       yaml:
         optional: true
 
-  vitepress-openapi@0.2.8:
-    resolution: {integrity: sha512-9el46owjPDjUOkyR5Ic4ODFLIfJADxVYVthMFdp+YB+dgwTA1w1svQf7nDyOLg6q5js3y9xnl3gr3xLAXtFPrw==}
+  vitepress-openapi@0.2.17:
+    resolution: {integrity: sha512-KnApOJ14d73RSzvZgq1YQ7ujw7W4ZOhhZCFtXGkdue8rG7L2GUNUyfbpa4Nb17xdSJO0EPx32Ehnmd2i1KcaJw==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24.0.0}
+    hasBin: true
     peerDependencies:
       vitepress: '>=1.0.0'
-      vue: ^3.0.0
+      vue: ^3.5.0
+    peerDependenciesMeta:
+      vitepress:
+        optional: true
 
   vitepress@1.6.4:
     resolution: {integrity: sha512-+2ym1/+0VVrbhNyRoFFesVvBvHAVMZMK0rw60E3X/5349M1GuVdKeazuksqopEdvkKwKGs21Q729jX81/bkBJg==}
@@ -6605,6 +6607,11 @@ packages:
   xml-naming@0.1.0:
     resolution: {integrity: sha512-k8KO9hrMyNk6tUWqUfkTEZbezRRpONVOzUTnc97VnCvyj6Tf9lyUR9EDAIeiVLv56jsMcoXEwjW8Kv5yPY52lw==}
     engines: {node: '>=16.0.0'}
+
+  xss@1.0.17:
+    resolution: {integrity: sha512-+SEr5IDSgTBnhT6bnnf0mVRHT91+HU517zkahLNhkWLz8retCgeR1YDT4OknLiExA5+chn2Wy7z3KyjvnD8A2w==}
+    engines: {node: '>= 0.10.0'}
+    hasBin: true
 
   xtend@4.0.2:
     resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==}
@@ -8874,10 +8881,6 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@vueuse/shared@14.2.1(vue@3.5.13(typescript@5.9.3))':
-    dependencies:
-      vue: 3.5.13(typescript@5.9.3)
-
   '@vueuse/shared@14.4.0(vue@3.5.13(typescript@5.9.3))':
     dependencies:
       vue: 3.5.13(typescript@5.9.3)
@@ -9633,6 +9636,8 @@ snapshots:
   css-what@6.1.0: {}
 
   cssesc@3.0.0: {}
+
+  cssfilter@0.0.10: {}
 
   cssom@0.5.0:
     optional: true
@@ -12421,7 +12426,7 @@ snapshots:
       '@internationalized/number': 3.6.0
       '@tanstack/vue-virtual': 3.13.6(vue@3.5.13(typescript@5.9.3))
       '@vueuse/core': 14.4.0(vue@3.5.13(typescript@5.9.3))
-      '@vueuse/shared': 14.2.1(vue@3.5.13(typescript@5.9.3))
+      '@vueuse/shared': 14.4.0(vue@3.5.13(typescript@5.9.3))
       aria-hidden: 1.2.4
       defu: 6.1.7
       ohash: 2.0.11
@@ -13294,7 +13299,7 @@ snapshots:
       lightningcss: 1.32.0
       yaml: 2.8.3
 
-  vitepress-openapi@0.2.8(vitepress@1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.19.0)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3))(vue@3.5.13(typescript@5.9.3)):
+  vitepress-openapi@0.2.17(vitepress@1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.19.0)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3))(vue@3.5.13(typescript@5.9.3)):
     dependencies:
       '@lucide/vue': 1.70.0(vue@3.5.13(typescript@5.9.3))
       '@vueuse/core': 14.4.0(vue@3.5.13(typescript@5.9.3))
@@ -13302,8 +13307,10 @@ snapshots:
       clsx: 2.1.1
       markdown-it-link-attributes: 4.0.1
       reka-ui: 2.11.0(vue@3.5.13(typescript@5.9.3))
-      vitepress: 1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.19.0)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3)
       vue: 3.5.13(typescript@5.9.3)
+      xss: 1.0.17
+    optionalDependencies:
+      vitepress: 1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.19.0)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3)
 
   vitepress@1.6.4(@algolia/client-search@5.23.3)(@types/node@24.10.1)(axios@1.19.0)(change-case@5.4.4)(lightningcss@1.32.0)(postcss@8.5.8)(search-insights@2.17.3)(typescript@5.9.3):
     dependencies:
@@ -13605,6 +13612,11 @@ snapshots:
   xml-name-validator@4.0.0: {}
 
   xml-naming@0.1.0: {}
+
+  xss@1.0.17:
+    dependencies:
+      commander: 2.20.3
+      cssfilter: 0.0.10
 
   xtend@4.0.2: {}
 

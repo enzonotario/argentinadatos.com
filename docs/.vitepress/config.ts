@@ -1,7 +1,7 @@
 import { URL, fileURLToPath } from 'node:url'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig, loadEnv } from 'vitepress'
-import { useSidebar } from 'vitepress-openapi'
+import { generateLlmsFiles, llmsDevServer, useSidebar } from 'vitepress-openapi'
 import { SitemapStream } from 'sitemap'
 import { createWriteStream } from 'node:fs'
 import { resolve } from 'node:path'
@@ -14,6 +14,13 @@ const env = loadEnv('', process.cwd())
 const gTag = env.VITE_GTAG
 
 const sidebar = useSidebar({ spec })
+
+const llms = {
+  spec,
+  operationRoute: 'docs/operations/{operationId}',
+  introductionRoute: 'docs/index',
+  openapiUrl: '/openapi.json',
+}
 
 function addDocsPrefix(group: string) {
   return {
@@ -423,11 +430,14 @@ export default defineConfig({
   ],
 
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), llmsDevServer(llms)],
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./', import.meta.url)),
       },
+    },
+    ssr: {
+      noExternal: ['vitepress-openapi'],
     },
   },
 
@@ -449,7 +459,10 @@ export default defineConfig({
       })
     }
   },
-  buildEnd: async ({ outDir }) => {
+  buildEnd: async (siteConfig) => {
+    await generateLlmsFiles(siteConfig, llms)
+
+    const { outDir } = siteConfig
     const sitemap = new SitemapStream({
       hostname: 'https://argentinadatos.com/docs/',
     })
