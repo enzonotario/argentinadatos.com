@@ -57,6 +57,7 @@ export function mapearArqRemesas(texto) {
     costoMantenimientoTarjeta: '0 USD',
     costoTarjeta: '0%',
     retiroArs: '0',
+    metodosRecepcion: ['ACH', 'Wire'],
     detalles: {
       cuentaPropia:
         'Para un wire, el beneficiario es tu nombre, en una cuenta checking de Lead Bank. Recibir o enviar con esos datos de EE.UU. cuesta 3 USD por operación y se acredita en dólares digitales.',

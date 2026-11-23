@@ -5385,6 +5385,24 @@
             "description": "Costo de retiro en ARS",
             "example": "0"
           },
+          "metodosRecepcion": {
+            "type": "array",
+            "nullable": true,
+            "description": "Métodos de recepción de pagos del exterior que la fuente oficial afirma (ACH, Wire, SWIFT)",
+            "items": {
+              "type": "string",
+              "enum": [
+                "ACH",
+                "Wire",
+                "SWIFT"
+              ]
+            },
+            "example": [
+              "ACH",
+              "Wire",
+              "SWIFT"
+            ]
+          },
           "detalles": {
             "type": "object",
             "nullable": true,
@@ -5430,6 +5448,11 @@
                 "nullable": true,
                 "description": "Detalle adicional de retiro en ARS"
               },
+              "metodosRecepcion": {
+                "type": "string",
+                "nullable": true,
+                "description": "Detalle adicional de métodos de recepción"
+              },
               "calificacionAndroid": {
                 "type": "string",
                 "nullable": true,
@@ -5464,6 +5487,11 @@
             "costoMantenimientoTarjeta": "0 USD",
             "costoTarjeta": "0%",
             "retiroArs": "1%",
+            "metodosRecepcion": [
+              "ACH",
+              "Wire",
+              "SWIFT"
+            ],
             "detalles": {
               "costoRecibirPagos": "Para ACH es 0, para wire doméstica es 25 USD y swift 35 USD"
             },
@@ -5507,6 +5535,11 @@
                 "costoMantenimientoTarjeta": "0 USD",
                 "costoTarjeta": "0%",
                 "retiroArs": "1%",
+                "metodosRecepcion": [
+                  "ACH",
+                  "Wire",
+                  "SWIFT"
+                ],
                 "detalles": {
                   "costoRecibirPagos": "Para ACH es 0, para wire doméstica es 25 USD y swift 35 USD"
                 },

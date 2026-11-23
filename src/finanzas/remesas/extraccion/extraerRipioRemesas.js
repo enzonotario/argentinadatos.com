@@ -384,6 +384,7 @@ export function fusionarExtraccionesRipio(extracciones) {
           ? retiroArsCrudo
           : null,
       ) || '0',
+    metodosRecepcion: ['ACH', 'Wire'],
     calificacionAndroid: elegirPrimero(
       tarjeta.calificacionAndroid,
       cuentaExterior.calificacionAndroid,

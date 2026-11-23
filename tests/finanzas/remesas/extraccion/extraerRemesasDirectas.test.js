@@ -99,6 +99,7 @@ describe('mapear remesas desde fuente oficial', () => {
       costoRecibirPagos: '0',
       costoTarjeta: '0%',
       retiroArs: 'FX',
+      metodosRecepcion: ['ACH', 'Wire'],
     })
   })
 
@@ -162,6 +163,7 @@ describe('mapear remesas desde fuente oficial', () => {
       tarjetaUsa: false,
       costoRecibirPagos: '0.5% + 5 USD',
       retiroArs: 'FX',
+      metodosRecepcion: ['ACH', 'Wire', 'SWIFT'],
     })
     expect(remesa.detalles.costoRecibirPagos).toContain('35 USD')
     expect(remesa.detalles.cuentaPropia).toContain('Zenus Bank')
@@ -336,5 +338,12 @@ describe('fuentes oficiales vivas', () => {
     expect(porNombre.lbfinanzas.costoRecibirPagos).toBe('0.5% + 5 USD')
     expect(porNombre.lbfinanzas.cuentaPropia).toBe(true)
     expect(porNombre.lbfinanzas.detalles.costoRecibirPagos).toContain('35 USD')
+    expect(porNombre.lbfinanzas.metodosRecepcion).toEqual([
+      'ACH',
+      'Wire',
+      'SWIFT',
+    ])
+    expect(porNombre.wise.metodosRecepcion).toEqual(['ACH', 'Wire', 'SWIFT'])
+    expect(porNombre.takenos.metodosRecepcion).toEqual(['ACH', 'Wire'])
   }, 60000)
 })

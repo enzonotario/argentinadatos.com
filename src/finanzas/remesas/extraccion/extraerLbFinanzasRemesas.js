@@ -23,6 +23,7 @@ export function mapearLbFinanzasRemesas(texto) {
     costoMantenimientoTarjeta: null,
     costoTarjeta: null,
     retiroArs: 'FX',
+    metodosRecepcion: ['ACH', 'Wire', 'SWIFT'],
     detalles: {
       cuentaPropia:
         'Cuenta en dólares en EE.UU. a tu nombre vía Zenus Bank International. LB Finanzas no es un banco.',

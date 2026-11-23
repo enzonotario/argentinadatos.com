@@ -23,6 +23,7 @@ export function mapearTakenosRemesas(texto) {
     costoMantenimientoTarjeta: '0 USD',
     costoTarjeta: '1%',
     retiroArs: '0',
+    metodosRecepcion: ['ACH', 'Wire'],
     detalles: {
       moneda: 'Los pagos se acreditan como USD digital.',
       costoRecibirPagos: 'ACH en USD gratis. Wire en USD: 25 USD.',

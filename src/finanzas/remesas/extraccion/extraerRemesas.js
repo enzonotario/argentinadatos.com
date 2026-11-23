@@ -13,6 +13,8 @@ const ALIAS_COMPANIA_REMESA = {
   global666: 'global66',
 }
 
+export const METODOS_RECEPCION = ['ACH', 'Wire', 'SWIFT']
+
 const CAMPOS_CON_DETALLE = [
   'cuentaPropia',
   'moneda',
@@ -22,6 +24,7 @@ const CAMPOS_CON_DETALLE = [
   'costoMantenimientoTarjeta',
   'costoTarjeta',
   'retiroArs',
+  'metodosRecepcion',
   'calificacionAndroid',
   'calificacionIos',
 ]
@@ -74,7 +77,60 @@ export function normalizarDetallesRemesa(rawDetalles) {
   return Object.keys(detalles).length > 0 ? detalles : null
 }
 
+export function normalizarMetodosRecepcion(raw) {
+  if (!Array.isArray(raw) || raw.length === 0) {
+    return null
+  }
+
+  const vistos = new Set()
+
+  for (const item of raw) {
+    const texto = String(item || '')
+      .trim()
+      .toLowerCase()
+
+    if (texto === 'ach') vistos.add('ACH')
+    else if (texto === 'wire') vistos.add('Wire')
+    else if (texto === 'swift') vistos.add('SWIFT')
+  }
+
+  const metodos = METODOS_RECEPCION.filter(metodo => vistos.has(metodo))
+
+  return metodos.length > 0 ? metodos : null
+}
+
+/** Detecta ACH / Wire / SWIFT mencionados en prosa oficial. */
+export function detectarMetodosRecepcionDesdeTexto(...textos) {
+  const unido = textos
+    .filter(Boolean)
+    .map(texto => String(texto))
+    .join(' ')
+    .toLowerCase()
+
+  if (!unido.trim()) {
+    return null
+  }
+
+  const metodos = []
+
+  if (/\bach\b/.test(unido)) metodos.push('ACH')
+  if (/\bwire\b/.test(unido)) metodos.push('Wire')
+  if (/\bswift\b/.test(unido)) metodos.push('SWIFT')
+
+  return metodos.length > 0 ? metodos : null
+}
+
 export function normalizarRemesa(raw) {
+  const metodosExplicitos = normalizarMetodosRecepcion(raw.metodosRecepcion)
+  const metodosDetectados =
+    metodosExplicitos ||
+    detectarMetodosRecepcionDesdeTexto(
+      raw.costoRecibirPagos,
+      raw.detalles?.costoRecibirPagos || raw.extras?.costoRecibirPagos,
+      raw.detalles?.cuentaPropia || raw.extras?.cuentaPropia,
+      raw.detalles?.metodosRecepcion || raw.extras?.metodosRecepcion,
+    )
+
   return {
     compania: normalizarCompaniaRemesa(raw.compania),
     cuentaPropia: normalizarBooleano(raw.cuentaPropia),
@@ -85,6 +141,7 @@ export function normalizarRemesa(raw) {
     costoMantenimientoTarjeta: normalizarTexto(raw.costoMantenimientoTarjeta),
     costoTarjeta: normalizarTexto(raw.costoTarjeta),
     retiroArs: normalizarTexto(raw.retiroArs),
+    metodosRecepcion: metodosDetectados,
     detalles: normalizarDetallesRemesa(raw.detalles || raw.extras),
     calificacionAndroid:
       typeof raw.calificacionAndroid === 'number'

@@ -62,6 +62,7 @@ export function mapearLemonRemesas(texto) {
     costoMantenimientoTarjeta: '0',
     costoTarjeta: '0',
     retiroArs: '0',
+    metodosRecepcion: ['ACH', 'Wire'],
     detalles: {
       cuentaPropia:
         'Bridge asigna una cuenta virtual en Lead Bank. Tenés el account number para depositar, pero no sos el titular de la cuenta bancaria. Abrirla cuesta 4 USD en USDt y se vuelve a debitar a los 12 meses si la usás.',

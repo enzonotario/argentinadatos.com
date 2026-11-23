@@ -21,6 +21,7 @@ export function mapearWiseRemesas(texto) {
     costoMantenimientoTarjeta: null,
     costoTarjeta: null,
     retiroArs: null,
+    metodosRecepcion: ['ACH', 'Wire', 'SWIFT'],
     detalles: {
       cuentaPropia:
         'Wise da datos de cuenta para cobrar. No es una cuenta bancaria propia en EE.UU.',

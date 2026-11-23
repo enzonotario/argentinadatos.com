@@ -45,6 +45,7 @@ export function mapearAstropayRemesas(texto) {
     costoMantenimientoTarjeta: '0 ARS',
     costoTarjeta: '0 ARS',
     retiroArs: null,
+    metodosRecepcion: ['ACH', 'Wire', 'SWIFT'],
     detalles: {
       cuentaPropia:
         'AstroPay da instrucciones ACH, SWIFT o Wire a nombre del usuario. La cuenta en USD no es una cuenta personal: es una cuenta FBO agrupada.',

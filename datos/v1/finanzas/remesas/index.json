@@ -1,5 +1,5 @@
 {
-  "fechaActualizacion": "2026-11-23T13:16:51.000Z",
+  "fechaActualizacion": "2026-11-23T14:00:00.000Z",
   "remesas": [
     {
       "compania": "lbfinanzas",
@@ -11,6 +11,11 @@
       "costoMantenimientoTarjeta": null,
       "costoTarjeta": null,
       "retiroArs": "FX",
+      "metodosRecepcion": [
+        "ACH",
+        "Wire",
+        "SWIFT"
+      ],
       "detalles": {
         "cuentaPropia": "Cuenta en dólares en EE.UU. a tu nombre vía Zenus Bank International. LB Finanzas no es un banco.",
         "inversiones": "Podés mantener saldo en dólares con rendimientos e invertir desde la plataforma.",
@@ -31,6 +36,10 @@
       "costoMantenimientoTarjeta": "0 USD",
       "costoTarjeta": "0%",
       "retiroArs": "FX",
+      "metodosRecepcion": [
+        "ACH",
+        "Wire"
+      ],
       "detalles": {
         "inversiones": "Cuenta remunerada desde 2,75% APR e inversiones en EE.UU.",
         "tarjetaUsa": "Tarjeta Visa Platinum de la cuenta en Estados Unidos.",
@@ -52,6 +61,10 @@
       "costoMantenimientoTarjeta": "0 USD",
       "costoTarjeta": "1%",
       "retiroArs": "0",
+      "metodosRecepcion": [
+        "ACH",
+        "Wire"
+      ],
       "detalles": {
         "moneda": "Los pagos se acreditan como USD digital.",
         "tarjetaUsa": "TakeCard para compras internacionales con USD digital.",
@@ -72,6 +85,11 @@
       "costoMantenimientoTarjeta": "0 si hay 1 compra al mes",
       "costoTarjeta": "0",
       "retiroArs": null,
+      "metodosRecepcion": [
+        "ACH",
+        "Wire",
+        "SWIFT"
+      ],
       "detalles": {
         "cuentaPropia": "En global66.com/ar/freelancers/ dicen que dan datos bancarios locales a tu nombre: Routing Number y Account Number (USA) e IBAN (Europa).",
         "inversiones": "El centro de ayuda, que incluye a personas en Argentina, dice que la cuenta en dólares mantiene un rendimiento de hasta 6% anual.",
@@ -94,6 +112,7 @@
       "costoMantenimientoTarjeta": "0 USD",
       "costoTarjeta": "0%",
       "retiroArs": "0",
+      "metodosRecepcion": null,
       "detalles": {
         "cuentaPropia": "Cuenta propia a tu nombre (checking account)",
         "inversiones": "Permite inversiones (Stacking cripto.)",
@@ -114,6 +133,10 @@
       "costoMantenimientoTarjeta": "0 USD",
       "costoTarjeta": "0%",
       "retiroArs": "5 USD",
+      "metodosRecepcion": [
+        "ACH",
+        "Wire"
+      ],
       "detalles": {
         "moneda": "El saldo de la cuenta global está en dólares digitales (USDB o USDC).",
         "inversiones": "Boost es un incentivo promocional, no un producto de inversión.",
@@ -135,6 +158,11 @@
       "costoMantenimientoTarjeta": "0 ARS",
       "costoTarjeta": "0 ARS",
       "retiroArs": null,
+      "metodosRecepcion": [
+        "ACH",
+        "Wire",
+        "SWIFT"
+      ],
       "detalles": {
         "cuentaPropia": "AstroPay da instrucciones ACH, SWIFT o Wire a nombre del usuario. La cuenta en USD no es una cuenta personal: es una cuenta FBO agrupada.",
         "inversiones": "Los términos dicen que el saldo no devenga intereses para el usuario. El rendimiento del programa de efectivo de la cuenta en custodia queda para AstroPay.",
@@ -157,6 +185,9 @@
       "costoMantenimientoTarjeta": "29.95 USD",
       "costoTarjeta": "1.8% a 3.5%",
       "retiroArs": "1.2% a 4%",
+      "metodosRecepcion": [
+        "ACH"
+      ],
       "detalles": {
         "tarjetaUsa": "Payoneer publica tarjeta y fees en USD. La página de precios no dice que esté emitida en EE.UU.",
         "costoRecibirPagos": "1% (mín. 1 USD) si la receiving account no está en tu moneda local. ACH bank debit en EE.UU.: 1%. En moneda local: gratis.",
@@ -177,6 +208,10 @@
       "costoMantenimientoTarjeta": "0",
       "costoTarjeta": "0",
       "retiroArs": "0",
+      "metodosRecepcion": [
+        "ACH",
+        "Wire"
+      ],
       "detalles": {
         "cuentaPropia": "Bridge asigna una cuenta virtual en Lead Bank. Tenés el account number para depositar, pero no sos el titular de la cuenta bancaria. Abrirla cuesta 4 USD en USDt y se vuelve a debitar a los 12 meses si la usás.",
         "inversiones": "El saldo en dólar digital (USDt) genera rendimientos, sin tope. La tasa la publica la app y puede cambiar.",
@@ -199,6 +234,10 @@
       "costoMantenimientoTarjeta": "0 USD",
       "costoTarjeta": "0%",
       "retiroArs": "0",
+      "metodosRecepcion": [
+        "ACH",
+        "Wire"
+      ],
       "detalles": {
         "cuentaPropia": "Para un wire, el beneficiario es tu nombre, en una cuenta checking de Lead Bank. Recibir o enviar con esos datos de EE.UU. cuesta 3 USD por operación y se acredita en dólares digitales.",
         "inversiones": "Guardar dólares digitales y sumar rewards no tiene costo extra.",
@@ -221,6 +260,11 @@
       "costoMantenimientoTarjeta": null,
       "costoTarjeta": null,
       "retiroArs": null,
+      "metodosRecepcion": [
+        "ACH",
+        "Wire",
+        "SWIFT"
+      ],
       "detalles": {
         "cuentaPropia": "Wise da datos de cuenta para cobrar. No es una cuenta bancaria propia en EE.UU.",
         "tarjetaUsa": "La página de cobros no publica una tarjeta emitida en EE.UU.",
@@ -239,6 +283,10 @@
       "costoMantenimientoTarjeta": "0 USD",
       "costoTarjeta": "0%",
       "retiroArs": "0",
+      "metodosRecepcion": [
+        "ACH",
+        "Wire"
+      ],
       "detalles": {
         "costoRecibirPagos": "Mínimo 2.5 USD. todo gratis · wire/ach"
       },
@@ -255,6 +303,10 @@
       "costoMantenimientoTarjeta": "0 USD",
       "costoTarjeta": "0%",
       "retiroArs": "0",
+      "metodosRecepcion": [
+        "ACH",
+        "Wire"
+      ],
       "detalles": {
         "cuentaPropia": "Se puede abrir una cuenta en dólares (USD) sin costo",
         "moneda": "Los fondos se acreditan como dólares digitales (USDC)",
@@ -278,6 +330,10 @@
       "costoMantenimientoTarjeta": "0 USD",
       "costoTarjeta": "0%",
       "retiroArs": "/",
+      "metodosRecepcion": [
+        "ACH",
+        "Wire"
+      ],
       "detalles": {
         "cuentaPropia": "Permite apertura de cuenta en el exterior.",
         "moneda": "Acredita en Criptodólares (UXD).",

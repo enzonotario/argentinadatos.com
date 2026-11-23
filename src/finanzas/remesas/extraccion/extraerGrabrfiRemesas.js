@@ -23,6 +23,7 @@ export function mapearGrabrfiRemesas(texto) {
     costoMantenimientoTarjeta: '0 USD',
     costoTarjeta: '0%',
     retiroArs: '5 USD',
+    metodosRecepcion: ['ACH', 'Wire'],
     detalles: {
       moneda:
         'El saldo de la cuenta global está en dólares digitales (USDB o USDC).',

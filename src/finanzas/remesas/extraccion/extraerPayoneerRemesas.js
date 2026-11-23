@@ -25,6 +25,7 @@ export function mapearPayoneerRemesas(texto) {
     costoMantenimientoTarjeta: '29.95 USD',
     costoTarjeta: '1.8% a 3.5%',
     retiroArs: '1.2% a 4%',
+    metodosRecepcion: ['ACH'],
     detalles: {
       costoRecibirPagos:
         '1% (mín. 1 USD) si la receiving account no está en tu moneda local. ACH bank debit en EE.UU.: 1%. En moneda local: gratis.',

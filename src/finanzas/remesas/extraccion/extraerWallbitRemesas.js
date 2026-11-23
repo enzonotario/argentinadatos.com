@@ -23,6 +23,7 @@ export function mapearWallbitRemesas(texto) {
     costoMantenimientoTarjeta: '0 USD',
     costoTarjeta: '0%',
     retiroArs: 'FX',
+    metodosRecepcion: ['ACH', 'Wire'],
     detalles: {
       costoRecibirPagos:
         'Depósitos ACH, Wire, moneda local y cripto gratis en el plan Classic.',

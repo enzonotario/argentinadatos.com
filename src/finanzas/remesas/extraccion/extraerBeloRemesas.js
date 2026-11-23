@@ -311,6 +311,7 @@ export function fusionarExtraccionesBelo(extracciones) {
       normalizarCostoRetiroArs(
         elegirPrimero(tarjeta.retiroArs, lux.retiroArs, cuentaUsd.retiroArs),
       ) || '0',
+    metodosRecepcion: ['ACH', 'Wire'],
     detalles,
   }
 }

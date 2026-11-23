@@ -44,6 +44,7 @@ export function mapearCocosDesdeRendimientos(
       cocosRaw.mantenimientoFree === true ? '0 USD' : null,
     costoTarjeta: '0%',
     retiroArs: '0',
+    metodosRecepcion: ['ACH', 'Wire'],
     calificacionAndroid,
     calificacionIos,
     detalles: Object.keys(detalles).length > 0 ? detalles : null,

@@ -86,6 +86,7 @@ export function mapearGlobal66Remesas(texto) {
     costoMantenimientoTarjeta: '0 si hay 1 compra al mes',
     costoTarjeta: '0',
     retiroArs: null,
+    metodosRecepcion: ['ACH', 'Wire', 'SWIFT'],
     detalles: {
       cuentaPropia:
         'En global66.com/ar/freelancers/ dicen que dan datos bancarios locales a tu nombre: Routing Number y Account Number (USA) e IBAN (Europa).',

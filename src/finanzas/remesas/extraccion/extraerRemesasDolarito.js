@@ -1,6 +1,7 @@
 import { scrapeWithFirecrawl } from '@/shared/extraction/firecrawl/scrapeWithFirecrawl.js'
 import { logMensaje } from '@/log.js'
 import {
+  detectarMetodosRecepcionDesdeTexto,
   normalizarDetallesRemesa,
   normalizarRemesa,
 } from '@/finanzas/remesas/extraccion/extraerRemesas.js'
@@ -51,6 +52,15 @@ const schema = {
         retiroArs: {
           type: 'string',
           description: 'Costo de retiro en ARS (ej. 0, 2%, 1%)',
+        },
+        metodosRecepcion: {
+          type: 'array',
+          description:
+            'Métodos de recepción soportados: ACH, Wire y/o SWIFT (solo los que la fuente afirma)',
+          items: {
+            type: 'string',
+            enum: ['ACH', 'Wire', 'SWIFT'],
+          },
         },
         calificacionAndroid: {
           type: 'number',
@@ -175,6 +185,11 @@ function mapearRemesaDesdeHtml(raw) {
     costoMantenimientoTarjeta: raw.cardMaintenanceCost?.description,
     costoTarjeta: raw.cardUseCost?.description,
     retiroArs: raw.arsWithdrawal?.description,
+    metodosRecepcion: detectarMetodosRecepcionDesdeTexto(
+      raw.receivePaymentsCost?.description,
+      raw.receivePaymentsCost?.popup,
+      raw.ownAccount?.popup,
+    ),
     detalles: {
       cuentaPropia: raw.ownAccount?.popup,
       moneda: raw.currencyPopup,
