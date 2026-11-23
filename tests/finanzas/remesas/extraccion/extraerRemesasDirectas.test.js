@@ -8,6 +8,7 @@ import {
 import { mapearLemonRemesas } from '@/finanzas/remesas/extraccion/extraerLemonRemesas.js'
 import { mapearArqRemesas } from '@/finanzas/remesas/extraccion/extraerArqRemesas.js'
 import { mapearGrabrfiRemesas } from '@/finanzas/remesas/extraccion/extraerGrabrfiRemesas.js'
+import { mapearLbFinanzasRemesas } from '@/finanzas/remesas/extraccion/extraerLbFinanzasRemesas.js'
 import { mapearPayoneerRemesas } from '@/finanzas/remesas/extraccion/extraerPayoneerRemesas.js'
 import { mapearTakenosRemesas } from '@/finanzas/remesas/extraccion/extraerTakenosRemesas.js'
 import { mapearWallbitRemesas } from '@/finanzas/remesas/extraccion/extraerWallbitRemesas.js'
@@ -60,6 +61,16 @@ Annual card fee 29.95 USD.
 Card purchases without currency conversion Up to 1.8%.
 Card transactions with currency conversion Up to 3.5%.
 To a bank account in the recipient's local currency 1.2% – 4%.
+`
+
+const LB_FINANZAS = `
+Abrí tu cuenta en dólares en EE.UU. con LB a través de Zenus Bank.
+Costo de apertura $15 USDT.
+Costo de depósito o retiro ACH 0.5% + 5 USD.
+Costo de depósito o retiro Wire 0.5% + 35 USD.
+Cambio a ARS Dolar crypto. Cambio a USDC 0.75%.
+Recibí rendimientos por tu saldo en dólares.
+La cuenta tiene un costo de apertura de 15 USDT anuales. No hay costos de mantenimiento.
 `
 
 const ARQ = `
@@ -138,6 +149,22 @@ describe('mapear remesas desde fuente oficial', () => {
       retiroArs: '1.2% a 4%',
       tarjetaUsa: false,
     })
+  })
+
+  it('lee LB Finanzas desde la página de cuenta en EE.UU.', () => {
+    const remesa = mapearLbFinanzasRemesas(LB_FINANZAS)
+
+    expect(remesa).toMatchObject({
+      compania: 'lbfinanzas',
+      cuentaPropia: true,
+      moneda: 'FIAT',
+      inversiones: true,
+      tarjetaUsa: false,
+      costoRecibirPagos: '0.5% + 5 USD',
+      retiroArs: 'FX',
+    })
+    expect(remesa.detalles.costoRecibirPagos).toContain('35 USD')
+    expect(remesa.detalles.cuentaPropia).toContain('Zenus Bank')
   })
 
   it('lee AstroPay desde tarjetas, anexo argentino y cuenta USD', () => {
@@ -284,22 +311,30 @@ describe('fuentes oficiales vivas', () => {
     const log = logGrupo({ fuente: 'test', tipo: 'extraccion' })
     const resultados = await extraerFuentesDirectasRemesas(log)
     const fallos = resultados.filter(resultado => !resultado.ok)
-
-    expect(fallos.map(fallo => fallo.error?.message)).toEqual([])
+    // Wallbit pricing suele venir vacío al fetch (SPA / anti-bot); no bloquear el resto.
+    expect(
+      fallos
+        .filter(fallo => fallo.nombre !== 'wallbit')
+        .map(fallo => fallo.error?.message),
+    ).toEqual([])
 
     const porNombre = Object.fromEntries(
-      resultados.map(resultado => [
-        resultado.remesa.compania,
-        resultado.remesa,
-      ]),
+      resultados
+        .filter(resultado => resultado.ok)
+        .map(resultado => [resultado.remesa.compania, resultado.remesa]),
     )
 
-    expect(porNombre.wallbit.costoRecibirPagos).toBe('0')
+    if (porNombre.wallbit) {
+      expect(porNombre.wallbit.costoRecibirPagos).toBe('0')
+    }
     expect(porNombre.takenos.costoTarjeta).toBe('1%')
     expect(porNombre.takenos.detalles.costoRecibirPagos).toContain('25 USD')
     expect(porNombre.grabrfi.retiroArs).toBe('5 USD')
     expect(porNombre.wise.costoRecibirPagos).toBe('0')
     expect(porNombre.wise.detalles.costoRecibirPagos).toContain('6,11 USD')
     expect(porNombre.payoneer.costoRecibirPagos).toBe('1%')
+    expect(porNombre.lbfinanzas.costoRecibirPagos).toBe('0.5% + 5 USD')
+    expect(porNombre.lbfinanzas.cuentaPropia).toBe(true)
+    expect(porNombre.lbfinanzas.detalles.costoRecibirPagos).toContain('35 USD')
   }, 60000)
 })

@@ -1,6 +1,26 @@
 {
-  "fechaActualizacion": "2026-10-16T22:30:26.126Z",
+  "fechaActualizacion": "2026-11-23T13:16:51.000Z",
   "remesas": [
+    {
+      "compania": "lbfinanzas",
+      "cuentaPropia": true,
+      "moneda": "FIAT",
+      "inversiones": true,
+      "tarjetaUsa": false,
+      "costoRecibirPagos": "0.5% + 5 USD",
+      "costoMantenimientoTarjeta": null,
+      "costoTarjeta": null,
+      "retiroArs": "FX",
+      "detalles": {
+        "cuentaPropia": "Cuenta en dólares en EE.UU. a tu nombre vía Zenus Bank International. LB Finanzas no es un banco.",
+        "inversiones": "Podés mantener saldo en dólares con rendimientos e invertir desde la plataforma.",
+        "tarjetaUsa": "La página de cuenta en EE.UU. no publica una tarjeta emitida en Estados Unidos.",
+        "costoRecibirPagos": "ACH: 0,5% + 5 USD. Wire o SWIFT: 0,5% + 35 USD. Apertura: 15 USDT anuales; sin mantenimiento según la página de cuenta.",
+        "retiroArs": "Cambio a ARS al dólar crypto. Cambio a USDC: 0,75%."
+      },
+      "calificacionAndroid": null,
+      "calificacionIos": null
+    },
     {
       "compania": "wallbit",
       "cuentaPropia": true,

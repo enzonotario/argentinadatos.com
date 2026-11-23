@@ -1,5 +1,6 @@
 import { logMensaje } from '@/log.js'
 import { fuenteGrabrfiRemesas } from '@/finanzas/remesas/extraccion/extraerGrabrfiRemesas.js'
+import { fuenteLbFinanzasRemesas } from '@/finanzas/remesas/extraccion/extraerLbFinanzasRemesas.js'
 import { fuentePayoneerRemesas } from '@/finanzas/remesas/extraccion/extraerPayoneerRemesas.js'
 import { fuenteTakenosRemesas } from '@/finanzas/remesas/extraccion/extraerTakenosRemesas.js'
 import { fuenteWallbitRemesas } from '@/finanzas/remesas/extraccion/extraerWallbitRemesas.js'
@@ -14,6 +15,7 @@ export const FUENTES_REMESAS_DIRECTAS = [
   fuenteGrabrfiRemesas,
   fuenteWiseRemesas,
   fuentePayoneerRemesas,
+  fuenteLbFinanzasRemesas,
 ]
 
 export function htmlATexto(html) {
