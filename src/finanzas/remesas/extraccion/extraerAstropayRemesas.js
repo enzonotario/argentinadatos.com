@@ -1,6 +1,7 @@
 import { logMensaje } from '@/log.js'
 import { htmlATexto } from '@/finanzas/remesas/extraccion/extraerRemesasDirectas.js'
 import { normalizarRemesa } from '@/finanzas/remesas/extraccion/extraerRemesas.js'
+import { enriquecerRemesaConCalificaciones } from '@/finanzas/remesas/extraccion/stores/obtenerCalificacionesAppStores.js'
 
 const FUENTES_ASTROPAY_REMESAS = [
   {
@@ -93,5 +94,8 @@ export async function extraerAstropayRemesas(log) {
     }),
   )
 
-  return mapearAstropayRemesas(textos.join('\n'))
+  return enriquecerRemesaConCalificaciones(
+    log,
+    mapearAstropayRemesas(textos.join('\n')),
+  )
 }

@@ -1,6 +1,7 @@
 import { logMensaje } from '@/log.js'
 import { scrapeHtmlWithFirecrawl } from '@/shared/extraction/firecrawl/scrapeHtmlWithFirecrawl.js'
 import { normalizarRemesa } from '@/finanzas/remesas/extraccion/extraerRemesas.js'
+import { enriquecerRemesaConCalificaciones } from '@/finanzas/remesas/extraccion/stores/obtenerCalificacionesAppStores.js'
 
 const FUENTES_GLOBAL66_REMESAS = [
   {
@@ -123,5 +124,8 @@ export async function extraerGlobal66Remesas(log) {
     }),
   )
 
-  return mapearGlobal66Remesas(textos.join('\n'))
+  return enriquecerRemesaConCalificaciones(
+    log,
+    mapearGlobal66Remesas(textos.join('\n')),
+  )
 }

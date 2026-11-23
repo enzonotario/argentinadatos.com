@@ -1,6 +1,7 @@
 import { logMensaje } from '@/log.js'
 import { htmlATexto } from '@/finanzas/remesas/extraccion/extraerRemesasDirectas.js'
 import { normalizarRemesa } from '@/finanzas/remesas/extraccion/extraerRemesas.js'
+import { enriquecerRemesaConCalificaciones } from '@/finanzas/remesas/extraccion/stores/obtenerCalificacionesAppStores.js'
 
 const FUENTES_ARQ_REMESAS = [
   {
@@ -106,5 +107,8 @@ export async function extraerArqRemesas(log) {
     }),
   )
 
-  return mapearArqRemesas(textos.join('\n'))
+  return enriquecerRemesaConCalificaciones(
+    log,
+    mapearArqRemesas(textos.join('\n')),
+  )
 }

@@ -5,6 +5,7 @@ import { fuentePayoneerRemesas } from '@/finanzas/remesas/extraccion/extraerPayo
 import { fuenteTakenosRemesas } from '@/finanzas/remesas/extraccion/extraerTakenosRemesas.js'
 import { fuenteWallbitRemesas } from '@/finanzas/remesas/extraccion/extraerWallbitRemesas.js'
 import { fuenteWiseRemesas } from '@/finanzas/remesas/extraccion/extraerWiseRemesas.js'
+import { enriquecerRemesaConCalificaciones } from '@/finanzas/remesas/extraccion/stores/obtenerCalificacionesAppStores.js'
 
 /**
  * Proveedores que siguen en Dolarito: AirTM.
@@ -58,7 +59,7 @@ async function extraerFuente(log, fuente) {
     throw new Error(`Parser de ${fuente.nombre} devolvió ${remesa.compania}`)
   }
 
-  return remesa
+  return enriquecerRemesaConCalificaciones(log, remesa)
 }
 
 export async function extraerFuentesDirectasRemesas(log) {

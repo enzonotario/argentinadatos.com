@@ -1,6 +1,7 @@
 import { logMensaje } from '@/log.js'
 import { htmlATexto } from '@/finanzas/remesas/extraccion/extraerRemesasDirectas.js'
 import { normalizarRemesa } from '@/finanzas/remesas/extraccion/extraerRemesas.js'
+import { enriquecerRemesaConCalificaciones } from '@/finanzas/remesas/extraccion/stores/obtenerCalificacionesAppStores.js'
 
 const FUENTES_LEMON_REMESAS = [
   {
@@ -110,5 +111,8 @@ export async function extraerLemonRemesas(log) {
     }),
   )
 
-  return mapearLemonRemesas(textos.join('\n'))
+  return enriquecerRemesaConCalificaciones(
+    log,
+    mapearLemonRemesas(textos.join('\n')),
+  )
 }

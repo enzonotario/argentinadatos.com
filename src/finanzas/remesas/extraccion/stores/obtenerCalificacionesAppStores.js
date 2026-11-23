@@ -1,6 +1,7 @@
 import { logMensaje } from '@/log.js'
 import { obtenerCalificacionPlayStore } from '@/finanzas/remesas/extraccion/stores/playStore.js'
 import { obtenerCalificacionAppStore } from '@/finanzas/remesas/extraccion/stores/appStore.js'
+import { CALIFICACIONES_APPS_REMESAS } from '@/finanzas/remesas/extraccion/stores/calificacionesAppsRemesas.js'
 
 /**
  * @typedef {object} AppStoreCalificacionesConfig
@@ -53,4 +54,27 @@ export async function obtenerCalificacionesAppStores(log, config) {
   }
 
   return { calificacionAndroid, calificacionIos }
+}
+
+/**
+ * Si hay config de stores para la compañía, pisa las calificaciones con
+ * Play Store / App Store (fuente directa, no Dolarito).
+ */
+export async function enriquecerRemesaConCalificaciones(log, remesa) {
+  const clave = remesa?.compania?.toLowerCase()
+  const config = clave ? CALIFICACIONES_APPS_REMESAS[clave] : null
+
+  if (!config) {
+    return remesa
+  }
+
+  const calificaciones = await obtenerCalificacionesAppStores(log, config)
+
+  return {
+    ...remesa,
+    calificacionAndroid:
+      calificaciones.calificacionAndroid ?? remesa.calificacionAndroid ?? null,
+    calificacionIos:
+      calificaciones.calificacionIos ?? remesa.calificacionIos ?? null,
+  }
 }
