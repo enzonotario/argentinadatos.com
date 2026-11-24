@@ -9,6 +9,7 @@ import { collect } from 'collect.js'
 import { getYear, parse } from 'date-fns'
 import { USER_AGENT, VOTACIONES_BASE_URL } from '../../constants.ts'
 import { ActasDatabaseService } from './database/service.ts'
+import { asignarBancasHistoricas, readRecintoHistorial } from '../diputados/recintoHistorial.ts'
 import { parseCabeceraPdf } from './parseCabeceraPdf.ts'
 
 enum TipoVoto {
@@ -24,6 +25,11 @@ interface Voto {
   tipoVoto: TipoVoto
   imagen: string
   videoDiscurso: string | null
+  /**
+   * Banca que ocupaba el diputado cuando se votó (historial del recinto HCDN).
+   * Ausente si no se conocía el recinto en esa fecha; no se recalcula después.
+   */
+  banca?: number | null
 }
 
 interface Acta {
@@ -127,6 +133,11 @@ export async function crawlActas(): Promise<Acta[]> {
     .unique((acta: Acta) => String(acta.id))
     .sortBy('fecha')
     .all() as Acta[]
+
+  // Congelar la banca de cada voto con el recinto vigente en la fecha del acta
+  // (no pisa las ya guardadas: el recinto de hoy puede ser otro mañana).
+  const conBancas = asignarBancasHistoricas(actas, readRecintoHistorial())
+  if (conBancas) console.log(`Bancas históricas: ${conBancas} actas completadas`)
 
   // Backfill cabecera PDF (campos que el HTML no trae) en actas recientes.
   const toEnrich = [...actas]

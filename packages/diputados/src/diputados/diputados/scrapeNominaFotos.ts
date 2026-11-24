@@ -20,7 +20,7 @@ export interface NominaFotoRow {
   fotoUrl: string
 }
 
-function fold(value: string): string {
+export function fold(value: string): string {
   return String(value || '')
     .normalize('NFD')
     .replace(/\p{M}/gu, '')
@@ -31,7 +31,7 @@ function fold(value: string): string {
     .trim()
 }
 
-function claveApellidoNombre(nombre: string): string | null {
+export function claveApellidoNombre(nombre: string): string | null {
   const folded = fold(nombre)
   if (!folded) return null
   let apellidos: string[]

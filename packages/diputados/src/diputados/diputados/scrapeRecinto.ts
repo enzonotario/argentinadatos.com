@@ -1,9 +1,14 @@
 import axios from 'axios'
 import { readEndpoint } from '@argentinadatos/core/src/utils/readEndpoint.ts'
 import { writeEndpoint } from '@argentinadatos/core/src/utils/writeEndpoint.ts'
-import { shouldWriteJsonFiles } from '@argentinadatos/core/src/utils/database-mode.ts'
 import { USER_AGENT } from '../../constants.ts'
 import type { Diputado } from './crawlDiputados.ts'
+import {
+  RECINTO_ENDPOINT,
+  appendRecintoSnapshot,
+  readRecintoHistorial,
+  writeRecintoHistorial,
+} from './recintoHistorial.ts'
 import { matchNominaToDiputadoId } from './scrapeNominaFotos.ts'
 
 export const RECINTO_WEB_URL = 'https://parlamentaria.hcdn.gob.ar/recintoweb'
@@ -235,10 +240,14 @@ export async function fillBancasFromRecinto(diputados: Diputado[]): Promise<{
   const enriched = applyBancasToDiputados(diputados, bancaMap)
   diputados.splice(0, diputados.length, ...enriched)
 
-  if (shouldWriteJsonFiles()) {
-    writeEndpoint('diputados/recinto', payload)
-    writeEndpoint('/diputados/recinto', payload)
-  }
+  // El historial se lee ANTES de pisar `/v1/diputados/recinto`: si todavía no
+  // existe, se inicializa con la foto previa del recinto.
+  const historial = appendRecintoSnapshot(readRecintoHistorial(), payload)
+
+  // Recinto e historial no tienen colección en PocketBase: se publican siempre
+  // como JSON estático (a diferencia de diputados/actas, que respetan el modo).
+  writeEndpoint(RECINTO_ENDPOINT, payload)
+  writeRecintoHistorial(historial)
 
   return { payload, matched, unmatched }
 }
