@@ -328,7 +328,11 @@ export default defineConfig({
           ]),
           congresoGroup('Diputados', 'Diputados', [
             {
-              ids: ['get-diputados-diputados', 'get-diputados-recinto'],
+              ids: [
+                'get-diputados-diputados',
+                'get-diputados-recinto',
+                'get-diputados-recinto-historial',
+              ],
             },
             {
               text: 'Períodos',

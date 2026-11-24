@@ -2300,6 +2300,35 @@
         ]
       }
     },
+    "/v1/diputados/recinto/historial": {
+      "get": {
+        "summary": "Historial del recinto de Diputados",
+        "tags": [
+          "Congreso",
+          "Diputados"
+        ],
+        "description": "Historial de bancas del recinto de la HCDN. Cada ítem es un mapa banca → diputado vigente entre `desde` y `hasta` (primer y último scrape que lo observaron); se agrega un ítem nuevo cada vez que alguien cambia de banca o es reemplazado. El recinto web solo publica el estado actual, así que el historial empieza cuando se comenzó a guardar. `votos[].banca` en las actas se calcula a partir de este historial.",
+        "responses": {
+          "200": {
+            "description": "Historial de bancas del recinto de Diputados",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RecintoSnapshotDiputados"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-diputados-recinto-historial",
+        "x-data-source": [
+          "[HCDN — Recinto web](https://parlamentaria.hcdn.gob.ar/recintoweb)"
+        ]
+      }
+    },
     "/v1/diputados/periodos": {
       "get": {
         "summary": "Períodos parlamentarios",
@@ -5268,6 +5297,11 @@
                 "videoDiscurso": {
                   "type": "string",
                   "nullable": true
+                },
+                "banca": {
+                  "type": "integer",
+                  "nullable": true,
+                  "description": "Banca del recinto que ocupaba el diputado al momento de la votación (según el historial del recinto). Ausente si no se conocía el recinto en esa fecha: no se recalcula con el recinto actual."
                 }
               }
             }
@@ -7257,6 +7291,63 @@
               "type": "integer"
             },
             "description": "Números de banca vacantes"
+          }
+        }
+      },
+      "RecintoSnapshotDiputados": {
+        "title": "RecintoSnapshotDiputados",
+        "type": "object",
+        "required": [
+          "desde",
+          "hasta",
+          "asientos",
+          "vacantes"
+        ],
+        "properties": {
+          "desde": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Primer scrape en el que se observó este mapa de bancas"
+          },
+          "hasta": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Último scrape en el que se observó este mismo mapa de bancas"
+          },
+          "asientos": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "banca": {
+                  "type": "integer"
+                },
+                "diputadoId": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "apellido": {
+                  "type": "string"
+                },
+                "nombre": {
+                  "type": "string"
+                },
+                "distrito": {
+                  "type": "string"
+                },
+                "bloque": {
+                  "type": "string",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "vacantes": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "Números de banca vacantes en este snapshot"
           }
         }
       },
