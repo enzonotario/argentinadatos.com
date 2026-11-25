@@ -17,6 +17,7 @@ describe('extraerTasasDepositos30Dias', () => {
         expect(item.fecha).toMatch(/^\d{4}-\d{2}-\d{2}$/)
         expect(typeof item.valor).toBe('number')
         expect(item.valor).toBeGreaterThan(0)
+        expect(item.valor).toBeLessThan(5)
       }
     },
     30000,
