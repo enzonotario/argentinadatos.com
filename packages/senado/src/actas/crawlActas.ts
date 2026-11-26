@@ -52,6 +52,7 @@ export async function crawlActas({ year }: { year?: number } = {}): Promise<
   }
 
   const idsToProcess = buildActaIdsToProcess(listedIds, FORWARD_PADDING)
+  const listedIdsSet = new Set(listedIds)
   const knownTitulos = new Map(listed.map(row => [row.id, row.titulo]))
   const knownFechaSesion = new Map(
     listed
@@ -82,6 +83,7 @@ export async function crawlActas({ year }: { year?: number } = {}): Promise<
       knownTitulos.get(actaId) || '',
       yearToSearch,
       knownFechaSesion.get(actaId),
+      listedIdsSet.has(actaId),
     )
     if (acta) validActas.push(acta)
   })
@@ -256,11 +258,40 @@ async function mapPool<T>(
   await Promise.all(runners)
 }
 
+/**
+ * Evita guardar actas "fantasma" (PDF sin tabla de votos + fallo de HTML):
+ * sin fecha ni votos no es un acta utilizable.
+ */
+export function isValidActaData(acta: ActaData | null | undefined): boolean {
+  if (!acta) return false
+  const hasFecha = Boolean(String(acta.fecha || '').trim())
+  const hasVotos = Array.isArray(acta.votos) && acta.votos.length > 0
+  return hasFecha || hasVotos
+}
+
+/**
+ * Si el acta estaba en el listado oficial del año consultado, siempre entra.
+ * Si solo llegó por FORWARD_PADDING, exige que su año coincida con `year`
+ * (el Senado a veces carga actas digitalizadas de 2005/2009 con IDs nuevos).
+ */
+export function belongsToCrawlYear(
+  acta: Pick<ActaData, 'fecha' | 'fechaSesion'>,
+  year: number,
+  isListed: boolean,
+): boolean {
+  if (isListed) return true
+  const raw = String(acta.fechaSesion || acta.fecha || '').trim()
+  const match = raw.match(/^(\d{4})-/)
+  if (!match) return false
+  return Number(match[1]) === year
+}
+
 async function processActa(
   actaId: number,
   titulo: string,
   yearToSearch: number,
   fechaSesion?: string,
+  isListed = true,
 ): Promise<ActaData | null> {
   try {
     const pdfPath = await downloadPdf(actaId)
@@ -297,7 +328,13 @@ async function processActa(
       acta = parseDetalleActaHtml(html, actaId, finalTitulo)
     }
     else {
-      acta = await parseActa(actaId, finalTitulo, pdfPath)
+      console.warn(`⚠️ Acta ${actaId}: PDF sin votos individuales y sin HTML, se omite`)
+      return null
+    }
+
+    if (!isValidActaData(acta)) {
+      console.warn(`⚠️ Acta ${actaId}: sin fecha ni votos, se omite`)
+      return null
     }
 
     if (fechaSesion) {
@@ -306,6 +343,13 @@ async function processActa(
     else {
       const existing = readExistingFechaSesion(actaId, yearToSearch)
       if (existing) acta.fechaSesion = existing
+    }
+
+    if (!belongsToCrawlYear(acta, yearToSearch, isListed)) {
+      console.warn(
+        `⚠️ Acta ${actaId}: fuera de año ${yearToSearch} (${acta.fecha || acta.fechaSesion || 'sin fecha'}), se omite`,
+      )
+      return null
     }
 
     if (shouldWriteJsonFiles()) {

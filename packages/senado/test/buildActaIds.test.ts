@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest'
 import {
+  belongsToCrawlYear,
   buildActaIdsToProcess,
   collectListedActas,
+  isValidActaData,
   parseFechaSesionListado,
 } from '../src/actas/crawlActas.ts'
 import * as cheerio from 'cheerio'
@@ -174,5 +176,20 @@ describe('parseFechaSesionListado', () => {
         fechaSesion: '2026-11-19',
       },
     ])
+  })
+})
+
+describe('validación de actas fantasma y año', () => {
+  it('rechaza actas sin fecha ni votos', () => {
+    expect(isValidActaData({ fecha: '', votos: [] } as any)).toBe(false)
+    expect(isValidActaData({ fecha: '2026-02-11T10:00:00.000Z', votos: [] } as any)).toBe(true)
+    expect(isValidActaData({ fecha: '', votos: [{ nombre: 'A', voto: 'si' }] } as any)).toBe(true)
+  })
+
+  it('filtra actas de otros años llegadas por padding', () => {
+    expect(belongsToCrawlYear({ fecha: '2009-11-25T00:00:00.000Z' }, 2026, false)).toBe(false)
+    expect(belongsToCrawlYear({ fecha: '2026-11-26T15:00:00.000Z' }, 2026, false)).toBe(true)
+    expect(belongsToCrawlYear({ fecha: '2025-12-27T01:00:00.000Z' }, 2026, true)).toBe(true)
+    expect(belongsToCrawlYear({ fecha: '' }, 2026, false)).toBe(false)
   })
 })
