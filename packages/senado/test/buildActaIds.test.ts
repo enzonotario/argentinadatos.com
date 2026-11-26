@@ -112,6 +112,36 @@ describe('collectListedActas', () => {
   })
 })
 
+describe('título del listado con expedientes', () => {
+  it('incluye O.D. del div oculto y descarta los toggles y el paréntesis', () => {
+    const html = `
+      <table id="actasTable"><tbody>
+        <tr>
+          <td>19/11/2026</td>
+          <td>15</td>
+          <td class="ocultar">
+            Transferencias de inmuebles del Estado Nacional.
+            (
+            <a onclick="mostrar(2889)" id="botonMostrar2889">Ver
+              Expedientes</a>
+            <div id="mostrarOcultarDiv2889" class="expedientesOcultos" style="display:none">
+              <a onclick="ocultar(2889)">Ocultar Expedientes</a><br>
+              <a href="/od/130" target="_blank">O.D. 130/2026  </a>
+              , <a href="/od/131" target="_blank">O.D. 131/2026  </a>
+            </div>
+          </td>
+          <td><a href="/votaciones/detalleActa/2889">VER</a></td>
+        </tr>
+      </tbody></table>
+    `
+    const $ = cheerio.load(html)
+    const rows = collectListedActas($, $('table#actasTable tbody tr'))
+    expect(rows[0]!.titulo).toBe(
+      'Transferencias de inmuebles del Estado Nacional. O.D. 130/2026 , O.D. 131/2026',
+    )
+  })
+})
+
 describe('parseFechaSesionListado', () => {
   it('normaliza dd/MM/yyyy y el span oculto yyyyMMdd', () => {
     expect(parseFechaSesionListado('19/11/2026')).toBe('2026-11-19')

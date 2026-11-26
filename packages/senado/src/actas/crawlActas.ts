@@ -10,7 +10,9 @@ import { parseActa } from './parseActa.ts'
 import { pdfTieneVotosIndividuales } from './parseVotos.ts'
 import {
   fetchDetalleActaHtml,
+  normalizeTitulo,
   parseDetalleActaHtml,
+  pickRichestTitulo,
   scrapeTituloFromHtml,
 } from './scrapeDetalleActa.ts'
 
@@ -124,18 +126,19 @@ export async function crawlActas({ year }: { year?: number } = {}): Promise<
 }
 
 /**
- * Título de la celda del listado: solo text nodes directos.
- * Ignora <a>Ver Expedientes</a> y el div de expedientes ocultos.
+ * Título de la celda del listado, con los expedientes / O.D. (div oculto
+ * `expedientesOcultos`) para que coincida con el título del detalle.
+ * Solo se descartan los toggles <a onclick> "Ver/Ocultar Expedientes".
  */
 export function scrapeTituloFromListadoTd(
   $td: cheerio.Cheerio<any>,
 ): string {
-  return $td
-    .contents()
-    .filter((_, node) => node.type === 'text')
-    .text()
-    .replace(/\s+/g, ' ')
-    .trim()
+  const $clone = $td.clone()
+  $clone.find('a[onclick]').remove()
+  // Los separadores " , " viven en text nodes; <br> no aporta texto.
+  $clone.find('br').remove()
+
+  return normalizeTitulo($clone.text())
 }
 
 /**
@@ -275,10 +278,13 @@ async function processActa(
     }
 
     const tituloFromHtml = html ? scrapeTituloFromHtml(html) : ''
-    const finalTitulo =
-      tituloFromHtml ||
-      titulo ||
-      readExistingTitulo(actaId, yearToSearch)
+    // Siempre el título más completo (con expedientes / O.D.): el HTML del
+    // detalle, el listado y lo ya guardado solo difieren en cuánto traen.
+    const finalTitulo = pickRichestTitulo(
+      tituloFromHtml,
+      titulo,
+      readExistingTitulo(actaId, yearToSearch),
+    )
 
     const tieneVotosPdf = await pdfTieneVotosIndividuales(pdfPath)
 
@@ -405,7 +411,7 @@ function mergeActasById(incoming: ActaData[], existing: any[]): ActaData[] {
     byId.set(id, {
       ...prev,
       ...acta,
-      titulo: newTitulo || prevTitulo || acta.titulo || '',
+      titulo: pickRichestTitulo(newTitulo, prevTitulo) || acta.titulo || '',
       fechaSesion: newFechaSesion || prevFechaSesion || undefined,
     })
   }

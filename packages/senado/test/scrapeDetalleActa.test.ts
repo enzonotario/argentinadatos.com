@@ -5,7 +5,10 @@ import { describe, expect, it } from 'vitest'
 import { pdfTieneVotosIndividuales } from '../src/actas/parseVotos.ts'
 import {
   mapHtmlVoto,
+  normalizeTitulo,
   parseDetalleActaHtml,
+  pickRichestTitulo,
+  scrapeTituloFromHtml,
 } from '../src/actas/scrapeDetalleActa.ts'
 import { VotoEnum } from '../src/actas/parseActa.ts'
 
@@ -72,5 +75,44 @@ describe('pdfTieneVotosIndividuales', () => {
     expect(
       await pdfTieneVotosIndividuales('/senado/actas/pdf/2794.pdf'),
     ).toBe(true)
+  })
+})
+
+describe('títulos de actas', () => {
+  const header = (inner: string) => `
+    <div class="row"><div class="col-lg-6 col-sm-6">
+      <p>Acta Nro: 23</p>
+      <p>${inner}</p>
+    </div></div>`
+
+  it('incluye expedientes y O.D. del detalle', () => {
+    const html = header(`
+      Modernización Laboral. Título XXII.
+      <a href="/x">PE-159/25-PL</a> , <a href="/y">O.D. 699/2025  </a>`)
+    expect(scrapeTituloFromHtml(html)).toBe(
+      'Modernización Laboral. Título XXII. PE-159/25-PL , O.D. 699/2025',
+    )
+  })
+
+  it('descarta el paréntesis sin cerrar que emite el sitio', () => {
+    expect(normalizeTitulo('Tratados. ( O.D. 1/2026 , O.D. 2/2026')).toBe(
+      'Tratados. O.D. 1/2026 , O.D. 2/2026',
+    )
+    expect(normalizeTitulo('( O.D. 477/2026 , O.D. 478/2026')).toBe(
+      'O.D. 477/2026 , O.D. 478/2026',
+    )
+    expect(normalizeTitulo('Art. 4 (bis) O.D. 1/2026')).toBe(
+      'Art. 4 (bis) O.D. 1/2026',
+    )
+  })
+
+  it('pickRichestTitulo nunca pierde expedientes entre corridas', () => {
+    const full = 'Modernización Laboral. Título XXII. PE-159/25-PL , O.D. 699/2025'
+    const short = 'Modernización Laboral. Título XXII.'
+    expect(pickRichestTitulo(short, full)).toBe(full)
+    expect(pickRichestTitulo(full, short)).toBe(full)
+    expect(pickRichestTitulo('', undefined, short)).toBe(short)
+    // Títulos distintos: gana la fuente de mayor prioridad.
+    expect(pickRichestTitulo('Nuevo título', 'Otro título más largo')).toBe('Nuevo título')
   })
 })

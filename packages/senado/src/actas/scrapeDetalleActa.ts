@@ -5,19 +5,90 @@ import * as cheerio from 'cheerio'
 
 const DETALLE_ACTA_URL = 'https://www.senado.gob.ar/votaciones/detalleActa'
 
-export async function fetchDetalleActaHtml(actaId: number): Promise<string> {
-  const response = await fetch(`${DETALLE_ACTA_URL}/${actaId}`)
-  return await response.text()
+export async function fetchDetalleActaHtml(
+  actaId: number,
+  attempts = 3,
+): Promise<string> {
+  let lastError: unknown
+
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    try {
+      const response = await fetch(`${DETALLE_ACTA_URL}/${actaId}`)
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`)
+      }
+      const html = await response.text()
+      // Una página sin cabecera de acta es una respuesta degradada (carga/WAF).
+      if (/Acta Nro:/i.test(html)) {
+        return html
+      }
+      throw new Error('respuesta sin cabecera de acta')
+    }
+    catch (error) {
+      lastError = error
+      if (attempt < attempts) {
+        await new Promise(resolve => setTimeout(resolve, 500 * attempt))
+      }
+    }
+  }
+
+  throw lastError
+}
+
+/**
+ * Normaliza un título: colapsa espacios y descarta paréntesis sin cerrar.
+ * El sitio emite `Texto. ( <a>O.D. 1/2026</a> , <a>O.D. 2/2026</a>` sin el
+ * `)` final, o directamente `( <a>O.D...</a>` sin texto previo.
+ */
+export function normalizeTitulo(raw: string | null | undefined): string {
+  const text = String(raw || '').replace(/\s+/g, ' ').trim()
+  const unmatchedOpen = new Set<number>()
+  const stack: number[] = []
+
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] === '(') {
+      stack.push(i)
+    }
+    else if (text[i] === ')' && stack.length) {
+      stack.pop()
+    }
+  }
+  for (const i of stack) unmatchedOpen.add(i)
+
+  return [...text]
+    .filter((_, i) => !unmatchedOpen.has(i))
+    .join('')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+/**
+ * Elige el título más completo entre varias fuentes (en orden de prioridad).
+ * Los títulos pueden diferir solo en que uno trae los expedientes / O.D.
+ * (`... Título XXII. PE-159/25-PL , O.D. 699/2025`) y otro no: se prefiere
+ * siempre el que contiene al otro, para no perder información entre corridas.
+ */
+export function pickRichestTitulo(
+  ...candidates: Array<string | null | undefined>
+): string {
+  const titulos = candidates.map(normalizeTitulo).filter(Boolean)
+  let best = titulos[0] || ''
+
+  for (const candidate of titulos.slice(1)) {
+    if (candidate.length > best.length && candidate.includes(best)) {
+      best = candidate
+    }
+  }
+
+  return best
 }
 
 export function scrapeTituloFromHtml(html: string): string {
   const $ = cheerio.load(html)
 
-  return ($('div.row div.col-lg-6.col-sm-6:first-child p:nth-child(2)')
-    .text()
-    .trim())
-    .replace(/[\n\t\r]/g, '')
-    .replace(/\s+/g, ' ')
+  return normalizeTitulo(
+    $('div.row div.col-lg-6.col-sm-6:first-child p:nth-child(2)').text(),
+  )
 }
 
 /**
@@ -38,7 +109,7 @@ export function parseDetalleActaHtml(
   const acta = actaMatch?.[1]?.trim() || ''
 
   const tituloFromHtml = scrapeTituloFromHtml(html)
-  const finalTitulo = titulo || tituloFromHtml
+  const finalTitulo = pickRichestTitulo(tituloFromHtml, titulo)
 
   const spans = headerCol
     .find('span')
