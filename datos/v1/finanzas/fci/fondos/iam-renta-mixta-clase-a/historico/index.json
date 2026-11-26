@@ -2,7 +2,7 @@
   "fondoId": "1422",
   "claseId": "4153",
   "nombre": "IAM Renta Mixta - Clase A",
-  "fechaActualizacion": "2026-11-25T15:01:58.000Z",
+  "fechaActualizacion": "2026-11-25T23:40:23.000Z",
   "historico": [
     {
       "slug": "iam-renta-mixta-clase-a",
@@ -12786,6 +12786,22 @@
       "retornoDiario": 0.862228,
       "retornoAcumulado": 301.7045,
       "flujoEstimado": -4572459.70017,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "iam-renta-mixta-clase-a",
+      "fondoId": "1422",
+      "claseId": "4153",
+      "nombre": "IAM Renta Mixta - Clase A",
+      "fecha": "2026-11-25",
+      "categoria": "Renta Mixta",
+      "categoriaKey": "rentaMixta",
+      "horizonte": "Largo Plazo",
+      "valorCuotaparte": 3990.939,
+      "patrimonio": 71799643.59,
+      "retornoDiario": -0.649881,
+      "retornoAcumulado": 299.0939,
+      "flujoEstimado": 399985.389375,
       "origen": "cnv-excel"
     }
   ]

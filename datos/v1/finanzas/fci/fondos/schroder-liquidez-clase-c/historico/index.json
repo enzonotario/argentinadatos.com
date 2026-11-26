@@ -2,7 +2,7 @@
   "fondoId": "1248",
   "claseId": "3832",
   "nombre": "Schroder Liquidez - Clase C",
-  "fechaActualizacion": "2026-11-25T15:01:58.000Z",
+  "fechaActualizacion": "2026-11-25T23:40:23.000Z",
   "historico": [
     {
       "slug": "schroder-liquidez-clase-c",
@@ -18,6 +18,22 @@
       "retornoDiario": null,
       "retornoAcumulado": 0,
       "flujoEstimado": null,
+      "origen": "cnv-excel"
+    },
+    {
+      "slug": "schroder-liquidez-clase-c",
+      "fondoId": "1248",
+      "claseId": "3832",
+      "nombre": "Schroder Liquidez - Clase C",
+      "fecha": "2026-11-25",
+      "categoria": "Mercado de Dinero",
+      "categoriaKey": "mercadoDinero",
+      "horizonte": "Corto Plazo",
+      "valorCuotaparte": 1000.542,
+      "patrimonio": 253037922.87,
+      "retornoDiario": 0.0542,
+      "retornoAcumulado": 0.0542,
+      "flujoEstimado": -21699986650.844112,
       "origen": "cnv-excel"
     }
   ]
