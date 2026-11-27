@@ -112,6 +112,38 @@ describe('collectListedActas', () => {
       },
     ])
   })
+
+  it('toma el ID desde verActaVotacion cuando la fila aún no tiene detalleActa', () => {
+    const html = `
+      <table id="actasTable"><tbody>
+        <tr>
+          <td><span style="display:none">20261126</span> 26/11/2026</td>
+          <td>26</td>
+          <td>
+            <a onclick="mostrar(2915)">Ver Expedientes</a>
+            <div class="expedientesOcultos" style="display:none">
+              <a onclick="ocultar(2915)">Ocultar Expedientes</a><br>
+              <a href="/od/530">O.D. 530/2026</a>
+            </div>
+          </td>
+          <td>EN GENERAL Y EN PARTICULAR</td>
+          <td>AFIRMATIVO</td>
+          <td><a href="/votaciones/verActaVotacion/2915">descargar</a></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody></table>
+    `
+    const $ = cheerio.load(html)
+    const rows = collectListedActas($, $('table#actasTable tbody tr'))
+    expect(rows).toEqual([
+      {
+        id: 2915,
+        titulo: 'O.D. 530/2026',
+        fechaSesion: '2026-11-26',
+      },
+    ])
+  })
 })
 
 describe('título del listado con expedientes', () => {

@@ -181,7 +181,9 @@ export function collectListedActas(
 
   for (const row of actasRows.toArray()) {
     const $row = $(row)
-    const href = $row.find('a[href*="detalleActa"]').attr('href')
+    const href =
+      $row.find('a[href*="detalleActa"]').attr('href')
+      || $row.find('a[href*="verActaVotacion"]').attr('href')
     if (!href) continue
     const id = Number(href.split('/').pop())
     if (!Number.isFinite(id)) continue
