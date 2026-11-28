@@ -88,9 +88,9 @@ const FORWARD_WITH_HOME = 40
 const BACKWARD_WITH_DATA = 10
 const BACKWARD_WITHOUT_DATA = 20
 
-/** HCDN pasó de `/votacion/6023` a `/votacion/6023.html`. Sin el sufijo responde 404. */
+/** URL canónica del acta en HCDN (`/votacion/<id>`). */
 export function urlVotacion(id: string | number): string {
-  return `${VOTACIONES_BASE_URL}/votacion/${id}.html`
+  return `${VOTACIONES_BASE_URL}/votacion/${id}`
 }
 
 export function idDesdeHrefVotacion(href: string): number {
@@ -415,10 +415,37 @@ function applyCabeceraPdf(
   }
 }
 
+function resolveVotacionesUrl(src: string): string {
+  const clean = String(src || '').trim()
+  if (!clean) return ''
+  if (/^https?:\/\//i.test(clean)) return clean
+  return `${VOTACIONES_BASE_URL}${clean.startsWith('/') ? '' : '/'}${clean}`
+}
+
+function readTotalCount($: cheerio.CheerioAPI, label: string): number | null {
+  // HTML nuevo (2026-11): <ul class="totales"><li><span class="num">200</span>...<span class="nombre">AFIRMATIVOS</span></li>
+  const newLi = $('ul.totales li')
+    .filter((_, el) => $(el).find('span.nombre').text().trim().toUpperCase() === label)
+    .first()
+  if (newLi.length) {
+    const n = Number.parseInt(newLi.find('span.num').text().trim(), 10)
+    return Number.isFinite(n) ? n : null
+  }
+
+  // HTML anterior: <div class="col-lg-2 col-sm-6"><ul><h4>AFIRMATIVOS</h4><h3>200</h3>
+  const legacyUl = $(`div.col-lg-2.col-sm-6 ul h4:contains("${label}")`).parent()
+  if (legacyUl.length) {
+    const n = Number.parseInt(legacyUl.find('h3').text().trim(), 10)
+    return Number.isFinite(n) ? n : null
+  }
+
+  return null
+}
+
 export function parseActa(id: string, html: string): Acta | null {
   const $ = cheerio.load(html)
 
-  const title = $('h5 b').text().trim()
+  const title = $('.barra-titulo').first().text().trim() || $('h5 b').text().trim()
   if (!title) {
     return null
   }
@@ -426,9 +453,14 @@ export function parseActa(id: string, html: string): Acta | null {
   const [periodo, reunion, numeroActa] = title
     .split(' - ')
     .map(s => s.replace(/\D+/g, '')) // Extract numbers
-  const titulo = $('ul.col h4.black-opacity').clone().children('h5').remove().end().text().trim()
-  const resultado = $('ul.col-in li.col-middle h3').text().trim().toLowerCase()
-  const dateTime = $('ul.col h5.text-muted').text().trim()
+  const titulo = $('.acta-titulo h1').first().text().trim()
+    || $('ul.col h4.black-opacity').clone().children('h5').remove().end().text().trim()
+  const resultado = (
+    $('p.resultado').first().clone().children('.vh').remove().end().text().trim()
+    || $('ul.col-in li.col-middle h3').text().trim()
+  ).toLowerCase()
+  const dateTime = $('.acta-titulo p.fecha').first().text().trim()
+    || $('ul.col h5.text-muted').text().trim()
   const [fecha, hora] = dateTime.split(' - ')
   const fechaHora = parseFechaHora(fecha, hora)
 
@@ -437,11 +469,12 @@ export function parseActa(id: string, html: string): Acta | null {
   }
 
   const presidente = titleCaseSpanish(
-    $('div#custom-share h4 b').text().trim().toLowerCase(),
+    ($('p.presidida b').first().text().trim() || $('div#custom-share h4 b').text().trim()).toLowerCase(),
   )
 
   // HTML: "Más de la mitad - Votos Emitidos"
-  const mayoriaRaw = $('ul.col-in li.col-middle h5.text-muted').text().trim()
+  const mayoriaRaw = $('p.mayoria').first().text().trim()
+    || $('ul.col-in li.col-middle h5.text-muted').text().trim()
   let mayoria: string | null = mayoriaRaw || null
   let tipoMayoria: string | null = null
   let baseMayoria: string | null = null
@@ -452,65 +485,80 @@ export function parseActa(id: string, html: string): Acta | null {
     mayoria = [tipoMayoria, baseMayoria].filter(Boolean).join(' — ')
   }
 
-  const afirmativosUl = $(
-    'div.col-lg-2.col-sm-6 ul h4:contains("AFIRMATIVOS")',
-  ).parent()
-  const negativosUl = $(
-    'div.col-lg-2.col-sm-6 ul h4:contains("NEGATIVOS")',
-  ).parent()
-  const abstencionesUl = $(
-    'div.col-lg-2.col-sm-6 ul h4:contains("ABSTENCIONES")',
-  ).parent()
-  const ausentesUl = $(
-    'div.col-lg-2.col-sm-6 ul h4:contains("AUSENTES")',
-  ).parent()
-  const sinVotarUl = $(
-    'div.col-lg-2.col-sm-6 ul h4:contains("SIN VOTAR")',
-  ).parent()
-
-  const votosAfirmativos
-    = Number.parseInt(afirmativosUl.find('h3').text().trim(), 10) || 0
-  const votosNegativos
-    = Number.parseInt(negativosUl.find('h3').text().trim(), 10) || 0
-  const abstenciones
-    = Number.parseInt(abstencionesUl.find('h3').text().trim(), 10) || 0
-  const ausentes = Number.parseInt(ausentesUl.find('h3').text().trim(), 10) || 0
-  const sinVotarRaw = Number.parseInt(sinVotarUl.find('h3').text().trim(), 10)
-  const sinVotar = Number.isFinite(sinVotarRaw) ? sinVotarRaw : null
+  const votosAfirmativos = readTotalCount($, 'AFIRMATIVOS') ?? 0
+  const votosNegativos = readTotalCount($, 'NEGATIVOS') ?? 0
+  const abstenciones = readTotalCount($, 'ABSTENCIONES') ?? 0
+  const ausentes = readTotalCount($, 'AUSENTES') ?? 0
+  const sinVotar = readTotalCount($, 'SIN VOTAR')
   const presentes
     = votosAfirmativos + votosNegativos + abstenciones + (sinVotar ?? 0)
 
   const votos: Voto[] = []
-  $('#myTable tbody tr').each((_, row) => {
-    const imagen = $(row).find('td:nth-child(1) img').attr('src') || ''
-    const diputado = titleCaseSpanish(
-      $(row).find('td:nth-child(2)').text().trim().toLowerCase(),
-    )
-    const tipoVoto = parseTipoVoto(
-      $(row).find('td:nth-child(5) span.label').text().trim()
-      || $(row).find('td:nth-child(5)').text().trim(),
-    )
-    const videoButton = $(row).find('td:nth-child(6) button')
-    const videoDiscurso
-      = videoButton.length > 0 && !videoButton.prop('disabled')
-        ? videoButton.attr('onclick')?.match(/'([^']+)'/)?.[1] || null
+  const newRows = $('#tabla-votos tbody tr')
+  if (newRows.length > 0) {
+    newRows.each((_, row) => {
+      const imagen = resolveVotacionesUrl($(row).find('td:first-child img').attr('src') || '')
+      const diputado = titleCaseSpanish(
+        $(row).find('th[scope="row"]').text().trim().toLowerCase(),
+      )
+      const tipoVoto = parseTipoVoto(
+        $(row).find('span.etq').text().trim()
+        || $(row).find('td:last-child').text().trim(),
+      )
+      const videoLink = $(row).find('a[href*="video"], button[data-video]').first()
+      const videoDiscurso = videoLink.length > 0 && !videoLink.prop('disabled')
+        ? (videoLink.attr('data-video') || videoLink.attr('href') || null)
         : null
 
-    // Update diputado with missing photo.
-    diputados.filter((d: any) => `${d.apellido}, ${d.nombre}` === diputado)
-      .forEach((d: any) => {
-        if (!d.foto) {
-          d.foto = imagen
-        }
-      })
+      if (!diputado) return
 
-    votos.push({
-      diputado,
-      tipoVoto,
-      imagen,
-      videoDiscurso,
+      diputados.filter((d: any) => `${d.apellido}, ${d.nombre}` === diputado)
+        .forEach((d: any) => {
+          if (!d.foto && imagen) {
+            d.foto = imagen
+          }
+        })
+
+      votos.push({
+        diputado,
+        tipoVoto,
+        imagen,
+        videoDiscurso,
+      })
     })
-  })
+  }
+  else {
+    $('#myTable tbody tr').each((_, row) => {
+      const imagen = resolveVotacionesUrl($(row).find('td:nth-child(1) img').attr('src') || '')
+      const diputado = titleCaseSpanish(
+        $(row).find('td:nth-child(2)').text().trim().toLowerCase(),
+      )
+      const tipoVoto = parseTipoVoto(
+        $(row).find('td:nth-child(5) span.label').text().trim()
+        || $(row).find('td:nth-child(5)').text().trim(),
+      )
+      const videoButton = $(row).find('td:nth-child(6) button')
+      const videoDiscurso
+        = videoButton.length > 0 && !videoButton.prop('disabled')
+          ? videoButton.attr('onclick')?.match(/'([^']+)'/)?.[1] || null
+          : null
+
+      // Update diputado with missing photo.
+      diputados.filter((d: any) => `${d.apellido}, ${d.nombre}` === diputado)
+        .forEach((d: any) => {
+          if (!d.foto && imagen) {
+            d.foto = imagen
+          }
+        })
+
+      votos.push({
+        diputado,
+        tipoVoto,
+        imagen,
+        videoDiscurso,
+      })
+    })
+  }
 
   if (votos.length === 0) {
     return null
